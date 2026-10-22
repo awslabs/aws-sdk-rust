@@ -19,6 +19,106 @@ impl ContinuousParameterRangeSpecification {
         self.max_value.as_deref()
     }
 }
+static CONTINUOUSPARAMETERRANGESPECIFICATION_MEMBER_MIN_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContinuousParameterRangeSpecification$MinValue",
+        "com.amazonaws.sagemaker",
+        "ContinuousParameterRangeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MinValue",
+    0,
+);
+static CONTINUOUSPARAMETERRANGESPECIFICATION_MEMBER_MAX_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContinuousParameterRangeSpecification$MaxValue",
+        "com.amazonaws.sagemaker",
+        "ContinuousParameterRangeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxValue",
+    1,
+);
+static CONTINUOUSPARAMETERRANGESPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContinuousParameterRangeSpecification",
+        "com.amazonaws.sagemaker",
+        "ContinuousParameterRangeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTINUOUSPARAMETERRANGESPECIFICATION_MEMBER_MIN_VALUE,
+        &CONTINUOUSPARAMETERRANGESPECIFICATION_MEMBER_MAX_VALUE,
+    ],
+);
+impl ContinuousParameterRangeSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTINUOUSPARAMETERRANGESPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContinuousParameterRangeSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.min_value {
+            ser.write_string(&CONTINUOUSPARAMETERRANGESPECIFICATION_MEMBER_MIN_VALUE, val)?;
+        }
+        if let Some(ref val) = self.max_value {
+            ser.write_string(&CONTINUOUSPARAMETERRANGESPECIFICATION_MEMBER_MAX_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContinuousParameterRangeSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTINUOUSPARAMETERRANGESPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContinuousParameterRangeSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContinuousParameterRangeSpecification {
     /// Creates a new builder-style object to manufacture [`ContinuousParameterRangeSpecification`](crate::types::ContinuousParameterRangeSpecification).
     pub fn builder() -> crate::types::builders::ContinuousParameterRangeSpecificationBuilder {

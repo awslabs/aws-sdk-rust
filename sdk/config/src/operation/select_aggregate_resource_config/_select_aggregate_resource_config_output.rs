@@ -27,6 +27,143 @@ impl SelectAggregateResourceConfigOutput {
         self.next_token.as_deref()
     }
 }
+static SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_RESULTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Results$member", "com.amazonaws.configservice", "Results"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigOutput$Results",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Results",
+    0,
+)
+.with_list_member(&SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_RESULTS_MEMBER);
+static SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_QUERY_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigOutput$QueryInfo",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "QueryInfo",
+    1,
+);
+static SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigOutput$NextToken",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static SELECTAGGREGATERESOURCECONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigOutput",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_RESULTS,
+        &SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_QUERY_INFO,
+        &SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("SelectAggregateResourceConfigResponse");
+impl SelectAggregateResourceConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SELECTAGGREGATERESOURCECONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SelectAggregateResourceConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.results {
+            ser.write_list(
+                &SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_RESULTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.query_info {
+            ser.write_struct(&SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_QUERY_INFO, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&SELECTAGGREGATERESOURCECONFIGOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SELECTAGGREGATERESOURCECONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.results = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_info = Some(crate::types::QueryInfo::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SelectAggregateResourceConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for SelectAggregateResourceConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

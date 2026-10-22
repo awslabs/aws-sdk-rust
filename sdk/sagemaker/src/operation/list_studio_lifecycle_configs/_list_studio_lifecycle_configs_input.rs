@@ -66,6 +66,276 @@ impl ListStudioLifecycleConfigsInput {
         self.sort_order.as_ref()
     }
 }
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    0,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$NameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NameContains",
+    2,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_APP_TYPE_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$AppTypeEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppTypeEquals",
+    3,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    4,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    5,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MODIFIED_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$ModifiedTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ModifiedTimeBefore",
+    6,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MODIFIED_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$ModifiedTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ModifiedTimeAfter",
+    7,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    8,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    9,
+);
+static LISTSTUDIOLIFECYCLECONFIGSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListStudioLifecycleConfigsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListStudioLifecycleConfigsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MAX_RESULTS,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_NAME_CONTAINS,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_APP_TYPE_EQUALS,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MODIFIED_TIME_BEFORE,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MODIFIED_TIME_AFTER,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_SORT_BY,
+        &LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListStudioLifecycleConfigsRequest");
+impl ListStudioLifecycleConfigsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTSTUDIOLIFECYCLECONFIGSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListStudioLifecycleConfigsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.name_contains {
+            ser.write_string(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.app_type_equals {
+            ser.write_string(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_APP_TYPE_EQUALS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.modified_time_before {
+            ser.write_timestamp(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MODIFIED_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.modified_time_after {
+            ser.write_timestamp(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_MODIFIED_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTSTUDIOLIFECYCLECONFIGSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTSTUDIOLIFECYCLECONFIGSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_type_equals = Some(crate::types::StudioLifecycleConfigAppType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modified_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modified_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::StudioLifecycleConfigSortKey::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListStudioLifecycleConfigsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListStudioLifecycleConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListStudioLifecycleConfigsInput`](crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsInput).
     pub fn builder() -> crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder {

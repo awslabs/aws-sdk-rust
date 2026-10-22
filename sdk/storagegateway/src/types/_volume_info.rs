@@ -59,6 +59,204 @@ impl VolumeInfo {
         self.volume_attachment_status.as_deref()
     }
 }
+static VOLUMEINFO_MEMBER_VOLUME_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeInfo$VolumeARN",
+        "com.amazonaws.storagegateway",
+        "VolumeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeARN",
+    0,
+);
+static VOLUMEINFO_MEMBER_VOLUME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeInfo$VolumeId",
+        "com.amazonaws.storagegateway",
+        "VolumeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeId",
+    1,
+);
+static VOLUMEINFO_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeInfo$GatewayARN",
+        "com.amazonaws.storagegateway",
+        "VolumeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    2,
+);
+static VOLUMEINFO_MEMBER_GATEWAY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeInfo$GatewayId",
+        "com.amazonaws.storagegateway",
+        "VolumeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayId",
+    3,
+);
+static VOLUMEINFO_MEMBER_VOLUME_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeInfo$VolumeType",
+        "com.amazonaws.storagegateway",
+        "VolumeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeType",
+    4,
+);
+static VOLUMEINFO_MEMBER_VOLUME_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeInfo$VolumeSizeInBytes",
+        "com.amazonaws.storagegateway",
+        "VolumeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSizeInBytes",
+    5,
+);
+static VOLUMEINFO_MEMBER_VOLUME_ATTACHMENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeInfo$VolumeAttachmentStatus",
+        "com.amazonaws.storagegateway",
+        "VolumeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeAttachmentStatus",
+    6,
+);
+static VOLUMEINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#VolumeInfo", "com.amazonaws.storagegateway", "VolumeInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VOLUMEINFO_MEMBER_VOLUME_ARN,
+        &VOLUMEINFO_MEMBER_VOLUME_ID,
+        &VOLUMEINFO_MEMBER_GATEWAY_ARN,
+        &VOLUMEINFO_MEMBER_GATEWAY_ID,
+        &VOLUMEINFO_MEMBER_VOLUME_TYPE,
+        &VOLUMEINFO_MEMBER_VOLUME_SIZE_IN_BYTES,
+        &VOLUMEINFO_MEMBER_VOLUME_ATTACHMENT_STATUS,
+    ],
+);
+impl VolumeInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VOLUMEINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VolumeInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_arn {
+            ser.write_string(&VOLUMEINFO_MEMBER_VOLUME_ARN, val)?;
+        }
+        if let Some(ref val) = self.volume_id {
+            ser.write_string(&VOLUMEINFO_MEMBER_VOLUME_ID, val)?;
+        }
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&VOLUMEINFO_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.gateway_id {
+            ser.write_string(&VOLUMEINFO_MEMBER_GATEWAY_ID, val)?;
+        }
+        if let Some(ref val) = self.volume_type {
+            ser.write_string(&VOLUMEINFO_MEMBER_VOLUME_TYPE, val)?;
+        }
+        {
+            let val = &self.volume_size_in_bytes;
+            ser.write_long(&VOLUMEINFO_MEMBER_VOLUME_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.volume_attachment_status {
+            ser.write_string(&VOLUMEINFO_MEMBER_VOLUME_ATTACHMENT_STATUS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VolumeInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VOLUMEINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.volume_size_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_attachment_status = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VolumeInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl VolumeInfo {
     /// Creates a new builder-style object to manufacture [`VolumeInfo`](crate::types::VolumeInfo).
     pub fn builder() -> crate::types::builders::VolumeInfoBuilder {

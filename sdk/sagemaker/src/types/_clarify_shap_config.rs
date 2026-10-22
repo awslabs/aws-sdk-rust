@@ -41,6 +41,169 @@ impl ClarifyShapConfig {
         self.text_config.as_ref()
     }
 }
+static CLARIFYSHAPCONFIG_MEMBER_SHAP_BASELINE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapConfig$ShapBaselineConfig",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ShapBaselineConfig",
+    0,
+);
+static CLARIFYSHAPCONFIG_MEMBER_NUMBER_OF_SAMPLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapConfig$NumberOfSamples",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "NumberOfSamples",
+    1,
+);
+static CLARIFYSHAPCONFIG_MEMBER_USE_LOGIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapConfig$UseLogit",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "UseLogit",
+    2,
+);
+static CLARIFYSHAPCONFIG_MEMBER_SEED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapConfig$Seed",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Seed",
+    3,
+);
+static CLARIFYSHAPCONFIG_MEMBER_TEXT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapConfig$TextConfig",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TextConfig",
+    4,
+);
+static CLARIFYSHAPCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapConfig",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLARIFYSHAPCONFIG_MEMBER_SHAP_BASELINE_CONFIG,
+        &CLARIFYSHAPCONFIG_MEMBER_NUMBER_OF_SAMPLES,
+        &CLARIFYSHAPCONFIG_MEMBER_USE_LOGIT,
+        &CLARIFYSHAPCONFIG_MEMBER_SEED,
+        &CLARIFYSHAPCONFIG_MEMBER_TEXT_CONFIG,
+    ],
+);
+impl ClarifyShapConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLARIFYSHAPCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClarifyShapConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.shap_baseline_config {
+            ser.write_struct(&CLARIFYSHAPCONFIG_MEMBER_SHAP_BASELINE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.number_of_samples {
+            ser.write_integer(&CLARIFYSHAPCONFIG_MEMBER_NUMBER_OF_SAMPLES, *val)?;
+        }
+        if let Some(ref val) = self.use_logit {
+            ser.write_boolean(&CLARIFYSHAPCONFIG_MEMBER_USE_LOGIT, *val)?;
+        }
+        if let Some(ref val) = self.seed {
+            ser.write_integer(&CLARIFYSHAPCONFIG_MEMBER_SEED, *val)?;
+        }
+        if let Some(ref val) = self.text_config {
+            ser.write_struct(&CLARIFYSHAPCONFIG_MEMBER_TEXT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClarifyShapConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLARIFYSHAPCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shap_baseline_config = Some(crate::types::ClarifyShapBaselineConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.number_of_samples = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.use_logit = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.seed = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text_config = Some(crate::types::ClarifyTextConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClarifyShapConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClarifyShapConfig {
     /// Creates a new builder-style object to manufacture [`ClarifyShapConfig`](crate::types::ClarifyShapConfig).
     pub fn builder() -> crate::types::builders::ClarifyShapConfigBuilder {

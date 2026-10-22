@@ -87,6 +87,183 @@ impl MemberAccountStatus {
         self.last_update_time.as_ref()
     }
 }
+static MEMBERACCOUNTSTATUS_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#MemberAccountStatus$AccountId",
+        "com.amazonaws.configservice",
+        "MemberAccountStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountId",
+    0,
+);
+static MEMBERACCOUNTSTATUS_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#MemberAccountStatus$ConfigRuleName",
+        "com.amazonaws.configservice",
+        "MemberAccountStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleName",
+    1,
+);
+static MEMBERACCOUNTSTATUS_MEMBER_MEMBER_ACCOUNT_RULE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#MemberAccountStatus$MemberAccountRuleStatus",
+        "com.amazonaws.configservice",
+        "MemberAccountStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MemberAccountRuleStatus",
+    2,
+);
+static MEMBERACCOUNTSTATUS_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#MemberAccountStatus$ErrorCode",
+        "com.amazonaws.configservice",
+        "MemberAccountStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    3,
+);
+static MEMBERACCOUNTSTATUS_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#MemberAccountStatus$ErrorMessage",
+        "com.amazonaws.configservice",
+        "MemberAccountStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    4,
+);
+static MEMBERACCOUNTSTATUS_MEMBER_LAST_UPDATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#MemberAccountStatus$LastUpdateTime",
+        "com.amazonaws.configservice",
+        "MemberAccountStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdateTime",
+    5,
+);
+static MEMBERACCOUNTSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#MemberAccountStatus",
+        "com.amazonaws.configservice",
+        "MemberAccountStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MEMBERACCOUNTSTATUS_MEMBER_ACCOUNT_ID,
+        &MEMBERACCOUNTSTATUS_MEMBER_CONFIG_RULE_NAME,
+        &MEMBERACCOUNTSTATUS_MEMBER_MEMBER_ACCOUNT_RULE_STATUS,
+        &MEMBERACCOUNTSTATUS_MEMBER_ERROR_CODE,
+        &MEMBERACCOUNTSTATUS_MEMBER_ERROR_MESSAGE,
+        &MEMBERACCOUNTSTATUS_MEMBER_LAST_UPDATE_TIME,
+    ],
+);
+impl MemberAccountStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MEMBERACCOUNTSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MemberAccountStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.account_id;
+            ser.write_string(&MEMBERACCOUNTSTATUS_MEMBER_ACCOUNT_ID, val)?;
+        }
+        {
+            let val = &self.config_rule_name;
+            ser.write_string(&MEMBERACCOUNTSTATUS_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        {
+            let val = &self.member_account_rule_status;
+            ser.write_string(&MEMBERACCOUNTSTATUS_MEMBER_MEMBER_ACCOUNT_RULE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&MEMBERACCOUNTSTATUS_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&MEMBERACCOUNTSTATUS_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.last_update_time {
+            ser.write_timestamp(&MEMBERACCOUNTSTATUS_MEMBER_LAST_UPDATE_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MemberAccountStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MEMBERACCOUNTSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.account_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.config_rule_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.member_account_rule_status = Some(crate::types::MemberAccountRuleStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MemberAccountStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.account_id = builder.account_id.or(Some(String::new()));
+        builder.config_rule_name = builder.config_rule_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MemberAccountStatus {
     /// Creates a new builder-style object to manufacture [`MemberAccountStatus`](crate::types::MemberAccountStatus).
     pub fn builder() -> crate::types::builders::MemberAccountStatusBuilder {

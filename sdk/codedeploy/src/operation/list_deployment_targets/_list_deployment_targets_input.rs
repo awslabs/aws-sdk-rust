@@ -38,6 +38,193 @@ impl ListDeploymentTargetsInput {
         self.target_filters.as_ref()
     }
 }
+static LISTDEPLOYMENTTARGETSINPUT_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentTargetsInput$deploymentId",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentTargetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static LISTDEPLOYMENTTARGETSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentTargetsInput$nextToken",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentTargetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    1,
+);
+static LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#FilterValueList$member",
+        "com.amazonaws.codedeploy",
+        "FilterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#TargetFilters$key", "com.amazonaws.codedeploy", "TargetFilters"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#TargetFilters$value",
+        "com.amazonaws.codedeploy",
+        "TargetFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_VALUE_MEMBER);
+static LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentTargetsInput$targetFilters",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentTargetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "targetFilters",
+    2,
+)
+.with_map_members(
+    &LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_KEY,
+    &LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_VALUE,
+);
+static LISTDEPLOYMENTTARGETSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentTargetsInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentTargetsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTDEPLOYMENTTARGETSINPUT_MEMBER_DEPLOYMENT_ID,
+        &LISTDEPLOYMENTTARGETSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListDeploymentTargetsInput");
+impl ListDeploymentTargetsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTDEPLOYMENTTARGETSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListDeploymentTargetsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&LISTDEPLOYMENTTARGETSINPUT_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTDEPLOYMENTTARGETSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.target_filters {
+            ser.write_map(
+                &LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key.as_str())?;
+
+                        ser.write_list(
+                            &LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTDEPLOYMENTTARGETSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_filters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(crate::types::TargetFilterName::from(key.as_str()), {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&LISTDEPLOYMENTTARGETSINPUT_MEMBER_TARGET_FILTERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListDeploymentTargetsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.deployment_id = builder.deployment_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListDeploymentTargetsInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentTargetsInput`](crate::operation::list_deployment_targets::ListDeploymentTargetsInput).
     pub fn builder() -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder {

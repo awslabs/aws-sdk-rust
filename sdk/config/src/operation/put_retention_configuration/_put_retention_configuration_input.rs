@@ -16,6 +16,86 @@ impl PutRetentionConfigurationInput {
         self.retention_period_in_days
     }
 }
+static PUTRETENTIONCONFIGURATIONINPUT_MEMBER_RETENTION_PERIOD_IN_DAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutRetentionConfigurationInput$RetentionPeriodInDays",
+        "com.amazonaws.configservice.synthetic",
+        "PutRetentionConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RetentionPeriodInDays",
+    0,
+);
+static PUTRETENTIONCONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutRetentionConfigurationInput",
+        "com.amazonaws.configservice.synthetic",
+        "PutRetentionConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUTRETENTIONCONFIGURATIONINPUT_MEMBER_RETENTION_PERIOD_IN_DAYS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutRetentionConfigurationRequest");
+impl PutRetentionConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTRETENTIONCONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRetentionConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.retention_period_in_days {
+            ser.write_integer(&PUTRETENTIONCONFIGURATIONINPUT_MEMBER_RETENTION_PERIOD_IN_DAYS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_retention_configuration::builders::PutRetentionConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTRETENTIONCONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_period_in_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRetentionConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.retention_period_in_days = builder.retention_period_in_days.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutRetentionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutRetentionConfigurationInput`](crate::operation::put_retention_configuration::PutRetentionConfigurationInput).
     pub fn builder() -> crate::operation::put_retention_configuration::builders::PutRetentionConfigurationInputBuilder {

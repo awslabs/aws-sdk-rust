@@ -53,6 +53,239 @@ impl EcsTarget {
         self.task_sets_info.as_deref().unwrap_or_default()
     }
 }
+static ECSTARGET_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTarget$deploymentId", "com.amazonaws.codedeploy", "ECSTarget"),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static ECSTARGET_MEMBER_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTarget$targetId", "com.amazonaws.codedeploy", "ECSTarget"),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetId",
+    1,
+);
+static ECSTARGET_MEMBER_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTarget$targetArn", "com.amazonaws.codedeploy", "ECSTarget"),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetArn",
+    2,
+);
+static ECSTARGET_MEMBER_LAST_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTarget$lastUpdatedAt",
+        "com.amazonaws.codedeploy",
+        "ECSTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastUpdatedAt",
+    3,
+);
+static ECSTARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LifecycleEventList$member",
+        "com.amazonaws.codedeploy",
+        "LifecycleEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ECSTARGET_MEMBER_LIFECYCLE_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTarget$lifecycleEvents",
+        "com.amazonaws.codedeploy",
+        "ECSTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "lifecycleEvents",
+    4,
+)
+.with_list_member(&ECSTARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER);
+static ECSTARGET_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTarget$status", "com.amazonaws.codedeploy", "ECSTarget"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    5,
+);
+static ECSTARGET_MEMBER_TASK_SETS_INFO_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTaskSetList$member",
+        "com.amazonaws.codedeploy",
+        "ECSTaskSetList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ECSTARGET_MEMBER_TASK_SETS_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTarget$taskSetsInfo", "com.amazonaws.codedeploy", "ECSTarget"),
+    ::aws_smithy_schema::ShapeType::List,
+    "taskSetsInfo",
+    6,
+)
+.with_list_member(&ECSTARGET_MEMBER_TASK_SETS_INFO_MEMBER);
+static ECSTARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTarget", "com.amazonaws.codedeploy", "ECSTarget"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ECSTARGET_MEMBER_DEPLOYMENT_ID,
+        &ECSTARGET_MEMBER_TARGET_ID,
+        &ECSTARGET_MEMBER_TARGET_ARN,
+        &ECSTARGET_MEMBER_LAST_UPDATED_AT,
+        &ECSTARGET_MEMBER_LIFECYCLE_EVENTS,
+        &ECSTARGET_MEMBER_STATUS,
+        &ECSTARGET_MEMBER_TASK_SETS_INFO,
+    ],
+);
+impl EcsTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ECSTARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EcsTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&ECSTARGET_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.target_id {
+            ser.write_string(&ECSTARGET_MEMBER_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.target_arn {
+            ser.write_string(&ECSTARGET_MEMBER_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.last_updated_at {
+            ser.write_timestamp(&ECSTARGET_MEMBER_LAST_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_events {
+            ser.write_list(
+                &ECSTARGET_MEMBER_LIFECYCLE_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LifecycleEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ECSTARGET_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.task_sets_info {
+            ser.write_list(
+                &ECSTARGET_MEMBER_TASK_SETS_INFO,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EcsTaskSet::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EcsTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ECSTARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LifecycleEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TargetStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_sets_info = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EcsTaskSet::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EcsTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EcsTarget {
     /// Creates a new builder-style object to manufacture [`EcsTarget`](crate::types::EcsTarget).
     pub fn builder() -> crate::types::builders::EcsTargetBuilder {

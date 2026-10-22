@@ -66,6 +66,276 @@ impl ListEdgeDeploymentPlansInput {
         self.sort_order.as_ref()
     }
 }
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    2,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    3,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$LastModifiedTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTimeAfter",
+    4,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$LastModifiedTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTimeBefore",
+    5,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$NameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NameContains",
+    6,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_DEVICE_FLEET_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$DeviceFleetNameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetNameContains",
+    7,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    8,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    9,
+);
+static LISTEDGEDEPLOYMENTPLANSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListEdgeDeploymentPlansInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListEdgeDeploymentPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_MAX_RESULTS,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_NAME_CONTAINS,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_DEVICE_FLEET_NAME_CONTAINS,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_SORT_BY,
+        &LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListEdgeDeploymentPlansRequest");
+impl ListEdgeDeploymentPlansInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTEDGEDEPLOYMENTPLANSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListEdgeDeploymentPlansInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_after {
+            ser.write_timestamp(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_before {
+            ser.write_timestamp(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.name_contains {
+            ser.write_string(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.device_fleet_name_contains {
+            ser.write_string(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_DEVICE_FLEET_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTEDGEDEPLOYMENTPLANSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTEDGEDEPLOYMENTPLANSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ListEdgeDeploymentPlansSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListEdgeDeploymentPlansInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListEdgeDeploymentPlansInput {
     /// Creates a new builder-style object to manufacture [`ListEdgeDeploymentPlansInput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput).
     pub fn builder() -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder {

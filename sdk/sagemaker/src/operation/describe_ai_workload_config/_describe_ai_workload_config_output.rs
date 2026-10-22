@@ -45,6 +45,213 @@ impl DescribeAiWorkloadConfigOutput {
         self.creation_time.as_ref()
     }
 }
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAIWorkloadConfigOutput$AIWorkloadConfigName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAIWorkloadConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AIWorkloadConfigName",
+    0,
+);
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIG_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAIWorkloadConfigOutput$AIWorkloadConfigArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAIWorkloadConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AIWorkloadConfigArn",
+    1,
+);
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_DATASET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAIWorkloadConfigOutput$DatasetConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAIWorkloadConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "DatasetConfig",
+    2,
+);
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAIWorkloadConfigOutput$AIWorkloadConfigs",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAIWorkloadConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AIWorkloadConfigs",
+    3,
+);
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAIWorkloadConfigOutput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAIWorkloadConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_TAGS_MEMBER);
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAIWorkloadConfigOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAIWorkloadConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static DESCRIBEAIWORKLOADCONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAIWorkloadConfigOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAIWorkloadConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIG_NAME,
+        &DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIG_ARN,
+        &DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_DATASET_CONFIG,
+        &DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIGS,
+        &DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_TAGS,
+        &DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_CREATION_TIME,
+    ],
+)
+.with_original_name("DescribeAIWorkloadConfigResponse");
+impl DescribeAiWorkloadConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAIWORKLOADCONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAiWorkloadConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ai_workload_config_name {
+            ser.write_string(&DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.ai_workload_config_arn {
+            ser.write_string(&DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIG_ARN, val)?;
+        }
+        if let Some(ref val) = self.dataset_config {
+            ser.write_struct(&DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_DATASET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.ai_workload_configs {
+            ser.write_struct(&DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_AI_WORKLOAD_CONFIGS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEAIWORKLOADCONFIGOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_ai_workload_config::builders::DescribeAiWorkloadConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAIWORKLOADCONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_workload_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_workload_config_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dataset_config = Some(crate::types::AiDatasetConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_workload_configs = Some(crate::types::AiWorkloadConfigs::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAiWorkloadConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeAiWorkloadConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

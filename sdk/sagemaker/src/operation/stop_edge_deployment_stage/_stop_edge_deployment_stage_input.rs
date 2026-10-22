@@ -18,6 +18,110 @@ impl StopEdgeDeploymentStageInput {
         self.stage_name.as_deref()
     }
 }
+static STOPEDGEDEPLOYMENTSTAGEINPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StopEdgeDeploymentStageInput$EdgeDeploymentPlanName",
+        "com.amazonaws.sagemaker.synthetic",
+        "StopEdgeDeploymentStageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EdgeDeploymentPlanName",
+    0,
+);
+static STOPEDGEDEPLOYMENTSTAGEINPUT_MEMBER_STAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StopEdgeDeploymentStageInput$StageName",
+        "com.amazonaws.sagemaker.synthetic",
+        "StopEdgeDeploymentStageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StageName",
+    1,
+);
+static STOPEDGEDEPLOYMENTSTAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StopEdgeDeploymentStageInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "StopEdgeDeploymentStageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STOPEDGEDEPLOYMENTSTAGEINPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME,
+        &STOPEDGEDEPLOYMENTSTAGEINPUT_MEMBER_STAGE_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StopEdgeDeploymentStageRequest");
+impl StopEdgeDeploymentStageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOPEDGEDEPLOYMENTSTAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StopEdgeDeploymentStageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.edge_deployment_plan_name {
+            ser.write_string(&STOPEDGEDEPLOYMENTSTAGEINPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME, val)?;
+        }
+        if let Some(ref val) = self.stage_name {
+            ser.write_string(&STOPEDGEDEPLOYMENTSTAGEINPUT_MEMBER_STAGE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STOPEDGEDEPLOYMENTSTAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_plan_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StopEdgeDeploymentStageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.edge_deployment_plan_name = builder.edge_deployment_plan_name.or(Some(String::new()));
+        builder.stage_name = builder.stage_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StopEdgeDeploymentStageInput {
     /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageInput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageInput).
     pub fn builder() -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder {

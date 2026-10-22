@@ -20,6 +20,138 @@ impl UpdateEndpointWeightsAndCapacitiesInput {
         self.desired_weights_and_capacities.as_deref().unwrap_or_default()
     }
 }
+static UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointWeightsAndCapacitiesInput$EndpointName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointWeightsAndCapacitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointName",
+    0,
+);
+static UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_DESIRED_WEIGHTS_AND_CAPACITIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#DesiredWeightAndCapacityList$member",
+            "com.amazonaws.sagemaker",
+            "DesiredWeightAndCapacityList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_DESIRED_WEIGHTS_AND_CAPACITIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateEndpointWeightsAndCapacitiesInput$DesiredWeightsAndCapacities",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateEndpointWeightsAndCapacitiesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DesiredWeightsAndCapacities",
+        1,
+    )
+    .with_list_member(&UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_DESIRED_WEIGHTS_AND_CAPACITIES_MEMBER);
+static UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointWeightsAndCapacitiesInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointWeightsAndCapacitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_ENDPOINT_NAME,
+        &UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_DESIRED_WEIGHTS_AND_CAPACITIES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateEndpointWeightsAndCapacitiesInput");
+impl UpdateEndpointWeightsAndCapacitiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateEndpointWeightsAndCapacitiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.desired_weights_and_capacities {
+            ser.write_list(
+                &UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_MEMBER_DESIRED_WEIGHTS_AND_CAPACITIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DesiredWeightAndCapacity::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEENDPOINTWEIGHTSANDCAPACITIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_weights_and_capacities = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DesiredWeightAndCapacity::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateEndpointWeightsAndCapacitiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_name = builder.endpoint_name.or(Some(String::new()));
+        builder.desired_weights_and_capacities = builder.desired_weights_and_capacities.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateEndpointWeightsAndCapacitiesInput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointWeightsAndCapacitiesInput`](crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesInput).
     pub fn builder() -> crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder {

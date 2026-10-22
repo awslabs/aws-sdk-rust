@@ -63,6 +63,300 @@ impl ExportImageTask {
         self.error_details.as_deref().unwrap_or_default()
     }
 }
+static EXPORTIMAGETASK_MEMBER_TASK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$TaskId",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskId",
+    0,
+);
+static EXPORTIMAGETASK_MEMBER_IMAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$ImageArn",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageArn",
+    1,
+);
+static EXPORTIMAGETASK_MEMBER_AMI_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$AmiName",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AmiName",
+    2,
+);
+static EXPORTIMAGETASK_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$CreatedDate",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    3,
+);
+static EXPORTIMAGETASK_MEMBER_AMI_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$AmiDescription",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AmiDescription",
+    4,
+);
+static EXPORTIMAGETASK_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$State",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    5,
+);
+static EXPORTIMAGETASK_MEMBER_AMI_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$AmiId",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AmiId",
+    6,
+);
+static EXPORTIMAGETASK_MEMBER_TAG_SPECIFICATIONS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$key", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static EXPORTIMAGETASK_MEMBER_TAG_SPECIFICATIONS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$value", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static EXPORTIMAGETASK_MEMBER_TAG_SPECIFICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$TagSpecifications",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "TagSpecifications",
+    7,
+)
+.with_map_members(
+    &EXPORTIMAGETASK_MEMBER_TAG_SPECIFICATIONS_KEY,
+    &EXPORTIMAGETASK_MEMBER_TAG_SPECIFICATIONS_VALUE,
+);
+static EXPORTIMAGETASK_MEMBER_ERROR_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ErrorDetailsList$member",
+        "com.amazonaws.appstream",
+        "ErrorDetailsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EXPORTIMAGETASK_MEMBER_ERROR_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ExportImageTask$ErrorDetails",
+        "com.amazonaws.appstream",
+        "ExportImageTask",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ErrorDetails",
+    8,
+)
+.with_list_member(&EXPORTIMAGETASK_MEMBER_ERROR_DETAILS_MEMBER);
+static EXPORTIMAGETASK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#ExportImageTask", "com.amazonaws.appstream", "ExportImageTask"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXPORTIMAGETASK_MEMBER_TASK_ID,
+        &EXPORTIMAGETASK_MEMBER_IMAGE_ARN,
+        &EXPORTIMAGETASK_MEMBER_AMI_NAME,
+        &EXPORTIMAGETASK_MEMBER_CREATED_DATE,
+        &EXPORTIMAGETASK_MEMBER_AMI_DESCRIPTION,
+        &EXPORTIMAGETASK_MEMBER_STATE,
+        &EXPORTIMAGETASK_MEMBER_AMI_ID,
+        &EXPORTIMAGETASK_MEMBER_TAG_SPECIFICATIONS,
+        &EXPORTIMAGETASK_MEMBER_ERROR_DETAILS,
+    ],
+);
+impl ExportImageTask {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXPORTIMAGETASK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExportImageTask {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.task_id {
+            ser.write_string(&EXPORTIMAGETASK_MEMBER_TASK_ID, val)?;
+        }
+        if let Some(ref val) = self.image_arn {
+            ser.write_string(&EXPORTIMAGETASK_MEMBER_IMAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.ami_name {
+            ser.write_string(&EXPORTIMAGETASK_MEMBER_AMI_NAME, val)?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&EXPORTIMAGETASK_MEMBER_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.ami_description {
+            ser.write_string(&EXPORTIMAGETASK_MEMBER_AMI_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&EXPORTIMAGETASK_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ami_id {
+            ser.write_string(&EXPORTIMAGETASK_MEMBER_AMI_ID, val)?;
+        }
+        if let Some(ref val) = self.tag_specifications {
+            ser.write_map(
+                &EXPORTIMAGETASK_MEMBER_TAG_SPECIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.error_details {
+            ser.write_list(
+                &EXPORTIMAGETASK_MEMBER_ERROR_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ErrorDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExportImageTaskBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXPORTIMAGETASK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ami_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ami_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ExportImageTaskState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ami_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_specifications = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ErrorDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExportImageTask {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExportImageTask {
     /// Creates a new builder-style object to manufacture [`ExportImageTask`](crate::types::ExportImageTask).
     pub fn builder() -> crate::types::builders::ExportImageTaskBuilder {

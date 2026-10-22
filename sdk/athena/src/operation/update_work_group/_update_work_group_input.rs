@@ -30,6 +30,151 @@ impl UpdateWorkGroupInput {
         self.state.as_ref()
     }
 }
+static UPDATEWORKGROUPINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateWorkGroupInput$WorkGroup",
+        "com.amazonaws.athena.synthetic",
+        "UpdateWorkGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    0,
+);
+static UPDATEWORKGROUPINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateWorkGroupInput$Description",
+        "com.amazonaws.athena.synthetic",
+        "UpdateWorkGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static UPDATEWORKGROUPINPUT_MEMBER_CONFIGURATION_UPDATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateWorkGroupInput$ConfigurationUpdates",
+        "com.amazonaws.athena.synthetic",
+        "UpdateWorkGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ConfigurationUpdates",
+    2,
+);
+static UPDATEWORKGROUPINPUT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateWorkGroupInput$State",
+        "com.amazonaws.athena.synthetic",
+        "UpdateWorkGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    3,
+);
+static UPDATEWORKGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateWorkGroupInput",
+        "com.amazonaws.athena.synthetic",
+        "UpdateWorkGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEWORKGROUPINPUT_MEMBER_WORK_GROUP,
+        &UPDATEWORKGROUPINPUT_MEMBER_DESCRIPTION,
+        &UPDATEWORKGROUPINPUT_MEMBER_CONFIGURATION_UPDATES,
+        &UPDATEWORKGROUPINPUT_MEMBER_STATE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateWorkGroupInput");
+impl UpdateWorkGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEWORKGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateWorkGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&UPDATEWORKGROUPINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEWORKGROUPINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.configuration_updates {
+            ser.write_struct(&UPDATEWORKGROUPINPUT_MEMBER_CONFIGURATION_UPDATES, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&UPDATEWORKGROUPINPUT_MEMBER_STATE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEWORKGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_updates = Some(crate::types::WorkGroupConfigurationUpdates::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::WorkGroupState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateWorkGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.work_group = builder.work_group.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateWorkGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkGroupInput`](crate::operation::update_work_group::UpdateWorkGroupInput).
     pub fn builder() -> crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder {

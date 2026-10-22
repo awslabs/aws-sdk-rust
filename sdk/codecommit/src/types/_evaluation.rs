@@ -35,6 +35,168 @@ impl Evaluation {
         self.approval_rules_not_satisfied.as_deref().unwrap_or_default()
     }
 }
+static EVALUATION_MEMBER_APPROVED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Evaluation$approved", "com.amazonaws.codecommit", "Evaluation"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "approved",
+    0,
+);
+static EVALUATION_MEMBER_OVERRIDDEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Evaluation$overridden", "com.amazonaws.codecommit", "Evaluation"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "overridden",
+    1,
+);
+static EVALUATION_MEMBER_APPROVAL_RULES_SATISFIED_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRulesSatisfiedList$member",
+        "com.amazonaws.codecommit",
+        "ApprovalRulesSatisfiedList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static EVALUATION_MEMBER_APPROVAL_RULES_SATISFIED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#Evaluation$approvalRulesSatisfied",
+        "com.amazonaws.codecommit",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "approvalRulesSatisfied",
+    2,
+)
+.with_list_member(&EVALUATION_MEMBER_APPROVAL_RULES_SATISFIED_MEMBER);
+static EVALUATION_MEMBER_APPROVAL_RULES_NOT_SATISFIED_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRulesNotSatisfiedList$member",
+        "com.amazonaws.codecommit",
+        "ApprovalRulesNotSatisfiedList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static EVALUATION_MEMBER_APPROVAL_RULES_NOT_SATISFIED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#Evaluation$approvalRulesNotSatisfied",
+        "com.amazonaws.codecommit",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "approvalRulesNotSatisfied",
+    3,
+)
+.with_list_member(&EVALUATION_MEMBER_APPROVAL_RULES_NOT_SATISFIED_MEMBER);
+static EVALUATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Evaluation", "com.amazonaws.codecommit", "Evaluation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EVALUATION_MEMBER_APPROVED,
+        &EVALUATION_MEMBER_OVERRIDDEN,
+        &EVALUATION_MEMBER_APPROVAL_RULES_SATISFIED,
+        &EVALUATION_MEMBER_APPROVAL_RULES_NOT_SATISFIED,
+    ],
+);
+impl Evaluation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EVALUATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Evaluation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.approved;
+            ser.write_boolean(&EVALUATION_MEMBER_APPROVED, *val)?;
+        }
+        {
+            let val = &self.overridden;
+            ser.write_boolean(&EVALUATION_MEMBER_OVERRIDDEN, *val)?;
+        }
+        if let Some(ref val) = self.approval_rules_satisfied {
+            ser.write_list(
+                &EVALUATION_MEMBER_APPROVAL_RULES_SATISFIED,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.approval_rules_not_satisfied {
+            ser.write_list(
+                &EVALUATION_MEMBER_APPROVAL_RULES_NOT_SATISFIED,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EvaluationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EVALUATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.approved = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.overridden = Some(deser.read_boolean(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rules_satisfied = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rules_not_satisfied = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Evaluation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Evaluation {
     /// Creates a new builder-style object to manufacture [`Evaluation`](crate::types::Evaluation).
     pub fn builder() -> crate::types::builders::EvaluationBuilder {

@@ -33,6 +33,172 @@ impl JupyterServerAppSettings {
         self.code_repositories.as_deref().unwrap_or_default()
     }
 }
+static JUPYTERSERVERAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JupyterServerAppSettings$DefaultResourceSpec",
+        "com.amazonaws.sagemaker",
+        "JupyterServerAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultResourceSpec",
+    0,
+);
+static JUPYTERSERVERAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LifecycleConfigArns$member",
+        "com.amazonaws.sagemaker",
+        "LifecycleConfigArns",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static JUPYTERSERVERAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JupyterServerAppSettings$LifecycleConfigArns",
+        "com.amazonaws.sagemaker",
+        "JupyterServerAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LifecycleConfigArns",
+    1,
+)
+.with_list_member(&JUPYTERSERVERAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS_MEMBER);
+static JUPYTERSERVERAPPSETTINGS_MEMBER_CODE_REPOSITORIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeRepositories$member",
+        "com.amazonaws.sagemaker",
+        "CodeRepositories",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static JUPYTERSERVERAPPSETTINGS_MEMBER_CODE_REPOSITORIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JupyterServerAppSettings$CodeRepositories",
+        "com.amazonaws.sagemaker",
+        "JupyterServerAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CodeRepositories",
+    2,
+)
+.with_list_member(&JUPYTERSERVERAPPSETTINGS_MEMBER_CODE_REPOSITORIES_MEMBER);
+static JUPYTERSERVERAPPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JupyterServerAppSettings",
+        "com.amazonaws.sagemaker",
+        "JupyterServerAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &JUPYTERSERVERAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC,
+        &JUPYTERSERVERAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS,
+        &JUPYTERSERVERAPPSETTINGS_MEMBER_CODE_REPOSITORIES,
+    ],
+);
+impl JupyterServerAppSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &JUPYTERSERVERAPPSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for JupyterServerAppSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_resource_spec {
+            ser.write_struct(&JUPYTERSERVERAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_config_arns {
+            ser.write_list(
+                &JUPYTERSERVERAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.code_repositories {
+            ser.write_list(
+                &JUPYTERSERVERAPPSETTINGS_MEMBER_CODE_REPOSITORIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CodeRepository::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::JupyterServerAppSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&JUPYTERSERVERAPPSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_config_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_repositories = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CodeRepository::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl JupyterServerAppSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl JupyterServerAppSettings {
     /// Creates a new builder-style object to manufacture [`JupyterServerAppSettings`](crate::types::JupyterServerAppSettings).
     pub fn builder() -> crate::types::builders::JupyterServerAppSettingsBuilder {

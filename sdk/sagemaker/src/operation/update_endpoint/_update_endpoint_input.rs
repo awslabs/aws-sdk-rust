@@ -44,6 +44,222 @@ impl UpdateEndpointInput {
         self.retain_deployment_config
     }
 }
+static UPDATEENDPOINTINPUT_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointInput$EndpointName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointName",
+    0,
+);
+static UPDATEENDPOINTINPUT_MEMBER_ENDPOINT_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointInput$EndpointConfigName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointConfigName",
+    1,
+);
+static UPDATEENDPOINTINPUT_MEMBER_RETAIN_ALL_VARIANT_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointInput$RetainAllVariantProperties",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RetainAllVariantProperties",
+    2,
+);
+static UPDATEENDPOINTINPUT_MEMBER_EXCLUDE_RETAINED_VARIANT_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#VariantPropertyList$member",
+            "com.amazonaws.sagemaker",
+            "VariantPropertyList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static UPDATEENDPOINTINPUT_MEMBER_EXCLUDE_RETAINED_VARIANT_PROPERTIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateEndpointInput$ExcludeRetainedVariantProperties",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateEndpointInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ExcludeRetainedVariantProperties",
+        3,
+    )
+    .with_list_member(&UPDATEENDPOINTINPUT_MEMBER_EXCLUDE_RETAINED_VARIANT_PROPERTIES_MEMBER);
+static UPDATEENDPOINTINPUT_MEMBER_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointInput$DeploymentConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentConfig",
+    4,
+);
+static UPDATEENDPOINTINPUT_MEMBER_RETAIN_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointInput$RetainDeploymentConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RetainDeploymentConfig",
+    5,
+);
+static UPDATEENDPOINTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateEndpointInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEENDPOINTINPUT_MEMBER_ENDPOINT_NAME,
+        &UPDATEENDPOINTINPUT_MEMBER_ENDPOINT_CONFIG_NAME,
+        &UPDATEENDPOINTINPUT_MEMBER_RETAIN_ALL_VARIANT_PROPERTIES,
+        &UPDATEENDPOINTINPUT_MEMBER_EXCLUDE_RETAINED_VARIANT_PROPERTIES,
+        &UPDATEENDPOINTINPUT_MEMBER_DEPLOYMENT_CONFIG,
+        &UPDATEENDPOINTINPUT_MEMBER_RETAIN_DEPLOYMENT_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateEndpointInput");
+impl UpdateEndpointInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEENDPOINTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateEndpointInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&UPDATEENDPOINTINPUT_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.endpoint_config_name {
+            ser.write_string(&UPDATEENDPOINTINPUT_MEMBER_ENDPOINT_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.retain_all_variant_properties {
+            ser.write_boolean(&UPDATEENDPOINTINPUT_MEMBER_RETAIN_ALL_VARIANT_PROPERTIES, *val)?;
+        }
+        if let Some(ref val) = self.exclude_retained_variant_properties {
+            ser.write_list(
+                &UPDATEENDPOINTINPUT_MEMBER_EXCLUDE_RETAINED_VARIANT_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::VariantProperty::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.deployment_config {
+            ser.write_struct(&UPDATEENDPOINTINPUT_MEMBER_DEPLOYMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.retain_deployment_config {
+            ser.write_boolean(&UPDATEENDPOINTINPUT_MEMBER_RETAIN_DEPLOYMENT_CONFIG, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEENDPOINTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retain_all_variant_properties = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exclude_retained_variant_properties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VariantProperty::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config = Some(crate::types::DeploymentConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retain_deployment_config = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateEndpointInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_name = builder.endpoint_name.or(Some(String::new()));
+        builder.endpoint_config_name = builder.endpoint_config_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointInput`](crate::operation::update_endpoint::UpdateEndpointInput).
     pub fn builder() -> crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder {

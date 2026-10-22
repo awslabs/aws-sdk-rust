@@ -43,6 +43,186 @@ impl PoolInfo {
         self.pool_status.as_ref()
     }
 }
+static POOLINFO_MEMBER_POOL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#PoolInfo$PoolARN",
+        "com.amazonaws.storagegateway",
+        "PoolInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolARN",
+    0,
+);
+static POOLINFO_MEMBER_POOL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#PoolInfo$PoolName",
+        "com.amazonaws.storagegateway",
+        "PoolInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolName",
+    1,
+);
+static POOLINFO_MEMBER_STORAGE_CLASS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#PoolInfo$StorageClass",
+        "com.amazonaws.storagegateway",
+        "PoolInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StorageClass",
+    2,
+);
+static POOLINFO_MEMBER_RETENTION_LOCK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#PoolInfo$RetentionLockType",
+        "com.amazonaws.storagegateway",
+        "PoolInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RetentionLockType",
+    3,
+);
+static POOLINFO_MEMBER_RETENTION_LOCK_TIME_IN_DAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#PoolInfo$RetentionLockTimeInDays",
+        "com.amazonaws.storagegateway",
+        "PoolInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RetentionLockTimeInDays",
+    4,
+);
+static POOLINFO_MEMBER_POOL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#PoolInfo$PoolStatus",
+        "com.amazonaws.storagegateway",
+        "PoolInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolStatus",
+    5,
+);
+static POOLINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#PoolInfo", "com.amazonaws.storagegateway", "PoolInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POOLINFO_MEMBER_POOL_ARN,
+        &POOLINFO_MEMBER_POOL_NAME,
+        &POOLINFO_MEMBER_STORAGE_CLASS,
+        &POOLINFO_MEMBER_RETENTION_LOCK_TYPE,
+        &POOLINFO_MEMBER_RETENTION_LOCK_TIME_IN_DAYS,
+        &POOLINFO_MEMBER_POOL_STATUS,
+    ],
+);
+impl PoolInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POOLINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PoolInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pool_arn {
+            ser.write_string(&POOLINFO_MEMBER_POOL_ARN, val)?;
+        }
+        if let Some(ref val) = self.pool_name {
+            ser.write_string(&POOLINFO_MEMBER_POOL_NAME, val)?;
+        }
+        if let Some(ref val) = self.storage_class {
+            ser.write_string(&POOLINFO_MEMBER_STORAGE_CLASS, val.as_str())?;
+        }
+        if let Some(ref val) = self.retention_lock_type {
+            ser.write_string(&POOLINFO_MEMBER_RETENTION_LOCK_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.retention_lock_time_in_days {
+            ser.write_integer(&POOLINFO_MEMBER_RETENTION_LOCK_TIME_IN_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.pool_status {
+            ser.write_string(&POOLINFO_MEMBER_POOL_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PoolInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POOLINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_class = Some(crate::types::TapeStorageClass::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_lock_type = Some(crate::types::RetentionLockType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_lock_time_in_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_status = Some(crate::types::PoolStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PoolInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PoolInfo {
     /// Creates a new builder-style object to manufacture [`PoolInfo`](crate::types::PoolInfo).
     pub fn builder() -> crate::types::builders::PoolInfoBuilder {

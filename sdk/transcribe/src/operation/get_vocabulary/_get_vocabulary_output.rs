@@ -57,6 +57,233 @@ impl GetVocabularyOutput {
         self.encryption_configuration.as_ref()
     }
 }
+static GETVOCABULARYOUTPUT_MEMBER_VOCABULARY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$VocabularyName",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyName",
+    0,
+);
+static GETVOCABULARYOUTPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static GETVOCABULARYOUTPUT_MEMBER_VOCABULARY_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$VocabularyState",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyState",
+    2,
+);
+static GETVOCABULARYOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$LastModifiedTime",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    3,
+);
+static GETVOCABULARYOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$FailureReason",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    4,
+);
+static GETVOCABULARYOUTPUT_MEMBER_DOWNLOAD_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$DownloadUri",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DownloadUri",
+    5,
+);
+static GETVOCABULARYOUTPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$DataAccessRoleArn",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    6,
+);
+static GETVOCABULARYOUTPUT_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput$EncryptionConfiguration",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    7,
+);
+static GETVOCABULARYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetVocabularyOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "GetVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETVOCABULARYOUTPUT_MEMBER_VOCABULARY_NAME,
+        &GETVOCABULARYOUTPUT_MEMBER_LANGUAGE_CODE,
+        &GETVOCABULARYOUTPUT_MEMBER_VOCABULARY_STATE,
+        &GETVOCABULARYOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &GETVOCABULARYOUTPUT_MEMBER_FAILURE_REASON,
+        &GETVOCABULARYOUTPUT_MEMBER_DOWNLOAD_URI,
+        &GETVOCABULARYOUTPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &GETVOCABULARYOUTPUT_MEMBER_ENCRYPTION_CONFIGURATION,
+    ],
+)
+.with_original_name("GetVocabularyResponse");
+impl GetVocabularyOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETVOCABULARYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetVocabularyOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_name {
+            ser.write_string(&GETVOCABULARYOUTPUT_MEMBER_VOCABULARY_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&GETVOCABULARYOUTPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.vocabulary_state {
+            ser.write_string(&GETVOCABULARYOUTPUT_MEMBER_VOCABULARY_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&GETVOCABULARYOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&GETVOCABULARYOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.download_uri {
+            ser.write_string(&GETVOCABULARYOUTPUT_MEMBER_DOWNLOAD_URI, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&GETVOCABULARYOUTPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&GETVOCABULARYOUTPUT_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_vocabulary::builders::GetVocabularyOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETVOCABULARYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_state = Some(crate::types::VocabularyState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.download_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::EncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetVocabularyOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetVocabularyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

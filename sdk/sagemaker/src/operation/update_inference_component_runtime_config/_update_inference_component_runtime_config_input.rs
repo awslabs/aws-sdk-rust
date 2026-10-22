@@ -18,6 +18,111 @@ impl UpdateInferenceComponentRuntimeConfigInput {
         self.desired_runtime_config.as_ref()
     }
 }
+static UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_MEMBER_INFERENCE_COMPONENT_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateInferenceComponentRuntimeConfigInput$InferenceComponentName",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateInferenceComponentRuntimeConfigInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InferenceComponentName",
+        0,
+    );
+static UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_MEMBER_DESIRED_RUNTIME_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateInferenceComponentRuntimeConfigInput$DesiredRuntimeConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateInferenceComponentRuntimeConfigInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DesiredRuntimeConfig",
+        1,
+    );
+static UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceComponentRuntimeConfigInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceComponentRuntimeConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_MEMBER_INFERENCE_COMPONENT_NAME,
+        &UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_MEMBER_DESIRED_RUNTIME_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateInferenceComponentRuntimeConfigInput");
+impl UpdateInferenceComponentRuntimeConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateInferenceComponentRuntimeConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.inference_component_name {
+            ser.write_string(&UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_MEMBER_INFERENCE_COMPONENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.desired_runtime_config {
+            ser.write_struct(&UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_MEMBER_DESIRED_RUNTIME_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_inference_component_runtime_config::builders::UpdateInferenceComponentRuntimeConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEINFERENCECOMPONENTRUNTIMECONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_runtime_config = Some(crate::types::InferenceComponentRuntimeConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateInferenceComponentRuntimeConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.inference_component_name = builder.inference_component_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateInferenceComponentRuntimeConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateInferenceComponentRuntimeConfigInput`](crate::operation::update_inference_component_runtime_config::UpdateInferenceComponentRuntimeConfigInput).
     pub fn builder() -> crate::operation::update_inference_component_runtime_config::builders::UpdateInferenceComponentRuntimeConfigInputBuilder {

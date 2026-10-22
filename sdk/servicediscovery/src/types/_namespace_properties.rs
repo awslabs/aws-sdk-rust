@@ -19,6 +19,103 @@ impl NamespaceProperties {
         self.http_properties.as_ref()
     }
 }
+static NAMESPACEPROPERTIES_MEMBER_DNS_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#NamespaceProperties$DnsProperties",
+        "com.amazonaws.servicediscovery",
+        "NamespaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DnsProperties",
+    0,
+);
+static NAMESPACEPROPERTIES_MEMBER_HTTP_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#NamespaceProperties$HttpProperties",
+        "com.amazonaws.servicediscovery",
+        "NamespaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HttpProperties",
+    1,
+);
+static NAMESPACEPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#NamespaceProperties",
+        "com.amazonaws.servicediscovery",
+        "NamespaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&NAMESPACEPROPERTIES_MEMBER_DNS_PROPERTIES, &NAMESPACEPROPERTIES_MEMBER_HTTP_PROPERTIES],
+);
+impl NamespaceProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NAMESPACEPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NamespaceProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.dns_properties {
+            ser.write_struct(&NAMESPACEPROPERTIES_MEMBER_DNS_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.http_properties {
+            ser.write_struct(&NAMESPACEPROPERTIES_MEMBER_HTTP_PROPERTIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NamespacePropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NAMESPACEPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_properties = Some(crate::types::DnsProperties::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.http_properties = Some(crate::types::HttpProperties::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NamespaceProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NamespaceProperties {
     /// Creates a new builder-style object to manufacture [`NamespaceProperties`](crate::types::NamespaceProperties).
     pub fn builder() -> crate::types::builders::NamespacePropertiesBuilder {

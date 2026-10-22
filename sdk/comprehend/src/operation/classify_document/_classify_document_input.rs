@@ -54,6 +54,151 @@ impl ::std::fmt::Debug for ClassifyDocumentInput {
         formatter.finish()
     }
 }
+static CLASSIFYDOCUMENTINPUT_MEMBER_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentInput$Text",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Text",
+    0,
+);
+static CLASSIFYDOCUMENTINPUT_MEMBER_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentInput$EndpointArn",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointArn",
+    1,
+);
+static CLASSIFYDOCUMENTINPUT_MEMBER_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentInput$Bytes",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "Bytes",
+    2,
+);
+static CLASSIFYDOCUMENTINPUT_MEMBER_DOCUMENT_READER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentInput$DocumentReaderConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DocumentReaderConfig",
+    3,
+);
+static CLASSIFYDOCUMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentInput",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLASSIFYDOCUMENTINPUT_MEMBER_TEXT,
+        &CLASSIFYDOCUMENTINPUT_MEMBER_ENDPOINT_ARN,
+        &CLASSIFYDOCUMENTINPUT_MEMBER_BYTES,
+        &CLASSIFYDOCUMENTINPUT_MEMBER_DOCUMENT_READER_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ClassifyDocumentRequest");
+impl ClassifyDocumentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLASSIFYDOCUMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClassifyDocumentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.text {
+            ser.write_string(&CLASSIFYDOCUMENTINPUT_MEMBER_TEXT, val)?;
+        }
+        if let Some(ref val) = self.endpoint_arn {
+            ser.write_string(&CLASSIFYDOCUMENTINPUT_MEMBER_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.bytes {
+            ser.write_blob(&CLASSIFYDOCUMENTINPUT_MEMBER_BYTES, val.clone())?;
+        }
+        if let Some(ref val) = self.document_reader_config {
+            ser.write_struct(&CLASSIFYDOCUMENTINPUT_MEMBER_DOCUMENT_READER_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::classify_document::builders::ClassifyDocumentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLASSIFYDOCUMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bytes = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_reader_config = Some(crate::types::DocumentReaderConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClassifyDocumentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_arn = builder.endpoint_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ClassifyDocumentInput {
     /// Creates a new builder-style object to manufacture [`ClassifyDocumentInput`](crate::operation::classify_document::ClassifyDocumentInput).
     pub fn builder() -> crate::operation::classify_document::builders::ClassifyDocumentInputBuilder {

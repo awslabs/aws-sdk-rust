@@ -30,6 +30,108 @@ impl RegisteredDomainDelegationInfo {
         self.r53_hosted_zone_deletion_state.as_ref()
     }
 }
+static REGISTEREDDOMAINDELEGATIONINFO_MEMBER_NAME_SERVERS_UPDATE_STATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#RegisteredDomainDelegationInfo$nameServersUpdateState",
+            "com.amazonaws.lightsail",
+            "RegisteredDomainDelegationInfo",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "nameServersUpdateState",
+        0,
+    );
+static REGISTEREDDOMAINDELEGATIONINFO_MEMBER_R53_HOSTED_ZONE_DELETION_STATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#RegisteredDomainDelegationInfo$r53HostedZoneDeletionState",
+            "com.amazonaws.lightsail",
+            "RegisteredDomainDelegationInfo",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "r53HostedZoneDeletionState",
+        1,
+    );
+static REGISTEREDDOMAINDELEGATIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RegisteredDomainDelegationInfo",
+        "com.amazonaws.lightsail",
+        "RegisteredDomainDelegationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTEREDDOMAINDELEGATIONINFO_MEMBER_NAME_SERVERS_UPDATE_STATE,
+        &REGISTEREDDOMAINDELEGATIONINFO_MEMBER_R53_HOSTED_ZONE_DELETION_STATE,
+    ],
+);
+impl RegisteredDomainDelegationInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTEREDDOMAINDELEGATIONINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisteredDomainDelegationInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name_servers_update_state {
+            ser.write_struct(&REGISTEREDDOMAINDELEGATIONINFO_MEMBER_NAME_SERVERS_UPDATE_STATE, val)?;
+        }
+        if let Some(ref val) = self.r53_hosted_zone_deletion_state {
+            ser.write_struct(&REGISTEREDDOMAINDELEGATIONINFO_MEMBER_R53_HOSTED_ZONE_DELETION_STATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RegisteredDomainDelegationInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTEREDDOMAINDELEGATIONINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_servers_update_state = Some(crate::types::NameServersUpdateState::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r53_hosted_zone_deletion_state = Some(crate::types::R53HostedZoneDeletionState::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisteredDomainDelegationInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RegisteredDomainDelegationInfo {
     /// Creates a new builder-style object to manufacture [`RegisteredDomainDelegationInfo`](crate::types::RegisteredDomainDelegationInfo).
     pub fn builder() -> crate::types::builders::RegisteredDomainDelegationInfoBuilder {

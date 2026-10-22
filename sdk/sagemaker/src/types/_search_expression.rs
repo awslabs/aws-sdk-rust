@@ -48,6 +48,218 @@ impl SearchExpression {
         self.operator.as_ref()
     }
 }
+static SEARCHEXPRESSION_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#FilterList$member", "com.amazonaws.sagemaker", "FilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SEARCHEXPRESSION_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchExpression$Filters",
+        "com.amazonaws.sagemaker",
+        "SearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Filters",
+    0,
+)
+.with_list_member(&SEARCHEXPRESSION_MEMBER_FILTERS_MEMBER);
+static SEARCHEXPRESSION_MEMBER_NESTED_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NestedFiltersList$member",
+        "com.amazonaws.sagemaker",
+        "NestedFiltersList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SEARCHEXPRESSION_MEMBER_NESTED_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchExpression$NestedFilters",
+        "com.amazonaws.sagemaker",
+        "SearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "NestedFilters",
+    1,
+)
+.with_list_member(&SEARCHEXPRESSION_MEMBER_NESTED_FILTERS_MEMBER);
+static SEARCHEXPRESSION_MEMBER_SUB_EXPRESSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchExpressionList$member",
+        "com.amazonaws.sagemaker",
+        "SearchExpressionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SEARCHEXPRESSION_MEMBER_SUB_EXPRESSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchExpression$SubExpressions",
+        "com.amazonaws.sagemaker",
+        "SearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubExpressions",
+    2,
+)
+.with_list_member(&SEARCHEXPRESSION_MEMBER_SUB_EXPRESSIONS_MEMBER);
+static SEARCHEXPRESSION_MEMBER_OPERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchExpression$Operator",
+        "com.amazonaws.sagemaker",
+        "SearchExpression",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Operator",
+    3,
+);
+static SEARCHEXPRESSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchExpression", "com.amazonaws.sagemaker", "SearchExpression"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SEARCHEXPRESSION_MEMBER_FILTERS,
+        &SEARCHEXPRESSION_MEMBER_NESTED_FILTERS,
+        &SEARCHEXPRESSION_MEMBER_SUB_EXPRESSIONS,
+        &SEARCHEXPRESSION_MEMBER_OPERATOR,
+    ],
+);
+impl SearchExpression {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SEARCHEXPRESSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SearchExpression {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &SEARCHEXPRESSION_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Filter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.nested_filters {
+            ser.write_list(
+                &SEARCHEXPRESSION_MEMBER_NESTED_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NestedFilters::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.sub_expressions {
+            ser.write_list(
+                &SEARCHEXPRESSION_MEMBER_SUB_EXPRESSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SearchExpression::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.operator {
+            ser.write_string(&SEARCHEXPRESSION_MEMBER_OPERATOR, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SearchExpressionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SEARCHEXPRESSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Filter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nested_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NestedFilters::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sub_expressions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SearchExpression::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operator = Some(crate::types::BooleanOperator::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SearchExpression {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SearchExpression {
     /// Creates a new builder-style object to manufacture [`SearchExpression`](crate::types::SearchExpression).
     pub fn builder() -> crate::types::builders::SearchExpressionBuilder {

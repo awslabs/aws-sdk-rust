@@ -123,17 +123,17 @@ impl SendDurableExecutionCallbackSuccessFluentBuilder {
     pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_callback_id()
     }
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub fn result(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.result(input);
         self
     }
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_result(input);
         self
     }
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub fn get_result(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_result()
     }

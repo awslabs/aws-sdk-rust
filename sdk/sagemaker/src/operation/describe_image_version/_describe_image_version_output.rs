@@ -151,6 +151,401 @@ impl DescribeImageVersionOutput {
         self.release_notes.as_deref()
     }
 }
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_BASE_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$BaseImage",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaseImage",
+    0,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_CONTAINER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$ContainerImage",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContainerImage",
+    1,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    2,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    3,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$ImageArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageArn",
+    4,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_VERSION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$ImageVersionArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageVersionArn",
+    5,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_VERSION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$ImageVersionStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageVersionStatus",
+    6,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$Version",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Version",
+    8,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_VENDOR_GUIDANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$VendorGuidance",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VendorGuidance",
+    9,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_JOB_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$JobType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobType",
+    10,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_ML_FRAMEWORK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$MLFramework",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MLFramework",
+    11,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_PROGRAMMING_LANG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$ProgrammingLang",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProgrammingLang",
+    12,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_PROCESSOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$Processor",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Processor",
+    13,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_HOROVOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$Horovod",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Horovod",
+    14,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_RELEASE_NOTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput$ReleaseNotes",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReleaseNotes",
+    15,
+);
+static DESCRIBEIMAGEVERSIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeImageVersionOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeImageVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_BASE_IMAGE,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_CONTAINER_IMAGE,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_ARN,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_VERSION_ARN,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_VERSION_STATUS,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_VERSION,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_VENDOR_GUIDANCE,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_JOB_TYPE,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_ML_FRAMEWORK,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_PROGRAMMING_LANG,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_PROCESSOR,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_HOROVOD,
+        &DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_RELEASE_NOTES,
+    ],
+)
+.with_original_name("DescribeImageVersionResponse");
+impl DescribeImageVersionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEIMAGEVERSIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeImageVersionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.base_image {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_BASE_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.container_image {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_CONTAINER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.image_arn {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.image_version_arn {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_VERSION_ARN, val)?;
+        }
+        if let Some(ref val) = self.image_version_status {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_IMAGE_VERSION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_integer(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.vendor_guidance {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_VENDOR_GUIDANCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_type {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_JOB_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ml_framework {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_ML_FRAMEWORK, val)?;
+        }
+        if let Some(ref val) = self.programming_lang {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_PROGRAMMING_LANG, val)?;
+        }
+        if let Some(ref val) = self.processor {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_PROCESSOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.horovod {
+            ser.write_boolean(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_HOROVOD, *val)?;
+        }
+        if let Some(ref val) = self.release_notes {
+            ser.write_string(&DESCRIBEIMAGEVERSIONOUTPUT_MEMBER_RELEASE_NOTES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_image_version::builders::DescribeImageVersionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEIMAGEVERSIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_version_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_version_status = Some(crate::types::ImageVersionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vendor_guidance = Some(crate::types::VendorGuidance::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_type = Some(crate::types::JobType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ml_framework = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.programming_lang = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processor = Some(crate::types::Processor::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.horovod = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.release_notes = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeImageVersionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeImageVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -8,6 +8,12 @@ impl PutRepositoryTriggers {
     pub fn new() -> Self {
         Self
     }
+    /// The schema for this operation's input shape.
+    pub const INPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::put_repository_triggers::PutRepositoryTriggersInput::SCHEMA;
+    /// The schema for this operation's output shape.
+    pub const OUTPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::put_repository_triggers::PutRepositoryTriggersOutput::SCHEMA;
     pub(crate) async fn orchestrate(
         runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
         input: crate::operation::put_repository_triggers::PutRepositoryTriggersInput,
@@ -83,6 +89,209 @@ impl PutRepositoryTriggers {
         }
         runtime_plugins
     }
+}
+/// Per-operation error registry. Contains an entry for every modeled
+/// error this operation can throw.
+///
+/// Used by the schema-serde error path as the operation-scoped lookup
+/// for registry-backed error reification: an error code that does not
+/// match one of the operation's modeled errors directly is resolved
+/// against this registry first, then widened to the service-wide error
+/// registry.
+pub(crate) mod error_registry {
+    pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry::TypeRegistry> = ::std::sync::LazyLock::new(|| {
+        ::aws_smithy_schema::registry::TypeRegistry::builder()
+                            .insert_error_shape(
+                        crate::types::error::EncryptionIntegrityChecksFailedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionIntegrityChecksFailedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionIntegrityChecksFailedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyAccessDeniedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyAccessDeniedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyAccessDeniedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyDisabledException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyDisabledException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyDisabledException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyNotFoundException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyNotFoundException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyNotFoundException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyUnavailableException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyUnavailableException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyUnavailableException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryNameException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryNameException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryNameException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryTriggerBranchNameException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryTriggerBranchNameException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryTriggerBranchNameException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryTriggerCustomDataException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryTriggerCustomDataException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryTriggerCustomDataException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryTriggerDestinationArnException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryTriggerDestinationArnException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryTriggerDestinationArnException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryTriggerEventsException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryTriggerEventsException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryTriggerEventsException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryTriggerNameException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryTriggerNameException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryTriggerNameException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryTriggerRegionException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryTriggerRegionException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryTriggerRegionException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::MaximumBranchesExceededException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::MaximumBranchesExceededException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::MaximumBranchesExceededException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::MaximumRepositoryTriggersExceededException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::MaximumRepositoryTriggersExceededException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::MaximumRepositoryTriggersExceededException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryDoesNotExistException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryDoesNotExistException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryDoesNotExistException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryNameRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryNameRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryNameRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryTriggerBranchNameListRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryTriggerBranchNameListRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryTriggerBranchNameListRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryTriggerDestinationArnRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryTriggerDestinationArnRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryTriggerDestinationArnRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryTriggerEventsListRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryTriggerEventsListRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryTriggerEventsListRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryTriggerNameRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryTriggerNameRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryTriggerNameRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryTriggersListRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryTriggersListRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryTriggersListRequiredException::deserialize(d)?))
+                        },
+                    )
+                            .build()
+    });
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutRepositoryTriggers {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
@@ -204,17 +413,510 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutReposi
         _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
+        // Load body and headers BEFORE BeforeParseResponse so customizations
+        // (e.g., S3's `body_is_error` check that detects errors returned with
+        // HTTP 200) can inspect them. The legacy non-streaming path also
+        // loads `body` before firing this hook.
+        #[allow(unused_variables)]
         let body = response.body().bytes().expect("body loaded");
+        let headers = response.headers();
         #[allow(unused_mut)]
         let mut force_error = false;
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_put_repository_triggers::de_put_repository_triggers_http_error(status, headers, body, _cfg)
+        if !success && status != 200 || force_error {
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            #[allow(unused_mut)]
+            let mut generic_builder = protocol.parse_error_metadata(response, _cfg).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, headers);
+            let generic = generic_builder.build();
+            let error_code = match generic.code() {
+                ::std::option::Option::Some(code) => code,
+                ::std::option::Option::None => {
+                    return ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                        ::aws_smithy_runtime_api::box_error::BoxError::from(
+                            crate::operation::put_repository_triggers::PutRepositoryTriggersError::unhandled(generic),
+                        ),
+                    ))
+                }
+            };
+            let _error_message = generic.message().map(|msg| msg.to_owned());
+            let err = match error_code {
+                "EncryptionIntegrityChecksFailedException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionIntegrityChecksFailedException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "EncryptionKeyAccessDeniedException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyAccessDeniedException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "EncryptionKeyDisabledException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyDisabledException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "EncryptionKeyNotFoundException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyNotFoundException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "EncryptionKeyUnavailableException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::EncryptionKeyUnavailableException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "InvalidRepositoryNameException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryNameException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidRepositoryNameExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "InvalidRepositoryTriggerBranchNameException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerBranchNameException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidRepositoryTriggerBranchNameExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "InvalidRepositoryTriggerCustomDataException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerCustomDataException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidRepositoryTriggerCustomDataExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "InvalidRepositoryTriggerDestinationArnException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerDestinationArnException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidRepositoryTriggerDestinationArnExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "InvalidRepositoryTriggerEventsException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerEventsException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidRepositoryTriggerEventsExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "InvalidRepositoryTriggerNameException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerNameException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidRepositoryTriggerNameExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "InvalidRepositoryTriggerRegionException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::InvalidRepositoryTriggerRegionException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::InvalidRepositoryTriggerRegionExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "MaximumBranchesExceededException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::MaximumBranchesExceededException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::MaximumBranchesExceededExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "MaximumRepositoryTriggersExceededException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::MaximumRepositoryTriggersExceededException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::MaximumRepositoryTriggersExceededExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "RepositoryDoesNotExistException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryDoesNotExistException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "RepositoryNameRequiredException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryNameRequiredException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::RepositoryNameRequiredExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "RepositoryTriggerBranchNameListRequiredException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerBranchNameListRequiredException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::RepositoryTriggerBranchNameListRequiredExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "RepositoryTriggerDestinationArnRequiredException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerDestinationArnRequiredException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::RepositoryTriggerDestinationArnRequiredExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "RepositoryTriggerEventsListRequiredException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerEventsListRequiredException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::RepositoryTriggerEventsListRequiredExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "RepositoryTriggerNameRequiredException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggerNameRequiredException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::RepositoryTriggerNameRequiredExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                "RepositoryTriggersListRequiredException" => {
+                    crate::operation::put_repository_triggers::PutRepositoryTriggersError::RepositoryTriggersListRequiredException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::RepositoryTriggersListRequiredExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
+                _ => {
+                    // Registry-backed, operation-scoped reification of an error whose
+                    // code this operation does not model directly: the operation's own
+                    // error registry is consulted first, then the lookup widens to the
+                    // service-wide error registry. On a hit, the reified error is attached
+                    // as the source of the returned unhandled error while its metadata
+                    // (code, message, request id) is preserved; on a miss the generic
+                    // error is returned unchanged.
+                    match protocol
+                        .deserialize_error_response(response, _cfg)
+                        .ok()
+                        .and_then(|mut deser| {
+                            ::aws_smithy_schema::registry::reify_error(
+                                crate::operation::put_repository_triggers::error_registry::REGISTRY
+                                    .or(&crate::error_type_registry::REGISTRY),
+                                error_code,
+                                &mut *deser,
+                            )
+                        }) {
+                        ::std::option::Option::Some(source) => <crate::operation::put_repository_triggers::PutRepositoryTriggersError as ::aws_smithy_runtime_api::client::result::CreateUnhandledError>::create_unhandled_error(source, ::std::option::Option::Some(generic)),
+                        ::std::option::Option::None => crate::operation::put_repository_triggers::PutRepositoryTriggersError::generic(generic),
+                    }
+                }
+            };
+            ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::operation(
+                ::aws_smithy_runtime_api::client::interceptors::context::Error::erase(err),
+            ))
         } else {
-            crate::protocol_serde::shape_put_repository_triggers::de_put_repository_triggers_http_response(status, headers, body, _cfg)
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            let mut deser = protocol
+                .deserialize_response(response, PutRepositoryTriggers::OUTPUT_SCHEMA, _cfg)
+                .map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+            // `headers` is already in scope from the top of the function; alias it as
+            // `_response_headers` so MutateOutput customizations have a stable name to
+            // read from.
+            let _response_headers = headers;
+            // `mut` is required because `deserialize_members` and the `MutateOutput`
+            // builder setters take `&mut self`. Marked `allow(unused_mut)` because an
+            // empty output has no members and no customizations to run.
+            #[allow(unused_mut)]
+            let mut output = <crate::operation::put_repository_triggers::builders::PutRepositoryTriggersOutputBuilder>::default();
+            output.deserialize_members(&mut *deser).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+            let output = output.build();
+            ::std::result::Result::Ok(::aws_smithy_runtime_api::client::interceptors::context::Output::erase(output))
+        }
     }
 }
 #[derive(Debug)]
@@ -229,46 +931,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutRepositor
         let input = input
             .downcast::<crate::operation::put_repository_triggers::PutRepositoryTriggersInput>()
             .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            #[allow(clippy::uninlined_format_args)]
-            fn uri_base(
-                _input: &crate::operation::put_repository_triggers::PutRepositoryTriggersInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::operation::put_repository_triggers::PutRepositoryTriggersInput,
-                builder: ::http_1x::request::Builder,
-            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/x-amz-json-1.1");
-            builder = _header_serialization_settings.set_default_header(
-                builder,
-                ::http_1x::header::HeaderName::from_static("x-amz-target"),
-                "CodeCommit_20150413.PutRepositoryTriggers",
-            );
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_put_repository_triggers::ser_put_repository_triggers_input(
-            &input,
-        )?);
-        if let Some(content_length) = body.content_length() {
-            let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
-        }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        let mut request = protocol
+            .serialize_request(&input, PutRepositoryTriggers::INPUT_SCHEMA, "/", _cfg)
+            .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
+
+        return ::std::result::Result::Ok(request);
     }
 }
 #[derive(Debug)]

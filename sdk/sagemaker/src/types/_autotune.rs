@@ -27,6 +27,75 @@ impl Autotune {
         self.mode.as_ref()
     }
 }
+static AUTOTUNE_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Autotune$Mode", "com.amazonaws.sagemaker", "Autotune"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    0,
+);
+static AUTOTUNE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Autotune", "com.amazonaws.sagemaker", "Autotune"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AUTOTUNE_MEMBER_MODE],
+);
+impl Autotune {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOTUNE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Autotune {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.mode {
+            ser.write_string(&AUTOTUNE_MEMBER_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutotuneBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTOTUNE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::AutotuneMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Autotune {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Autotune {
     /// Creates a new builder-style object to manufacture [`Autotune`](crate::types::Autotune).
     pub fn builder() -> crate::types::builders::AutotuneBuilder {

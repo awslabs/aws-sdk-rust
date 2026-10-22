@@ -26,6 +26,150 @@ impl BatchCheckLayerAvailabilityInput {
         self.layer_digests.as_deref().unwrap_or_default()
     }
 }
+static BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#BatchCheckLayerAvailabilityInput$registryId",
+        "com.amazonaws.ecrpublic.synthetic",
+        "BatchCheckLayerAvailabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#BatchCheckLayerAvailabilityInput$repositoryName",
+        "com.amazonaws.ecrpublic.synthetic",
+        "BatchCheckLayerAvailabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_LAYER_DIGESTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#BatchedOperationLayerDigestList$member",
+        "com.amazonaws.ecrpublic",
+        "BatchedOperationLayerDigestList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_LAYER_DIGESTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#BatchCheckLayerAvailabilityInput$layerDigests",
+        "com.amazonaws.ecrpublic.synthetic",
+        "BatchCheckLayerAvailabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "layerDigests",
+    2,
+)
+.with_list_member(&BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_LAYER_DIGESTS_MEMBER);
+static BATCHCHECKLAYERAVAILABILITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#BatchCheckLayerAvailabilityInput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "BatchCheckLayerAvailabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_REGISTRY_ID,
+        &BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_REPOSITORY_NAME,
+        &BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_LAYER_DIGESTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchCheckLayerAvailabilityRequest");
+impl BatchCheckLayerAvailabilityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHCHECKLAYERAVAILABILITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchCheckLayerAvailabilityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.layer_digests {
+            ser.write_list(
+                &BATCHCHECKLAYERAVAILABILITYINPUT_MEMBER_LAYER_DIGESTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHCHECKLAYERAVAILABILITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.layer_digests = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchCheckLayerAvailabilityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.layer_digests = builder.layer_digests.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchCheckLayerAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityInput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput).
     pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder {

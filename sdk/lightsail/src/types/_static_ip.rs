@@ -61,6 +61,213 @@ impl StaticIp {
         self.is_attached
     }
 }
+static STATICIP_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$name", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static STATICIP_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$arn", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static STATICIP_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$supportCode", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    2,
+);
+static STATICIP_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$createdAt", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static STATICIP_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$location", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    4,
+);
+static STATICIP_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$resourceType", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static STATICIP_MEMBER_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$ipAddress", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddress",
+    6,
+);
+static STATICIP_MEMBER_ATTACHED_TO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$attachedTo", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::String,
+    "attachedTo",
+    7,
+);
+static STATICIP_MEMBER_IS_ATTACHED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp$isAttached", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isAttached",
+    8,
+);
+static STATICIP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StaticIp", "com.amazonaws.lightsail", "StaticIp"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STATICIP_MEMBER_NAME,
+        &STATICIP_MEMBER_ARN,
+        &STATICIP_MEMBER_SUPPORT_CODE,
+        &STATICIP_MEMBER_CREATED_AT,
+        &STATICIP_MEMBER_LOCATION,
+        &STATICIP_MEMBER_RESOURCE_TYPE,
+        &STATICIP_MEMBER_IP_ADDRESS,
+        &STATICIP_MEMBER_ATTACHED_TO,
+        &STATICIP_MEMBER_IS_ATTACHED,
+    ],
+);
+impl StaticIp {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STATICIP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StaticIp {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&STATICIP_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&STATICIP_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&STATICIP_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&STATICIP_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&STATICIP_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&STATICIP_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ip_address {
+            ser.write_string(&STATICIP_MEMBER_IP_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.attached_to {
+            ser.write_string(&STATICIP_MEMBER_ATTACHED_TO, val)?;
+        }
+        if let Some(ref val) = self.is_attached {
+            ser.write_boolean(&STATICIP_MEMBER_IS_ATTACHED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StaticIpBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STATICIP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attached_to = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_attached = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StaticIp {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl StaticIp {
     /// Creates a new builder-style object to manufacture [`StaticIp`](crate::types::StaticIp).
     pub fn builder() -> crate::types::builders::StaticIpBuilder {

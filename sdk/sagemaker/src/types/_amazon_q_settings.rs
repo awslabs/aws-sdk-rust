@@ -19,6 +19,99 @@ impl AmazonQSettings {
         self.q_profile_arn.as_deref()
     }
 }
+static AMAZONQSETTINGS_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AmazonQSettings$Status",
+        "com.amazonaws.sagemaker",
+        "AmazonQSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static AMAZONQSETTINGS_MEMBER_Q_PROFILE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AmazonQSettings$QProfileArn",
+        "com.amazonaws.sagemaker",
+        "AmazonQSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QProfileArn",
+    1,
+);
+static AMAZONQSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AmazonQSettings", "com.amazonaws.sagemaker", "AmazonQSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AMAZONQSETTINGS_MEMBER_STATUS, &AMAZONQSETTINGS_MEMBER_Q_PROFILE_ARN],
+);
+impl AmazonQSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AMAZONQSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AmazonQSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&AMAZONQSETTINGS_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.q_profile_arn {
+            ser.write_string(&AMAZONQSETTINGS_MEMBER_Q_PROFILE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AmazonQSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AMAZONQSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::FeatureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.q_profile_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AmazonQSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AmazonQSettings {
     /// Creates a new builder-style object to manufacture [`AmazonQSettings`](crate::types::AmazonQSettings).
     pub fn builder() -> crate::types::builders::AmazonQSettingsBuilder {

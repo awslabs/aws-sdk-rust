@@ -50,6 +50,196 @@ impl CapacityReservation {
         &self.creation_time
     }
 }
+static CAPACITYRESERVATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityReservation$Name",
+        "com.amazonaws.athena",
+        "CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CAPACITYRESERVATION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityReservation$Status",
+        "com.amazonaws.athena",
+        "CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static CAPACITYRESERVATION_MEMBER_TARGET_DPUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityReservation$TargetDpus",
+        "com.amazonaws.athena",
+        "CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TargetDpus",
+    2,
+);
+static CAPACITYRESERVATION_MEMBER_ALLOCATED_DPUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityReservation$AllocatedDpus",
+        "com.amazonaws.athena",
+        "CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AllocatedDpus",
+    3,
+);
+static CAPACITYRESERVATION_MEMBER_LAST_ALLOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityReservation$LastAllocation",
+        "com.amazonaws.athena",
+        "CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastAllocation",
+    4,
+);
+static CAPACITYRESERVATION_MEMBER_LAST_SUCCESSFUL_ALLOCATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityReservation$LastSuccessfulAllocationTime",
+        "com.amazonaws.athena",
+        "CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastSuccessfulAllocationTime",
+    5,
+);
+static CAPACITYRESERVATION_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityReservation$CreationTime",
+        "com.amazonaws.athena",
+        "CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static CAPACITYRESERVATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#CapacityReservation", "com.amazonaws.athena", "CapacityReservation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CAPACITYRESERVATION_MEMBER_NAME,
+        &CAPACITYRESERVATION_MEMBER_STATUS,
+        &CAPACITYRESERVATION_MEMBER_TARGET_DPUS,
+        &CAPACITYRESERVATION_MEMBER_ALLOCATED_DPUS,
+        &CAPACITYRESERVATION_MEMBER_LAST_ALLOCATION,
+        &CAPACITYRESERVATION_MEMBER_LAST_SUCCESSFUL_ALLOCATION_TIME,
+        &CAPACITYRESERVATION_MEMBER_CREATION_TIME,
+    ],
+);
+impl CapacityReservation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CAPACITYRESERVATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CapacityReservation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&CAPACITYRESERVATION_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&CAPACITYRESERVATION_MEMBER_STATUS, val.as_str())?;
+        }
+        {
+            let val = &self.target_dpus;
+            ser.write_integer(&CAPACITYRESERVATION_MEMBER_TARGET_DPUS, *val)?;
+        }
+        {
+            let val = &self.allocated_dpus;
+            ser.write_integer(&CAPACITYRESERVATION_MEMBER_ALLOCATED_DPUS, *val)?;
+        }
+        if let Some(ref val) = self.last_allocation {
+            ser.write_struct(&CAPACITYRESERVATION_MEMBER_LAST_ALLOCATION, val)?;
+        }
+        if let Some(ref val) = self.last_successful_allocation_time {
+            ser.write_timestamp(&CAPACITYRESERVATION_MEMBER_LAST_SUCCESSFUL_ALLOCATION_TIME, val)?;
+        }
+        {
+            let val = &self.creation_time;
+            ser.write_timestamp(&CAPACITYRESERVATION_MEMBER_CREATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CapacityReservationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CAPACITYRESERVATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.status = Some(crate::types::CapacityReservationStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.target_dpus = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.allocated_dpus = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_allocation = Some(crate::types::CapacityAllocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_successful_allocation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    self.creation_time = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CapacityReservation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.target_dpus = builder.target_dpus.or(Some(0i32));
+        builder.allocated_dpus = builder.allocated_dpus.or(Some(0i32));
+        builder.creation_time = builder.creation_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CapacityReservation {
     /// Creates a new builder-style object to manufacture [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn builder() -> crate::types::builders::CapacityReservationBuilder {

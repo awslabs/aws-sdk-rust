@@ -77,6 +77,111 @@ impl TargetPlatform {
         self.accelerator.as_ref()
     }
 }
+static TARGETPLATFORM_MEMBER_OS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TargetPlatform$Os", "com.amazonaws.sagemaker", "TargetPlatform"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Os",
+    0,
+);
+static TARGETPLATFORM_MEMBER_ARCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TargetPlatform$Arch", "com.amazonaws.sagemaker", "TargetPlatform"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arch",
+    1,
+);
+static TARGETPLATFORM_MEMBER_ACCELERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TargetPlatform$Accelerator",
+        "com.amazonaws.sagemaker",
+        "TargetPlatform",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Accelerator",
+    2,
+);
+static TARGETPLATFORM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TargetPlatform", "com.amazonaws.sagemaker", "TargetPlatform"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TARGETPLATFORM_MEMBER_OS, &TARGETPLATFORM_MEMBER_ARCH, &TARGETPLATFORM_MEMBER_ACCELERATOR],
+);
+impl TargetPlatform {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TARGETPLATFORM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TargetPlatform {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.os {
+            ser.write_string(&TARGETPLATFORM_MEMBER_OS, val.as_str())?;
+        }
+        if let Some(ref val) = self.arch {
+            ser.write_string(&TARGETPLATFORM_MEMBER_ARCH, val.as_str())?;
+        }
+        if let Some(ref val) = self.accelerator {
+            ser.write_string(&TARGETPLATFORM_MEMBER_ACCELERATOR, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TargetPlatformBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TARGETPLATFORM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.os = Some(crate::types::TargetPlatformOs::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arch = Some(crate::types::TargetPlatformArch::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator = Some(crate::types::TargetPlatformAccelerator::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TargetPlatform {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TargetPlatform {
     /// Creates a new builder-style object to manufacture [`TargetPlatform`](crate::types::TargetPlatform).
     pub fn builder() -> crate::types::builders::TargetPlatformBuilder {

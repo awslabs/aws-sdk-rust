@@ -39,6 +39,242 @@ impl BatchDeleteClusterNodesOutput {
         self.successful_node_logical_ids.as_deref().unwrap_or_default()
     }
 }
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchDeleteClusterNodesErrorList$member",
+        "com.amazonaws.sagemaker",
+        "BatchDeleteClusterNodesErrorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchDeleteClusterNodesOutput$Failed",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchDeleteClusterNodesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Failed",
+    0,
+)
+.with_list_member(&BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED_MEMBER);
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterNodeIds$member",
+        "com.amazonaws.sagemaker",
+        "ClusterNodeIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchDeleteClusterNodesOutput$Successful",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchDeleteClusterNodesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Successful",
+    1,
+)
+.with_list_member(&BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL_MEMBER);
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED_NODE_LOGICAL_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#BatchDeleteClusterNodeLogicalIdsErrorList$member",
+            "com.amazonaws.sagemaker",
+            "BatchDeleteClusterNodeLogicalIdsErrorList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED_NODE_LOGICAL_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchDeleteClusterNodesOutput$FailedNodeLogicalIds",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchDeleteClusterNodesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FailedNodeLogicalIds",
+    2,
+)
+.with_list_member(&BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED_NODE_LOGICAL_IDS_MEMBER);
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL_NODE_LOGICAL_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterNodeLogicalIdList$member",
+            "com.amazonaws.sagemaker",
+            "ClusterNodeLogicalIdList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL_NODE_LOGICAL_IDS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#BatchDeleteClusterNodesOutput$SuccessfulNodeLogicalIds",
+            "com.amazonaws.sagemaker.synthetic",
+            "BatchDeleteClusterNodesOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "SuccessfulNodeLogicalIds",
+        3,
+    )
+    .with_list_member(&BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL_NODE_LOGICAL_IDS_MEMBER);
+static BATCHDELETECLUSTERNODESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchDeleteClusterNodesOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchDeleteClusterNodesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED,
+        &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL,
+        &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED_NODE_LOGICAL_IDS,
+        &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL_NODE_LOGICAL_IDS,
+    ],
+)
+.with_original_name("BatchDeleteClusterNodesResponse");
+impl BatchDeleteClusterNodesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDELETECLUSTERNODESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDeleteClusterNodesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.failed {
+            ser.write_list(
+                &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BatchDeleteClusterNodesError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.successful {
+            ser.write_list(
+                &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.failed_node_logical_ids {
+            ser.write_list(
+                &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_FAILED_NODE_LOGICAL_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BatchDeleteClusterNodeLogicalIdsError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.successful_node_logical_ids {
+            ser.write_list(
+                &BATCHDELETECLUSTERNODESOUTPUT_MEMBER_SUCCESSFUL_NODE_LOGICAL_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_delete_cluster_nodes::builders::BatchDeleteClusterNodesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDELETECLUSTERNODESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failed = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BatchDeleteClusterNodesError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.successful = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failed_node_logical_ids = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BatchDeleteClusterNodeLogicalIdsError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.successful_node_logical_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDeleteClusterNodesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchDeleteClusterNodesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

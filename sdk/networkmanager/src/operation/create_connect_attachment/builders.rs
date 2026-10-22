@@ -165,6 +165,39 @@ impl CreateConnectAttachmentFluentBuilder {
     pub fn get_routing_policy_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_routing_policy_label()
     }
+    /// <p>Specifies whether to enable NAT gateway support on the Connect attachment. NAT is supported only on Connect attachments that use the GRE tunnel protocol. Tunnel-less Connect attachments aren't supported. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub fn nat_gateway_support(mut self, input: crate::types::NatGatewaySupportValue) -> Self {
+        self.inner = self.inner.nat_gateway_support(input);
+        self
+    }
+    /// <p>Specifies whether to enable NAT gateway support on the Connect attachment. NAT is supported only on Connect attachments that use the GRE tunnel protocol. Tunnel-less Connect attachments aren't supported. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub fn set_nat_gateway_support(mut self, input: ::std::option::Option<crate::types::NatGatewaySupportValue>) -> Self {
+        self.inner = self.inner.set_nat_gateway_support(input);
+        self
+    }
+    /// <p>Specifies whether to enable NAT gateway support on the Connect attachment. NAT is supported only on Connect attachments that use the GRE tunnel protocol. Tunnel-less Connect attachments aren't supported. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub fn get_nat_gateway_support(&self) -> &::std::option::Option<crate::types::NatGatewaySupportValue> {
+        self.inner.get_nat_gateway_support()
+    }
+    ///
+    /// Appends an item to `NatGatewayRules`.
+    ///
+    /// To override the contents of this collection use [`set_nat_gateway_rules`](Self::set_nat_gateway_rules).
+    ///
+    /// <p>The NAT rules for the Connect attachment, up to 50 rules.</p>
+    pub fn nat_gateway_rules(mut self, input: crate::types::NatRuleRequest) -> Self {
+        self.inner = self.inner.nat_gateway_rules(input);
+        self
+    }
+    /// <p>The NAT rules for the Connect attachment, up to 50 rules.</p>
+    pub fn set_nat_gateway_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatRuleRequest>>) -> Self {
+        self.inner = self.inner.set_nat_gateway_rules(input);
+        self
+    }
+    /// <p>The NAT rules for the Connect attachment, up to 50 rules.</p>
+    pub fn get_nat_gateway_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatRuleRequest>> {
+        self.inner.get_nat_gateway_rules()
+    }
     /// <p>Options for creating an attachment.</p>
     pub fn options(mut self, input: crate::types::ConnectAttachmentOptions) -> Self {
         self.inner = self.inner.options(input);

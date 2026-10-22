@@ -34,6 +34,138 @@ impl S3ManifestConfig {
         self.manifest_object_version_id.as_deref()
     }
 }
+static S3MANIFESTCONFIG_MEMBER_MANIFEST_OBJECT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#S3ManifestConfig$ManifestObjectPath",
+        "com.amazonaws.datasync",
+        "S3ManifestConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManifestObjectPath",
+    0,
+);
+static S3MANIFESTCONFIG_MEMBER_BUCKET_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#S3ManifestConfig$BucketAccessRoleArn",
+        "com.amazonaws.datasync",
+        "S3ManifestConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BucketAccessRoleArn",
+    1,
+);
+static S3MANIFESTCONFIG_MEMBER_S3_BUCKET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#S3ManifestConfig$S3BucketArn",
+        "com.amazonaws.datasync",
+        "S3ManifestConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketArn",
+    2,
+);
+static S3MANIFESTCONFIG_MEMBER_MANIFEST_OBJECT_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#S3ManifestConfig$ManifestObjectVersionId",
+        "com.amazonaws.datasync",
+        "S3ManifestConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManifestObjectVersionId",
+    3,
+);
+static S3MANIFESTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#S3ManifestConfig", "com.amazonaws.datasync", "S3ManifestConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3MANIFESTCONFIG_MEMBER_MANIFEST_OBJECT_PATH,
+        &S3MANIFESTCONFIG_MEMBER_BUCKET_ACCESS_ROLE_ARN,
+        &S3MANIFESTCONFIG_MEMBER_S3_BUCKET_ARN,
+        &S3MANIFESTCONFIG_MEMBER_MANIFEST_OBJECT_VERSION_ID,
+    ],
+);
+impl S3ManifestConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3MANIFESTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3ManifestConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.manifest_object_path;
+            ser.write_string(&S3MANIFESTCONFIG_MEMBER_MANIFEST_OBJECT_PATH, val)?;
+        }
+        {
+            let val = &self.bucket_access_role_arn;
+            ser.write_string(&S3MANIFESTCONFIG_MEMBER_BUCKET_ACCESS_ROLE_ARN, val)?;
+        }
+        {
+            let val = &self.s3_bucket_arn;
+            ser.write_string(&S3MANIFESTCONFIG_MEMBER_S3_BUCKET_ARN, val)?;
+        }
+        if let Some(ref val) = self.manifest_object_version_id {
+            ser.write_string(&S3MANIFESTCONFIG_MEMBER_MANIFEST_OBJECT_VERSION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3ManifestConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3MANIFESTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.manifest_object_path = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.bucket_access_role_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.s3_bucket_arn = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manifest_object_version_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3ManifestConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.manifest_object_path = builder.manifest_object_path.or(Some(String::new()));
+        builder.bucket_access_role_arn = builder.bucket_access_role_arn.or(Some(String::new()));
+        builder.s3_bucket_arn = builder.s3_bucket_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl S3ManifestConfig {
     /// Creates a new builder-style object to manufacture [`S3ManifestConfig`](crate::types::S3ManifestConfig).
     pub fn builder() -> crate::types::builders::S3ManifestConfigBuilder {

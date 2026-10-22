@@ -14,6 +14,83 @@ impl PrivateRegistryAccessRequest {
         self.ecr_image_puller_role.as_ref()
     }
 }
+static PRIVATEREGISTRYACCESSREQUEST_MEMBER_ECR_IMAGE_PULLER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PrivateRegistryAccessRequest$ecrImagePullerRole",
+        "com.amazonaws.lightsail",
+        "PrivateRegistryAccessRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ecrImagePullerRole",
+    0,
+);
+static PRIVATEREGISTRYACCESSREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PrivateRegistryAccessRequest",
+        "com.amazonaws.lightsail",
+        "PrivateRegistryAccessRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PRIVATEREGISTRYACCESSREQUEST_MEMBER_ECR_IMAGE_PULLER_ROLE],
+);
+impl PrivateRegistryAccessRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRIVATEREGISTRYACCESSREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PrivateRegistryAccessRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ecr_image_puller_role {
+            ser.write_struct(&PRIVATEREGISTRYACCESSREQUEST_MEMBER_ECR_IMAGE_PULLER_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PrivateRegistryAccessRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRIVATEREGISTRYACCESSREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ecr_image_puller_role = Some(crate::types::ContainerServiceEcrImagePullerRoleRequest::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PrivateRegistryAccessRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PrivateRegistryAccessRequest {
     /// Creates a new builder-style object to manufacture [`PrivateRegistryAccessRequest`](crate::types::PrivateRegistryAccessRequest).
     pub fn builder() -> crate::types::builders::PrivateRegistryAccessRequestBuilder {

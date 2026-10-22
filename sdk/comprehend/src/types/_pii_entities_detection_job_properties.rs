@@ -111,6 +111,337 @@ impl PiiEntitiesDetectionJobProperties {
         self.mode.as_ref()
     }
 }
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$JobId",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobId",
+    0,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$JobArn",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobArn",
+    1,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$JobName",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    2,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$JobStatus",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobStatus",
+    3,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$Message",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    4,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_SUBMIT_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$SubmitTime",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SubmitTime",
+    5,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$EndTime",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    6,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$InputDataConfig",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    7,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$OutputDataConfig",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    8,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_REDACTION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$RedactionConfig",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RedactionConfig",
+    9,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$LanguageCode",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    10,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$DataAccessRoleArn",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    11,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties$Mode",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    12,
+);
+static PIIENTITIESDETECTIONJOBPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#PiiEntitiesDetectionJobProperties",
+        "com.amazonaws.comprehend",
+        "PiiEntitiesDetectionJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_ID,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_ARN,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_NAME,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_STATUS,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_MESSAGE,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_SUBMIT_TIME,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_END_TIME,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_INPUT_DATA_CONFIG,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_REDACTION_CONFIG,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_LANGUAGE_CODE,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_MODE,
+    ],
+);
+impl PiiEntitiesDetectionJobProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIIENTITIESDETECTIONJOBPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PiiEntitiesDetectionJobProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_id {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_ID, val)?;
+        }
+        if let Some(ref val) = self.job_arn {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_status {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.submit_time {
+            ser.write_timestamp(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_SUBMIT_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.redaction_config {
+            ser.write_struct(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_REDACTION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&PIIENTITIESDETECTIONJOBPROPERTIES_MEMBER_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PiiEntitiesDetectionJobPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIIENTITIESDETECTIONJOBPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_status = Some(crate::types::JobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submit_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::PiiOutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.redaction_config = Some(crate::types::RedactionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::PiiEntitiesDetectionMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PiiEntitiesDetectionJobProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PiiEntitiesDetectionJobProperties {
     /// Creates a new builder-style object to manufacture [`PiiEntitiesDetectionJobProperties`](crate::types::PiiEntitiesDetectionJobProperties).
     pub fn builder() -> crate::types::builders::PiiEntitiesDetectionJobPropertiesBuilder {

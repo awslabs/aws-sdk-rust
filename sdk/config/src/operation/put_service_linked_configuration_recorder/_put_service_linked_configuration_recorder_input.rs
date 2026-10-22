@@ -20,6 +20,132 @@ impl PutServiceLinkedConfigurationRecorderInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SERVICE_PRINCIPAL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutServiceLinkedConfigurationRecorderInput$ServicePrincipal",
+            "com.amazonaws.configservice.synthetic",
+            "PutServiceLinkedConfigurationRecorderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ServicePrincipal",
+        0,
+    );
+static PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#TagsList$member", "com.amazonaws.configservice", "TagsList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutServiceLinkedConfigurationRecorderInput$Tags",
+        "com.amazonaws.configservice.synthetic",
+        "PutServiceLinkedConfigurationRecorderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS_MEMBER);
+static PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutServiceLinkedConfigurationRecorderInput",
+        "com.amazonaws.configservice.synthetic",
+        "PutServiceLinkedConfigurationRecorderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SERVICE_PRINCIPAL,
+        &PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutServiceLinkedConfigurationRecorderRequest");
+impl PutServiceLinkedConfigurationRecorderInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutServiceLinkedConfigurationRecorderInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_principal {
+            ser.write_string(&PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SERVICE_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_service_linked_configuration_recorder::builders::PutServiceLinkedConfigurationRecorderInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTSERVICELINKEDCONFIGURATIONRECORDERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutServiceLinkedConfigurationRecorderInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_principal = builder.service_principal.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutServiceLinkedConfigurationRecorderInput {
     /// Creates a new builder-style object to manufacture [`PutServiceLinkedConfigurationRecorderInput`](crate::operation::put_service_linked_configuration_recorder::PutServiceLinkedConfigurationRecorderInput).
     pub fn builder() -> crate::operation::put_service_linked_configuration_recorder::builders::PutServiceLinkedConfigurationRecorderInputBuilder {

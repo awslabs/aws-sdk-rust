@@ -40,6 +40,222 @@ impl UpdateProjectInput {
         self.template_providers_to_update.as_deref().unwrap_or_default()
     }
 }
+static UPDATEPROJECTINPUT_MEMBER_PROJECT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateProjectInput$ProjectName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProjectName",
+    0,
+);
+static UPDATEPROJECTINPUT_MEMBER_PROJECT_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateProjectInput$ProjectDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProjectDescription",
+    1,
+);
+static UPDATEPROJECTINPUT_MEMBER_SERVICE_CATALOG_PROVISIONING_UPDATE_DETAILS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateProjectInput$ServiceCatalogProvisioningUpdateDetails",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateProjectInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ServiceCatalogProvisioningUpdateDetails",
+        2,
+    );
+static UPDATEPROJECTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEPROJECTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateProjectInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    3,
+)
+.with_list_member(&UPDATEPROJECTINPUT_MEMBER_TAGS_MEMBER);
+static UPDATEPROJECTINPUT_MEMBER_TEMPLATE_PROVIDERS_TO_UPDATE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UpdateTemplateProviderList$member",
+        "com.amazonaws.sagemaker",
+        "UpdateTemplateProviderList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEPROJECTINPUT_MEMBER_TEMPLATE_PROVIDERS_TO_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateProjectInput$TemplateProvidersToUpdate",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TemplateProvidersToUpdate",
+    4,
+)
+.with_list_member(&UPDATEPROJECTINPUT_MEMBER_TEMPLATE_PROVIDERS_TO_UPDATE_MEMBER);
+static UPDATEPROJECTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateProjectInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateProjectInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPROJECTINPUT_MEMBER_PROJECT_NAME,
+        &UPDATEPROJECTINPUT_MEMBER_PROJECT_DESCRIPTION,
+        &UPDATEPROJECTINPUT_MEMBER_SERVICE_CATALOG_PROVISIONING_UPDATE_DETAILS,
+        &UPDATEPROJECTINPUT_MEMBER_TAGS,
+        &UPDATEPROJECTINPUT_MEMBER_TEMPLATE_PROVIDERS_TO_UPDATE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateProjectInput");
+impl UpdateProjectInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPROJECTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateProjectInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.project_name {
+            ser.write_string(&UPDATEPROJECTINPUT_MEMBER_PROJECT_NAME, val)?;
+        }
+        if let Some(ref val) = self.project_description {
+            ser.write_string(&UPDATEPROJECTINPUT_MEMBER_PROJECT_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.service_catalog_provisioning_update_details {
+            ser.write_struct(&UPDATEPROJECTINPUT_MEMBER_SERVICE_CATALOG_PROVISIONING_UPDATE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &UPDATEPROJECTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.template_providers_to_update {
+            ser.write_list(
+                &UPDATEPROJECTINPUT_MEMBER_TEMPLATE_PROVIDERS_TO_UPDATE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UpdateTemplateProvider::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_project::builders::UpdateProjectInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPROJECTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_catalog_provisioning_update_details =
+                            Some(crate::types::ServiceCatalogProvisioningUpdateDetails::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_providers_to_update = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UpdateTemplateProvider::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateProjectInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.project_name = builder.project_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateProjectInput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn builder() -> crate::operation::update_project::builders::UpdateProjectInputBuilder {

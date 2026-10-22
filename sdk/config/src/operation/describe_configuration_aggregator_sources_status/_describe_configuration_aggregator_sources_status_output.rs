@@ -21,6 +21,136 @@ impl DescribeConfigurationAggregatorSourcesStatusOutput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_AGGREGATED_SOURCE_STATUS_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#AggregatedSourceStatusList$member",
+            "com.amazonaws.configservice",
+            "AggregatedSourceStatusList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_AGGREGATED_SOURCE_STATUS_LIST: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#DescribeConfigurationAggregatorSourcesStatusOutput$AggregatedSourceStatusList",
+            "com.amazonaws.configservice.synthetic",
+            "DescribeConfigurationAggregatorSourcesStatusOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AggregatedSourceStatusList",
+        0,
+    )
+    .with_list_member(&DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_AGGREGATED_SOURCE_STATUS_LIST_MEMBER);
+static DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#DescribeConfigurationAggregatorSourcesStatusOutput$NextToken",
+            "com.amazonaws.configservice.synthetic",
+            "DescribeConfigurationAggregatorSourcesStatusOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NextToken",
+        1,
+    );
+static DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeConfigurationAggregatorSourcesStatusOutput",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeConfigurationAggregatorSourcesStatusOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_AGGREGATED_SOURCE_STATUS_LIST,
+        &DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("DescribeConfigurationAggregatorSourcesStatusResponse");
+impl DescribeConfigurationAggregatorSourcesStatusOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeConfigurationAggregatorSourcesStatusOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.aggregated_source_status_list {
+            ser.write_list(
+                &DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_AGGREGATED_SOURCE_STATUS_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AggregatedSourceStatus::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_configuration_aggregator_sources_status::builders::DescribeConfigurationAggregatorSourcesStatusOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECONFIGURATIONAGGREGATORSOURCESSTATUSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aggregated_source_status_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AggregatedSourceStatus::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeConfigurationAggregatorSourcesStatusOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeConfigurationAggregatorSourcesStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

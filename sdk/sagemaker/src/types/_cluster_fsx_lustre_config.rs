@@ -27,6 +27,123 @@ impl ClusterFsxLustreConfig {
         self.mount_path.as_deref()
     }
 }
+static CLUSTERFSXLUSTRECONFIG_MEMBER_DNS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterFsxLustreConfig$DnsName",
+        "com.amazonaws.sagemaker",
+        "ClusterFsxLustreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DnsName",
+    0,
+);
+static CLUSTERFSXLUSTRECONFIG_MEMBER_MOUNT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterFsxLustreConfig$MountName",
+        "com.amazonaws.sagemaker",
+        "ClusterFsxLustreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MountName",
+    1,
+);
+static CLUSTERFSXLUSTRECONFIG_MEMBER_MOUNT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterFsxLustreConfig$MountPath",
+        "com.amazonaws.sagemaker",
+        "ClusterFsxLustreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MountPath",
+    2,
+);
+static CLUSTERFSXLUSTRECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterFsxLustreConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterFsxLustreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTERFSXLUSTRECONFIG_MEMBER_DNS_NAME,
+        &CLUSTERFSXLUSTRECONFIG_MEMBER_MOUNT_NAME,
+        &CLUSTERFSXLUSTRECONFIG_MEMBER_MOUNT_PATH,
+    ],
+);
+impl ClusterFsxLustreConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERFSXLUSTRECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterFsxLustreConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.dns_name;
+            ser.write_string(&CLUSTERFSXLUSTRECONFIG_MEMBER_DNS_NAME, val)?;
+        }
+        {
+            let val = &self.mount_name;
+            ser.write_string(&CLUSTERFSXLUSTRECONFIG_MEMBER_MOUNT_NAME, val)?;
+        }
+        if let Some(ref val) = self.mount_path {
+            ser.write_string(&CLUSTERFSXLUSTRECONFIG_MEMBER_MOUNT_PATH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterFsxLustreConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERFSXLUSTRECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.dns_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.mount_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_path = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterFsxLustreConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.dns_name = builder.dns_name.or(Some(String::new()));
+        builder.mount_name = builder.mount_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ClusterFsxLustreConfig {
     /// Creates a new builder-style object to manufacture [`ClusterFsxLustreConfig`](crate::types::ClusterFsxLustreConfig).
     pub fn builder() -> crate::types::builders::ClusterFsxLustreConfigBuilder {

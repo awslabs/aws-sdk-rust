@@ -44,6 +44,179 @@ impl ActionTypeProperty {
         self.description.as_deref()
     }
 }
+static ACTIONTYPEPROPERTY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeProperty$name",
+        "com.amazonaws.codepipeline",
+        "ActionTypeProperty",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static ACTIONTYPEPROPERTY_MEMBER_OPTIONAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeProperty$optional",
+        "com.amazonaws.codepipeline",
+        "ActionTypeProperty",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "optional",
+    1,
+);
+static ACTIONTYPEPROPERTY_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeProperty$key",
+        "com.amazonaws.codepipeline",
+        "ActionTypeProperty",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "key",
+    2,
+);
+static ACTIONTYPEPROPERTY_MEMBER_NO_ECHO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeProperty$noEcho",
+        "com.amazonaws.codepipeline",
+        "ActionTypeProperty",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "noEcho",
+    3,
+);
+static ACTIONTYPEPROPERTY_MEMBER_QUERYABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeProperty$queryable",
+        "com.amazonaws.codepipeline",
+        "ActionTypeProperty",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "queryable",
+    4,
+);
+static ACTIONTYPEPROPERTY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeProperty$description",
+        "com.amazonaws.codepipeline",
+        "ActionTypeProperty",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    5,
+);
+static ACTIONTYPEPROPERTY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeProperty",
+        "com.amazonaws.codepipeline",
+        "ActionTypeProperty",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONTYPEPROPERTY_MEMBER_NAME,
+        &ACTIONTYPEPROPERTY_MEMBER_OPTIONAL,
+        &ACTIONTYPEPROPERTY_MEMBER_KEY,
+        &ACTIONTYPEPROPERTY_MEMBER_NO_ECHO,
+        &ACTIONTYPEPROPERTY_MEMBER_QUERYABLE,
+        &ACTIONTYPEPROPERTY_MEMBER_DESCRIPTION,
+    ],
+);
+impl ActionTypeProperty {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONTYPEPROPERTY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionTypeProperty {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&ACTIONTYPEPROPERTY_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.optional;
+            ser.write_boolean(&ACTIONTYPEPROPERTY_MEMBER_OPTIONAL, *val)?;
+        }
+        {
+            let val = &self.key;
+            ser.write_boolean(&ACTIONTYPEPROPERTY_MEMBER_KEY, *val)?;
+        }
+        {
+            let val = &self.no_echo;
+            ser.write_boolean(&ACTIONTYPEPROPERTY_MEMBER_NO_ECHO, *val)?;
+        }
+        {
+            let val = &self.queryable;
+            ser.write_boolean(&ACTIONTYPEPROPERTY_MEMBER_QUERYABLE, *val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&ACTIONTYPEPROPERTY_MEMBER_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionTypePropertyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONTYPEPROPERTY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.optional = Some(deser.read_boolean(member)?);
+                }
+                Some(2) => {
+                    self.key = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    self.no_echo = Some(deser.read_boolean(member)?);
+                }
+                Some(4) => {
+                    self.queryable = Some(deser.read_boolean(member)?);
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionTypeProperty {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.optional = builder.optional.or(Some(false));
+        builder.key = builder.key.or(Some(false));
+        builder.no_echo = builder.no_echo.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ActionTypeProperty {
     /// Creates a new builder-style object to manufacture [`ActionTypeProperty`](crate::types::ActionTypeProperty).
     pub fn builder() -> crate::types::builders::ActionTypePropertyBuilder {

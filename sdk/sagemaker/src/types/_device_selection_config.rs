@@ -33,6 +33,163 @@ impl DeviceSelectionConfig {
         self.device_name_contains.as_deref()
     }
 }
+static DEVICESELECTIONCONFIG_MEMBER_DEVICE_SUBSET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSelectionConfig$DeviceSubsetType",
+        "com.amazonaws.sagemaker",
+        "DeviceSelectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceSubsetType",
+    0,
+);
+static DEVICESELECTIONCONFIG_MEMBER_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSelectionConfig$Percentage",
+        "com.amazonaws.sagemaker",
+        "DeviceSelectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Percentage",
+    1,
+);
+static DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DeviceNames$member", "com.amazonaws.sagemaker", "DeviceNames"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSelectionConfig$DeviceNames",
+        "com.amazonaws.sagemaker",
+        "DeviceSelectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DeviceNames",
+    2,
+)
+.with_list_member(&DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAMES_MEMBER);
+static DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSelectionConfig$DeviceNameContains",
+        "com.amazonaws.sagemaker",
+        "DeviceSelectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceNameContains",
+    3,
+);
+static DEVICESELECTIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSelectionConfig",
+        "com.amazonaws.sagemaker",
+        "DeviceSelectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEVICESELECTIONCONFIG_MEMBER_DEVICE_SUBSET_TYPE,
+        &DEVICESELECTIONCONFIG_MEMBER_PERCENTAGE,
+        &DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAMES,
+        &DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAME_CONTAINS,
+    ],
+);
+impl DeviceSelectionConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEVICESELECTIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeviceSelectionConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_subset_type {
+            ser.write_string(&DEVICESELECTIONCONFIG_MEMBER_DEVICE_SUBSET_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.percentage {
+            ser.write_integer(&DEVICESELECTIONCONFIG_MEMBER_PERCENTAGE, *val)?;
+        }
+        if let Some(ref val) = self.device_names {
+            ser.write_list(
+                &DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.device_name_contains {
+            ser.write_string(&DEVICESELECTIONCONFIG_MEMBER_DEVICE_NAME_CONTAINS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeviceSelectionConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEVICESELECTIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_subset_type = Some(crate::types::DeviceSubsetType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.percentage = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeviceSelectionConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeviceSelectionConfig {
     /// Creates a new builder-style object to manufacture [`DeviceSelectionConfig`](crate::types::DeviceSelectionConfig).
     pub fn builder() -> crate::types::builders::DeviceSelectionConfigBuilder {

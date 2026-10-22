@@ -47,6 +47,127 @@ impl BatchReplaceClusterNodeLogicalIdsError {
         self.message.as_deref()
     }
 }
+static BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_NODE_LOGICAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchReplaceClusterNodeLogicalIdsError$NodeLogicalId",
+        "com.amazonaws.sagemaker",
+        "BatchReplaceClusterNodeLogicalIdsError",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeLogicalId",
+    0,
+);
+static BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchReplaceClusterNodeLogicalIdsError$ErrorCode",
+        "com.amazonaws.sagemaker",
+        "BatchReplaceClusterNodeLogicalIdsError",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    1,
+);
+static BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchReplaceClusterNodeLogicalIdsError$Message",
+        "com.amazonaws.sagemaker",
+        "BatchReplaceClusterNodeLogicalIdsError",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static BATCHREPLACECLUSTERNODELOGICALIDSERROR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchReplaceClusterNodeLogicalIdsError",
+        "com.amazonaws.sagemaker",
+        "BatchReplaceClusterNodeLogicalIdsError",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_NODE_LOGICAL_ID,
+        &BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_ERROR_CODE,
+        &BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_MESSAGE,
+    ],
+);
+impl BatchReplaceClusterNodeLogicalIdsError {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHREPLACECLUSTERNODELOGICALIDSERROR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchReplaceClusterNodeLogicalIdsError {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.node_logical_id {
+            ser.write_string(&BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_NODE_LOGICAL_ID, val)?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_ERROR_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&BATCHREPLACECLUSTERNODELOGICALIDSERROR_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BatchReplaceClusterNodeLogicalIdsErrorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHREPLACECLUSTERNODELOGICALIDSERROR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_logical_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(crate::types::BatchReplaceClusterNodesErrorCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchReplaceClusterNodeLogicalIdsError {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BatchReplaceClusterNodeLogicalIdsError {
     /// Creates a new builder-style object to manufacture [`BatchReplaceClusterNodeLogicalIdsError`](crate::types::BatchReplaceClusterNodeLogicalIdsError).
     pub fn builder() -> crate::types::builders::BatchReplaceClusterNodeLogicalIdsErrorBuilder {

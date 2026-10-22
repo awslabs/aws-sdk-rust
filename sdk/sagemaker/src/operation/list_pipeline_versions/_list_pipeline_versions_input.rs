@@ -42,6 +42,193 @@ impl ListPipelineVersionsInput {
         self.max_results
     }
 }
+static LISTPIPELINEVERSIONSINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineVersionsInput$PipelineName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineName",
+    0,
+);
+static LISTPIPELINEVERSIONSINPUT_MEMBER_CREATED_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineVersionsInput$CreatedAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAfter",
+    1,
+);
+static LISTPIPELINEVERSIONSINPUT_MEMBER_CREATED_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineVersionsInput$CreatedBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedBefore",
+    2,
+);
+static LISTPIPELINEVERSIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineVersionsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    3,
+);
+static LISTPIPELINEVERSIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineVersionsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTPIPELINEVERSIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineVersionsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static LISTPIPELINEVERSIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineVersionsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTPIPELINEVERSIONSINPUT_MEMBER_PIPELINE_NAME,
+        &LISTPIPELINEVERSIONSINPUT_MEMBER_CREATED_AFTER,
+        &LISTPIPELINEVERSIONSINPUT_MEMBER_CREATED_BEFORE,
+        &LISTPIPELINEVERSIONSINPUT_MEMBER_SORT_ORDER,
+        &LISTPIPELINEVERSIONSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTPIPELINEVERSIONSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListPipelineVersionsRequest");
+impl ListPipelineVersionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTPIPELINEVERSIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListPipelineVersionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&LISTPIPELINEVERSIONSINPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.created_after {
+            ser.write_timestamp(&LISTPIPELINEVERSIONSINPUT_MEMBER_CREATED_AFTER, val)?;
+        }
+        if let Some(ref val) = self.created_before {
+            ser.write_timestamp(&LISTPIPELINEVERSIONSINPUT_MEMBER_CREATED_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTPIPELINEVERSIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTPIPELINEVERSIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTPIPELINEVERSIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_pipeline_versions::builders::ListPipelineVersionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTPIPELINEVERSIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListPipelineVersionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListPipelineVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineVersionsInput`](crate::operation::list_pipeline_versions::ListPipelineVersionsInput).
     pub fn builder() -> crate::operation::list_pipeline_versions::builders::ListPipelineVersionsInputBuilder {

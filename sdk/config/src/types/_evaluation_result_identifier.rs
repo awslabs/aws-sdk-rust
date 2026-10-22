@@ -25,6 +25,127 @@ impl EvaluationResultIdentifier {
         self.resource_evaluation_id.as_deref()
     }
 }
+static EVALUATIONRESULTIDENTIFIER_MEMBER_EVALUATION_RESULT_QUALIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResultIdentifier$EvaluationResultQualifier",
+        "com.amazonaws.configservice",
+        "EvaluationResultIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EvaluationResultQualifier",
+    0,
+);
+static EVALUATIONRESULTIDENTIFIER_MEMBER_ORDERING_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResultIdentifier$OrderingTimestamp",
+        "com.amazonaws.configservice",
+        "EvaluationResultIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "OrderingTimestamp",
+    1,
+);
+static EVALUATIONRESULTIDENTIFIER_MEMBER_RESOURCE_EVALUATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResultIdentifier$ResourceEvaluationId",
+        "com.amazonaws.configservice",
+        "EvaluationResultIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceEvaluationId",
+    2,
+);
+static EVALUATIONRESULTIDENTIFIER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResultIdentifier",
+        "com.amazonaws.configservice",
+        "EvaluationResultIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EVALUATIONRESULTIDENTIFIER_MEMBER_EVALUATION_RESULT_QUALIFIER,
+        &EVALUATIONRESULTIDENTIFIER_MEMBER_ORDERING_TIMESTAMP,
+        &EVALUATIONRESULTIDENTIFIER_MEMBER_RESOURCE_EVALUATION_ID,
+    ],
+);
+impl EvaluationResultIdentifier {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EVALUATIONRESULTIDENTIFIER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EvaluationResultIdentifier {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.evaluation_result_qualifier {
+            ser.write_struct(&EVALUATIONRESULTIDENTIFIER_MEMBER_EVALUATION_RESULT_QUALIFIER, val)?;
+        }
+        if let Some(ref val) = self.ordering_timestamp {
+            ser.write_timestamp(&EVALUATIONRESULTIDENTIFIER_MEMBER_ORDERING_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.resource_evaluation_id {
+            ser.write_string(&EVALUATIONRESULTIDENTIFIER_MEMBER_RESOURCE_EVALUATION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EvaluationResultIdentifierBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EVALUATIONRESULTIDENTIFIER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_result_qualifier = Some(crate::types::EvaluationResultQualifier::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ordering_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_evaluation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EvaluationResultIdentifier {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EvaluationResultIdentifier {
     /// Creates a new builder-style object to manufacture [`EvaluationResultIdentifier`](crate::types::EvaluationResultIdentifier).
     pub fn builder() -> crate::types::builders::EvaluationResultIdentifierBuilder {

@@ -79,6 +79,272 @@ impl Workforce {
         self.ip_address_type.as_ref()
     }
 }
+static WORKFORCE_MEMBER_WORKFORCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$WorkforceName", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkforceName",
+    0,
+);
+static WORKFORCE_MEMBER_WORKFORCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$WorkforceArn", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkforceArn",
+    1,
+);
+static WORKFORCE_MEMBER_LAST_UPDATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Workforce$LastUpdatedDate",
+        "com.amazonaws.sagemaker",
+        "Workforce",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedDate",
+    2,
+);
+static WORKFORCE_MEMBER_SOURCE_IP_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$SourceIpConfig", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SourceIpConfig",
+    3,
+);
+static WORKFORCE_MEMBER_SUB_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$SubDomain", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubDomain",
+    4,
+);
+static WORKFORCE_MEMBER_COGNITO_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$CognitoConfig", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CognitoConfig",
+    5,
+);
+static WORKFORCE_MEMBER_OIDC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$OidcConfig", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OidcConfig",
+    6,
+);
+static WORKFORCE_MEMBER_CREATE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$CreateDate", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateDate",
+    7,
+);
+static WORKFORCE_MEMBER_WORKFORCE_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Workforce$WorkforceVpcConfig",
+        "com.amazonaws.sagemaker",
+        "Workforce",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkforceVpcConfig",
+    8,
+);
+static WORKFORCE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$Status", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    9,
+);
+static WORKFORCE_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$FailureReason", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    10,
+);
+static WORKFORCE_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce$IpAddressType", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    11,
+);
+static WORKFORCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workforce", "com.amazonaws.sagemaker", "Workforce"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKFORCE_MEMBER_WORKFORCE_NAME,
+        &WORKFORCE_MEMBER_WORKFORCE_ARN,
+        &WORKFORCE_MEMBER_LAST_UPDATED_DATE,
+        &WORKFORCE_MEMBER_SOURCE_IP_CONFIG,
+        &WORKFORCE_MEMBER_SUB_DOMAIN,
+        &WORKFORCE_MEMBER_COGNITO_CONFIG,
+        &WORKFORCE_MEMBER_OIDC_CONFIG,
+        &WORKFORCE_MEMBER_CREATE_DATE,
+        &WORKFORCE_MEMBER_WORKFORCE_VPC_CONFIG,
+        &WORKFORCE_MEMBER_STATUS,
+        &WORKFORCE_MEMBER_FAILURE_REASON,
+        &WORKFORCE_MEMBER_IP_ADDRESS_TYPE,
+    ],
+);
+impl Workforce {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKFORCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Workforce {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workforce_name {
+            ser.write_string(&WORKFORCE_MEMBER_WORKFORCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.workforce_arn {
+            ser.write_string(&WORKFORCE_MEMBER_WORKFORCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.last_updated_date {
+            ser.write_timestamp(&WORKFORCE_MEMBER_LAST_UPDATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.source_ip_config {
+            ser.write_struct(&WORKFORCE_MEMBER_SOURCE_IP_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.sub_domain {
+            ser.write_string(&WORKFORCE_MEMBER_SUB_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.cognito_config {
+            ser.write_struct(&WORKFORCE_MEMBER_COGNITO_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.oidc_config {
+            ser.write_struct(&WORKFORCE_MEMBER_OIDC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.create_date {
+            ser.write_timestamp(&WORKFORCE_MEMBER_CREATE_DATE, val)?;
+        }
+        if let Some(ref val) = self.workforce_vpc_config {
+            ser.write_struct(&WORKFORCE_MEMBER_WORKFORCE_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&WORKFORCE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&WORKFORCE_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&WORKFORCE_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkforceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKFORCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workforce_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workforce_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_ip_config = Some(crate::types::SourceIpConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sub_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cognito_config = Some(crate::types::CognitoConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.oidc_config = Some(crate::types::OidcConfigForResponse::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workforce_vpc_config = Some(crate::types::WorkforceVpcConfigResponse::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::WorkforceStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::WorkforceIpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Workforce {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Workforce {
     /// Creates a new builder-style object to manufacture [`Workforce`](crate::types::Workforce).
     pub fn builder() -> crate::types::builders::WorkforceBuilder {

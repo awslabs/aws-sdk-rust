@@ -21,6 +21,94 @@ impl SourceIpConfig {
         self.cidrs.as_deref().unwrap_or_default()
     }
 }
+static SOURCEIPCONFIG_MEMBER_CIDRS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Cidrs$member", "com.amazonaws.sagemaker", "Cidrs"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SOURCEIPCONFIG_MEMBER_CIDRS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SourceIpConfig$Cidrs",
+        "com.amazonaws.sagemaker",
+        "SourceIpConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Cidrs",
+    0,
+)
+.with_list_member(&SOURCEIPCONFIG_MEMBER_CIDRS_MEMBER);
+static SOURCEIPCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SourceIpConfig", "com.amazonaws.sagemaker", "SourceIpConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SOURCEIPCONFIG_MEMBER_CIDRS],
+);
+impl SourceIpConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SOURCEIPCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SourceIpConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cidrs {
+            ser.write_list(
+                &SOURCEIPCONFIG_MEMBER_CIDRS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SourceIpConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SOURCEIPCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cidrs = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SourceIpConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SourceIpConfig {
     /// Creates a new builder-style object to manufacture [`SourceIpConfig`](crate::types::SourceIpConfig).
     pub fn builder() -> crate::types::builders::SourceIpConfigBuilder {

@@ -50,6 +50,215 @@ impl GetBlobDifferencesInput {
         self.next_token.as_deref()
     }
 }
+static GETBLOBDIFFERENCESINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static GETBLOBDIFFERENCESINPUT_MEMBER_AFTER_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput$afterBlobId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterBlobId",
+    1,
+);
+static GETBLOBDIFFERENCESINPUT_MEMBER_BEFORE_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput$beforeBlobId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforeBlobId",
+    2,
+);
+static GETBLOBDIFFERENCESINPUT_MEMBER_CONTEXT_LINES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput$contextLines",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "contextLines",
+    3,
+);
+static GETBLOBDIFFERENCESINPUT_MEMBER_IGNORE_WHITESPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput$ignoreWhitespace",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ignoreWhitespace",
+    4,
+);
+static GETBLOBDIFFERENCESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput$MaxResults",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static GETBLOBDIFFERENCESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput$NextToken",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static GETBLOBDIFFERENCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetBlobDifferencesInput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetBlobDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETBLOBDIFFERENCESINPUT_MEMBER_REPOSITORY_NAME,
+        &GETBLOBDIFFERENCESINPUT_MEMBER_AFTER_BLOB_ID,
+        &GETBLOBDIFFERENCESINPUT_MEMBER_BEFORE_BLOB_ID,
+        &GETBLOBDIFFERENCESINPUT_MEMBER_CONTEXT_LINES,
+        &GETBLOBDIFFERENCESINPUT_MEMBER_IGNORE_WHITESPACE,
+        &GETBLOBDIFFERENCESINPUT_MEMBER_MAX_RESULTS,
+        &GETBLOBDIFFERENCESINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetBlobDifferencesInput");
+impl GetBlobDifferencesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETBLOBDIFFERENCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetBlobDifferencesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&GETBLOBDIFFERENCESINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.after_blob_id {
+            ser.write_string(&GETBLOBDIFFERENCESINPUT_MEMBER_AFTER_BLOB_ID, val)?;
+        }
+        if let Some(ref val) = self.before_blob_id {
+            ser.write_string(&GETBLOBDIFFERENCESINPUT_MEMBER_BEFORE_BLOB_ID, val)?;
+        }
+        if let Some(ref val) = self.context_lines {
+            ser.write_integer(&GETBLOBDIFFERENCESINPUT_MEMBER_CONTEXT_LINES, *val)?;
+        }
+        if let Some(ref val) = self.ignore_whitespace {
+            ser.write_boolean(&GETBLOBDIFFERENCESINPUT_MEMBER_IGNORE_WHITESPACE, *val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&GETBLOBDIFFERENCESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETBLOBDIFFERENCESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_blob_differences::builders::GetBlobDifferencesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETBLOBDIFFERENCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_blob_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_blob_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_lines = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ignore_whitespace = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetBlobDifferencesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.after_blob_id = builder.after_blob_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetBlobDifferencesInput {
     /// Creates a new builder-style object to manufacture [`GetBlobDifferencesInput`](crate::operation::get_blob_differences::GetBlobDifferencesInput).
     pub fn builder() -> crate::operation::get_blob_differences::builders::GetBlobDifferencesInputBuilder {

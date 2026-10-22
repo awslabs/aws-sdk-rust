@@ -70,6 +70,328 @@ impl CreateAutoMlJobInput {
         self.model_deploy_config.as_ref()
     }
 }
+static CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$AutoMLJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobName",
+    0,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_INPUT_DATA_CONFIG_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLInputDataConfig$member",
+        "com.amazonaws.sagemaker",
+        "AutoMLInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$InputDataConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InputDataConfig",
+    1,
+)
+.with_list_member(&CREATEAUTOMLJOBINPUT_MEMBER_INPUT_DATA_CONFIG_MEMBER);
+static CREATEAUTOMLJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$OutputDataConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    2,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_PROBLEM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$ProblemType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProblemType",
+    3,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_OBJECTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$AutoMLJobObjective",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoMLJobObjective",
+    4,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$AutoMLJobConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoMLJobConfig",
+    5,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    6,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_GENERATE_CANDIDATE_DEFINITIONS_ONLY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$GenerateCandidateDefinitionsOnly",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateAutoMLJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "GenerateCandidateDefinitionsOnly",
+        7,
+    );
+static CREATEAUTOMLJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEAUTOMLJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&CREATEAUTOMLJOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATEAUTOMLJOBINPUT_MEMBER_MODEL_DEPLOY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput$ModelDeployConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDeployConfig",
+    9,
+);
+static CREATEAUTOMLJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAutoMLJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_NAME,
+        &CREATEAUTOMLJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &CREATEAUTOMLJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &CREATEAUTOMLJOBINPUT_MEMBER_PROBLEM_TYPE,
+        &CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_OBJECTIVE,
+        &CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_CONFIG,
+        &CREATEAUTOMLJOBINPUT_MEMBER_ROLE_ARN,
+        &CREATEAUTOMLJOBINPUT_MEMBER_GENERATE_CANDIDATE_DEFINITIONS_ONLY,
+        &CREATEAUTOMLJOBINPUT_MEMBER_TAGS,
+        &CREATEAUTOMLJOBINPUT_MEMBER_MODEL_DEPLOY_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAutoMLJobRequest");
+impl CreateAutoMlJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAUTOMLJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAutoMlJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_ml_job_name {
+            ser.write_string(&CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_list(
+                &CREATEAUTOMLJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AutoMlChannel::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&CREATEAUTOMLJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.problem_type {
+            ser.write_string(&CREATEAUTOMLJOBINPUT_MEMBER_PROBLEM_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.auto_ml_job_objective {
+            ser.write_struct(&CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_OBJECTIVE, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job_config {
+            ser.write_struct(&CREATEAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEAUTOMLJOBINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.generate_candidate_definitions_only {
+            ser.write_boolean(&CREATEAUTOMLJOBINPUT_MEMBER_GENERATE_CANDIDATE_DEFINITIONS_ONLY, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEAUTOMLJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.model_deploy_config {
+            ser.write_struct(&CREATEAUTOMLJOBINPUT_MEMBER_MODEL_DEPLOY_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_auto_ml_job::builders::CreateAutoMlJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAUTOMLJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoMlChannel::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::AutoMlOutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.problem_type = Some(crate::types::ProblemType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_objective = Some(crate::types::AutoMlJobObjective::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_config = Some(crate::types::AutoMlJobConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.generate_candidate_definitions_only = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_deploy_config = Some(crate::types::ModelDeployConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAutoMlJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.auto_ml_job_name = builder.auto_ml_job_name.or(Some(String::new()));
+        builder.input_data_config = builder.input_data_config.or(Some(Vec::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAutoMlJobInput {
     /// Creates a new builder-style object to manufacture [`CreateAutoMlJobInput`](crate::operation::create_auto_ml_job::CreateAutoMlJobInput).
     pub fn builder() -> crate::operation::create_auto_ml_job::builders::CreateAutoMlJobInputBuilder {

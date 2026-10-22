@@ -49,6 +49,207 @@ impl MetricDatapoint {
         self.unit.as_ref()
     }
 }
+static METRICDATAPOINT_MEMBER_AVERAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricDatapoint$average",
+        "com.amazonaws.lightsail",
+        "MetricDatapoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "average",
+    0,
+);
+static METRICDATAPOINT_MEMBER_MAXIMUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricDatapoint$maximum",
+        "com.amazonaws.lightsail",
+        "MetricDatapoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "maximum",
+    1,
+);
+static METRICDATAPOINT_MEMBER_MINIMUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricDatapoint$minimum",
+        "com.amazonaws.lightsail",
+        "MetricDatapoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "minimum",
+    2,
+);
+static METRICDATAPOINT_MEMBER_SAMPLE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricDatapoint$sampleCount",
+        "com.amazonaws.lightsail",
+        "MetricDatapoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "sampleCount",
+    3,
+);
+static METRICDATAPOINT_MEMBER_SUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricDatapoint$sum",
+        "com.amazonaws.lightsail",
+        "MetricDatapoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "sum",
+    4,
+);
+static METRICDATAPOINT_MEMBER_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricDatapoint$timestamp",
+        "com.amazonaws.lightsail",
+        "MetricDatapoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "timestamp",
+    5,
+);
+static METRICDATAPOINT_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricDatapoint$unit",
+        "com.amazonaws.lightsail",
+        "MetricDatapoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "unit",
+    6,
+);
+static METRICDATAPOINT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#MetricDatapoint", "com.amazonaws.lightsail", "MetricDatapoint"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &METRICDATAPOINT_MEMBER_AVERAGE,
+        &METRICDATAPOINT_MEMBER_MAXIMUM,
+        &METRICDATAPOINT_MEMBER_MINIMUM,
+        &METRICDATAPOINT_MEMBER_SAMPLE_COUNT,
+        &METRICDATAPOINT_MEMBER_SUM,
+        &METRICDATAPOINT_MEMBER_TIMESTAMP,
+        &METRICDATAPOINT_MEMBER_UNIT,
+    ],
+);
+impl MetricDatapoint {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METRICDATAPOINT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MetricDatapoint {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.average {
+            ser.write_double(&METRICDATAPOINT_MEMBER_AVERAGE, *val)?;
+        }
+        if let Some(ref val) = self.maximum {
+            ser.write_double(&METRICDATAPOINT_MEMBER_MAXIMUM, *val)?;
+        }
+        if let Some(ref val) = self.minimum {
+            ser.write_double(&METRICDATAPOINT_MEMBER_MINIMUM, *val)?;
+        }
+        if let Some(ref val) = self.sample_count {
+            ser.write_double(&METRICDATAPOINT_MEMBER_SAMPLE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.sum {
+            ser.write_double(&METRICDATAPOINT_MEMBER_SUM, *val)?;
+        }
+        if let Some(ref val) = self.timestamp {
+            ser.write_timestamp(&METRICDATAPOINT_MEMBER_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.unit {
+            ser.write_string(&METRICDATAPOINT_MEMBER_UNIT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MetricDatapointBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METRICDATAPOINT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.average = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.minimum = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sample_count = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sum = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unit = Some(crate::types::MetricUnit::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MetricDatapoint {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MetricDatapoint {
     /// Creates a new builder-style object to manufacture [`MetricDatapoint`](crate::types::MetricDatapoint).
     pub fn builder() -> crate::types::builders::MetricDatapointBuilder {

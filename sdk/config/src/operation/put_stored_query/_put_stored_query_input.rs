@@ -24,6 +24,127 @@ impl PutStoredQueryInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static PUTSTOREDQUERYINPUT_MEMBER_STORED_QUERY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutStoredQueryInput$StoredQuery",
+        "com.amazonaws.configservice.synthetic",
+        "PutStoredQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoredQuery",
+    0,
+);
+static PUTSTOREDQUERYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#TagsList$member", "com.amazonaws.configservice", "TagsList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTSTOREDQUERYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutStoredQueryInput$Tags",
+        "com.amazonaws.configservice.synthetic",
+        "PutStoredQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&PUTSTOREDQUERYINPUT_MEMBER_TAGS_MEMBER);
+static PUTSTOREDQUERYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutStoredQueryInput",
+        "com.amazonaws.configservice.synthetic",
+        "PutStoredQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUTSTOREDQUERYINPUT_MEMBER_STORED_QUERY, &PUTSTOREDQUERYINPUT_MEMBER_TAGS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutStoredQueryRequest");
+impl PutStoredQueryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTSTOREDQUERYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutStoredQueryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stored_query {
+            ser.write_struct(&PUTSTOREDQUERYINPUT_MEMBER_STORED_QUERY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &PUTSTOREDQUERYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_stored_query::builders::PutStoredQueryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTSTOREDQUERYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stored_query = Some(crate::types::StoredQuery::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutStoredQueryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutStoredQueryInput {
     /// Creates a new builder-style object to manufacture [`PutStoredQueryInput`](crate::operation::put_stored_query::PutStoredQueryInput).
     pub fn builder() -> crate::operation::put_stored_query::builders::PutStoredQueryInputBuilder {

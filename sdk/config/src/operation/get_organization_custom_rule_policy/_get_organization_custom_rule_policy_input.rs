@@ -12,6 +12,87 @@ impl GetOrganizationCustomRulePolicyInput {
         self.organization_config_rule_name.as_deref()
     }
 }
+static GETORGANIZATIONCUSTOMRULEPOLICYINPUT_MEMBER_ORGANIZATION_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetOrganizationCustomRulePolicyInput$OrganizationConfigRuleName",
+            "com.amazonaws.configservice.synthetic",
+            "GetOrganizationCustomRulePolicyInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "OrganizationConfigRuleName",
+        0,
+    );
+static GETORGANIZATIONCUSTOMRULEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetOrganizationCustomRulePolicyInput",
+        "com.amazonaws.configservice.synthetic",
+        "GetOrganizationCustomRulePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETORGANIZATIONCUSTOMRULEPOLICYINPUT_MEMBER_ORGANIZATION_CONFIG_RULE_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetOrganizationCustomRulePolicyRequest");
+impl GetOrganizationCustomRulePolicyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETORGANIZATIONCUSTOMRULEPOLICYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetOrganizationCustomRulePolicyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.organization_config_rule_name {
+            ser.write_string(&GETORGANIZATIONCUSTOMRULEPOLICYINPUT_MEMBER_ORGANIZATION_CONFIG_RULE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETORGANIZATIONCUSTOMRULEPOLICYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetOrganizationCustomRulePolicyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.organization_config_rule_name = builder.organization_config_rule_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetOrganizationCustomRulePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyInput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput).
     pub fn builder() -> crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyInputBuilder {

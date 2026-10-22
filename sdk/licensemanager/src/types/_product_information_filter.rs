@@ -29,6 +29,146 @@ impl ProductInformationFilter {
         self.product_information_filter_comparator.deref()
     }
 }
+static PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#ProductInformationFilter$ProductInformationFilterName",
+            "com.amazonaws.licensemanager",
+            "ProductInformationFilter",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ProductInformationFilterName",
+        0,
+    );
+static PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#StringList$member",
+            "com.amazonaws.licensemanager",
+            "StringList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#ProductInformationFilter$ProductInformationFilterValue",
+            "com.amazonaws.licensemanager",
+            "ProductInformationFilter",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ProductInformationFilterValue",
+        1,
+    )
+    .with_list_member(&PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_VALUE_MEMBER);
+static PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_COMPARATOR: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#ProductInformationFilter$ProductInformationFilterComparator",
+            "com.amazonaws.licensemanager",
+            "ProductInformationFilter",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ProductInformationFilterComparator",
+        2,
+    );
+static PRODUCTINFORMATIONFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ProductInformationFilter",
+        "com.amazonaws.licensemanager",
+        "ProductInformationFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_NAME,
+        &PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_VALUE,
+        &PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_COMPARATOR,
+    ],
+);
+impl ProductInformationFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRODUCTINFORMATIONFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProductInformationFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.product_information_filter_name;
+            ser.write_string(&PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.product_information_filter_value {
+            ser.write_list(
+                &PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_VALUE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.product_information_filter_comparator;
+            ser.write_string(&PRODUCTINFORMATIONFILTER_MEMBER_PRODUCT_INFORMATION_FILTER_COMPARATOR, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProductInformationFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRODUCTINFORMATIONFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.product_information_filter_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_information_filter_value = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.product_information_filter_comparator = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProductInformationFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.product_information_filter_name = builder.product_information_filter_name.or(Some(String::new()));
+        builder.product_information_filter_comparator = builder.product_information_filter_comparator.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ProductInformationFilter {
     /// Creates a new builder-style object to manufacture [`ProductInformationFilter`](crate::types::ProductInformationFilter).
     pub fn builder() -> crate::types::builders::ProductInformationFilterBuilder {

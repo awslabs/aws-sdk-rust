@@ -85,6 +85,8 @@ pub(crate) mod shape_list_storage_configurations;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_revoke_connection_token;
+
 pub(crate) mod shape_start_composition;
 
 pub(crate) mod shape_start_participant_replication;
@@ -180,6 +182,8 @@ pub(crate) mod shape_list_storage_configurations_input;
 pub(crate) mod shape_pending_verification;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_revoke_connection_token_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 

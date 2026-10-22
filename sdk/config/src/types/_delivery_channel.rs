@@ -47,6 +47,190 @@ impl DeliveryChannel {
         self.config_snapshot_delivery_properties.as_ref()
     }
 }
+static DELIVERYCHANNEL_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannel$name",
+        "com.amazonaws.configservice",
+        "DeliveryChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static DELIVERYCHANNEL_MEMBER_S3_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannel$s3BucketName",
+        "com.amazonaws.configservice",
+        "DeliveryChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3BucketName",
+    1,
+);
+static DELIVERYCHANNEL_MEMBER_S3_KEY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannel$s3KeyPrefix",
+        "com.amazonaws.configservice",
+        "DeliveryChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3KeyPrefix",
+    2,
+);
+static DELIVERYCHANNEL_MEMBER_S3_KMS_KEY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannel$s3KmsKeyArn",
+        "com.amazonaws.configservice",
+        "DeliveryChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3KmsKeyArn",
+    3,
+);
+static DELIVERYCHANNEL_MEMBER_SNS_TOPIC_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannel$snsTopicARN",
+        "com.amazonaws.configservice",
+        "DeliveryChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "snsTopicARN",
+    4,
+);
+static DELIVERYCHANNEL_MEMBER_CONFIG_SNAPSHOT_DELIVERY_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannel$configSnapshotDeliveryProperties",
+        "com.amazonaws.configservice",
+        "DeliveryChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "configSnapshotDeliveryProperties",
+    5,
+);
+static DELIVERYCHANNEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannel",
+        "com.amazonaws.configservice",
+        "DeliveryChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELIVERYCHANNEL_MEMBER_NAME,
+        &DELIVERYCHANNEL_MEMBER_S3_BUCKET_NAME,
+        &DELIVERYCHANNEL_MEMBER_S3_KEY_PREFIX,
+        &DELIVERYCHANNEL_MEMBER_S3_KMS_KEY_ARN,
+        &DELIVERYCHANNEL_MEMBER_SNS_TOPIC_ARN,
+        &DELIVERYCHANNEL_MEMBER_CONFIG_SNAPSHOT_DELIVERY_PROPERTIES,
+    ],
+);
+impl DeliveryChannel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELIVERYCHANNEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeliveryChannel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DELIVERYCHANNEL_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.s3_bucket_name {
+            ser.write_string(&DELIVERYCHANNEL_MEMBER_S3_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.s3_key_prefix {
+            ser.write_string(&DELIVERYCHANNEL_MEMBER_S3_KEY_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.s3_kms_key_arn {
+            ser.write_string(&DELIVERYCHANNEL_MEMBER_S3_KMS_KEY_ARN, val)?;
+        }
+        if let Some(ref val) = self.sns_topic_arn {
+            ser.write_string(&DELIVERYCHANNEL_MEMBER_SNS_TOPIC_ARN, val)?;
+        }
+        if let Some(ref val) = self.config_snapshot_delivery_properties {
+            ser.write_struct(&DELIVERYCHANNEL_MEMBER_CONFIG_SNAPSHOT_DELIVERY_PROPERTIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeliveryChannelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELIVERYCHANNEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_key_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_kms_key_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sns_topic_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_snapshot_delivery_properties = Some(crate::types::ConfigSnapshotDeliveryProperties::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeliveryChannel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeliveryChannel {
     /// Creates a new builder-style object to manufacture [`DeliveryChannel`](crate::types::DeliveryChannel).
     pub fn builder() -> crate::types::builders::DeliveryChannelBuilder {

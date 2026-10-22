@@ -6,6 +6,8 @@
 pub struct EvaluatorSummary {
     /// <p>The unique identifier of the evaluator.</p>
     pub evaluator_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the dimension that this summary covers. This field is set only for evaluators that use a multi-dimensional rating scale, where each dimension is summarized separately. For single-scale evaluators, this field is not set.</p>
+    pub evaluation_dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The aggregated statistics for this evaluator.</p>
     pub statistics: ::std::option::Option<crate::types::EvaluatorStatistics>,
     /// <p>The total number of sessions evaluated by this evaluator.</p>
@@ -17,6 +19,10 @@ impl EvaluatorSummary {
     /// <p>The unique identifier of the evaluator.</p>
     pub fn evaluator_id(&self) -> ::std::option::Option<&str> {
         self.evaluator_id.as_deref()
+    }
+    /// <p>The name of the dimension that this summary covers. This field is set only for evaluators that use a multi-dimensional rating scale, where each dimension is summarized separately. For single-scale evaluators, this field is not set.</p>
+    pub fn evaluation_dimension_name(&self) -> ::std::option::Option<&str> {
+        self.evaluation_dimension_name.as_deref()
     }
     /// <p>The aggregated statistics for this evaluator.</p>
     pub fn statistics(&self) -> ::std::option::Option<&crate::types::EvaluatorStatistics> {
@@ -43,6 +49,7 @@ impl EvaluatorSummary {
 #[non_exhaustive]
 pub struct EvaluatorSummaryBuilder {
     pub(crate) evaluator_id: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_dimension_name: ::std::option::Option<::std::string::String>,
     pub(crate) statistics: ::std::option::Option<crate::types::EvaluatorStatistics>,
     pub(crate) total_evaluated: ::std::option::Option<i32>,
     pub(crate) total_failed: ::std::option::Option<i32>,
@@ -61,6 +68,20 @@ impl EvaluatorSummaryBuilder {
     /// <p>The unique identifier of the evaluator.</p>
     pub fn get_evaluator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluator_id
+    }
+    /// <p>The name of the dimension that this summary covers. This field is set only for evaluators that use a multi-dimensional rating scale, where each dimension is summarized separately. For single-scale evaluators, this field is not set.</p>
+    pub fn evaluation_dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.evaluation_dimension_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the dimension that this summary covers. This field is set only for evaluators that use a multi-dimensional rating scale, where each dimension is summarized separately. For single-scale evaluators, this field is not set.</p>
+    pub fn set_evaluation_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_dimension_name = input;
+        self
+    }
+    /// <p>The name of the dimension that this summary covers. This field is set only for evaluators that use a multi-dimensional rating scale, where each dimension is summarized separately. For single-scale evaluators, this field is not set.</p>
+    pub fn get_evaluation_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_dimension_name
     }
     /// <p>The aggregated statistics for this evaluator.</p>
     pub fn statistics(mut self, input: crate::types::EvaluatorStatistics) -> Self {
@@ -108,6 +129,7 @@ impl EvaluatorSummaryBuilder {
     pub fn build(self) -> crate::types::EvaluatorSummary {
         crate::types::EvaluatorSummary {
             evaluator_id: self.evaluator_id,
+            evaluation_dimension_name: self.evaluation_dimension_name,
             statistics: self.statistics,
             total_evaluated: self.total_evaluated,
             total_failed: self.total_failed,

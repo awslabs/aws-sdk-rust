@@ -112,6 +112,348 @@ impl CreateAppBlockBuilderInput {
         self.disable_imdsv1
     }
 }
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$Name",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$Description",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$DisplayName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$key", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$value", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$Tags",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Tags",
+    3,
+)
+.with_map_members(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_TAGS_KEY, &CREATEAPPBLOCKBUILDERINPUT_MEMBER_TAGS_VALUE);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$Platform",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Platform",
+    4,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$InstanceType",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    5,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$VpcConfig",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    6,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_ENABLE_DEFAULT_INTERNET_ACCESS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$EnableDefaultInternetAccess",
+            "com.amazonaws.appstream.synthetic",
+            "CreateAppBlockBuilderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableDefaultInternetAccess",
+        7,
+    );
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_IAM_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$IamRoleArn",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IamRoleArn",
+    8,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_ACCESS_ENDPOINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AccessEndpointList$member",
+        "com.amazonaws.appstream",
+        "AccessEndpointList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_ACCESS_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$AccessEndpoints",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AccessEndpoints",
+    9,
+)
+.with_list_member(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_ACCESS_ENDPOINTS_MEMBER);
+static CREATEAPPBLOCKBUILDERINPUT_MEMBER_DISABLE_IMDSV1: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput$DisableIMDSV1",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DisableIMDSV1",
+    10,
+);
+static CREATEAPPBLOCKBUILDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_NAME,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_DESCRIPTION,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_DISPLAY_NAME,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_TAGS,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_PLATFORM,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_INSTANCE_TYPE,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_VPC_CONFIG,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_ENABLE_DEFAULT_INTERNET_ACCESS,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_IAM_ROLE_ARN,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_ACCESS_ENDPOINTS,
+        &CREATEAPPBLOCKBUILDERINPUT_MEMBER_DISABLE_IMDSV1,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAppBlockBuilderRequest");
+impl CreateAppBlockBuilderInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAPPBLOCKBUILDERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAppBlockBuilderInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &CREATEAPPBLOCKBUILDERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.platform {
+            ser.write_string(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_PLATFORM, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_INSTANCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.enable_default_internet_access {
+            ser.write_boolean(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_ENABLE_DEFAULT_INTERNET_ACCESS, *val)?;
+        }
+        if let Some(ref val) = self.iam_role_arn {
+            ser.write_string(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_IAM_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.access_endpoints {
+            ser.write_list(
+                &CREATEAPPBLOCKBUILDERINPUT_MEMBER_ACCESS_ENDPOINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AccessEndpoint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.disable_imdsv1 {
+            ser.write_boolean(&CREATEAPPBLOCKBUILDERINPUT_MEMBER_DISABLE_IMDSV1, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAPPBLOCKBUILDERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform = Some(crate::types::AppBlockBuilderPlatformType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_default_internet_access = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_endpoints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AccessEndpoint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disable_imdsv1 = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAppBlockBuilderInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.instance_type = builder.instance_type.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
     pub fn builder() -> crate::operation::create_app_block_builder::builders::CreateAppBlockBuilderInputBuilder {

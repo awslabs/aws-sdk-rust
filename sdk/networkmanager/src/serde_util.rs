@@ -89,6 +89,15 @@ pub(crate) fn core_network_policy_exception_correct_errors(
     builder
 }
 
+pub(crate) fn list_attachment_nat_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_attachment_nat_configurations::builders::ListAttachmentNatConfigurationsOutputBuilder,
+) -> crate::operation::list_attachment_nat_configurations::builders::ListAttachmentNatConfigurationsOutputBuilder {
+    if builder.attachment_nat_configurations.is_none() {
+        builder.attachment_nat_configurations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn core_network_policy_error_correct_errors(
     mut builder: crate::types::builders::CoreNetworkPolicyErrorBuilder,
 ) -> crate::types::builders::CoreNetworkPolicyErrorBuilder {

@@ -31,6 +31,148 @@ impl AggregationAuthorization {
         self.creation_time.as_ref()
     }
 }
+static AGGREGATIONAUTHORIZATION_MEMBER_AGGREGATION_AUTHORIZATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregationAuthorization$AggregationAuthorizationArn",
+        "com.amazonaws.configservice",
+        "AggregationAuthorization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AggregationAuthorizationArn",
+    0,
+);
+static AGGREGATIONAUTHORIZATION_MEMBER_AUTHORIZED_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregationAuthorization$AuthorizedAccountId",
+        "com.amazonaws.configservice",
+        "AggregationAuthorization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthorizedAccountId",
+    1,
+);
+static AGGREGATIONAUTHORIZATION_MEMBER_AUTHORIZED_AWS_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregationAuthorization$AuthorizedAwsRegion",
+        "com.amazonaws.configservice",
+        "AggregationAuthorization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthorizedAwsRegion",
+    2,
+);
+static AGGREGATIONAUTHORIZATION_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregationAuthorization$CreationTime",
+        "com.amazonaws.configservice",
+        "AggregationAuthorization",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static AGGREGATIONAUTHORIZATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregationAuthorization",
+        "com.amazonaws.configservice",
+        "AggregationAuthorization",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AGGREGATIONAUTHORIZATION_MEMBER_AGGREGATION_AUTHORIZATION_ARN,
+        &AGGREGATIONAUTHORIZATION_MEMBER_AUTHORIZED_ACCOUNT_ID,
+        &AGGREGATIONAUTHORIZATION_MEMBER_AUTHORIZED_AWS_REGION,
+        &AGGREGATIONAUTHORIZATION_MEMBER_CREATION_TIME,
+    ],
+);
+impl AggregationAuthorization {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AGGREGATIONAUTHORIZATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AggregationAuthorization {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.aggregation_authorization_arn {
+            ser.write_string(&AGGREGATIONAUTHORIZATION_MEMBER_AGGREGATION_AUTHORIZATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.authorized_account_id {
+            ser.write_string(&AGGREGATIONAUTHORIZATION_MEMBER_AUTHORIZED_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.authorized_aws_region {
+            ser.write_string(&AGGREGATIONAUTHORIZATION_MEMBER_AUTHORIZED_AWS_REGION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&AGGREGATIONAUTHORIZATION_MEMBER_CREATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AggregationAuthorizationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AGGREGATIONAUTHORIZATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aggregation_authorization_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authorized_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authorized_aws_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AggregationAuthorization {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AggregationAuthorization {
     /// Creates a new builder-style object to manufacture [`AggregationAuthorization`](crate::types::AggregationAuthorization).
     pub fn builder() -> crate::types::builders::AggregationAuthorizationBuilder {

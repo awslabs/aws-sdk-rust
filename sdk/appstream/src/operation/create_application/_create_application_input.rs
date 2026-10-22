@@ -76,6 +76,363 @@ impl CreateApplicationInput {
         self.tags.as_ref()
     }
 }
+static CREATEAPPLICATIONINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$Name",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$DisplayName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    1,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$Description",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_ICON_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$IconS3Location",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IconS3Location",
+    3,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_LAUNCH_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$LaunchPath",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LaunchPath",
+    4,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_WORKING_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$WorkingDirectory",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkingDirectory",
+    5,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_LAUNCH_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$LaunchParameters",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LaunchParameters",
+    6,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_PLATFORMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Platforms$member", "com.amazonaws.appstream", "Platforms"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_PLATFORMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$Platforms",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Platforms",
+    7,
+)
+.with_list_member(&CREATEAPPLICATIONINPUT_MEMBER_PLATFORMS_MEMBER);
+static CREATEAPPLICATIONINPUT_MEMBER_INSTANCE_FAMILIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#StringList$member", "com.amazonaws.appstream", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_INSTANCE_FAMILIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$InstanceFamilies",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceFamilies",
+    8,
+)
+.with_list_member(&CREATEAPPLICATIONINPUT_MEMBER_INSTANCE_FAMILIES_MEMBER);
+static CREATEAPPLICATIONINPUT_MEMBER_APP_BLOCK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$AppBlockArn",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppBlockArn",
+    9,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$key", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$value", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEAPPLICATIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput$Tags",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Tags",
+    10,
+)
+.with_map_members(&CREATEAPPLICATIONINPUT_MEMBER_TAGS_KEY, &CREATEAPPLICATIONINPUT_MEMBER_TAGS_VALUE);
+static CREATEAPPLICATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateApplicationInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAPPLICATIONINPUT_MEMBER_NAME,
+        &CREATEAPPLICATIONINPUT_MEMBER_DISPLAY_NAME,
+        &CREATEAPPLICATIONINPUT_MEMBER_DESCRIPTION,
+        &CREATEAPPLICATIONINPUT_MEMBER_ICON_S3_LOCATION,
+        &CREATEAPPLICATIONINPUT_MEMBER_LAUNCH_PATH,
+        &CREATEAPPLICATIONINPUT_MEMBER_WORKING_DIRECTORY,
+        &CREATEAPPLICATIONINPUT_MEMBER_LAUNCH_PARAMETERS,
+        &CREATEAPPLICATIONINPUT_MEMBER_PLATFORMS,
+        &CREATEAPPLICATIONINPUT_MEMBER_INSTANCE_FAMILIES,
+        &CREATEAPPLICATIONINPUT_MEMBER_APP_BLOCK_ARN,
+        &CREATEAPPLICATIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateApplicationRequest");
+impl CreateApplicationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAPPLICATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateApplicationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEAPPLICATIONINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&CREATEAPPLICATIONINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEAPPLICATIONINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.icon_s3_location {
+            ser.write_struct(&CREATEAPPLICATIONINPUT_MEMBER_ICON_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.launch_path {
+            ser.write_string(&CREATEAPPLICATIONINPUT_MEMBER_LAUNCH_PATH, val)?;
+        }
+        if let Some(ref val) = self.working_directory {
+            ser.write_string(&CREATEAPPLICATIONINPUT_MEMBER_WORKING_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.launch_parameters {
+            ser.write_string(&CREATEAPPLICATIONINPUT_MEMBER_LAUNCH_PARAMETERS, val)?;
+        }
+        if let Some(ref val) = self.platforms {
+            ser.write_list(
+                &CREATEAPPLICATIONINPUT_MEMBER_PLATFORMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_families {
+            ser.write_list(
+                &CREATEAPPLICATIONINPUT_MEMBER_INSTANCE_FAMILIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.app_block_arn {
+            ser.write_string(&CREATEAPPLICATIONINPUT_MEMBER_APP_BLOCK_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &CREATEAPPLICATIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_application::builders::CreateApplicationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAPPLICATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.icon_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.working_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_parameters = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platforms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlatformType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_families = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_block_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateApplicationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.launch_path = builder.launch_path.or(Some(String::new()));
+        builder.platforms = builder.platforms.or(Some(Vec::new()));
+        builder.instance_families = builder.instance_families.or(Some(Vec::new()));
+        builder.app_block_arn = builder.app_block_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
     pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder {

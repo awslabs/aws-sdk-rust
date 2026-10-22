@@ -97,6 +97,382 @@ impl DescribeEdgePackagingJobOutput {
         self.preset_deployment_output.as_ref()
     }
 }
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$EdgePackagingJobArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EdgePackagingJobArn",
+    0,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$EdgePackagingJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EdgePackagingJobName",
+    1,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_COMPILATION_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$CompilationJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompilationJobName",
+    2,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$ModelName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    3,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$ModelVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelVersion",
+    4,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    5,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    6,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_RESOURCE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$ResourceKey",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceKey",
+    7,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$EdgePackagingJobStatus",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeEdgePackagingJobOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EdgePackagingJobStatus",
+        8,
+    );
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$EdgePackagingJobStatusMessage",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeEdgePackagingJobOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EdgePackagingJobStatusMessage",
+        9,
+    );
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    10,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    11,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_ARTIFACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$ModelArtifact",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelArtifact",
+    12,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_SIGNATURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$ModelSignature",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelSignature",
+    13,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_PRESET_DEPLOYMENT_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput$PresetDeploymentOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PresetDeploymentOutput",
+    14,
+);
+static DESCRIBEEDGEPACKAGINGJOBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgePackagingJobOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgePackagingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_ARN,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_NAME,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_COMPILATION_JOB_NAME,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_NAME,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_VERSION,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_OUTPUT_CONFIG,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_RESOURCE_KEY,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_STATUS,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_STATUS_MESSAGE,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_ARTIFACT,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_SIGNATURE,
+        &DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_PRESET_DEPLOYMENT_OUTPUT,
+    ],
+)
+.with_original_name("DescribeEdgePackagingJobResponse");
+impl DescribeEdgePackagingJobOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEEDGEPACKAGINGJOBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeEdgePackagingJobOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.edge_packaging_job_arn {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.edge_packaging_job_name {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.compilation_job_name {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_COMPILATION_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_version {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_VERSION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.resource_key {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_RESOURCE_KEY, val)?;
+        }
+        if let Some(ref val) = self.edge_packaging_job_status {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.edge_packaging_job_status_message {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_EDGE_PACKAGING_JOB_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.model_artifact {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_ARTIFACT, val)?;
+        }
+        if let Some(ref val) = self.model_signature {
+            ser.write_string(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_MODEL_SIGNATURE, val)?;
+        }
+        if let Some(ref val) = self.preset_deployment_output {
+            ser.write_struct(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_MEMBER_PRESET_DEPLOYMENT_OUTPUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_edge_packaging_job::builders::DescribeEdgePackagingJobOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEEDGEPACKAGINGJOBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_packaging_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_packaging_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compilation_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::EdgeOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_packaging_job_status = Some(crate::types::EdgePackagingJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_packaging_job_status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_artifact = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_signature = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preset_deployment_output = Some(crate::types::EdgePresetDeploymentOutput::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeEdgePackagingJobOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeEdgePackagingJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

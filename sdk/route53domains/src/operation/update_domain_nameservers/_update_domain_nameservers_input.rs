@@ -39,6 +39,157 @@ impl ::std::fmt::Debug for UpdateDomainNameserversInput {
         formatter.finish()
     }
 }
+static UPDATEDOMAINNAMESERVERSINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainNameserversInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainNameserversInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static UPDATEDOMAINNAMESERVERSINPUT_MEMBER_FI_AUTH_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainNameserversInput$FIAuthKey",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainNameserversInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FIAuthKey",
+    1,
+);
+static UPDATEDOMAINNAMESERVERSINPUT_MEMBER_NAMESERVERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#NameserverList$member",
+        "com.amazonaws.route53domains",
+        "NameserverList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEDOMAINNAMESERVERSINPUT_MEMBER_NAMESERVERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainNameserversInput$Nameservers",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainNameserversInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Nameservers",
+    2,
+)
+.with_list_member(&UPDATEDOMAINNAMESERVERSINPUT_MEMBER_NAMESERVERS_MEMBER);
+static UPDATEDOMAINNAMESERVERSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainNameserversInput",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainNameserversInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDOMAINNAMESERVERSINPUT_MEMBER_DOMAIN_NAME,
+        &UPDATEDOMAINNAMESERVERSINPUT_MEMBER_FI_AUTH_KEY,
+        &UPDATEDOMAINNAMESERVERSINPUT_MEMBER_NAMESERVERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDomainNameserversRequest");
+impl UpdateDomainNameserversInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDOMAINNAMESERVERSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDomainNameserversInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&UPDATEDOMAINNAMESERVERSINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.fi_auth_key {
+            ser.write_string(&UPDATEDOMAINNAMESERVERSINPUT_MEMBER_FI_AUTH_KEY, val)?;
+        }
+        if let Some(ref val) = self.nameservers {
+            ser.write_list(
+                &UPDATEDOMAINNAMESERVERSINPUT_MEMBER_NAMESERVERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Nameserver::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDOMAINNAMESERVERSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fi_auth_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nameservers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Nameserver::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDomainNameserversInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.nameservers = builder.nameservers.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateDomainNameserversInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainNameserversInput`](crate::operation::update_domain_nameservers::UpdateDomainNameserversInput).
     pub fn builder() -> crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder {

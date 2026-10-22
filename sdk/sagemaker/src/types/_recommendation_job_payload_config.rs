@@ -21,6 +21,126 @@ impl RecommendationJobPayloadConfig {
         self.supported_content_types.as_deref().unwrap_or_default()
     }
 }
+static RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SAMPLE_PAYLOAD_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobPayloadConfig$SamplePayloadUrl",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobPayloadConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SamplePayloadUrl",
+    0,
+);
+static RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SUPPORTED_CONTENT_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#RecommendationJobSupportedContentTypes$member",
+            "com.amazonaws.sagemaker",
+            "RecommendationJobSupportedContentTypes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SUPPORTED_CONTENT_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobPayloadConfig$SupportedContentTypes",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobPayloadConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SupportedContentTypes",
+    1,
+)
+.with_list_member(&RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SUPPORTED_CONTENT_TYPES_MEMBER);
+static RECOMMENDATIONJOBPAYLOADCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobPayloadConfig",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobPayloadConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SAMPLE_PAYLOAD_URL,
+        &RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SUPPORTED_CONTENT_TYPES,
+    ],
+);
+impl RecommendationJobPayloadConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECOMMENDATIONJOBPAYLOADCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RecommendationJobPayloadConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sample_payload_url {
+            ser.write_string(&RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SAMPLE_PAYLOAD_URL, val)?;
+        }
+        if let Some(ref val) = self.supported_content_types {
+            ser.write_list(
+                &RECOMMENDATIONJOBPAYLOADCONFIG_MEMBER_SUPPORTED_CONTENT_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecommendationJobPayloadConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECOMMENDATIONJOBPAYLOADCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sample_payload_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_content_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RecommendationJobPayloadConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RecommendationJobPayloadConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobPayloadConfig`](crate::types::RecommendationJobPayloadConfig).
     pub fn builder() -> crate::types::builders::RecommendationJobPayloadConfigBuilder {

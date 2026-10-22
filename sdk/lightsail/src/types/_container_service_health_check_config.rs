@@ -43,6 +43,190 @@ impl ContainerServiceHealthCheckConfig {
         self.success_codes.as_deref()
     }
 }
+static CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_HEALTHY_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceHealthCheckConfig$healthyThreshold",
+        "com.amazonaws.lightsail",
+        "ContainerServiceHealthCheckConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "healthyThreshold",
+    0,
+);
+static CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_UNHEALTHY_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceHealthCheckConfig$unhealthyThreshold",
+        "com.amazonaws.lightsail",
+        "ContainerServiceHealthCheckConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "unhealthyThreshold",
+    1,
+);
+static CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_TIMEOUT_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceHealthCheckConfig$timeoutSeconds",
+        "com.amazonaws.lightsail",
+        "ContainerServiceHealthCheckConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "timeoutSeconds",
+    2,
+);
+static CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_INTERVAL_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceHealthCheckConfig$intervalSeconds",
+        "com.amazonaws.lightsail",
+        "ContainerServiceHealthCheckConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "intervalSeconds",
+    3,
+);
+static CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceHealthCheckConfig$path",
+        "com.amazonaws.lightsail",
+        "ContainerServiceHealthCheckConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "path",
+    4,
+);
+static CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_SUCCESS_CODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceHealthCheckConfig$successCodes",
+        "com.amazonaws.lightsail",
+        "ContainerServiceHealthCheckConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "successCodes",
+    5,
+);
+static CONTAINERSERVICEHEALTHCHECKCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceHealthCheckConfig",
+        "com.amazonaws.lightsail",
+        "ContainerServiceHealthCheckConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_HEALTHY_THRESHOLD,
+        &CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_UNHEALTHY_THRESHOLD,
+        &CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_TIMEOUT_SECONDS,
+        &CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_INTERVAL_SECONDS,
+        &CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_PATH,
+        &CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_SUCCESS_CODES,
+    ],
+);
+impl ContainerServiceHealthCheckConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERSERVICEHEALTHCHECKCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerServiceHealthCheckConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.healthy_threshold {
+            ser.write_integer(&CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_HEALTHY_THRESHOLD, *val)?;
+        }
+        if let Some(ref val) = self.unhealthy_threshold {
+            ser.write_integer(&CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_UNHEALTHY_THRESHOLD, *val)?;
+        }
+        if let Some(ref val) = self.timeout_seconds {
+            ser.write_integer(&CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_TIMEOUT_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.interval_seconds {
+            ser.write_integer(&CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_INTERVAL_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.success_codes {
+            ser.write_string(&CONTAINERSERVICEHEALTHCHECKCONFIG_MEMBER_SUCCESS_CODES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerServiceHealthCheckConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERSERVICEHEALTHCHECKCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.healthy_threshold = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unhealthy_threshold = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.interval_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.success_codes = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerServiceHealthCheckConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerServiceHealthCheckConfig {
     /// Creates a new builder-style object to manufacture [`ContainerServiceHealthCheckConfig`](crate::types::ContainerServiceHealthCheckConfig).
     pub fn builder() -> crate::types::builders::ContainerServiceHealthCheckConfigBuilder {

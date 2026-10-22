@@ -73,6 +73,297 @@ impl DescribeUserProfileOutput {
         self.user_settings.as_ref()
     }
 }
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$DomainId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    0,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_PROFILE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$UserProfileArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserProfileArn",
+    1,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_PROFILE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$UserProfileName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserProfileName",
+    2,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_UID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$HomeEfsFileSystemUid",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeEfsFileSystemUid",
+    3,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    5,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    7,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_SINGLE_SIGN_ON_USER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$SingleSignOnUserIdentifier",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeUserProfileOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SingleSignOnUserIdentifier",
+        8,
+    );
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_SINGLE_SIGN_ON_USER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$SingleSignOnUserValue",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SingleSignOnUserValue",
+    9,
+);
+static DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput$UserSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UserSettings",
+    10,
+);
+static DESCRIBEUSERPROFILEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_DOMAIN_ID,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_PROFILE_ARN,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_PROFILE_NAME,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_UID,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_STATUS,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_SINGLE_SIGN_ON_USER_IDENTIFIER,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_SINGLE_SIGN_ON_USER_VALUE,
+        &DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_SETTINGS,
+    ],
+)
+.with_original_name("DescribeUserProfileResponse");
+impl DescribeUserProfileOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEUSERPROFILEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeUserProfileOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.user_profile_arn {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_PROFILE_ARN, val)?;
+        }
+        if let Some(ref val) = self.user_profile_name {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_PROFILE_NAME, val)?;
+        }
+        if let Some(ref val) = self.home_efs_file_system_uid {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_UID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.single_sign_on_user_identifier {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_SINGLE_SIGN_ON_USER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.single_sign_on_user_value {
+            ser.write_string(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_SINGLE_SIGN_ON_USER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.user_settings {
+            ser.write_struct(&DESCRIBEUSERPROFILEOUTPUT_MEMBER_USER_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_user_profile::builders::DescribeUserProfileOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEUSERPROFILEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_profile_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_profile_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_efs_file_system_uid = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::UserProfileStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.single_sign_on_user_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.single_sign_on_user_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_settings = Some(crate::types::UserSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeUserProfileOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeUserProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

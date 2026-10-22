@@ -64,6 +64,219 @@ impl ::std::fmt::Debug for InviteOrganizationToTransferResponsibilityInput {
         formatter.finish()
     }
 }
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityInput$Type",
+        "com.amazonaws.organizations.synthetic",
+        "InviteOrganizationToTransferResponsibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityInput$Target",
+        "com.amazonaws.organizations.synthetic",
+        "InviteOrganizationToTransferResponsibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Target",
+    1,
+);
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_NOTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityInput$Notes",
+        "com.amazonaws.organizations.synthetic",
+        "InviteOrganizationToTransferResponsibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Notes",
+    2,
+);
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_START_TIMESTAMP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityInput$StartTimestamp",
+            "com.amazonaws.organizations.synthetic",
+            "InviteOrganizationToTransferResponsibilityInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "StartTimestamp",
+        3,
+    );
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_SOURCE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityInput$SourceName",
+            "com.amazonaws.organizations.synthetic",
+            "InviteOrganizationToTransferResponsibilityInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SourceName",
+        4,
+    );
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Tags$member", "com.amazonaws.organizations", "Tags"),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityInput$Tags",
+        "com.amazonaws.organizations.synthetic",
+        "InviteOrganizationToTransferResponsibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TAGS_MEMBER);
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityInput",
+        "com.amazonaws.organizations.synthetic",
+        "InviteOrganizationToTransferResponsibilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TYPE,
+        &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TARGET,
+        &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_NOTES,
+        &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_START_TIMESTAMP,
+        &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_SOURCE_NAME,
+        &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("InviteOrganizationToTransferResponsibilityRequest");
+impl InviteOrganizationToTransferResponsibilityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InviteOrganizationToTransferResponsibilityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.target {
+            ser.write_struct(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TARGET, val)?;
+        }
+        if let Some(ref val) = self.notes {
+            ser.write_string(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_NOTES, val)?;
+        }
+        if let Some(ref val) = self.start_timestamp {
+            ser.write_timestamp(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_START_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.source_name {
+            ser.write_string(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_SOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::invite_organization_to_transfer_responsibility::builders::InviteOrganizationToTransferResponsibilityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ResponsibilityTransferType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target = Some(crate::types::HandshakeParty::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notes = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InviteOrganizationToTransferResponsibilityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.start_timestamp = builder.start_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.source_name = builder.source_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl InviteOrganizationToTransferResponsibilityInput {
     /// Creates a new builder-style object to manufacture [`InviteOrganizationToTransferResponsibilityInput`](crate::operation::invite_organization_to_transfer_responsibility::InviteOrganizationToTransferResponsibilityInput).
     pub fn builder(

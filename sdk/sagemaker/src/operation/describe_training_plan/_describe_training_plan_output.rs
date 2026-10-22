@@ -141,6 +141,499 @@ impl DescribeTrainingPlanOutput {
         self.reserved_capacity_summaries.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_TRAINING_PLAN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$TrainingPlanArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingPlanArn",
+    0,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_TRAINING_PLAN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$TrainingPlanName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingPlanName",
+    1,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$StatusMessage",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    3,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_DURATION_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$DurationHours",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationHours",
+    4,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_DURATION_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$DurationMinutes",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationMinutes",
+    5,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$StartTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    6,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$EndTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    7,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_UPFRONT_FEE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$UpfrontFee",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UpfrontFee",
+    8,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_CURRENCY_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$CurrencyCode",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CurrencyCode",
+    9,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_TOTAL_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$TotalInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalInstanceCount",
+    10,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_AVAILABLE_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$AvailableInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AvailableInstanceCount",
+    11,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_IN_USE_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$InUseInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InUseInstanceCount",
+    12,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_UNHEALTHY_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$UnhealthyInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UnhealthyInstanceCount",
+    13,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_AVAILABLE_SPARE_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$AvailableSpareInstanceCount",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeTrainingPlanOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "AvailableSpareInstanceCount",
+        14,
+    );
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_TOTAL_ULTRA_SERVER_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$TotalUltraServerCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalUltraServerCount",
+    15,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_TARGET_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SageMakerResourceNames$member",
+        "com.amazonaws.sagemaker",
+        "SageMakerResourceNames",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_TARGET_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$TargetResources",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetResources",
+    16,
+)
+.with_list_member(&DESCRIBETRAININGPLANOUTPUT_MEMBER_TARGET_RESOURCES_MEMBER);
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_RESERVED_CAPACITY_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ReservedCapacitySummaries$member",
+            "com.amazonaws.sagemaker",
+            "ReservedCapacitySummaries",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBETRAININGPLANOUTPUT_MEMBER_RESERVED_CAPACITY_SUMMARIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput$ReservedCapacitySummaries",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ReservedCapacitySummaries",
+    17,
+)
+.with_list_member(&DESCRIBETRAININGPLANOUTPUT_MEMBER_RESERVED_CAPACITY_SUMMARIES_MEMBER);
+static DESCRIBETRAININGPLANOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeTrainingPlanOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeTrainingPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_TRAINING_PLAN_ARN,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_TRAINING_PLAN_NAME,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_STATUS,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_STATUS_MESSAGE,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_DURATION_HOURS,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_DURATION_MINUTES,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_START_TIME,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_END_TIME,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_UPFRONT_FEE,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_CURRENCY_CODE,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_TOTAL_INSTANCE_COUNT,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_AVAILABLE_INSTANCE_COUNT,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_IN_USE_INSTANCE_COUNT,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_UNHEALTHY_INSTANCE_COUNT,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_AVAILABLE_SPARE_INSTANCE_COUNT,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_TOTAL_ULTRA_SERVER_COUNT,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_TARGET_RESOURCES,
+        &DESCRIBETRAININGPLANOUTPUT_MEMBER_RESERVED_CAPACITY_SUMMARIES,
+    ],
+)
+.with_original_name("DescribeTrainingPlanResponse");
+impl DescribeTrainingPlanOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBETRAININGPLANOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeTrainingPlanOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_plan_arn {
+            ser.write_string(&DESCRIBETRAININGPLANOUTPUT_MEMBER_TRAINING_PLAN_ARN, val)?;
+        }
+        if let Some(ref val) = self.training_plan_name {
+            ser.write_string(&DESCRIBETRAININGPLANOUTPUT_MEMBER_TRAINING_PLAN_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBETRAININGPLANOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&DESCRIBETRAININGPLANOUTPUT_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.duration_hours {
+            ser.write_long(&DESCRIBETRAININGPLANOUTPUT_MEMBER_DURATION_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.duration_minutes {
+            ser.write_long(&DESCRIBETRAININGPLANOUTPUT_MEMBER_DURATION_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&DESCRIBETRAININGPLANOUTPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&DESCRIBETRAININGPLANOUTPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.upfront_fee {
+            ser.write_string(&DESCRIBETRAININGPLANOUTPUT_MEMBER_UPFRONT_FEE, val)?;
+        }
+        if let Some(ref val) = self.currency_code {
+            ser.write_string(&DESCRIBETRAININGPLANOUTPUT_MEMBER_CURRENCY_CODE, val)?;
+        }
+        if let Some(ref val) = self.total_instance_count {
+            ser.write_integer(&DESCRIBETRAININGPLANOUTPUT_MEMBER_TOTAL_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.available_instance_count {
+            ser.write_integer(&DESCRIBETRAININGPLANOUTPUT_MEMBER_AVAILABLE_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.in_use_instance_count {
+            ser.write_integer(&DESCRIBETRAININGPLANOUTPUT_MEMBER_IN_USE_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.unhealthy_instance_count {
+            ser.write_integer(&DESCRIBETRAININGPLANOUTPUT_MEMBER_UNHEALTHY_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.available_spare_instance_count {
+            ser.write_integer(&DESCRIBETRAININGPLANOUTPUT_MEMBER_AVAILABLE_SPARE_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.total_ultra_server_count {
+            ser.write_integer(&DESCRIBETRAININGPLANOUTPUT_MEMBER_TOTAL_ULTRA_SERVER_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.target_resources {
+            ser.write_list(
+                &DESCRIBETRAININGPLANOUTPUT_MEMBER_TARGET_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.reserved_capacity_summaries {
+            ser.write_list(
+                &DESCRIBETRAININGPLANOUTPUT_MEMBER_RESERVED_CAPACITY_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ReservedCapacitySummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_training_plan::builders::DescribeTrainingPlanOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBETRAININGPLANOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TrainingPlanStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_hours = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_minutes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.upfront_fee = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.currency_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.available_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.in_use_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unhealthy_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.available_spare_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_ultra_server_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SageMakerResourceName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reserved_capacity_summaries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ReservedCapacitySummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeTrainingPlanOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeTrainingPlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

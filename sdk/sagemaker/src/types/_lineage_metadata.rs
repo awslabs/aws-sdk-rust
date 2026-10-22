@@ -33,6 +33,236 @@ impl LineageMetadata {
         self.associations.as_deref().unwrap_or_default()
     }
 }
+static LINEAGEMETADATA_MEMBER_ACTION_ARNS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MapString2048$key", "com.amazonaws.sagemaker", "MapString2048"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static LINEAGEMETADATA_MEMBER_ACTION_ARNS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MapString2048$value", "com.amazonaws.sagemaker", "MapString2048"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static LINEAGEMETADATA_MEMBER_ACTION_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageMetadata$ActionArns",
+        "com.amazonaws.sagemaker",
+        "LineageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ActionArns",
+    0,
+)
+.with_map_members(&LINEAGEMETADATA_MEMBER_ACTION_ARNS_KEY, &LINEAGEMETADATA_MEMBER_ACTION_ARNS_VALUE);
+static LINEAGEMETADATA_MEMBER_ARTIFACT_ARNS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MapString2048$key", "com.amazonaws.sagemaker", "MapString2048"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static LINEAGEMETADATA_MEMBER_ARTIFACT_ARNS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MapString2048$value", "com.amazonaws.sagemaker", "MapString2048"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static LINEAGEMETADATA_MEMBER_ARTIFACT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageMetadata$ArtifactArns",
+        "com.amazonaws.sagemaker",
+        "LineageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ArtifactArns",
+    1,
+)
+.with_map_members(&LINEAGEMETADATA_MEMBER_ARTIFACT_ARNS_KEY, &LINEAGEMETADATA_MEMBER_ARTIFACT_ARNS_VALUE);
+static LINEAGEMETADATA_MEMBER_CONTEXT_ARNS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MapString2048$key", "com.amazonaws.sagemaker", "MapString2048"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static LINEAGEMETADATA_MEMBER_CONTEXT_ARNS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MapString2048$value", "com.amazonaws.sagemaker", "MapString2048"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static LINEAGEMETADATA_MEMBER_CONTEXT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageMetadata$ContextArns",
+        "com.amazonaws.sagemaker",
+        "LineageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ContextArns",
+    2,
+)
+.with_map_members(&LINEAGEMETADATA_MEMBER_CONTEXT_ARNS_KEY, &LINEAGEMETADATA_MEMBER_CONTEXT_ARNS_VALUE);
+static LINEAGEMETADATA_MEMBER_ASSOCIATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AssociationInfoList$member",
+        "com.amazonaws.sagemaker",
+        "AssociationInfoList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LINEAGEMETADATA_MEMBER_ASSOCIATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageMetadata$Associations",
+        "com.amazonaws.sagemaker",
+        "LineageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Associations",
+    3,
+)
+.with_list_member(&LINEAGEMETADATA_MEMBER_ASSOCIATIONS_MEMBER);
+static LINEAGEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#LineageMetadata", "com.amazonaws.sagemaker", "LineageMetadata"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LINEAGEMETADATA_MEMBER_ACTION_ARNS,
+        &LINEAGEMETADATA_MEMBER_ARTIFACT_ARNS,
+        &LINEAGEMETADATA_MEMBER_CONTEXT_ARNS,
+        &LINEAGEMETADATA_MEMBER_ASSOCIATIONS,
+    ],
+);
+impl LineageMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LINEAGEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LineageMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action_arns {
+            ser.write_map(
+                &LINEAGEMETADATA_MEMBER_ACTION_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.artifact_arns {
+            ser.write_map(
+                &LINEAGEMETADATA_MEMBER_ARTIFACT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.context_arns {
+            ser.write_map(
+                &LINEAGEMETADATA_MEMBER_CONTEXT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.associations {
+            ser.write_list(
+                &LINEAGEMETADATA_MEMBER_ASSOCIATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AssociationInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LineageMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LINEAGEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_arns = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_arns = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_arns = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.associations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AssociationInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LineageMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LineageMetadata {
     /// Creates a new builder-style object to manufacture [`LineageMetadata`](crate::types::LineageMetadata).
     pub fn builder() -> crate::types::builders::LineageMetadataBuilder {

@@ -23,6 +23,132 @@ impl SelectiveExecutionConfig {
         self.selected_steps.as_deref().unwrap_or_default()
     }
 }
+static SELECTIVEEXECUTIONCONFIG_MEMBER_SOURCE_PIPELINE_EXECUTION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SelectiveExecutionConfig$SourcePipelineExecutionArn",
+        "com.amazonaws.sagemaker",
+        "SelectiveExecutionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourcePipelineExecutionArn",
+    0,
+);
+static SELECTIVEEXECUTIONCONFIG_MEMBER_SELECTED_STEPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SelectedStepList$member",
+        "com.amazonaws.sagemaker",
+        "SelectedStepList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SELECTIVEEXECUTIONCONFIG_MEMBER_SELECTED_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SelectiveExecutionConfig$SelectedSteps",
+        "com.amazonaws.sagemaker",
+        "SelectiveExecutionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SelectedSteps",
+    1,
+)
+.with_list_member(&SELECTIVEEXECUTIONCONFIG_MEMBER_SELECTED_STEPS_MEMBER);
+static SELECTIVEEXECUTIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SelectiveExecutionConfig",
+        "com.amazonaws.sagemaker",
+        "SelectiveExecutionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SELECTIVEEXECUTIONCONFIG_MEMBER_SOURCE_PIPELINE_EXECUTION_ARN,
+        &SELECTIVEEXECUTIONCONFIG_MEMBER_SELECTED_STEPS,
+    ],
+);
+impl SelectiveExecutionConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SELECTIVEEXECUTIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SelectiveExecutionConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_pipeline_execution_arn {
+            ser.write_string(&SELECTIVEEXECUTIONCONFIG_MEMBER_SOURCE_PIPELINE_EXECUTION_ARN, val)?;
+        }
+        if let Some(ref val) = self.selected_steps {
+            ser.write_list(
+                &SELECTIVEEXECUTIONCONFIG_MEMBER_SELECTED_STEPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SelectedStep::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SelectiveExecutionConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SELECTIVEEXECUTIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_pipeline_execution_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selected_steps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SelectedStep::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SelectiveExecutionConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SelectiveExecutionConfig {
     /// Creates a new builder-style object to manufacture [`SelectiveExecutionConfig`](crate::types::SelectiveExecutionConfig).
     pub fn builder() -> crate::types::builders::SelectiveExecutionConfigBuilder {

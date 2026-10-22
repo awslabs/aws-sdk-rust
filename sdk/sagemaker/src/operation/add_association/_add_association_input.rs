@@ -44,6 +44,131 @@ impl AddAssociationInput {
         self.association_type.as_ref()
     }
 }
+static ADDASSOCIATIONINPUT_MEMBER_SOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AddAssociationInput$SourceArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "AddAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceArn",
+    0,
+);
+static ADDASSOCIATIONINPUT_MEMBER_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AddAssociationInput$DestinationArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "AddAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationArn",
+    1,
+);
+static ADDASSOCIATIONINPUT_MEMBER_ASSOCIATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AddAssociationInput$AssociationType",
+        "com.amazonaws.sagemaker.synthetic",
+        "AddAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationType",
+    2,
+);
+static ADDASSOCIATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AddAssociationInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "AddAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADDASSOCIATIONINPUT_MEMBER_SOURCE_ARN,
+        &ADDASSOCIATIONINPUT_MEMBER_DESTINATION_ARN,
+        &ADDASSOCIATIONINPUT_MEMBER_ASSOCIATION_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AddAssociationRequest");
+impl AddAssociationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADDASSOCIATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AddAssociationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_arn {
+            ser.write_string(&ADDASSOCIATIONINPUT_MEMBER_SOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.destination_arn {
+            ser.write_string(&ADDASSOCIATIONINPUT_MEMBER_DESTINATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.association_type {
+            ser.write_string(&ADDASSOCIATIONINPUT_MEMBER_ASSOCIATION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::add_association::builders::AddAssociationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADDASSOCIATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_type = Some(crate::types::AssociationEdgeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AddAssociationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.source_arn = builder.source_arn.or(Some(String::new()));
+        builder.destination_arn = builder.destination_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AddAssociationInput {
     /// Creates a new builder-style object to manufacture [`AddAssociationInput`](crate::operation::add_association::AddAssociationInput).
     pub fn builder() -> crate::operation::add_association::builders::AddAssociationInputBuilder {

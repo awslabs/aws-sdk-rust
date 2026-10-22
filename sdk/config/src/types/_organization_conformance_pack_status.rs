@@ -80,6 +80,165 @@ impl OrganizationConformancePackStatus {
         self.last_update_time.as_ref()
     }
 }
+static ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ORGANIZATION_CONFORMANCE_PACK_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationConformancePackStatus$OrganizationConformancePackName",
+            "com.amazonaws.configservice",
+            "OrganizationConformancePackStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "OrganizationConformancePackName",
+        0,
+    );
+static ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConformancePackStatus$Status",
+        "com.amazonaws.configservice",
+        "OrganizationConformancePackStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConformancePackStatus$ErrorCode",
+        "com.amazonaws.configservice",
+        "OrganizationConformancePackStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    2,
+);
+static ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConformancePackStatus$ErrorMessage",
+        "com.amazonaws.configservice",
+        "OrganizationConformancePackStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    3,
+);
+static ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_LAST_UPDATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConformancePackStatus$LastUpdateTime",
+        "com.amazonaws.configservice",
+        "OrganizationConformancePackStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdateTime",
+    4,
+);
+static ORGANIZATIONCONFORMANCEPACKSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConformancePackStatus",
+        "com.amazonaws.configservice",
+        "OrganizationConformancePackStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ORGANIZATION_CONFORMANCE_PACK_NAME,
+        &ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_STATUS,
+        &ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ERROR_CODE,
+        &ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ERROR_MESSAGE,
+        &ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_LAST_UPDATE_TIME,
+    ],
+);
+impl OrganizationConformancePackStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ORGANIZATIONCONFORMANCEPACKSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OrganizationConformancePackStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.organization_conformance_pack_name;
+            ser.write_string(&ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ORGANIZATION_CONFORMANCE_PACK_NAME, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.last_update_time {
+            ser.write_timestamp(&ORGANIZATIONCONFORMANCEPACKSTATUS_MEMBER_LAST_UPDATE_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OrganizationConformancePackStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ORGANIZATIONCONFORMANCEPACKSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.organization_conformance_pack_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.status = Some(crate::types::OrganizationResourceStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OrganizationConformancePackStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.organization_conformance_pack_name = builder.organization_conformance_pack_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl OrganizationConformancePackStatus {
     /// Creates a new builder-style object to manufacture [`OrganizationConformancePackStatus`](crate::types::OrganizationConformancePackStatus).
     pub fn builder() -> crate::types::builders::OrganizationConformancePackStatusBuilder {

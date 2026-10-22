@@ -40,6 +40,157 @@ impl InputOrigin {
         self.ip_address_type.as_ref()
     }
 }
+static INPUTORIGIN_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#InputOrigin$name", "com.amazonaws.lightsail", "InputOrigin"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static INPUTORIGIN_MEMBER_REGION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#InputOrigin$regionName", "com.amazonaws.lightsail", "InputOrigin"),
+    ::aws_smithy_schema::ShapeType::String,
+    "regionName",
+    1,
+);
+static INPUTORIGIN_MEMBER_PROTOCOL_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InputOrigin$protocolPolicy",
+        "com.amazonaws.lightsail",
+        "InputOrigin",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "protocolPolicy",
+    2,
+);
+static INPUTORIGIN_MEMBER_RESPONSE_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InputOrigin$responseTimeout",
+        "com.amazonaws.lightsail",
+        "InputOrigin",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "responseTimeout",
+    3,
+);
+static INPUTORIGIN_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InputOrigin$ipAddressType",
+        "com.amazonaws.lightsail",
+        "InputOrigin",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddressType",
+    4,
+);
+static INPUTORIGIN_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#InputOrigin", "com.amazonaws.lightsail", "InputOrigin"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INPUTORIGIN_MEMBER_NAME,
+        &INPUTORIGIN_MEMBER_REGION_NAME,
+        &INPUTORIGIN_MEMBER_PROTOCOL_POLICY,
+        &INPUTORIGIN_MEMBER_RESPONSE_TIMEOUT,
+        &INPUTORIGIN_MEMBER_IP_ADDRESS_TYPE,
+    ],
+);
+impl InputOrigin {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INPUTORIGIN_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InputOrigin {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&INPUTORIGIN_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.region_name {
+            ser.write_string(&INPUTORIGIN_MEMBER_REGION_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.protocol_policy {
+            ser.write_string(&INPUTORIGIN_MEMBER_PROTOCOL_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.response_timeout {
+            ser.write_integer(&INPUTORIGIN_MEMBER_RESPONSE_TIMEOUT, *val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&INPUTORIGIN_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InputOriginBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INPUTORIGIN_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region_name = Some(crate::types::RegionName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol_policy = Some(crate::types::OriginProtocolPolicyEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.response_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::OriginIpAddressTypeEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InputOrigin {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InputOrigin {
     /// Creates a new builder-style object to manufacture [`InputOrigin`](crate::types::InputOrigin).
     pub fn builder() -> crate::types::builders::InputOriginBuilder {

@@ -10,11 +10,11 @@ pub struct GetDurableExecutionOutput {
     pub durable_execution_name: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that was invoked to start this durable execution.</p>
     pub function_arn: ::std::string::String,
-    /// <p>The JSON input payload that was provided when the durable execution was started. For asynchronous invocations, this is limited to 256 KB. For synchronous invocations, this can be up to 6 MB.</p>
+    /// <p>The JSON input payload that you provided when you started the durable execution. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub input_payload: ::std::option::Option<::std::string::String>,
-    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. The result is limited to 256 KB.</p>
+    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub result: ::std::option::Option<::std::string::String>,
-    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 256 KB.</p>
+    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 1 MB.</p>
     pub error: ::std::option::Option<crate::types::ErrorObject>,
     /// <p>The date and time when the durable execution started, in Unix timestamp format.</p>
     pub start_timestamp: ::aws_smithy_types::DateTime,
@@ -48,15 +48,15 @@ impl GetDurableExecutionOutput {
         use std::ops::Deref;
         self.function_arn.deref()
     }
-    /// <p>The JSON input payload that was provided when the durable execution was started. For asynchronous invocations, this is limited to 256 KB. For synchronous invocations, this can be up to 6 MB.</p>
+    /// <p>The JSON input payload that you provided when you started the durable execution. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn input_payload(&self) -> ::std::option::Option<&str> {
         self.input_payload.as_deref()
     }
-    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. The result is limited to 256 KB.</p>
+    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn result(&self) -> ::std::option::Option<&str> {
         self.result.as_deref()
     }
-    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 256 KB.</p>
+    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorObject> {
         self.error.as_ref()
     }
@@ -186,45 +186,45 @@ impl GetDurableExecutionOutputBuilder {
     pub fn get_function_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_arn
     }
-    /// <p>The JSON input payload that was provided when the durable execution was started. For asynchronous invocations, this is limited to 256 KB. For synchronous invocations, this can be up to 6 MB.</p>
+    /// <p>The JSON input payload that you provided when you started the durable execution. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn input_payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input_payload = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON input payload that was provided when the durable execution was started. For asynchronous invocations, this is limited to 256 KB. For synchronous invocations, this can be up to 6 MB.</p>
+    /// <p>The JSON input payload that you provided when you started the durable execution. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn set_input_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_payload = input;
         self
     }
-    /// <p>The JSON input payload that was provided when the durable execution was started. For asynchronous invocations, this is limited to 256 KB. For synchronous invocations, this can be up to 6 MB.</p>
+    /// <p>The JSON input payload that you provided when you started the durable execution. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn get_input_payload(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_payload
     }
-    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. The result is limited to 256 KB.</p>
+    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.result = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. The result is limited to 256 KB.</p>
+    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result = input;
         self
     }
-    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. The result is limited to 256 KB.</p>
+    /// <p>The JSON result returned by the durable execution if it completed successfully. This field is only present when the execution status is <code>SUCCEEDED</code>. Asynchronous invocations support up to 1 MB, and synchronous invocations support up to 6 MB.</p>
     pub fn get_result(&self) -> &::std::option::Option<::std::string::String> {
         &self.result
     }
-    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 256 KB.</p>
+    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(mut self, input: crate::types::ErrorObject) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 256 KB.</p>
+    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 1 MB.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorObject>) -> Self {
         self.error = input;
         self
     }
-    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 256 KB.</p>
+    /// <p>Error information if the durable execution failed. This field is only present when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>. The combined size of all error fields is limited to 1 MB.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorObject> {
         &self.error
     }

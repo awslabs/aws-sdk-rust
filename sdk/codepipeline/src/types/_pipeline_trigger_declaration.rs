@@ -23,6 +23,103 @@ impl PipelineTriggerDeclaration {
         self.git_configuration.as_ref()
     }
 }
+static PIPELINETRIGGERDECLARATION_MEMBER_PROVIDER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineTriggerDeclaration$providerType",
+        "com.amazonaws.codepipeline",
+        "PipelineTriggerDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "providerType",
+    0,
+);
+static PIPELINETRIGGERDECLARATION_MEMBER_GIT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineTriggerDeclaration$gitConfiguration",
+        "com.amazonaws.codepipeline",
+        "PipelineTriggerDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gitConfiguration",
+    1,
+);
+static PIPELINETRIGGERDECLARATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineTriggerDeclaration",
+        "com.amazonaws.codepipeline",
+        "PipelineTriggerDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINETRIGGERDECLARATION_MEMBER_PROVIDER_TYPE,
+        &PIPELINETRIGGERDECLARATION_MEMBER_GIT_CONFIGURATION,
+    ],
+);
+impl PipelineTriggerDeclaration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINETRIGGERDECLARATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineTriggerDeclaration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.provider_type;
+            ser.write_string(&PIPELINETRIGGERDECLARATION_MEMBER_PROVIDER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.git_configuration {
+            ser.write_struct(&PIPELINETRIGGERDECLARATION_MEMBER_GIT_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineTriggerDeclarationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINETRIGGERDECLARATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.provider_type = Some(crate::types::PipelineTriggerProviderType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_configuration = Some(crate::types::GitConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineTriggerDeclaration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PipelineTriggerDeclaration {
     /// Creates a new builder-style object to manufacture [`PipelineTriggerDeclaration`](crate::types::PipelineTriggerDeclaration).
     pub fn builder() -> crate::types::builders::PipelineTriggerDeclarationBuilder {

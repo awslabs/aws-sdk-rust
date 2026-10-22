@@ -56,6 +56,205 @@ impl TranscriptFilter {
         self.targets.deref()
     }
 }
+static TRANSCRIPTFILTER_MEMBER_TRANSCRIPT_FILTER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptFilter$TranscriptFilterType",
+        "com.amazonaws.transcribe",
+        "TranscriptFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TranscriptFilterType",
+    0,
+);
+static TRANSCRIPTFILTER_MEMBER_ABSOLUTE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptFilter$AbsoluteTimeRange",
+        "com.amazonaws.transcribe",
+        "TranscriptFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AbsoluteTimeRange",
+    1,
+);
+static TRANSCRIPTFILTER_MEMBER_RELATIVE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptFilter$RelativeTimeRange",
+        "com.amazonaws.transcribe",
+        "TranscriptFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RelativeTimeRange",
+    2,
+);
+static TRANSCRIPTFILTER_MEMBER_PARTICIPANT_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptFilter$ParticipantRole",
+        "com.amazonaws.transcribe",
+        "TranscriptFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParticipantRole",
+    3,
+);
+static TRANSCRIPTFILTER_MEMBER_NEGATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptFilter$Negate",
+        "com.amazonaws.transcribe",
+        "TranscriptFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Negate",
+    4,
+);
+static TRANSCRIPTFILTER_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#StringTargetList$member",
+        "com.amazonaws.transcribe",
+        "StringTargetList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static TRANSCRIPTFILTER_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptFilter$Targets",
+        "com.amazonaws.transcribe",
+        "TranscriptFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    5,
+)
+.with_list_member(&TRANSCRIPTFILTER_MEMBER_TARGETS_MEMBER);
+static TRANSCRIPTFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptFilter",
+        "com.amazonaws.transcribe",
+        "TranscriptFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSCRIPTFILTER_MEMBER_TRANSCRIPT_FILTER_TYPE,
+        &TRANSCRIPTFILTER_MEMBER_ABSOLUTE_TIME_RANGE,
+        &TRANSCRIPTFILTER_MEMBER_RELATIVE_TIME_RANGE,
+        &TRANSCRIPTFILTER_MEMBER_PARTICIPANT_ROLE,
+        &TRANSCRIPTFILTER_MEMBER_NEGATE,
+        &TRANSCRIPTFILTER_MEMBER_TARGETS,
+    ],
+);
+impl TranscriptFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSCRIPTFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TranscriptFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.transcript_filter_type;
+            ser.write_string(&TRANSCRIPTFILTER_MEMBER_TRANSCRIPT_FILTER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.absolute_time_range {
+            ser.write_struct(&TRANSCRIPTFILTER_MEMBER_ABSOLUTE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.relative_time_range {
+            ser.write_struct(&TRANSCRIPTFILTER_MEMBER_RELATIVE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.participant_role {
+            ser.write_string(&TRANSCRIPTFILTER_MEMBER_PARTICIPANT_ROLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.negate {
+            ser.write_boolean(&TRANSCRIPTFILTER_MEMBER_NEGATE, *val)?;
+        }
+        {
+            let val = &self.targets;
+
+            ser.write_list(
+                &TRANSCRIPTFILTER_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TranscriptFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSCRIPTFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.transcript_filter_type = Some(crate::types::TranscriptFilterType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_time_range = Some(crate::types::AbsoluteTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relative_time_range = Some(crate::types::RelativeTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.participant_role = Some(crate::types::ParticipantRole::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.negate = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.targets = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TranscriptFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.targets = builder.targets.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TranscriptFilter {
     /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::types::TranscriptFilter).
     pub fn builder() -> crate::types::builders::TranscriptFilterBuilder {

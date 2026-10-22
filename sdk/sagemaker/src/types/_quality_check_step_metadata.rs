@@ -67,6 +67,277 @@ impl QualityCheckStepMetadata {
         self.register_new_baseline
     }
 }
+static QUALITYCHECKSTEPMETADATA_MEMBER_CHECK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata$CheckType",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CheckType",
+    0,
+);
+static QUALITYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_STATISTICS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#QualityCheckStepMetadata$BaselineUsedForDriftCheckStatistics",
+            "com.amazonaws.sagemaker",
+            "QualityCheckStepMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "BaselineUsedForDriftCheckStatistics",
+        1,
+    );
+static QUALITYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#QualityCheckStepMetadata$BaselineUsedForDriftCheckConstraints",
+            "com.amazonaws.sagemaker",
+            "QualityCheckStepMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "BaselineUsedForDriftCheckConstraints",
+        2,
+    );
+static QUALITYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_STATISTICS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata$CalculatedBaselineStatistics",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CalculatedBaselineStatistics",
+    3,
+);
+static QUALITYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#QualityCheckStepMetadata$CalculatedBaselineConstraints",
+            "com.amazonaws.sagemaker",
+            "QualityCheckStepMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CalculatedBaselineConstraints",
+        4,
+    );
+static QUALITYCHECKSTEPMETADATA_MEMBER_MODEL_PACKAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata$ModelPackageGroupName",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupName",
+    5,
+);
+static QUALITYCHECKSTEPMETADATA_MEMBER_VIOLATION_REPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata$ViolationReport",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ViolationReport",
+    6,
+);
+static QUALITYCHECKSTEPMETADATA_MEMBER_CHECK_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata$CheckJobArn",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CheckJobArn",
+    7,
+);
+static QUALITYCHECKSTEPMETADATA_MEMBER_SKIP_CHECK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata$SkipCheck",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "SkipCheck",
+    8,
+);
+static QUALITYCHECKSTEPMETADATA_MEMBER_REGISTER_NEW_BASELINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata$RegisterNewBaseline",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RegisterNewBaseline",
+    9,
+);
+static QUALITYCHECKSTEPMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QualityCheckStepMetadata",
+        "com.amazonaws.sagemaker",
+        "QualityCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUALITYCHECKSTEPMETADATA_MEMBER_CHECK_TYPE,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_STATISTICS,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_CONSTRAINTS,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_STATISTICS,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_CONSTRAINTS,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_MODEL_PACKAGE_GROUP_NAME,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_VIOLATION_REPORT,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_CHECK_JOB_ARN,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_SKIP_CHECK,
+        &QUALITYCHECKSTEPMETADATA_MEMBER_REGISTER_NEW_BASELINE,
+    ],
+);
+impl QualityCheckStepMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUALITYCHECKSTEPMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QualityCheckStepMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.check_type {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_CHECK_TYPE, val)?;
+        }
+        if let Some(ref val) = self.baseline_used_for_drift_check_statistics {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_STATISTICS, val)?;
+        }
+        if let Some(ref val) = self.baseline_used_for_drift_check_constraints {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_CONSTRAINTS, val)?;
+        }
+        if let Some(ref val) = self.calculated_baseline_statistics {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_STATISTICS, val)?;
+        }
+        if let Some(ref val) = self.calculated_baseline_constraints {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_CONSTRAINTS, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_name {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_MODEL_PACKAGE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.violation_report {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_VIOLATION_REPORT, val)?;
+        }
+        if let Some(ref val) = self.check_job_arn {
+            ser.write_string(&QUALITYCHECKSTEPMETADATA_MEMBER_CHECK_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.skip_check {
+            ser.write_boolean(&QUALITYCHECKSTEPMETADATA_MEMBER_SKIP_CHECK, *val)?;
+        }
+        if let Some(ref val) = self.register_new_baseline {
+            ser.write_boolean(&QUALITYCHECKSTEPMETADATA_MEMBER_REGISTER_NEW_BASELINE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QualityCheckStepMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUALITYCHECKSTEPMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.check_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.baseline_used_for_drift_check_statistics = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.baseline_used_for_drift_check_constraints = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.calculated_baseline_statistics = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.calculated_baseline_constraints = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.violation_report = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.check_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.skip_check = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.register_new_baseline = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QualityCheckStepMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QualityCheckStepMetadata {
     /// Creates a new builder-style object to manufacture [`QualityCheckStepMetadata`](crate::types::QualityCheckStepMetadata).
     pub fn builder() -> crate::types::builders::QualityCheckStepMetadataBuilder {

@@ -629,6 +629,35 @@ impl From<crate::operation::list_worker_configurations::ListWorkerConfigurations
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::pause_connector::PauseConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::pause_connector::PauseConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::pause_connector::PauseConnectorError> for Error {
+    fn from(err: crate::operation::pause_connector::PauseConnectorError) -> Self {
+        match err {
+            crate::operation::pause_connector::PauseConnectorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::pause_connector::PauseConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::pause_connector::PauseConnectorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::pause_connector::PauseConnectorError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::pause_connector::PauseConnectorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::pause_connector::PauseConnectorError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::pause_connector::PauseConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::pause_connector::PauseConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::pause_connector::PauseConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_connector::RestartConnectorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -658,6 +687,37 @@ impl From<crate::operation::restart_connector::RestartConnectorError> for Error 
             crate::operation::restart_connector::RestartConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::restart_connector::RestartConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::restart_connector::RestartConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_connector::ResumeConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_connector::ResumeConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::resume_connector::ResumeConnectorError> for Error {
+    fn from(err: crate::operation::resume_connector::ResumeConnectorError) -> Self {
+        match err {
+            crate::operation::resume_connector::ResumeConnectorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::resume_connector::ResumeConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::resume_connector::ResumeConnectorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::resume_connector::ResumeConnectorError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::resume_connector::ResumeConnectorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::resume_connector::ResumeConnectorError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::resume_connector::ResumeConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::resume_connector::ResumeConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::resume_connector::ResumeConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -37,6 +37,169 @@ impl DeploymentTarget {
         self.cloud_formation_target.as_ref()
     }
 }
+static DEPLOYMENTTARGET_MEMBER_DEPLOYMENT_TARGET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentTarget$deploymentTargetType",
+        "com.amazonaws.codedeploy",
+        "DeploymentTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentTargetType",
+    0,
+);
+static DEPLOYMENTTARGET_MEMBER_INSTANCE_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentTarget$instanceTarget",
+        "com.amazonaws.codedeploy",
+        "DeploymentTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "instanceTarget",
+    1,
+);
+static DEPLOYMENTTARGET_MEMBER_LAMBDA_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentTarget$lambdaTarget",
+        "com.amazonaws.codedeploy",
+        "DeploymentTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaTarget",
+    2,
+);
+static DEPLOYMENTTARGET_MEMBER_ECS_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentTarget$ecsTarget",
+        "com.amazonaws.codedeploy",
+        "DeploymentTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ecsTarget",
+    3,
+);
+static DEPLOYMENTTARGET_MEMBER_CLOUD_FORMATION_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentTarget$cloudFormationTarget",
+        "com.amazonaws.codedeploy",
+        "DeploymentTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cloudFormationTarget",
+    4,
+);
+static DEPLOYMENTTARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentTarget",
+        "com.amazonaws.codedeploy",
+        "DeploymentTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTTARGET_MEMBER_DEPLOYMENT_TARGET_TYPE,
+        &DEPLOYMENTTARGET_MEMBER_INSTANCE_TARGET,
+        &DEPLOYMENTTARGET_MEMBER_LAMBDA_TARGET,
+        &DEPLOYMENTTARGET_MEMBER_ECS_TARGET,
+        &DEPLOYMENTTARGET_MEMBER_CLOUD_FORMATION_TARGET,
+    ],
+);
+impl DeploymentTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTTARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_target_type {
+            ser.write_string(&DEPLOYMENTTARGET_MEMBER_DEPLOYMENT_TARGET_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_target {
+            ser.write_struct(&DEPLOYMENTTARGET_MEMBER_INSTANCE_TARGET, val)?;
+        }
+        if let Some(ref val) = self.lambda_target {
+            ser.write_struct(&DEPLOYMENTTARGET_MEMBER_LAMBDA_TARGET, val)?;
+        }
+        if let Some(ref val) = self.ecs_target {
+            ser.write_struct(&DEPLOYMENTTARGET_MEMBER_ECS_TARGET, val)?;
+        }
+        if let Some(ref val) = self.cloud_formation_target {
+            ser.write_struct(&DEPLOYMENTTARGET_MEMBER_CLOUD_FORMATION_TARGET, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTTARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_target_type = Some(crate::types::DeploymentTargetType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_target = Some(crate::types::InstanceTarget::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_target = Some(crate::types::LambdaTarget::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ecs_target = Some(crate::types::EcsTarget::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_formation_target = Some(crate::types::CloudFormationTarget::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentTarget {
     /// Creates a new builder-style object to manufacture [`DeploymentTarget`](crate::types::DeploymentTarget).
     pub fn builder() -> crate::types::builders::DeploymentTargetBuilder {

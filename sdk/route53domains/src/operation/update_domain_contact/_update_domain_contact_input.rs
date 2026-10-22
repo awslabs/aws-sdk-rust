@@ -55,6 +55,193 @@ impl ::std::fmt::Debug for UpdateDomainContactInput {
         formatter.finish()
     }
 }
+static UPDATEDOMAINCONTACTINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static UPDATEDOMAINCONTACTINPUT_MEMBER_ADMIN_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactInput$AdminContact",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdminContact",
+    1,
+);
+static UPDATEDOMAINCONTACTINPUT_MEMBER_REGISTRANT_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactInput$RegistrantContact",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RegistrantContact",
+    2,
+);
+static UPDATEDOMAINCONTACTINPUT_MEMBER_TECH_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactInput$TechContact",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TechContact",
+    3,
+);
+static UPDATEDOMAINCONTACTINPUT_MEMBER_CONSENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactInput$Consent",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Consent",
+    4,
+);
+static UPDATEDOMAINCONTACTINPUT_MEMBER_BILLING_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactInput$BillingContact",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BillingContact",
+    5,
+);
+static UPDATEDOMAINCONTACTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactInput",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDOMAINCONTACTINPUT_MEMBER_DOMAIN_NAME,
+        &UPDATEDOMAINCONTACTINPUT_MEMBER_ADMIN_CONTACT,
+        &UPDATEDOMAINCONTACTINPUT_MEMBER_REGISTRANT_CONTACT,
+        &UPDATEDOMAINCONTACTINPUT_MEMBER_TECH_CONTACT,
+        &UPDATEDOMAINCONTACTINPUT_MEMBER_CONSENT,
+        &UPDATEDOMAINCONTACTINPUT_MEMBER_BILLING_CONTACT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDomainContactRequest");
+impl UpdateDomainContactInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDOMAINCONTACTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDomainContactInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&UPDATEDOMAINCONTACTINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.admin_contact {
+            ser.write_struct(&UPDATEDOMAINCONTACTINPUT_MEMBER_ADMIN_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.registrant_contact {
+            ser.write_struct(&UPDATEDOMAINCONTACTINPUT_MEMBER_REGISTRANT_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.tech_contact {
+            ser.write_struct(&UPDATEDOMAINCONTACTINPUT_MEMBER_TECH_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.consent {
+            ser.write_struct(&UPDATEDOMAINCONTACTINPUT_MEMBER_CONSENT, val)?;
+        }
+        if let Some(ref val) = self.billing_contact {
+            ser.write_struct(&UPDATEDOMAINCONTACTINPUT_MEMBER_BILLING_CONTACT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDOMAINCONTACTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrant_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tech_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.consent = Some(crate::types::Consent::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billing_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDomainContactInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateDomainContactInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactInput`](crate::operation::update_domain_contact::UpdateDomainContactInput).
     pub fn builder() -> crate::operation::update_domain_contact::builders::UpdateDomainContactInputBuilder {

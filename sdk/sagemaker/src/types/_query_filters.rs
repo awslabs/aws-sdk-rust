@@ -53,6 +53,276 @@ impl QueryFilters {
         self.properties.as_ref()
     }
 }
+static QUERYFILTERS_MEMBER_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#QueryTypes$member", "com.amazonaws.sagemaker", "QueryTypes"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static QUERYFILTERS_MEMBER_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#QueryFilters$Types", "com.amazonaws.sagemaker", "QueryFilters"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Types",
+    0,
+)
+.with_list_member(&QUERYFILTERS_MEMBER_TYPES_MEMBER);
+static QUERYFILTERS_MEMBER_LINEAGE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryLineageTypes$member",
+        "com.amazonaws.sagemaker",
+        "QueryLineageTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static QUERYFILTERS_MEMBER_LINEAGE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryFilters$LineageTypes",
+        "com.amazonaws.sagemaker",
+        "QueryFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LineageTypes",
+    1,
+)
+.with_list_member(&QUERYFILTERS_MEMBER_LINEAGE_TYPES_MEMBER);
+static QUERYFILTERS_MEMBER_CREATED_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryFilters$CreatedBefore",
+        "com.amazonaws.sagemaker",
+        "QueryFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedBefore",
+    2,
+);
+static QUERYFILTERS_MEMBER_CREATED_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryFilters$CreatedAfter",
+        "com.amazonaws.sagemaker",
+        "QueryFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAfter",
+    3,
+);
+static QUERYFILTERS_MEMBER_MODIFIED_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryFilters$ModifiedBefore",
+        "com.amazonaws.sagemaker",
+        "QueryFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ModifiedBefore",
+    4,
+);
+static QUERYFILTERS_MEMBER_MODIFIED_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryFilters$ModifiedAfter",
+        "com.amazonaws.sagemaker",
+        "QueryFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ModifiedAfter",
+    5,
+);
+static QUERYFILTERS_MEMBER_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryProperties$key",
+        "com.amazonaws.sagemaker",
+        "QueryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static QUERYFILTERS_MEMBER_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryProperties$value",
+        "com.amazonaws.sagemaker",
+        "QueryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static QUERYFILTERS_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#QueryFilters$Properties",
+        "com.amazonaws.sagemaker",
+        "QueryFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Properties",
+    6,
+)
+.with_map_members(&QUERYFILTERS_MEMBER_PROPERTIES_KEY, &QUERYFILTERS_MEMBER_PROPERTIES_VALUE);
+static QUERYFILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#QueryFilters", "com.amazonaws.sagemaker", "QueryFilters"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYFILTERS_MEMBER_TYPES,
+        &QUERYFILTERS_MEMBER_LINEAGE_TYPES,
+        &QUERYFILTERS_MEMBER_CREATED_BEFORE,
+        &QUERYFILTERS_MEMBER_CREATED_AFTER,
+        &QUERYFILTERS_MEMBER_MODIFIED_BEFORE,
+        &QUERYFILTERS_MEMBER_MODIFIED_AFTER,
+        &QUERYFILTERS_MEMBER_PROPERTIES,
+    ],
+);
+impl QueryFilters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYFILTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryFilters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.types {
+            ser.write_list(
+                &QUERYFILTERS_MEMBER_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.lineage_types {
+            ser.write_list(
+                &QUERYFILTERS_MEMBER_LINEAGE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.created_before {
+            ser.write_timestamp(&QUERYFILTERS_MEMBER_CREATED_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.created_after {
+            ser.write_timestamp(&QUERYFILTERS_MEMBER_CREATED_AFTER, val)?;
+        }
+        if let Some(ref val) = self.modified_before {
+            ser.write_timestamp(&QUERYFILTERS_MEMBER_MODIFIED_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.modified_after {
+            ser.write_timestamp(&QUERYFILTERS_MEMBER_MODIFIED_AFTER, val)?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_map(
+                &QUERYFILTERS_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QueryFiltersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYFILTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lineage_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LineageType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modified_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.modified_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryFilters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QueryFilters {
     /// Creates a new builder-style object to manufacture [`QueryFilters`](crate::types::QueryFilters).
     pub fn builder() -> crate::types::builders::QueryFiltersBuilder {

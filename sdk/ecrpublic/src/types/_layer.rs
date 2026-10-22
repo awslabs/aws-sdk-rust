@@ -31,6 +31,128 @@ impl Layer {
         self.media_type.as_deref()
     }
 }
+static LAYER_MEMBER_LAYER_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Layer$layerDigest", "com.amazonaws.ecrpublic", "Layer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "layerDigest",
+    0,
+);
+static LAYER_MEMBER_LAYER_AVAILABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Layer$layerAvailability", "com.amazonaws.ecrpublic", "Layer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "layerAvailability",
+    1,
+);
+static LAYER_MEMBER_LAYER_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Layer$layerSize", "com.amazonaws.ecrpublic", "Layer"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "layerSize",
+    2,
+);
+static LAYER_MEMBER_MEDIA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Layer$mediaType", "com.amazonaws.ecrpublic", "Layer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "mediaType",
+    3,
+);
+static LAYER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Layer", "com.amazonaws.ecrpublic", "Layer"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LAYER_MEMBER_LAYER_DIGEST,
+        &LAYER_MEMBER_LAYER_AVAILABILITY,
+        &LAYER_MEMBER_LAYER_SIZE,
+        &LAYER_MEMBER_MEDIA_TYPE,
+    ],
+);
+impl Layer {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LAYER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Layer {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.layer_digest {
+            ser.write_string(&LAYER_MEMBER_LAYER_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.layer_availability {
+            ser.write_string(&LAYER_MEMBER_LAYER_AVAILABILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.layer_size {
+            ser.write_long(&LAYER_MEMBER_LAYER_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.media_type {
+            ser.write_string(&LAYER_MEMBER_MEDIA_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LayerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LAYER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.layer_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.layer_availability = Some(crate::types::LayerAvailability::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.layer_size = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Layer {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Layer {
     /// Creates a new builder-style object to manufacture [`Layer`](crate::types::Layer).
     pub fn builder() -> crate::types::builders::LayerBuilder {

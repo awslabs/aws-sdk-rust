@@ -18,6 +18,107 @@ impl AssociateFleetInput {
         self.stack_name.as_deref()
     }
 }
+static ASSOCIATEFLEETINPUT_MEMBER_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#AssociateFleetInput$FleetName",
+        "com.amazonaws.appstream.synthetic",
+        "AssociateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FleetName",
+    0,
+);
+static ASSOCIATEFLEETINPUT_MEMBER_STACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#AssociateFleetInput$StackName",
+        "com.amazonaws.appstream.synthetic",
+        "AssociateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StackName",
+    1,
+);
+static ASSOCIATEFLEETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#AssociateFleetInput",
+        "com.amazonaws.appstream.synthetic",
+        "AssociateFleetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ASSOCIATEFLEETINPUT_MEMBER_FLEET_NAME, &ASSOCIATEFLEETINPUT_MEMBER_STACK_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AssociateFleetRequest");
+impl AssociateFleetInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATEFLEETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociateFleetInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.fleet_name {
+            ser.write_string(&ASSOCIATEFLEETINPUT_MEMBER_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.stack_name {
+            ser.write_string(&ASSOCIATEFLEETINPUT_MEMBER_STACK_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::associate_fleet::builders::AssociateFleetInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATEFLEETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociateFleetInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.fleet_name = builder.fleet_name.or(Some(String::new()));
+        builder.stack_name = builder.stack_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssociateFleetInput {
     /// Creates a new builder-style object to manufacture [`AssociateFleetInput`](crate::operation::associate_fleet::AssociateFleetInput).
     pub fn builder() -> crate::operation::associate_fleet::builders::AssociateFleetInputBuilder {

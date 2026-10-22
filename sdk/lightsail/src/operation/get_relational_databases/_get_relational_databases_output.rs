@@ -25,6 +25,134 @@ impl GetRelationalDatabasesOutput {
         self.next_page_token.as_deref()
     }
 }
+static GETRELATIONALDATABASESOUTPUT_MEMBER_RELATIONAL_DATABASES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#RelationalDatabaseList$member",
+            "com.amazonaws.lightsail",
+            "RelationalDatabaseList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static GETRELATIONALDATABASESOUTPUT_MEMBER_RELATIONAL_DATABASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabasesOutput$relationalDatabases",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabasesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "relationalDatabases",
+    0,
+)
+.with_list_member(&GETRELATIONALDATABASESOUTPUT_MEMBER_RELATIONAL_DATABASES_MEMBER);
+static GETRELATIONALDATABASESOUTPUT_MEMBER_NEXT_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabasesOutput$nextPageToken",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabasesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextPageToken",
+    1,
+);
+static GETRELATIONALDATABASESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabasesOutput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabasesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRELATIONALDATABASESOUTPUT_MEMBER_RELATIONAL_DATABASES,
+        &GETRELATIONALDATABASESOUTPUT_MEMBER_NEXT_PAGE_TOKEN,
+    ],
+)
+.with_original_name("GetRelationalDatabasesResult");
+impl GetRelationalDatabasesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRELATIONALDATABASESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRelationalDatabasesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_databases {
+            ser.write_list(
+                &GETRELATIONALDATABASESOUTPUT_MEMBER_RELATIONAL_DATABASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RelationalDatabase::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_page_token {
+            ser.write_string(&GETRELATIONALDATABASESOUTPUT_MEMBER_NEXT_PAGE_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_relational_databases::builders::GetRelationalDatabasesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRELATIONALDATABASESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_databases = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RelationalDatabase::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRelationalDatabasesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetRelationalDatabasesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

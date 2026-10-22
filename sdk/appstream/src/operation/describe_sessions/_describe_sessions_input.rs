@@ -48,6 +48,215 @@ impl DescribeSessionsInput {
         self.instance_id.as_deref()
     }
 }
+static DESCRIBESESSIONSINPUT_MEMBER_STACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput$StackName",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StackName",
+    0,
+);
+static DESCRIBESESSIONSINPUT_MEMBER_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput$FleetName",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FleetName",
+    1,
+);
+static DESCRIBESESSIONSINPUT_MEMBER_USER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput$UserId",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserId",
+    2,
+);
+static DESCRIBESESSIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput$NextToken",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static DESCRIBESESSIONSINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput$Limit",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    4,
+);
+static DESCRIBESESSIONSINPUT_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput$AuthenticationType",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    5,
+);
+static DESCRIBESESSIONSINPUT_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput$InstanceId",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    6,
+);
+static DESCRIBESESSIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeSessionsInput",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeSessionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBESESSIONSINPUT_MEMBER_STACK_NAME,
+        &DESCRIBESESSIONSINPUT_MEMBER_FLEET_NAME,
+        &DESCRIBESESSIONSINPUT_MEMBER_USER_ID,
+        &DESCRIBESESSIONSINPUT_MEMBER_NEXT_TOKEN,
+        &DESCRIBESESSIONSINPUT_MEMBER_LIMIT,
+        &DESCRIBESESSIONSINPUT_MEMBER_AUTHENTICATION_TYPE,
+        &DESCRIBESESSIONSINPUT_MEMBER_INSTANCE_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeSessionsRequest");
+impl DescribeSessionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBESESSIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeSessionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stack_name {
+            ser.write_string(&DESCRIBESESSIONSINPUT_MEMBER_STACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.fleet_name {
+            ser.write_string(&DESCRIBESESSIONSINPUT_MEMBER_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.user_id {
+            ser.write_string(&DESCRIBESESSIONSINPUT_MEMBER_USER_ID, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBESESSIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&DESCRIBESESSIONSINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&DESCRIBESESSIONSINPUT_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&DESCRIBESESSIONSINPUT_MEMBER_INSTANCE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBESESSIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::AuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeSessionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.stack_name = builder.stack_name.or(Some(String::new()));
+        builder.fleet_name = builder.fleet_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeSessionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSessionsInput`](crate::operation::describe_sessions::DescribeSessionsInput).
     pub fn builder() -> crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder {

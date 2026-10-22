@@ -14,6 +14,105 @@ impl DescribeCachediScsiVolumesInput {
         self.volume_arns.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBECACHEDISCSIVOLUMESINPUT_MEMBER_VOLUME_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeARNs$member",
+        "com.amazonaws.storagegateway",
+        "VolumeARNs",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBECACHEDISCSIVOLUMESINPUT_MEMBER_VOLUME_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCachediSCSIVolumesInput$VolumeARNs",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCachediSCSIVolumesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "VolumeARNs",
+    0,
+)
+.with_list_member(&DESCRIBECACHEDISCSIVOLUMESINPUT_MEMBER_VOLUME_ARNS_MEMBER);
+static DESCRIBECACHEDISCSIVOLUMESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCachediSCSIVolumesInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCachediSCSIVolumesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBECACHEDISCSIVOLUMESINPUT_MEMBER_VOLUME_ARNS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeCachediSCSIVolumesInput");
+impl DescribeCachediScsiVolumesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECACHEDISCSIVOLUMESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCachediScsiVolumesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_arns {
+            ser.write_list(
+                &DESCRIBECACHEDISCSIVOLUMESINPUT_MEMBER_VOLUME_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECACHEDISCSIVOLUMESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCachediScsiVolumesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.volume_arns = builder.volume_arns.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeCachediScsiVolumesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCachediScsiVolumesInput`](crate::operation::describe_cachedi_scsi_volumes::DescribeCachediScsiVolumesInput).
     pub fn builder() -> crate::operation::describe_cachedi_scsi_volumes::builders::DescribeCachediScsiVolumesInputBuilder {

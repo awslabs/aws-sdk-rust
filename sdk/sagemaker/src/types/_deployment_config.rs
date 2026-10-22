@@ -25,6 +25,123 @@ impl DeploymentConfig {
         self.auto_rollback_configuration.as_ref()
     }
 }
+static DEPLOYMENTCONFIG_MEMBER_BLUE_GREEN_UPDATE_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentConfig$BlueGreenUpdatePolicy",
+        "com.amazonaws.sagemaker",
+        "DeploymentConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BlueGreenUpdatePolicy",
+    0,
+);
+static DEPLOYMENTCONFIG_MEMBER_ROLLING_UPDATE_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentConfig$RollingUpdatePolicy",
+        "com.amazonaws.sagemaker",
+        "DeploymentConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RollingUpdatePolicy",
+    1,
+);
+static DEPLOYMENTCONFIG_MEMBER_AUTO_ROLLBACK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentConfig$AutoRollbackConfiguration",
+        "com.amazonaws.sagemaker",
+        "DeploymentConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoRollbackConfiguration",
+    2,
+);
+static DEPLOYMENTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DeploymentConfig", "com.amazonaws.sagemaker", "DeploymentConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTCONFIG_MEMBER_BLUE_GREEN_UPDATE_POLICY,
+        &DEPLOYMENTCONFIG_MEMBER_ROLLING_UPDATE_POLICY,
+        &DEPLOYMENTCONFIG_MEMBER_AUTO_ROLLBACK_CONFIGURATION,
+    ],
+);
+impl DeploymentConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.blue_green_update_policy {
+            ser.write_struct(&DEPLOYMENTCONFIG_MEMBER_BLUE_GREEN_UPDATE_POLICY, val)?;
+        }
+        if let Some(ref val) = self.rolling_update_policy {
+            ser.write_struct(&DEPLOYMENTCONFIG_MEMBER_ROLLING_UPDATE_POLICY, val)?;
+        }
+        if let Some(ref val) = self.auto_rollback_configuration {
+            ser.write_struct(&DEPLOYMENTCONFIG_MEMBER_AUTO_ROLLBACK_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blue_green_update_policy = Some(crate::types::BlueGreenUpdatePolicy::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rolling_update_policy = Some(crate::types::RollingUpdatePolicy::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_rollback_configuration = Some(crate::types::AutoRollbackConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentConfig {
     /// Creates a new builder-style object to manufacture [`DeploymentConfig`](crate::types::DeploymentConfig).
     pub fn builder() -> crate::types::builders::DeploymentConfigBuilder {

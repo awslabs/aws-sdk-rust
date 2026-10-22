@@ -62,6 +62,151 @@ impl RecordingModeOverride {
         &self.recording_frequency
     }
 }
+static RECORDINGMODEOVERRIDE_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingModeOverride$description",
+        "com.amazonaws.configservice",
+        "RecordingModeOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    0,
+);
+static RECORDINGMODEOVERRIDE_MEMBER_RESOURCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingModeResourceTypesList$member",
+        "com.amazonaws.configservice",
+        "RecordingModeResourceTypesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RECORDINGMODEOVERRIDE_MEMBER_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingModeOverride$resourceTypes",
+        "com.amazonaws.configservice",
+        "RecordingModeOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourceTypes",
+    1,
+)
+.with_list_member(&RECORDINGMODEOVERRIDE_MEMBER_RESOURCE_TYPES_MEMBER);
+static RECORDINGMODEOVERRIDE_MEMBER_RECORDING_FREQUENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingModeOverride$recordingFrequency",
+        "com.amazonaws.configservice",
+        "RecordingModeOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "recordingFrequency",
+    2,
+);
+static RECORDINGMODEOVERRIDE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingModeOverride",
+        "com.amazonaws.configservice",
+        "RecordingModeOverride",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECORDINGMODEOVERRIDE_MEMBER_DESCRIPTION,
+        &RECORDINGMODEOVERRIDE_MEMBER_RESOURCE_TYPES,
+        &RECORDINGMODEOVERRIDE_MEMBER_RECORDING_FREQUENCY,
+    ],
+);
+impl RecordingModeOverride {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECORDINGMODEOVERRIDE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RecordingModeOverride {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&RECORDINGMODEOVERRIDE_MEMBER_DESCRIPTION, val)?;
+        }
+        {
+            let val = &self.resource_types;
+
+            ser.write_list(
+                &RECORDINGMODEOVERRIDE_MEMBER_RESOURCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.recording_frequency;
+            ser.write_string(&RECORDINGMODEOVERRIDE_MEMBER_RECORDING_FREQUENCY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecordingModeOverrideBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECORDINGMODEOVERRIDE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.resource_types = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::ResourceType::from(
+                                deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                            ));
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(2) => {
+                    self.recording_frequency = Some(crate::types::RecordingFrequency::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RecordingModeOverride {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_types = builder.resource_types.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RecordingModeOverride {
     /// Creates a new builder-style object to manufacture [`RecordingModeOverride`](crate::types::RecordingModeOverride).
     pub fn builder() -> crate::types::builders::RecordingModeOverrideBuilder {

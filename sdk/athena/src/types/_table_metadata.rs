@@ -54,6 +54,251 @@ impl TableMetadata {
         self.parameters.as_ref()
     }
 }
+static TABLEMETADATA_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TableMetadata$Name", "com.amazonaws.athena", "TableMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static TABLEMETADATA_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TableMetadata$CreateTime", "com.amazonaws.athena", "TableMetadata"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateTime",
+    1,
+);
+static TABLEMETADATA_MEMBER_LAST_ACCESS_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#TableMetadata$LastAccessTime",
+        "com.amazonaws.athena",
+        "TableMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastAccessTime",
+    2,
+);
+static TABLEMETADATA_MEMBER_TABLE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TableMetadata$TableType", "com.amazonaws.athena", "TableMetadata"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TableType",
+    3,
+);
+static TABLEMETADATA_MEMBER_COLUMNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnList$member", "com.amazonaws.athena", "ColumnList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TABLEMETADATA_MEMBER_COLUMNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TableMetadata$Columns", "com.amazonaws.athena", "TableMetadata"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Columns",
+    4,
+)
+.with_list_member(&TABLEMETADATA_MEMBER_COLUMNS_MEMBER);
+static TABLEMETADATA_MEMBER_PARTITION_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnList$member", "com.amazonaws.athena", "ColumnList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TABLEMETADATA_MEMBER_PARTITION_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#TableMetadata$PartitionKeys",
+        "com.amazonaws.athena",
+        "TableMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PartitionKeys",
+    5,
+)
+.with_list_member(&TABLEMETADATA_MEMBER_PARTITION_KEYS_MEMBER);
+static TABLEMETADATA_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$key", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TABLEMETADATA_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$value", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TABLEMETADATA_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TableMetadata$Parameters", "com.amazonaws.athena", "TableMetadata"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    6,
+)
+.with_map_members(&TABLEMETADATA_MEMBER_PARAMETERS_KEY, &TABLEMETADATA_MEMBER_PARAMETERS_VALUE);
+static TABLEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TableMetadata", "com.amazonaws.athena", "TableMetadata"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TABLEMETADATA_MEMBER_NAME,
+        &TABLEMETADATA_MEMBER_CREATE_TIME,
+        &TABLEMETADATA_MEMBER_LAST_ACCESS_TIME,
+        &TABLEMETADATA_MEMBER_TABLE_TYPE,
+        &TABLEMETADATA_MEMBER_COLUMNS,
+        &TABLEMETADATA_MEMBER_PARTITION_KEYS,
+        &TABLEMETADATA_MEMBER_PARAMETERS,
+    ],
+);
+impl TableMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TABLEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TableMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&TABLEMETADATA_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_timestamp(&TABLEMETADATA_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_access_time {
+            ser.write_timestamp(&TABLEMETADATA_MEMBER_LAST_ACCESS_TIME, val)?;
+        }
+        if let Some(ref val) = self.table_type {
+            ser.write_string(&TABLEMETADATA_MEMBER_TABLE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.columns {
+            ser.write_list(
+                &TABLEMETADATA_MEMBER_COLUMNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Column::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.partition_keys {
+            ser.write_list(
+                &TABLEMETADATA_MEMBER_PARTITION_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Column::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &TABLEMETADATA_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TableMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TABLEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_access_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.table_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.columns = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Column::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partition_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Column::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TableMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TableMetadata {
     /// Creates a new builder-style object to manufacture [`TableMetadata`](crate::types::TableMetadata).
     pub fn builder() -> crate::types::builders::TableMetadataBuilder {

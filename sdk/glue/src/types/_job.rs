@@ -90,14 +90,15 @@ pub struct Job {
     /// <p>R Worker Types (Memory-optimized workers):</p>
     /// <ul>
     /// <li>
-    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory)</p></li>
+    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory, 94GB disk)</p></li>
     /// <li>
-    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory)</p></li>
+    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory, 138GB disk)</p></li>
     /// <li>
-    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory)</p></li>
+    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory, 256GB disk)</p></li>
     /// <li>
-    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory)</p></li>
+    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory, 512GB disk)</p></li>
     /// </ul>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     pub number_of_workers: ::std::option::Option<i32>,
@@ -246,14 +247,15 @@ impl Job {
     /// <p>R Worker Types (Memory-optimized workers):</p>
     /// <ul>
     /// <li>
-    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory)</p></li>
+    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory, 94GB disk)</p></li>
     /// <li>
-    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory)</p></li>
+    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory, 138GB disk)</p></li>
     /// <li>
-    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory)</p></li>
+    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory, 256GB disk)</p></li>
     /// <li>
-    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory)</p></li>
+    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory, 512GB disk)</p></li>
     /// </ul>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn worker_type(&self) -> ::std::option::Option<&crate::types::WorkerType> {
         self.worker_type.as_ref()
     }
@@ -756,14 +758,15 @@ impl JobBuilder {
     /// <p>R Worker Types (Memory-optimized workers):</p>
     /// <ul>
     /// <li>
-    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory)</p></li>
+    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory, 94GB disk)</p></li>
     /// <li>
-    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory)</p></li>
+    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory, 138GB disk)</p></li>
     /// <li>
-    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory)</p></li>
+    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory, 256GB disk)</p></li>
     /// <li>
-    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory)</p></li>
+    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory, 512GB disk)</p></li>
     /// </ul>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn worker_type(mut self, input: crate::types::WorkerType) -> Self {
         self.worker_type = ::std::option::Option::Some(input);
         self
@@ -788,14 +791,15 @@ impl JobBuilder {
     /// <p>R Worker Types (Memory-optimized workers):</p>
     /// <ul>
     /// <li>
-    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory)</p></li>
+    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory, 94GB disk)</p></li>
     /// <li>
-    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory)</p></li>
+    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory, 138GB disk)</p></li>
     /// <li>
-    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory)</p></li>
+    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory, 256GB disk)</p></li>
     /// <li>
-    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory)</p></li>
+    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory, 512GB disk)</p></li>
     /// </ul>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
@@ -820,14 +824,15 @@ impl JobBuilder {
     /// <p>R Worker Types (Memory-optimized workers):</p>
     /// <ul>
     /// <li>
-    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory)</p></li>
+    /// <p>R.1X: 1 M-DPU (4 vCPUs, 32 GB memory, 94GB disk)</p></li>
     /// <li>
-    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory)</p></li>
+    /// <p>R.2X: 2 M-DPU (8 vCPUs, 64 GB memory, 138GB disk)</p></li>
     /// <li>
-    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory)</p></li>
+    /// <p>R.4X: 4 M-DPU (16 vCPUs, 128 GB memory, 256GB disk)</p></li>
     /// <li>
-    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory)</p></li>
+    /// <p>R.8X: 8 M-DPU (32 vCPUs, 256 GB memory, 512GB disk)</p></li>
     /// </ul>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
         &self.worker_type
     }

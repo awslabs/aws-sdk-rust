@@ -26,6 +26,152 @@ impl CreateRepositoryInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEREPOSITORYINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#CreateRepositoryInput$repositoryName",
+        "com.amazonaws.ecrpublic.synthetic",
+        "CreateRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static CREATEREPOSITORYINPUT_MEMBER_CATALOG_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#CreateRepositoryInput$catalogData",
+        "com.amazonaws.ecrpublic.synthetic",
+        "CreateRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "catalogData",
+    1,
+);
+static CREATEREPOSITORYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#TagList$member", "com.amazonaws.ecrpublic", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEREPOSITORYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#CreateRepositoryInput$tags",
+        "com.amazonaws.ecrpublic.synthetic",
+        "CreateRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    2,
+)
+.with_list_member(&CREATEREPOSITORYINPUT_MEMBER_TAGS_MEMBER);
+static CREATEREPOSITORYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#CreateRepositoryInput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "CreateRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEREPOSITORYINPUT_MEMBER_REPOSITORY_NAME,
+        &CREATEREPOSITORYINPUT_MEMBER_CATALOG_DATA,
+        &CREATEREPOSITORYINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateRepositoryRequest");
+impl CreateRepositoryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEREPOSITORYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateRepositoryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&CREATEREPOSITORYINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.catalog_data {
+            ser.write_struct(&CREATEREPOSITORYINPUT_MEMBER_CATALOG_DATA, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEREPOSITORYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEREPOSITORYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.catalog_data = Some(crate::types::RepositoryCatalogDataInput::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateRepositoryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
     pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder {

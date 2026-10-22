@@ -791,6 +791,12 @@ pub use crate::types::_real_time_contact_analysis_segment_type::RealTimeContactA
 
 pub use crate::types::_realtime_contact_analysis_segment::RealtimeContactAnalysisSegment;
 
+pub use crate::types::_replication_finding::ReplicationFinding;
+
+pub use crate::types::_approximate_drifted_resource_count::ApproximateDriftedResourceCount;
+
+pub use crate::types::_resource_replication_status::ResourceReplicationStatus;
+
 pub use crate::types::_routing_profile_manual_assignment_queue_config_summary::RoutingProfileManualAssignmentQueueConfigSummary;
 
 pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueueConfigSummary;
@@ -1686,6 +1692,8 @@ mod _answering_machine_detection_status;
 mod _application;
 
 mod _application_type;
+
+mod _approximate_drifted_resource_count;
 
 mod _artifact_status;
 
@@ -2819,9 +2827,13 @@ mod _rehydration_type;
 
 mod _replication_configuration;
 
+mod _replication_finding;
+
 mod _replication_status_summary;
 
 mod _required_field_info;
+
+mod _resource_replication_status;
 
 mod _resource_tags_search_criteria;
 

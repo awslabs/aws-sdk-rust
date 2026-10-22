@@ -43,6 +43,191 @@ impl ProcessingS3Input {
         self.s3_compression_type.as_ref()
     }
 }
+static PROCESSINGS3INPUT_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingS3Input$S3Uri",
+        "com.amazonaws.sagemaker",
+        "ProcessingS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    0,
+);
+static PROCESSINGS3INPUT_MEMBER_LOCAL_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingS3Input$LocalPath",
+        "com.amazonaws.sagemaker",
+        "ProcessingS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocalPath",
+    1,
+);
+static PROCESSINGS3INPUT_MEMBER_S3_DATA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingS3Input$S3DataType",
+        "com.amazonaws.sagemaker",
+        "ProcessingS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3DataType",
+    2,
+);
+static PROCESSINGS3INPUT_MEMBER_S3_INPUT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingS3Input$S3InputMode",
+        "com.amazonaws.sagemaker",
+        "ProcessingS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3InputMode",
+    3,
+);
+static PROCESSINGS3INPUT_MEMBER_S3_DATA_DISTRIBUTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingS3Input$S3DataDistributionType",
+        "com.amazonaws.sagemaker",
+        "ProcessingS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3DataDistributionType",
+    4,
+);
+static PROCESSINGS3INPUT_MEMBER_S3_COMPRESSION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingS3Input$S3CompressionType",
+        "com.amazonaws.sagemaker",
+        "ProcessingS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3CompressionType",
+    5,
+);
+static PROCESSINGS3INPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingS3Input",
+        "com.amazonaws.sagemaker",
+        "ProcessingS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROCESSINGS3INPUT_MEMBER_S3_URI,
+        &PROCESSINGS3INPUT_MEMBER_LOCAL_PATH,
+        &PROCESSINGS3INPUT_MEMBER_S3_DATA_TYPE,
+        &PROCESSINGS3INPUT_MEMBER_S3_INPUT_MODE,
+        &PROCESSINGS3INPUT_MEMBER_S3_DATA_DISTRIBUTION_TYPE,
+        &PROCESSINGS3INPUT_MEMBER_S3_COMPRESSION_TYPE,
+    ],
+);
+impl ProcessingS3Input {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROCESSINGS3INPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProcessingS3Input {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_uri {
+            ser.write_string(&PROCESSINGS3INPUT_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.local_path {
+            ser.write_string(&PROCESSINGS3INPUT_MEMBER_LOCAL_PATH, val)?;
+        }
+        if let Some(ref val) = self.s3_data_type {
+            ser.write_string(&PROCESSINGS3INPUT_MEMBER_S3_DATA_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_input_mode {
+            ser.write_string(&PROCESSINGS3INPUT_MEMBER_S3_INPUT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_data_distribution_type {
+            ser.write_string(&PROCESSINGS3INPUT_MEMBER_S3_DATA_DISTRIBUTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_compression_type {
+            ser.write_string(&PROCESSINGS3INPUT_MEMBER_S3_COMPRESSION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProcessingS3InputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROCESSINGS3INPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_data_type = Some(crate::types::ProcessingS3DataType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_input_mode = Some(crate::types::ProcessingS3InputMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_data_distribution_type =
+                            Some(crate::types::ProcessingS3DataDistributionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_compression_type = Some(crate::types::ProcessingS3CompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProcessingS3Input {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProcessingS3Input {
     /// Creates a new builder-style object to manufacture [`ProcessingS3Input`](crate::types::ProcessingS3Input).
     pub fn builder() -> crate::types::builders::ProcessingS3InputBuilder {

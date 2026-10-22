@@ -21,6 +21,133 @@ impl ListPreparedStatementsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_PREPARED_STATEMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#PreparedStatementsList$member",
+        "com.amazonaws.athena",
+        "PreparedStatementsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_PREPARED_STATEMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListPreparedStatementsOutput$PreparedStatements",
+        "com.amazonaws.athena.synthetic",
+        "ListPreparedStatementsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PreparedStatements",
+    0,
+)
+.with_list_member(&LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_PREPARED_STATEMENTS_MEMBER);
+static LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListPreparedStatementsOutput$NextToken",
+        "com.amazonaws.athena.synthetic",
+        "ListPreparedStatementsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTPREPAREDSTATEMENTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListPreparedStatementsOutput",
+        "com.amazonaws.athena.synthetic",
+        "ListPreparedStatementsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_PREPARED_STATEMENTS,
+        &LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListPreparedStatementsOutput");
+impl ListPreparedStatementsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTPREPAREDSTATEMENTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListPreparedStatementsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.prepared_statements {
+            ser.write_list(
+                &LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_PREPARED_STATEMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PreparedStatementSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTPREPAREDSTATEMENTSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_prepared_statements::builders::ListPreparedStatementsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTPREPAREDSTATEMENTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prepared_statements = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PreparedStatementSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListPreparedStatementsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListPreparedStatementsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

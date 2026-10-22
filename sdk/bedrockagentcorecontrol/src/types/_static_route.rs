@@ -6,6 +6,10 @@
 pub struct StaticRoute {
     /// <p>The name of the target to route requests to.</p>
     pub target_name: ::std::string::String,
+    /// <p>The model ID to send to the target. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub model: ::std::option::Option<::std::string::String>,
+    /// <p>The fallback configuration for this route. Supported only for inference targets.</p>
+    pub fallback: ::std::option::Option<crate::types::Fallback>,
 }
 impl StaticRoute {
     /// <p>The name of the target to route requests to.</p>
@@ -13,11 +17,21 @@ impl StaticRoute {
         use std::ops::Deref;
         self.target_name.deref()
     }
+    /// <p>The model ID to send to the target. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn model(&self) -> ::std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The fallback configuration for this route. Supported only for inference targets.</p>
+    pub fn fallback(&self) -> ::std::option::Option<&crate::types::Fallback> {
+        self.fallback.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StaticRoute {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StaticRoute");
         formatter.field("target_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("model", &self.model);
+        formatter.field("fallback", &self.fallback);
         formatter.finish()
     }
 }
@@ -33,6 +47,8 @@ impl StaticRoute {
 #[non_exhaustive]
 pub struct StaticRouteBuilder {
     pub(crate) target_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model: ::std::option::Option<::std::string::String>,
+    pub(crate) fallback: ::std::option::Option<crate::types::Fallback>,
 }
 impl StaticRouteBuilder {
     /// <p>The name of the target to route requests to.</p>
@@ -50,6 +66,34 @@ impl StaticRouteBuilder {
     pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_name
     }
+    /// <p>The model ID to send to the target. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The model ID to send to the target. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model = input;
+        self
+    }
+    /// <p>The model ID to send to the target. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
+    }
+    /// <p>The fallback configuration for this route. Supported only for inference targets.</p>
+    pub fn fallback(mut self, input: crate::types::Fallback) -> Self {
+        self.fallback = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The fallback configuration for this route. Supported only for inference targets.</p>
+    pub fn set_fallback(mut self, input: ::std::option::Option<crate::types::Fallback>) -> Self {
+        self.fallback = input;
+        self
+    }
+    /// <p>The fallback configuration for this route. Supported only for inference targets.</p>
+    pub fn get_fallback(&self) -> &::std::option::Option<crate::types::Fallback> {
+        &self.fallback
+    }
     /// Consumes the builder and constructs a [`StaticRoute`](crate::types::StaticRoute).
     /// This method will fail if any of the following fields are not set:
     /// - [`target_name`](crate::types::builders::StaticRouteBuilder::target_name)
@@ -61,6 +105,8 @@ impl StaticRouteBuilder {
                     "target_name was not specified but it is required when building StaticRoute",
                 )
             })?,
+            model: self.model,
+            fallback: self.fallback,
         })
     }
 }
@@ -68,6 +114,8 @@ impl ::std::fmt::Debug for StaticRouteBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StaticRouteBuilder");
         formatter.field("target_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("model", &self.model);
+        formatter.field("fallback", &self.fallback);
         formatter.finish()
     }
 }

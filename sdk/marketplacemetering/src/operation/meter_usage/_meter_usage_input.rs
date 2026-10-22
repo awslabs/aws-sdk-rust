@@ -56,6 +56,242 @@ impl MeterUsageInput {
         self.client_token.as_deref()
     }
 }
+static METERUSAGEINPUT_MEMBER_PRODUCT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$ProductCode",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductCode",
+    0,
+);
+static METERUSAGEINPUT_MEMBER_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$Timestamp",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Timestamp",
+    1,
+);
+static METERUSAGEINPUT_MEMBER_USAGE_DIMENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$UsageDimension",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UsageDimension",
+    2,
+);
+static METERUSAGEINPUT_MEMBER_USAGE_QUANTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$UsageQuantity",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UsageQuantity",
+    3,
+);
+static METERUSAGEINPUT_MEMBER_DRY_RUN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$DryRun",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DryRun",
+    4,
+);
+static METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageAllocations$member",
+        "com.amazonaws.marketplacemetering",
+        "UsageAllocations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$UsageAllocations",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UsageAllocations",
+    5,
+)
+.with_list_member(&METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS_MEMBER);
+static METERUSAGEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$ClientToken",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    6,
+);
+static METERUSAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &METERUSAGEINPUT_MEMBER_PRODUCT_CODE,
+        &METERUSAGEINPUT_MEMBER_TIMESTAMP,
+        &METERUSAGEINPUT_MEMBER_USAGE_DIMENSION,
+        &METERUSAGEINPUT_MEMBER_USAGE_QUANTITY,
+        &METERUSAGEINPUT_MEMBER_DRY_RUN,
+        &METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS,
+        &METERUSAGEINPUT_MEMBER_CLIENT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("MeterUsageRequest");
+impl MeterUsageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METERUSAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MeterUsageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.product_code {
+            ser.write_string(&METERUSAGEINPUT_MEMBER_PRODUCT_CODE, val)?;
+        }
+        if let Some(ref val) = self.timestamp {
+            ser.write_timestamp(&METERUSAGEINPUT_MEMBER_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.usage_dimension {
+            ser.write_string(&METERUSAGEINPUT_MEMBER_USAGE_DIMENSION, val)?;
+        }
+        if let Some(ref val) = self.usage_quantity {
+            ser.write_integer(&METERUSAGEINPUT_MEMBER_USAGE_QUANTITY, *val)?;
+        }
+        if let Some(ref val) = self.dry_run {
+            ser.write_boolean(&METERUSAGEINPUT_MEMBER_DRY_RUN, *val)?;
+        }
+        if let Some(ref val) = self.usage_allocations {
+            ser.write_list(
+                &METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UsageAllocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&METERUSAGEINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::meter_usage::builders::MeterUsageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METERUSAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_dimension = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_quantity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dry_run = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_allocations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UsageAllocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MeterUsageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.product_code = builder.product_code.or(Some(String::new()));
+        builder.timestamp = builder.timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.usage_dimension = builder.usage_dimension.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MeterUsageInput {
     /// Creates a new builder-style object to manufacture [`MeterUsageInput`](crate::operation::meter_usage::MeterUsageInput).
     pub fn builder() -> crate::operation::meter_usage::builders::MeterUsageInputBuilder {

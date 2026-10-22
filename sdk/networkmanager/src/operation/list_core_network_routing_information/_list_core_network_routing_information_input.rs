@@ -9,8 +9,31 @@ pub struct ListCoreNetworkRoutingInformationInput {
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The edge location to filter routing information by.</p>
     pub edge_location: ::std::option::Option<::std::string::String>,
-    /// <p>Filters to apply based on next hop information.</p>
+    /// <p>Filters to apply based on next hop information. Each filter value must exactly match the corresponding next hop value. Values for the same filter are joined with OR, and different filters are joined with AND. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>core-network-attachment-id</code>: The ID of the core network attachment for the next hop, for example <code>attachment-0123456789abcdef0</code>.</p></li>
+    /// <li>
+    /// <p><code>segment-name</code>: The name of the segment for the next hop.</p></li>
+    /// <li>
+    /// <p><code>edge-location</code>: The edge location for the next hop, for example <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code>: The ID of the resource for the next hop.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code>: The type of resource for the next hop. The possible values are <code>vpc</code>, <code>vpn</code>, <code>connect-peer</code>, <code>direct-connect-gateway</code>, <code>transit-gateway-route-table</code>, <code>attachment</code>, and <code>blackhole</code>.</p></li>
+    /// <li>
+    /// <p><code>ip-address</code>: The IP address of the next hop. For a Site-to-Site VPN next hop, this is the outside IP address of the AWS side of the VPN tunnel. For a Connect peer next hop, this is the core network BGP address of the Connect peer. The value must be a single IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>You can specify up to 10 filter values in total across <code>NextHopFilters</code> and the other match parameters in the request. Each filter value can be up to 256 characters.</p>
     pub next_hop_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    /// <p>Exact prefix values to match when filtering routing information.</p>
+    pub exact_prefix_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Filters routing information based on the longest prefix that matches each provided IP address.</p>
+    pub longest_prefix_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Prefix values to filter routing information whose prefix is a subnet of the prefixes provided.</p>
+    pub subnet_of_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Prefix values to filter routing information whose prefix is a supernet of the prefixes provided.</p>
+    pub supernet_of_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Local preference values to match when filtering routing information.</p>
     pub local_preference_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Exact AS path values to match when filtering routing information.</p>
@@ -37,11 +60,50 @@ impl ListCoreNetworkRoutingInformationInput {
     pub fn edge_location(&self) -> ::std::option::Option<&str> {
         self.edge_location.as_deref()
     }
-    /// <p>Filters to apply based on next hop information.</p>
+    /// <p>Filters to apply based on next hop information. Each filter value must exactly match the corresponding next hop value. Values for the same filter are joined with OR, and different filters are joined with AND. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>core-network-attachment-id</code>: The ID of the core network attachment for the next hop, for example <code>attachment-0123456789abcdef0</code>.</p></li>
+    /// <li>
+    /// <p><code>segment-name</code>: The name of the segment for the next hop.</p></li>
+    /// <li>
+    /// <p><code>edge-location</code>: The edge location for the next hop, for example <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code>: The ID of the resource for the next hop.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code>: The type of resource for the next hop. The possible values are <code>vpc</code>, <code>vpn</code>, <code>connect-peer</code>, <code>direct-connect-gateway</code>, <code>transit-gateway-route-table</code>, <code>attachment</code>, and <code>blackhole</code>.</p></li>
+    /// <li>
+    /// <p><code>ip-address</code>: The IP address of the next hop. For a Site-to-Site VPN next hop, this is the outside IP address of the AWS side of the VPN tunnel. For a Connect peer next hop, this is the core network BGP address of the Connect peer. The value must be a single IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>You can specify up to 10 filter values in total across <code>NextHopFilters</code> and the other match parameters in the request. Each filter value can be up to 256 characters.</p>
     pub fn next_hop_filters(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.next_hop_filters.as_ref()
+    }
+    /// <p>Exact prefix values to match when filtering routing information.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exact_prefix_matches.is_none()`.
+    pub fn exact_prefix_matches(&self) -> &[::std::string::String] {
+        self.exact_prefix_matches.as_deref().unwrap_or_default()
+    }
+    /// <p>Filters routing information based on the longest prefix that matches each provided IP address.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.longest_prefix_matches.is_none()`.
+    pub fn longest_prefix_matches(&self) -> &[::std::string::String] {
+        self.longest_prefix_matches.as_deref().unwrap_or_default()
+    }
+    /// <p>Prefix values to filter routing information whose prefix is a subnet of the prefixes provided.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subnet_of_matches.is_none()`.
+    pub fn subnet_of_matches(&self) -> &[::std::string::String] {
+        self.subnet_of_matches.as_deref().unwrap_or_default()
+    }
+    /// <p>Prefix values to filter routing information whose prefix is a supernet of the prefixes provided.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supernet_of_matches.is_none()`.
+    pub fn supernet_of_matches(&self) -> &[::std::string::String] {
+        self.supernet_of_matches.as_deref().unwrap_or_default()
     }
     /// <p>Local preference values to match when filtering routing information.</p>
     ///
@@ -91,6 +153,10 @@ pub struct ListCoreNetworkRoutingInformationInputBuilder {
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
     pub(crate) edge_location: ::std::option::Option<::std::string::String>,
     pub(crate) next_hop_filters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) exact_prefix_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) longest_prefix_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_of_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) supernet_of_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) local_preference_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) exact_as_path_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) med_matches: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -148,14 +214,44 @@ impl ListCoreNetworkRoutingInformationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_next_hop_filters`](Self::set_next_hop_filters).
     ///
-    /// <p>Filters to apply based on next hop information.</p>
+    /// <p>Filters to apply based on next hop information. Each filter value must exactly match the corresponding next hop value. Values for the same filter are joined with OR, and different filters are joined with AND. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>core-network-attachment-id</code>: The ID of the core network attachment for the next hop, for example <code>attachment-0123456789abcdef0</code>.</p></li>
+    /// <li>
+    /// <p><code>segment-name</code>: The name of the segment for the next hop.</p></li>
+    /// <li>
+    /// <p><code>edge-location</code>: The edge location for the next hop, for example <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code>: The ID of the resource for the next hop.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code>: The type of resource for the next hop. The possible values are <code>vpc</code>, <code>vpn</code>, <code>connect-peer</code>, <code>direct-connect-gateway</code>, <code>transit-gateway-route-table</code>, <code>attachment</code>, and <code>blackhole</code>.</p></li>
+    /// <li>
+    /// <p><code>ip-address</code>: The IP address of the next hop. For a Site-to-Site VPN next hop, this is the outside IP address of the AWS side of the VPN tunnel. For a Connect peer next hop, this is the core network BGP address of the Connect peer. The value must be a single IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>You can specify up to 10 filter values in total across <code>NextHopFilters</code> and the other match parameters in the request. Each filter value can be up to 256 characters.</p>
     pub fn next_hop_filters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.next_hop_filters.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.next_hop_filters = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Filters to apply based on next hop information.</p>
+    /// <p>Filters to apply based on next hop information. Each filter value must exactly match the corresponding next hop value. Values for the same filter are joined with OR, and different filters are joined with AND. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>core-network-attachment-id</code>: The ID of the core network attachment for the next hop, for example <code>attachment-0123456789abcdef0</code>.</p></li>
+    /// <li>
+    /// <p><code>segment-name</code>: The name of the segment for the next hop.</p></li>
+    /// <li>
+    /// <p><code>edge-location</code>: The edge location for the next hop, for example <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code>: The ID of the resource for the next hop.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code>: The type of resource for the next hop. The possible values are <code>vpc</code>, <code>vpn</code>, <code>connect-peer</code>, <code>direct-connect-gateway</code>, <code>transit-gateway-route-table</code>, <code>attachment</code>, and <code>blackhole</code>.</p></li>
+    /// <li>
+    /// <p><code>ip-address</code>: The IP address of the next hop. For a Site-to-Site VPN next hop, this is the outside IP address of the AWS side of the VPN tunnel. For a Connect peer next hop, this is the core network BGP address of the Connect peer. The value must be a single IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>You can specify up to 10 filter values in total across <code>NextHopFilters</code> and the other match parameters in the request. Each filter value can be up to 256 characters.</p>
     pub fn set_next_hop_filters(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -163,11 +259,106 @@ impl ListCoreNetworkRoutingInformationInputBuilder {
         self.next_hop_filters = input;
         self
     }
-    /// <p>Filters to apply based on next hop information.</p>
+    /// <p>Filters to apply based on next hop information. Each filter value must exactly match the corresponding next hop value. Values for the same filter are joined with OR, and different filters are joined with AND. The following filters are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>core-network-attachment-id</code>: The ID of the core network attachment for the next hop, for example <code>attachment-0123456789abcdef0</code>.</p></li>
+    /// <li>
+    /// <p><code>segment-name</code>: The name of the segment for the next hop.</p></li>
+    /// <li>
+    /// <p><code>edge-location</code>: The edge location for the next hop, for example <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p><code>resource-id</code>: The ID of the resource for the next hop.</p></li>
+    /// <li>
+    /// <p><code>resource-type</code>: The type of resource for the next hop. The possible values are <code>vpc</code>, <code>vpn</code>, <code>connect-peer</code>, <code>direct-connect-gateway</code>, <code>transit-gateway-route-table</code>, <code>attachment</code>, and <code>blackhole</code>.</p></li>
+    /// <li>
+    /// <p><code>ip-address</code>: The IP address of the next hop. For a Site-to-Site VPN next hop, this is the outside IP address of the AWS side of the VPN tunnel. For a Connect peer next hop, this is the core network BGP address of the Connect peer. The value must be a single IPv4 or IPv6 address.</p></li>
+    /// </ul>
+    /// <p>You can specify up to 10 filter values in total across <code>NextHopFilters</code> and the other match parameters in the request. Each filter value can be up to 256 characters.</p>
     pub fn get_next_hop_filters(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.next_hop_filters
+    }
+    /// Appends an item to `exact_prefix_matches`.
+    ///
+    /// To override the contents of this collection use [`set_exact_prefix_matches`](Self::set_exact_prefix_matches).
+    ///
+    /// <p>Exact prefix values to match when filtering routing information.</p>
+    pub fn exact_prefix_matches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.exact_prefix_matches.unwrap_or_default();
+        v.push(input.into());
+        self.exact_prefix_matches = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Exact prefix values to match when filtering routing information.</p>
+    pub fn set_exact_prefix_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.exact_prefix_matches = input;
+        self
+    }
+    /// <p>Exact prefix values to match when filtering routing information.</p>
+    pub fn get_exact_prefix_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.exact_prefix_matches
+    }
+    /// Appends an item to `longest_prefix_matches`.
+    ///
+    /// To override the contents of this collection use [`set_longest_prefix_matches`](Self::set_longest_prefix_matches).
+    ///
+    /// <p>Filters routing information based on the longest prefix that matches each provided IP address.</p>
+    pub fn longest_prefix_matches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.longest_prefix_matches.unwrap_or_default();
+        v.push(input.into());
+        self.longest_prefix_matches = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filters routing information based on the longest prefix that matches each provided IP address.</p>
+    pub fn set_longest_prefix_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.longest_prefix_matches = input;
+        self
+    }
+    /// <p>Filters routing information based on the longest prefix that matches each provided IP address.</p>
+    pub fn get_longest_prefix_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.longest_prefix_matches
+    }
+    /// Appends an item to `subnet_of_matches`.
+    ///
+    /// To override the contents of this collection use [`set_subnet_of_matches`](Self::set_subnet_of_matches).
+    ///
+    /// <p>Prefix values to filter routing information whose prefix is a subnet of the prefixes provided.</p>
+    pub fn subnet_of_matches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.subnet_of_matches.unwrap_or_default();
+        v.push(input.into());
+        self.subnet_of_matches = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Prefix values to filter routing information whose prefix is a subnet of the prefixes provided.</p>
+    pub fn set_subnet_of_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.subnet_of_matches = input;
+        self
+    }
+    /// <p>Prefix values to filter routing information whose prefix is a subnet of the prefixes provided.</p>
+    pub fn get_subnet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.subnet_of_matches
+    }
+    /// Appends an item to `supernet_of_matches`.
+    ///
+    /// To override the contents of this collection use [`set_supernet_of_matches`](Self::set_supernet_of_matches).
+    ///
+    /// <p>Prefix values to filter routing information whose prefix is a supernet of the prefixes provided.</p>
+    pub fn supernet_of_matches(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.supernet_of_matches.unwrap_or_default();
+        v.push(input.into());
+        self.supernet_of_matches = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Prefix values to filter routing information whose prefix is a supernet of the prefixes provided.</p>
+    pub fn set_supernet_of_matches(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.supernet_of_matches = input;
+        self
+    }
+    /// <p>Prefix values to filter routing information whose prefix is a supernet of the prefixes provided.</p>
+    pub fn get_supernet_of_matches(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.supernet_of_matches
     }
     /// Appends an item to `local_preference_matches`.
     ///
@@ -290,6 +481,10 @@ impl ListCoreNetworkRoutingInformationInputBuilder {
                 segment_name: self.segment_name,
                 edge_location: self.edge_location,
                 next_hop_filters: self.next_hop_filters,
+                exact_prefix_matches: self.exact_prefix_matches,
+                longest_prefix_matches: self.longest_prefix_matches,
+                subnet_of_matches: self.subnet_of_matches,
+                supernet_of_matches: self.supernet_of_matches,
                 local_preference_matches: self.local_preference_matches,
                 exact_as_path_matches: self.exact_as_path_matches,
                 med_matches: self.med_matches,

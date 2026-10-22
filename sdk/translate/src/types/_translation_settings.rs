@@ -47,6 +47,127 @@ impl TranslationSettings {
         self.brevity.as_ref()
     }
 }
+static TRANSLATIONSETTINGS_MEMBER_FORMALITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TranslationSettings$Formality",
+        "com.amazonaws.translate",
+        "TranslationSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Formality",
+    0,
+);
+static TRANSLATIONSETTINGS_MEMBER_PROFANITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TranslationSettings$Profanity",
+        "com.amazonaws.translate",
+        "TranslationSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Profanity",
+    1,
+);
+static TRANSLATIONSETTINGS_MEMBER_BREVITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TranslationSettings$Brevity",
+        "com.amazonaws.translate",
+        "TranslationSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Brevity",
+    2,
+);
+static TRANSLATIONSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TranslationSettings",
+        "com.amazonaws.translate",
+        "TranslationSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSLATIONSETTINGS_MEMBER_FORMALITY,
+        &TRANSLATIONSETTINGS_MEMBER_PROFANITY,
+        &TRANSLATIONSETTINGS_MEMBER_BREVITY,
+    ],
+);
+impl TranslationSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSLATIONSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TranslationSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.formality {
+            ser.write_string(&TRANSLATIONSETTINGS_MEMBER_FORMALITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.profanity {
+            ser.write_string(&TRANSLATIONSETTINGS_MEMBER_PROFANITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.brevity {
+            ser.write_string(&TRANSLATIONSETTINGS_MEMBER_BREVITY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TranslationSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSLATIONSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.formality = Some(crate::types::Formality::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profanity = Some(crate::types::Profanity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.brevity = Some(crate::types::Brevity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TranslationSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TranslationSettings {
     /// Creates a new builder-style object to manufacture [`TranslationSettings`](crate::types::TranslationSettings).
     pub fn builder() -> crate::types::builders::TranslationSettingsBuilder {

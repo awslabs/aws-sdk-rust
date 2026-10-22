@@ -42,6 +42,194 @@ impl PutImageInput {
         self.image_digest.as_deref()
     }
 }
+static PUTIMAGEINPUT_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutImageInput$registryId",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static PUTIMAGEINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutImageInput$repositoryName",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static PUTIMAGEINPUT_MEMBER_IMAGE_MANIFEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutImageInput$imageManifest",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageManifest",
+    2,
+);
+static PUTIMAGEINPUT_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutImageInput$imageManifestMediaType",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageManifestMediaType",
+    3,
+);
+static PUTIMAGEINPUT_MEMBER_IMAGE_TAG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutImageInput$imageTag",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageTag",
+    4,
+);
+static PUTIMAGEINPUT_MEMBER_IMAGE_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutImageInput$imageDigest",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageDigest",
+    5,
+);
+static PUTIMAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutImageInput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTIMAGEINPUT_MEMBER_REGISTRY_ID,
+        &PUTIMAGEINPUT_MEMBER_REPOSITORY_NAME,
+        &PUTIMAGEINPUT_MEMBER_IMAGE_MANIFEST,
+        &PUTIMAGEINPUT_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE,
+        &PUTIMAGEINPUT_MEMBER_IMAGE_TAG,
+        &PUTIMAGEINPUT_MEMBER_IMAGE_DIGEST,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutImageRequest");
+impl PutImageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTIMAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutImageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&PUTIMAGEINPUT_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&PUTIMAGEINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_manifest {
+            ser.write_string(&PUTIMAGEINPUT_MEMBER_IMAGE_MANIFEST, val)?;
+        }
+        if let Some(ref val) = self.image_manifest_media_type {
+            ser.write_string(&PUTIMAGEINPUT_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE, val)?;
+        }
+        if let Some(ref val) = self.image_tag {
+            ser.write_string(&PUTIMAGEINPUT_MEMBER_IMAGE_TAG, val)?;
+        }
+        if let Some(ref val) = self.image_digest {
+            ser.write_string(&PUTIMAGEINPUT_MEMBER_IMAGE_DIGEST, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_image::builders::PutImageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTIMAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_manifest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_manifest_media_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_tag = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutImageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.image_manifest = builder.image_manifest.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutImageInput {
     /// Creates a new builder-style object to manufacture [`PutImageInput`](crate::operation::put_image::PutImageInput).
     pub fn builder() -> crate::operation::put_image::builders::PutImageInputBuilder {

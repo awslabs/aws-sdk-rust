@@ -120,6 +120,424 @@ impl CreateOptimizationJobInput {
         self.training_plan_arns.as_deref().unwrap_or_default()
     }
 }
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$OptimizationJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OptimizationJobName",
+    0,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    1,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_MODEL_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$ModelSource",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelSource",
+    2,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_DEPLOYMENT_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$DeploymentInstanceType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeploymentInstanceType",
+    3,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_MAX_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$MaxInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxInstanceCount",
+    4,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobEnvironmentVariables$key",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobEnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#OptimizationJobEnvironmentVariables$value",
+            "com.amazonaws.sagemaker",
+            "OptimizationJobEnvironmentVariables",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$OptimizationEnvironment",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "OptimizationEnvironment",
+    5,
+)
+.with_map_members(
+    &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_ENVIRONMENT_KEY,
+    &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_ENVIRONMENT_VALUE,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_CONFIGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationConfigs$member",
+        "com.amazonaws.sagemaker",
+        "OptimizationConfigs",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_CONFIGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$OptimizationConfigs",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OptimizationConfigs",
+    6,
+)
+.with_list_member(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_CONFIGS_MEMBER);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    7,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$StoppingCondition",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    8,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$VpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    10,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_TRAINING_PLAN_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobTrainingPlanArns$member",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobTrainingPlanArns",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEOPTIMIZATIONJOBINPUT_MEMBER_TRAINING_PLAN_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput$TrainingPlanArns",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TrainingPlanArns",
+    11,
+)
+.with_list_member(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_TRAINING_PLAN_ARNS_MEMBER);
+static CREATEOPTIMIZATIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateOptimizationJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateOptimizationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_JOB_NAME,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_ROLE_ARN,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_MODEL_SOURCE,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_DEPLOYMENT_INSTANCE_TYPE,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_MAX_INSTANCE_COUNT,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_ENVIRONMENT,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_CONFIGS,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OUTPUT_CONFIG,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_STOPPING_CONDITION,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_TAGS,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_VPC_CONFIG,
+        &CREATEOPTIMIZATIONJOBINPUT_MEMBER_TRAINING_PLAN_ARNS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateOptimizationJobRequest");
+impl CreateOptimizationJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEOPTIMIZATIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateOptimizationJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.optimization_job_name {
+            ser.write_string(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_source {
+            ser.write_struct(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_MODEL_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.deployment_instance_type {
+            ser.write_string(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_DEPLOYMENT_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_instance_count {
+            ser.write_integer(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_MAX_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.optimization_environment {
+            ser.write_map(
+                &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.optimization_configs {
+            ser.write_list(
+                &CREATEOPTIMIZATIONJOBINPUT_MEMBER_OPTIMIZATION_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OptimizationConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEOPTIMIZATIONJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATEOPTIMIZATIONJOBINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.training_plan_arns {
+            ser.write_list(
+                &CREATEOPTIMIZATIONJOBINPUT_MEMBER_TRAINING_PLAN_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_optimization_job::builders::CreateOptimizationJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEOPTIMIZATIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.optimization_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_source = Some(crate::types::OptimizationJobModelSource::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_instance_type = Some(crate::types::OptimizationJobDeploymentInstanceType::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.optimization_environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.optimization_configs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OptimizationConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::OptimizationJobOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::StoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::OptimizationVpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateOptimizationJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.optimization_job_name = builder.optimization_job_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.optimization_configs = builder.optimization_configs.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateOptimizationJobInput {
     /// Creates a new builder-style object to manufacture [`CreateOptimizationJobInput`](crate::operation::create_optimization_job::CreateOptimizationJobInput).
     pub fn builder() -> crate::operation::create_optimization_job::builders::CreateOptimizationJobInputBuilder {

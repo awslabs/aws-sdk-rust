@@ -20,6 +20,136 @@ impl DeleteRemediationExceptionsInput {
         self.resource_keys.as_deref().unwrap_or_default()
     }
 }
+static DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DeleteRemediationExceptionsInput$ConfigRuleName",
+        "com.amazonaws.configservice.synthetic",
+        "DeleteRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleName",
+    0,
+);
+static DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExceptionResourceKeys$member",
+        "com.amazonaws.configservice",
+        "RemediationExceptionResourceKeys",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DeleteRemediationExceptionsInput$ResourceKeys",
+        "com.amazonaws.configservice.synthetic",
+        "DeleteRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResourceKeys",
+    1,
+)
+.with_list_member(&DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS_MEMBER);
+static DELETEREMEDIATIONEXCEPTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DeleteRemediationExceptionsInput",
+        "com.amazonaws.configservice.synthetic",
+        "DeleteRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_CONFIG_RULE_NAME,
+        &DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteRemediationExceptionsRequest");
+impl DeleteRemediationExceptionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEREMEDIATIONEXCEPTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteRemediationExceptionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.config_rule_name {
+            ser.write_string(&DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_keys {
+            ser.write_list(
+                &DELETEREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RemediationExceptionResourceKey::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEREMEDIATIONEXCEPTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RemediationExceptionResourceKey::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteRemediationExceptionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.config_rule_name = builder.config_rule_name.or(Some(String::new()));
+        builder.resource_keys = builder.resource_keys.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteRemediationExceptionsInput {
     /// Creates a new builder-style object to manufacture [`DeleteRemediationExceptionsInput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput).
     pub fn builder() -> crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsInputBuilder {

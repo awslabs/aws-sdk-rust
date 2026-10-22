@@ -107,6 +107,369 @@ impl ContainerDefinition {
         self.container_metrics_config.as_ref()
     }
 }
+static CONTAINERDEFINITION_MEMBER_CONTAINER_HOSTNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$ContainerHostname",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContainerHostname",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$Image",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Image",
+    1,
+);
+static CONTAINERDEFINITION_MEMBER_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$ImageConfig",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ImageConfig",
+    2,
+);
+static CONTAINERDEFINITION_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$Mode",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    3,
+);
+static CONTAINERDEFINITION_MEMBER_MODEL_DATA_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$ModelDataUrl",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelDataUrl",
+    4,
+);
+static CONTAINERDEFINITION_MEMBER_MODEL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$ModelDataSource",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDataSource",
+    5,
+);
+static CONTAINERDEFINITION_MEMBER_ADDITIONAL_MODEL_DATA_SOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AdditionalModelDataSources$member",
+            "com.amazonaws.sagemaker",
+            "AdditionalModelDataSources",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CONTAINERDEFINITION_MEMBER_ADDITIONAL_MODEL_DATA_SOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$AdditionalModelDataSources",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AdditionalModelDataSources",
+    6,
+)
+.with_list_member(&CONTAINERDEFINITION_MEMBER_ADDITIONAL_MODEL_DATA_SOURCES_MEMBER);
+static CONTAINERDEFINITION_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EnvironmentMap$key", "com.amazonaws.sagemaker", "EnvironmentMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONTAINERDEFINITION_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "EnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONTAINERDEFINITION_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$Environment",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    7,
+)
+.with_map_members(&CONTAINERDEFINITION_MEMBER_ENVIRONMENT_KEY, &CONTAINERDEFINITION_MEMBER_ENVIRONMENT_VALUE);
+static CONTAINERDEFINITION_MEMBER_MODEL_PACKAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$ModelPackageName",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageName",
+    8,
+);
+static CONTAINERDEFINITION_MEMBER_INFERENCE_SPECIFICATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$InferenceSpecificationName",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InferenceSpecificationName",
+    9,
+);
+static CONTAINERDEFINITION_MEMBER_MULTI_MODEL_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$MultiModelConfig",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MultiModelConfig",
+    10,
+);
+static CONTAINERDEFINITION_MEMBER_CONTAINER_METRICS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition$ContainerMetricsConfig",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContainerMetricsConfig",
+    11,
+);
+static CONTAINERDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinition",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERDEFINITION_MEMBER_CONTAINER_HOSTNAME,
+        &CONTAINERDEFINITION_MEMBER_IMAGE,
+        &CONTAINERDEFINITION_MEMBER_IMAGE_CONFIG,
+        &CONTAINERDEFINITION_MEMBER_MODE,
+        &CONTAINERDEFINITION_MEMBER_MODEL_DATA_URL,
+        &CONTAINERDEFINITION_MEMBER_MODEL_DATA_SOURCE,
+        &CONTAINERDEFINITION_MEMBER_ADDITIONAL_MODEL_DATA_SOURCES,
+        &CONTAINERDEFINITION_MEMBER_ENVIRONMENT,
+        &CONTAINERDEFINITION_MEMBER_MODEL_PACKAGE_NAME,
+        &CONTAINERDEFINITION_MEMBER_INFERENCE_SPECIFICATION_NAME,
+        &CONTAINERDEFINITION_MEMBER_MULTI_MODEL_CONFIG,
+        &CONTAINERDEFINITION_MEMBER_CONTAINER_METRICS_CONFIG,
+    ],
+);
+impl ContainerDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_hostname {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_CONTAINER_HOSTNAME, val)?;
+        }
+        if let Some(ref val) = self.image {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.image_config {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_IMAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_data_url {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_MODEL_DATA_URL, val)?;
+        }
+        if let Some(ref val) = self.model_data_source {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_MODEL_DATA_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.additional_model_data_sources {
+            ser.write_list(
+                &CONTAINERDEFINITION_MEMBER_ADDITIONAL_MODEL_DATA_SOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AdditionalModelDataSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &CONTAINERDEFINITION_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.model_package_name {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_MODEL_PACKAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.inference_specification_name {
+            ser.write_string(&CONTAINERDEFINITION_MEMBER_INFERENCE_SPECIFICATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.multi_model_config {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_MULTI_MODEL_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.container_metrics_config {
+            ser.write_struct(&CONTAINERDEFINITION_MEMBER_CONTAINER_METRICS_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_hostname = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_config = Some(crate::types::ImageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::ContainerMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_data_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_data_source = Some(crate::types::ModelDataSource::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_model_data_sources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AdditionalModelDataSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_specification_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.multi_model_config = Some(crate::types::MultiModelConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_metrics_config = Some(crate::types::ContainerMetricsConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerDefinition {
     /// Creates a new builder-style object to manufacture [`ContainerDefinition`](crate::types::ContainerDefinition).
     pub fn builder() -> crate::types::builders::ContainerDefinitionBuilder {

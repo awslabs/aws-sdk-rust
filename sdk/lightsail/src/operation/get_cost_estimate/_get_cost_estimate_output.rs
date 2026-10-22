@@ -15,6 +15,110 @@ impl GetCostEstimateOutput {
         self.resources_budget_estimate.as_deref().unwrap_or_default()
     }
 }
+static GETCOSTESTIMATEOUTPUT_MEMBER_RESOURCES_BUDGET_ESTIMATE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ResourcesBudgetEstimate$member",
+        "com.amazonaws.lightsail",
+        "ResourcesBudgetEstimate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETCOSTESTIMATEOUTPUT_MEMBER_RESOURCES_BUDGET_ESTIMATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetCostEstimateOutput$resourcesBudgetEstimate",
+        "com.amazonaws.lightsail.synthetic",
+        "GetCostEstimateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourcesBudgetEstimate",
+    0,
+)
+.with_list_member(&GETCOSTESTIMATEOUTPUT_MEMBER_RESOURCES_BUDGET_ESTIMATE_MEMBER);
+static GETCOSTESTIMATEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetCostEstimateOutput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetCostEstimateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETCOSTESTIMATEOUTPUT_MEMBER_RESOURCES_BUDGET_ESTIMATE],
+)
+.with_original_name("GetCostEstimateResult");
+impl GetCostEstimateOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCOSTESTIMATEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetCostEstimateOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resources_budget_estimate {
+            ser.write_list(
+                &GETCOSTESTIMATEOUTPUT_MEMBER_RESOURCES_BUDGET_ESTIMATE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceBudgetEstimate::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_cost_estimate::builders::GetCostEstimateOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCOSTESTIMATEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resources_budget_estimate = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceBudgetEstimate::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetCostEstimateOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetCostEstimateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

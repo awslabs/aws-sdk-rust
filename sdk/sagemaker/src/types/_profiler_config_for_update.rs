@@ -31,6 +31,182 @@ impl ProfilerConfigForUpdate {
         self.disable_profiler
     }
 }
+static PROFILERCONFIGFORUPDATE_MEMBER_S3_OUTPUT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProfilerConfigForUpdate$S3OutputPath",
+        "com.amazonaws.sagemaker",
+        "ProfilerConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3OutputPath",
+    0,
+);
+static PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_INTERVAL_IN_MILLISECONDS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProfilerConfigForUpdate$ProfilingIntervalInMilliseconds",
+            "com.amazonaws.sagemaker",
+            "ProfilerConfigForUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "ProfilingIntervalInMilliseconds",
+        1,
+    );
+static PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProfilingParameters$key",
+        "com.amazonaws.sagemaker",
+        "ProfilingParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProfilingParameters$value",
+        "com.amazonaws.sagemaker",
+        "ProfilingParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProfilerConfigForUpdate$ProfilingParameters",
+        "com.amazonaws.sagemaker",
+        "ProfilerConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ProfilingParameters",
+    2,
+)
+.with_map_members(
+    &PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_PARAMETERS_KEY,
+    &PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_PARAMETERS_VALUE,
+);
+static PROFILERCONFIGFORUPDATE_MEMBER_DISABLE_PROFILER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProfilerConfigForUpdate$DisableProfiler",
+        "com.amazonaws.sagemaker",
+        "ProfilerConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DisableProfiler",
+    3,
+);
+static PROFILERCONFIGFORUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProfilerConfigForUpdate",
+        "com.amazonaws.sagemaker",
+        "ProfilerConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROFILERCONFIGFORUPDATE_MEMBER_S3_OUTPUT_PATH,
+        &PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_INTERVAL_IN_MILLISECONDS,
+        &PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_PARAMETERS,
+        &PROFILERCONFIGFORUPDATE_MEMBER_DISABLE_PROFILER,
+    ],
+);
+impl ProfilerConfigForUpdate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROFILERCONFIGFORUPDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProfilerConfigForUpdate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_output_path {
+            ser.write_string(&PROFILERCONFIGFORUPDATE_MEMBER_S3_OUTPUT_PATH, val)?;
+        }
+        if let Some(ref val) = self.profiling_interval_in_milliseconds {
+            ser.write_long(&PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_INTERVAL_IN_MILLISECONDS, *val)?;
+        }
+        if let Some(ref val) = self.profiling_parameters {
+            ser.write_map(
+                &PROFILERCONFIGFORUPDATE_MEMBER_PROFILING_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.disable_profiler {
+            ser.write_boolean(&PROFILERCONFIGFORUPDATE_MEMBER_DISABLE_PROFILER, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProfilerConfigForUpdateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROFILERCONFIGFORUPDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_output_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profiling_interval_in_milliseconds = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profiling_parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disable_profiler = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProfilerConfigForUpdate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProfilerConfigForUpdate {
     /// Creates a new builder-style object to manufacture [`ProfilerConfigForUpdate`](crate::types::ProfilerConfigForUpdate).
     pub fn builder() -> crate::types::builders::ProfilerConfigForUpdateBuilder {

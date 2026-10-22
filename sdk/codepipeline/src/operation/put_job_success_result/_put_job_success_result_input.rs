@@ -37,6 +37,205 @@ impl PutJobSuccessResultInput {
         self.output_variables.as_ref()
     }
 }
+static PUTJOBSUCCESSRESULTINPUT_MEMBER_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobSuccessResultInput$jobId",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "jobId",
+    0,
+);
+static PUTJOBSUCCESSRESULTINPUT_MEMBER_CURRENT_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobSuccessResultInput$currentRevision",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "currentRevision",
+    1,
+);
+static PUTJOBSUCCESSRESULTINPUT_MEMBER_CONTINUATION_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobSuccessResultInput$continuationToken",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "continuationToken",
+    2,
+);
+static PUTJOBSUCCESSRESULTINPUT_MEMBER_EXECUTION_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobSuccessResultInput$executionDetails",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "executionDetails",
+    3,
+);
+static PUTJOBSUCCESSRESULTINPUT_MEMBER_OUTPUT_VARIABLES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#OutputVariablesMap$key",
+        "com.amazonaws.codepipeline",
+        "OutputVariablesMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static PUTJOBSUCCESSRESULTINPUT_MEMBER_OUTPUT_VARIABLES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#OutputVariablesMap$value",
+        "com.amazonaws.codepipeline",
+        "OutputVariablesMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static PUTJOBSUCCESSRESULTINPUT_MEMBER_OUTPUT_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobSuccessResultInput$outputVariables",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "outputVariables",
+    4,
+)
+.with_map_members(
+    &PUTJOBSUCCESSRESULTINPUT_MEMBER_OUTPUT_VARIABLES_KEY,
+    &PUTJOBSUCCESSRESULTINPUT_MEMBER_OUTPUT_VARIABLES_VALUE,
+);
+static PUTJOBSUCCESSRESULTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobSuccessResultInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTJOBSUCCESSRESULTINPUT_MEMBER_JOB_ID,
+        &PUTJOBSUCCESSRESULTINPUT_MEMBER_CURRENT_REVISION,
+        &PUTJOBSUCCESSRESULTINPUT_MEMBER_CONTINUATION_TOKEN,
+        &PUTJOBSUCCESSRESULTINPUT_MEMBER_EXECUTION_DETAILS,
+        &PUTJOBSUCCESSRESULTINPUT_MEMBER_OUTPUT_VARIABLES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutJobSuccessResultInput");
+impl PutJobSuccessResultInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTJOBSUCCESSRESULTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutJobSuccessResultInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_id {
+            ser.write_string(&PUTJOBSUCCESSRESULTINPUT_MEMBER_JOB_ID, val)?;
+        }
+        if let Some(ref val) = self.current_revision {
+            ser.write_struct(&PUTJOBSUCCESSRESULTINPUT_MEMBER_CURRENT_REVISION, val)?;
+        }
+        if let Some(ref val) = self.continuation_token {
+            ser.write_string(&PUTJOBSUCCESSRESULTINPUT_MEMBER_CONTINUATION_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.execution_details {
+            ser.write_struct(&PUTJOBSUCCESSRESULTINPUT_MEMBER_EXECUTION_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.output_variables {
+            ser.write_map(
+                &PUTJOBSUCCESSRESULTINPUT_MEMBER_OUTPUT_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_job_success_result::builders::PutJobSuccessResultInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTJOBSUCCESSRESULTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_revision = Some(crate::types::CurrentRevision::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.continuation_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_details = Some(crate::types::ExecutionDetails::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_variables = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutJobSuccessResultInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_id = builder.job_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutJobSuccessResultInput {
     /// Creates a new builder-style object to manufacture [`PutJobSuccessResultInput`](crate::operation::put_job_success_result::PutJobSuccessResultInput).
     pub fn builder() -> crate::operation::put_job_success_result::builders::PutJobSuccessResultInputBuilder {

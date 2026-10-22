@@ -36,6 +36,127 @@ impl RegistryAlias {
         self.default_registry_alias
     }
 }
+static REGISTRYALIAS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#RegistryAlias$name", "com.amazonaws.ecrpublic", "RegistryAlias"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static REGISTRYALIAS_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#RegistryAlias$status", "com.amazonaws.ecrpublic", "RegistryAlias"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    1,
+);
+static REGISTRYALIAS_MEMBER_PRIMARY_REGISTRY_ALIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RegistryAlias$primaryRegistryAlias",
+        "com.amazonaws.ecrpublic",
+        "RegistryAlias",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "primaryRegistryAlias",
+    2,
+);
+static REGISTRYALIAS_MEMBER_DEFAULT_REGISTRY_ALIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RegistryAlias$defaultRegistryAlias",
+        "com.amazonaws.ecrpublic",
+        "RegistryAlias",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "defaultRegistryAlias",
+    3,
+);
+static REGISTRYALIAS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#RegistryAlias", "com.amazonaws.ecrpublic", "RegistryAlias"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTRYALIAS_MEMBER_NAME,
+        &REGISTRYALIAS_MEMBER_STATUS,
+        &REGISTRYALIAS_MEMBER_PRIMARY_REGISTRY_ALIAS,
+        &REGISTRYALIAS_MEMBER_DEFAULT_REGISTRY_ALIAS,
+    ],
+);
+impl RegistryAlias {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTRYALIAS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegistryAlias {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&REGISTRYALIAS_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&REGISTRYALIAS_MEMBER_STATUS, val.as_str())?;
+        }
+        {
+            let val = &self.primary_registry_alias;
+            ser.write_boolean(&REGISTRYALIAS_MEMBER_PRIMARY_REGISTRY_ALIAS, *val)?;
+        }
+        {
+            let val = &self.default_registry_alias;
+            ser.write_boolean(&REGISTRYALIAS_MEMBER_DEFAULT_REGISTRY_ALIAS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RegistryAliasBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTRYALIAS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.status = Some(crate::types::RegistryAliasStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.primary_registry_alias = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    self.default_registry_alias = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegistryAlias {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.primary_registry_alias = builder.primary_registry_alias.or(Some(false));
+        builder.default_registry_alias = builder.default_registry_alias.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegistryAlias {
     /// Creates a new builder-style object to manufacture [`RegistryAlias`](crate::types::RegistryAlias).
     pub fn builder() -> crate::types::builders::RegistryAliasBuilder {

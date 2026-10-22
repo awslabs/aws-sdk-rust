@@ -19,6 +19,102 @@ impl EngineVersion {
         self.effective_engine_version.as_deref()
     }
 }
+static ENGINEVERSION_MEMBER_SELECTED_ENGINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineVersion$SelectedEngineVersion",
+        "com.amazonaws.athena",
+        "EngineVersion",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SelectedEngineVersion",
+    0,
+);
+static ENGINEVERSION_MEMBER_EFFECTIVE_ENGINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineVersion$EffectiveEngineVersion",
+        "com.amazonaws.athena",
+        "EngineVersion",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EffectiveEngineVersion",
+    1,
+);
+static ENGINEVERSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#EngineVersion", "com.amazonaws.athena", "EngineVersion"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENGINEVERSION_MEMBER_SELECTED_ENGINE_VERSION,
+        &ENGINEVERSION_MEMBER_EFFECTIVE_ENGINE_VERSION,
+    ],
+);
+impl EngineVersion {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENGINEVERSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EngineVersion {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.selected_engine_version {
+            ser.write_string(&ENGINEVERSION_MEMBER_SELECTED_ENGINE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.effective_engine_version {
+            ser.write_string(&ENGINEVERSION_MEMBER_EFFECTIVE_ENGINE_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EngineVersionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENGINEVERSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selected_engine_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.effective_engine_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EngineVersion {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EngineVersion {
     /// Creates a new builder-style object to manufacture [`EngineVersion`](crate::types::EngineVersion).
     pub fn builder() -> crate::types::builders::EngineVersionBuilder {

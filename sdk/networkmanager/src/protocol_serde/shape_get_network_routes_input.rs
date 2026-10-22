@@ -37,56 +37,65 @@ pub fn ser_get_network_routes_input_input(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.prefix_list_ids {
-        let mut array_14 = object.key("PrefixListIds").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.max_results {
+        object.key("MaxResults").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+        );
+    }
+    if let Some(var_14) = &input.next_token {
+        object.key("NextToken").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.prefix_list_ids {
+        let mut array_16 = object.key("PrefixListIds").start_array();
+        for item_17 in var_15 {
             {
-                array_14.value().string(item_15.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_16) = &input.route_table_identifier {
+    if let Some(var_18) = &input.route_table_identifier {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("RouteTableIdentifier").start_object();
-        crate::protocol_serde::shape_route_table_identifier::ser_route_table_identifier(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_19 = object.key("RouteTableIdentifier").start_object();
+        crate::protocol_serde::shape_route_table_identifier::ser_route_table_identifier(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_18) = &input.states {
-        let mut array_19 = object.key("States").start_array();
-        for item_20 in var_18 {
+    if let Some(var_20) = &input.states {
+        let mut array_21 = object.key("States").start_array();
+        for item_22 in var_20 {
             {
-                array_19.value().string(item_20.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_19.finish();
+        array_21.finish();
     }
-    if let Some(var_21) = &input.subnet_of_matches {
-        let mut array_22 = object.key("SubnetOfMatches").start_array();
-        for item_23 in var_21 {
+    if let Some(var_23) = &input.subnet_of_matches {
+        let mut array_24 = object.key("SubnetOfMatches").start_array();
+        for item_25 in var_23 {
             {
-                array_22.value().string(item_23.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_22.finish();
+        array_24.finish();
     }
-    if let Some(var_24) = &input.supernet_of_matches {
-        let mut array_25 = object.key("SupernetOfMatches").start_array();
-        for item_26 in var_24 {
+    if let Some(var_26) = &input.supernet_of_matches {
+        let mut array_27 = object.key("SupernetOfMatches").start_array();
+        for item_28 in var_26 {
             {
-                array_25.value().string(item_26.as_str());
+                array_27.value().string(item_28.as_str());
             }
         }
-        array_25.finish();
+        array_27.finish();
     }
-    if let Some(var_27) = &input.types {
-        let mut array_28 = object.key("Types").start_array();
-        for item_29 in var_27 {
+    if let Some(var_29) = &input.types {
+        let mut array_30 = object.key("Types").start_array();
+        for item_31 in var_29 {
             {
-                array_28.value().string(item_29.as_str());
+                array_30.value().string(item_31.as_str());
             }
         }
-        array_28.finish();
+        array_30.finish();
     }
     Ok(())
 }

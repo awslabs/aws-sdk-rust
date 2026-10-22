@@ -174,6 +174,191 @@ impl RecordingGroup {
         self.recording_strategy.as_ref()
     }
 }
+static RECORDINGGROUP_MEMBER_ALL_SUPPORTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingGroup$allSupported",
+        "com.amazonaws.configservice",
+        "RecordingGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "allSupported",
+    0,
+);
+static RECORDINGGROUP_MEMBER_INCLUDE_GLOBAL_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingGroup$includeGlobalResourceTypes",
+        "com.amazonaws.configservice",
+        "RecordingGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "includeGlobalResourceTypes",
+    1,
+);
+static RECORDINGGROUP_MEMBER_RESOURCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceTypeList$member",
+        "com.amazonaws.configservice",
+        "ResourceTypeList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RECORDINGGROUP_MEMBER_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingGroup$resourceTypes",
+        "com.amazonaws.configservice",
+        "RecordingGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourceTypes",
+    2,
+)
+.with_list_member(&RECORDINGGROUP_MEMBER_RESOURCE_TYPES_MEMBER);
+static RECORDINGGROUP_MEMBER_EXCLUSION_BY_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingGroup$exclusionByResourceTypes",
+        "com.amazonaws.configservice",
+        "RecordingGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "exclusionByResourceTypes",
+    3,
+);
+static RECORDINGGROUP_MEMBER_RECORDING_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingGroup$recordingStrategy",
+        "com.amazonaws.configservice",
+        "RecordingGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "recordingStrategy",
+    4,
+);
+static RECORDINGGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RecordingGroup",
+        "com.amazonaws.configservice",
+        "RecordingGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECORDINGGROUP_MEMBER_ALL_SUPPORTED,
+        &RECORDINGGROUP_MEMBER_INCLUDE_GLOBAL_RESOURCE_TYPES,
+        &RECORDINGGROUP_MEMBER_RESOURCE_TYPES,
+        &RECORDINGGROUP_MEMBER_EXCLUSION_BY_RESOURCE_TYPES,
+        &RECORDINGGROUP_MEMBER_RECORDING_STRATEGY,
+    ],
+);
+impl RecordingGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECORDINGGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RecordingGroup {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.all_supported;
+            ser.write_boolean(&RECORDINGGROUP_MEMBER_ALL_SUPPORTED, *val)?;
+        }
+        {
+            let val = &self.include_global_resource_types;
+            ser.write_boolean(&RECORDINGGROUP_MEMBER_INCLUDE_GLOBAL_RESOURCE_TYPES, *val)?;
+        }
+        if let Some(ref val) = self.resource_types {
+            ser.write_list(
+                &RECORDINGGROUP_MEMBER_RESOURCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.exclusion_by_resource_types {
+            ser.write_struct(&RECORDINGGROUP_MEMBER_EXCLUSION_BY_RESOURCE_TYPES, val)?;
+        }
+        if let Some(ref val) = self.recording_strategy {
+            ser.write_struct(&RECORDINGGROUP_MEMBER_RECORDING_STRATEGY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecordingGroupBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECORDINGGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.all_supported = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.include_global_resource_types = Some(deser.read_boolean(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exclusion_by_resource_types = Some(crate::types::ExclusionByResourceTypes::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recording_strategy = Some(crate::types::RecordingStrategy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RecordingGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RecordingGroup {
     /// Creates a new builder-style object to manufacture [`RecordingGroup`](crate::types::RecordingGroup).
     pub fn builder() -> crate::types::builders::RecordingGroupBuilder {

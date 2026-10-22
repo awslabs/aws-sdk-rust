@@ -83,6 +83,336 @@ impl InstanceAccessDetails {
         self.host_keys.as_deref().unwrap_or_default()
     }
 }
+static INSTANCEACCESSDETAILS_MEMBER_CERT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$certKey",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certKey",
+    0,
+);
+static INSTANCEACCESSDETAILS_MEMBER_EXPIRES_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$expiresAt",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "expiresAt",
+    1,
+);
+static INSTANCEACCESSDETAILS_MEMBER_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$ipAddress",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddress",
+    2,
+);
+static INSTANCEACCESSDETAILS_MEMBER_IPV6_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#Ipv6AddressList$member",
+        "com.amazonaws.lightsail",
+        "Ipv6AddressList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static INSTANCEACCESSDETAILS_MEMBER_IPV6_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$ipv6Addresses",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ipv6Addresses",
+    3,
+)
+.with_list_member(&INSTANCEACCESSDETAILS_MEMBER_IPV6_ADDRESSES_MEMBER);
+static INSTANCEACCESSDETAILS_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$password",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "password",
+    4,
+);
+static INSTANCEACCESSDETAILS_MEMBER_PASSWORD_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$passwordData",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "passwordData",
+    5,
+);
+static INSTANCEACCESSDETAILS_MEMBER_PRIVATE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$privateKey",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "privateKey",
+    6,
+);
+static INSTANCEACCESSDETAILS_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$protocol",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "protocol",
+    7,
+);
+static INSTANCEACCESSDETAILS_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$instanceName",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceName",
+    8,
+);
+static INSTANCEACCESSDETAILS_MEMBER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$username",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "username",
+    9,
+);
+static INSTANCEACCESSDETAILS_MEMBER_HOST_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#HostKeysList$member", "com.amazonaws.lightsail", "HostKeysList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCEACCESSDETAILS_MEMBER_HOST_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails$hostKeys",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "hostKeys",
+    10,
+)
+.with_list_member(&INSTANCEACCESSDETAILS_MEMBER_HOST_KEYS_MEMBER);
+static INSTANCEACCESSDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceAccessDetails",
+        "com.amazonaws.lightsail",
+        "InstanceAccessDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEACCESSDETAILS_MEMBER_CERT_KEY,
+        &INSTANCEACCESSDETAILS_MEMBER_EXPIRES_AT,
+        &INSTANCEACCESSDETAILS_MEMBER_IP_ADDRESS,
+        &INSTANCEACCESSDETAILS_MEMBER_IPV6_ADDRESSES,
+        &INSTANCEACCESSDETAILS_MEMBER_PASSWORD,
+        &INSTANCEACCESSDETAILS_MEMBER_PASSWORD_DATA,
+        &INSTANCEACCESSDETAILS_MEMBER_PRIVATE_KEY,
+        &INSTANCEACCESSDETAILS_MEMBER_PROTOCOL,
+        &INSTANCEACCESSDETAILS_MEMBER_INSTANCE_NAME,
+        &INSTANCEACCESSDETAILS_MEMBER_USERNAME,
+        &INSTANCEACCESSDETAILS_MEMBER_HOST_KEYS,
+    ],
+);
+impl InstanceAccessDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEACCESSDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceAccessDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cert_key {
+            ser.write_string(&INSTANCEACCESSDETAILS_MEMBER_CERT_KEY, val)?;
+        }
+        if let Some(ref val) = self.expires_at {
+            ser.write_timestamp(&INSTANCEACCESSDETAILS_MEMBER_EXPIRES_AT, val)?;
+        }
+        if let Some(ref val) = self.ip_address {
+            ser.write_string(&INSTANCEACCESSDETAILS_MEMBER_IP_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.ipv6_addresses {
+            ser.write_list(
+                &INSTANCEACCESSDETAILS_MEMBER_IPV6_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&INSTANCEACCESSDETAILS_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.password_data {
+            ser.write_struct(&INSTANCEACCESSDETAILS_MEMBER_PASSWORD_DATA, val)?;
+        }
+        if let Some(ref val) = self.private_key {
+            ser.write_string(&INSTANCEACCESSDETAILS_MEMBER_PRIVATE_KEY, val)?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&INSTANCEACCESSDETAILS_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&INSTANCEACCESSDETAILS_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.username {
+            ser.write_string(&INSTANCEACCESSDETAILS_MEMBER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.host_keys {
+            ser.write_list(
+                &INSTANCEACCESSDETAILS_MEMBER_HOST_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HostKeyAttributes::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceAccessDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEACCESSDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cert_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expires_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password_data = Some(crate::types::PasswordData::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.private_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::InstanceAccessProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HostKeyAttributes::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceAccessDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceAccessDetails {
     /// Creates a new builder-style object to manufacture [`InstanceAccessDetails`](crate::types::InstanceAccessDetails).
     pub fn builder() -> crate::types::builders::InstanceAccessDetailsBuilder {

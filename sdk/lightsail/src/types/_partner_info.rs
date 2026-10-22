@@ -39,6 +39,102 @@ impl PartnerInfo {
         &self.status
     }
 }
+static PARTNERINFO_MEMBER_ENROLLED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#PartnerInfo$enrolledAt", "com.amazonaws.lightsail", "PartnerInfo"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "enrolledAt",
+    0,
+);
+static PARTNERINFO_MEMBER_TIER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#PartnerInfo$tierName", "com.amazonaws.lightsail", "PartnerInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "tierName",
+    1,
+);
+static PARTNERINFO_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#PartnerInfo$status", "com.amazonaws.lightsail", "PartnerInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    2,
+);
+static PARTNERINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#PartnerInfo", "com.amazonaws.lightsail", "PartnerInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PARTNERINFO_MEMBER_ENROLLED_AT, &PARTNERINFO_MEMBER_TIER_NAME, &PARTNERINFO_MEMBER_STATUS],
+);
+impl PartnerInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PARTNERINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PartnerInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enrolled_at;
+            ser.write_timestamp(&PARTNERINFO_MEMBER_ENROLLED_AT, val)?;
+        }
+        if let Some(ref val) = self.tier_name {
+            ser.write_string(&PARTNERINFO_MEMBER_TIER_NAME, val.as_str())?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&PARTNERINFO_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PartnerInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PARTNERINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enrolled_at = Some(deser.read_timestamp(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tier_name = Some(crate::types::TierName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    self.status = Some(crate::types::PartnerStatus::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PartnerInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.enrolled_at = builder.enrolled_at.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PartnerInfo {
     /// Creates a new builder-style object to manufacture [`PartnerInfo`](crate::types::PartnerInfo).
     pub fn builder() -> crate::types::builders::PartnerInfoBuilder {

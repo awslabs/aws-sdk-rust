@@ -40,6 +40,195 @@ impl CreatePerformanceAnalysisReportInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_SERVICE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#CreatePerformanceAnalysisReportInput$ServiceType",
+        "com.amazonaws.pi.synthetic",
+        "CreatePerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceType",
+    0,
+);
+static CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#CreatePerformanceAnalysisReportInput$Identifier",
+        "com.amazonaws.pi.synthetic",
+        "CreatePerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Identifier",
+    1,
+);
+static CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#CreatePerformanceAnalysisReportInput$StartTime",
+        "com.amazonaws.pi.synthetic",
+        "CreatePerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    2,
+);
+static CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#CreatePerformanceAnalysisReportInput$EndTime",
+        "com.amazonaws.pi.synthetic",
+        "CreatePerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    3,
+);
+static CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#TagList$member", "com.amazonaws.pi", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#CreatePerformanceAnalysisReportInput$Tags",
+        "com.amazonaws.pi.synthetic",
+        "CreatePerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEPERFORMANCEANALYSISREPORTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#CreatePerformanceAnalysisReportInput",
+        "com.amazonaws.pi.synthetic",
+        "CreatePerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_SERVICE_TYPE,
+        &CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_IDENTIFIER,
+        &CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_START_TIME,
+        &CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_END_TIME,
+        &CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePerformanceAnalysisReportRequest");
+impl CreatePerformanceAnalysisReportInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPERFORMANCEANALYSISREPORTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePerformanceAnalysisReportInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_type {
+            ser.write_string(&CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_SERVICE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEPERFORMANCEANALYSISREPORTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_performance_analysis_report::builders::CreatePerformanceAnalysisReportInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPERFORMANCEANALYSISREPORTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_type = Some(crate::types::ServiceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePerformanceAnalysisReportInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identifier = builder.identifier.or(Some(String::new()));
+        builder.start_time = builder.start_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePerformanceAnalysisReportInput {
     /// Creates a new builder-style object to manufacture [`CreatePerformanceAnalysisReportInput`](crate::operation::create_performance_analysis_report::CreatePerformanceAnalysisReportInput).
     pub fn builder() -> crate::operation::create_performance_analysis_report::builders::CreatePerformanceAnalysisReportInputBuilder {

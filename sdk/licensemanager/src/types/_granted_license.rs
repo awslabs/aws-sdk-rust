@@ -101,6 +101,431 @@ impl GrantedLicense {
         self.received_metadata.as_ref()
     }
 }
+static GRANTEDLICENSE_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$LicenseArn",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    0,
+);
+static GRANTEDLICENSE_MEMBER_LICENSE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$LicenseName",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseName",
+    1,
+);
+static GRANTEDLICENSE_MEMBER_PRODUCT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$ProductName",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductName",
+    2,
+);
+static GRANTEDLICENSE_MEMBER_PRODUCT_SKU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$ProductSKU",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductSKU",
+    3,
+);
+static GRANTEDLICENSE_MEMBER_ISSUER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$Issuer",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Issuer",
+    4,
+);
+static GRANTEDLICENSE_MEMBER_HOME_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$HomeRegion",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeRegion",
+    5,
+);
+static GRANTEDLICENSE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$Status",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static GRANTEDLICENSE_MEMBER_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$Validity",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Validity",
+    7,
+);
+static GRANTEDLICENSE_MEMBER_BENEFICIARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$Beneficiary",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Beneficiary",
+    8,
+);
+static GRANTEDLICENSE_MEMBER_ENTITLEMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementList$member",
+        "com.amazonaws.licensemanager",
+        "EntitlementList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GRANTEDLICENSE_MEMBER_ENTITLEMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$Entitlements",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Entitlements",
+    9,
+)
+.with_list_member(&GRANTEDLICENSE_MEMBER_ENTITLEMENTS_MEMBER);
+static GRANTEDLICENSE_MEMBER_CONSUMPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$ConsumptionConfiguration",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ConsumptionConfiguration",
+    10,
+);
+static GRANTEDLICENSE_MEMBER_LICENSE_METADATA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MetadataList$member",
+        "com.amazonaws.licensemanager",
+        "MetadataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GRANTEDLICENSE_MEMBER_LICENSE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$LicenseMetadata",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LicenseMetadata",
+    11,
+)
+.with_list_member(&GRANTEDLICENSE_MEMBER_LICENSE_METADATA_MEMBER);
+static GRANTEDLICENSE_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$CreateTime",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreateTime",
+    12,
+);
+static GRANTEDLICENSE_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$Version",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Version",
+    13,
+);
+static GRANTEDLICENSE_MEMBER_RECEIVED_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense$ReceivedMetadata",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ReceivedMetadata",
+    14,
+);
+static GRANTEDLICENSE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#GrantedLicense",
+        "com.amazonaws.licensemanager",
+        "GrantedLicense",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GRANTEDLICENSE_MEMBER_LICENSE_ARN,
+        &GRANTEDLICENSE_MEMBER_LICENSE_NAME,
+        &GRANTEDLICENSE_MEMBER_PRODUCT_NAME,
+        &GRANTEDLICENSE_MEMBER_PRODUCT_SKU,
+        &GRANTEDLICENSE_MEMBER_ISSUER,
+        &GRANTEDLICENSE_MEMBER_HOME_REGION,
+        &GRANTEDLICENSE_MEMBER_STATUS,
+        &GRANTEDLICENSE_MEMBER_VALIDITY,
+        &GRANTEDLICENSE_MEMBER_BENEFICIARY,
+        &GRANTEDLICENSE_MEMBER_ENTITLEMENTS,
+        &GRANTEDLICENSE_MEMBER_CONSUMPTION_CONFIGURATION,
+        &GRANTEDLICENSE_MEMBER_LICENSE_METADATA,
+        &GRANTEDLICENSE_MEMBER_CREATE_TIME,
+        &GRANTEDLICENSE_MEMBER_VERSION,
+        &GRANTEDLICENSE_MEMBER_RECEIVED_METADATA,
+    ],
+);
+impl GrantedLicense {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GRANTEDLICENSE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GrantedLicense {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_LICENSE_ARN, val)?;
+        }
+        if let Some(ref val) = self.license_name {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_LICENSE_NAME, val)?;
+        }
+        if let Some(ref val) = self.product_name {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_PRODUCT_NAME, val)?;
+        }
+        if let Some(ref val) = self.product_sku {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_PRODUCT_SKU, val)?;
+        }
+        if let Some(ref val) = self.issuer {
+            ser.write_struct(&GRANTEDLICENSE_MEMBER_ISSUER, val)?;
+        }
+        if let Some(ref val) = self.home_region {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_HOME_REGION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.validity {
+            ser.write_struct(&GRANTEDLICENSE_MEMBER_VALIDITY, val)?;
+        }
+        if let Some(ref val) = self.beneficiary {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_BENEFICIARY, val)?;
+        }
+        if let Some(ref val) = self.entitlements {
+            ser.write_list(
+                &GRANTEDLICENSE_MEMBER_ENTITLEMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Entitlement::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.consumption_configuration {
+            ser.write_struct(&GRANTEDLICENSE_MEMBER_CONSUMPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.license_metadata {
+            ser.write_list(
+                &GRANTEDLICENSE_MEMBER_LICENSE_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Metadata::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_string(&GRANTEDLICENSE_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.received_metadata {
+            ser.write_struct(&GRANTEDLICENSE_MEMBER_RECEIVED_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GrantedLicenseBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GRANTEDLICENSE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_sku = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer = Some(crate::types::IssuerDetails::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::LicenseStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validity = Some(crate::types::DatetimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.beneficiary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entitlements = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Entitlement::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.consumption_configuration = Some(crate::types::ConsumptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_metadata = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Metadata::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.received_metadata = Some(crate::types::ReceivedMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GrantedLicense {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GrantedLicense {
     /// Creates a new builder-style object to manufacture [`GrantedLicense`](crate::types::GrantedLicense).
     pub fn builder() -> crate::types::builders::GrantedLicenseBuilder {

@@ -24,6 +24,130 @@ impl UpdatePrivateDnsNamespaceInput {
         self.namespace.as_ref()
     }
 }
+static UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdatePrivateDnsNamespaceInput$Id",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdatePrivateDnsNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_UPDATER_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdatePrivateDnsNamespaceInput$UpdaterRequestId",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdatePrivateDnsNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UpdaterRequestId",
+    1,
+);
+static UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_NAMESPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdatePrivateDnsNamespaceInput$Namespace",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdatePrivateDnsNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Namespace",
+    2,
+);
+static UPDATEPRIVATEDNSNAMESPACEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdatePrivateDnsNamespaceInput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdatePrivateDnsNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_ID,
+        &UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_UPDATER_REQUEST_ID,
+        &UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_NAMESPACE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdatePrivateDnsNamespaceRequest");
+impl UpdatePrivateDnsNamespaceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPRIVATEDNSNAMESPACEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePrivateDnsNamespaceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.updater_request_id {
+            ser.write_string(&UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_UPDATER_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.namespace {
+            ser.write_struct(&UPDATEPRIVATEDNSNAMESPACEINPUT_MEMBER_NAMESPACE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPRIVATEDNSNAMESPACEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updater_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace = Some(crate::types::PrivateDnsNamespaceChange::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdatePrivateDnsNamespaceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.id = builder.id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdatePrivateDnsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`UpdatePrivateDnsNamespaceInput`](crate::operation::update_private_dns_namespace::UpdatePrivateDnsNamespaceInput).
     pub fn builder() -> crate::operation::update_private_dns_namespace::builders::UpdatePrivateDnsNamespaceInputBuilder {

@@ -85,6 +85,338 @@ impl DescribeReservedCapacityOutput {
         self.ultra_server_summary.as_ref()
     }
 }
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_RESERVED_CAPACITY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$ReservedCapacityArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReservedCapacityArn",
+    0,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_RESERVED_CAPACITY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$ReservedCapacityType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReservedCapacityType",
+    1,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$AvailabilityZone",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AvailabilityZone",
+    3,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_DURATION_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$DurationHours",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationHours",
+    4,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_DURATION_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$DurationMinutes",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationMinutes",
+    5,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$StartTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    6,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$EndTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    7,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$InstanceType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    8,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_TOTAL_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$TotalInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalInstanceCount",
+    9,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_AVAILABLE_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$AvailableInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AvailableInstanceCount",
+    10,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_IN_USE_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$InUseInstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InUseInstanceCount",
+    11,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_ULTRA_SERVER_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput$UltraServerSummary",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UltraServerSummary",
+    12,
+);
+static DESCRIBERESERVEDCAPACITYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeReservedCapacityOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeReservedCapacityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_RESERVED_CAPACITY_ARN,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_RESERVED_CAPACITY_TYPE,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_STATUS,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_AVAILABILITY_ZONE,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_DURATION_HOURS,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_DURATION_MINUTES,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_START_TIME,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_END_TIME,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_INSTANCE_TYPE,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_TOTAL_INSTANCE_COUNT,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_AVAILABLE_INSTANCE_COUNT,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_IN_USE_INSTANCE_COUNT,
+        &DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_ULTRA_SERVER_SUMMARY,
+    ],
+)
+.with_original_name("DescribeReservedCapacityResponse");
+impl DescribeReservedCapacityOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBERESERVEDCAPACITYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeReservedCapacityOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reserved_capacity_arn {
+            ser.write_string(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_RESERVED_CAPACITY_ARN, val)?;
+        }
+        if let Some(ref val) = self.reserved_capacity_type {
+            ser.write_string(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_RESERVED_CAPACITY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.duration_hours {
+            ser.write_long(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_DURATION_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.duration_minutes {
+            ser.write_long(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_DURATION_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.total_instance_count {
+            ser.write_integer(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_TOTAL_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.available_instance_count {
+            ser.write_integer(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_AVAILABLE_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.in_use_instance_count {
+            ser.write_integer(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_IN_USE_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.ultra_server_summary {
+            ser.write_struct(&DESCRIBERESERVEDCAPACITYOUTPUT_MEMBER_ULTRA_SERVER_SUMMARY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_reserved_capacity::builders::DescribeReservedCapacityOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBERESERVEDCAPACITYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reserved_capacity_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reserved_capacity_type = Some(crate::types::ReservedCapacityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ReservedCapacityStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_hours = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_minutes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::ReservedCapacityInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.available_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.in_use_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ultra_server_summary = Some(crate::types::UltraServerSummary::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeReservedCapacityOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeReservedCapacityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

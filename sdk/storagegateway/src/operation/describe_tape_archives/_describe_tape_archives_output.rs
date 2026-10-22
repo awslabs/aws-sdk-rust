@@ -22,6 +22,133 @@ impl DescribeTapeArchivesOutput {
         self.marker.as_deref()
     }
 }
+static DESCRIBETAPEARCHIVESOUTPUT_MEMBER_TAPE_ARCHIVES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchives$member",
+        "com.amazonaws.storagegateway",
+        "TapeArchives",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBETAPEARCHIVESOUTPUT_MEMBER_TAPE_ARCHIVES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeTapeArchivesOutput$TapeArchives",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeTapeArchivesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TapeArchives",
+    0,
+)
+.with_list_member(&DESCRIBETAPEARCHIVESOUTPUT_MEMBER_TAPE_ARCHIVES_MEMBER);
+static DESCRIBETAPEARCHIVESOUTPUT_MEMBER_MARKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeTapeArchivesOutput$Marker",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeTapeArchivesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Marker",
+    1,
+);
+static DESCRIBETAPEARCHIVESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeTapeArchivesOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeTapeArchivesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBETAPEARCHIVESOUTPUT_MEMBER_TAPE_ARCHIVES,
+        &DESCRIBETAPEARCHIVESOUTPUT_MEMBER_MARKER,
+    ],
+)
+.with_original_name("DescribeTapeArchivesOutput");
+impl DescribeTapeArchivesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBETAPEARCHIVESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeTapeArchivesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tape_archives {
+            ser.write_list(
+                &DESCRIBETAPEARCHIVESOUTPUT_MEMBER_TAPE_ARCHIVES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TapeArchive::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.marker {
+            ser.write_string(&DESCRIBETAPEARCHIVESOUTPUT_MEMBER_MARKER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_tape_archives::builders::DescribeTapeArchivesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBETAPEARCHIVESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_archives = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TapeArchive::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marker = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeTapeArchivesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeTapeArchivesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

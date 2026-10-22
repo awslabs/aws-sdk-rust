@@ -99,6 +99,380 @@ impl DescribeComputeQuotaOutput {
         self.last_modified_by.as_ref()
     }
 }
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$ComputeQuotaArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComputeQuotaArn",
+    0,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$ComputeQuotaId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComputeQuotaId",
+    1,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$Name",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    2,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$ComputeQuotaVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ComputeQuotaVersion",
+    4,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    5,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    6,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CLUSTER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$ClusterArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterArn",
+    7,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$ComputeQuotaConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComputeQuotaConfig",
+    8,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$ComputeQuotaTarget",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComputeQuotaTarget",
+    9,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_ACTIVATION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$ActivationState",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActivationState",
+    10,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    11,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    12,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    13,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    14,
+);
+static DESCRIBECOMPUTEQUOTAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeComputeQuotaOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ARN,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ID,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_NAME,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_VERSION,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_STATUS,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CLUSTER_ARN,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_CONFIG,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_TARGET,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_ACTIVATION_STATE,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_LAST_MODIFIED_BY,
+    ],
+)
+.with_original_name("DescribeComputeQuotaResponse");
+impl DescribeComputeQuotaOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECOMPUTEQUOTAOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeComputeQuotaOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compute_quota_arn {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ARN, val)?;
+        }
+        if let Some(ref val) = self.compute_quota_id {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.compute_quota_version {
+            ser.write_integer(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.cluster_arn {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CLUSTER_ARN, val)?;
+        }
+        if let Some(ref val) = self.compute_quota_config {
+            ser.write_struct(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.compute_quota_target {
+            ser.write_struct(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_TARGET, val)?;
+        }
+        if let Some(ref val) = self.activation_state {
+            ser.write_string(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_ACTIVATION_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBECOMPUTEQUOTAOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_compute_quota::builders::DescribeComputeQuotaOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECOMPUTEQUOTAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::SchedulerResourceStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_config = Some(crate::types::ComputeQuotaConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_target = Some(crate::types::ComputeQuotaTarget::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activation_state = Some(crate::types::ActivationState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeComputeQuotaOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeComputeQuotaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

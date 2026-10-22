@@ -60,6 +60,255 @@ impl ListCodeRepositoriesInput {
         self.sort_order.as_ref()
     }
 }
+static LISTCODEREPOSITORIESINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    0,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    1,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$LastModifiedTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTimeAfter",
+    2,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$LastModifiedTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTimeBefore",
+    3,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    4,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$NameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NameContains",
+    5,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    7,
+);
+static LISTCODEREPOSITORIESINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    8,
+);
+static LISTCODEREPOSITORIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCodeRepositoriesInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCodeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCODEREPOSITORIESINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_MAX_RESULTS,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_NAME_CONTAINS,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_NEXT_TOKEN,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_SORT_BY,
+        &LISTCODEREPOSITORIESINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListCodeRepositoriesInput");
+impl ListCodeRepositoriesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCODEREPOSITORIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCodeRepositoriesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTCODEREPOSITORIESINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTCODEREPOSITORIESINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_after {
+            ser.write_timestamp(&LISTCODEREPOSITORIESINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_before {
+            ser.write_timestamp(&LISTCODEREPOSITORIESINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTCODEREPOSITORIESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.name_contains {
+            ser.write_string(&LISTCODEREPOSITORIESINPUT_MEMBER_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCODEREPOSITORIESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTCODEREPOSITORIESINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTCODEREPOSITORIESINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCODEREPOSITORIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::CodeRepositorySortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::CodeRepositorySortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCodeRepositoriesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListCodeRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`ListCodeRepositoriesInput`](crate::operation::list_code_repositories::ListCodeRepositoriesInput).
     pub fn builder() -> crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder {

@@ -81,6 +81,220 @@ impl ListDeploymentsInput {
         self.next_token.as_deref()
     }
 }
+static LISTDEPLOYMENTSINPUT_MEMBER_APPLICATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentsInput$applicationName",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applicationName",
+    0,
+);
+static LISTDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentsInput$deploymentGroupName",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentGroupName",
+    1,
+);
+static LISTDEPLOYMENTSINPUT_MEMBER_EXTERNAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentsInput$externalId",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalId",
+    2,
+);
+static LISTDEPLOYMENTSINPUT_MEMBER_INCLUDE_ONLY_STATUSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentStatusList$member",
+        "com.amazonaws.codedeploy",
+        "DeploymentStatusList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTDEPLOYMENTSINPUT_MEMBER_INCLUDE_ONLY_STATUSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentsInput$includeOnlyStatuses",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "includeOnlyStatuses",
+    3,
+)
+.with_list_member(&LISTDEPLOYMENTSINPUT_MEMBER_INCLUDE_ONLY_STATUSES_MEMBER);
+static LISTDEPLOYMENTSINPUT_MEMBER_CREATE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentsInput$createTimeRange",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "createTimeRange",
+    4,
+);
+static LISTDEPLOYMENTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentsInput$nextToken",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    5,
+);
+static LISTDEPLOYMENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentsInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTDEPLOYMENTSINPUT_MEMBER_APPLICATION_NAME,
+        &LISTDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_GROUP_NAME,
+        &LISTDEPLOYMENTSINPUT_MEMBER_EXTERNAL_ID,
+        &LISTDEPLOYMENTSINPUT_MEMBER_INCLUDE_ONLY_STATUSES,
+        &LISTDEPLOYMENTSINPUT_MEMBER_CREATE_TIME_RANGE,
+        &LISTDEPLOYMENTSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListDeploymentsInput");
+impl ListDeploymentsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTDEPLOYMENTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListDeploymentsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.application_name {
+            ser.write_string(&LISTDEPLOYMENTSINPUT_MEMBER_APPLICATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.deployment_group_name {
+            ser.write_string(&LISTDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.external_id {
+            ser.write_string(&LISTDEPLOYMENTSINPUT_MEMBER_EXTERNAL_ID, val)?;
+        }
+        if let Some(ref val) = self.include_only_statuses {
+            ser.write_list(
+                &LISTDEPLOYMENTSINPUT_MEMBER_INCLUDE_ONLY_STATUSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.create_time_range {
+            ser.write_struct(&LISTDEPLOYMENTSINPUT_MEMBER_CREATE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTDEPLOYMENTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTDEPLOYMENTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include_only_statuses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeploymentStatus::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time_range = Some(crate::types::TimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListDeploymentsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
     pub fn builder() -> crate::operation::list_deployments::builders::ListDeploymentsInputBuilder {

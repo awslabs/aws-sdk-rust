@@ -120,6 +120,241 @@ impl S3DataSource {
         self.hub_access_config.as_ref()
     }
 }
+static S3DATASOURCE_MEMBER_S3_DATA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3DataSource$S3DataType",
+        "com.amazonaws.sagemaker",
+        "S3DataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3DataType",
+    0,
+);
+static S3DATASOURCE_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#S3DataSource$S3Uri", "com.amazonaws.sagemaker", "S3DataSource"),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    1,
+);
+static S3DATASOURCE_MEMBER_S3_DATA_DISTRIBUTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3DataSource$S3DataDistributionType",
+        "com.amazonaws.sagemaker",
+        "S3DataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3DataDistributionType",
+    2,
+);
+static S3DATASOURCE_MEMBER_ATTRIBUTE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AttributeNames$member",
+        "com.amazonaws.sagemaker",
+        "AttributeNames",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static S3DATASOURCE_MEMBER_ATTRIBUTE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3DataSource$AttributeNames",
+        "com.amazonaws.sagemaker",
+        "S3DataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AttributeNames",
+    3,
+)
+.with_list_member(&S3DATASOURCE_MEMBER_ATTRIBUTE_NAMES_MEMBER);
+static S3DATASOURCE_MEMBER_INSTANCE_GROUP_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceGroupNames$member",
+        "com.amazonaws.sagemaker",
+        "InstanceGroupNames",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static S3DATASOURCE_MEMBER_INSTANCE_GROUP_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3DataSource$InstanceGroupNames",
+        "com.amazonaws.sagemaker",
+        "S3DataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceGroupNames",
+    4,
+)
+.with_list_member(&S3DATASOURCE_MEMBER_INSTANCE_GROUP_NAMES_MEMBER);
+static S3DATASOURCE_MEMBER_MODEL_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3DataSource$ModelAccessConfig",
+        "com.amazonaws.sagemaker",
+        "S3DataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelAccessConfig",
+    5,
+);
+static S3DATASOURCE_MEMBER_HUB_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3DataSource$HubAccessConfig",
+        "com.amazonaws.sagemaker",
+        "S3DataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HubAccessConfig",
+    6,
+);
+static S3DATASOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#S3DataSource", "com.amazonaws.sagemaker", "S3DataSource"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3DATASOURCE_MEMBER_S3_DATA_TYPE,
+        &S3DATASOURCE_MEMBER_S3_URI,
+        &S3DATASOURCE_MEMBER_S3_DATA_DISTRIBUTION_TYPE,
+        &S3DATASOURCE_MEMBER_ATTRIBUTE_NAMES,
+        &S3DATASOURCE_MEMBER_INSTANCE_GROUP_NAMES,
+        &S3DATASOURCE_MEMBER_MODEL_ACCESS_CONFIG,
+        &S3DATASOURCE_MEMBER_HUB_ACCESS_CONFIG,
+    ],
+);
+impl S3DataSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3DATASOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3DataSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_data_type {
+            ser.write_string(&S3DATASOURCE_MEMBER_S3_DATA_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_uri {
+            ser.write_string(&S3DATASOURCE_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.s3_data_distribution_type {
+            ser.write_string(&S3DATASOURCE_MEMBER_S3_DATA_DISTRIBUTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.attribute_names {
+            ser.write_list(
+                &S3DATASOURCE_MEMBER_ATTRIBUTE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_group_names {
+            ser.write_list(
+                &S3DATASOURCE_MEMBER_INSTANCE_GROUP_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.model_access_config {
+            ser.write_struct(&S3DATASOURCE_MEMBER_MODEL_ACCESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.hub_access_config {
+            ser.write_struct(&S3DATASOURCE_MEMBER_HUB_ACCESS_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3DataSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3DATASOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_data_type = Some(crate::types::S3DataType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_data_distribution_type = Some(crate::types::S3DataDistribution::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attribute_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_group_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_access_config = Some(crate::types::ModelAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_access_config = Some(crate::types::HubAccessConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3DataSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl S3DataSource {
     /// Creates a new builder-style object to manufacture [`S3DataSource`](crate::types::S3DataSource).
     pub fn builder() -> crate::types::builders::S3DataSourceBuilder {

@@ -36,6 +36,151 @@ impl UpdatePolicyInput {
         self.content.as_deref()
     }
 }
+static UPDATEPOLICYINPUT_MEMBER_POLICY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdatePolicyInput$PolicyId",
+        "com.amazonaws.organizations.synthetic",
+        "UpdatePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyId",
+    0,
+);
+static UPDATEPOLICYINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdatePolicyInput$Name",
+        "com.amazonaws.organizations.synthetic",
+        "UpdatePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static UPDATEPOLICYINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdatePolicyInput$Description",
+        "com.amazonaws.organizations.synthetic",
+        "UpdatePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEPOLICYINPUT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdatePolicyInput$Content",
+        "com.amazonaws.organizations.synthetic",
+        "UpdatePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    3,
+);
+static UPDATEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdatePolicyInput",
+        "com.amazonaws.organizations.synthetic",
+        "UpdatePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPOLICYINPUT_MEMBER_POLICY_ID,
+        &UPDATEPOLICYINPUT_MEMBER_NAME,
+        &UPDATEPOLICYINPUT_MEMBER_DESCRIPTION,
+        &UPDATEPOLICYINPUT_MEMBER_CONTENT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdatePolicyRequest");
+impl UpdatePolicyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPOLICYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePolicyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.policy_id {
+            ser.write_string(&UPDATEPOLICYINPUT_MEMBER_POLICY_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEPOLICYINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEPOLICYINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&UPDATEPOLICYINPUT_MEMBER_CONTENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_policy::builders::UpdatePolicyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPOLICYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdatePolicyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.policy_id = builder.policy_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdatePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
     pub fn builder() -> crate::operation::update_policy::builders::UpdatePolicyInputBuilder {

@@ -106,6 +106,321 @@ impl CreateEntityRecognizerInput {
         self.model_policy.as_deref()
     }
 }
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_RECOGNIZER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$RecognizerName",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RecognizerName",
+    0,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$VersionName",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    1,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    2,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    3,
+)
+.with_list_member(&CREATEENTITYRECOGNIZERINPUT_MEMBER_TAGS_MEMBER);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$InputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    4,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    5,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    6,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$VolumeKmsKeyId",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    7,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$VpcConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    8,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_MODEL_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$ModelKmsKeyId",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelKmsKeyId",
+    9,
+);
+static CREATEENTITYRECOGNIZERINPUT_MEMBER_MODEL_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput$ModelPolicy",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPolicy",
+    10,
+);
+static CREATEENTITYRECOGNIZERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEntityRecognizerInput",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEntityRecognizerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_RECOGNIZER_NAME,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_VERSION_NAME,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_TAGS,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_LANGUAGE_CODE,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_VOLUME_KMS_KEY_ID,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_VPC_CONFIG,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_MODEL_KMS_KEY_ID,
+        &CREATEENTITYRECOGNIZERINPUT_MEMBER_MODEL_POLICY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateEntityRecognizerRequest");
+impl CreateEntityRecognizerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEENTITYRECOGNIZERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateEntityRecognizerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.recognizer_name {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_RECOGNIZER_NAME, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEENTITYRECOGNIZERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&CREATEENTITYRECOGNIZERINPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATEENTITYRECOGNIZERINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_kms_key_id {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_MODEL_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.model_policy {
+            ser.write_string(&CREATEENTITYRECOGNIZERINPUT_MEMBER_MODEL_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEENTITYRECOGNIZERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recognizer_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::EntityRecognizerInputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateEntityRecognizerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.recognizer_name = builder.recognizer_name.or(Some(String::new()));
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateEntityRecognizerInput {
     /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerInput`](crate::operation::create_entity_recognizer::CreateEntityRecognizerInput).
     pub fn builder() -> crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerInputBuilder {

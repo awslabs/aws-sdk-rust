@@ -38,6 +38,172 @@ impl UpdateGatewayInformationInput {
         self.gateway_capacity.as_ref()
     }
 }
+static UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateGatewayInformationInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateGatewayInformationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateGatewayInformationInput$GatewayName",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateGatewayInformationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayName",
+    1,
+);
+static UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_TIMEZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateGatewayInformationInput$GatewayTimezone",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateGatewayInformationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayTimezone",
+    2,
+);
+static UPDATEGATEWAYINFORMATIONINPUT_MEMBER_CLOUD_WATCH_LOG_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateGatewayInformationInput$CloudWatchLogGroupARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateGatewayInformationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudWatchLogGroupARN",
+    3,
+);
+static UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateGatewayInformationInput$GatewayCapacity",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateGatewayInformationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayCapacity",
+    4,
+);
+static UPDATEGATEWAYINFORMATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateGatewayInformationInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateGatewayInformationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_ARN,
+        &UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_NAME,
+        &UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_TIMEZONE,
+        &UPDATEGATEWAYINFORMATIONINPUT_MEMBER_CLOUD_WATCH_LOG_GROUP_ARN,
+        &UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_CAPACITY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateGatewayInformationInput");
+impl UpdateGatewayInformationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEGATEWAYINFORMATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateGatewayInformationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.gateway_name {
+            ser.write_string(&UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.gateway_timezone {
+            ser.write_string(&UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_TIMEZONE, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_log_group_arn {
+            ser.write_string(&UPDATEGATEWAYINFORMATIONINPUT_MEMBER_CLOUD_WATCH_LOG_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.gateway_capacity {
+            ser.write_string(&UPDATEGATEWAYINFORMATIONINPUT_MEMBER_GATEWAY_CAPACITY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEGATEWAYINFORMATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_timezone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_log_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_capacity = Some(crate::types::GatewayCapacity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateGatewayInformationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.gateway_arn = builder.gateway_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateGatewayInformationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
     pub fn builder() -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder {

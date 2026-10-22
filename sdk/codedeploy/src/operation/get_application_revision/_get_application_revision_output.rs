@@ -26,6 +26,128 @@ impl GetApplicationRevisionOutput {
         self.revision_info.as_ref()
     }
 }
+static GETAPPLICATIONREVISIONOUTPUT_MEMBER_APPLICATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#GetApplicationRevisionOutput$applicationName",
+        "com.amazonaws.codedeploy.synthetic",
+        "GetApplicationRevisionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applicationName",
+    0,
+);
+static GETAPPLICATIONREVISIONOUTPUT_MEMBER_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#GetApplicationRevisionOutput$revision",
+        "com.amazonaws.codedeploy.synthetic",
+        "GetApplicationRevisionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "revision",
+    1,
+);
+static GETAPPLICATIONREVISIONOUTPUT_MEMBER_REVISION_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#GetApplicationRevisionOutput$revisionInfo",
+        "com.amazonaws.codedeploy.synthetic",
+        "GetApplicationRevisionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "revisionInfo",
+    2,
+);
+static GETAPPLICATIONREVISIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#GetApplicationRevisionOutput",
+        "com.amazonaws.codedeploy.synthetic",
+        "GetApplicationRevisionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETAPPLICATIONREVISIONOUTPUT_MEMBER_APPLICATION_NAME,
+        &GETAPPLICATIONREVISIONOUTPUT_MEMBER_REVISION,
+        &GETAPPLICATIONREVISIONOUTPUT_MEMBER_REVISION_INFO,
+    ],
+)
+.with_original_name("GetApplicationRevisionOutput");
+impl GetApplicationRevisionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETAPPLICATIONREVISIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetApplicationRevisionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.application_name {
+            ser.write_string(&GETAPPLICATIONREVISIONOUTPUT_MEMBER_APPLICATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.revision {
+            ser.write_struct(&GETAPPLICATIONREVISIONOUTPUT_MEMBER_REVISION, val)?;
+        }
+        if let Some(ref val) = self.revision_info {
+            ser.write_struct(&GETAPPLICATIONREVISIONOUTPUT_MEMBER_REVISION_INFO, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_application_revision::builders::GetApplicationRevisionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETAPPLICATIONREVISIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision = Some(crate::types::RevisionLocation::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_info = Some(crate::types::GenericRevisionInfo::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetApplicationRevisionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetApplicationRevisionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

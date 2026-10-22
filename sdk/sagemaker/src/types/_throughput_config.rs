@@ -30,6 +30,123 @@ impl ThroughputConfig {
         self.provisioned_write_capacity_units
     }
 }
+static THROUGHPUTCONFIG_MEMBER_THROUGHPUT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ThroughputConfig$ThroughputMode",
+        "com.amazonaws.sagemaker",
+        "ThroughputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ThroughputMode",
+    0,
+);
+static THROUGHPUTCONFIG_MEMBER_PROVISIONED_READ_CAPACITY_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ThroughputConfig$ProvisionedReadCapacityUnits",
+        "com.amazonaws.sagemaker",
+        "ThroughputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ProvisionedReadCapacityUnits",
+    1,
+);
+static THROUGHPUTCONFIG_MEMBER_PROVISIONED_WRITE_CAPACITY_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ThroughputConfig$ProvisionedWriteCapacityUnits",
+        "com.amazonaws.sagemaker",
+        "ThroughputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ProvisionedWriteCapacityUnits",
+    2,
+);
+static THROUGHPUTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ThroughputConfig", "com.amazonaws.sagemaker", "ThroughputConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &THROUGHPUTCONFIG_MEMBER_THROUGHPUT_MODE,
+        &THROUGHPUTCONFIG_MEMBER_PROVISIONED_READ_CAPACITY_UNITS,
+        &THROUGHPUTCONFIG_MEMBER_PROVISIONED_WRITE_CAPACITY_UNITS,
+    ],
+);
+impl ThroughputConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &THROUGHPUTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ThroughputConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.throughput_mode {
+            ser.write_string(&THROUGHPUTCONFIG_MEMBER_THROUGHPUT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.provisioned_read_capacity_units {
+            ser.write_integer(&THROUGHPUTCONFIG_MEMBER_PROVISIONED_READ_CAPACITY_UNITS, *val)?;
+        }
+        if let Some(ref val) = self.provisioned_write_capacity_units {
+            ser.write_integer(&THROUGHPUTCONFIG_MEMBER_PROVISIONED_WRITE_CAPACITY_UNITS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ThroughputConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&THROUGHPUTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_mode = Some(crate::types::ThroughputMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provisioned_read_capacity_units = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provisioned_write_capacity_units = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ThroughputConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ThroughputConfig {
     /// Creates a new builder-style object to manufacture [`ThroughputConfig`](crate::types::ThroughputConfig).
     pub fn builder() -> crate::types::builders::ThroughputConfigBuilder {

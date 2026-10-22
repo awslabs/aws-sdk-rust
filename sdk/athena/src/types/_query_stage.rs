@@ -63,6 +63,235 @@ impl QueryStage {
         self.sub_stages.as_deref().unwrap_or_default()
     }
 }
+static QUERYSTAGE_MEMBER_STAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$StageId", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "StageId",
+    0,
+);
+static QUERYSTAGE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$State", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    1,
+);
+static QUERYSTAGE_MEMBER_OUTPUT_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$OutputBytes", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "OutputBytes",
+    2,
+);
+static QUERYSTAGE_MEMBER_OUTPUT_ROWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$OutputRows", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "OutputRows",
+    3,
+);
+static QUERYSTAGE_MEMBER_INPUT_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$InputBytes", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "InputBytes",
+    4,
+);
+static QUERYSTAGE_MEMBER_INPUT_ROWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$InputRows", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "InputRows",
+    5,
+);
+static QUERYSTAGE_MEMBER_EXECUTION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$ExecutionTime", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ExecutionTime",
+    6,
+);
+static QUERYSTAGE_MEMBER_QUERY_STAGE_PLAN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$QueryStagePlan", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "QueryStagePlan",
+    7,
+);
+static QUERYSTAGE_MEMBER_SUB_STAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStages$member", "com.amazonaws.athena", "QueryStages"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static QUERYSTAGE_MEMBER_SUB_STAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage$SubStages", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubStages",
+    8,
+)
+.with_list_member(&QUERYSTAGE_MEMBER_SUB_STAGES_MEMBER);
+static QUERYSTAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStage", "com.amazonaws.athena", "QueryStage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYSTAGE_MEMBER_STAGE_ID,
+        &QUERYSTAGE_MEMBER_STATE,
+        &QUERYSTAGE_MEMBER_OUTPUT_BYTES,
+        &QUERYSTAGE_MEMBER_OUTPUT_ROWS,
+        &QUERYSTAGE_MEMBER_INPUT_BYTES,
+        &QUERYSTAGE_MEMBER_INPUT_ROWS,
+        &QUERYSTAGE_MEMBER_EXECUTION_TIME,
+        &QUERYSTAGE_MEMBER_QUERY_STAGE_PLAN,
+        &QUERYSTAGE_MEMBER_SUB_STAGES,
+    ],
+);
+impl QueryStage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYSTAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryStage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stage_id {
+            ser.write_long(&QUERYSTAGE_MEMBER_STAGE_ID, *val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&QUERYSTAGE_MEMBER_STATE, val)?;
+        }
+        if let Some(ref val) = self.output_bytes {
+            ser.write_long(&QUERYSTAGE_MEMBER_OUTPUT_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.output_rows {
+            ser.write_long(&QUERYSTAGE_MEMBER_OUTPUT_ROWS, *val)?;
+        }
+        if let Some(ref val) = self.input_bytes {
+            ser.write_long(&QUERYSTAGE_MEMBER_INPUT_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.input_rows {
+            ser.write_long(&QUERYSTAGE_MEMBER_INPUT_ROWS, *val)?;
+        }
+        if let Some(ref val) = self.execution_time {
+            ser.write_long(&QUERYSTAGE_MEMBER_EXECUTION_TIME, *val)?;
+        }
+        if let Some(ref val) = self.query_stage_plan {
+            ser.write_struct(&QUERYSTAGE_MEMBER_QUERY_STAGE_PLAN, val)?;
+        }
+        if let Some(ref val) = self.sub_stages {
+            ser.write_list(
+                &QUERYSTAGE_MEMBER_SUB_STAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::QueryStage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QueryStageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYSTAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_id = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_rows = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_rows = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_time = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_stage_plan = Some(crate::types::QueryStagePlanNode::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sub_stages = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::QueryStage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryStage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QueryStage {
     /// Creates a new builder-style object to manufacture [`QueryStage`](crate::types::QueryStage).
     pub fn builder() -> crate::types::builders::QueryStageBuilder {

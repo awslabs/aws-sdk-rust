@@ -37,6 +37,169 @@ impl EntityRecognizerSummary {
         self.latest_version_status.as_ref()
     }
 }
+static ENTITYRECOGNIZERSUMMARY_MEMBER_RECOGNIZER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerSummary$RecognizerName",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RecognizerName",
+    0,
+);
+static ENTITYRECOGNIZERSUMMARY_MEMBER_NUMBER_OF_VERSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerSummary$NumberOfVersions",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "NumberOfVersions",
+    1,
+);
+static ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerSummary$LatestVersionCreatedAt",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LatestVersionCreatedAt",
+    2,
+);
+static ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerSummary$LatestVersionName",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LatestVersionName",
+    3,
+);
+static ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerSummary$LatestVersionStatus",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LatestVersionStatus",
+    4,
+);
+static ENTITYRECOGNIZERSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerSummary",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITYRECOGNIZERSUMMARY_MEMBER_RECOGNIZER_NAME,
+        &ENTITYRECOGNIZERSUMMARY_MEMBER_NUMBER_OF_VERSIONS,
+        &ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_CREATED_AT,
+        &ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_NAME,
+        &ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_STATUS,
+    ],
+);
+impl EntityRecognizerSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITYRECOGNIZERSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntityRecognizerSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.recognizer_name {
+            ser.write_string(&ENTITYRECOGNIZERSUMMARY_MEMBER_RECOGNIZER_NAME, val)?;
+        }
+        if let Some(ref val) = self.number_of_versions {
+            ser.write_integer(&ENTITYRECOGNIZERSUMMARY_MEMBER_NUMBER_OF_VERSIONS, *val)?;
+        }
+        if let Some(ref val) = self.latest_version_created_at {
+            ser.write_timestamp(&ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.latest_version_name {
+            ser.write_string(&ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.latest_version_status {
+            ser.write_string(&ENTITYRECOGNIZERSUMMARY_MEMBER_LATEST_VERSION_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntityRecognizerSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITYRECOGNIZERSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recognizer_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.number_of_versions = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_version_created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_version_status = Some(crate::types::ModelStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntityRecognizerSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EntityRecognizerSummary {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerSummary`](crate::types::EntityRecognizerSummary).
     pub fn builder() -> crate::types::builders::EntityRecognizerSummaryBuilder {

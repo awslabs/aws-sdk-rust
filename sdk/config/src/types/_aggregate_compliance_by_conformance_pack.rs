@@ -32,6 +32,149 @@ impl AggregateComplianceByConformancePack {
         self.aws_region.as_deref()
     }
 }
+static AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_CONFORMANCE_PACK_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#AggregateComplianceByConformancePack$ConformancePackName",
+            "com.amazonaws.configservice",
+            "AggregateComplianceByConformancePack",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConformancePackName",
+        0,
+    );
+static AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_COMPLIANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateComplianceByConformancePack$Compliance",
+        "com.amazonaws.configservice",
+        "AggregateComplianceByConformancePack",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Compliance",
+    1,
+);
+static AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateComplianceByConformancePack$AccountId",
+        "com.amazonaws.configservice",
+        "AggregateComplianceByConformancePack",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountId",
+    2,
+);
+static AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_AWS_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateComplianceByConformancePack$AwsRegion",
+        "com.amazonaws.configservice",
+        "AggregateComplianceByConformancePack",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AwsRegion",
+    3,
+);
+static AGGREGATECOMPLIANCEBYCONFORMANCEPACK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateComplianceByConformancePack",
+        "com.amazonaws.configservice",
+        "AggregateComplianceByConformancePack",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_CONFORMANCE_PACK_NAME,
+        &AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_COMPLIANCE,
+        &AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_ACCOUNT_ID,
+        &AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_AWS_REGION,
+    ],
+);
+impl AggregateComplianceByConformancePack {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AGGREGATECOMPLIANCEBYCONFORMANCEPACK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AggregateComplianceByConformancePack {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.conformance_pack_name {
+            ser.write_string(&AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_CONFORMANCE_PACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.compliance {
+            ser.write_struct(&AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_COMPLIANCE, val)?;
+        }
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.aws_region {
+            ser.write_string(&AGGREGATECOMPLIANCEBYCONFORMANCEPACK_MEMBER_AWS_REGION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AggregateComplianceByConformancePackBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AGGREGATECOMPLIANCEBYCONFORMANCEPACK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conformance_pack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance = Some(crate::types::AggregateConformancePackCompliance::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aws_region = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AggregateComplianceByConformancePack {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AggregateComplianceByConformancePack {
     /// Creates a new builder-style object to manufacture [`AggregateComplianceByConformancePack`](crate::types::AggregateComplianceByConformancePack).
     pub fn builder() -> crate::types::builders::AggregateComplianceByConformancePackBuilder {

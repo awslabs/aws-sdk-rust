@@ -39,6 +39,195 @@ impl RemediationExecutionStatus {
         self.last_updated_time.as_ref()
     }
 }
+static REMEDIATIONEXECUTIONSTATUS_MEMBER_RESOURCE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStatus$ResourceKey",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceKey",
+    0,
+);
+static REMEDIATIONEXECUTIONSTATUS_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStatus$State",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    1,
+);
+static REMEDIATIONEXECUTIONSTATUS_MEMBER_STEP_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionSteps$member",
+        "com.amazonaws.configservice",
+        "RemediationExecutionSteps",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REMEDIATIONEXECUTIONSTATUS_MEMBER_STEP_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStatus$StepDetails",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StepDetails",
+    2,
+)
+.with_list_member(&REMEDIATIONEXECUTIONSTATUS_MEMBER_STEP_DETAILS_MEMBER);
+static REMEDIATIONEXECUTIONSTATUS_MEMBER_INVOCATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStatus$InvocationTime",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "InvocationTime",
+    3,
+);
+static REMEDIATIONEXECUTIONSTATUS_MEMBER_LAST_UPDATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStatus$LastUpdatedTime",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedTime",
+    4,
+);
+static REMEDIATIONEXECUTIONSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStatus",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REMEDIATIONEXECUTIONSTATUS_MEMBER_RESOURCE_KEY,
+        &REMEDIATIONEXECUTIONSTATUS_MEMBER_STATE,
+        &REMEDIATIONEXECUTIONSTATUS_MEMBER_STEP_DETAILS,
+        &REMEDIATIONEXECUTIONSTATUS_MEMBER_INVOCATION_TIME,
+        &REMEDIATIONEXECUTIONSTATUS_MEMBER_LAST_UPDATED_TIME,
+    ],
+);
+impl RemediationExecutionStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMEDIATIONEXECUTIONSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemediationExecutionStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_key {
+            ser.write_struct(&REMEDIATIONEXECUTIONSTATUS_MEMBER_RESOURCE_KEY, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&REMEDIATIONEXECUTIONSTATUS_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.step_details {
+            ser.write_list(
+                &REMEDIATIONEXECUTIONSTATUS_MEMBER_STEP_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RemediationExecutionStep::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.invocation_time {
+            ser.write_timestamp(&REMEDIATIONEXECUTIONSTATUS_MEMBER_INVOCATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_updated_time {
+            ser.write_timestamp(&REMEDIATIONEXECUTIONSTATUS_MEMBER_LAST_UPDATED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RemediationExecutionStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REMEDIATIONEXECUTIONSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_key = Some(crate::types::ResourceKey::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::RemediationExecutionState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.step_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RemediationExecutionStep::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.invocation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RemediationExecutionStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RemediationExecutionStatus {
     /// Creates a new builder-style object to manufacture [`RemediationExecutionStatus`](crate::types::RemediationExecutionStatus).
     pub fn builder() -> crate::types::builders::RemediationExecutionStatusBuilder {

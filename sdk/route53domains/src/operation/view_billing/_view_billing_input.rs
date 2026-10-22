@@ -35,6 +35,150 @@ impl ViewBillingInput {
         self.max_items
     }
 }
+static VIEWBILLINGINPUT_MEMBER_START: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ViewBillingInput$Start",
+        "com.amazonaws.route53domains.synthetic",
+        "ViewBillingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Start",
+    0,
+);
+static VIEWBILLINGINPUT_MEMBER_END: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ViewBillingInput$End",
+        "com.amazonaws.route53domains.synthetic",
+        "ViewBillingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "End",
+    1,
+);
+static VIEWBILLINGINPUT_MEMBER_MARKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ViewBillingInput$Marker",
+        "com.amazonaws.route53domains.synthetic",
+        "ViewBillingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Marker",
+    2,
+);
+static VIEWBILLINGINPUT_MEMBER_MAX_ITEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ViewBillingInput$MaxItems",
+        "com.amazonaws.route53domains.synthetic",
+        "ViewBillingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxItems",
+    3,
+);
+static VIEWBILLINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ViewBillingInput",
+        "com.amazonaws.route53domains.synthetic",
+        "ViewBillingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VIEWBILLINGINPUT_MEMBER_START,
+        &VIEWBILLINGINPUT_MEMBER_END,
+        &VIEWBILLINGINPUT_MEMBER_MARKER,
+        &VIEWBILLINGINPUT_MEMBER_MAX_ITEMS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ViewBillingRequest");
+impl ViewBillingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VIEWBILLINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ViewBillingInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.start {
+            ser.write_timestamp(&VIEWBILLINGINPUT_MEMBER_START, val)?;
+        }
+        if let Some(ref val) = self.end {
+            ser.write_timestamp(&VIEWBILLINGINPUT_MEMBER_END, val)?;
+        }
+        if let Some(ref val) = self.marker {
+            ser.write_string(&VIEWBILLINGINPUT_MEMBER_MARKER, val)?;
+        }
+        if let Some(ref val) = self.max_items {
+            ser.write_integer(&VIEWBILLINGINPUT_MEMBER_MAX_ITEMS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::view_billing::builders::ViewBillingInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VIEWBILLINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marker = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_items = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ViewBillingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ViewBillingInput {
     /// Creates a new builder-style object to manufacture [`ViewBillingInput`](crate::operation::view_billing::ViewBillingInput).
     pub fn builder() -> crate::operation::view_billing::builders::ViewBillingInputBuilder {

@@ -37,6 +37,169 @@ impl DataCaptureConfigSummary {
         self.kms_key_id.as_deref()
     }
 }
+static DATACAPTURECONFIGSUMMARY_MEMBER_ENABLE_CAPTURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DataCaptureConfigSummary$EnableCapture",
+        "com.amazonaws.sagemaker",
+        "DataCaptureConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableCapture",
+    0,
+);
+static DATACAPTURECONFIGSUMMARY_MEMBER_CAPTURE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DataCaptureConfigSummary$CaptureStatus",
+        "com.amazonaws.sagemaker",
+        "DataCaptureConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CaptureStatus",
+    1,
+);
+static DATACAPTURECONFIGSUMMARY_MEMBER_CURRENT_SAMPLING_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DataCaptureConfigSummary$CurrentSamplingPercentage",
+        "com.amazonaws.sagemaker",
+        "DataCaptureConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CurrentSamplingPercentage",
+    2,
+);
+static DATACAPTURECONFIGSUMMARY_MEMBER_DESTINATION_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DataCaptureConfigSummary$DestinationS3Uri",
+        "com.amazonaws.sagemaker",
+        "DataCaptureConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationS3Uri",
+    3,
+);
+static DATACAPTURECONFIGSUMMARY_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DataCaptureConfigSummary$KmsKeyId",
+        "com.amazonaws.sagemaker",
+        "DataCaptureConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    4,
+);
+static DATACAPTURECONFIGSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DataCaptureConfigSummary",
+        "com.amazonaws.sagemaker",
+        "DataCaptureConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATACAPTURECONFIGSUMMARY_MEMBER_ENABLE_CAPTURE,
+        &DATACAPTURECONFIGSUMMARY_MEMBER_CAPTURE_STATUS,
+        &DATACAPTURECONFIGSUMMARY_MEMBER_CURRENT_SAMPLING_PERCENTAGE,
+        &DATACAPTURECONFIGSUMMARY_MEMBER_DESTINATION_S3_URI,
+        &DATACAPTURECONFIGSUMMARY_MEMBER_KMS_KEY_ID,
+    ],
+);
+impl DataCaptureConfigSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATACAPTURECONFIGSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DataCaptureConfigSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_capture {
+            ser.write_boolean(&DATACAPTURECONFIGSUMMARY_MEMBER_ENABLE_CAPTURE, *val)?;
+        }
+        if let Some(ref val) = self.capture_status {
+            ser.write_string(&DATACAPTURECONFIGSUMMARY_MEMBER_CAPTURE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.current_sampling_percentage {
+            ser.write_integer(&DATACAPTURECONFIGSUMMARY_MEMBER_CURRENT_SAMPLING_PERCENTAGE, *val)?;
+        }
+        if let Some(ref val) = self.destination_s3_uri {
+            ser.write_string(&DATACAPTURECONFIGSUMMARY_MEMBER_DESTINATION_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&DATACAPTURECONFIGSUMMARY_MEMBER_KMS_KEY_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DataCaptureConfigSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATACAPTURECONFIGSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_capture = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capture_status = Some(crate::types::CaptureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_sampling_percentage = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DataCaptureConfigSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DataCaptureConfigSummary {
     /// Creates a new builder-style object to manufacture [`DataCaptureConfigSummary`](crate::types::DataCaptureConfigSummary).
     pub fn builder() -> crate::types::builders::DataCaptureConfigSummaryBuilder {

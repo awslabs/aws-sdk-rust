@@ -110,6 +110,141 @@ impl MatchingRuleStatement {
         self.value_to_match.deref()
     }
 }
+static MATCHINGRULESTATEMENT_MEMBER_KEY_TO_MATCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MatchingRuleStatement$KeyToMatch",
+        "com.amazonaws.licensemanager",
+        "MatchingRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyToMatch",
+    0,
+);
+static MATCHINGRULESTATEMENT_MEMBER_CONSTRAINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MatchingRuleStatement$Constraint",
+        "com.amazonaws.licensemanager",
+        "MatchingRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Constraint",
+    1,
+);
+static MATCHINGRULESTATEMENT_MEMBER_VALUE_TO_MATCH_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#StringList$member",
+        "com.amazonaws.licensemanager",
+        "StringList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static MATCHINGRULESTATEMENT_MEMBER_VALUE_TO_MATCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MatchingRuleStatement$ValueToMatch",
+        "com.amazonaws.licensemanager",
+        "MatchingRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ValueToMatch",
+    2,
+)
+.with_list_member(&MATCHINGRULESTATEMENT_MEMBER_VALUE_TO_MATCH_MEMBER);
+static MATCHINGRULESTATEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MatchingRuleStatement",
+        "com.amazonaws.licensemanager",
+        "MatchingRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MATCHINGRULESTATEMENT_MEMBER_KEY_TO_MATCH,
+        &MATCHINGRULESTATEMENT_MEMBER_CONSTRAINT,
+        &MATCHINGRULESTATEMENT_MEMBER_VALUE_TO_MATCH,
+    ],
+);
+impl MatchingRuleStatement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MATCHINGRULESTATEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MatchingRuleStatement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key_to_match;
+            ser.write_string(&MATCHINGRULESTATEMENT_MEMBER_KEY_TO_MATCH, val)?;
+        }
+        {
+            let val = &self.constraint;
+            ser.write_string(&MATCHINGRULESTATEMENT_MEMBER_CONSTRAINT, val)?;
+        }
+        {
+            let val = &self.value_to_match;
+
+            ser.write_list(
+                &MATCHINGRULESTATEMENT_MEMBER_VALUE_TO_MATCH,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MatchingRuleStatementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MATCHINGRULESTATEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.key_to_match = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.constraint = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.value_to_match = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MatchingRuleStatement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.key_to_match = builder.key_to_match.or(Some(String::new()));
+        builder.constraint = builder.constraint.or(Some(String::new()));
+        builder.value_to_match = builder.value_to_match.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MatchingRuleStatement {
     /// Creates a new builder-style object to manufacture [`MatchingRuleStatement`](crate::types::MatchingRuleStatement).
     pub fn builder() -> crate::types::builders::MatchingRuleStatementBuilder {

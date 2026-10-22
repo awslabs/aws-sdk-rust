@@ -16,6 +16,9 @@ pub mod batch_get_lifecycle_policy;
 /// Types for the `BatchGetVpcEndpoint` operation.
 pub mod batch_get_vpc_endpoint;
 
+/// Types for the `CancelIngestionJob` operation.
+pub mod cancel_ingestion_job;
+
 /// Types for the `CreateAccessPolicy` operation.
 pub mod create_access_policy;
 
@@ -27,6 +30,12 @@ pub mod create_collection_group;
 
 /// Types for the `CreateIndex` operation.
 pub mod create_index;
+
+/// Types for the `CreateIngestionJob` operation.
+pub mod create_ingestion_job;
+
+/// Types for the `CreateIngestionStream` operation.
+pub mod create_ingestion_stream;
 
 /// Types for the `CreateLifecyclePolicy` operation.
 pub mod create_lifecycle_policy;
@@ -52,6 +61,9 @@ pub mod delete_collection_group;
 /// Types for the `DeleteIndex` operation.
 pub mod delete_index;
 
+/// Types for the `DeleteIngestionStream` operation.
+pub mod delete_ingestion_stream;
+
 /// Types for the `DeleteLifecyclePolicy` operation.
 pub mod delete_lifecycle_policy;
 
@@ -73,6 +85,12 @@ pub mod get_account_settings;
 /// Types for the `GetIndex` operation.
 pub mod get_index;
 
+/// Types for the `GetIngestionJob` operation.
+pub mod get_ingestion_job;
+
+/// Types for the `GetIngestionStream` operation.
+pub mod get_ingestion_stream;
+
 /// Types for the `GetPoliciesStats` operation.
 pub mod get_policies_stats;
 
@@ -90,6 +108,12 @@ pub mod list_collection_groups;
 
 /// Types for the `ListCollections` operation.
 pub mod list_collections;
+
+/// Types for the `ListIngestionJobs` operation.
+pub mod list_ingestion_jobs;
+
+/// Types for the `ListIngestionStreams` operation.
+pub mod list_ingestion_streams;
 
 /// Types for the `ListLifecyclePolicies` operation.
 pub mod list_lifecycle_policies;

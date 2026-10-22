@@ -55,6 +55,123 @@ impl MetricsConfig {
         self.metric_publish_frequency_in_seconds
     }
 }
+static METRICSCONFIG_MEMBER_ENABLE_ENHANCED_METRICS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricsConfig$EnableEnhancedMetrics",
+        "com.amazonaws.sagemaker",
+        "MetricsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableEnhancedMetrics",
+    0,
+);
+static METRICSCONFIG_MEMBER_ENABLE_DETAILED_OBSERVABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricsConfig$EnableDetailedObservability",
+        "com.amazonaws.sagemaker",
+        "MetricsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableDetailedObservability",
+    1,
+);
+static METRICSCONFIG_MEMBER_METRIC_PUBLISH_FREQUENCY_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricsConfig$MetricPublishFrequencyInSeconds",
+        "com.amazonaws.sagemaker",
+        "MetricsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MetricPublishFrequencyInSeconds",
+    2,
+);
+static METRICSCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricsConfig", "com.amazonaws.sagemaker", "MetricsConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &METRICSCONFIG_MEMBER_ENABLE_ENHANCED_METRICS,
+        &METRICSCONFIG_MEMBER_ENABLE_DETAILED_OBSERVABILITY,
+        &METRICSCONFIG_MEMBER_METRIC_PUBLISH_FREQUENCY_IN_SECONDS,
+    ],
+);
+impl MetricsConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METRICSCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MetricsConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_enhanced_metrics {
+            ser.write_boolean(&METRICSCONFIG_MEMBER_ENABLE_ENHANCED_METRICS, *val)?;
+        }
+        if let Some(ref val) = self.enable_detailed_observability {
+            ser.write_boolean(&METRICSCONFIG_MEMBER_ENABLE_DETAILED_OBSERVABILITY, *val)?;
+        }
+        if let Some(ref val) = self.metric_publish_frequency_in_seconds {
+            ser.write_integer(&METRICSCONFIG_MEMBER_METRIC_PUBLISH_FREQUENCY_IN_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MetricsConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METRICSCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_enhanced_metrics = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_detailed_observability = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_publish_frequency_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MetricsConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MetricsConfig {
     /// Creates a new builder-style object to manufacture [`MetricsConfig`](crate::types::MetricsConfig).
     pub fn builder() -> crate::types::builders::MetricsConfigBuilder {

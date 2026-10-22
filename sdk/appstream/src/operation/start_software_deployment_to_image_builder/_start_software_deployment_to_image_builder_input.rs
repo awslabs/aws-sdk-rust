@@ -18,6 +18,111 @@ impl StartSoftwareDeploymentToImageBuilderInput {
         self.retry_failed_deployments
     }
 }
+static STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_MEMBER_IMAGE_BUILDER_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.appstream.synthetic#StartSoftwareDeploymentToImageBuilderInput$ImageBuilderName",
+            "com.amazonaws.appstream.synthetic",
+            "StartSoftwareDeploymentToImageBuilderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ImageBuilderName",
+        0,
+    );
+static STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_MEMBER_RETRY_FAILED_DEPLOYMENTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.appstream.synthetic#StartSoftwareDeploymentToImageBuilderInput$RetryFailedDeployments",
+            "com.amazonaws.appstream.synthetic",
+            "StartSoftwareDeploymentToImageBuilderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "RetryFailedDeployments",
+        1,
+    );
+static STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#StartSoftwareDeploymentToImageBuilderInput",
+        "com.amazonaws.appstream.synthetic",
+        "StartSoftwareDeploymentToImageBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_MEMBER_IMAGE_BUILDER_NAME,
+        &STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_MEMBER_RETRY_FAILED_DEPLOYMENTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartSoftwareDeploymentToImageBuilderRequest");
+impl StartSoftwareDeploymentToImageBuilderInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartSoftwareDeploymentToImageBuilderInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_builder_name {
+            ser.write_string(&STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_MEMBER_IMAGE_BUILDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.retry_failed_deployments {
+            ser.write_boolean(&STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_MEMBER_RETRY_FAILED_DEPLOYMENTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_software_deployment_to_image_builder::builders::StartSoftwareDeploymentToImageBuilderInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTSOFTWAREDEPLOYMENTTOIMAGEBUILDERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_builder_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_failed_deployments = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartSoftwareDeploymentToImageBuilderInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_builder_name = builder.image_builder_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartSoftwareDeploymentToImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`StartSoftwareDeploymentToImageBuilderInput`](crate::operation::start_software_deployment_to_image_builder::StartSoftwareDeploymentToImageBuilderInput).
     pub fn builder() -> crate::operation::start_software_deployment_to_image_builder::builders::StartSoftwareDeploymentToImageBuilderInputBuilder {

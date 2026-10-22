@@ -31,6 +31,148 @@ impl FlywheelModelEvaluationMetrics {
         self.average_accuracy
     }
 }
+static FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_F1_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelModelEvaluationMetrics$AverageF1Score",
+        "com.amazonaws.comprehend",
+        "FlywheelModelEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "AverageF1Score",
+    0,
+);
+static FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_PRECISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelModelEvaluationMetrics$AveragePrecision",
+        "com.amazonaws.comprehend",
+        "FlywheelModelEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "AveragePrecision",
+    1,
+);
+static FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_RECALL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelModelEvaluationMetrics$AverageRecall",
+        "com.amazonaws.comprehend",
+        "FlywheelModelEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "AverageRecall",
+    2,
+);
+static FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_ACCURACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelModelEvaluationMetrics$AverageAccuracy",
+        "com.amazonaws.comprehend",
+        "FlywheelModelEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "AverageAccuracy",
+    3,
+);
+static FLYWHEELMODELEVALUATIONMETRICS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelModelEvaluationMetrics",
+        "com.amazonaws.comprehend",
+        "FlywheelModelEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_F1_SCORE,
+        &FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_PRECISION,
+        &FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_RECALL,
+        &FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_ACCURACY,
+    ],
+);
+impl FlywheelModelEvaluationMetrics {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FLYWHEELMODELEVALUATIONMETRICS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FlywheelModelEvaluationMetrics {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.average_f1_score {
+            ser.write_double(&FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_F1_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.average_precision {
+            ser.write_double(&FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_PRECISION, *val)?;
+        }
+        if let Some(ref val) = self.average_recall {
+            ser.write_double(&FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_RECALL, *val)?;
+        }
+        if let Some(ref val) = self.average_accuracy {
+            ser.write_double(&FLYWHEELMODELEVALUATIONMETRICS_MEMBER_AVERAGE_ACCURACY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FlywheelModelEvaluationMetricsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FLYWHEELMODELEVALUATIONMETRICS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.average_f1_score = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.average_precision = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.average_recall = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.average_accuracy = Some(deser.read_double(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FlywheelModelEvaluationMetrics {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FlywheelModelEvaluationMetrics {
     /// Creates a new builder-style object to manufacture [`FlywheelModelEvaluationMetrics`](crate::types::FlywheelModelEvaluationMetrics).
     pub fn builder() -> crate::types::builders::FlywheelModelEvaluationMetricsBuilder {

@@ -73,6 +73,329 @@ impl DescribeContextOutput {
         self.lineage_group_arn.as_deref()
     }
 }
+static DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$ContextName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextName",
+    0,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$ContextArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextArn",
+    1,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$Source",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    2,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$ContextType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextType",
+    3,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    4,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$key",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$value",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$Properties",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Properties",
+    5,
+)
+.with_map_members(
+    &DESCRIBECONTEXTOUTPUT_MEMBER_PROPERTIES_KEY,
+    &DESCRIBECONTEXTOUTPUT_MEMBER_PROPERTIES_VALUE,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    7,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    9,
+);
+static DESCRIBECONTEXTOUTPUT_MEMBER_LINEAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput$LineageGroupArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LineageGroupArn",
+    10,
+);
+static DESCRIBECONTEXTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeContextOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeContextOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_NAME,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_ARN,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_SOURCE,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_TYPE,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_PROPERTIES,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_LAST_MODIFIED_BY,
+        &DESCRIBECONTEXTOUTPUT_MEMBER_LINEAGE_GROUP_ARN,
+    ],
+)
+.with_original_name("DescribeContextResponse");
+impl DescribeContextOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECONTEXTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeContextOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.context_name {
+            ser.write_string(&DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_NAME, val)?;
+        }
+        if let Some(ref val) = self.context_arn {
+            ser.write_string(&DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_ARN, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&DESCRIBECONTEXTOUTPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.context_type {
+            ser.write_string(&DESCRIBECONTEXTOUTPUT_MEMBER_CONTEXT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBECONTEXTOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_map(
+                &DESCRIBECONTEXTOUTPUT_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBECONTEXTOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBECONTEXTOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBECONTEXTOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBECONTEXTOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.lineage_group_arn {
+            ser.write_string(&DESCRIBECONTEXTOUTPUT_MEMBER_LINEAGE_GROUP_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_context::builders::DescribeContextOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECONTEXTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ContextSource::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lineage_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeContextOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeContextOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

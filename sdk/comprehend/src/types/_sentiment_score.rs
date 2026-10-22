@@ -31,6 +31,144 @@ impl SentimentScore {
         self.mixed
     }
 }
+static SENTIMENTSCORE_MEMBER_POSITIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#SentimentScore$Positive",
+        "com.amazonaws.comprehend",
+        "SentimentScore",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Positive",
+    0,
+);
+static SENTIMENTSCORE_MEMBER_NEGATIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#SentimentScore$Negative",
+        "com.amazonaws.comprehend",
+        "SentimentScore",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Negative",
+    1,
+);
+static SENTIMENTSCORE_MEMBER_NEUTRAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#SentimentScore$Neutral",
+        "com.amazonaws.comprehend",
+        "SentimentScore",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Neutral",
+    2,
+);
+static SENTIMENTSCORE_MEMBER_MIXED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#SentimentScore$Mixed",
+        "com.amazonaws.comprehend",
+        "SentimentScore",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Mixed",
+    3,
+);
+static SENTIMENTSCORE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#SentimentScore", "com.amazonaws.comprehend", "SentimentScore"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SENTIMENTSCORE_MEMBER_POSITIVE,
+        &SENTIMENTSCORE_MEMBER_NEGATIVE,
+        &SENTIMENTSCORE_MEMBER_NEUTRAL,
+        &SENTIMENTSCORE_MEMBER_MIXED,
+    ],
+);
+impl SentimentScore {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SENTIMENTSCORE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SentimentScore {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.positive {
+            ser.write_float(&SENTIMENTSCORE_MEMBER_POSITIVE, *val)?;
+        }
+        if let Some(ref val) = self.negative {
+            ser.write_float(&SENTIMENTSCORE_MEMBER_NEGATIVE, *val)?;
+        }
+        if let Some(ref val) = self.neutral {
+            ser.write_float(&SENTIMENTSCORE_MEMBER_NEUTRAL, *val)?;
+        }
+        if let Some(ref val) = self.mixed {
+            ser.write_float(&SENTIMENTSCORE_MEMBER_MIXED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SentimentScoreBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SENTIMENTSCORE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.positive = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.negative = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.neutral = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mixed = Some(deser.read_float(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SentimentScore {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SentimentScore {
     /// Creates a new builder-style object to manufacture [`SentimentScore`](crate::types::SentimentScore).
     pub fn builder() -> crate::types::builders::SentimentScoreBuilder {

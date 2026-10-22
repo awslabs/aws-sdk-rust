@@ -21,6 +21,136 @@ impl PutRepositoryTriggersInput {
         self.triggers.as_deref().unwrap_or_default()
     }
 }
+static PUTREPOSITORYTRIGGERSINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PutRepositoryTriggersInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "PutRepositoryTriggersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static PUTREPOSITORYTRIGGERSINPUT_MEMBER_TRIGGERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTriggersList$member",
+        "com.amazonaws.codecommit",
+        "RepositoryTriggersList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTREPOSITORYTRIGGERSINPUT_MEMBER_TRIGGERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PutRepositoryTriggersInput$triggers",
+        "com.amazonaws.codecommit.synthetic",
+        "PutRepositoryTriggersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "triggers",
+    1,
+)
+.with_list_member(&PUTREPOSITORYTRIGGERSINPUT_MEMBER_TRIGGERS_MEMBER);
+static PUTREPOSITORYTRIGGERSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PutRepositoryTriggersInput",
+        "com.amazonaws.codecommit.synthetic",
+        "PutRepositoryTriggersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTREPOSITORYTRIGGERSINPUT_MEMBER_REPOSITORY_NAME,
+        &PUTREPOSITORYTRIGGERSINPUT_MEMBER_TRIGGERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutRepositoryTriggersInput");
+impl PutRepositoryTriggersInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTREPOSITORYTRIGGERSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRepositoryTriggersInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&PUTREPOSITORYTRIGGERSINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.triggers {
+            ser.write_list(
+                &PUTREPOSITORYTRIGGERSINPUT_MEMBER_TRIGGERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RepositoryTrigger::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTREPOSITORYTRIGGERSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.triggers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RepositoryTrigger::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRepositoryTriggersInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.triggers = builder.triggers.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutRepositoryTriggersInput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersInput`](crate::operation::put_repository_triggers::PutRepositoryTriggersInput).
     pub fn builder() -> crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder {

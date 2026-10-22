@@ -45,6 +45,283 @@ impl StudioWebPortalSettings {
         self.execution_role_session_name_mode.as_ref()
     }
 }
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_ML_TOOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HiddenMlToolsList$member",
+        "com.amazonaws.sagemaker",
+        "HiddenMlToolsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_ML_TOOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#StudioWebPortalSettings$HiddenMlTools",
+        "com.amazonaws.sagemaker",
+        "StudioWebPortalSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HiddenMlTools",
+    0,
+)
+.with_list_member(&STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_ML_TOOLS_MEMBER);
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_APP_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HiddenAppTypesList$member",
+        "com.amazonaws.sagemaker",
+        "HiddenAppTypesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_APP_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#StudioWebPortalSettings$HiddenAppTypes",
+        "com.amazonaws.sagemaker",
+        "StudioWebPortalSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HiddenAppTypes",
+    1,
+)
+.with_list_member(&STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_APP_TYPES_MEMBER);
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_INSTANCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HiddenInstanceTypesList$member",
+        "com.amazonaws.sagemaker",
+        "HiddenInstanceTypesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_INSTANCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#StudioWebPortalSettings$HiddenInstanceTypes",
+        "com.amazonaws.sagemaker",
+        "StudioWebPortalSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HiddenInstanceTypes",
+    2,
+)
+.with_list_member(&STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_INSTANCE_TYPES_MEMBER);
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_SAGE_MAKER_IMAGE_VERSION_ALIASES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HiddenSageMakerImageVersionAliasesList$member",
+            "com.amazonaws.sagemaker",
+            "HiddenSageMakerImageVersionAliasesList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_SAGE_MAKER_IMAGE_VERSION_ALIASES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#StudioWebPortalSettings$HiddenSageMakerImageVersionAliases",
+            "com.amazonaws.sagemaker",
+            "StudioWebPortalSettings",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "HiddenSageMakerImageVersionAliases",
+        3,
+    )
+    .with_list_member(&STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_SAGE_MAKER_IMAGE_VERSION_ALIASES_MEMBER);
+static STUDIOWEBPORTALSETTINGS_MEMBER_EXECUTION_ROLE_SESSION_NAME_MODE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#StudioWebPortalSettings$ExecutionRoleSessionNameMode",
+            "com.amazonaws.sagemaker",
+            "StudioWebPortalSettings",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ExecutionRoleSessionNameMode",
+        4,
+    );
+static STUDIOWEBPORTALSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#StudioWebPortalSettings",
+        "com.amazonaws.sagemaker",
+        "StudioWebPortalSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_ML_TOOLS,
+        &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_APP_TYPES,
+        &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_INSTANCE_TYPES,
+        &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_SAGE_MAKER_IMAGE_VERSION_ALIASES,
+        &STUDIOWEBPORTALSETTINGS_MEMBER_EXECUTION_ROLE_SESSION_NAME_MODE,
+    ],
+);
+impl StudioWebPortalSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STUDIOWEBPORTALSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StudioWebPortalSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hidden_ml_tools {
+            ser.write_list(
+                &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_ML_TOOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hidden_app_types {
+            ser.write_list(
+                &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_APP_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hidden_instance_types {
+            ser.write_list(
+                &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_INSTANCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hidden_sage_maker_image_version_aliases {
+            ser.write_list(
+                &STUDIOWEBPORTALSETTINGS_MEMBER_HIDDEN_SAGE_MAKER_IMAGE_VERSION_ALIASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HiddenSageMakerImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.execution_role_session_name_mode {
+            ser.write_string(&STUDIOWEBPORTALSETTINGS_MEMBER_EXECUTION_ROLE_SESSION_NAME_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StudioWebPortalSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STUDIOWEBPORTALSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hidden_ml_tools = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MlTools::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hidden_app_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AppType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hidden_instance_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AppInstanceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hidden_sage_maker_image_version_aliases = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HiddenSageMakerImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_session_name_mode =
+                            Some(crate::types::ExecutionRoleSessionNameMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StudioWebPortalSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl StudioWebPortalSettings {
     /// Creates a new builder-style object to manufacture [`StudioWebPortalSettings`](crate::types::StudioWebPortalSettings).
     pub fn builder() -> crate::types::builders::StudioWebPortalSettingsBuilder {

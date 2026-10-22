@@ -43,6 +43,190 @@ impl EdgeDeploymentStatus {
         self.edge_deployment_stage_start_time.as_ref()
     }
 }
+static EDGEDEPLOYMENTSTATUS_MEMBER_STAGE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus$StageStatus",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StageStatus",
+    0,
+);
+static EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_SUCCESS_IN_STAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus$EdgeDeploymentSuccessInStage",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EdgeDeploymentSuccessInStage",
+    1,
+);
+static EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_PENDING_IN_STAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus$EdgeDeploymentPendingInStage",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EdgeDeploymentPendingInStage",
+    2,
+);
+static EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_FAILED_IN_STAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus$EdgeDeploymentFailedInStage",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EdgeDeploymentFailedInStage",
+    3,
+);
+static EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus$EdgeDeploymentStatusMessage",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EdgeDeploymentStatusMessage",
+    4,
+);
+static EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_STAGE_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus$EdgeDeploymentStageStartTime",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EdgeDeploymentStageStartTime",
+    5,
+);
+static EDGEDEPLOYMENTSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentStatus",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EDGEDEPLOYMENTSTATUS_MEMBER_STAGE_STATUS,
+        &EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_SUCCESS_IN_STAGE,
+        &EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_PENDING_IN_STAGE,
+        &EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_FAILED_IN_STAGE,
+        &EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_STATUS_MESSAGE,
+        &EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_STAGE_START_TIME,
+    ],
+);
+impl EdgeDeploymentStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EDGEDEPLOYMENTSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EdgeDeploymentStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stage_status {
+            ser.write_string(&EDGEDEPLOYMENTSTATUS_MEMBER_STAGE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.edge_deployment_success_in_stage {
+            ser.write_integer(&EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_SUCCESS_IN_STAGE, *val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_pending_in_stage {
+            ser.write_integer(&EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_PENDING_IN_STAGE, *val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_failed_in_stage {
+            ser.write_integer(&EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_FAILED_IN_STAGE, *val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_status_message {
+            ser.write_string(&EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_stage_start_time {
+            ser.write_timestamp(&EDGEDEPLOYMENTSTATUS_MEMBER_EDGE_DEPLOYMENT_STAGE_START_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EdgeDeploymentStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EDGEDEPLOYMENTSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_status = Some(crate::types::StageStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_success_in_stage = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_pending_in_stage = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_failed_in_stage = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_stage_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EdgeDeploymentStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EdgeDeploymentStatus {
     /// Creates a new builder-style object to manufacture [`EdgeDeploymentStatus`](crate::types::EdgeDeploymentStatus).
     pub fn builder() -> crate::types::builders::EdgeDeploymentStatusBuilder {

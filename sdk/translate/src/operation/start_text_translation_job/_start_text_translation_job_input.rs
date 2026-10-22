@@ -110,6 +110,338 @@ impl StartTextTranslationJobInput {
         self.settings.as_ref()
     }
 }
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$JobName",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    0,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$InputDataConfig",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    1,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$OutputDataConfig",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    2,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$DataAccessRoleArn",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    3,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_SOURCE_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$SourceLanguageCode",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceLanguageCode",
+    4,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TARGET_LANGUAGE_CODES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.translate#TargetLanguageCodeStringList$member",
+            "com.amazonaws.translate",
+            "TargetLanguageCodeStringList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TARGET_LANGUAGE_CODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$TargetLanguageCodes",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetLanguageCodes",
+    5,
+)
+.with_list_member(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TARGET_LANGUAGE_CODES_MEMBER);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TERMINOLOGY_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ResourceNameList$member",
+        "com.amazonaws.translate",
+        "ResourceNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TERMINOLOGY_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$TerminologyNames",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TerminologyNames",
+    6,
+)
+.with_list_member(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TERMINOLOGY_NAMES_MEMBER);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_PARALLEL_DATA_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ResourceNameList$member",
+        "com.amazonaws.translate",
+        "ResourceNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_PARALLEL_DATA_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$ParallelDataNames",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ParallelDataNames",
+    7,
+)
+.with_list_member(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_PARALLEL_DATA_NAMES_MEMBER);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$ClientToken",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    8,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput$Settings",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Settings",
+    9,
+);
+static STARTTEXTTRANSLATIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#StartTextTranslationJobInput",
+        "com.amazonaws.translate.synthetic",
+        "StartTextTranslationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_JOB_NAME,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_SOURCE_LANGUAGE_CODE,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TARGET_LANGUAGE_CODES,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TERMINOLOGY_NAMES,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_PARALLEL_DATA_NAMES,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_CLIENT_TOKEN,
+        &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_SETTINGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartTextTranslationJobRequest");
+impl StartTextTranslationJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTTEXTTRANSLATIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartTextTranslationJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.source_language_code {
+            ser.write_string(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_SOURCE_LANGUAGE_CODE, val)?;
+        }
+        if let Some(ref val) = self.target_language_codes {
+            ser.write_list(
+                &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TARGET_LANGUAGE_CODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.terminology_names {
+            ser.write_list(
+                &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_TERMINOLOGY_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parallel_data_names {
+            ser.write_list(
+                &STARTTEXTTRANSLATIONJOBINPUT_MEMBER_PARALLEL_DATA_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&STARTTEXTTRANSLATIONJOBINPUT_MEMBER_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTTEXTTRANSLATIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_language_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_language_codes = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terminology_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallel_data_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::TranslationSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartTextTranslationJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.source_language_code = builder.source_language_code.or(Some(String::new()));
+        builder.target_language_codes = builder.target_language_codes.or(Some(Vec::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartTextTranslationJobInput {
     /// Creates a new builder-style object to manufacture [`StartTextTranslationJobInput`](crate::operation::start_text_translation_job::StartTextTranslationJobInput).
     pub fn builder() -> crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder {

@@ -15,6 +15,105 @@ impl AutoRollbackConfig {
         self.alarms.as_deref().unwrap_or_default()
     }
 }
+static AUTOROLLBACKCONFIG_MEMBER_ALARMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AlarmList$member", "com.amazonaws.sagemaker", "AlarmList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AUTOROLLBACKCONFIG_MEMBER_ALARMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoRollbackConfig$Alarms",
+        "com.amazonaws.sagemaker",
+        "AutoRollbackConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Alarms",
+    0,
+)
+.with_list_member(&AUTOROLLBACKCONFIG_MEMBER_ALARMS_MEMBER);
+static AUTOROLLBACKCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoRollbackConfig",
+        "com.amazonaws.sagemaker",
+        "AutoRollbackConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AUTOROLLBACKCONFIG_MEMBER_ALARMS],
+);
+impl AutoRollbackConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOROLLBACKCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutoRollbackConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.alarms {
+            ser.write_list(
+                &AUTOROLLBACKCONFIG_MEMBER_ALARMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Alarm::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutoRollbackConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTOROLLBACKCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alarms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Alarm::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AutoRollbackConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AutoRollbackConfig {
     /// Creates a new builder-style object to manufacture [`AutoRollbackConfig`](crate::types::AutoRollbackConfig).
     pub fn builder() -> crate::types::builders::AutoRollbackConfigBuilder {

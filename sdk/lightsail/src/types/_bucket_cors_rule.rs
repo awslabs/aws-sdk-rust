@@ -75,6 +75,256 @@ impl BucketCorsRule {
         self.max_age_seconds
     }
 }
+static BUCKETCORSRULE_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#BucketCorsRule$id", "com.amazonaws.lightsail", "BucketCorsRule"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static BUCKETCORSRULE_MEMBER_ALLOWED_METHODS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsAllowedMethods$member",
+        "com.amazonaws.lightsail",
+        "BucketCorsAllowedMethods",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BUCKETCORSRULE_MEMBER_ALLOWED_METHODS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsRule$allowedMethods",
+        "com.amazonaws.lightsail",
+        "BucketCorsRule",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "allowedMethods",
+    1,
+)
+.with_list_member(&BUCKETCORSRULE_MEMBER_ALLOWED_METHODS_MEMBER);
+static BUCKETCORSRULE_MEMBER_ALLOWED_ORIGINS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsAllowedOrigins$member",
+        "com.amazonaws.lightsail",
+        "BucketCorsAllowedOrigins",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BUCKETCORSRULE_MEMBER_ALLOWED_ORIGINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsRule$allowedOrigins",
+        "com.amazonaws.lightsail",
+        "BucketCorsRule",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "allowedOrigins",
+    2,
+)
+.with_list_member(&BUCKETCORSRULE_MEMBER_ALLOWED_ORIGINS_MEMBER);
+static BUCKETCORSRULE_MEMBER_ALLOWED_HEADERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsAllowedHeaders$member",
+        "com.amazonaws.lightsail",
+        "BucketCorsAllowedHeaders",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BUCKETCORSRULE_MEMBER_ALLOWED_HEADERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsRule$allowedHeaders",
+        "com.amazonaws.lightsail",
+        "BucketCorsRule",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "allowedHeaders",
+    3,
+)
+.with_list_member(&BUCKETCORSRULE_MEMBER_ALLOWED_HEADERS_MEMBER);
+static BUCKETCORSRULE_MEMBER_EXPOSE_HEADERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsExposeHeaders$member",
+        "com.amazonaws.lightsail",
+        "BucketCorsExposeHeaders",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BUCKETCORSRULE_MEMBER_EXPOSE_HEADERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsRule$exposeHeaders",
+        "com.amazonaws.lightsail",
+        "BucketCorsRule",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "exposeHeaders",
+    4,
+)
+.with_list_member(&BUCKETCORSRULE_MEMBER_EXPOSE_HEADERS_MEMBER);
+static BUCKETCORSRULE_MEMBER_MAX_AGE_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#BucketCorsRule$maxAgeSeconds",
+        "com.amazonaws.lightsail",
+        "BucketCorsRule",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxAgeSeconds",
+    5,
+);
+static BUCKETCORSRULE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#BucketCorsRule", "com.amazonaws.lightsail", "BucketCorsRule"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BUCKETCORSRULE_MEMBER_ID,
+        &BUCKETCORSRULE_MEMBER_ALLOWED_METHODS,
+        &BUCKETCORSRULE_MEMBER_ALLOWED_ORIGINS,
+        &BUCKETCORSRULE_MEMBER_ALLOWED_HEADERS,
+        &BUCKETCORSRULE_MEMBER_EXPOSE_HEADERS,
+        &BUCKETCORSRULE_MEMBER_MAX_AGE_SECONDS,
+    ],
+);
+impl BucketCorsRule {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BUCKETCORSRULE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BucketCorsRule {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&BUCKETCORSRULE_MEMBER_ID, val)?;
+        }
+        {
+            let val = &self.allowed_methods;
+
+            ser.write_list(
+                &BUCKETCORSRULE_MEMBER_ALLOWED_METHODS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.allowed_origins;
+
+            ser.write_list(
+                &BUCKETCORSRULE_MEMBER_ALLOWED_ORIGINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.allowed_headers {
+            ser.write_list(
+                &BUCKETCORSRULE_MEMBER_ALLOWED_HEADERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.expose_headers {
+            ser.write_list(
+                &BUCKETCORSRULE_MEMBER_EXPOSE_HEADERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_age_seconds {
+            ser.write_integer(&BUCKETCORSRULE_MEMBER_MAX_AGE_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BucketCorsRuleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BUCKETCORSRULE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.allowed_methods = Some(deser.read_string_list(member)?);
+                }
+                Some(2) => {
+                    self.allowed_origins = Some(deser.read_string_list(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_headers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expose_headers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_age_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BucketCorsRule {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.allowed_methods = builder.allowed_methods.or(Some(Vec::new()));
+        builder.allowed_origins = builder.allowed_origins.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BucketCorsRule {
     /// Creates a new builder-style object to manufacture [`BucketCorsRule`](crate::types::BucketCorsRule).
     pub fn builder() -> crate::types::builders::BucketCorsRuleBuilder {

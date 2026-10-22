@@ -26,6 +26,137 @@ impl UpdateMedicalVocabularyInput {
         self.vocabulary_file_uri.as_deref()
     }
 }
+static UPDATEMEDICALVOCABULARYINPUT_MEMBER_VOCABULARY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateMedicalVocabularyInput$VocabularyName",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateMedicalVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyName",
+    0,
+)
+.with_http_label();
+static UPDATEMEDICALVOCABULARYINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateMedicalVocabularyInput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateMedicalVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static UPDATEMEDICALVOCABULARYINPUT_MEMBER_VOCABULARY_FILE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateMedicalVocabularyInput$VocabularyFileUri",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateMedicalVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFileUri",
+    2,
+);
+static UPDATEMEDICALVOCABULARYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateMedicalVocabularyInput",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateMedicalVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEMEDICALVOCABULARYINPUT_MEMBER_VOCABULARY_NAME,
+        &UPDATEMEDICALVOCABULARYINPUT_MEMBER_LANGUAGE_CODE,
+        &UPDATEMEDICALVOCABULARYINPUT_MEMBER_VOCABULARY_FILE_URI,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PATCH",
+    "/medicalvocabularies/{VocabularyName}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateMedicalVocabularyRequest");
+impl UpdateMedicalVocabularyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEMEDICALVOCABULARYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateMedicalVocabularyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_name {
+            ser.write_string(&UPDATEMEDICALVOCABULARYINPUT_MEMBER_VOCABULARY_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&UPDATEMEDICALVOCABULARYINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.vocabulary_file_uri {
+            ser.write_string(&UPDATEMEDICALVOCABULARYINPUT_MEMBER_VOCABULARY_FILE_URI, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEMEDICALVOCABULARYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_file_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateMedicalVocabularyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.vocabulary_name = builder.vocabulary_name.or(Some(String::new()));
+        builder.vocabulary_file_uri = builder.vocabulary_file_uri.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateMedicalVocabularyInput {
     /// Creates a new builder-style object to manufacture [`UpdateMedicalVocabularyInput`](crate::operation::update_medical_vocabulary::UpdateMedicalVocabularyInput).
     pub fn builder() -> crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder {

@@ -31,6 +31,140 @@ impl ModelMetrics {
         self.explainability.as_ref()
     }
 }
+static MODELMETRICS_MEMBER_MODEL_QUALITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelMetrics$ModelQuality",
+        "com.amazonaws.sagemaker",
+        "ModelMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelQuality",
+    0,
+);
+static MODELMETRICS_MEMBER_MODEL_DATA_QUALITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelMetrics$ModelDataQuality",
+        "com.amazonaws.sagemaker",
+        "ModelMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDataQuality",
+    1,
+);
+static MODELMETRICS_MEMBER_BIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelMetrics$Bias", "com.amazonaws.sagemaker", "ModelMetrics"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Bias",
+    2,
+);
+static MODELMETRICS_MEMBER_EXPLAINABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelMetrics$Explainability",
+        "com.amazonaws.sagemaker",
+        "ModelMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Explainability",
+    3,
+);
+static MODELMETRICS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelMetrics", "com.amazonaws.sagemaker", "ModelMetrics"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELMETRICS_MEMBER_MODEL_QUALITY,
+        &MODELMETRICS_MEMBER_MODEL_DATA_QUALITY,
+        &MODELMETRICS_MEMBER_BIAS,
+        &MODELMETRICS_MEMBER_EXPLAINABILITY,
+    ],
+);
+impl ModelMetrics {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELMETRICS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelMetrics {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_quality {
+            ser.write_struct(&MODELMETRICS_MEMBER_MODEL_QUALITY, val)?;
+        }
+        if let Some(ref val) = self.model_data_quality {
+            ser.write_struct(&MODELMETRICS_MEMBER_MODEL_DATA_QUALITY, val)?;
+        }
+        if let Some(ref val) = self.bias {
+            ser.write_struct(&MODELMETRICS_MEMBER_BIAS, val)?;
+        }
+        if let Some(ref val) = self.explainability {
+            ser.write_struct(&MODELMETRICS_MEMBER_EXPLAINABILITY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelMetricsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELMETRICS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_quality = Some(crate::types::ModelQuality::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_data_quality = Some(crate::types::ModelDataQuality::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bias = Some(crate::types::Bias::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.explainability = Some(crate::types::Explainability::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelMetrics {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelMetrics {
     /// Creates a new builder-style object to manufacture [`ModelMetrics`](crate::types::ModelMetrics).
     pub fn builder() -> crate::types::builders::ModelMetricsBuilder {

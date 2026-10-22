@@ -27,6 +27,146 @@ impl ReactionForComment {
         self.reactions_from_deleted_users_count
     }
 }
+static REACTIONFORCOMMENT_MEMBER_REACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReactionForComment$reaction",
+        "com.amazonaws.codecommit",
+        "ReactionForComment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "reaction",
+    0,
+);
+static REACTIONFORCOMMENT_MEMBER_REACTION_USERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReactionUsersList$member",
+        "com.amazonaws.codecommit",
+        "ReactionUsersList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REACTIONFORCOMMENT_MEMBER_REACTION_USERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReactionForComment$reactionUsers",
+        "com.amazonaws.codecommit",
+        "ReactionForComment",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "reactionUsers",
+    1,
+)
+.with_list_member(&REACTIONFORCOMMENT_MEMBER_REACTION_USERS_MEMBER);
+static REACTIONFORCOMMENT_MEMBER_REACTIONS_FROM_DELETED_USERS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReactionForComment$reactionsFromDeletedUsersCount",
+        "com.amazonaws.codecommit",
+        "ReactionForComment",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "reactionsFromDeletedUsersCount",
+    2,
+);
+static REACTIONFORCOMMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReactionForComment",
+        "com.amazonaws.codecommit",
+        "ReactionForComment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REACTIONFORCOMMENT_MEMBER_REACTION,
+        &REACTIONFORCOMMENT_MEMBER_REACTION_USERS,
+        &REACTIONFORCOMMENT_MEMBER_REACTIONS_FROM_DELETED_USERS_COUNT,
+    ],
+);
+impl ReactionForComment {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REACTIONFORCOMMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ReactionForComment {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reaction {
+            ser.write_struct(&REACTIONFORCOMMENT_MEMBER_REACTION, val)?;
+        }
+        if let Some(ref val) = self.reaction_users {
+            ser.write_list(
+                &REACTIONFORCOMMENT_MEMBER_REACTION_USERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.reactions_from_deleted_users_count {
+            ser.write_integer(&REACTIONFORCOMMENT_MEMBER_REACTIONS_FROM_DELETED_USERS_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ReactionForCommentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REACTIONFORCOMMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reaction = Some(crate::types::ReactionValueFormats::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reaction_users = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reactions_from_deleted_users_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ReactionForComment {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ReactionForComment {
     /// Creates a new builder-style object to manufacture [`ReactionForComment`](crate::types::ReactionForComment).
     pub fn builder() -> crate::types::builders::ReactionForCommentBuilder {

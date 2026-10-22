@@ -21,6 +21,128 @@ impl RelatedDeployments {
         self.auto_update_outdated_instances_deployment_ids.as_deref().unwrap_or_default()
     }
 }
+static RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_ROOT_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#RelatedDeployments$autoUpdateOutdatedInstancesRootDeploymentId",
+            "com.amazonaws.codedeploy",
+            "RelatedDeployments",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "autoUpdateOutdatedInstancesRootDeploymentId",
+        0,
+    );
+static RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_DEPLOYMENT_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#DeploymentsList$member",
+            "com.amazonaws.codedeploy",
+            "DeploymentsList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_DEPLOYMENT_IDS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#RelatedDeployments$autoUpdateOutdatedInstancesDeploymentIds",
+            "com.amazonaws.codedeploy",
+            "RelatedDeployments",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "autoUpdateOutdatedInstancesDeploymentIds",
+        1,
+    )
+    .with_list_member(&RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_DEPLOYMENT_IDS_MEMBER);
+static RELATEDDEPLOYMENTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RelatedDeployments",
+        "com.amazonaws.codedeploy",
+        "RelatedDeployments",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_ROOT_DEPLOYMENT_ID,
+        &RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_DEPLOYMENT_IDS,
+    ],
+);
+impl RelatedDeployments {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RELATEDDEPLOYMENTS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RelatedDeployments {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_update_outdated_instances_root_deployment_id {
+            ser.write_string(&RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_ROOT_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.auto_update_outdated_instances_deployment_ids {
+            ser.write_list(
+                &RELATEDDEPLOYMENTS_MEMBER_AUTO_UPDATE_OUTDATED_INSTANCES_DEPLOYMENT_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RelatedDeploymentsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RELATEDDEPLOYMENTS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_update_outdated_instances_root_deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_update_outdated_instances_deployment_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RelatedDeployments {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RelatedDeployments {
     /// Creates a new builder-style object to manufacture [`RelatedDeployments`](crate::types::RelatedDeployments).
     pub fn builder() -> crate::types::builders::RelatedDeploymentsBuilder {

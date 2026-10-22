@@ -36,6 +36,173 @@ impl DeleteAppInput {
         self.app_name.as_deref()
     }
 }
+static DELETEAPPINPUT_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteAppInput$DomainId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    0,
+);
+static DELETEAPPINPUT_MEMBER_USER_PROFILE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteAppInput$UserProfileName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserProfileName",
+    1,
+);
+static DELETEAPPINPUT_MEMBER_SPACE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteAppInput$SpaceName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpaceName",
+    2,
+);
+static DELETEAPPINPUT_MEMBER_APP_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteAppInput$AppType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppType",
+    3,
+);
+static DELETEAPPINPUT_MEMBER_APP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteAppInput$AppName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppName",
+    4,
+);
+static DELETEAPPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteAppInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEAPPINPUT_MEMBER_DOMAIN_ID,
+        &DELETEAPPINPUT_MEMBER_USER_PROFILE_NAME,
+        &DELETEAPPINPUT_MEMBER_SPACE_NAME,
+        &DELETEAPPINPUT_MEMBER_APP_TYPE,
+        &DELETEAPPINPUT_MEMBER_APP_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteAppRequest");
+impl DeleteAppInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEAPPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteAppInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&DELETEAPPINPUT_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.user_profile_name {
+            ser.write_string(&DELETEAPPINPUT_MEMBER_USER_PROFILE_NAME, val)?;
+        }
+        if let Some(ref val) = self.space_name {
+            ser.write_string(&DELETEAPPINPUT_MEMBER_SPACE_NAME, val)?;
+        }
+        if let Some(ref val) = self.app_type {
+            ser.write_string(&DELETEAPPINPUT_MEMBER_APP_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.app_name {
+            ser.write_string(&DELETEAPPINPUT_MEMBER_APP_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_app::builders::DeleteAppInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEAPPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_profile_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_type = Some(crate::types::AppType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteAppInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_id = builder.domain_id.or(Some(String::new()));
+        builder.app_name = builder.app_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteAppInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInput`](crate::operation::delete_app::DeleteAppInput).
     pub fn builder() -> crate::operation::delete_app::builders::DeleteAppInputBuilder {

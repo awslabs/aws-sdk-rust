@@ -16,6 +16,8 @@ pub struct UpdateCollectionDetail {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key used to encrypt the collection.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the collection was created.</p>
@@ -49,6 +51,10 @@ impl UpdateCollectionDetail {
     /// <p>Configuration options for vector search capabilities in the collection.</p>
     pub fn vector_options(&self) -> ::std::option::Option<&crate::types::VectorOptions> {
         self.vector_options.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key used to encrypt the collection.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -84,6 +90,7 @@ pub struct UpdateCollectionDetailBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CollectionType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_date: ::std::option::Option<i64>,
     pub(crate) last_modified_date: ::std::option::Option<i64>,
@@ -174,6 +181,20 @@ impl UpdateCollectionDetailBuilder {
     pub fn get_vector_options(&self) -> &::std::option::Option<crate::types::VectorOptions> {
         &self.vector_options
     }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key used to encrypt the collection.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key used to encrypt the collection.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key used to encrypt the collection.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
@@ -239,6 +260,7 @@ impl UpdateCollectionDetailBuilder {
             r#type: self.r#type,
             description: self.description,
             vector_options: self.vector_options,
+            kms_key_arn: self.kms_key_arn,
             arn: self.arn,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,

@@ -27,6 +27,120 @@ impl CustomPolicyDetails {
         self.enable_debug_log_delivery
     }
 }
+static CUSTOMPOLICYDETAILS_MEMBER_POLICY_RUNTIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#CustomPolicyDetails$PolicyRuntime",
+        "com.amazonaws.configservice",
+        "CustomPolicyDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyRuntime",
+    0,
+);
+static CUSTOMPOLICYDETAILS_MEMBER_POLICY_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#CustomPolicyDetails$PolicyText",
+        "com.amazonaws.configservice",
+        "CustomPolicyDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyText",
+    1,
+);
+static CUSTOMPOLICYDETAILS_MEMBER_ENABLE_DEBUG_LOG_DELIVERY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#CustomPolicyDetails$EnableDebugLogDelivery",
+        "com.amazonaws.configservice",
+        "CustomPolicyDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableDebugLogDelivery",
+    2,
+);
+static CUSTOMPOLICYDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#CustomPolicyDetails",
+        "com.amazonaws.configservice",
+        "CustomPolicyDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CUSTOMPOLICYDETAILS_MEMBER_POLICY_RUNTIME,
+        &CUSTOMPOLICYDETAILS_MEMBER_POLICY_TEXT,
+        &CUSTOMPOLICYDETAILS_MEMBER_ENABLE_DEBUG_LOG_DELIVERY,
+    ],
+);
+impl CustomPolicyDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMPOLICYDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomPolicyDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.policy_runtime;
+            ser.write_string(&CUSTOMPOLICYDETAILS_MEMBER_POLICY_RUNTIME, val)?;
+        }
+        {
+            let val = &self.policy_text;
+            ser.write_string(&CUSTOMPOLICYDETAILS_MEMBER_POLICY_TEXT, val)?;
+        }
+        {
+            let val = &self.enable_debug_log_delivery;
+            ser.write_boolean(&CUSTOMPOLICYDETAILS_MEMBER_ENABLE_DEBUG_LOG_DELIVERY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CustomPolicyDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CUSTOMPOLICYDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.policy_runtime = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.policy_text = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.enable_debug_log_delivery = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CustomPolicyDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.policy_runtime = builder.policy_runtime.or(Some(String::new()));
+        builder.policy_text = builder.policy_text.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CustomPolicyDetails {
     /// Creates a new builder-style object to manufacture [`CustomPolicyDetails`](crate::types::CustomPolicyDetails).
     pub fn builder() -> crate::types::builders::CustomPolicyDetailsBuilder {

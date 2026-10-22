@@ -28,6 +28,149 @@ impl LookupDeveloperIdentityOutput {
         self.next_token.as_deref()
     }
 }
+static LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_IDENTITY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#LookupDeveloperIdentityOutput$IdentityId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "LookupDeveloperIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityId",
+    0,
+);
+static LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_DEVELOPER_USER_IDENTIFIER_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentity#DeveloperUserIdentifierList$member",
+            "com.amazonaws.cognitoidentity",
+            "DeveloperUserIdentifierList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_DEVELOPER_USER_IDENTIFIER_LIST: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentity.synthetic#LookupDeveloperIdentityOutput$DeveloperUserIdentifierList",
+            "com.amazonaws.cognitoidentity.synthetic",
+            "LookupDeveloperIdentityOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DeveloperUserIdentifierList",
+        1,
+    )
+    .with_list_member(&LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_DEVELOPER_USER_IDENTIFIER_LIST_MEMBER);
+static LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#LookupDeveloperIdentityOutput$NextToken",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "LookupDeveloperIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static LOOKUPDEVELOPERIDENTITYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#LookupDeveloperIdentityOutput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "LookupDeveloperIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_IDENTITY_ID,
+        &LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_DEVELOPER_USER_IDENTIFIER_LIST,
+        &LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("LookupDeveloperIdentityResponse");
+impl LookupDeveloperIdentityOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOOKUPDEVELOPERIDENTITYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LookupDeveloperIdentityOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_id {
+            ser.write_string(&LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_IDENTITY_ID, val)?;
+        }
+        if let Some(ref val) = self.developer_user_identifier_list {
+            ser.write_list(
+                &LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_DEVELOPER_USER_IDENTIFIER_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LOOKUPDEVELOPERIDENTITYOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOOKUPDEVELOPERIDENTITYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.developer_user_identifier_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LookupDeveloperIdentityOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for LookupDeveloperIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -13,6 +13,83 @@ impl TrainingSessionOutputConfig {
         self.s3_location.as_ref()
     }
 }
+static TRAININGSESSIONOUTPUTCONFIG_MEMBER_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionOutputConfig$S3Location",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Location",
+    0,
+);
+static TRAININGSESSIONOUTPUTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionOutputConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TRAININGSESSIONOUTPUTCONFIG_MEMBER_S3_LOCATION],
+);
+impl TrainingSessionOutputConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGSESSIONOUTPUTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingSessionOutputConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_location {
+            ser.write_struct(&TRAININGSESSIONOUTPUTCONFIG_MEMBER_S3_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingSessionOutputConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGSESSIONOUTPUTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_location = Some(crate::types::TrainingSessionS3Location::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingSessionOutputConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingSessionOutputConfig {
     /// Creates a new builder-style object to manufacture [`TrainingSessionOutputConfig`](crate::types::TrainingSessionOutputConfig).
     pub fn builder() -> crate::types::builders::TrainingSessionOutputConfigBuilder {

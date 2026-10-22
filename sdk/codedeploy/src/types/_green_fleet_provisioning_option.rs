@@ -25,6 +25,83 @@ impl GreenFleetProvisioningOption {
         self.action.as_ref()
     }
 }
+static GREENFLEETPROVISIONINGOPTION_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GreenFleetProvisioningOption$action",
+        "com.amazonaws.codedeploy",
+        "GreenFleetProvisioningOption",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "action",
+    0,
+);
+static GREENFLEETPROVISIONINGOPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GreenFleetProvisioningOption",
+        "com.amazonaws.codedeploy",
+        "GreenFleetProvisioningOption",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GREENFLEETPROVISIONINGOPTION_MEMBER_ACTION],
+);
+impl GreenFleetProvisioningOption {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GREENFLEETPROVISIONINGOPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GreenFleetProvisioningOption {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action {
+            ser.write_string(&GREENFLEETPROVISIONINGOPTION_MEMBER_ACTION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GreenFleetProvisioningOptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GREENFLEETPROVISIONINGOPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(crate::types::GreenFleetProvisioningAction::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GreenFleetProvisioningOption {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GreenFleetProvisioningOption {
     /// Creates a new builder-style object to manufacture [`GreenFleetProvisioningOption`](crate::types::GreenFleetProvisioningOption).
     pub fn builder() -> crate::types::builders::GreenFleetProvisioningOptionBuilder {

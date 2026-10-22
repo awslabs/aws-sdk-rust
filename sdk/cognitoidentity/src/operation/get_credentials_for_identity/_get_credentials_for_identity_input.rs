@@ -29,6 +29,163 @@ impl GetCredentialsForIdentityInput {
         self.custom_role_arn.as_deref()
     }
 }
+static GETCREDENTIALSFORIDENTITYINPUT_MEMBER_IDENTITY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetCredentialsForIdentityInput$IdentityId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetCredentialsForIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityId",
+    0,
+);
+static GETCREDENTIALSFORIDENTITYINPUT_MEMBER_LOGINS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsMap$key",
+        "com.amazonaws.cognitoidentity",
+        "LoginsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETCREDENTIALSFORIDENTITYINPUT_MEMBER_LOGINS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsMap$value",
+        "com.amazonaws.cognitoidentity",
+        "LoginsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static GETCREDENTIALSFORIDENTITYINPUT_MEMBER_LOGINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetCredentialsForIdentityInput$Logins",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetCredentialsForIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Logins",
+    1,
+)
+.with_map_members(
+    &GETCREDENTIALSFORIDENTITYINPUT_MEMBER_LOGINS_KEY,
+    &GETCREDENTIALSFORIDENTITYINPUT_MEMBER_LOGINS_VALUE,
+);
+static GETCREDENTIALSFORIDENTITYINPUT_MEMBER_CUSTOM_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetCredentialsForIdentityInput$CustomRoleArn",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetCredentialsForIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomRoleArn",
+    2,
+);
+static GETCREDENTIALSFORIDENTITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetCredentialsForIdentityInput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetCredentialsForIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETCREDENTIALSFORIDENTITYINPUT_MEMBER_IDENTITY_ID,
+        &GETCREDENTIALSFORIDENTITYINPUT_MEMBER_LOGINS,
+        &GETCREDENTIALSFORIDENTITYINPUT_MEMBER_CUSTOM_ROLE_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetCredentialsForIdentityInput");
+impl GetCredentialsForIdentityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCREDENTIALSFORIDENTITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetCredentialsForIdentityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_id {
+            ser.write_string(&GETCREDENTIALSFORIDENTITYINPUT_MEMBER_IDENTITY_ID, val)?;
+        }
+        if let Some(ref val) = self.logins {
+            ser.write_map(
+                &GETCREDENTIALSFORIDENTITYINPUT_MEMBER_LOGINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.custom_role_arn {
+            ser.write_string(&GETCREDENTIALSFORIDENTITYINPUT_MEMBER_CUSTOM_ROLE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCREDENTIALSFORIDENTITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logins = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetCredentialsForIdentityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identity_id = builder.identity_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetCredentialsForIdentityInput {
     /// Creates a new builder-style object to manufacture [`GetCredentialsForIdentityInput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityInput).
     pub fn builder() -> crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityInputBuilder {

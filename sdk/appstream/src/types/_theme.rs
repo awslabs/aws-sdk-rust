@@ -57,6 +57,226 @@ impl Theme {
         self.created_time.as_ref()
     }
 }
+static THEME_MEMBER_STACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme$StackName", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StackName",
+    0,
+);
+static THEME_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme$State", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    1,
+);
+static THEME_MEMBER_THEME_TITLE_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme$ThemeTitleText", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ThemeTitleText",
+    2,
+);
+static THEME_MEMBER_THEME_STYLING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme$ThemeStyling", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ThemeStyling",
+    3,
+);
+static THEME_MEMBER_THEME_FOOTER_LINKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ThemeFooterLinks$member",
+        "com.amazonaws.appstream",
+        "ThemeFooterLinks",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static THEME_MEMBER_THEME_FOOTER_LINKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme$ThemeFooterLinks", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::List,
+    "ThemeFooterLinks",
+    4,
+)
+.with_list_member(&THEME_MEMBER_THEME_FOOTER_LINKS_MEMBER);
+static THEME_MEMBER_THEME_ORGANIZATION_LOGO_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Theme$ThemeOrganizationLogoURL",
+        "com.amazonaws.appstream",
+        "Theme",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ThemeOrganizationLogoURL",
+    5,
+);
+static THEME_MEMBER_THEME_FAVICON_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme$ThemeFaviconURL", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ThemeFaviconURL",
+    6,
+);
+static THEME_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme$CreatedTime", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    7,
+);
+static THEME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Theme", "com.amazonaws.appstream", "Theme"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &THEME_MEMBER_STACK_NAME,
+        &THEME_MEMBER_STATE,
+        &THEME_MEMBER_THEME_TITLE_TEXT,
+        &THEME_MEMBER_THEME_STYLING,
+        &THEME_MEMBER_THEME_FOOTER_LINKS,
+        &THEME_MEMBER_THEME_ORGANIZATION_LOGO_URL,
+        &THEME_MEMBER_THEME_FAVICON_URL,
+        &THEME_MEMBER_CREATED_TIME,
+    ],
+);
+impl Theme {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &THEME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Theme {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stack_name {
+            ser.write_string(&THEME_MEMBER_STACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&THEME_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.theme_title_text {
+            ser.write_string(&THEME_MEMBER_THEME_TITLE_TEXT, val)?;
+        }
+        if let Some(ref val) = self.theme_styling {
+            ser.write_string(&THEME_MEMBER_THEME_STYLING, val.as_str())?;
+        }
+        if let Some(ref val) = self.theme_footer_links {
+            ser.write_list(
+                &THEME_MEMBER_THEME_FOOTER_LINKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ThemeFooterLink::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.theme_organization_logo_url {
+            ser.write_string(&THEME_MEMBER_THEME_ORGANIZATION_LOGO_URL, val)?;
+        }
+        if let Some(ref val) = self.theme_favicon_url {
+            ser.write_string(&THEME_MEMBER_THEME_FAVICON_URL, val)?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&THEME_MEMBER_CREATED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ThemeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&THEME_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ThemeState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.theme_title_text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.theme_styling = Some(crate::types::ThemeStyling::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.theme_footer_links = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ThemeFooterLink::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.theme_organization_logo_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.theme_favicon_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Theme {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Theme {
     /// Creates a new builder-style object to manufacture [`Theme`](crate::types::Theme).
     pub fn builder() -> crate::types::builders::ThemeBuilder {

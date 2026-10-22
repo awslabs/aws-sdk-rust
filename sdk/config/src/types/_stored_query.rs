@@ -38,6 +38,163 @@ impl StoredQuery {
         self.expression.as_deref()
     }
 }
+static STOREDQUERY_MEMBER_QUERY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#StoredQuery$QueryId",
+        "com.amazonaws.configservice",
+        "StoredQuery",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryId",
+    0,
+);
+static STOREDQUERY_MEMBER_QUERY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#StoredQuery$QueryArn",
+        "com.amazonaws.configservice",
+        "StoredQuery",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryArn",
+    1,
+);
+static STOREDQUERY_MEMBER_QUERY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#StoredQuery$QueryName",
+        "com.amazonaws.configservice",
+        "StoredQuery",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryName",
+    2,
+);
+static STOREDQUERY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#StoredQuery$Description",
+        "com.amazonaws.configservice",
+        "StoredQuery",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static STOREDQUERY_MEMBER_EXPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#StoredQuery$Expression",
+        "com.amazonaws.configservice",
+        "StoredQuery",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Expression",
+    4,
+);
+static STOREDQUERY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#StoredQuery", "com.amazonaws.configservice", "StoredQuery"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STOREDQUERY_MEMBER_QUERY_ID,
+        &STOREDQUERY_MEMBER_QUERY_ARN,
+        &STOREDQUERY_MEMBER_QUERY_NAME,
+        &STOREDQUERY_MEMBER_DESCRIPTION,
+        &STOREDQUERY_MEMBER_EXPRESSION,
+    ],
+);
+impl StoredQuery {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOREDQUERY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StoredQuery {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.query_id {
+            ser.write_string(&STOREDQUERY_MEMBER_QUERY_ID, val)?;
+        }
+        if let Some(ref val) = self.query_arn {
+            ser.write_string(&STOREDQUERY_MEMBER_QUERY_ARN, val)?;
+        }
+        {
+            let val = &self.query_name;
+            ser.write_string(&STOREDQUERY_MEMBER_QUERY_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&STOREDQUERY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.expression {
+            ser.write_string(&STOREDQUERY_MEMBER_EXPRESSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StoredQueryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STOREDQUERY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.query_name = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expression = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StoredQuery {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.query_name = builder.query_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StoredQuery {
     /// Creates a new builder-style object to manufacture [`StoredQuery`](crate::types::StoredQuery).
     pub fn builder() -> crate::types::builders::StoredQueryBuilder {

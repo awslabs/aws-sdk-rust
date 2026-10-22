@@ -78,6 +78,253 @@ impl ::std::fmt::Debug for DelegatedAdministrator {
         formatter.finish()
     }
 }
+static DELEGATEDADMINISTRATOR_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$Id",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$Arn",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$Email",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Email",
+    2,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$Name",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$Status",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$State",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    5,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_JOINED_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$JoinedMethod",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JoinedMethod",
+    6,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_JOINED_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$JoinedTimestamp",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "JoinedTimestamp",
+    7,
+);
+static DELEGATEDADMINISTRATOR_MEMBER_DELEGATION_ENABLED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator$DelegationEnabledDate",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DelegationEnabledDate",
+    8,
+);
+static DELEGATEDADMINISTRATOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#DelegatedAdministrator",
+        "com.amazonaws.organizations",
+        "DelegatedAdministrator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELEGATEDADMINISTRATOR_MEMBER_ID,
+        &DELEGATEDADMINISTRATOR_MEMBER_ARN,
+        &DELEGATEDADMINISTRATOR_MEMBER_EMAIL,
+        &DELEGATEDADMINISTRATOR_MEMBER_NAME,
+        &DELEGATEDADMINISTRATOR_MEMBER_STATUS,
+        &DELEGATEDADMINISTRATOR_MEMBER_STATE,
+        &DELEGATEDADMINISTRATOR_MEMBER_JOINED_METHOD,
+        &DELEGATEDADMINISTRATOR_MEMBER_JOINED_TIMESTAMP,
+        &DELEGATEDADMINISTRATOR_MEMBER_DELEGATION_ENABLED_DATE,
+    ],
+);
+impl DelegatedAdministrator {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELEGATEDADMINISTRATOR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DelegatedAdministrator {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&DELEGATEDADMINISTRATOR_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&DELEGATEDADMINISTRATOR_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.email {
+            ser.write_string(&DELEGATEDADMINISTRATOR_MEMBER_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&DELEGATEDADMINISTRATOR_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DELEGATEDADMINISTRATOR_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&DELEGATEDADMINISTRATOR_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.joined_method {
+            ser.write_string(&DELEGATEDADMINISTRATOR_MEMBER_JOINED_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.joined_timestamp {
+            ser.write_timestamp(&DELEGATEDADMINISTRATOR_MEMBER_JOINED_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.delegation_enabled_date {
+            ser.write_timestamp(&DELEGATEDADMINISTRATOR_MEMBER_DELEGATION_ENABLED_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DelegatedAdministratorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELEGATEDADMINISTRATOR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AccountStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::AccountState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.joined_method = Some(crate::types::AccountJoinedMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.joined_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delegation_enabled_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DelegatedAdministrator {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DelegatedAdministrator {
     /// Creates a new builder-style object to manufacture [`DelegatedAdministrator`](crate::types::DelegatedAdministrator).
     pub fn builder() -> crate::types::builders::DelegatedAdministratorBuilder {

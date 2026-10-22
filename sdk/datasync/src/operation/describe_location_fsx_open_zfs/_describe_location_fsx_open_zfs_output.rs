@@ -41,6 +41,190 @@ impl DescribeLocationFsxOpenZfsOutput {
         self.creation_time.as_ref()
     }
 }
+static DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOpenZfsOutput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOpenZfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_LOCATION_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOpenZfsOutput$LocationUri",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOpenZfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationUri",
+    1,
+);
+static DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.datasync#Ec2SecurityGroupArnList$member",
+            "com.amazonaws.datasync",
+            "Ec2SecurityGroupArnList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_SECURITY_GROUP_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOpenZfsOutput$SecurityGroupArns",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOpenZfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupArns",
+    2,
+)
+.with_list_member(&DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER);
+static DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOpenZfsOutput$Protocol",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOpenZfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Protocol",
+    3,
+);
+static DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOpenZfsOutput$CreationTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOpenZfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static DESCRIBELOCATIONFSXOPENZFSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOpenZfsOutput",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOpenZfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_LOCATION_ARN,
+        &DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_LOCATION_URI,
+        &DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_SECURITY_GROUP_ARNS,
+        &DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_PROTOCOL,
+        &DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_CREATION_TIME,
+    ],
+)
+.with_original_name("DescribeLocationFsxOpenZfsResponse");
+impl DescribeLocationFsxOpenZfsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELOCATIONFSXOPENZFSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLocationFsxOpenZfsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_uri {
+            ser.write_string(&DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_LOCATION_URI, val)?;
+        }
+        if let Some(ref val) = self.security_group_arns {
+            ser.write_list(
+                &DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_SECURITY_GROUP_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_struct(&DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_PROTOCOL, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBELOCATIONFSXOPENZFSOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_location_fsx_open_zfs::builders::DescribeLocationFsxOpenZfsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELOCATIONFSXOPENZFSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::FsxProtocol::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLocationFsxOpenZfsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLocationFsxOpenZfsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

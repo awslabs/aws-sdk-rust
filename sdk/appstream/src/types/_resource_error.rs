@@ -25,6 +25,123 @@ impl ResourceError {
         self.error_timestamp.as_ref()
     }
 }
+static RESOURCEERROR_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ResourceError$ErrorCode",
+        "com.amazonaws.appstream",
+        "ResourceError",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    0,
+);
+static RESOURCEERROR_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ResourceError$ErrorMessage",
+        "com.amazonaws.appstream",
+        "ResourceError",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    1,
+);
+static RESOURCEERROR_MEMBER_ERROR_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ResourceError$ErrorTimestamp",
+        "com.amazonaws.appstream",
+        "ResourceError",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ErrorTimestamp",
+    2,
+);
+static RESOURCEERROR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#ResourceError", "com.amazonaws.appstream", "ResourceError"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEERROR_MEMBER_ERROR_CODE,
+        &RESOURCEERROR_MEMBER_ERROR_MESSAGE,
+        &RESOURCEERROR_MEMBER_ERROR_TIMESTAMP,
+    ],
+);
+impl ResourceError {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEERROR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceError {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&RESOURCEERROR_MEMBER_ERROR_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&RESOURCEERROR_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.error_timestamp {
+            ser.write_timestamp(&RESOURCEERROR_MEMBER_ERROR_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceErrorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCEERROR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(crate::types::FleetErrorCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceError {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResourceError {
     /// Creates a new builder-style object to manufacture [`ResourceError`](crate::types::ResourceError).
     pub fn builder() -> crate::types::builders::ResourceErrorBuilder {

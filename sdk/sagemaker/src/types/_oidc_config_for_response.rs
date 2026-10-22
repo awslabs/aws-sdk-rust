@@ -63,6 +63,289 @@ impl OidcConfigForResponse {
         self.authentication_request_extra_params.as_ref()
     }
 }
+static OIDCCONFIGFORRESPONSE_MEMBER_CLIENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$ClientId",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientId",
+    0,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_ISSUER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$Issuer",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Issuer",
+    1,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_AUTHORIZATION_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$AuthorizationEndpoint",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthorizationEndpoint",
+    2,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_TOKEN_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$TokenEndpoint",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TokenEndpoint",
+    3,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_USER_INFO_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$UserInfoEndpoint",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserInfoEndpoint",
+    4,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_LOGOUT_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$LogoutEndpoint",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogoutEndpoint",
+    5,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_JWKS_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$JwksUri",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JwksUri",
+    6,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse$Scope",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Scope",
+    7,
+);
+static OIDCCONFIGFORRESPONSE_MEMBER_AUTHENTICATION_REQUEST_EXTRA_PARAMS_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AuthenticationRequestExtraParams$key",
+            "com.amazonaws.sagemaker",
+            "AuthenticationRequestExtraParams",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static OIDCCONFIGFORRESPONSE_MEMBER_AUTHENTICATION_REQUEST_EXTRA_PARAMS_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AuthenticationRequestExtraParams$value",
+            "com.amazonaws.sagemaker",
+            "AuthenticationRequestExtraParams",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static OIDCCONFIGFORRESPONSE_MEMBER_AUTHENTICATION_REQUEST_EXTRA_PARAMS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#OidcConfigForResponse$AuthenticationRequestExtraParams",
+            "com.amazonaws.sagemaker",
+            "OidcConfigForResponse",
+        ),
+        ::aws_smithy_schema::ShapeType::Map,
+        "AuthenticationRequestExtraParams",
+        8,
+    )
+    .with_map_members(
+        &OIDCCONFIGFORRESPONSE_MEMBER_AUTHENTICATION_REQUEST_EXTRA_PARAMS_KEY,
+        &OIDCCONFIGFORRESPONSE_MEMBER_AUTHENTICATION_REQUEST_EXTRA_PARAMS_VALUE,
+    );
+static OIDCCONFIGFORRESPONSE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OidcConfigForResponse",
+        "com.amazonaws.sagemaker",
+        "OidcConfigForResponse",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OIDCCONFIGFORRESPONSE_MEMBER_CLIENT_ID,
+        &OIDCCONFIGFORRESPONSE_MEMBER_ISSUER,
+        &OIDCCONFIGFORRESPONSE_MEMBER_AUTHORIZATION_ENDPOINT,
+        &OIDCCONFIGFORRESPONSE_MEMBER_TOKEN_ENDPOINT,
+        &OIDCCONFIGFORRESPONSE_MEMBER_USER_INFO_ENDPOINT,
+        &OIDCCONFIGFORRESPONSE_MEMBER_LOGOUT_ENDPOINT,
+        &OIDCCONFIGFORRESPONSE_MEMBER_JWKS_URI,
+        &OIDCCONFIGFORRESPONSE_MEMBER_SCOPE,
+        &OIDCCONFIGFORRESPONSE_MEMBER_AUTHENTICATION_REQUEST_EXTRA_PARAMS,
+    ],
+);
+impl OidcConfigForResponse {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OIDCCONFIGFORRESPONSE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OidcConfigForResponse {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_id {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_CLIENT_ID, val)?;
+        }
+        if let Some(ref val) = self.issuer {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_ISSUER, val)?;
+        }
+        if let Some(ref val) = self.authorization_endpoint {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_AUTHORIZATION_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.token_endpoint {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_TOKEN_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.user_info_endpoint {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_USER_INFO_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.logout_endpoint {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_LOGOUT_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.jwks_uri {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_JWKS_URI, val)?;
+        }
+        if let Some(ref val) = self.scope {
+            ser.write_string(&OIDCCONFIGFORRESPONSE_MEMBER_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.authentication_request_extra_params {
+            ser.write_map(
+                &OIDCCONFIGFORRESPONSE_MEMBER_AUTHENTICATION_REQUEST_EXTRA_PARAMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OidcConfigForResponseBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OIDCCONFIGFORRESPONSE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authorization_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_info_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logout_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jwks_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_request_extra_params = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OidcConfigForResponse {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OidcConfigForResponse {
     /// Creates a new builder-style object to manufacture [`OidcConfigForResponse`](crate::types::OidcConfigForResponse).
     pub fn builder() -> crate::types::builders::OidcConfigForResponseBuilder {

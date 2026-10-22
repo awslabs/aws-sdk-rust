@@ -68,6 +68,271 @@ impl ConfigurationRecorderStatus {
         self.service_principal.as_deref()
     }
 }
+static CONFIGURATIONRECORDERSTATUS_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$arn",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$name",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$lastStartTime",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastStartTime",
+    2,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STOP_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$lastStopTime",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastStopTime",
+    3,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_RECORDING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$recording",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "recording",
+    4,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$lastStatus",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastStatus",
+    5,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$lastErrorCode",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastErrorCode",
+    6,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$lastErrorMessage",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastErrorMessage",
+    7,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STATUS_CHANGE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$lastStatusChangeTime",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastStatusChangeTime",
+    8,
+);
+static CONFIGURATIONRECORDERSTATUS_MEMBER_SERVICE_PRINCIPAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus$servicePrincipal",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "servicePrincipal",
+    9,
+);
+static CONFIGURATIONRECORDERSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorderStatus",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorderStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_ARN,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_NAME,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_START_TIME,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STOP_TIME,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_RECORDING,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STATUS,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_ERROR_CODE,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_ERROR_MESSAGE,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STATUS_CHANGE_TIME,
+        &CONFIGURATIONRECORDERSTATUS_MEMBER_SERVICE_PRINCIPAL,
+    ],
+);
+impl ConfigurationRecorderStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFIGURATIONRECORDERSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConfigurationRecorderStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CONFIGURATIONRECORDERSTATUS_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CONFIGURATIONRECORDERSTATUS_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.last_start_time {
+            ser.write_timestamp(&CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_stop_time {
+            ser.write_timestamp(&CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STOP_TIME, val)?;
+        }
+        {
+            let val = &self.recording;
+            ser.write_boolean(&CONFIGURATIONRECORDERSTATUS_MEMBER_RECORDING, *val)?;
+        }
+        if let Some(ref val) = self.last_status {
+            ser.write_string(&CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_error_code {
+            ser.write_string(&CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.last_error_message {
+            ser.write_string(&CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.last_status_change_time {
+            ser.write_timestamp(&CONFIGURATIONRECORDERSTATUS_MEMBER_LAST_STATUS_CHANGE_TIME, val)?;
+        }
+        if let Some(ref val) = self.service_principal {
+            ser.write_string(&CONFIGURATIONRECORDERSTATUS_MEMBER_SERVICE_PRINCIPAL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConfigurationRecorderStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFIGURATIONRECORDERSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_stop_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.recording = Some(deser.read_boolean(member)?);
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status = Some(crate::types::RecorderStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status_change_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_principal = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConfigurationRecorderStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConfigurationRecorderStatus {
     /// Creates a new builder-style object to manufacture [`ConfigurationRecorderStatus`](crate::types::ConfigurationRecorderStatus).
     pub fn builder() -> crate::types::builders::ConfigurationRecorderStatusBuilder {

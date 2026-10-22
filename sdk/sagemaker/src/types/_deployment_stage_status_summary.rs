@@ -31,6 +31,148 @@ impl DeploymentStageStatusSummary {
         self.deployment_status.as_ref()
     }
 }
+static DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_STAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummary$StageName",
+        "com.amazonaws.sagemaker",
+        "DeploymentStageStatusSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StageName",
+    0,
+);
+static DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEVICE_SELECTION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummary$DeviceSelectionConfig",
+        "com.amazonaws.sagemaker",
+        "DeploymentStageStatusSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceSelectionConfig",
+    1,
+);
+static DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummary$DeploymentConfig",
+        "com.amazonaws.sagemaker",
+        "DeploymentStageStatusSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentConfig",
+    2,
+);
+static DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEPLOYMENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummary$DeploymentStatus",
+        "com.amazonaws.sagemaker",
+        "DeploymentStageStatusSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentStatus",
+    3,
+);
+static DEPLOYMENTSTAGESTATUSSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummary",
+        "com.amazonaws.sagemaker",
+        "DeploymentStageStatusSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_STAGE_NAME,
+        &DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEVICE_SELECTION_CONFIG,
+        &DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEPLOYMENT_CONFIG,
+        &DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEPLOYMENT_STATUS,
+    ],
+);
+impl DeploymentStageStatusSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTSTAGESTATUSSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentStageStatusSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stage_name {
+            ser.write_string(&DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_STAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.device_selection_config {
+            ser.write_struct(&DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEVICE_SELECTION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.deployment_config {
+            ser.write_struct(&DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEPLOYMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.deployment_status {
+            ser.write_struct(&DEPLOYMENTSTAGESTATUSSUMMARY_MEMBER_DEPLOYMENT_STATUS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentStageStatusSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTSTAGESTATUSSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_selection_config = Some(crate::types::DeviceSelectionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config = Some(crate::types::EdgeDeploymentConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_status = Some(crate::types::EdgeDeploymentStatus::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentStageStatusSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentStageStatusSummary {
     /// Creates a new builder-style object to manufacture [`DeploymentStageStatusSummary`](crate::types::DeploymentStageStatusSummary).
     pub fn builder() -> crate::types::builders::DeploymentStageStatusSummaryBuilder {

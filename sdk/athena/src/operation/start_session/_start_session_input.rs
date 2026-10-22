@@ -72,6 +72,299 @@ impl StartSessionInput {
         self.copy_work_group_tags
     }
 }
+static STARTSESSIONINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$Description",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    0,
+);
+static STARTSESSIONINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$WorkGroup",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    1,
+);
+static STARTSESSIONINPUT_MEMBER_ENGINE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$EngineConfiguration",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EngineConfiguration",
+    2,
+);
+static STARTSESSIONINPUT_MEMBER_EXECUTION_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$ExecutionRole",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRole",
+    3,
+);
+static STARTSESSIONINPUT_MEMBER_MONITORING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$MonitoringConfiguration",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MonitoringConfiguration",
+    4,
+);
+static STARTSESSIONINPUT_MEMBER_NOTEBOOK_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$NotebookVersion",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookVersion",
+    5,
+);
+static STARTSESSIONINPUT_MEMBER_SESSION_IDLE_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$SessionIdleTimeoutInMinutes",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SessionIdleTimeoutInMinutes",
+    6,
+);
+static STARTSESSIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$ClientRequestToken",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    7,
+);
+static STARTSESSIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TagList$member", "com.amazonaws.athena", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTSESSIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$Tags",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&STARTSESSIONINPUT_MEMBER_TAGS_MEMBER);
+static STARTSESSIONINPUT_MEMBER_COPY_WORK_GROUP_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput$CopyWorkGroupTags",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CopyWorkGroupTags",
+    9,
+);
+static STARTSESSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartSessionInput",
+        "com.amazonaws.athena.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTSESSIONINPUT_MEMBER_DESCRIPTION,
+        &STARTSESSIONINPUT_MEMBER_WORK_GROUP,
+        &STARTSESSIONINPUT_MEMBER_ENGINE_CONFIGURATION,
+        &STARTSESSIONINPUT_MEMBER_EXECUTION_ROLE,
+        &STARTSESSIONINPUT_MEMBER_MONITORING_CONFIGURATION,
+        &STARTSESSIONINPUT_MEMBER_NOTEBOOK_VERSION,
+        &STARTSESSIONINPUT_MEMBER_SESSION_IDLE_TIMEOUT_IN_MINUTES,
+        &STARTSESSIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &STARTSESSIONINPUT_MEMBER_TAGS,
+        &STARTSESSIONINPUT_MEMBER_COPY_WORK_GROUP_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartSessionRequest");
+impl StartSessionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSESSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartSessionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        if let Some(ref val) = self.engine_configuration {
+            ser.write_struct(&STARTSESSIONINPUT_MEMBER_ENGINE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.execution_role {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_EXECUTION_ROLE, val)?;
+        }
+        if let Some(ref val) = self.monitoring_configuration {
+            ser.write_struct(&STARTSESSIONINPUT_MEMBER_MONITORING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.notebook_version {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_NOTEBOOK_VERSION, val)?;
+        }
+        if let Some(ref val) = self.session_idle_timeout_in_minutes {
+            ser.write_integer(&STARTSESSIONINPUT_MEMBER_SESSION_IDLE_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTSESSIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.copy_work_group_tags {
+            ser.write_boolean(&STARTSESSIONINPUT_MEMBER_COPY_WORK_GROUP_TAGS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_session::builders::StartSessionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTSESSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_configuration = Some(crate::types::EngineConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_configuration = Some(crate::types::MonitoringConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_idle_timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_work_group_tags = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartSessionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.work_group = builder.work_group.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartSessionInput {
     /// Creates a new builder-style object to manufacture [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
     pub fn builder() -> crate::operation::start_session::builders::StartSessionInputBuilder {

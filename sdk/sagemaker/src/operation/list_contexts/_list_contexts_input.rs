@@ -54,6 +54,234 @@ impl ListContextsInput {
         self.max_results
     }
 }
+static LISTCONTEXTSINPUT_MEMBER_SOURCE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$SourceUri",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceUri",
+    0,
+);
+static LISTCONTEXTSINPUT_MEMBER_CONTEXT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$ContextType",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextType",
+    1,
+);
+static LISTCONTEXTSINPUT_MEMBER_CREATED_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$CreatedAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAfter",
+    2,
+);
+static LISTCONTEXTSINPUT_MEMBER_CREATED_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$CreatedBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedBefore",
+    3,
+);
+static LISTCONTEXTSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    4,
+);
+static LISTCONTEXTSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    5,
+);
+static LISTCONTEXTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static LISTCONTEXTSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    7,
+);
+static LISTCONTEXTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListContextsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListContextsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCONTEXTSINPUT_MEMBER_SOURCE_URI,
+        &LISTCONTEXTSINPUT_MEMBER_CONTEXT_TYPE,
+        &LISTCONTEXTSINPUT_MEMBER_CREATED_AFTER,
+        &LISTCONTEXTSINPUT_MEMBER_CREATED_BEFORE,
+        &LISTCONTEXTSINPUT_MEMBER_SORT_BY,
+        &LISTCONTEXTSINPUT_MEMBER_SORT_ORDER,
+        &LISTCONTEXTSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTCONTEXTSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListContextsRequest");
+impl ListContextsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCONTEXTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListContextsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_uri {
+            ser.write_string(&LISTCONTEXTSINPUT_MEMBER_SOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.context_type {
+            ser.write_string(&LISTCONTEXTSINPUT_MEMBER_CONTEXT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.created_after {
+            ser.write_timestamp(&LISTCONTEXTSINPUT_MEMBER_CREATED_AFTER, val)?;
+        }
+        if let Some(ref val) = self.created_before {
+            ser.write_timestamp(&LISTCONTEXTSINPUT_MEMBER_CREATED_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTCONTEXTSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTCONTEXTSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCONTEXTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTCONTEXTSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_contexts::builders::ListContextsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCONTEXTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::SortContextsBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListContextsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListContextsInput {
     /// Creates a new builder-style object to manufacture [`ListContextsInput`](crate::operation::list_contexts::ListContextsInput).
     pub fn builder() -> crate::operation::list_contexts::builders::ListContextsInputBuilder {

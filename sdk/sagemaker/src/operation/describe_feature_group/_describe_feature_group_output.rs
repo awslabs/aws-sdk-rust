@@ -157,6 +157,471 @@ impl DescribeFeatureGroupOutput {
         self.online_store_total_size_bytes
     }
 }
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$FeatureGroupArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupArn",
+    0,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$FeatureGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupName",
+    1,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$RecordIdentifierFeatureName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeFeatureGroupOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RecordIdentifierFeatureName",
+        2,
+    );
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_EVENT_TIME_FEATURE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$EventTimeFeatureName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventTimeFeatureName",
+    3,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureDefinitions$member",
+        "com.amazonaws.sagemaker",
+        "FeatureDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$FeatureDefinitions",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FeatureDefinitions",
+    4,
+)
+.with_list_member(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_DEFINITIONS_MEMBER);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    6,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ONLINE_STORE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$OnlineStoreConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OnlineStoreConfig",
+    7,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_OFFLINE_STORE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$OfflineStoreConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OfflineStoreConfig",
+    8,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_THROUGHPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$ThroughputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ThroughputConfig",
+    9,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    10,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$FeatureGroupStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupStatus",
+    11,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_OFFLINE_STORE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$OfflineStoreStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OfflineStoreStatus",
+    12,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_LAST_UPDATE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$LastUpdateStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastUpdateStatus",
+    13,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    14,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    15,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    16,
+);
+static DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ONLINE_STORE_TOTAL_SIZE_BYTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput$OnlineStoreTotalSizeBytes",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeFeatureGroupOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "OnlineStoreTotalSizeBytes",
+        17,
+    );
+static DESCRIBEFEATUREGROUPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeFeatureGroupOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeFeatureGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_ARN,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_NAME,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_EVENT_TIME_FEATURE_NAME,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_DEFINITIONS,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ONLINE_STORE_CONFIG,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_OFFLINE_STORE_CONFIG,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_THROUGHPUT_CONFIG,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_STATUS,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_OFFLINE_STORE_STATUS,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_LAST_UPDATE_STATUS,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_NEXT_TOKEN,
+        &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ONLINE_STORE_TOTAL_SIZE_BYTES,
+    ],
+)
+.with_original_name("DescribeFeatureGroupResponse");
+impl DescribeFeatureGroupOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEFEATUREGROUPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeFeatureGroupOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.feature_group_arn {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.feature_group_name {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.record_identifier_feature_name {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME, val)?;
+        }
+        if let Some(ref val) = self.event_time_feature_name {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_EVENT_TIME_FEATURE_NAME, val)?;
+        }
+        if let Some(ref val) = self.feature_definitions {
+            ser.write_list(
+                &DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FeatureDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.online_store_config {
+            ser.write_struct(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ONLINE_STORE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.offline_store_config {
+            ser.write_struct(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_OFFLINE_STORE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.throughput_config {
+            ser.write_struct(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_THROUGHPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.feature_group_status {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FEATURE_GROUP_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.offline_store_status {
+            ser.write_struct(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_OFFLINE_STORE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.last_update_status {
+            ser.write_struct(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_LAST_UPDATE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.online_store_total_size_bytes {
+            ser.write_long(&DESCRIBEFEATUREGROUPOUTPUT_MEMBER_ONLINE_STORE_TOTAL_SIZE_BYTES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_feature_group::builders::DescribeFeatureGroupOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEFEATUREGROUPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_identifier_feature_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_time_feature_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FeatureDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.online_store_config = Some(crate::types::OnlineStoreConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.offline_store_config = Some(crate::types::OfflineStoreConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_config = Some(crate::types::ThroughputConfigDescription::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_status = Some(crate::types::FeatureGroupStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.offline_store_status = Some(crate::types::OfflineStoreStatus::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_status = Some(crate::types::LastUpdateStatus::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.online_store_total_size_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeFeatureGroupOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeFeatureGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

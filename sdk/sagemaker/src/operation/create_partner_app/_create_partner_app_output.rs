@@ -13,6 +13,84 @@ impl CreatePartnerAppOutput {
         self.arn.as_deref()
     }
 }
+static CREATEPARTNERAPPOUTPUT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppOutput$Arn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static CREATEPARTNERAPPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEPARTNERAPPOUTPUT_MEMBER_ARN],
+)
+.with_original_name("CreatePartnerAppResponse");
+impl CreatePartnerAppOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPARTNERAPPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePartnerAppOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CREATEPARTNERAPPOUTPUT_MEMBER_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_partner_app::builders::CreatePartnerAppOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPARTNERAPPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePartnerAppOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreatePartnerAppOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

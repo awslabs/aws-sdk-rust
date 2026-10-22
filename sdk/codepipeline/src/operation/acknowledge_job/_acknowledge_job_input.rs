@@ -19,6 +19,107 @@ impl AcknowledgeJobInput {
         self.nonce.as_deref()
     }
 }
+static ACKNOWLEDGEJOBINPUT_MEMBER_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#AcknowledgeJobInput$jobId",
+        "com.amazonaws.codepipeline.synthetic",
+        "AcknowledgeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "jobId",
+    0,
+);
+static ACKNOWLEDGEJOBINPUT_MEMBER_NONCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#AcknowledgeJobInput$nonce",
+        "com.amazonaws.codepipeline.synthetic",
+        "AcknowledgeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nonce",
+    1,
+);
+static ACKNOWLEDGEJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#AcknowledgeJobInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "AcknowledgeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACKNOWLEDGEJOBINPUT_MEMBER_JOB_ID, &ACKNOWLEDGEJOBINPUT_MEMBER_NONCE],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AcknowledgeJobInput");
+impl AcknowledgeJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACKNOWLEDGEJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcknowledgeJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_id {
+            ser.write_string(&ACKNOWLEDGEJOBINPUT_MEMBER_JOB_ID, val)?;
+        }
+        if let Some(ref val) = self.nonce {
+            ser.write_string(&ACKNOWLEDGEJOBINPUT_MEMBER_NONCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::acknowledge_job::builders::AcknowledgeJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACKNOWLEDGEJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nonce = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcknowledgeJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_id = builder.job_id.or(Some(String::new()));
+        builder.nonce = builder.nonce.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AcknowledgeJobInput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeJobInput`](crate::operation::acknowledge_job::AcknowledgeJobInput).
     pub fn builder() -> crate::operation::acknowledge_job::builders::AcknowledgeJobInputBuilder {

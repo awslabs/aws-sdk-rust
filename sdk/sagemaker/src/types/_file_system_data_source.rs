@@ -31,6 +31,148 @@ impl FileSystemDataSource {
         self.directory_path.as_deref()
     }
 }
+static FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemDataSource$FileSystemId",
+        "com.amazonaws.sagemaker",
+        "FileSystemDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    0,
+);
+static FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_ACCESS_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemDataSource$FileSystemAccessMode",
+        "com.amazonaws.sagemaker",
+        "FileSystemDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemAccessMode",
+    1,
+);
+static FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemDataSource$FileSystemType",
+        "com.amazonaws.sagemaker",
+        "FileSystemDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemType",
+    2,
+);
+static FILESYSTEMDATASOURCE_MEMBER_DIRECTORY_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemDataSource$DirectoryPath",
+        "com.amazonaws.sagemaker",
+        "FileSystemDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectoryPath",
+    3,
+);
+static FILESYSTEMDATASOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemDataSource",
+        "com.amazonaws.sagemaker",
+        "FileSystemDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_ID,
+        &FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_ACCESS_MODE,
+        &FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_TYPE,
+        &FILESYSTEMDATASOURCE_MEMBER_DIRECTORY_PATH,
+    ],
+);
+impl FileSystemDataSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILESYSTEMDATASOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileSystemDataSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.file_system_access_mode {
+            ser.write_string(&FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_ACCESS_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.file_system_type {
+            ser.write_string(&FILESYSTEMDATASOURCE_MEMBER_FILE_SYSTEM_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.directory_path {
+            ser.write_string(&FILESYSTEMDATASOURCE_MEMBER_DIRECTORY_PATH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileSystemDataSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILESYSTEMDATASOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_access_mode = Some(crate::types::FileSystemAccessMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_type = Some(crate::types::FileSystemType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_path = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileSystemDataSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileSystemDataSource {
     /// Creates a new builder-style object to manufacture [`FileSystemDataSource`](crate::types::FileSystemDataSource).
     pub fn builder() -> crate::types::builders::FileSystemDataSourceBuilder {

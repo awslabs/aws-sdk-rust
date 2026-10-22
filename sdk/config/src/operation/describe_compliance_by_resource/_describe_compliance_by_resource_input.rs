@@ -39,6 +39,200 @@ impl DescribeComplianceByResourceInput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeComplianceByResourceInput$ResourceType",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeComplianceByResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    0,
+);
+static DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeComplianceByResourceInput$ResourceId",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeComplianceByResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    1,
+);
+static DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_COMPLIANCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ComplianceTypes$member",
+            "com.amazonaws.configservice",
+            "ComplianceTypes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_COMPLIANCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeComplianceByResourceInput$ComplianceTypes",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeComplianceByResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ComplianceTypes",
+    2,
+)
+.with_list_member(&DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_COMPLIANCE_TYPES_MEMBER);
+static DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeComplianceByResourceInput$Limit",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeComplianceByResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    3,
+);
+static DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeComplianceByResourceInput$NextToken",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeComplianceByResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static DESCRIBECOMPLIANCEBYRESOURCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeComplianceByResourceInput",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeComplianceByResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_RESOURCE_TYPE,
+        &DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_RESOURCE_ID,
+        &DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_COMPLIANCE_TYPES,
+        &DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_LIMIT,
+        &DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeComplianceByResourceRequest");
+impl DescribeComplianceByResourceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECOMPLIANCEBYRESOURCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeComplianceByResourceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.compliance_types {
+            ser.write_list(
+                &DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_COMPLIANCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBECOMPLIANCEBYRESOURCEINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECOMPLIANCEBYRESOURCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ComplianceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeComplianceByResourceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeComplianceByResourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeComplianceByResourceInput`](crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceInput).
     pub fn builder() -> crate::operation::describe_compliance_by_resource::builders::DescribeComplianceByResourceInputBuilder {

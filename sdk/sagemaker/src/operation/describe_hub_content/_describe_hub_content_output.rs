@@ -131,6 +131,533 @@ impl DescribeHubContentOutput {
         self.last_modified_time.as_ref()
     }
 }
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentName",
+    0,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentArn",
+    1,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentVersion",
+    2,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentType",
+    3,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_DOCUMENT_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$DocumentSchemaVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentSchemaVersion",
+    4,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    5,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubArn",
+    6,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentDisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentDisplayName",
+    7,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentDescription",
+    8,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_MARKDOWN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentMarkdown",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentMarkdown",
+    9,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DOCUMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentDocument",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentDocument",
+    10,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_SAGE_MAKER_PUBLIC_HUB_CONTENT_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$SageMakerPublicHubContentArn",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeHubContentOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SageMakerPublicHubContentArn",
+        11,
+    );
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_REFERENCE_MIN_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$ReferenceMinVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReferenceMinVersion",
+    12,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_SUPPORT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$SupportStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SupportStatus",
+    13,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HubContentSearchKeywordList$member",
+            "com.amazonaws.sagemaker",
+            "HubContentSearchKeywordList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentSearchKeywords",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HubContentSearchKeywords",
+    14,
+)
+.with_list_member(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS_MEMBER);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DEPENDENCIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HubContentDependencyList$member",
+            "com.amazonaws.sagemaker",
+            "HubContentDependencyList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DEPENDENCIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentDependencies",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HubContentDependencies",
+    15,
+)
+.with_list_member(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DEPENDENCIES_MEMBER);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$HubContentStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentStatus",
+    16,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    17,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    18,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    19,
+);
+static DESCRIBEHUBCONTENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_NAME,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_ARN,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_VERSION,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_TYPE,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_DOCUMENT_SCHEMA_VERSION,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_NAME,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_ARN,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DISPLAY_NAME,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DESCRIPTION,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_MARKDOWN,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DOCUMENT,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_SAGE_MAKER_PUBLIC_HUB_CONTENT_ARN,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_REFERENCE_MIN_VERSION,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_SUPPORT_STATUS,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DEPENDENCIES,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_STATUS,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+    ],
+)
+.with_original_name("DescribeHubContentResponse");
+impl DescribeHubContentOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEHUBCONTENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeHubContentOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_content_name {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_arn {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.hub_content_version {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.hub_content_type {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.document_schema_version {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_DOCUMENT_SCHEMA_VERSION, val)?;
+        }
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_arn {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_ARN, val)?;
+        }
+        if let Some(ref val) = self.hub_content_display_name {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_description {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.hub_content_markdown {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_MARKDOWN, val)?;
+        }
+        if let Some(ref val) = self.hub_content_document {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DOCUMENT, val)?;
+        }
+        if let Some(ref val) = self.sage_maker_public_hub_content_arn {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_SAGE_MAKER_PUBLIC_HUB_CONTENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.reference_min_version {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_REFERENCE_MIN_VERSION, val)?;
+        }
+        if let Some(ref val) = self.support_status {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_SUPPORT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.hub_content_search_keywords {
+            ser.write_list(
+                &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hub_content_dependencies {
+            ser.write_list(
+                &DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_DEPENDENCIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HubContentDependency::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hub_content_status {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_HUB_CONTENT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_hub_content::builders::DescribeHubContentOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEHUBCONTENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_type = Some(crate::types::HubContentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_markdown = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_document = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sage_maker_public_hub_content_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reference_min_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_status = Some(crate::types::HubContentSupportStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_search_keywords = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_dependencies = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HubContentDependency::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_status = Some(crate::types::HubContentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeHubContentOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeHubContentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

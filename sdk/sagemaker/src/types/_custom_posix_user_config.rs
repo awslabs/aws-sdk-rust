@@ -19,6 +19,103 @@ impl CustomPosixUserConfig {
         self.gid
     }
 }
+static CUSTOMPOSIXUSERCONFIG_MEMBER_UID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomPosixUserConfig$Uid",
+        "com.amazonaws.sagemaker",
+        "CustomPosixUserConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Uid",
+    0,
+);
+static CUSTOMPOSIXUSERCONFIG_MEMBER_GID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomPosixUserConfig$Gid",
+        "com.amazonaws.sagemaker",
+        "CustomPosixUserConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Gid",
+    1,
+);
+static CUSTOMPOSIXUSERCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomPosixUserConfig",
+        "com.amazonaws.sagemaker",
+        "CustomPosixUserConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CUSTOMPOSIXUSERCONFIG_MEMBER_UID, &CUSTOMPOSIXUSERCONFIG_MEMBER_GID],
+);
+impl CustomPosixUserConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMPOSIXUSERCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomPosixUserConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.uid {
+            ser.write_long(&CUSTOMPOSIXUSERCONFIG_MEMBER_UID, *val)?;
+        }
+        if let Some(ref val) = self.gid {
+            ser.write_long(&CUSTOMPOSIXUSERCONFIG_MEMBER_GID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CustomPosixUserConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CUSTOMPOSIXUSERCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.uid = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gid = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CustomPosixUserConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CustomPosixUserConfig {
     /// Creates a new builder-style object to manufacture [`CustomPosixUserConfig`](crate::types::CustomPosixUserConfig).
     pub fn builder() -> crate::types::builders::CustomPosixUserConfigBuilder {

@@ -68,6 +68,317 @@ impl CreateModelExplainabilityJobDefinitionInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$JobDefinitionName",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "JobDefinitionName",
+        0,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_BASELINE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$ModelExplainabilityBaselineConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelExplainabilityBaselineConfig",
+        1,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_APP_SPECIFICATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$ModelExplainabilityAppSpecification",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelExplainabilityAppSpecification",
+        2,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_JOB_INPUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$ModelExplainabilityJobInput",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelExplainabilityJobInput",
+        3,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_JOB_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$ModelExplainabilityJobOutputConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelExplainabilityJobOutputConfig",
+        4,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$JobResources",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "JobResources",
+        5,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$NetworkConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "NetworkConfig",
+        6,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelExplainabilityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    7,
+);
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$StoppingCondition",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "StoppingCondition",
+        8,
+    );
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelExplainabilityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_TAGS_MEMBER);
+static CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelExplainabilityJobDefinitionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelExplainabilityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_BASELINE_CONFIG,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_APP_SPECIFICATION,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_JOB_INPUT,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_JOB_OUTPUT_CONFIG,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION,
+        &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateModelExplainabilityJobDefinitionRequest");
+impl CreateModelExplainabilityJobDefinitionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateModelExplainabilityJobDefinitionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_definition_name {
+            ser.write_string(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_explainability_baseline_config {
+            ser.write_struct(
+                &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_BASELINE_CONFIG,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.model_explainability_app_specification {
+            ser.write_struct(
+                &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_APP_SPECIFICATION,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.model_explainability_job_input {
+            ser.write_struct(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_JOB_INPUT, val)?;
+        }
+        if let Some(ref val) = self.model_explainability_job_output_config {
+            ser.write_struct(
+                &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_MODEL_EXPLAINABILITY_JOB_OUTPUT_CONFIG,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.job_resources {
+            ser.write_struct(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.network_config {
+            ser.write_struct(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMODELEXPLAINABILITYJOBDEFINITIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_explainability_baseline_config = Some(crate::types::ModelExplainabilityBaselineConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_explainability_app_specification = Some(crate::types::ModelExplainabilityAppSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_explainability_job_input = Some(crate::types::ModelExplainabilityJobInput::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_explainability_job_output_config = Some(crate::types::MonitoringOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_resources = Some(crate::types::MonitoringResources::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_config = Some(crate::types::MonitoringNetworkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::MonitoringStoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateModelExplainabilityJobDefinitionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_definition_name = builder.job_definition_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateModelExplainabilityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateModelExplainabilityJobDefinitionInput`](crate::operation::create_model_explainability_job_definition::CreateModelExplainabilityJobDefinitionInput).
     pub fn builder() -> crate::operation::create_model_explainability_job_definition::builders::CreateModelExplainabilityJobDefinitionInputBuilder {

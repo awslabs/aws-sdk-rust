@@ -85,6 +85,356 @@ impl OrganizationCustomPolicyRuleMetadataNoPolicy {
         self.debug_log_delivery_accounts.as_deref().unwrap_or_default()
     }
 }
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$Description",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "Description",
+        0,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_ORGANIZATION_CONFIG_RULE_TRIGGER_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationConfigRuleTriggerTypeNoSNs$member",
+            "com.amazonaws.configservice",
+            "OrganizationConfigRuleTriggerTypeNoSNs",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_ORGANIZATION_CONFIG_RULE_TRIGGER_TYPES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$OrganizationConfigRuleTriggerTypes",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "OrganizationConfigRuleTriggerTypes",
+        1,
+    )
+    .with_list_member(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_ORGANIZATION_CONFIG_RULE_TRIGGER_TYPES_MEMBER);
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_INPUT_PARAMETERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$InputParameters",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InputParameters",
+        2,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_MAXIMUM_EXECUTION_FREQUENCY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$MaximumExecutionFrequency",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "MaximumExecutionFrequency",
+        3,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_TYPES_SCOPE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ResourceTypesScope$member",
+            "com.amazonaws.configservice",
+            "ResourceTypesScope",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_TYPES_SCOPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$ResourceTypesScope",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ResourceTypesScope",
+        4,
+    )
+    .with_list_member(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_TYPES_SCOPE_MEMBER);
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_ID_SCOPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$ResourceIdScope",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ResourceIdScope",
+        5,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_TAG_KEY_SCOPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$TagKeyScope",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "TagKeyScope",
+        6,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_TAG_VALUE_SCOPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$TagValueScope",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "TagValueScope",
+        7,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_POLICY_RUNTIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$PolicyRuntime",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PolicyRuntime",
+        8,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DEBUG_LOG_DELIVERY_ACCOUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#DebugLogDeliveryAccounts$member",
+            "com.amazonaws.configservice",
+            "DebugLogDeliveryAccounts",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DEBUG_LOG_DELIVERY_ACCOUNTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy$DebugLogDeliveryAccounts",
+            "com.amazonaws.configservice",
+            "OrganizationCustomPolicyRuleMetadataNoPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DebugLogDeliveryAccounts",
+        9,
+    )
+    .with_list_member(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DEBUG_LOG_DELIVERY_ACCOUNTS_MEMBER);
+static ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationCustomPolicyRuleMetadataNoPolicy",
+        "com.amazonaws.configservice",
+        "OrganizationCustomPolicyRuleMetadataNoPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DESCRIPTION,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_ORGANIZATION_CONFIG_RULE_TRIGGER_TYPES,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_INPUT_PARAMETERS,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_MAXIMUM_EXECUTION_FREQUENCY,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_TYPES_SCOPE,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_ID_SCOPE,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_TAG_KEY_SCOPE,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_TAG_VALUE_SCOPE,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_POLICY_RUNTIME,
+        &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DEBUG_LOG_DELIVERY_ACCOUNTS,
+    ],
+);
+impl OrganizationCustomPolicyRuleMetadataNoPolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OrganizationCustomPolicyRuleMetadataNoPolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.organization_config_rule_trigger_types {
+            ser.write_list(
+                &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_ORGANIZATION_CONFIG_RULE_TRIGGER_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_parameters {
+            ser.write_string(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_INPUT_PARAMETERS, val)?;
+        }
+        if let Some(ref val) = self.maximum_execution_frequency {
+            ser.write_string(
+                &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_MAXIMUM_EXECUTION_FREQUENCY,
+                val.as_str(),
+            )?;
+        }
+        if let Some(ref val) = self.resource_types_scope {
+            ser.write_list(
+                &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_TYPES_SCOPE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resource_id_scope {
+            ser.write_string(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_RESOURCE_ID_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.tag_key_scope {
+            ser.write_string(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_TAG_KEY_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.tag_value_scope {
+            ser.write_string(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_TAG_VALUE_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.policy_runtime {
+            ser.write_string(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_POLICY_RUNTIME, val)?;
+        }
+        if let Some(ref val) = self.debug_log_delivery_accounts {
+            ser.write_list(
+                &ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_MEMBER_DEBUG_LOG_DELIVERY_ACCOUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ORGANIZATIONCUSTOMPOLICYRULEMETADATANOPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_config_rule_trigger_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OrganizationConfigRuleTriggerTypeNoSn::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_parameters = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_execution_frequency = Some(crate::types::MaximumExecutionFrequency::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_types_scope = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id_scope = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_key_scope = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_value_scope = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_runtime = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_log_delivery_accounts = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OrganizationCustomPolicyRuleMetadataNoPolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OrganizationCustomPolicyRuleMetadataNoPolicy {
     /// Creates a new builder-style object to manufacture [`OrganizationCustomPolicyRuleMetadataNoPolicy`](crate::types::OrganizationCustomPolicyRuleMetadataNoPolicy).
     pub fn builder() -> crate::types::builders::OrganizationCustomPolicyRuleMetadataNoPolicyBuilder {

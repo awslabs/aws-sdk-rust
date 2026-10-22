@@ -12,6 +12,86 @@ impl StopTransformJobInput {
         self.transform_job_name.as_deref()
     }
 }
+static STOPTRANSFORMJOBINPUT_MEMBER_TRANSFORM_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StopTransformJobInput$TransformJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "StopTransformJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TransformJobName",
+    0,
+);
+static STOPTRANSFORMJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StopTransformJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "StopTransformJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STOPTRANSFORMJOBINPUT_MEMBER_TRANSFORM_JOB_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StopTransformJobRequest");
+impl StopTransformJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOPTRANSFORMJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StopTransformJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.transform_job_name {
+            ser.write_string(&STOPTRANSFORMJOBINPUT_MEMBER_TRANSFORM_JOB_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STOPTRANSFORMJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StopTransformJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.transform_job_name = builder.transform_job_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StopTransformJobInput {
     /// Creates a new builder-style object to manufacture [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
     pub fn builder() -> crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder {

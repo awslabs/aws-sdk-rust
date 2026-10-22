@@ -49,6 +49,187 @@ impl PolicySummary {
         self.aws_managed
     }
 }
+static POLICYSUMMARY_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicySummary$Id",
+        "com.amazonaws.organizations",
+        "PolicySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static POLICYSUMMARY_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicySummary$Arn",
+        "com.amazonaws.organizations",
+        "PolicySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static POLICYSUMMARY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicySummary$Name",
+        "com.amazonaws.organizations",
+        "PolicySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    2,
+);
+static POLICYSUMMARY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicySummary$Description",
+        "com.amazonaws.organizations",
+        "PolicySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static POLICYSUMMARY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicySummary$Type",
+        "com.amazonaws.organizations",
+        "PolicySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    4,
+);
+static POLICYSUMMARY_MEMBER_AWS_MANAGED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicySummary$AwsManaged",
+        "com.amazonaws.organizations",
+        "PolicySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AwsManaged",
+    5,
+);
+static POLICYSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicySummary",
+        "com.amazonaws.organizations",
+        "PolicySummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POLICYSUMMARY_MEMBER_ID,
+        &POLICYSUMMARY_MEMBER_ARN,
+        &POLICYSUMMARY_MEMBER_NAME,
+        &POLICYSUMMARY_MEMBER_DESCRIPTION,
+        &POLICYSUMMARY_MEMBER_TYPE,
+        &POLICYSUMMARY_MEMBER_AWS_MANAGED,
+    ],
+);
+impl PolicySummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLICYSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PolicySummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&POLICYSUMMARY_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&POLICYSUMMARY_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&POLICYSUMMARY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&POLICYSUMMARY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&POLICYSUMMARY_MEMBER_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.aws_managed;
+            ser.write_boolean(&POLICYSUMMARY_MEMBER_AWS_MANAGED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PolicySummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLICYSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::PolicyType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    self.aws_managed = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PolicySummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PolicySummary {
     /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::types::PolicySummary).
     pub fn builder() -> crate::types::builders::PolicySummaryBuilder {

@@ -69,6 +69,280 @@ impl StartTaskExecutionInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static STARTTASKEXECUTIONINPUT_MEMBER_TASK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput$TaskArn",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskArn",
+    0,
+);
+static STARTTASKEXECUTIONINPUT_MEMBER_OVERRIDE_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput$OverrideOptions",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OverrideOptions",
+    1,
+);
+static STARTTASKEXECUTIONINPUT_MEMBER_INCLUDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#FilterList$member", "com.amazonaws.datasync", "FilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTTASKEXECUTIONINPUT_MEMBER_INCLUDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput$Includes",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Includes",
+    2,
+)
+.with_list_member(&STARTTASKEXECUTIONINPUT_MEMBER_INCLUDES_MEMBER);
+static STARTTASKEXECUTIONINPUT_MEMBER_EXCLUDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#FilterList$member", "com.amazonaws.datasync", "FilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTTASKEXECUTIONINPUT_MEMBER_EXCLUDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput$Excludes",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Excludes",
+    3,
+)
+.with_list_member(&STARTTASKEXECUTIONINPUT_MEMBER_EXCLUDES_MEMBER);
+static STARTTASKEXECUTIONINPUT_MEMBER_MANIFEST_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput$ManifestConfig",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManifestConfig",
+    4,
+);
+static STARTTASKEXECUTIONINPUT_MEMBER_TASK_REPORT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput$TaskReportConfig",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TaskReportConfig",
+    5,
+);
+static STARTTASKEXECUTIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#InputTagList$member", "com.amazonaws.datasync", "InputTagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTTASKEXECUTIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput$Tags",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&STARTTASKEXECUTIONINPUT_MEMBER_TAGS_MEMBER);
+static STARTTASKEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#StartTaskExecutionInput",
+        "com.amazonaws.datasync.synthetic",
+        "StartTaskExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTTASKEXECUTIONINPUT_MEMBER_TASK_ARN,
+        &STARTTASKEXECUTIONINPUT_MEMBER_OVERRIDE_OPTIONS,
+        &STARTTASKEXECUTIONINPUT_MEMBER_INCLUDES,
+        &STARTTASKEXECUTIONINPUT_MEMBER_EXCLUDES,
+        &STARTTASKEXECUTIONINPUT_MEMBER_MANIFEST_CONFIG,
+        &STARTTASKEXECUTIONINPUT_MEMBER_TASK_REPORT_CONFIG,
+        &STARTTASKEXECUTIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartTaskExecutionRequest");
+impl StartTaskExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTTASKEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartTaskExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.task_arn {
+            ser.write_string(&STARTTASKEXECUTIONINPUT_MEMBER_TASK_ARN, val)?;
+        }
+        if let Some(ref val) = self.override_options {
+            ser.write_struct(&STARTTASKEXECUTIONINPUT_MEMBER_OVERRIDE_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.includes {
+            ser.write_list(
+                &STARTTASKEXECUTIONINPUT_MEMBER_INCLUDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FilterRule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.excludes {
+            ser.write_list(
+                &STARTTASKEXECUTIONINPUT_MEMBER_EXCLUDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FilterRule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.manifest_config {
+            ser.write_struct(&STARTTASKEXECUTIONINPUT_MEMBER_MANIFEST_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.task_report_config {
+            ser.write_struct(&STARTTASKEXECUTIONINPUT_MEMBER_TASK_REPORT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTTASKEXECUTIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TagListEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_task_execution::builders::StartTaskExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTTASKEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.override_options = Some(crate::types::Options::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.includes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FilterRule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.excludes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FilterRule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manifest_config = Some(crate::types::ManifestConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_report_config = Some(crate::types::TaskReportConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TagListEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartTaskExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.task_arn = builder.task_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartTaskExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartTaskExecutionInput`](crate::operation::start_task_execution::StartTaskExecutionInput).
     pub fn builder() -> crate::operation::start_task_execution::builders::StartTaskExecutionInputBuilder {

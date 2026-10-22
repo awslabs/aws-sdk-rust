@@ -52,6 +52,223 @@ impl GetAggregateComplianceDetailsByConfigRuleInput {
         self.next_token.as_deref()
     }
 }
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput$ConfigurationAggregatorName",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateComplianceDetailsByConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConfigurationAggregatorName",
+        0,
+    );
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput$ConfigRuleName",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateComplianceDetailsByConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConfigRuleName",
+        1,
+    );
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput$AccountId",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateComplianceDetailsByConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AccountId",
+        2,
+    );
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_AWS_REGION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput$AwsRegion",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateComplianceDetailsByConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AwsRegion",
+        3,
+    );
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput$ComplianceType",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateComplianceDetailsByConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ComplianceType",
+        4,
+    );
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput$Limit",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateComplianceDetailsByConfigRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    5,
+);
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput$NextToken",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateComplianceDetailsByConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NextToken",
+        6,
+    );
+static GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateComplianceDetailsByConfigRuleInput",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateComplianceDetailsByConfigRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME,
+        &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_CONFIG_RULE_NAME,
+        &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_ACCOUNT_ID,
+        &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_AWS_REGION,
+        &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_COMPLIANCE_TYPE,
+        &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_LIMIT,
+        &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetAggregateComplianceDetailsByConfigRuleRequest");
+impl GetAggregateComplianceDetailsByConfigRuleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetAggregateComplianceDetailsByConfigRuleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.configuration_aggregator_name {
+            ser.write_string(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.config_rule_name {
+            ser.write_string(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.aws_region {
+            ser.write_string(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_AWS_REGION, val)?;
+        }
+        if let Some(ref val) = self.compliance_type {
+            ser.write_string(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETAGGREGATECOMPLIANCEDETAILSBYCONFIGRULEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_aggregator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aws_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_type = Some(crate::types::ComplianceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetAggregateComplianceDetailsByConfigRuleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.configuration_aggregator_name = builder.configuration_aggregator_name.or(Some(String::new()));
+        builder.config_rule_name = builder.config_rule_name.or(Some(String::new()));
+        builder.account_id = builder.account_id.or(Some(String::new()));
+        builder.aws_region = builder.aws_region.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetAggregateComplianceDetailsByConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`GetAggregateComplianceDetailsByConfigRuleInput`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleInput).
     pub fn builder(

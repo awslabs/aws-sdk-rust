@@ -12,6 +12,87 @@ impl GetCapacityAssignmentConfigurationInput {
         self.capacity_reservation_name.as_deref()
     }
 }
+static GETCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_RESERVATION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena.synthetic#GetCapacityAssignmentConfigurationInput$CapacityReservationName",
+            "com.amazonaws.athena.synthetic",
+            "GetCapacityAssignmentConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CapacityReservationName",
+        0,
+    );
+static GETCAPACITYASSIGNMENTCONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#GetCapacityAssignmentConfigurationInput",
+        "com.amazonaws.athena.synthetic",
+        "GetCapacityAssignmentConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_RESERVATION_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetCapacityAssignmentConfigurationInput");
+impl GetCapacityAssignmentConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCAPACITYASSIGNMENTCONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetCapacityAssignmentConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capacity_reservation_name {
+            ser.write_string(&GETCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_RESERVATION_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCAPACITYASSIGNMENTCONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetCapacityAssignmentConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.capacity_reservation_name = builder.capacity_reservation_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetCapacityAssignmentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetCapacityAssignmentConfigurationInput`](crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationInput).
     pub fn builder() -> crate::operation::get_capacity_assignment_configuration::builders::GetCapacityAssignmentConfigurationInputBuilder {

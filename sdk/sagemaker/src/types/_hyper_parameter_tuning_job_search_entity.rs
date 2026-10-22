@@ -125,6 +125,506 @@ impl HyperParameterTuningJobSearchEntity {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$HyperParameterTuningJobName",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "HyperParameterTuningJobName",
+        0,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$HyperParameterTuningJobArn",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "HyperParameterTuningJobArn",
+        1,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$HyperParameterTuningJobConfig",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "HyperParameterTuningJobConfig",
+        2,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$TrainingJobDefinition",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "TrainingJobDefinition",
+        3,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTrainingJobDefinitions$member",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTrainingJobDefinitions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$TrainingJobDefinitions",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "TrainingJobDefinitions",
+        4,
+    )
+    .with_list_member(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITIONS_MEMBER);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$HyperParameterTuningJobStatus",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "HyperParameterTuningJobStatus",
+        5,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$CreationTime",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_END_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$HyperParameterTuningEndTime",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "HyperParameterTuningEndTime",
+        7,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_STATUS_COUNTERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$TrainingJobStatusCounters",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "TrainingJobStatusCounters",
+        9,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_OBJECTIVE_STATUS_COUNTERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$ObjectiveStatusCounters",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ObjectiveStatusCounters",
+        10,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_BEST_TRAINING_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$BestTrainingJob",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BestTrainingJob",
+    11,
+);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_OVERALL_BEST_TRAINING_JOB: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$OverallBestTrainingJob",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "OverallBestTrainingJob",
+        12,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_WARM_START_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$WarmStartConfig",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WarmStartConfig",
+    13,
+);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$FailureReason",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    14,
+);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TUNING_JOB_COMPLETION_DETAILS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$TuningJobCompletionDetails",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobSearchEntity",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "TuningJobCompletionDetails",
+        15,
+    );
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_CONSUMED_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$ConsumedResources",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ConsumedResources",
+    16,
+);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity$Tags",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    17,
+)
+.with_list_member(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TAGS_MEMBER);
+static HYPERPARAMETERTUNINGJOBSEARCHENTITY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobSearchEntity",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobSearchEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_NAME,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_ARN,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_CONFIG,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITION,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITIONS,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_STATUS,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_CREATION_TIME,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_END_TIME,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_LAST_MODIFIED_TIME,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_STATUS_COUNTERS,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_OBJECTIVE_STATUS_COUNTERS,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_BEST_TRAINING_JOB,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_OVERALL_BEST_TRAINING_JOB,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_WARM_START_CONFIG,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_FAILURE_REASON,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TUNING_JOB_COMPLETION_DETAILS,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_CONSUMED_RESOURCES,
+        &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TAGS,
+    ],
+);
+impl HyperParameterTuningJobSearchEntity {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HYPERPARAMETERTUNINGJOBSEARCHENTITY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HyperParameterTuningJobSearchEntity {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hyper_parameter_tuning_job_name {
+            ser.write_string(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameter_tuning_job_arn {
+            ser.write_string(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameter_tuning_job_config {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.training_job_definition {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.training_job_definitions {
+            ser.write_list(
+                &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HyperParameterTrainingJobDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hyper_parameter_tuning_job_status {
+            ser.write_string(
+                &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_JOB_STATUS,
+                val.as_str(),
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameter_tuning_end_time {
+            ser.write_timestamp(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_HYPER_PARAMETER_TUNING_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_job_status_counters {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TRAINING_JOB_STATUS_COUNTERS, val)?;
+        }
+        if let Some(ref val) = self.objective_status_counters {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_OBJECTIVE_STATUS_COUNTERS, val)?;
+        }
+        if let Some(ref val) = self.best_training_job {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_BEST_TRAINING_JOB, val)?;
+        }
+        if let Some(ref val) = self.overall_best_training_job {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_OVERALL_BEST_TRAINING_JOB, val)?;
+        }
+        if let Some(ref val) = self.warm_start_config {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_WARM_START_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.tuning_job_completion_details {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TUNING_JOB_COMPLETION_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.consumed_resources {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_CONSUMED_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &HYPERPARAMETERTUNINGJOBSEARCHENTITY_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HyperParameterTuningJobSearchEntityBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HYPERPARAMETERTUNINGJOBSEARCHENTITY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job_config = Some(crate::types::HyperParameterTuningJobConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_definition = Some(crate::types::HyperParameterTrainingJobDefinition::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HyperParameterTrainingJobDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job_status =
+                            Some(crate::types::HyperParameterTuningJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_status_counters = Some(crate::types::TrainingJobStatusCounters::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.objective_status_counters = Some(crate::types::ObjectiveStatusCounters::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.best_training_job = Some(crate::types::HyperParameterTrainingJobSummary::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overall_best_training_job = Some(crate::types::HyperParameterTrainingJobSummary::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.warm_start_config = Some(crate::types::HyperParameterTuningJobWarmStartConfig::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tuning_job_completion_details = Some(crate::types::HyperParameterTuningJobCompletionDetails::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.consumed_resources = Some(crate::types::HyperParameterTuningJobConsumedResources::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HyperParameterTuningJobSearchEntity {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HyperParameterTuningJobSearchEntity {
     /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobSearchEntity`](crate::types::HyperParameterTuningJobSearchEntity).
     pub fn builder() -> crate::types::builders::HyperParameterTuningJobSearchEntityBuilder {

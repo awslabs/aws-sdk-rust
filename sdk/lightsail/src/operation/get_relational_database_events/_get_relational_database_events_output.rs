@@ -25,6 +25,135 @@ impl GetRelationalDatabaseEventsOutput {
         self.next_page_token.as_deref()
     }
 }
+static GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_RELATIONAL_DATABASE_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#RelationalDatabaseEventList$member",
+            "com.amazonaws.lightsail",
+            "RelationalDatabaseEventList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_RELATIONAL_DATABASE_EVENTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseEventsOutput$relationalDatabaseEvents",
+            "com.amazonaws.lightsail.synthetic",
+            "GetRelationalDatabaseEventsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "relationalDatabaseEvents",
+        0,
+    )
+    .with_list_member(&GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_RELATIONAL_DATABASE_EVENTS_MEMBER);
+static GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_NEXT_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseEventsOutput$nextPageToken",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseEventsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextPageToken",
+    1,
+);
+static GETRELATIONALDATABASEEVENTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseEventsOutput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseEventsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_RELATIONAL_DATABASE_EVENTS,
+        &GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_NEXT_PAGE_TOKEN,
+    ],
+)
+.with_original_name("GetRelationalDatabaseEventsResult");
+impl GetRelationalDatabaseEventsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRELATIONALDATABASEEVENTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRelationalDatabaseEventsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_database_events {
+            ser.write_list(
+                &GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_RELATIONAL_DATABASE_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RelationalDatabaseEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_page_token {
+            ser.write_string(&GETRELATIONALDATABASEEVENTSOUTPUT_MEMBER_NEXT_PAGE_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_relational_database_events::builders::GetRelationalDatabaseEventsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRELATIONALDATABASEEVENTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RelationalDatabaseEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRelationalDatabaseEventsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetRelationalDatabaseEventsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

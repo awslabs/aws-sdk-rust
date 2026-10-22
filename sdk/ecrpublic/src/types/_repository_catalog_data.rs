@@ -61,6 +61,249 @@ impl RepositoryCatalogData {
         self.marketplace_certified
     }
 }
+static REPOSITORYCATALOGDATA_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData$description",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    0,
+);
+static REPOSITORYCATALOGDATA_MEMBER_ARCHITECTURES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ArchitectureList$member",
+        "com.amazonaws.ecrpublic",
+        "ArchitectureList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REPOSITORYCATALOGDATA_MEMBER_ARCHITECTURES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData$architectures",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "architectures",
+    1,
+)
+.with_list_member(&REPOSITORYCATALOGDATA_MEMBER_ARCHITECTURES_MEMBER);
+static REPOSITORYCATALOGDATA_MEMBER_OPERATING_SYSTEMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#OperatingSystemList$member",
+        "com.amazonaws.ecrpublic",
+        "OperatingSystemList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REPOSITORYCATALOGDATA_MEMBER_OPERATING_SYSTEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData$operatingSystems",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "operatingSystems",
+    2,
+)
+.with_list_member(&REPOSITORYCATALOGDATA_MEMBER_OPERATING_SYSTEMS_MEMBER);
+static REPOSITORYCATALOGDATA_MEMBER_LOGO_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData$logoUrl",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "logoUrl",
+    3,
+);
+static REPOSITORYCATALOGDATA_MEMBER_ABOUT_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData$aboutText",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "aboutText",
+    4,
+);
+static REPOSITORYCATALOGDATA_MEMBER_USAGE_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData$usageText",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "usageText",
+    5,
+);
+static REPOSITORYCATALOGDATA_MEMBER_MARKETPLACE_CERTIFIED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData$marketplaceCertified",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "marketplaceCertified",
+    6,
+);
+static REPOSITORYCATALOGDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryCatalogData",
+        "com.amazonaws.ecrpublic",
+        "RepositoryCatalogData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPOSITORYCATALOGDATA_MEMBER_DESCRIPTION,
+        &REPOSITORYCATALOGDATA_MEMBER_ARCHITECTURES,
+        &REPOSITORYCATALOGDATA_MEMBER_OPERATING_SYSTEMS,
+        &REPOSITORYCATALOGDATA_MEMBER_LOGO_URL,
+        &REPOSITORYCATALOGDATA_MEMBER_ABOUT_TEXT,
+        &REPOSITORYCATALOGDATA_MEMBER_USAGE_TEXT,
+        &REPOSITORYCATALOGDATA_MEMBER_MARKETPLACE_CERTIFIED,
+    ],
+);
+impl RepositoryCatalogData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPOSITORYCATALOGDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RepositoryCatalogData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&REPOSITORYCATALOGDATA_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.architectures {
+            ser.write_list(
+                &REPOSITORYCATALOGDATA_MEMBER_ARCHITECTURES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.operating_systems {
+            ser.write_list(
+                &REPOSITORYCATALOGDATA_MEMBER_OPERATING_SYSTEMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.logo_url {
+            ser.write_string(&REPOSITORYCATALOGDATA_MEMBER_LOGO_URL, val)?;
+        }
+        if let Some(ref val) = self.about_text {
+            ser.write_string(&REPOSITORYCATALOGDATA_MEMBER_ABOUT_TEXT, val)?;
+        }
+        if let Some(ref val) = self.usage_text {
+            ser.write_string(&REPOSITORYCATALOGDATA_MEMBER_USAGE_TEXT, val)?;
+        }
+        if let Some(ref val) = self.marketplace_certified {
+            ser.write_boolean(&REPOSITORYCATALOGDATA_MEMBER_MARKETPLACE_CERTIFIED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RepositoryCatalogDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPOSITORYCATALOGDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.architectures = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operating_systems = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logo_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.about_text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marketplace_certified = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RepositoryCatalogData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RepositoryCatalogData {
     /// Creates a new builder-style object to manufacture [`RepositoryCatalogData`](crate::types::RepositoryCatalogData).
     pub fn builder() -> crate::types::builders::RepositoryCatalogDataBuilder {

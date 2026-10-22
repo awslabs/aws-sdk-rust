@@ -24,6 +24,134 @@ impl ListTunnelsInput {
         self.next_token.as_deref()
     }
 }
+static LISTTUNNELSINPUT_MEMBER_THING_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#ListTunnelsInput$thingName",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "ListTunnelsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "thingName",
+    0,
+)
+.with_http_query("thingName");
+static LISTTUNNELSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#ListTunnelsInput$maxResults",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "ListTunnelsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    1,
+)
+.with_http_query("maxResults");
+static LISTTUNNELSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#ListTunnelsInput$nextToken",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "ListTunnelsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    2,
+)
+.with_http_query("nextToken");
+static LISTTUNNELSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#ListTunnelsInput",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "ListTunnelsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTTUNNELSINPUT_MEMBER_THING_NAME,
+        &LISTTUNNELSINPUT_MEMBER_MAX_RESULTS,
+        &LISTTUNNELSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("GET", "/tunnels", None))
+.with_no_body_members()
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListTunnelsRequest");
+impl ListTunnelsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTTUNNELSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListTunnelsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.thing_name {
+            ser.write_string(&LISTTUNNELSINPUT_MEMBER_THING_NAME, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTTUNNELSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTTUNNELSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_tunnels::builders::ListTunnelsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTTUNNELSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.thing_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListTunnelsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListTunnelsInput {
     /// Creates a new builder-style object to manufacture [`ListTunnelsInput`](crate::operation::list_tunnels::ListTunnelsInput).
     pub fn builder() -> crate::operation::list_tunnels::builders::ListTunnelsInputBuilder {

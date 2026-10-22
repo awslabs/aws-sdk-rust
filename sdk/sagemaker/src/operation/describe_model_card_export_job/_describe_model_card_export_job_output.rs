@@ -83,6 +83,277 @@ impl DescribeModelCardExportJobOutput {
         self.export_artifacts.as_ref()
     }
 }
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_EXPORT_JOB_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$ModelCardExportJobName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelCardExportJobOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ModelCardExportJobName",
+        0,
+    );
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_EXPORT_JOB_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$ModelCardExportJobArn",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelCardExportJobOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ModelCardExportJobArn",
+        1,
+    );
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$ModelCardName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    3,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$ModelCardVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ModelCardVersion",
+    4,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    5,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$CreatedAt",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    6,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_LAST_MODIFIED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$LastModifiedAt",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedAt",
+    7,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    8,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_EXPORT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput$ExportArtifacts",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExportArtifacts",
+    9,
+);
+static DESCRIBEMODELCARDEXPORTJOBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardExportJobOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardExportJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_EXPORT_JOB_NAME,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_EXPORT_JOB_ARN,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_STATUS,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_NAME,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_VERSION,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_OUTPUT_CONFIG,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_CREATED_AT,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_LAST_MODIFIED_AT,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_EXPORT_ARTIFACTS,
+    ],
+)
+.with_original_name("DescribeModelCardExportJobResponse");
+impl DescribeModelCardExportJobOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMODELCARDEXPORTJOBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeModelCardExportJobOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_card_export_job_name {
+            ser.write_string(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_EXPORT_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_card_export_job_arn {
+            ser.write_string(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_EXPORT_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_card_version {
+            ser.write_integer(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_MODEL_CARD_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.last_modified_at {
+            ser.write_timestamp(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_LAST_MODIFIED_AT, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.export_artifacts {
+            ser.write_struct(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_MEMBER_EXPORT_ARTIFACTS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEMODELCARDEXPORTJOBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_export_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_export_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ModelCardExportJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::ModelCardExportOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.export_artifacts = Some(crate::types::ModelCardExportArtifacts::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeModelCardExportJobOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeModelCardExportJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

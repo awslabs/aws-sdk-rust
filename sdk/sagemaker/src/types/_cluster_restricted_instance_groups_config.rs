@@ -13,6 +13,84 @@ impl ClusterRestrictedInstanceGroupsConfig {
         self.shared_environment_config.as_ref()
     }
 }
+static CLUSTERRESTRICTEDINSTANCEGROUPSCONFIG_MEMBER_SHARED_ENVIRONMENT_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupsConfig$SharedEnvironmentConfig",
+            "com.amazonaws.sagemaker",
+            "ClusterRestrictedInstanceGroupsConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SharedEnvironmentConfig",
+        0,
+    );
+static CLUSTERRESTRICTEDINSTANCEGROUPSCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupsConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterRestrictedInstanceGroupsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CLUSTERRESTRICTEDINSTANCEGROUPSCONFIG_MEMBER_SHARED_ENVIRONMENT_CONFIG],
+);
+impl ClusterRestrictedInstanceGroupsConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERRESTRICTEDINSTANCEGROUPSCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterRestrictedInstanceGroupsConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.shared_environment_config {
+            ser.write_struct(&CLUSTERRESTRICTEDINSTANCEGROUPSCONFIG_MEMBER_SHARED_ENVIRONMENT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterRestrictedInstanceGroupsConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERRESTRICTEDINSTANCEGROUPSCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shared_environment_config = Some(crate::types::ClusterSharedEnvironmentConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterRestrictedInstanceGroupsConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterRestrictedInstanceGroupsConfig {
     /// Creates a new builder-style object to manufacture [`ClusterRestrictedInstanceGroupsConfig`](crate::types::ClusterRestrictedInstanceGroupsConfig).
     pub fn builder() -> crate::types::builders::ClusterRestrictedInstanceGroupsConfigBuilder {

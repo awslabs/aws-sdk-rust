@@ -191,6 +191,532 @@ impl UpdateSmbFileShareInput {
         self.oplocks_enabled
     }
 }
+static UPDATESMBFILESHAREINPUT_MEMBER_FILE_SHARE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$FileShareARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareARN",
+    0,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_ENCRYPTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$EncryptionType",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EncryptionType",
+    1,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_KMS_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$KMSEncrypted",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "KMSEncrypted",
+    2,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$KMSKey",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    3,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_DEFAULT_STORAGE_CLASS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$DefaultStorageClass",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultStorageClass",
+    4,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_OBJECT_ACL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$ObjectACL",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ObjectACL",
+    5,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_READ_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$ReadOnly",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ReadOnly",
+    6,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_GUESS_MIME_TYPE_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$GuessMIMETypeEnabled",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "GuessMIMETypeEnabled",
+    7,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_REQUESTER_PAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$RequesterPays",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RequesterPays",
+    8,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_SMBACL_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$SMBACLEnabled",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "SMBACLEnabled",
+    9,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_ACCESS_BASED_ENUMERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$AccessBasedEnumeration",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AccessBasedEnumeration",
+    10,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_ADMIN_USER_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#UserList$member", "com.amazonaws.storagegateway", "UserList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_ADMIN_USER_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$AdminUserList",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AdminUserList",
+    11,
+)
+.with_list_member(&UPDATESMBFILESHAREINPUT_MEMBER_ADMIN_USER_LIST_MEMBER);
+static UPDATESMBFILESHAREINPUT_MEMBER_VALID_USER_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#UserList$member", "com.amazonaws.storagegateway", "UserList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_VALID_USER_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$ValidUserList",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ValidUserList",
+    12,
+)
+.with_list_member(&UPDATESMBFILESHAREINPUT_MEMBER_VALID_USER_LIST_MEMBER);
+static UPDATESMBFILESHAREINPUT_MEMBER_INVALID_USER_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#UserList$member", "com.amazonaws.storagegateway", "UserList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_INVALID_USER_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$InvalidUserList",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InvalidUserList",
+    13,
+)
+.with_list_member(&UPDATESMBFILESHAREINPUT_MEMBER_INVALID_USER_LIST_MEMBER);
+static UPDATESMBFILESHAREINPUT_MEMBER_AUDIT_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$AuditDestinationARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuditDestinationARN",
+    14,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_CASE_SENSITIVITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$CaseSensitivity",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CaseSensitivity",
+    15,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_FILE_SHARE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$FileShareName",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareName",
+    16,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_CACHE_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$CacheAttributes",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CacheAttributes",
+    17,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_NOTIFICATION_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$NotificationPolicy",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotificationPolicy",
+    18,
+);
+static UPDATESMBFILESHAREINPUT_MEMBER_OPLOCKS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput$OplocksEnabled",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "OplocksEnabled",
+    19,
+);
+static UPDATESMBFILESHAREINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSMBFileShareInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSMBFileShareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESMBFILESHAREINPUT_MEMBER_FILE_SHARE_ARN,
+        &UPDATESMBFILESHAREINPUT_MEMBER_ENCRYPTION_TYPE,
+        &UPDATESMBFILESHAREINPUT_MEMBER_KMS_ENCRYPTED,
+        &UPDATESMBFILESHAREINPUT_MEMBER_KMS_KEY,
+        &UPDATESMBFILESHAREINPUT_MEMBER_DEFAULT_STORAGE_CLASS,
+        &UPDATESMBFILESHAREINPUT_MEMBER_OBJECT_ACL,
+        &UPDATESMBFILESHAREINPUT_MEMBER_READ_ONLY,
+        &UPDATESMBFILESHAREINPUT_MEMBER_GUESS_MIME_TYPE_ENABLED,
+        &UPDATESMBFILESHAREINPUT_MEMBER_REQUESTER_PAYS,
+        &UPDATESMBFILESHAREINPUT_MEMBER_SMBACL_ENABLED,
+        &UPDATESMBFILESHAREINPUT_MEMBER_ACCESS_BASED_ENUMERATION,
+        &UPDATESMBFILESHAREINPUT_MEMBER_ADMIN_USER_LIST,
+        &UPDATESMBFILESHAREINPUT_MEMBER_VALID_USER_LIST,
+        &UPDATESMBFILESHAREINPUT_MEMBER_INVALID_USER_LIST,
+        &UPDATESMBFILESHAREINPUT_MEMBER_AUDIT_DESTINATION_ARN,
+        &UPDATESMBFILESHAREINPUT_MEMBER_CASE_SENSITIVITY,
+        &UPDATESMBFILESHAREINPUT_MEMBER_FILE_SHARE_NAME,
+        &UPDATESMBFILESHAREINPUT_MEMBER_CACHE_ATTRIBUTES,
+        &UPDATESMBFILESHAREINPUT_MEMBER_NOTIFICATION_POLICY,
+        &UPDATESMBFILESHAREINPUT_MEMBER_OPLOCKS_ENABLED,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateSMBFileShareInput");
+impl UpdateSmbFileShareInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESMBFILESHAREINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateSmbFileShareInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_share_arn {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_FILE_SHARE_ARN, val)?;
+        }
+        if let Some(ref val) = self.encryption_type {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_ENCRYPTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.kms_encrypted {
+            ser.write_boolean(&UPDATESMBFILESHAREINPUT_MEMBER_KMS_ENCRYPTED, *val)?;
+        }
+        if let Some(ref val) = self.kms_key {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_KMS_KEY, val)?;
+        }
+        if let Some(ref val) = self.default_storage_class {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_DEFAULT_STORAGE_CLASS, val)?;
+        }
+        if let Some(ref val) = self.object_acl {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_OBJECT_ACL, val.as_str())?;
+        }
+        if let Some(ref val) = self.read_only {
+            ser.write_boolean(&UPDATESMBFILESHAREINPUT_MEMBER_READ_ONLY, *val)?;
+        }
+        if let Some(ref val) = self.guess_mime_type_enabled {
+            ser.write_boolean(&UPDATESMBFILESHAREINPUT_MEMBER_GUESS_MIME_TYPE_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.requester_pays {
+            ser.write_boolean(&UPDATESMBFILESHAREINPUT_MEMBER_REQUESTER_PAYS, *val)?;
+        }
+        if let Some(ref val) = self.smbacl_enabled {
+            ser.write_boolean(&UPDATESMBFILESHAREINPUT_MEMBER_SMBACL_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.access_based_enumeration {
+            ser.write_boolean(&UPDATESMBFILESHAREINPUT_MEMBER_ACCESS_BASED_ENUMERATION, *val)?;
+        }
+        if let Some(ref val) = self.admin_user_list {
+            ser.write_list(
+                &UPDATESMBFILESHAREINPUT_MEMBER_ADMIN_USER_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.valid_user_list {
+            ser.write_list(
+                &UPDATESMBFILESHAREINPUT_MEMBER_VALID_USER_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.invalid_user_list {
+            ser.write_list(
+                &UPDATESMBFILESHAREINPUT_MEMBER_INVALID_USER_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.audit_destination_arn {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_AUDIT_DESTINATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.case_sensitivity {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_CASE_SENSITIVITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.file_share_name {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_FILE_SHARE_NAME, val)?;
+        }
+        if let Some(ref val) = self.cache_attributes {
+            ser.write_struct(&UPDATESMBFILESHAREINPUT_MEMBER_CACHE_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.notification_policy {
+            ser.write_string(&UPDATESMBFILESHAREINPUT_MEMBER_NOTIFICATION_POLICY, val)?;
+        }
+        if let Some(ref val) = self.oplocks_enabled {
+            ser.write_boolean(&UPDATESMBFILESHAREINPUT_MEMBER_OPLOCKS_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATESMBFILESHAREINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_type = Some(crate::types::EncryptionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_encrypted = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_storage_class = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.object_acl = Some(crate::types::ObjectAcl::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.read_only = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.guess_mime_type_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requester_pays = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.smbacl_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_based_enumeration = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_user_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.valid_user_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.invalid_user_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.audit_destination_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.case_sensitivity = Some(crate::types::CaseSensitivity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_attributes = Some(crate::types::CacheAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.oplocks_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateSmbFileShareInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_share_arn = builder.file_share_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateSmbFileShareInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareInput`](crate::operation::update_smb_file_share::UpdateSmbFileShareInput).
     pub fn builder() -> crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder {

@@ -12,6 +12,87 @@ impl DeleteModelExplainabilityJobDefinitionInput {
         self.job_definition_name.as_deref()
     }
 }
+static DELETEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DeleteModelExplainabilityJobDefinitionInput$JobDefinitionName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DeleteModelExplainabilityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "JobDefinitionName",
+        0,
+    );
+static DELETEMODELEXPLAINABILITYJOBDEFINITIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteModelExplainabilityJobDefinitionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteModelExplainabilityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteModelExplainabilityJobDefinitionRequest");
+impl DeleteModelExplainabilityJobDefinitionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEMODELEXPLAINABILITYJOBDEFINITIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteModelExplainabilityJobDefinitionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_definition_name {
+            ser.write_string(&DELETEMODELEXPLAINABILITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEMODELEXPLAINABILITYJOBDEFINITIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteModelExplainabilityJobDefinitionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_definition_name = builder.job_definition_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteModelExplainabilityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelExplainabilityJobDefinitionInput`](crate::operation::delete_model_explainability_job_definition::DeleteModelExplainabilityJobDefinitionInput).
     pub fn builder() -> crate::operation::delete_model_explainability_job_definition::builders::DeleteModelExplainabilityJobDefinitionInputBuilder {

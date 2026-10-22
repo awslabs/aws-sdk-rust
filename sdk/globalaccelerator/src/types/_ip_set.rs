@@ -37,6 +37,189 @@ impl IpSet {
         self.ip_address_details.as_deref().unwrap_or_default()
     }
 }
+static IPSET_MEMBER_IP_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpSet$IpFamily",
+        "com.amazonaws.globalaccelerator",
+        "IpSet",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpFamily",
+    0,
+);
+static IPSET_MEMBER_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpAddresses$member",
+        "com.amazonaws.globalaccelerator",
+        "IpAddresses",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static IPSET_MEMBER_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpSet$IpAddresses",
+        "com.amazonaws.globalaccelerator",
+        "IpSet",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpAddresses",
+    1,
+)
+.with_list_member(&IPSET_MEMBER_IP_ADDRESSES_MEMBER);
+static IPSET_MEMBER_IP_ADDRESS_FAMILY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpSet$IpAddressFamily",
+        "com.amazonaws.globalaccelerator",
+        "IpSet",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressFamily",
+    2,
+);
+static IPSET_MEMBER_IP_ADDRESS_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpAddressDetails$member",
+        "com.amazonaws.globalaccelerator",
+        "IpAddressDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static IPSET_MEMBER_IP_ADDRESS_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpSet$IpAddressDetails",
+        "com.amazonaws.globalaccelerator",
+        "IpSet",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpAddressDetails",
+    3,
+)
+.with_list_member(&IPSET_MEMBER_IP_ADDRESS_DETAILS_MEMBER);
+static IPSET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.globalaccelerator#IpSet", "com.amazonaws.globalaccelerator", "IpSet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IPSET_MEMBER_IP_FAMILY,
+        &IPSET_MEMBER_IP_ADDRESSES,
+        &IPSET_MEMBER_IP_ADDRESS_FAMILY,
+        &IPSET_MEMBER_IP_ADDRESS_DETAILS,
+    ],
+);
+impl IpSet {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IPSET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for IpSet {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ip_family {
+            ser.write_string(&IPSET_MEMBER_IP_FAMILY, val)?;
+        }
+        if let Some(ref val) = self.ip_addresses {
+            ser.write_list(
+                &IPSET_MEMBER_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ip_address_family {
+            ser.write_string(&IPSET_MEMBER_IP_ADDRESS_FAMILY, val.as_str())?;
+        }
+        if let Some(ref val) = self.ip_address_details {
+            ser.write_list(
+                &IPSET_MEMBER_IP_ADDRESS_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::IpAddressDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::IpSetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IPSET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_family = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_family = Some(crate::types::IpAddressFamily::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::IpAddressDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl IpSet {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl IpSet {
     /// Creates a new builder-style object to manufacture [`IpSet`](crate::types::IpSet).
     pub fn builder() -> crate::types::builders::IpSetBuilder {

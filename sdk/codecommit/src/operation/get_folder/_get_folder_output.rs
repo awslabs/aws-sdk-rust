@@ -59,6 +59,304 @@ impl GetFolderOutput {
         self.sub_modules.as_deref().unwrap_or_default()
     }
 }
+static GETFOLDEROUTPUT_MEMBER_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput$commitId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "commitId",
+    0,
+);
+static GETFOLDEROUTPUT_MEMBER_FOLDER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput$folderPath",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "folderPath",
+    1,
+);
+static GETFOLDEROUTPUT_MEMBER_TREE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput$treeId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "treeId",
+    2,
+);
+static GETFOLDEROUTPUT_MEMBER_SUB_FOLDERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FolderList$member", "com.amazonaws.codecommit", "FolderList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETFOLDEROUTPUT_MEMBER_SUB_FOLDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput$subFolders",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "subFolders",
+    3,
+)
+.with_list_member(&GETFOLDEROUTPUT_MEMBER_SUB_FOLDERS_MEMBER);
+static GETFOLDEROUTPUT_MEMBER_FILES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileList$member", "com.amazonaws.codecommit", "FileList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETFOLDEROUTPUT_MEMBER_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput$files",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "files",
+    4,
+)
+.with_list_member(&GETFOLDEROUTPUT_MEMBER_FILES_MEMBER);
+static GETFOLDEROUTPUT_MEMBER_SYMBOLIC_LINKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#SymbolicLinkList$member",
+        "com.amazonaws.codecommit",
+        "SymbolicLinkList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETFOLDEROUTPUT_MEMBER_SYMBOLIC_LINKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput$symbolicLinks",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "symbolicLinks",
+    5,
+)
+.with_list_member(&GETFOLDEROUTPUT_MEMBER_SYMBOLIC_LINKS_MEMBER);
+static GETFOLDEROUTPUT_MEMBER_SUB_MODULES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#SubModuleList$member",
+        "com.amazonaws.codecommit",
+        "SubModuleList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETFOLDEROUTPUT_MEMBER_SUB_MODULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput$subModules",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "subModules",
+    6,
+)
+.with_list_member(&GETFOLDEROUTPUT_MEMBER_SUB_MODULES_MEMBER);
+static GETFOLDEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETFOLDEROUTPUT_MEMBER_COMMIT_ID,
+        &GETFOLDEROUTPUT_MEMBER_FOLDER_PATH,
+        &GETFOLDEROUTPUT_MEMBER_TREE_ID,
+        &GETFOLDEROUTPUT_MEMBER_SUB_FOLDERS,
+        &GETFOLDEROUTPUT_MEMBER_FILES,
+        &GETFOLDEROUTPUT_MEMBER_SYMBOLIC_LINKS,
+        &GETFOLDEROUTPUT_MEMBER_SUB_MODULES,
+    ],
+)
+.with_original_name("GetFolderOutput");
+impl GetFolderOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETFOLDEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetFolderOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.commit_id;
+            ser.write_string(&GETFOLDEROUTPUT_MEMBER_COMMIT_ID, val)?;
+        }
+        {
+            let val = &self.folder_path;
+            ser.write_string(&GETFOLDEROUTPUT_MEMBER_FOLDER_PATH, val)?;
+        }
+        if let Some(ref val) = self.tree_id {
+            ser.write_string(&GETFOLDEROUTPUT_MEMBER_TREE_ID, val)?;
+        }
+        if let Some(ref val) = self.sub_folders {
+            ser.write_list(
+                &GETFOLDEROUTPUT_MEMBER_SUB_FOLDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Folder::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.files {
+            ser.write_list(
+                &GETFOLDEROUTPUT_MEMBER_FILES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::File::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.symbolic_links {
+            ser.write_list(
+                &GETFOLDEROUTPUT_MEMBER_SYMBOLIC_LINKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SymbolicLink::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.sub_modules {
+            ser.write_list(
+                &GETFOLDEROUTPUT_MEMBER_SUB_MODULES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SubModule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_folder::builders::GetFolderOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETFOLDEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.commit_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.folder_path = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tree_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sub_folders = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Folder::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.files = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::File::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.symbolic_links = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SymbolicLink::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sub_modules = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SubModule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetFolderOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.commit_id = builder.commit_id.or(Some(String::new()));
+        builder.folder_path = builder.folder_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for GetFolderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

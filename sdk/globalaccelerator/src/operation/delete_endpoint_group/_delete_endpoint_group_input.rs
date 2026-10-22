@@ -12,6 +12,86 @@ impl DeleteEndpointGroupInput {
         self.endpoint_group_arn.as_deref()
     }
 }
+static DELETEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#DeleteEndpointGroupInput$EndpointGroupArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "DeleteEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupArn",
+    0,
+);
+static DELETEENDPOINTGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#DeleteEndpointGroupInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "DeleteEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteEndpointGroupRequest");
+impl DeleteEndpointGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEENDPOINTGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteEndpointGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_group_arn {
+            ser.write_string(&DELETEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEENDPOINTGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteEndpointGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_group_arn = builder.endpoint_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupInput`](crate::operation::delete_endpoint_group::DeleteEndpointGroupInput).
     pub fn builder() -> crate::operation::delete_endpoint_group::builders::DeleteEndpointGroupInputBuilder {

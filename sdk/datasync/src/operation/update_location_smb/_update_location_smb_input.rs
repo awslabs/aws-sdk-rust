@@ -143,6 +143,412 @@ impl ::std::fmt::Debug for UpdateLocationSmbInput {
         formatter.finish()
     }
 }
+static UPDATELOCATIONSMBINPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    1,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_SERVER_HOSTNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$ServerHostname",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerHostname",
+    2,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$User",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "User",
+    3,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$Domain",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    4,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$Password",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    5,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$CmkSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    6,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$CustomSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    7,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$AgentArns",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AgentArns",
+    8,
+)
+.with_list_member(&UPDATELOCATIONSMBINPUT_MEMBER_AGENT_ARNS_MEMBER);
+static UPDATELOCATIONSMBINPUT_MEMBER_MOUNT_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$MountOptions",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MountOptions",
+    9,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$AuthenticationType",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    10,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_DNS_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#DnsIpList$member", "com.amazonaws.datasync", "DnsIpList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_DNS_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$DnsIpAddresses",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DnsIpAddresses",
+    11,
+)
+.with_list_member(&UPDATELOCATIONSMBINPUT_MEMBER_DNS_IP_ADDRESSES_MEMBER);
+static UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_PRINCIPAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$KerberosPrincipal",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KerberosPrincipal",
+    12,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_KEYTAB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$KerberosKeytab",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "KerberosKeytab",
+    13,
+);
+static UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_KRB5_CONF: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput$KerberosKrb5Conf",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "KerberosKrb5Conf",
+    14,
+);
+static UPDATELOCATIONSMBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationSmbInput",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationSmbInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATELOCATIONSMBINPUT_MEMBER_LOCATION_ARN,
+        &UPDATELOCATIONSMBINPUT_MEMBER_SUBDIRECTORY,
+        &UPDATELOCATIONSMBINPUT_MEMBER_SERVER_HOSTNAME,
+        &UPDATELOCATIONSMBINPUT_MEMBER_USER,
+        &UPDATELOCATIONSMBINPUT_MEMBER_DOMAIN,
+        &UPDATELOCATIONSMBINPUT_MEMBER_PASSWORD,
+        &UPDATELOCATIONSMBINPUT_MEMBER_CMK_SECRET_CONFIG,
+        &UPDATELOCATIONSMBINPUT_MEMBER_CUSTOM_SECRET_CONFIG,
+        &UPDATELOCATIONSMBINPUT_MEMBER_AGENT_ARNS,
+        &UPDATELOCATIONSMBINPUT_MEMBER_MOUNT_OPTIONS,
+        &UPDATELOCATIONSMBINPUT_MEMBER_AUTHENTICATION_TYPE,
+        &UPDATELOCATIONSMBINPUT_MEMBER_DNS_IP_ADDRESSES,
+        &UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_PRINCIPAL,
+        &UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_KEYTAB,
+        &UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_KRB5_CONF,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateLocationSmbRequest");
+impl UpdateLocationSmbInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATELOCATIONSMBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLocationSmbInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.server_hostname {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_SERVER_HOSTNAME, val)?;
+        }
+        if let Some(ref val) = self.user {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&UPDATELOCATIONSMBINPUT_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&UPDATELOCATIONSMBINPUT_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.agent_arns {
+            ser.write_list(
+                &UPDATELOCATIONSMBINPUT_MEMBER_AGENT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.mount_options {
+            ser.write_struct(&UPDATELOCATIONSMBINPUT_MEMBER_MOUNT_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.dns_ip_addresses {
+            ser.write_list(
+                &UPDATELOCATIONSMBINPUT_MEMBER_DNS_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.kerberos_principal {
+            ser.write_string(&UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.kerberos_keytab {
+            ser.write_blob(&UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_KEYTAB, val.clone())?;
+        }
+        if let Some(ref val) = self.kerberos_krb5_conf {
+            ser.write_blob(&UPDATELOCATIONSMBINPUT_MEMBER_KERBEROS_KRB5_CONF, val.clone())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATELOCATIONSMBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_hostname = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_options = Some(crate::types::SmbMountOptions::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::SmbAuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_ip_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kerberos_principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kerberos_keytab = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kerberos_krb5_conf = Some(deser.read_blob(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateLocationSmbInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.location_arn = builder.location_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateLocationSmbInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationSmbInput`](crate::operation::update_location_smb::UpdateLocationSmbInput).
     pub fn builder() -> crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder {

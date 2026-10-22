@@ -19,6 +19,136 @@ impl GetResourceMetadataOutput {
         self.features.as_ref()
     }
 }
+static GETRESOURCEMETADATAOUTPUT_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetadataOutput$Identifier",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Identifier",
+    0,
+);
+static GETRESOURCEMETADATAOUTPUT_MEMBER_FEATURES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#FeatureMetadataMap$key", "com.amazonaws.pi", "FeatureMetadataMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETRESOURCEMETADATAOUTPUT_MEMBER_FEATURES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#FeatureMetadataMap$value", "com.amazonaws.pi", "FeatureMetadataMap"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static GETRESOURCEMETADATAOUTPUT_MEMBER_FEATURES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetadataOutput$Features",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Features",
+    1,
+)
+.with_map_members(
+    &GETRESOURCEMETADATAOUTPUT_MEMBER_FEATURES_KEY,
+    &GETRESOURCEMETADATAOUTPUT_MEMBER_FEATURES_VALUE,
+);
+static GETRESOURCEMETADATAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetadataOutput",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETRESOURCEMETADATAOUTPUT_MEMBER_IDENTIFIER, &GETRESOURCEMETADATAOUTPUT_MEMBER_FEATURES],
+)
+.with_original_name("GetResourceMetadataResponse");
+impl GetResourceMetadataOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRESOURCEMETADATAOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetResourceMetadataOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&GETRESOURCEMETADATAOUTPUT_MEMBER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.features {
+            ser.write_map(
+                &GETRESOURCEMETADATAOUTPUT_MEMBER_FEATURES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::FeatureMetadata::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_resource_metadata::builders::GetResourceMetadataOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRESOURCEMETADATAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.features = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::FeatureMetadata::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetResourceMetadataOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetResourceMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

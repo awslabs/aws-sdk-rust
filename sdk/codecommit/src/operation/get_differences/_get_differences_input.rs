@@ -48,6 +48,215 @@ impl GetDifferencesInput {
         self.next_token.as_deref()
     }
 }
+static GETDIFFERENCESINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static GETDIFFERENCESINPUT_MEMBER_BEFORE_COMMIT_SPECIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput$beforeCommitSpecifier",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforeCommitSpecifier",
+    1,
+);
+static GETDIFFERENCESINPUT_MEMBER_AFTER_COMMIT_SPECIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput$afterCommitSpecifier",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterCommitSpecifier",
+    2,
+);
+static GETDIFFERENCESINPUT_MEMBER_BEFORE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput$beforePath",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforePath",
+    3,
+);
+static GETDIFFERENCESINPUT_MEMBER_AFTER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput$afterPath",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterPath",
+    4,
+);
+static GETDIFFERENCESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput$MaxResults",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static GETDIFFERENCESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput$NextToken",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static GETDIFFERENCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetDifferencesInput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetDifferencesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETDIFFERENCESINPUT_MEMBER_REPOSITORY_NAME,
+        &GETDIFFERENCESINPUT_MEMBER_BEFORE_COMMIT_SPECIFIER,
+        &GETDIFFERENCESINPUT_MEMBER_AFTER_COMMIT_SPECIFIER,
+        &GETDIFFERENCESINPUT_MEMBER_BEFORE_PATH,
+        &GETDIFFERENCESINPUT_MEMBER_AFTER_PATH,
+        &GETDIFFERENCESINPUT_MEMBER_MAX_RESULTS,
+        &GETDIFFERENCESINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetDifferencesInput");
+impl GetDifferencesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDIFFERENCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDifferencesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&GETDIFFERENCESINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.before_commit_specifier {
+            ser.write_string(&GETDIFFERENCESINPUT_MEMBER_BEFORE_COMMIT_SPECIFIER, val)?;
+        }
+        if let Some(ref val) = self.after_commit_specifier {
+            ser.write_string(&GETDIFFERENCESINPUT_MEMBER_AFTER_COMMIT_SPECIFIER, val)?;
+        }
+        if let Some(ref val) = self.before_path {
+            ser.write_string(&GETDIFFERENCESINPUT_MEMBER_BEFORE_PATH, val)?;
+        }
+        if let Some(ref val) = self.after_path {
+            ser.write_string(&GETDIFFERENCESINPUT_MEMBER_AFTER_PATH, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&GETDIFFERENCESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETDIFFERENCESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_differences::builders::GetDifferencesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDIFFERENCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_commit_specifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_commit_specifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDifferencesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.after_commit_specifier = builder.after_commit_specifier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetDifferencesInput {
     /// Creates a new builder-style object to manufacture [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
     pub fn builder() -> crate::operation::get_differences::builders::GetDifferencesInputBuilder {

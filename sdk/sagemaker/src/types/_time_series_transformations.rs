@@ -57,6 +57,230 @@ impl TimeSeriesTransformations {
         self.aggregation.as_ref()
     }
 }
+static TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FillingTransformationMap$key",
+        "com.amazonaws.sagemaker",
+        "FillingTransformationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FillingTransformationMap$value",
+        "com.amazonaws.sagemaker",
+        "FillingTransformationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FillingTransformations$key",
+        "com.amazonaws.sagemaker",
+        "FillingTransformations",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FillingTransformations$value",
+        "com.amazonaws.sagemaker",
+        "FillingTransformations",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "value",
+    1,
+)
+.with_map_members(
+    &TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE_KEY,
+    &TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE_VALUE,
+);
+static TIMESERIESTRANSFORMATIONS_MEMBER_FILLING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TimeSeriesTransformations$Filling",
+        "com.amazonaws.sagemaker",
+        "TimeSeriesTransformations",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Filling",
+    0,
+)
+.with_map_members(
+    &TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_KEY,
+    &TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE,
+);
+static TIMESERIESTRANSFORMATIONS_MEMBER_AGGREGATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AggregationTransformations$key",
+        "com.amazonaws.sagemaker",
+        "AggregationTransformations",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TIMESERIESTRANSFORMATIONS_MEMBER_AGGREGATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AggregationTransformations$value",
+        "com.amazonaws.sagemaker",
+        "AggregationTransformations",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TIMESERIESTRANSFORMATIONS_MEMBER_AGGREGATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TimeSeriesTransformations$Aggregation",
+        "com.amazonaws.sagemaker",
+        "TimeSeriesTransformations",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Aggregation",
+    1,
+)
+.with_map_members(
+    &TIMESERIESTRANSFORMATIONS_MEMBER_AGGREGATION_KEY,
+    &TIMESERIESTRANSFORMATIONS_MEMBER_AGGREGATION_VALUE,
+);
+static TIMESERIESTRANSFORMATIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TimeSeriesTransformations",
+        "com.amazonaws.sagemaker",
+        "TimeSeriesTransformations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TIMESERIESTRANSFORMATIONS_MEMBER_FILLING, &TIMESERIESTRANSFORMATIONS_MEMBER_AGGREGATION],
+);
+impl TimeSeriesTransformations {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TIMESERIESTRANSFORMATIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TimeSeriesTransformations {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.filling {
+            ser.write_map(
+                &TIMESERIESTRANSFORMATIONS_MEMBER_FILLING,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_map(
+                            &TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in value {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key.as_str())?;
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.aggregation {
+            ser.write_map(
+                &TIMESERIESTRANSFORMATIONS_MEMBER_AGGREGATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TimeSeriesTransformationsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TIMESERIESTRANSFORMATIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filling = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&TIMESERIESTRANSFORMATIONS_MEMBER_FILLING_VALUE, &mut |key, deser| {
+                                        let value = deser.read_string(&::aws_smithy_schema::prelude::STRING)?;
+                                        map.insert(crate::types::FillingType::from(key.as_str()), value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aggregation = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(
+                                    key,
+                                    crate::types::AggregationTransformationValue::from(
+                                        deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                    ),
+                                );
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TimeSeriesTransformations {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TimeSeriesTransformations {
     /// Creates a new builder-style object to manufacture [`TimeSeriesTransformations`](crate::types::TimeSeriesTransformations).
     pub fn builder() -> crate::types::builders::TimeSeriesTransformationsBuilder {

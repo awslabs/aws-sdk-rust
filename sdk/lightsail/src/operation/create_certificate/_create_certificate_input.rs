@@ -40,6 +40,198 @@ impl CreateCertificateInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATECERTIFICATEINPUT_MEMBER_CERTIFICATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateCertificateInput$certificateName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateName",
+    0,
+);
+static CREATECERTIFICATEINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateCertificateInput$domainName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domainName",
+    1,
+);
+static CREATECERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SubjectAlternativeNameList$member",
+        "com.amazonaws.lightsail",
+        "SubjectAlternativeNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATECERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateCertificateInput$subjectAlternativeNames",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "subjectAlternativeNames",
+    2,
+)
+.with_list_member(&CREATECERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER);
+static CREATECERTIFICATEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECERTIFICATEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateCertificateInput$tags",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    3,
+)
+.with_list_member(&CREATECERTIFICATEINPUT_MEMBER_TAGS_MEMBER);
+static CREATECERTIFICATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateCertificateInput",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECERTIFICATEINPUT_MEMBER_CERTIFICATE_NAME,
+        &CREATECERTIFICATEINPUT_MEMBER_DOMAIN_NAME,
+        &CREATECERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+        &CREATECERTIFICATEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/CreateCertificate",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCertificateRequest");
+impl CreateCertificateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECERTIFICATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCertificateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_name {
+            ser.write_string(&CREATECERTIFICATEINPUT_MEMBER_CERTIFICATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CREATECERTIFICATEINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.subject_alternative_names {
+            ser.write_list(
+                &CREATECERTIFICATEINPUT_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECERTIFICATEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_certificate::builders::CreateCertificateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECERTIFICATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject_alternative_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCertificateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.certificate_name = builder.certificate_name.or(Some(String::new()));
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCertificateInput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateInput`](crate::operation::create_certificate::CreateCertificateInput).
     pub fn builder() -> crate::operation::create_certificate::builders::CreateCertificateInputBuilder {

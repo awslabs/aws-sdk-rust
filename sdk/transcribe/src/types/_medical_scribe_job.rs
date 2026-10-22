@@ -112,6 +112,406 @@ impl MedicalScribeJob {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$MedicalScribeJobName",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MedicalScribeJobName",
+    0,
+);
+static MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$MedicalScribeJobStatus",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MedicalScribeJobStatus",
+    1,
+);
+static MEDICALSCRIBEJOB_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$LanguageCode",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    2,
+);
+static MEDICALSCRIBEJOB_MEMBER_MEDIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$Media",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Media",
+    3,
+);
+static MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$MedicalScribeOutput",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MedicalScribeOutput",
+    4,
+);
+static MEDICALSCRIBEJOB_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$StartTime",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    5,
+);
+static MEDICALSCRIBEJOB_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$CreationTime",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static MEDICALSCRIBEJOB_MEMBER_COMPLETION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$CompletionTime",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompletionTime",
+    7,
+);
+static MEDICALSCRIBEJOB_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$FailureReason",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    8,
+);
+static MEDICALSCRIBEJOB_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$Settings",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Settings",
+    9,
+);
+static MEDICALSCRIBEJOB_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$DataAccessRoleArn",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    10,
+);
+static MEDICALSCRIBEJOB_MEMBER_CHANNEL_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeChannelDefinitions$member",
+        "com.amazonaws.transcribe",
+        "MedicalScribeChannelDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MEDICALSCRIBEJOB_MEMBER_CHANNEL_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$ChannelDefinitions",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ChannelDefinitions",
+    11,
+)
+.with_list_member(&MEDICALSCRIBEJOB_MEMBER_CHANNEL_DEFINITIONS_MEMBER);
+static MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_CONTEXT_PROVIDED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$MedicalScribeContextProvided",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "MedicalScribeContextProvided",
+    12,
+);
+static MEDICALSCRIBEJOB_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#TagList$member", "com.amazonaws.transcribe", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MEDICALSCRIBEJOB_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob$Tags",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    13,
+)
+.with_list_member(&MEDICALSCRIBEJOB_MEMBER_TAGS_MEMBER);
+static MEDICALSCRIBEJOB_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJob",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_JOB_NAME,
+        &MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_JOB_STATUS,
+        &MEDICALSCRIBEJOB_MEMBER_LANGUAGE_CODE,
+        &MEDICALSCRIBEJOB_MEMBER_MEDIA,
+        &MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_OUTPUT,
+        &MEDICALSCRIBEJOB_MEMBER_START_TIME,
+        &MEDICALSCRIBEJOB_MEMBER_CREATION_TIME,
+        &MEDICALSCRIBEJOB_MEMBER_COMPLETION_TIME,
+        &MEDICALSCRIBEJOB_MEMBER_FAILURE_REASON,
+        &MEDICALSCRIBEJOB_MEMBER_SETTINGS,
+        &MEDICALSCRIBEJOB_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &MEDICALSCRIBEJOB_MEMBER_CHANNEL_DEFINITIONS,
+        &MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_CONTEXT_PROVIDED,
+        &MEDICALSCRIBEJOB_MEMBER_TAGS,
+    ],
+);
+impl MedicalScribeJob {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MEDICALSCRIBEJOB_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MedicalScribeJob {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.medical_scribe_job_name {
+            ser.write_string(&MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.medical_scribe_job_status {
+            ser.write_string(&MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&MEDICALSCRIBEJOB_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.media {
+            ser.write_struct(&MEDICALSCRIBEJOB_MEMBER_MEDIA, val)?;
+        }
+        if let Some(ref val) = self.medical_scribe_output {
+            ser.write_struct(&MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_OUTPUT, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&MEDICALSCRIBEJOB_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MEDICALSCRIBEJOB_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.completion_time {
+            ser.write_timestamp(&MEDICALSCRIBEJOB_MEMBER_COMPLETION_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&MEDICALSCRIBEJOB_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&MEDICALSCRIBEJOB_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&MEDICALSCRIBEJOB_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.channel_definitions {
+            ser.write_list(
+                &MEDICALSCRIBEJOB_MEMBER_CHANNEL_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MedicalScribeChannelDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.medical_scribe_context_provided {
+            ser.write_boolean(&MEDICALSCRIBEJOB_MEMBER_MEDICAL_SCRIBE_CONTEXT_PROVIDED, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &MEDICALSCRIBEJOB_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MedicalScribeJobBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MEDICALSCRIBEJOB_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_job_status = Some(crate::types::MedicalScribeJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::MedicalScribeLanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media = Some(crate::types::Media::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_output = Some(crate::types::MedicalScribeOutput::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::MedicalScribeSettings::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MedicalScribeChannelDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_context_provided = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MedicalScribeJob {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MedicalScribeJob {
     /// Creates a new builder-style object to manufacture [`MedicalScribeJob`](crate::types::MedicalScribeJob).
     pub fn builder() -> crate::types::builders::MedicalScribeJobBuilder {

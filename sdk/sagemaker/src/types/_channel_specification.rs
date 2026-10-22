@@ -53,6 +53,257 @@ impl ChannelSpecification {
         self.supported_input_modes.as_deref().unwrap_or_default()
     }
 }
+static CHANNELSPECIFICATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecification$Name",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CHANNELSPECIFICATION_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecification$Description",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CHANNELSPECIFICATION_MEMBER_IS_REQUIRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecification$IsRequired",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IsRequired",
+    2,
+);
+static CHANNELSPECIFICATION_MEMBER_SUPPORTED_CONTENT_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ContentTypes$member", "com.amazonaws.sagemaker", "ContentTypes"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CHANNELSPECIFICATION_MEMBER_SUPPORTED_CONTENT_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecification$SupportedContentTypes",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SupportedContentTypes",
+    3,
+)
+.with_list_member(&CHANNELSPECIFICATION_MEMBER_SUPPORTED_CONTENT_TYPES_MEMBER);
+static CHANNELSPECIFICATION_MEMBER_SUPPORTED_COMPRESSION_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CompressionTypes$member",
+        "com.amazonaws.sagemaker",
+        "CompressionTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CHANNELSPECIFICATION_MEMBER_SUPPORTED_COMPRESSION_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecification$SupportedCompressionTypes",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SupportedCompressionTypes",
+    4,
+)
+.with_list_member(&CHANNELSPECIFICATION_MEMBER_SUPPORTED_COMPRESSION_TYPES_MEMBER);
+static CHANNELSPECIFICATION_MEMBER_SUPPORTED_INPUT_MODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#InputModes$member", "com.amazonaws.sagemaker", "InputModes"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CHANNELSPECIFICATION_MEMBER_SUPPORTED_INPUT_MODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecification$SupportedInputModes",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SupportedInputModes",
+    5,
+)
+.with_list_member(&CHANNELSPECIFICATION_MEMBER_SUPPORTED_INPUT_MODES_MEMBER);
+static CHANNELSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecification",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHANNELSPECIFICATION_MEMBER_NAME,
+        &CHANNELSPECIFICATION_MEMBER_DESCRIPTION,
+        &CHANNELSPECIFICATION_MEMBER_IS_REQUIRED,
+        &CHANNELSPECIFICATION_MEMBER_SUPPORTED_CONTENT_TYPES,
+        &CHANNELSPECIFICATION_MEMBER_SUPPORTED_COMPRESSION_TYPES,
+        &CHANNELSPECIFICATION_MEMBER_SUPPORTED_INPUT_MODES,
+    ],
+);
+impl ChannelSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHANNELSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChannelSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CHANNELSPECIFICATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CHANNELSPECIFICATION_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.is_required {
+            ser.write_boolean(&CHANNELSPECIFICATION_MEMBER_IS_REQUIRED, *val)?;
+        }
+        if let Some(ref val) = self.supported_content_types {
+            ser.write_list(
+                &CHANNELSPECIFICATION_MEMBER_SUPPORTED_CONTENT_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.supported_compression_types {
+            ser.write_list(
+                &CHANNELSPECIFICATION_MEMBER_SUPPORTED_COMPRESSION_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.supported_input_modes {
+            ser.write_list(
+                &CHANNELSPECIFICATION_MEMBER_SUPPORTED_INPUT_MODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChannelSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHANNELSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_required = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_content_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_compression_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CompressionType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_input_modes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TrainingInputMode::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChannelSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ChannelSpecification {
     /// Creates a new builder-style object to manufacture [`ChannelSpecification`](crate::types::ChannelSpecification).
     pub fn builder() -> crate::types::builders::ChannelSpecificationBuilder {

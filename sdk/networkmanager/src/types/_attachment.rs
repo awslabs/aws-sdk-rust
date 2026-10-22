@@ -28,6 +28,10 @@ pub struct Attachment {
     pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the network function group.</p>
     pub network_function_group_name: ::std::option::Option<::std::string::String>,
+    /// <p>The state of NAT gateway support on the attachment. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub nat_gateway_support: ::std::option::Option<crate::types::NatGatewaySupportState>,
+    /// <p>Indicates whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub nat_system_route_support: ::std::option::Option<bool>,
     /// <p>The tags associated with the attachment.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The attachment to move from one segment to another.</p>
@@ -92,6 +96,14 @@ impl Attachment {
     pub fn network_function_group_name(&self) -> ::std::option::Option<&str> {
         self.network_function_group_name.as_deref()
     }
+    /// <p>The state of NAT gateway support on the attachment. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn nat_gateway_support(&self) -> ::std::option::Option<&crate::types::NatGatewaySupportState> {
+        self.nat_gateway_support.as_ref()
+    }
+    /// <p>Indicates whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn nat_system_route_support(&self) -> ::std::option::Option<bool> {
+        self.nat_system_route_support
+    }
     /// <p>The tags associated with the attachment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -144,6 +156,8 @@ pub struct AttachmentBuilder {
     pub(crate) attachment_policy_rule_number: ::std::option::Option<i32>,
     pub(crate) segment_name: ::std::option::Option<::std::string::String>,
     pub(crate) network_function_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) nat_gateway_support: ::std::option::Option<crate::types::NatGatewaySupportState>,
+    pub(crate) nat_system_route_support: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) proposed_segment_change: ::std::option::Option<crate::types::ProposedSegmentChange>,
     pub(crate) proposed_network_function_group_change: ::std::option::Option<crate::types::ProposedNetworkFunctionGroupChange>,
@@ -326,6 +340,34 @@ impl AttachmentBuilder {
     pub fn get_network_function_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.network_function_group_name
     }
+    /// <p>The state of NAT gateway support on the attachment. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn nat_gateway_support(mut self, input: crate::types::NatGatewaySupportState) -> Self {
+        self.nat_gateway_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of NAT gateway support on the attachment. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn set_nat_gateway_support(mut self, input: ::std::option::Option<crate::types::NatGatewaySupportState>) -> Self {
+        self.nat_gateway_support = input;
+        self
+    }
+    /// <p>The state of NAT gateway support on the attachment. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn get_nat_gateway_support(&self) -> &::std::option::Option<crate::types::NatGatewaySupportState> {
+        &self.nat_gateway_support
+    }
+    /// <p>Indicates whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn nat_system_route_support(mut self, input: bool) -> Self {
+        self.nat_system_route_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn set_nat_system_route_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.nat_system_route_support = input;
+        self
+    }
+    /// <p>Indicates whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. This is returned only to the core network owner for attachment types that support NAT.</p>
+    pub fn get_nat_system_route_support(&self) -> &::std::option::Option<bool> {
+        &self.nat_system_route_support
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -440,6 +482,8 @@ impl AttachmentBuilder {
             attachment_policy_rule_number: self.attachment_policy_rule_number,
             segment_name: self.segment_name,
             network_function_group_name: self.network_function_group_name,
+            nat_gateway_support: self.nat_gateway_support,
+            nat_system_route_support: self.nat_system_route_support,
             tags: self.tags,
             proposed_segment_change: self.proposed_segment_change,
             proposed_network_function_group_change: self.proposed_network_function_group_change,

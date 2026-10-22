@@ -31,6 +31,148 @@ impl DesiredWeightAndCapacity {
         self.serverless_update_config.as_ref()
     }
 }
+static DESIREDWEIGHTANDCAPACITY_MEMBER_VARIANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DesiredWeightAndCapacity$VariantName",
+        "com.amazonaws.sagemaker",
+        "DesiredWeightAndCapacity",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VariantName",
+    0,
+);
+static DESIREDWEIGHTANDCAPACITY_MEMBER_DESIRED_WEIGHT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DesiredWeightAndCapacity$DesiredWeight",
+        "com.amazonaws.sagemaker",
+        "DesiredWeightAndCapacity",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "DesiredWeight",
+    1,
+);
+static DESIREDWEIGHTANDCAPACITY_MEMBER_DESIRED_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DesiredWeightAndCapacity$DesiredInstanceCount",
+        "com.amazonaws.sagemaker",
+        "DesiredWeightAndCapacity",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DesiredInstanceCount",
+    2,
+);
+static DESIREDWEIGHTANDCAPACITY_MEMBER_SERVERLESS_UPDATE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DesiredWeightAndCapacity$ServerlessUpdateConfig",
+        "com.amazonaws.sagemaker",
+        "DesiredWeightAndCapacity",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ServerlessUpdateConfig",
+    3,
+);
+static DESIREDWEIGHTANDCAPACITY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DesiredWeightAndCapacity",
+        "com.amazonaws.sagemaker",
+        "DesiredWeightAndCapacity",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESIREDWEIGHTANDCAPACITY_MEMBER_VARIANT_NAME,
+        &DESIREDWEIGHTANDCAPACITY_MEMBER_DESIRED_WEIGHT,
+        &DESIREDWEIGHTANDCAPACITY_MEMBER_DESIRED_INSTANCE_COUNT,
+        &DESIREDWEIGHTANDCAPACITY_MEMBER_SERVERLESS_UPDATE_CONFIG,
+    ],
+);
+impl DesiredWeightAndCapacity {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESIREDWEIGHTANDCAPACITY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DesiredWeightAndCapacity {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.variant_name {
+            ser.write_string(&DESIREDWEIGHTANDCAPACITY_MEMBER_VARIANT_NAME, val)?;
+        }
+        if let Some(ref val) = self.desired_weight {
+            ser.write_float(&DESIREDWEIGHTANDCAPACITY_MEMBER_DESIRED_WEIGHT, *val)?;
+        }
+        if let Some(ref val) = self.desired_instance_count {
+            ser.write_integer(&DESIREDWEIGHTANDCAPACITY_MEMBER_DESIRED_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.serverless_update_config {
+            ser.write_struct(&DESIREDWEIGHTANDCAPACITY_MEMBER_SERVERLESS_UPDATE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DesiredWeightAndCapacityBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESIREDWEIGHTANDCAPACITY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.variant_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_weight = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serverless_update_config = Some(crate::types::ProductionVariantServerlessUpdateConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DesiredWeightAndCapacity {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DesiredWeightAndCapacity {
     /// Creates a new builder-style object to manufacture [`DesiredWeightAndCapacity`](crate::types::DesiredWeightAndCapacity).
     pub fn builder() -> crate::types::builders::DesiredWeightAndCapacityBuilder {

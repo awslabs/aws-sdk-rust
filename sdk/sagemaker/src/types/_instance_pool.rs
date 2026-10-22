@@ -27,6 +27,119 @@ impl InstancePool {
         self.priority
     }
 }
+static INSTANCEPOOL_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstancePool$InstanceType",
+        "com.amazonaws.sagemaker",
+        "InstancePool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    0,
+);
+static INSTANCEPOOL_MEMBER_MODEL_NAME_OVERRIDE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstancePool$ModelNameOverride",
+        "com.amazonaws.sagemaker",
+        "InstancePool",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelNameOverride",
+    1,
+);
+static INSTANCEPOOL_MEMBER_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#InstancePool$Priority", "com.amazonaws.sagemaker", "InstancePool"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Priority",
+    2,
+);
+static INSTANCEPOOL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#InstancePool", "com.amazonaws.sagemaker", "InstancePool"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEPOOL_MEMBER_INSTANCE_TYPE,
+        &INSTANCEPOOL_MEMBER_MODEL_NAME_OVERRIDE,
+        &INSTANCEPOOL_MEMBER_PRIORITY,
+    ],
+);
+impl InstancePool {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEPOOL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstancePool {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&INSTANCEPOOL_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_name_override {
+            ser.write_string(&INSTANCEPOOL_MEMBER_MODEL_NAME_OVERRIDE, val)?;
+        }
+        if let Some(ref val) = self.priority {
+            ser.write_integer(&INSTANCEPOOL_MEMBER_PRIORITY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstancePoolBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEPOOL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::ProductionVariantInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name_override = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.priority = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstancePool {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstancePool {
     /// Creates a new builder-style object to manufacture [`InstancePool`](crate::types::InstancePool).
     pub fn builder() -> crate::types::builders::InstancePoolBuilder {

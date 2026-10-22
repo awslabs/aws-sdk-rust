@@ -118,6 +118,363 @@ impl CreateDocumentClassifierInput {
         self.model_policy.as_deref()
     }
 }
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_DOCUMENT_CLASSIFIER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$DocumentClassifierName",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentClassifierName",
+    0,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$VersionName",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    1,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    2,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    3,
+)
+.with_list_member(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$InputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    4,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$OutputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    5,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    6,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    7,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$VolumeKmsKeyId",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    8,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$VpcConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    9,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$Mode",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    10,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODEL_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$ModelKmsKeyId",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelKmsKeyId",
+    11,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODEL_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput$ModelPolicy",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPolicy",
+    12,
+);
+static CREATEDOCUMENTCLASSIFIERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDocumentClassifierInput",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDocumentClassifierInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_DOCUMENT_CLASSIFIER_NAME,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VERSION_NAME,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_TAGS,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_LANGUAGE_CODE,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VOLUME_KMS_KEY_ID,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VPC_CONFIG,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODE,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODEL_KMS_KEY_ID,
+        &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODEL_POLICY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDocumentClassifierRequest");
+impl CreateDocumentClassifierInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDOCUMENTCLASSIFIERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDocumentClassifierInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.document_classifier_name {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_DOCUMENT_CLASSIFIER_NAME, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_kms_key_id {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODEL_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.model_policy {
+            ser.write_string(&CREATEDOCUMENTCLASSIFIERINPUT_MEMBER_MODEL_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDOCUMENTCLASSIFIERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_classifier_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::DocumentClassifierInputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::DocumentClassifierOutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::DocumentClassifierMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDocumentClassifierInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.document_classifier_name = builder.document_classifier_name.or(Some(String::new()));
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDocumentClassifierInput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierInput`](crate::operation::create_document_classifier::CreateDocumentClassifierInput).
     pub fn builder() -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder {

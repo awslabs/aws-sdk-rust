@@ -45,6 +45,216 @@ impl AgentAccessConfigForUpdate {
         self.user_control_mode.as_ref()
     }
 }
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_SETTINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessSettingList$member",
+        "com.amazonaws.appstream",
+        "AgentAccessSettingList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$Settings",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Settings",
+    0,
+)
+.with_list_member(&AGENTACCESSCONFIGFORUPDATE_MEMBER_SETTINGS_MEMBER);
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_S3_BUCKET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$S3BucketArn",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketArn",
+    1,
+);
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREENSHOTS_UPLOAD_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$ScreenshotsUploadEnabled",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ScreenshotsUploadEnabled",
+    2,
+);
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_RESOLUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$ScreenResolution",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScreenResolution",
+    3,
+);
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_IMAGE_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$ScreenImageFormat",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScreenImageFormat",
+    4,
+);
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_USER_CONTROL_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$UserControlMode",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserControlMode",
+    5,
+);
+static AGENTACCESSCONFIGFORUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_SETTINGS,
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_S3_BUCKET_ARN,
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREENSHOTS_UPLOAD_ENABLED,
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_RESOLUTION,
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_IMAGE_FORMAT,
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_USER_CONTROL_MODE,
+    ],
+);
+impl AgentAccessConfigForUpdate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AGENTACCESSCONFIGFORUPDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AgentAccessConfigForUpdate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.settings {
+            ser.write_list(
+                &AGENTACCESSCONFIGFORUPDATE_MEMBER_SETTINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AgentAccessSetting::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_bucket_arn {
+            ser.write_string(&AGENTACCESSCONFIGFORUPDATE_MEMBER_S3_BUCKET_ARN, val)?;
+        }
+        if let Some(ref val) = self.screenshots_upload_enabled {
+            ser.write_boolean(&AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREENSHOTS_UPLOAD_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.screen_resolution {
+            ser.write_string(&AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_RESOLUTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.screen_image_format {
+            ser.write_string(&AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_IMAGE_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.user_control_mode {
+            ser.write_string(&AGENTACCESSCONFIGFORUPDATE_MEMBER_USER_CONTROL_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AgentAccessConfigForUpdateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AGENTACCESSCONFIGFORUPDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AgentAccessSetting::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.screenshots_upload_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.screen_resolution = Some(crate::types::ScreenResolution::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.screen_image_format = Some(crate::types::ScreenImageFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_control_mode = Some(crate::types::UserControlMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AgentAccessConfigForUpdate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AgentAccessConfigForUpdate {
     /// Creates a new builder-style object to manufacture [`AgentAccessConfigForUpdate`](crate::types::AgentAccessConfigForUpdate).
     pub fn builder() -> crate::types::builders::AgentAccessConfigForUpdateBuilder {

@@ -133,6 +133,333 @@ impl ::std::fmt::Debug for ModelCard {
         formatter.finish()
     }
 }
+static MODELCARD_MEMBER_MODEL_CARD_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$ModelCardArn", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardArn",
+    0,
+);
+static MODELCARD_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$ModelCardName", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    1,
+);
+static MODELCARD_MEMBER_MODEL_CARD_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCard$ModelCardVersion",
+        "com.amazonaws.sagemaker",
+        "ModelCard",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ModelCardVersion",
+    2,
+);
+static MODELCARD_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$Content", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    3,
+);
+static MODELCARD_MEMBER_MODEL_CARD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCard$ModelCardStatus",
+        "com.amazonaws.sagemaker",
+        "ModelCard",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardStatus",
+    4,
+);
+static MODELCARD_MEMBER_SECURITY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$SecurityConfig", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SecurityConfig",
+    5,
+);
+static MODELCARD_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$CreationTime", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static MODELCARD_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$CreatedBy", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    7,
+);
+static MODELCARD_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCard$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "ModelCard",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static MODELCARD_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$LastModifiedBy", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    9,
+);
+static MODELCARD_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MODELCARD_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$Tags", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    10,
+)
+.with_list_member(&MODELCARD_MEMBER_TAGS_MEMBER);
+static MODELCARD_MEMBER_MODEL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$ModelId", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelId",
+    11,
+);
+static MODELCARD_MEMBER_RISK_RATING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard$RiskRating", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::String,
+    "RiskRating",
+    12,
+);
+static MODELCARD_MEMBER_MODEL_PACKAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCard$ModelPackageGroupName",
+        "com.amazonaws.sagemaker",
+        "ModelCard",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupName",
+    13,
+);
+static MODELCARD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCard", "com.amazonaws.sagemaker", "ModelCard"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELCARD_MEMBER_MODEL_CARD_ARN,
+        &MODELCARD_MEMBER_MODEL_CARD_NAME,
+        &MODELCARD_MEMBER_MODEL_CARD_VERSION,
+        &MODELCARD_MEMBER_CONTENT,
+        &MODELCARD_MEMBER_MODEL_CARD_STATUS,
+        &MODELCARD_MEMBER_SECURITY_CONFIG,
+        &MODELCARD_MEMBER_CREATION_TIME,
+        &MODELCARD_MEMBER_CREATED_BY,
+        &MODELCARD_MEMBER_LAST_MODIFIED_TIME,
+        &MODELCARD_MEMBER_LAST_MODIFIED_BY,
+        &MODELCARD_MEMBER_TAGS,
+        &MODELCARD_MEMBER_MODEL_ID,
+        &MODELCARD_MEMBER_RISK_RATING,
+        &MODELCARD_MEMBER_MODEL_PACKAGE_GROUP_NAME,
+    ],
+);
+impl ModelCard {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELCARD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelCard {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_card_arn {
+            ser.write_string(&MODELCARD_MEMBER_MODEL_CARD_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&MODELCARD_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_card_version {
+            ser.write_integer(&MODELCARD_MEMBER_MODEL_CARD_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&MODELCARD_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.model_card_status {
+            ser.write_string(&MODELCARD_MEMBER_MODEL_CARD_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.security_config {
+            ser.write_struct(&MODELCARD_MEMBER_SECURITY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MODELCARD_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&MODELCARD_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&MODELCARD_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&MODELCARD_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&MODELCARD_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.model_id {
+            ser.write_string(&MODELCARD_MEMBER_MODEL_ID, val)?;
+        }
+        if let Some(ref val) = self.risk_rating {
+            ser.write_string(&MODELCARD_MEMBER_RISK_RATING, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_name {
+            ser.write_string(&MODELCARD_MEMBER_MODEL_PACKAGE_GROUP_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelCardBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELCARD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_status = Some(crate::types::ModelCardStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_config = Some(crate::types::ModelCardSecurityConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.risk_rating = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelCard {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelCard {
     /// Creates a new builder-style object to manufacture [`ModelCard`](crate::types::ModelCard).
     pub fn builder() -> crate::types::builders::ModelCardBuilder {

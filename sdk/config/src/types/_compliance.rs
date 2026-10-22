@@ -27,6 +27,99 @@ impl Compliance {
         self.compliance_contributor_count.as_ref()
     }
 }
+static COMPLIANCE_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Compliance$ComplianceType",
+        "com.amazonaws.configservice",
+        "Compliance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    0,
+);
+static COMPLIANCE_MEMBER_COMPLIANCE_CONTRIBUTOR_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Compliance$ComplianceContributorCount",
+        "com.amazonaws.configservice",
+        "Compliance",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComplianceContributorCount",
+    1,
+);
+static COMPLIANCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Compliance", "com.amazonaws.configservice", "Compliance"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&COMPLIANCE_MEMBER_COMPLIANCE_TYPE, &COMPLIANCE_MEMBER_COMPLIANCE_CONTRIBUTOR_COUNT],
+);
+impl Compliance {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMPLIANCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Compliance {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compliance_type {
+            ser.write_string(&COMPLIANCE_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.compliance_contributor_count {
+            ser.write_struct(&COMPLIANCE_MEMBER_COMPLIANCE_CONTRIBUTOR_COUNT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ComplianceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMPLIANCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_type = Some(crate::types::ComplianceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_contributor_count = Some(crate::types::ComplianceContributorCount::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Compliance {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Compliance {
     /// Creates a new builder-style object to manufacture [`Compliance`](crate::types::Compliance).
     pub fn builder() -> crate::types::builders::ComplianceBuilder {

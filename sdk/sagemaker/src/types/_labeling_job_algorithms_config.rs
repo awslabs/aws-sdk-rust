@@ -53,6 +53,130 @@ impl LabelingJobAlgorithmsConfig {
         self.labeling_job_resource_config.as_ref()
     }
 }
+static LABELINGJOBALGORITHMSCONFIG_MEMBER_LABELING_JOB_ALGORITHM_SPECIFICATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#LabelingJobAlgorithmsConfig$LabelingJobAlgorithmSpecificationArn",
+            "com.amazonaws.sagemaker",
+            "LabelingJobAlgorithmsConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "LabelingJobAlgorithmSpecificationArn",
+        0,
+    );
+static LABELINGJOBALGORITHMSCONFIG_MEMBER_INITIAL_ACTIVE_LEARNING_MODEL_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#LabelingJobAlgorithmsConfig$InitialActiveLearningModelArn",
+            "com.amazonaws.sagemaker",
+            "LabelingJobAlgorithmsConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InitialActiveLearningModelArn",
+        1,
+    );
+static LABELINGJOBALGORITHMSCONFIG_MEMBER_LABELING_JOB_RESOURCE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#LabelingJobAlgorithmsConfig$LabelingJobResourceConfig",
+            "com.amazonaws.sagemaker",
+            "LabelingJobAlgorithmsConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "LabelingJobResourceConfig",
+        2,
+    );
+static LABELINGJOBALGORITHMSCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelingJobAlgorithmsConfig",
+        "com.amazonaws.sagemaker",
+        "LabelingJobAlgorithmsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LABELINGJOBALGORITHMSCONFIG_MEMBER_LABELING_JOB_ALGORITHM_SPECIFICATION_ARN,
+        &LABELINGJOBALGORITHMSCONFIG_MEMBER_INITIAL_ACTIVE_LEARNING_MODEL_ARN,
+        &LABELINGJOBALGORITHMSCONFIG_MEMBER_LABELING_JOB_RESOURCE_CONFIG,
+    ],
+);
+impl LabelingJobAlgorithmsConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LABELINGJOBALGORITHMSCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LabelingJobAlgorithmsConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.labeling_job_algorithm_specification_arn {
+            ser.write_string(&LABELINGJOBALGORITHMSCONFIG_MEMBER_LABELING_JOB_ALGORITHM_SPECIFICATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.initial_active_learning_model_arn {
+            ser.write_string(&LABELINGJOBALGORITHMSCONFIG_MEMBER_INITIAL_ACTIVE_LEARNING_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.labeling_job_resource_config {
+            ser.write_struct(&LABELINGJOBALGORITHMSCONFIG_MEMBER_LABELING_JOB_RESOURCE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LabelingJobAlgorithmsConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LABELINGJOBALGORITHMSCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_algorithm_specification_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.initial_active_learning_model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_resource_config = Some(crate::types::LabelingJobResourceConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LabelingJobAlgorithmsConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LabelingJobAlgorithmsConfig {
     /// Creates a new builder-style object to manufacture [`LabelingJobAlgorithmsConfig`](crate::types::LabelingJobAlgorithmsConfig).
     pub fn builder() -> crate::types::builders::LabelingJobAlgorithmsConfigBuilder {

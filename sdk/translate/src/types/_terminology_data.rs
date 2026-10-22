@@ -64,6 +64,118 @@ impl ::std::fmt::Debug for TerminologyData {
         formatter.finish()
     }
 }
+static TERMINOLOGYDATA_MEMBER_FILE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TerminologyData$File",
+        "com.amazonaws.translate",
+        "TerminologyData",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "File",
+    0,
+);
+static TERMINOLOGYDATA_MEMBER_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TerminologyData$Format",
+        "com.amazonaws.translate",
+        "TerminologyData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Format",
+    1,
+);
+static TERMINOLOGYDATA_MEMBER_DIRECTIONALITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TerminologyData$Directionality",
+        "com.amazonaws.translate",
+        "TerminologyData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Directionality",
+    2,
+);
+static TERMINOLOGYDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.translate#TerminologyData", "com.amazonaws.translate", "TerminologyData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TERMINOLOGYDATA_MEMBER_FILE,
+        &TERMINOLOGYDATA_MEMBER_FORMAT,
+        &TERMINOLOGYDATA_MEMBER_DIRECTIONALITY,
+    ],
+);
+impl TerminologyData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TERMINOLOGYDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TerminologyData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.file;
+            ser.write_blob(&TERMINOLOGYDATA_MEMBER_FILE, val.clone())?;
+        }
+        {
+            let val = &self.format;
+            ser.write_string(&TERMINOLOGYDATA_MEMBER_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.directionality {
+            ser.write_string(&TERMINOLOGYDATA_MEMBER_DIRECTIONALITY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TerminologyDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TERMINOLOGYDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.file = Some(deser.read_blob(member)?);
+                }
+                Some(1) => {
+                    self.format = Some(crate::types::TerminologyDataFormat::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directionality = Some(crate::types::Directionality::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TerminologyData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file = builder.file.or(Some(::aws_smithy_types::Blob::new("")));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TerminologyData {
     /// Creates a new builder-style object to manufacture [`TerminologyData`](crate::types::TerminologyData).
     pub fn builder() -> crate::types::builders::TerminologyDataBuilder {

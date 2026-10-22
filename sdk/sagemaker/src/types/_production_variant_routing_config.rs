@@ -35,6 +35,107 @@ impl ProductionVariantRoutingConfig {
         self.prefix_aware_routing_config.as_ref()
     }
 }
+static PRODUCTIONVARIANTROUTINGCONFIG_MEMBER_ROUTING_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantRoutingConfig$RoutingStrategy",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantRoutingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoutingStrategy",
+    0,
+);
+static PRODUCTIONVARIANTROUTINGCONFIG_MEMBER_PREFIX_AWARE_ROUTING_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantRoutingConfig$PrefixAwareRoutingConfig",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantRoutingConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "PrefixAwareRoutingConfig",
+        1,
+    );
+static PRODUCTIONVARIANTROUTINGCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantRoutingConfig",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantRoutingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRODUCTIONVARIANTROUTINGCONFIG_MEMBER_ROUTING_STRATEGY,
+        &PRODUCTIONVARIANTROUTINGCONFIG_MEMBER_PREFIX_AWARE_ROUTING_CONFIG,
+    ],
+);
+impl ProductionVariantRoutingConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRODUCTIONVARIANTROUTINGCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProductionVariantRoutingConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.routing_strategy {
+            ser.write_string(&PRODUCTIONVARIANTROUTINGCONFIG_MEMBER_ROUTING_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.prefix_aware_routing_config {
+            ser.write_struct(&PRODUCTIONVARIANTROUTINGCONFIG_MEMBER_PREFIX_AWARE_ROUTING_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProductionVariantRoutingConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRODUCTIONVARIANTROUTINGCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.routing_strategy = Some(crate::types::RoutingStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prefix_aware_routing_config = Some(crate::types::PrefixAwareRoutingConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProductionVariantRoutingConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProductionVariantRoutingConfig {
     /// Creates a new builder-style object to manufacture [`ProductionVariantRoutingConfig`](crate::types::ProductionVariantRoutingConfig).
     pub fn builder() -> crate::types::builders::ProductionVariantRoutingConfigBuilder {

@@ -116,6 +116,399 @@ impl CreateDomainInput {
         self.default_space_settings.as_ref()
     }
 }
+static CREATEDOMAININPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$DomainName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static CREATEDOMAININPUT_MEMBER_AUTH_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$AuthMode",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthMode",
+    1,
+);
+static CREATEDOMAININPUT_MEMBER_DEFAULT_USER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$DefaultUserSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultUserSettings",
+    2,
+);
+static CREATEDOMAININPUT_MEMBER_DOMAIN_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$DomainSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DomainSettings",
+    3,
+);
+static CREATEDOMAININPUT_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Subnets$member", "com.amazonaws.sagemaker", "Subnets"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEDOMAININPUT_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$SubnetIds",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    4,
+)
+.with_list_member(&CREATEDOMAININPUT_MEMBER_SUBNET_IDS_MEMBER);
+static CREATEDOMAININPUT_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$VpcId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcId",
+    5,
+);
+static CREATEDOMAININPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDOMAININPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATEDOMAININPUT_MEMBER_TAGS_MEMBER);
+static CREATEDOMAININPUT_MEMBER_APP_NETWORK_ACCESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$AppNetworkAccessType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppNetworkAccessType",
+    7,
+);
+static CREATEDOMAININPUT_MEMBER_HOME_EFS_FILE_SYSTEM_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$HomeEfsFileSystemKmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeEfsFileSystemKmsKeyId",
+    8,
+);
+static CREATEDOMAININPUT_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$KmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    9,
+);
+static CREATEDOMAININPUT_MEMBER_APP_SECURITY_GROUP_MANAGEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$AppSecurityGroupManagement",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppSecurityGroupManagement",
+    10,
+);
+static CREATEDOMAININPUT_MEMBER_HOME_EFS_FILE_SYSTEM_CREATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$HomeEfsFileSystemCreation",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeEfsFileSystemCreation",
+    11,
+);
+static CREATEDOMAININPUT_MEMBER_TAG_PROPAGATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$TagPropagation",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TagPropagation",
+    12,
+);
+static CREATEDOMAININPUT_MEMBER_DEFAULT_SPACE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput$DefaultSpaceSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultSpaceSettings",
+    13,
+);
+static CREATEDOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDomainInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDOMAININPUT_MEMBER_DOMAIN_NAME,
+        &CREATEDOMAININPUT_MEMBER_AUTH_MODE,
+        &CREATEDOMAININPUT_MEMBER_DEFAULT_USER_SETTINGS,
+        &CREATEDOMAININPUT_MEMBER_DOMAIN_SETTINGS,
+        &CREATEDOMAININPUT_MEMBER_SUBNET_IDS,
+        &CREATEDOMAININPUT_MEMBER_VPC_ID,
+        &CREATEDOMAININPUT_MEMBER_TAGS,
+        &CREATEDOMAININPUT_MEMBER_APP_NETWORK_ACCESS_TYPE,
+        &CREATEDOMAININPUT_MEMBER_HOME_EFS_FILE_SYSTEM_KMS_KEY_ID,
+        &CREATEDOMAININPUT_MEMBER_KMS_KEY_ID,
+        &CREATEDOMAININPUT_MEMBER_APP_SECURITY_GROUP_MANAGEMENT,
+        &CREATEDOMAININPUT_MEMBER_HOME_EFS_FILE_SYSTEM_CREATION,
+        &CREATEDOMAININPUT_MEMBER_TAG_PROPAGATION,
+        &CREATEDOMAININPUT_MEMBER_DEFAULT_SPACE_SETTINGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDomainRequest");
+impl CreateDomainInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDOMAININPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDomainInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.auth_mode {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_AUTH_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.default_user_settings {
+            ser.write_struct(&CREATEDOMAININPUT_MEMBER_DEFAULT_USER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.domain_settings {
+            ser.write_struct(&CREATEDOMAININPUT_MEMBER_DOMAIN_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.subnet_ids {
+            ser.write_list(
+                &CREATEDOMAININPUT_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDOMAININPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.app_network_access_type {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_APP_NETWORK_ACCESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.home_efs_file_system_kms_key_id {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_HOME_EFS_FILE_SYSTEM_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.app_security_group_management {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_APP_SECURITY_GROUP_MANAGEMENT, val.as_str())?;
+        }
+        if let Some(ref val) = self.home_efs_file_system_creation {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_HOME_EFS_FILE_SYSTEM_CREATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.tag_propagation {
+            ser.write_string(&CREATEDOMAININPUT_MEMBER_TAG_PROPAGATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.default_space_settings {
+            ser.write_struct(&CREATEDOMAININPUT_MEMBER_DEFAULT_SPACE_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_domain::builders::CreateDomainInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDOMAININPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auth_mode = Some(crate::types::AuthMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_user_settings = Some(crate::types::UserSettings::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_settings = Some(crate::types::DomainSettings::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_network_access_type = Some(crate::types::AppNetworkAccessType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_efs_file_system_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_security_group_management =
+                            Some(crate::types::AppSecurityGroupManagement::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_efs_file_system_creation = Some(crate::types::HomeEfsFileSystemCreation::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_propagation = Some(crate::types::TagPropagation::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_space_settings = Some(crate::types::DefaultSpaceSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDomainInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn builder() -> crate::operation::create_domain::builders::CreateDomainInputBuilder {

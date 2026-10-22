@@ -25,6 +25,128 @@ impl UpdateRepositoryEncryptionKeyOutput {
         self.original_kms_key_id.as_deref()
     }
 }
+static UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_REPOSITORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryEncryptionKeyOutput$repositoryId",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryEncryptionKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryId",
+    0,
+);
+static UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryEncryptionKeyOutput$kmsKeyId",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryEncryptionKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "kmsKeyId",
+    1,
+);
+static UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_ORIGINAL_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryEncryptionKeyOutput$originalKmsKeyId",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryEncryptionKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "originalKmsKeyId",
+    2,
+);
+static UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryEncryptionKeyOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryEncryptionKeyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_REPOSITORY_ID,
+        &UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_KMS_KEY_ID,
+        &UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_ORIGINAL_KMS_KEY_ID,
+    ],
+)
+.with_original_name("UpdateRepositoryEncryptionKeyOutput");
+impl UpdateRepositoryEncryptionKeyOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateRepositoryEncryptionKeyOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_id {
+            ser.write_string(&UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_REPOSITORY_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.original_kms_key_id {
+            ser.write_string(&UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_MEMBER_ORIGINAL_KMS_KEY_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_repository_encryption_key::builders::UpdateRepositoryEncryptionKeyOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEREPOSITORYENCRYPTIONKEYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.original_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateRepositoryEncryptionKeyOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateRepositoryEncryptionKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

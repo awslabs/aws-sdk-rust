@@ -44,6 +44,171 @@ impl StartResourceEvaluationInput {
         self.client_token.as_deref()
     }
 }
+static STARTRESOURCEEVALUATIONINPUT_MEMBER_RESOURCE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartResourceEvaluationInput$ResourceDetails",
+        "com.amazonaws.configservice.synthetic",
+        "StartResourceEvaluationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceDetails",
+    0,
+);
+static STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartResourceEvaluationInput$EvaluationContext",
+        "com.amazonaws.configservice.synthetic",
+        "StartResourceEvaluationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EvaluationContext",
+    1,
+);
+static STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartResourceEvaluationInput$EvaluationMode",
+        "com.amazonaws.configservice.synthetic",
+        "StartResourceEvaluationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EvaluationMode",
+    2,
+);
+static STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartResourceEvaluationInput$EvaluationTimeout",
+        "com.amazonaws.configservice.synthetic",
+        "StartResourceEvaluationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EvaluationTimeout",
+    3,
+);
+static STARTRESOURCEEVALUATIONINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartResourceEvaluationInput$ClientToken",
+        "com.amazonaws.configservice.synthetic",
+        "StartResourceEvaluationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    4,
+);
+static STARTRESOURCEEVALUATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartResourceEvaluationInput",
+        "com.amazonaws.configservice.synthetic",
+        "StartResourceEvaluationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTRESOURCEEVALUATIONINPUT_MEMBER_RESOURCE_DETAILS,
+        &STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_CONTEXT,
+        &STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_MODE,
+        &STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_TIMEOUT,
+        &STARTRESOURCEEVALUATIONINPUT_MEMBER_CLIENT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartResourceEvaluationRequest");
+impl StartResourceEvaluationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTRESOURCEEVALUATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartResourceEvaluationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_details {
+            ser.write_struct(&STARTRESOURCEEVALUATIONINPUT_MEMBER_RESOURCE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.evaluation_context {
+            ser.write_struct(&STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.evaluation_mode {
+            ser.write_string(&STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.evaluation_timeout {
+            ser.write_integer(&STARTRESOURCEEVALUATIONINPUT_MEMBER_EVALUATION_TIMEOUT, *val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&STARTRESOURCEEVALUATIONINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTRESOURCEEVALUATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_details = Some(crate::types::ResourceDetails::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_context = Some(crate::types::EvaluationContext::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_mode = Some(crate::types::EvaluationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartResourceEvaluationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartResourceEvaluationInput {
     /// Creates a new builder-style object to manufacture [`StartResourceEvaluationInput`](crate::operation::start_resource_evaluation::StartResourceEvaluationInput).
     pub fn builder() -> crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder {

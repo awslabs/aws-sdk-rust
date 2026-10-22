@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_feeds_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_schedule_actions_output_output_next_token(
+    input: &crate::operation::list_schedule_actions::ListScheduleActionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_fixtures_output_output_next_token(
     input: &crate::operation::search_fixtures::SearchFixturesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -40,6 +50,13 @@ pub(crate) fn lens_list_feeds_output_output_feeds(
     input: crate::operation::list_feeds::ListFeedsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FeedSummary>> {
     let input = input.feeds;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_schedule_actions_output_output_schedule_actions(
+    input: crate::operation::list_schedule_actions::ListScheduleActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAction>> {
+    let input = input.schedule_actions;
     ::std::option::Option::Some(input)
 }
 

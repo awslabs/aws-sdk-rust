@@ -51,6 +51,233 @@ impl CommentsForComparedCommit {
         self.comments.as_deref().unwrap_or_default()
     }
 }
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit$repositoryName",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_BEFORE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit$beforeCommitId",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforeCommitId",
+    1,
+);
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_AFTER_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit$afterCommitId",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterCommitId",
+    2,
+);
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_BEFORE_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit$beforeBlobId",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforeBlobId",
+    3,
+);
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_AFTER_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit$afterBlobId",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterBlobId",
+    4,
+);
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit$location",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    5,
+);
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_COMMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comments$member", "com.amazonaws.codecommit", "Comments"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static COMMENTSFORCOMPAREDCOMMIT_MEMBER_COMMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit$comments",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "comments",
+    6,
+)
+.with_list_member(&COMMENTSFORCOMPAREDCOMMIT_MEMBER_COMMENTS_MEMBER);
+static COMMENTSFORCOMPAREDCOMMIT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommentsForComparedCommit",
+        "com.amazonaws.codecommit",
+        "CommentsForComparedCommit",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COMMENTSFORCOMPAREDCOMMIT_MEMBER_REPOSITORY_NAME,
+        &COMMENTSFORCOMPAREDCOMMIT_MEMBER_BEFORE_COMMIT_ID,
+        &COMMENTSFORCOMPAREDCOMMIT_MEMBER_AFTER_COMMIT_ID,
+        &COMMENTSFORCOMPAREDCOMMIT_MEMBER_BEFORE_BLOB_ID,
+        &COMMENTSFORCOMPAREDCOMMIT_MEMBER_AFTER_BLOB_ID,
+        &COMMENTSFORCOMPAREDCOMMIT_MEMBER_LOCATION,
+        &COMMENTSFORCOMPAREDCOMMIT_MEMBER_COMMENTS,
+    ],
+);
+impl CommentsForComparedCommit {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMMENTSFORCOMPAREDCOMMIT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CommentsForComparedCommit {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&COMMENTSFORCOMPAREDCOMMIT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.before_commit_id {
+            ser.write_string(&COMMENTSFORCOMPAREDCOMMIT_MEMBER_BEFORE_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.after_commit_id {
+            ser.write_string(&COMMENTSFORCOMPAREDCOMMIT_MEMBER_AFTER_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.before_blob_id {
+            ser.write_string(&COMMENTSFORCOMPAREDCOMMIT_MEMBER_BEFORE_BLOB_ID, val)?;
+        }
+        if let Some(ref val) = self.after_blob_id {
+            ser.write_string(&COMMENTSFORCOMPAREDCOMMIT_MEMBER_AFTER_BLOB_ID, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&COMMENTSFORCOMPAREDCOMMIT_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.comments {
+            ser.write_list(
+                &COMMENTSFORCOMPAREDCOMMIT_MEMBER_COMMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Comment::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CommentsForComparedCommitBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMMENTSFORCOMPAREDCOMMIT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_blob_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_blob_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::Location::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.comments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Comment::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CommentsForComparedCommit {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CommentsForComparedCommit {
     /// Creates a new builder-style object to manufacture [`CommentsForComparedCommit`](crate::types::CommentsForComparedCommit).
     pub fn builder() -> crate::types::builders::CommentsForComparedCommitBuilder {

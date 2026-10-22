@@ -35,6 +35,171 @@ impl InstanceGroupHealthCheckConfiguration {
         self.deep_health_checks.deref()
     }
 }
+static INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InstanceGroupHealthCheckConfiguration$InstanceGroupName",
+            "com.amazonaws.sagemaker",
+            "InstanceGroupHealthCheckConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InstanceGroupName",
+        0,
+    );
+static INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#InstanceIds$member", "com.amazonaws.sagemaker", "InstanceIds"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceGroupHealthCheckConfiguration$InstanceIds",
+        "com.amazonaws.sagemaker",
+        "InstanceGroupHealthCheckConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceIds",
+    1,
+)
+.with_list_member(&INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_IDS_MEMBER);
+static INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_DEEP_HEALTH_CHECKS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#DeepHealthChecks$member",
+            "com.amazonaws.sagemaker",
+            "DeepHealthChecks",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_DEEP_HEALTH_CHECKS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InstanceGroupHealthCheckConfiguration$DeepHealthChecks",
+            "com.amazonaws.sagemaker",
+            "InstanceGroupHealthCheckConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DeepHealthChecks",
+        2,
+    )
+    .with_list_member(&INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_DEEP_HEALTH_CHECKS_MEMBER);
+static INSTANCEGROUPHEALTHCHECKCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceGroupHealthCheckConfiguration",
+        "com.amazonaws.sagemaker",
+        "InstanceGroupHealthCheckConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_GROUP_NAME,
+        &INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_IDS,
+        &INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_DEEP_HEALTH_CHECKS,
+    ],
+);
+impl InstanceGroupHealthCheckConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEGROUPHEALTHCHECKCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceGroupHealthCheckConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.instance_group_name;
+            ser.write_string(&INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_ids {
+            ser.write_list(
+                &INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_INSTANCE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.deep_health_checks;
+
+            ser.write_list(
+                &INSTANCEGROUPHEALTHCHECKCONFIGURATION_MEMBER_DEEP_HEALTH_CHECKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceGroupHealthCheckConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEGROUPHEALTHCHECKCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.instance_group_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.deep_health_checks = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::DeepHealthCheckType::from(
+                                deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                            ));
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceGroupHealthCheckConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.instance_group_name = builder.instance_group_name.or(Some(String::new()));
+        builder.deep_health_checks = builder.deep_health_checks.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl InstanceGroupHealthCheckConfiguration {
     /// Creates a new builder-style object to manufacture [`InstanceGroupHealthCheckConfiguration`](crate::types::InstanceGroupHealthCheckConfiguration).
     pub fn builder() -> crate::types::builders::InstanceGroupHealthCheckConfigurationBuilder {

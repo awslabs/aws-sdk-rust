@@ -37,6 +37,165 @@ impl LabelCounters {
         self.unlabeled
     }
 }
+static LABELCOUNTERS_MEMBER_TOTAL_LABELED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCounters$TotalLabeled",
+        "com.amazonaws.sagemaker",
+        "LabelCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalLabeled",
+    0,
+);
+static LABELCOUNTERS_MEMBER_HUMAN_LABELED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCounters$HumanLabeled",
+        "com.amazonaws.sagemaker",
+        "LabelCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HumanLabeled",
+    1,
+);
+static LABELCOUNTERS_MEMBER_MACHINE_LABELED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCounters$MachineLabeled",
+        "com.amazonaws.sagemaker",
+        "LabelCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MachineLabeled",
+    2,
+);
+static LABELCOUNTERS_MEMBER_FAILED_NON_RETRYABLE_ERROR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCounters$FailedNonRetryableError",
+        "com.amazonaws.sagemaker",
+        "LabelCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "FailedNonRetryableError",
+    3,
+);
+static LABELCOUNTERS_MEMBER_UNLABELED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCounters$Unlabeled",
+        "com.amazonaws.sagemaker",
+        "LabelCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Unlabeled",
+    4,
+);
+static LABELCOUNTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#LabelCounters", "com.amazonaws.sagemaker", "LabelCounters"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LABELCOUNTERS_MEMBER_TOTAL_LABELED,
+        &LABELCOUNTERS_MEMBER_HUMAN_LABELED,
+        &LABELCOUNTERS_MEMBER_MACHINE_LABELED,
+        &LABELCOUNTERS_MEMBER_FAILED_NON_RETRYABLE_ERROR,
+        &LABELCOUNTERS_MEMBER_UNLABELED,
+    ],
+);
+impl LabelCounters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LABELCOUNTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LabelCounters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.total_labeled {
+            ser.write_integer(&LABELCOUNTERS_MEMBER_TOTAL_LABELED, *val)?;
+        }
+        if let Some(ref val) = self.human_labeled {
+            ser.write_integer(&LABELCOUNTERS_MEMBER_HUMAN_LABELED, *val)?;
+        }
+        if let Some(ref val) = self.machine_labeled {
+            ser.write_integer(&LABELCOUNTERS_MEMBER_MACHINE_LABELED, *val)?;
+        }
+        if let Some(ref val) = self.failed_non_retryable_error {
+            ser.write_integer(&LABELCOUNTERS_MEMBER_FAILED_NON_RETRYABLE_ERROR, *val)?;
+        }
+        if let Some(ref val) = self.unlabeled {
+            ser.write_integer(&LABELCOUNTERS_MEMBER_UNLABELED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LabelCountersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LABELCOUNTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_labeled = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_labeled = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.machine_labeled = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failed_non_retryable_error = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unlabeled = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LabelCounters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LabelCounters {
     /// Creates a new builder-style object to manufacture [`LabelCounters`](crate::types::LabelCounters).
     pub fn builder() -> crate::types::builders::LabelCountersBuilder {

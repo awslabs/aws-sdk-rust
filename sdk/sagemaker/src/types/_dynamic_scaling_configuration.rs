@@ -39,6 +39,195 @@ impl DynamicScalingConfiguration {
         self.scaling_policies.as_deref().unwrap_or_default()
     }
 }
+static DYNAMICSCALINGCONFIGURATION_MEMBER_MIN_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DynamicScalingConfiguration$MinCapacity",
+        "com.amazonaws.sagemaker",
+        "DynamicScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MinCapacity",
+    0,
+);
+static DYNAMICSCALINGCONFIGURATION_MEMBER_MAX_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DynamicScalingConfiguration$MaxCapacity",
+        "com.amazonaws.sagemaker",
+        "DynamicScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxCapacity",
+    1,
+);
+static DYNAMICSCALINGCONFIGURATION_MEMBER_SCALE_IN_COOLDOWN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DynamicScalingConfiguration$ScaleInCooldown",
+        "com.amazonaws.sagemaker",
+        "DynamicScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ScaleInCooldown",
+    2,
+);
+static DYNAMICSCALINGCONFIGURATION_MEMBER_SCALE_OUT_COOLDOWN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DynamicScalingConfiguration$ScaleOutCooldown",
+        "com.amazonaws.sagemaker",
+        "DynamicScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ScaleOutCooldown",
+    3,
+);
+static DYNAMICSCALINGCONFIGURATION_MEMBER_SCALING_POLICIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ScalingPolicies$member",
+        "com.amazonaws.sagemaker",
+        "ScalingPolicies",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static DYNAMICSCALINGCONFIGURATION_MEMBER_SCALING_POLICIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DynamicScalingConfiguration$ScalingPolicies",
+        "com.amazonaws.sagemaker",
+        "DynamicScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ScalingPolicies",
+    4,
+)
+.with_list_member(&DYNAMICSCALINGCONFIGURATION_MEMBER_SCALING_POLICIES_MEMBER);
+static DYNAMICSCALINGCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DynamicScalingConfiguration",
+        "com.amazonaws.sagemaker",
+        "DynamicScalingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DYNAMICSCALINGCONFIGURATION_MEMBER_MIN_CAPACITY,
+        &DYNAMICSCALINGCONFIGURATION_MEMBER_MAX_CAPACITY,
+        &DYNAMICSCALINGCONFIGURATION_MEMBER_SCALE_IN_COOLDOWN,
+        &DYNAMICSCALINGCONFIGURATION_MEMBER_SCALE_OUT_COOLDOWN,
+        &DYNAMICSCALINGCONFIGURATION_MEMBER_SCALING_POLICIES,
+    ],
+);
+impl DynamicScalingConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DYNAMICSCALINGCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DynamicScalingConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.min_capacity {
+            ser.write_integer(&DYNAMICSCALINGCONFIGURATION_MEMBER_MIN_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.max_capacity {
+            ser.write_integer(&DYNAMICSCALINGCONFIGURATION_MEMBER_MAX_CAPACITY, *val)?;
+        }
+        if let Some(ref val) = self.scale_in_cooldown {
+            ser.write_integer(&DYNAMICSCALINGCONFIGURATION_MEMBER_SCALE_IN_COOLDOWN, *val)?;
+        }
+        if let Some(ref val) = self.scale_out_cooldown {
+            ser.write_integer(&DYNAMICSCALINGCONFIGURATION_MEMBER_SCALE_OUT_COOLDOWN, *val)?;
+        }
+        if let Some(ref val) = self.scaling_policies {
+            ser.write_list(
+                &DYNAMICSCALINGCONFIGURATION_MEMBER_SCALING_POLICIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ScalingPolicy::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DynamicScalingConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DYNAMICSCALINGCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_capacity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scale_in_cooldown = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scale_out_cooldown = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scaling_policies = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ScalingPolicy::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DynamicScalingConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DynamicScalingConfiguration {
     /// Creates a new builder-style object to manufacture [`DynamicScalingConfiguration`](crate::types::DynamicScalingConfiguration).
     pub fn builder() -> crate::types::builders::DynamicScalingConfigurationBuilder {

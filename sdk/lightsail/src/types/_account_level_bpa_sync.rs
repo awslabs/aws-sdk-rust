@@ -80,6 +80,148 @@ impl AccountLevelBpaSync {
         self.bpa_impacts_lightsail
     }
 }
+static ACCOUNTLEVELBPASYNC_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AccountLevelBpaSync$status",
+        "com.amazonaws.lightsail",
+        "AccountLevelBpaSync",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    0,
+);
+static ACCOUNTLEVELBPASYNC_MEMBER_LAST_SYNCED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AccountLevelBpaSync$lastSyncedAt",
+        "com.amazonaws.lightsail",
+        "AccountLevelBpaSync",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastSyncedAt",
+    1,
+);
+static ACCOUNTLEVELBPASYNC_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AccountLevelBpaSync$message",
+        "com.amazonaws.lightsail",
+        "AccountLevelBpaSync",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    2,
+);
+static ACCOUNTLEVELBPASYNC_MEMBER_BPA_IMPACTS_LIGHTSAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AccountLevelBpaSync$bpaImpactsLightsail",
+        "com.amazonaws.lightsail",
+        "AccountLevelBpaSync",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "bpaImpactsLightsail",
+    3,
+);
+static ACCOUNTLEVELBPASYNC_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AccountLevelBpaSync",
+        "com.amazonaws.lightsail",
+        "AccountLevelBpaSync",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACCOUNTLEVELBPASYNC_MEMBER_STATUS,
+        &ACCOUNTLEVELBPASYNC_MEMBER_LAST_SYNCED_AT,
+        &ACCOUNTLEVELBPASYNC_MEMBER_MESSAGE,
+        &ACCOUNTLEVELBPASYNC_MEMBER_BPA_IMPACTS_LIGHTSAIL,
+    ],
+);
+impl AccountLevelBpaSync {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCOUNTLEVELBPASYNC_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccountLevelBpaSync {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&ACCOUNTLEVELBPASYNC_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_synced_at {
+            ser.write_timestamp(&ACCOUNTLEVELBPASYNC_MEMBER_LAST_SYNCED_AT, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&ACCOUNTLEVELBPASYNC_MEMBER_MESSAGE, val.as_str())?;
+        }
+        if let Some(ref val) = self.bpa_impacts_lightsail {
+            ser.write_boolean(&ACCOUNTLEVELBPASYNC_MEMBER_BPA_IMPACTS_LIGHTSAIL, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccountLevelBpaSyncBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCOUNTLEVELBPASYNC_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AccountLevelBpaSyncStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_synced_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(crate::types::BpaStatusMessage::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bpa_impacts_lightsail = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccountLevelBpaSync {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AccountLevelBpaSync {
     /// Creates a new builder-style object to manufacture [`AccountLevelBpaSync`](crate::types::AccountLevelBpaSync).
     pub fn builder() -> crate::types::builders::AccountLevelBpaSyncBuilder {

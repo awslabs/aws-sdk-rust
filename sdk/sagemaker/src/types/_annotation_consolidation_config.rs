@@ -1265,6 +1265,84 @@ impl AnnotationConsolidationConfig {
         self.annotation_consolidation_lambda_arn.as_deref()
     }
 }
+static ANNOTATIONCONSOLIDATIONCONFIG_MEMBER_ANNOTATION_CONSOLIDATION_LAMBDA_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AnnotationConsolidationConfig$AnnotationConsolidationLambdaArn",
+            "com.amazonaws.sagemaker",
+            "AnnotationConsolidationConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AnnotationConsolidationLambdaArn",
+        0,
+    );
+static ANNOTATIONCONSOLIDATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AnnotationConsolidationConfig",
+        "com.amazonaws.sagemaker",
+        "AnnotationConsolidationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ANNOTATIONCONSOLIDATIONCONFIG_MEMBER_ANNOTATION_CONSOLIDATION_LAMBDA_ARN],
+);
+impl AnnotationConsolidationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ANNOTATIONCONSOLIDATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AnnotationConsolidationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.annotation_consolidation_lambda_arn {
+            ser.write_string(&ANNOTATIONCONSOLIDATIONCONFIG_MEMBER_ANNOTATION_CONSOLIDATION_LAMBDA_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AnnotationConsolidationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ANNOTATIONCONSOLIDATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.annotation_consolidation_lambda_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AnnotationConsolidationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AnnotationConsolidationConfig {
     /// Creates a new builder-style object to manufacture [`AnnotationConsolidationConfig`](crate::types::AnnotationConsolidationConfig).
     pub fn builder() -> crate::types::builders::AnnotationConsolidationConfigBuilder {

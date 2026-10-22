@@ -21,6 +21,159 @@ impl ClusterKubernetesConfig {
         self.taints.as_deref().unwrap_or_default()
     }
 }
+static CLUSTERKUBERNETESCONFIG_MEMBER_LABELS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterKubernetesLabels$key",
+        "com.amazonaws.sagemaker",
+        "ClusterKubernetesLabels",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CLUSTERKUBERNETESCONFIG_MEMBER_LABELS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterKubernetesLabels$value",
+        "com.amazonaws.sagemaker",
+        "ClusterKubernetesLabels",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CLUSTERKUBERNETESCONFIG_MEMBER_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterKubernetesConfig$Labels",
+        "com.amazonaws.sagemaker",
+        "ClusterKubernetesConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Labels",
+    0,
+)
+.with_map_members(&CLUSTERKUBERNETESCONFIG_MEMBER_LABELS_KEY, &CLUSTERKUBERNETESCONFIG_MEMBER_LABELS_VALUE);
+static CLUSTERKUBERNETESCONFIG_MEMBER_TAINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterKubernetesTaints$member",
+        "com.amazonaws.sagemaker",
+        "ClusterKubernetesTaints",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLUSTERKUBERNETESCONFIG_MEMBER_TAINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterKubernetesConfig$Taints",
+        "com.amazonaws.sagemaker",
+        "ClusterKubernetesConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Taints",
+    1,
+)
+.with_list_member(&CLUSTERKUBERNETESCONFIG_MEMBER_TAINTS_MEMBER);
+static CLUSTERKUBERNETESCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterKubernetesConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterKubernetesConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CLUSTERKUBERNETESCONFIG_MEMBER_LABELS, &CLUSTERKUBERNETESCONFIG_MEMBER_TAINTS],
+);
+impl ClusterKubernetesConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERKUBERNETESCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterKubernetesConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.labels {
+            ser.write_map(
+                &CLUSTERKUBERNETESCONFIG_MEMBER_LABELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.taints {
+            ser.write_list(
+                &CLUSTERKUBERNETESCONFIG_MEMBER_TAINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ClusterKubernetesTaint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterKubernetesConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERKUBERNETESCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labels = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.taints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClusterKubernetesTaint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterKubernetesConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterKubernetesConfig {
     /// Creates a new builder-style object to manufacture [`ClusterKubernetesConfig`](crate::types::ClusterKubernetesConfig).
     pub fn builder() -> crate::types::builders::ClusterKubernetesConfigBuilder {

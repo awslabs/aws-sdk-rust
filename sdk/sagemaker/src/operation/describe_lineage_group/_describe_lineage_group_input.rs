@@ -12,6 +12,86 @@ impl DescribeLineageGroupInput {
         self.lineage_group_name.as_deref()
     }
 }
+static DESCRIBELINEAGEGROUPINPUT_MEMBER_LINEAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupInput$LineageGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LineageGroupName",
+    0,
+);
+static DESCRIBELINEAGEGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBELINEAGEGROUPINPUT_MEMBER_LINEAGE_GROUP_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeLineageGroupRequest");
+impl DescribeLineageGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELINEAGEGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLineageGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.lineage_group_name {
+            ser.write_string(&DESCRIBELINEAGEGROUPINPUT_MEMBER_LINEAGE_GROUP_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELINEAGEGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lineage_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLineageGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.lineage_group_name = builder.lineage_group_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeLineageGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeLineageGroupInput`](crate::operation::describe_lineage_group::DescribeLineageGroupInput).
     pub fn builder() -> crate::operation::describe_lineage_group::builders::DescribeLineageGroupInputBuilder {

@@ -24,6 +24,131 @@ impl UpdateImagePermissionsInput {
         self.image_permissions.as_ref()
     }
 }
+static UPDATEIMAGEPERMISSIONSINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateImagePermissionsInput$Name",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateImagePermissionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static UPDATEIMAGEPERMISSIONSINPUT_MEMBER_SHARED_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateImagePermissionsInput$SharedAccountId",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateImagePermissionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SharedAccountId",
+    1,
+);
+static UPDATEIMAGEPERMISSIONSINPUT_MEMBER_IMAGE_PERMISSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateImagePermissionsInput$ImagePermissions",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateImagePermissionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ImagePermissions",
+    2,
+);
+static UPDATEIMAGEPERMISSIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateImagePermissionsInput",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateImagePermissionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEIMAGEPERMISSIONSINPUT_MEMBER_NAME,
+        &UPDATEIMAGEPERMISSIONSINPUT_MEMBER_SHARED_ACCOUNT_ID,
+        &UPDATEIMAGEPERMISSIONSINPUT_MEMBER_IMAGE_PERMISSIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateImagePermissionsRequest");
+impl UpdateImagePermissionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEIMAGEPERMISSIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateImagePermissionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEIMAGEPERMISSIONSINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.shared_account_id {
+            ser.write_string(&UPDATEIMAGEPERMISSIONSINPUT_MEMBER_SHARED_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.image_permissions {
+            ser.write_struct(&UPDATEIMAGEPERMISSIONSINPUT_MEMBER_IMAGE_PERMISSIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_image_permissions::builders::UpdateImagePermissionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEIMAGEPERMISSIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shared_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_permissions = Some(crate::types::ImagePermissions::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateImagePermissionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.shared_account_id = builder.shared_account_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateImagePermissionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateImagePermissionsInput`](crate::operation::update_image_permissions::UpdateImagePermissionsInput).
     pub fn builder() -> crate::operation::update_image_permissions::builders::UpdateImagePermissionsInputBuilder {

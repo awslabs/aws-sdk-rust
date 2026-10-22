@@ -37,6 +37,169 @@ impl LicenseConfigurationAssociation {
         self.ami_association_scope.as_deref()
     }
 }
+static LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseConfigurationAssociation$ResourceArn",
+        "com.amazonaws.licensemanager",
+        "LicenseConfigurationAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceArn",
+    0,
+);
+static LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseConfigurationAssociation$ResourceType",
+        "com.amazonaws.licensemanager",
+        "LicenseConfigurationAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    1,
+);
+static LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_OWNER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseConfigurationAssociation$ResourceOwnerId",
+        "com.amazonaws.licensemanager",
+        "LicenseConfigurationAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceOwnerId",
+    2,
+);
+static LICENSECONFIGURATIONASSOCIATION_MEMBER_ASSOCIATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseConfigurationAssociation$AssociationTime",
+        "com.amazonaws.licensemanager",
+        "LicenseConfigurationAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "AssociationTime",
+    3,
+);
+static LICENSECONFIGURATIONASSOCIATION_MEMBER_AMI_ASSOCIATION_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseConfigurationAssociation$AmiAssociationScope",
+        "com.amazonaws.licensemanager",
+        "LicenseConfigurationAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AmiAssociationScope",
+    4,
+);
+static LICENSECONFIGURATIONASSOCIATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseConfigurationAssociation",
+        "com.amazonaws.licensemanager",
+        "LicenseConfigurationAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_ARN,
+        &LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_TYPE,
+        &LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_OWNER_ID,
+        &LICENSECONFIGURATIONASSOCIATION_MEMBER_ASSOCIATION_TIME,
+        &LICENSECONFIGURATIONASSOCIATION_MEMBER_AMI_ASSOCIATION_SCOPE,
+    ],
+);
+impl LicenseConfigurationAssociation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LICENSECONFIGURATIONASSOCIATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LicenseConfigurationAssociation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_owner_id {
+            ser.write_string(&LICENSECONFIGURATIONASSOCIATION_MEMBER_RESOURCE_OWNER_ID, val)?;
+        }
+        if let Some(ref val) = self.association_time {
+            ser.write_timestamp(&LICENSECONFIGURATIONASSOCIATION_MEMBER_ASSOCIATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.ami_association_scope {
+            ser.write_string(&LICENSECONFIGURATIONASSOCIATION_MEMBER_AMI_ASSOCIATION_SCOPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LicenseConfigurationAssociationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LICENSECONFIGURATIONASSOCIATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owner_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ami_association_scope = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LicenseConfigurationAssociation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LicenseConfigurationAssociation {
     /// Creates a new builder-style object to manufacture [`LicenseConfigurationAssociation`](crate::types::LicenseConfigurationAssociation).
     pub fn builder() -> crate::types::builders::LicenseConfigurationAssociationBuilder {

@@ -25,6 +25,123 @@ impl JobDetails {
         self.input_documents_count
     }
 }
+static JOBDETAILS_MEMBER_TRANSLATED_DOCUMENTS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#JobDetails$TranslatedDocumentsCount",
+        "com.amazonaws.translate",
+        "JobDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TranslatedDocumentsCount",
+    0,
+);
+static JOBDETAILS_MEMBER_DOCUMENTS_WITH_ERRORS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#JobDetails$DocumentsWithErrorsCount",
+        "com.amazonaws.translate",
+        "JobDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DocumentsWithErrorsCount",
+    1,
+);
+static JOBDETAILS_MEMBER_INPUT_DOCUMENTS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#JobDetails$InputDocumentsCount",
+        "com.amazonaws.translate",
+        "JobDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InputDocumentsCount",
+    2,
+);
+static JOBDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.translate#JobDetails", "com.amazonaws.translate", "JobDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &JOBDETAILS_MEMBER_TRANSLATED_DOCUMENTS_COUNT,
+        &JOBDETAILS_MEMBER_DOCUMENTS_WITH_ERRORS_COUNT,
+        &JOBDETAILS_MEMBER_INPUT_DOCUMENTS_COUNT,
+    ],
+);
+impl JobDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &JOBDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for JobDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.translated_documents_count {
+            ser.write_integer(&JOBDETAILS_MEMBER_TRANSLATED_DOCUMENTS_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.documents_with_errors_count {
+            ser.write_integer(&JOBDETAILS_MEMBER_DOCUMENTS_WITH_ERRORS_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.input_documents_count {
+            ser.write_integer(&JOBDETAILS_MEMBER_INPUT_DOCUMENTS_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::JobDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&JOBDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.translated_documents_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.documents_with_errors_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_documents_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl JobDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl JobDetails {
     /// Creates a new builder-style object to manufacture [`JobDetails`](crate::types::JobDetails).
     pub fn builder() -> crate::types::builders::JobDetailsBuilder {

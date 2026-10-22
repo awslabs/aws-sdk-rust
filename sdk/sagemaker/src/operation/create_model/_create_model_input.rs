@@ -62,6 +62,283 @@ impl CreateModelInput {
         self.enable_network_isolation
     }
 }
+static CREATEMODELINPUT_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$ModelName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    0,
+);
+static CREATEMODELINPUT_MEMBER_PRIMARY_CONTAINER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$PrimaryContainer",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PrimaryContainer",
+    1,
+);
+static CREATEMODELINPUT_MEMBER_CONTAINERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinitionList$member",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinitionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMODELINPUT_MEMBER_CONTAINERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$Containers",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Containers",
+    2,
+)
+.with_list_member(&CREATEMODELINPUT_MEMBER_CONTAINERS_MEMBER);
+static CREATEMODELINPUT_MEMBER_INFERENCE_EXECUTION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$InferenceExecutionConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InferenceExecutionConfig",
+    3,
+);
+static CREATEMODELINPUT_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$ExecutionRoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRoleArn",
+    4,
+);
+static CREATEMODELINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMODELINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEMODELINPUT_MEMBER_TAGS_MEMBER);
+static CREATEMODELINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$VpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    6,
+);
+static CREATEMODELINPUT_MEMBER_ENABLE_NETWORK_ISOLATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput$EnableNetworkIsolation",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNetworkIsolation",
+    7,
+);
+static CREATEMODELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMODELINPUT_MEMBER_MODEL_NAME,
+        &CREATEMODELINPUT_MEMBER_PRIMARY_CONTAINER,
+        &CREATEMODELINPUT_MEMBER_CONTAINERS,
+        &CREATEMODELINPUT_MEMBER_INFERENCE_EXECUTION_CONFIG,
+        &CREATEMODELINPUT_MEMBER_EXECUTION_ROLE_ARN,
+        &CREATEMODELINPUT_MEMBER_TAGS,
+        &CREATEMODELINPUT_MEMBER_VPC_CONFIG,
+        &CREATEMODELINPUT_MEMBER_ENABLE_NETWORK_ISOLATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateModelInput");
+impl CreateModelInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMODELINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateModelInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&CREATEMODELINPUT_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.primary_container {
+            ser.write_struct(&CREATEMODELINPUT_MEMBER_PRIMARY_CONTAINER, val)?;
+        }
+        if let Some(ref val) = self.containers {
+            ser.write_list(
+                &CREATEMODELINPUT_MEMBER_CONTAINERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.inference_execution_config {
+            ser.write_struct(&CREATEMODELINPUT_MEMBER_INFERENCE_EXECUTION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&CREATEMODELINPUT_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEMODELINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATEMODELINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.enable_network_isolation {
+            ser.write_boolean(&CREATEMODELINPUT_MEMBER_ENABLE_NETWORK_ISOLATION, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_model::builders::CreateModelInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMODELINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.primary_container = Some(crate::types::ContainerDefinition::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.containers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_execution_config = Some(crate::types::InferenceExecutionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_network_isolation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateModelInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.model_name = builder.model_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateModelInput {
     /// Creates a new builder-style object to manufacture [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
     pub fn builder() -> crate::operation::create_model::builders::CreateModelInputBuilder {

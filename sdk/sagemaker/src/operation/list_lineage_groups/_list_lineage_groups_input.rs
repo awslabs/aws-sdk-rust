@@ -42,6 +42,192 @@ impl ListLineageGroupsInput {
         self.max_results
     }
 }
+static LISTLINEAGEGROUPSINPUT_MEMBER_CREATED_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLineageGroupsInput$CreatedAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLineageGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAfter",
+    0,
+);
+static LISTLINEAGEGROUPSINPUT_MEMBER_CREATED_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLineageGroupsInput$CreatedBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLineageGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedBefore",
+    1,
+);
+static LISTLINEAGEGROUPSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLineageGroupsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLineageGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    2,
+);
+static LISTLINEAGEGROUPSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLineageGroupsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLineageGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    3,
+);
+static LISTLINEAGEGROUPSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLineageGroupsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLineageGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTLINEAGEGROUPSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLineageGroupsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLineageGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static LISTLINEAGEGROUPSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLineageGroupsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLineageGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTLINEAGEGROUPSINPUT_MEMBER_CREATED_AFTER,
+        &LISTLINEAGEGROUPSINPUT_MEMBER_CREATED_BEFORE,
+        &LISTLINEAGEGROUPSINPUT_MEMBER_SORT_BY,
+        &LISTLINEAGEGROUPSINPUT_MEMBER_SORT_ORDER,
+        &LISTLINEAGEGROUPSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTLINEAGEGROUPSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListLineageGroupsRequest");
+impl ListLineageGroupsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTLINEAGEGROUPSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListLineageGroupsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.created_after {
+            ser.write_timestamp(&LISTLINEAGEGROUPSINPUT_MEMBER_CREATED_AFTER, val)?;
+        }
+        if let Some(ref val) = self.created_before {
+            ser.write_timestamp(&LISTLINEAGEGROUPSINPUT_MEMBER_CREATED_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTLINEAGEGROUPSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTLINEAGEGROUPSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTLINEAGEGROUPSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTLINEAGEGROUPSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_lineage_groups::builders::ListLineageGroupsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTLINEAGEGROUPSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::SortLineageGroupsBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListLineageGroupsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListLineageGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListLineageGroupsInput`](crate::operation::list_lineage_groups::ListLineageGroupsInput).
     pub fn builder() -> crate::operation::list_lineage_groups::builders::ListLineageGroupsInputBuilder {

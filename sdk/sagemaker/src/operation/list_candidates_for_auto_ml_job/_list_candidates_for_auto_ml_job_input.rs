@@ -48,6 +48,214 @@ impl ListCandidatesForAutoMlJobInput {
         self.next_token.as_deref()
     }
 }
+static LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput$AutoMLJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobName",
+    0,
+);
+static LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_STATUS_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput$StatusEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusEquals",
+    1,
+);
+static LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_CANDIDATE_NAME_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput$CandidateNameEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CandidateNameEquals",
+    2,
+);
+static LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    3,
+);
+static LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    4,
+);
+static LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static LISTCANDIDATESFORAUTOMLJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListCandidatesForAutoMLJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListCandidatesForAutoMLJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_NAME,
+        &LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_STATUS_EQUALS,
+        &LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_CANDIDATE_NAME_EQUALS,
+        &LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_SORT_ORDER,
+        &LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_SORT_BY,
+        &LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_MAX_RESULTS,
+        &LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListCandidatesForAutoMLJobRequest");
+impl ListCandidatesForAutoMlJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCANDIDATESFORAUTOMLJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCandidatesForAutoMlJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_ml_job_name {
+            ser.write_string(&LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_AUTO_ML_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.status_equals {
+            ser.write_string(&LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_STATUS_EQUALS, val.as_str())?;
+        }
+        if let Some(ref val) = self.candidate_name_equals {
+            ser.write_string(&LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_CANDIDATE_NAME_EQUALS, val)?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCANDIDATESFORAUTOMLJOBINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCANDIDATESFORAUTOMLJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_equals = Some(crate::types::CandidateStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_name_equals = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::AutoMlSortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::CandidateSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCandidatesForAutoMlJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.auto_ml_job_name = builder.auto_ml_job_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListCandidatesForAutoMlJobInput {
     /// Creates a new builder-style object to manufacture [`ListCandidatesForAutoMlJobInput`](crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobInput).
     pub fn builder() -> crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder {

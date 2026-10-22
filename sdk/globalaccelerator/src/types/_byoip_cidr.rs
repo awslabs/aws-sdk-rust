@@ -54,6 +54,146 @@ impl ByoipCidr {
         self.events.as_deref().unwrap_or_default()
     }
 }
+static BYOIPCIDR_MEMBER_CIDR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#ByoipCidr$Cidr",
+        "com.amazonaws.globalaccelerator",
+        "ByoipCidr",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Cidr",
+    0,
+);
+static BYOIPCIDR_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#ByoipCidr$State",
+        "com.amazonaws.globalaccelerator",
+        "ByoipCidr",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    1,
+);
+static BYOIPCIDR_MEMBER_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#ByoipCidrEvents$member",
+        "com.amazonaws.globalaccelerator",
+        "ByoipCidrEvents",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BYOIPCIDR_MEMBER_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#ByoipCidr$Events",
+        "com.amazonaws.globalaccelerator",
+        "ByoipCidr",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Events",
+    2,
+)
+.with_list_member(&BYOIPCIDR_MEMBER_EVENTS_MEMBER);
+static BYOIPCIDR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#ByoipCidr",
+        "com.amazonaws.globalaccelerator",
+        "ByoipCidr",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BYOIPCIDR_MEMBER_CIDR, &BYOIPCIDR_MEMBER_STATE, &BYOIPCIDR_MEMBER_EVENTS],
+);
+impl ByoipCidr {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BYOIPCIDR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ByoipCidr {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cidr {
+            ser.write_string(&BYOIPCIDR_MEMBER_CIDR, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&BYOIPCIDR_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.events {
+            ser.write_list(&BYOIPCIDR_MEMBER_EVENTS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::ByoipCidrEvent::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ByoipCidrBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BYOIPCIDR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cidr = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ByoipCidrState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ByoipCidrEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ByoipCidr {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ByoipCidr {
     /// Creates a new builder-style object to manufacture [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn builder() -> crate::types::builders::ByoipCidrBuilder {

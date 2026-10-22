@@ -64,6 +64,268 @@ impl CreateLicenseManagerReportGeneratorInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_GENERATOR_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput$ReportGeneratorName",
+            "com.amazonaws.licensemanager.synthetic",
+            "CreateLicenseManagerReportGeneratorInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ReportGeneratorName",
+        0,
+    );
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TYPE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportTypeList$member",
+        "com.amazonaws.licensemanager",
+        "ReportTypeList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput$Type",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseManagerReportGeneratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Type",
+    1,
+)
+.with_list_member(&CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TYPE_MEMBER);
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput$ReportContext",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseManagerReportGeneratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ReportContext",
+    2,
+);
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_FREQUENCY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput$ReportFrequency",
+            "com.amazonaws.licensemanager.synthetic",
+            "CreateLicenseManagerReportGeneratorInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ReportFrequency",
+        3,
+    );
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput$ClientToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseManagerReportGeneratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    4,
+);
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput$Description",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseManagerReportGeneratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    5,
+);
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#TagList$member", "com.amazonaws.licensemanager", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput$Tags",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseManagerReportGeneratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TAGS_MEMBER);
+static CREATELICENSEMANAGERREPORTGENERATORINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseManagerReportGeneratorInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseManagerReportGeneratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_GENERATOR_NAME,
+        &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TYPE,
+        &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_CONTEXT,
+        &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_FREQUENCY,
+        &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_DESCRIPTION,
+        &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLicenseManagerReportGeneratorRequest");
+impl CreateLicenseManagerReportGeneratorInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELICENSEMANAGERREPORTGENERATORINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLicenseManagerReportGeneratorInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.report_generator_name {
+            ser.write_string(&CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_GENERATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_list(
+                &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TYPE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.report_context {
+            ser.write_struct(&CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.report_frequency {
+            ser.write_struct(&CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_REPORT_FREQUENCY, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELICENSEMANAGERREPORTGENERATORINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELICENSEMANAGERREPORTGENERATORINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_generator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ReportType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_context = Some(crate::types::ReportContext::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_frequency = Some(crate::types::ReportFrequency::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLicenseManagerReportGeneratorInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.report_generator_name = builder.report_generator_name.or(Some(String::new()));
+        builder.r#type = builder.r#type.or(Some(Vec::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLicenseManagerReportGeneratorInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseManagerReportGeneratorInput`](crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorInput).
     pub fn builder() -> crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder {

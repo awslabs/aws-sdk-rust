@@ -57,6 +57,232 @@ impl RelationalDatabaseParameter {
         self.parameter_value.as_deref()
     }
 }
+static RELATIONALDATABASEPARAMETER_MEMBER_ALLOWED_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$allowedValues",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "allowedValues",
+    0,
+);
+static RELATIONALDATABASEPARAMETER_MEMBER_APPLY_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$applyMethod",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applyMethod",
+    1,
+);
+static RELATIONALDATABASEPARAMETER_MEMBER_APPLY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$applyType",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applyType",
+    2,
+);
+static RELATIONALDATABASEPARAMETER_MEMBER_DATA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$dataType",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "dataType",
+    3,
+);
+static RELATIONALDATABASEPARAMETER_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$description",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    4,
+);
+static RELATIONALDATABASEPARAMETER_MEMBER_IS_MODIFIABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$isModifiable",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isModifiable",
+    5,
+);
+static RELATIONALDATABASEPARAMETER_MEMBER_PARAMETER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$parameterName",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "parameterName",
+    6,
+);
+static RELATIONALDATABASEPARAMETER_MEMBER_PARAMETER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter$parameterValue",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "parameterValue",
+    7,
+);
+static RELATIONALDATABASEPARAMETER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseParameter",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseParameter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RELATIONALDATABASEPARAMETER_MEMBER_ALLOWED_VALUES,
+        &RELATIONALDATABASEPARAMETER_MEMBER_APPLY_METHOD,
+        &RELATIONALDATABASEPARAMETER_MEMBER_APPLY_TYPE,
+        &RELATIONALDATABASEPARAMETER_MEMBER_DATA_TYPE,
+        &RELATIONALDATABASEPARAMETER_MEMBER_DESCRIPTION,
+        &RELATIONALDATABASEPARAMETER_MEMBER_IS_MODIFIABLE,
+        &RELATIONALDATABASEPARAMETER_MEMBER_PARAMETER_NAME,
+        &RELATIONALDATABASEPARAMETER_MEMBER_PARAMETER_VALUE,
+    ],
+);
+impl RelationalDatabaseParameter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RELATIONALDATABASEPARAMETER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RelationalDatabaseParameter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.allowed_values {
+            ser.write_string(&RELATIONALDATABASEPARAMETER_MEMBER_ALLOWED_VALUES, val)?;
+        }
+        if let Some(ref val) = self.apply_method {
+            ser.write_string(&RELATIONALDATABASEPARAMETER_MEMBER_APPLY_METHOD, val)?;
+        }
+        if let Some(ref val) = self.apply_type {
+            ser.write_string(&RELATIONALDATABASEPARAMETER_MEMBER_APPLY_TYPE, val)?;
+        }
+        if let Some(ref val) = self.data_type {
+            ser.write_string(&RELATIONALDATABASEPARAMETER_MEMBER_DATA_TYPE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&RELATIONALDATABASEPARAMETER_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.is_modifiable {
+            ser.write_boolean(&RELATIONALDATABASEPARAMETER_MEMBER_IS_MODIFIABLE, *val)?;
+        }
+        if let Some(ref val) = self.parameter_name {
+            ser.write_string(&RELATIONALDATABASEPARAMETER_MEMBER_PARAMETER_NAME, val)?;
+        }
+        if let Some(ref val) = self.parameter_value {
+            ser.write_string(&RELATIONALDATABASEPARAMETER_MEMBER_PARAMETER_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RelationalDatabaseParameterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RELATIONALDATABASEPARAMETER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_values = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.apply_method = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.apply_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_modifiable = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameter_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RelationalDatabaseParameter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RelationalDatabaseParameter {
     /// Creates a new builder-style object to manufacture [`RelationalDatabaseParameter`](crate::types::RelationalDatabaseParameter).
     pub fn builder() -> crate::types::builders::RelationalDatabaseParameterBuilder {

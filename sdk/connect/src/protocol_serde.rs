@@ -499,6 +499,8 @@ pub(crate) mod shape_list_quick_connects;
 
 pub(crate) mod shape_list_realtime_contact_analysis_segments_v2;
 
+pub(crate) mod shape_list_replication_findings;
+
 pub(crate) mod shape_list_routing_profile_manual_assignment_queues;
 
 pub(crate) mod shape_list_routing_profile_queues;
@@ -1403,6 +1405,8 @@ pub(crate) mod shape_application;
 
 pub(crate) mod shape_applications;
 
+pub(crate) mod shape_approximate_drifted_resource_counts;
+
 pub(crate) mod shape_associated_contact_summary_list;
 
 pub(crate) mod shape_attached_file_errors_list;
@@ -1845,6 +1849,10 @@ pub(crate) mod shape_reference_summary_list;
 
 pub(crate) mod shape_replication_configuration;
 
+pub(crate) mod shape_replication_findings_list;
+
+pub(crate) mod shape_resource_replication_statuses;
+
 pub(crate) mod shape_resource_tags_search_criteria;
 
 pub(crate) mod shape_routing_criteria_input;
@@ -2072,6 +2080,8 @@ pub(crate) mod shape_allowed_extensions_list;
 pub(crate) mod shape_analytics_data_association_result;
 
 pub(crate) mod shape_analytics_data_sets_result;
+
+pub(crate) mod shape_approximate_drifted_resource_count;
 
 pub(crate) mod shape_assign_contact_category_action_definition;
 
@@ -2403,11 +2413,15 @@ pub(crate) mod shape_redaction_configuration;
 
 pub(crate) mod shape_reference_summary;
 
+pub(crate) mod shape_replication_finding;
+
 pub(crate) mod shape_replication_status_summary_list;
 
 pub(crate) mod shape_required_field_info;
 
 pub(crate) mod shape_required_task_template_fields;
+
+pub(crate) mod shape_resource_replication_status;
 
 pub(crate) mod shape_routing_criteria;
 

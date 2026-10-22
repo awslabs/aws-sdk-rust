@@ -55,6 +55,232 @@ impl AthenaDatasetDefinition {
         self.output_compression.as_ref()
     }
 }
+static ATHENADATASETDEFINITION_MEMBER_CATALOG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$Catalog",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Catalog",
+    0,
+);
+static ATHENADATASETDEFINITION_MEMBER_DATABASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$Database",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Database",
+    1,
+);
+static ATHENADATASETDEFINITION_MEMBER_QUERY_STRING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$QueryString",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryString",
+    2,
+);
+static ATHENADATASETDEFINITION_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$WorkGroup",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    3,
+);
+static ATHENADATASETDEFINITION_MEMBER_OUTPUT_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$OutputS3Uri",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputS3Uri",
+    4,
+);
+static ATHENADATASETDEFINITION_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$KmsKeyId",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    5,
+);
+static ATHENADATASETDEFINITION_MEMBER_OUTPUT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$OutputFormat",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputFormat",
+    6,
+);
+static ATHENADATASETDEFINITION_MEMBER_OUTPUT_COMPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition$OutputCompression",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputCompression",
+    7,
+);
+static ATHENADATASETDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AthenaDatasetDefinition",
+        "com.amazonaws.sagemaker",
+        "AthenaDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ATHENADATASETDEFINITION_MEMBER_CATALOG,
+        &ATHENADATASETDEFINITION_MEMBER_DATABASE,
+        &ATHENADATASETDEFINITION_MEMBER_QUERY_STRING,
+        &ATHENADATASETDEFINITION_MEMBER_WORK_GROUP,
+        &ATHENADATASETDEFINITION_MEMBER_OUTPUT_S3_URI,
+        &ATHENADATASETDEFINITION_MEMBER_KMS_KEY_ID,
+        &ATHENADATASETDEFINITION_MEMBER_OUTPUT_FORMAT,
+        &ATHENADATASETDEFINITION_MEMBER_OUTPUT_COMPRESSION,
+    ],
+);
+impl AthenaDatasetDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ATHENADATASETDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AthenaDatasetDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.catalog {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_CATALOG, val)?;
+        }
+        if let Some(ref val) = self.database {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_DATABASE, val)?;
+        }
+        if let Some(ref val) = self.query_string {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_QUERY_STRING, val)?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_WORK_GROUP, val)?;
+        }
+        if let Some(ref val) = self.output_s3_uri {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_OUTPUT_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.output_format {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_OUTPUT_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.output_compression {
+            ser.write_string(&ATHENADATASETDEFINITION_MEMBER_OUTPUT_COMPRESSION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AthenaDatasetDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ATHENADATASETDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.catalog = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.database = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_string = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_format = Some(crate::types::AthenaResultFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_compression = Some(crate::types::AthenaResultCompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AthenaDatasetDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AthenaDatasetDefinition {
     /// Creates a new builder-style object to manufacture [`AthenaDatasetDefinition`](crate::types::AthenaDatasetDefinition).
     pub fn builder() -> crate::types::builders::AthenaDatasetDefinitionBuilder {

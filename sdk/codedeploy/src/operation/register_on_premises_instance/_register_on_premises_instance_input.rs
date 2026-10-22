@@ -25,6 +25,130 @@ impl RegisterOnPremisesInstanceInput {
         self.iam_user_arn.as_deref()
     }
 }
+static REGISTERONPREMISESINSTANCEINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#RegisterOnPremisesInstanceInput$instanceName",
+        "com.amazonaws.codedeploy.synthetic",
+        "RegisterOnPremisesInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceName",
+    0,
+);
+static REGISTERONPREMISESINSTANCEINPUT_MEMBER_IAM_SESSION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#RegisterOnPremisesInstanceInput$iamSessionArn",
+        "com.amazonaws.codedeploy.synthetic",
+        "RegisterOnPremisesInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "iamSessionArn",
+    1,
+);
+static REGISTERONPREMISESINSTANCEINPUT_MEMBER_IAM_USER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#RegisterOnPremisesInstanceInput$iamUserArn",
+        "com.amazonaws.codedeploy.synthetic",
+        "RegisterOnPremisesInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "iamUserArn",
+    2,
+);
+static REGISTERONPREMISESINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#RegisterOnPremisesInstanceInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "RegisterOnPremisesInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERONPREMISESINSTANCEINPUT_MEMBER_INSTANCE_NAME,
+        &REGISTERONPREMISESINSTANCEINPUT_MEMBER_IAM_SESSION_ARN,
+        &REGISTERONPREMISESINSTANCEINPUT_MEMBER_IAM_USER_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterOnPremisesInstanceInput");
+impl RegisterOnPremisesInstanceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERONPREMISESINSTANCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterOnPremisesInstanceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&REGISTERONPREMISESINSTANCEINPUT_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.iam_session_arn {
+            ser.write_string(&REGISTERONPREMISESINSTANCEINPUT_MEMBER_IAM_SESSION_ARN, val)?;
+        }
+        if let Some(ref val) = self.iam_user_arn {
+            ser.write_string(&REGISTERONPREMISESINSTANCEINPUT_MEMBER_IAM_USER_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERONPREMISESINSTANCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_session_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_user_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterOnPremisesInstanceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.instance_name = builder.instance_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterOnPremisesInstanceInput {
     /// Creates a new builder-style object to manufacture [`RegisterOnPremisesInstanceInput`](crate::operation::register_on_premises_instance::RegisterOnPremisesInstanceInput).
     pub fn builder() -> crate::operation::register_on_premises_instance::builders::RegisterOnPremisesInstanceInputBuilder {

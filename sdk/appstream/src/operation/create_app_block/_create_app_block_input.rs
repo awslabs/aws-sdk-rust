@@ -54,6 +54,257 @@ impl CreateAppBlockInput {
         self.packaging_type.as_ref()
     }
 }
+static CREATEAPPBLOCKINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$Name",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$Description",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$DisplayName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_SOURCE_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$SourceS3Location",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SourceS3Location",
+    3,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_SETUP_SCRIPT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$SetupScriptDetails",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SetupScriptDetails",
+    4,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$key", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$value", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$Tags",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Tags",
+    5,
+)
+.with_map_members(&CREATEAPPBLOCKINPUT_MEMBER_TAGS_KEY, &CREATEAPPBLOCKINPUT_MEMBER_TAGS_VALUE);
+static CREATEAPPBLOCKINPUT_MEMBER_POST_SETUP_SCRIPT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$PostSetupScriptDetails",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PostSetupScriptDetails",
+    6,
+);
+static CREATEAPPBLOCKINPUT_MEMBER_PACKAGING_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput$PackagingType",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PackagingType",
+    7,
+);
+static CREATEAPPBLOCKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAPPBLOCKINPUT_MEMBER_NAME,
+        &CREATEAPPBLOCKINPUT_MEMBER_DESCRIPTION,
+        &CREATEAPPBLOCKINPUT_MEMBER_DISPLAY_NAME,
+        &CREATEAPPBLOCKINPUT_MEMBER_SOURCE_S3_LOCATION,
+        &CREATEAPPBLOCKINPUT_MEMBER_SETUP_SCRIPT_DETAILS,
+        &CREATEAPPBLOCKINPUT_MEMBER_TAGS,
+        &CREATEAPPBLOCKINPUT_MEMBER_POST_SETUP_SCRIPT_DETAILS,
+        &CREATEAPPBLOCKINPUT_MEMBER_PACKAGING_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAppBlockRequest");
+impl CreateAppBlockInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAPPBLOCKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAppBlockInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEAPPBLOCKINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEAPPBLOCKINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&CREATEAPPBLOCKINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_s3_location {
+            ser.write_struct(&CREATEAPPBLOCKINPUT_MEMBER_SOURCE_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.setup_script_details {
+            ser.write_struct(&CREATEAPPBLOCKINPUT_MEMBER_SETUP_SCRIPT_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &CREATEAPPBLOCKINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.post_setup_script_details {
+            ser.write_struct(&CREATEAPPBLOCKINPUT_MEMBER_POST_SETUP_SCRIPT_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.packaging_type {
+            ser.write_string(&CREATEAPPBLOCKINPUT_MEMBER_PACKAGING_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_app_block::builders::CreateAppBlockInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAPPBLOCKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.setup_script_details = Some(crate::types::ScriptDetails::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.post_setup_script_details = Some(crate::types::ScriptDetails::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.packaging_type = Some(crate::types::PackagingType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAppBlockInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAppBlockInput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockInput`](crate::operation::create_app_block::CreateAppBlockInput).
     pub fn builder() -> crate::operation::create_app_block::builders::CreateAppBlockInputBuilder {

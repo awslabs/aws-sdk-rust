@@ -73,6 +73,296 @@ impl TrainingPlanExtension {
         self.currency_code.as_deref()
     }
 }
+static TRAININGPLANEXTENSION_MEMBER_TRAINING_PLAN_EXTENSION_OFFERING_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TrainingPlanExtension$TrainingPlanExtensionOfferingId",
+            "com.amazonaws.sagemaker",
+            "TrainingPlanExtension",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "TrainingPlanExtensionOfferingId",
+        0,
+    );
+static TRAININGPLANEXTENSION_MEMBER_EXTENDED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$ExtendedAt",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExtendedAt",
+    1,
+);
+static TRAININGPLANEXTENSION_MEMBER_START_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$StartDate",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartDate",
+    2,
+);
+static TRAININGPLANEXTENSION_MEMBER_END_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$EndDate",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndDate",
+    3,
+);
+static TRAININGPLANEXTENSION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$Status",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static TRAININGPLANEXTENSION_MEMBER_PAYMENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$PaymentStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PaymentStatus",
+    5,
+);
+static TRAININGPLANEXTENSION_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$AvailabilityZone",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AvailabilityZone",
+    6,
+);
+static TRAININGPLANEXTENSION_MEMBER_AVAILABILITY_ZONE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$AvailabilityZoneId",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AvailabilityZoneId",
+    7,
+);
+static TRAININGPLANEXTENSION_MEMBER_DURATION_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$DurationHours",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DurationHours",
+    8,
+);
+static TRAININGPLANEXTENSION_MEMBER_UPFRONT_FEE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$UpfrontFee",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UpfrontFee",
+    9,
+);
+static TRAININGPLANEXTENSION_MEMBER_CURRENCY_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension$CurrencyCode",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CurrencyCode",
+    10,
+);
+static TRAININGPLANEXTENSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanExtension",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanExtension",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGPLANEXTENSION_MEMBER_TRAINING_PLAN_EXTENSION_OFFERING_ID,
+        &TRAININGPLANEXTENSION_MEMBER_EXTENDED_AT,
+        &TRAININGPLANEXTENSION_MEMBER_START_DATE,
+        &TRAININGPLANEXTENSION_MEMBER_END_DATE,
+        &TRAININGPLANEXTENSION_MEMBER_STATUS,
+        &TRAININGPLANEXTENSION_MEMBER_PAYMENT_STATUS,
+        &TRAININGPLANEXTENSION_MEMBER_AVAILABILITY_ZONE,
+        &TRAININGPLANEXTENSION_MEMBER_AVAILABILITY_ZONE_ID,
+        &TRAININGPLANEXTENSION_MEMBER_DURATION_HOURS,
+        &TRAININGPLANEXTENSION_MEMBER_UPFRONT_FEE,
+        &TRAININGPLANEXTENSION_MEMBER_CURRENCY_CODE,
+    ],
+);
+impl TrainingPlanExtension {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGPLANEXTENSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingPlanExtension {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_plan_extension_offering_id {
+            ser.write_string(&TRAININGPLANEXTENSION_MEMBER_TRAINING_PLAN_EXTENSION_OFFERING_ID, val)?;
+        }
+        if let Some(ref val) = self.extended_at {
+            ser.write_timestamp(&TRAININGPLANEXTENSION_MEMBER_EXTENDED_AT, val)?;
+        }
+        if let Some(ref val) = self.start_date {
+            ser.write_timestamp(&TRAININGPLANEXTENSION_MEMBER_START_DATE, val)?;
+        }
+        if let Some(ref val) = self.end_date {
+            ser.write_timestamp(&TRAININGPLANEXTENSION_MEMBER_END_DATE, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&TRAININGPLANEXTENSION_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.payment_status {
+            ser.write_string(&TRAININGPLANEXTENSION_MEMBER_PAYMENT_STATUS, val)?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&TRAININGPLANEXTENSION_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.availability_zone_id {
+            ser.write_string(&TRAININGPLANEXTENSION_MEMBER_AVAILABILITY_ZONE_ID, val)?;
+        }
+        if let Some(ref val) = self.duration_hours {
+            ser.write_integer(&TRAININGPLANEXTENSION_MEMBER_DURATION_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.upfront_fee {
+            ser.write_string(&TRAININGPLANEXTENSION_MEMBER_UPFRONT_FEE, val)?;
+        }
+        if let Some(ref val) = self.currency_code {
+            ser.write_string(&TRAININGPLANEXTENSION_MEMBER_CURRENCY_CODE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingPlanExtensionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGPLANEXTENSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_extension_offering_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extended_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.payment_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_hours = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.upfront_fee = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.currency_code = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingPlanExtension {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingPlanExtension {
     /// Creates a new builder-style object to manufacture [`TrainingPlanExtension`](crate::types::TrainingPlanExtension).
     pub fn builder() -> crate::types::builders::TrainingPlanExtensionBuilder {

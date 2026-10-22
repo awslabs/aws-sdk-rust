@@ -50,6 +50,237 @@ impl CreateSpaceInput {
         self.space_display_name.as_deref()
     }
 }
+static CREATESPACEINPUT_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput$DomainId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    0,
+);
+static CREATESPACEINPUT_MEMBER_SPACE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput$SpaceName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpaceName",
+    1,
+);
+static CREATESPACEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATESPACEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    2,
+)
+.with_list_member(&CREATESPACEINPUT_MEMBER_TAGS_MEMBER);
+static CREATESPACEINPUT_MEMBER_SPACE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput$SpaceSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SpaceSettings",
+    3,
+);
+static CREATESPACEINPUT_MEMBER_OWNERSHIP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput$OwnershipSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OwnershipSettings",
+    4,
+);
+static CREATESPACEINPUT_MEMBER_SPACE_SHARING_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput$SpaceSharingSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SpaceSharingSettings",
+    5,
+);
+static CREATESPACEINPUT_MEMBER_SPACE_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput$SpaceDisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpaceDisplayName",
+    6,
+);
+static CREATESPACEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateSpaceInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateSpaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATESPACEINPUT_MEMBER_DOMAIN_ID,
+        &CREATESPACEINPUT_MEMBER_SPACE_NAME,
+        &CREATESPACEINPUT_MEMBER_TAGS,
+        &CREATESPACEINPUT_MEMBER_SPACE_SETTINGS,
+        &CREATESPACEINPUT_MEMBER_OWNERSHIP_SETTINGS,
+        &CREATESPACEINPUT_MEMBER_SPACE_SHARING_SETTINGS,
+        &CREATESPACEINPUT_MEMBER_SPACE_DISPLAY_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateSpaceRequest");
+impl CreateSpaceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATESPACEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateSpaceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&CREATESPACEINPUT_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.space_name {
+            ser.write_string(&CREATESPACEINPUT_MEMBER_SPACE_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATESPACEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.space_settings {
+            ser.write_struct(&CREATESPACEINPUT_MEMBER_SPACE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.ownership_settings {
+            ser.write_struct(&CREATESPACEINPUT_MEMBER_OWNERSHIP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.space_sharing_settings {
+            ser.write_struct(&CREATESPACEINPUT_MEMBER_SPACE_SHARING_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.space_display_name {
+            ser.write_string(&CREATESPACEINPUT_MEMBER_SPACE_DISPLAY_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_space::builders::CreateSpaceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATESPACEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_settings = Some(crate::types::SpaceSettings::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ownership_settings = Some(crate::types::OwnershipSettings::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_sharing_settings = Some(crate::types::SpaceSharingSettings::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateSpaceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_id = builder.domain_id.or(Some(String::new()));
+        builder.space_name = builder.space_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateSpaceInput {
     /// Creates a new builder-style object to manufacture [`CreateSpaceInput`](crate::operation::create_space::CreateSpaceInput).
     pub fn builder() -> crate::operation::create_space::builders::CreateSpaceInputBuilder {

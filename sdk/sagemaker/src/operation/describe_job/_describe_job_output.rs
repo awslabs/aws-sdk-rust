@@ -95,6 +95,407 @@ impl DescribeJobOutput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static DESCRIBEJOBOUTPUT_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$JobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    0,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$JobArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobArn",
+    1,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    2,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_JOB_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$JobCategory",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobCategory",
+    3,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_JOB_CONFIG_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$JobConfigSchemaVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobConfigSchemaVersion",
+    4,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_JOB_CONFIG_DOCUMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$JobConfigDocument",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobConfigDocument",
+    5,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$EndTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    8,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$JobStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobStatus",
+    9,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$SecondaryStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecondaryStatus",
+    10,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS_TRANSITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JobSecondaryStatusTransitions$member",
+        "com.amazonaws.sagemaker",
+        "JobSecondaryStatusTransitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS_TRANSITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$SecondaryStatusTransitions",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecondaryStatusTransitions",
+    11,
+)
+.with_list_member(&DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS_TRANSITIONS_MEMBER);
+static DESCRIBEJOBOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    12,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEJOBOUTPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    13,
+)
+.with_list_member(&DESCRIBEJOBOUTPUT_MEMBER_TAGS_MEMBER);
+static DESCRIBEJOBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEJOBOUTPUT_MEMBER_JOB_NAME,
+        &DESCRIBEJOBOUTPUT_MEMBER_JOB_ARN,
+        &DESCRIBEJOBOUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBEJOBOUTPUT_MEMBER_JOB_CATEGORY,
+        &DESCRIBEJOBOUTPUT_MEMBER_JOB_CONFIG_SCHEMA_VERSION,
+        &DESCRIBEJOBOUTPUT_MEMBER_JOB_CONFIG_DOCUMENT,
+        &DESCRIBEJOBOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEJOBOUTPUT_MEMBER_END_TIME,
+        &DESCRIBEJOBOUTPUT_MEMBER_JOB_STATUS,
+        &DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS,
+        &DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS_TRANSITIONS,
+        &DESCRIBEJOBOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEJOBOUTPUT_MEMBER_TAGS,
+    ],
+)
+.with_original_name("DescribeJobResponse");
+impl DescribeJobOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEJOBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeJobOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_arn {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.job_category {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_JOB_CATEGORY, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_config_schema_version {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_JOB_CONFIG_SCHEMA_VERSION, val)?;
+        }
+        if let Some(ref val) = self.job_config_document {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_JOB_CONFIG_DOCUMENT, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEJOBOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&DESCRIBEJOBOUTPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.job_status {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.secondary_status {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.secondary_status_transitions {
+            ser.write_list(
+                &DESCRIBEJOBOUTPUT_MEMBER_SECONDARY_STATUS_TRANSITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::JobSecondaryStatusTransition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEJOBOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBEJOBOUTPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_job::builders::DescribeJobOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEJOBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_category = Some(crate::types::JobCategory::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_config_schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_config_document = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_status = Some(crate::types::JobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_status = Some(crate::types::JobSecondaryStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_status_transitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::JobSecondaryStatusTransition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeJobOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

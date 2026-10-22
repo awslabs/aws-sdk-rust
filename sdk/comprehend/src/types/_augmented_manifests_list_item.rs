@@ -65,6 +65,208 @@ impl AugmentedManifestsListItem {
         self.document_type.as_ref()
     }
 }
+static AUGMENTEDMANIFESTSLISTITEM_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AugmentedManifestsListItem$S3Uri",
+        "com.amazonaws.comprehend",
+        "AugmentedManifestsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    0,
+);
+static AUGMENTEDMANIFESTSLISTITEM_MEMBER_SPLIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AugmentedManifestsListItem$Split",
+        "com.amazonaws.comprehend",
+        "AugmentedManifestsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Split",
+    1,
+);
+static AUGMENTEDMANIFESTSLISTITEM_MEMBER_ATTRIBUTE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AttributeNamesList$member",
+        "com.amazonaws.comprehend",
+        "AttributeNamesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static AUGMENTEDMANIFESTSLISTITEM_MEMBER_ATTRIBUTE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AugmentedManifestsListItem$AttributeNames",
+        "com.amazonaws.comprehend",
+        "AugmentedManifestsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AttributeNames",
+    2,
+)
+.with_list_member(&AUGMENTEDMANIFESTSLISTITEM_MEMBER_ATTRIBUTE_NAMES_MEMBER);
+static AUGMENTEDMANIFESTSLISTITEM_MEMBER_ANNOTATION_DATA_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AugmentedManifestsListItem$AnnotationDataS3Uri",
+        "com.amazonaws.comprehend",
+        "AugmentedManifestsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AnnotationDataS3Uri",
+    3,
+);
+static AUGMENTEDMANIFESTSLISTITEM_MEMBER_SOURCE_DOCUMENTS_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AugmentedManifestsListItem$SourceDocumentsS3Uri",
+        "com.amazonaws.comprehend",
+        "AugmentedManifestsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceDocumentsS3Uri",
+    4,
+);
+static AUGMENTEDMANIFESTSLISTITEM_MEMBER_DOCUMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AugmentedManifestsListItem$DocumentType",
+        "com.amazonaws.comprehend",
+        "AugmentedManifestsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentType",
+    5,
+);
+static AUGMENTEDMANIFESTSLISTITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#AugmentedManifestsListItem",
+        "com.amazonaws.comprehend",
+        "AugmentedManifestsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUGMENTEDMANIFESTSLISTITEM_MEMBER_S3_URI,
+        &AUGMENTEDMANIFESTSLISTITEM_MEMBER_SPLIT,
+        &AUGMENTEDMANIFESTSLISTITEM_MEMBER_ATTRIBUTE_NAMES,
+        &AUGMENTEDMANIFESTSLISTITEM_MEMBER_ANNOTATION_DATA_S3_URI,
+        &AUGMENTEDMANIFESTSLISTITEM_MEMBER_SOURCE_DOCUMENTS_S3_URI,
+        &AUGMENTEDMANIFESTSLISTITEM_MEMBER_DOCUMENT_TYPE,
+    ],
+);
+impl AugmentedManifestsListItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUGMENTEDMANIFESTSLISTITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AugmentedManifestsListItem {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.s3_uri;
+            ser.write_string(&AUGMENTEDMANIFESTSLISTITEM_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.split {
+            ser.write_string(&AUGMENTEDMANIFESTSLISTITEM_MEMBER_SPLIT, val.as_str())?;
+        }
+        {
+            let val = &self.attribute_names;
+
+            ser.write_list(
+                &AUGMENTEDMANIFESTSLISTITEM_MEMBER_ATTRIBUTE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.annotation_data_s3_uri {
+            ser.write_string(&AUGMENTEDMANIFESTSLISTITEM_MEMBER_ANNOTATION_DATA_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.source_documents_s3_uri {
+            ser.write_string(&AUGMENTEDMANIFESTSLISTITEM_MEMBER_SOURCE_DOCUMENTS_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.document_type {
+            ser.write_string(&AUGMENTEDMANIFESTSLISTITEM_MEMBER_DOCUMENT_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AugmentedManifestsListItemBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUGMENTEDMANIFESTSLISTITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.s3_uri = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.split = Some(crate::types::Split::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    self.attribute_names = Some(deser.read_string_list(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.annotation_data_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_documents_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_type = Some(crate::types::AugmentedManifestsDocumentTypeFormat::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AugmentedManifestsListItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.s3_uri = builder.s3_uri.or(Some(String::new()));
+        builder.attribute_names = builder.attribute_names.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AugmentedManifestsListItem {
     /// Creates a new builder-style object to manufacture [`AugmentedManifestsListItem`](crate::types::AugmentedManifestsListItem).
     pub fn builder() -> crate::types::builders::AugmentedManifestsListItemBuilder {

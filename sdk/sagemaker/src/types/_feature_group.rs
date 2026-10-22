@@ -121,6 +121,433 @@ impl FeatureGroup {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static FEATUREGROUP_MEMBER_FEATURE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$FeatureGroupArn",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupArn",
+    0,
+);
+static FEATUREGROUP_MEMBER_FEATURE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$FeatureGroupName",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupName",
+    1,
+);
+static FEATUREGROUP_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$RecordIdentifierFeatureName",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RecordIdentifierFeatureName",
+    2,
+);
+static FEATUREGROUP_MEMBER_EVENT_TIME_FEATURE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$EventTimeFeatureName",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventTimeFeatureName",
+    3,
+);
+static FEATUREGROUP_MEMBER_FEATURE_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureDefinitions$member",
+        "com.amazonaws.sagemaker",
+        "FeatureDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static FEATUREGROUP_MEMBER_FEATURE_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$FeatureDefinitions",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FeatureDefinitions",
+    4,
+)
+.with_list_member(&FEATUREGROUP_MEMBER_FEATURE_DEFINITIONS_MEMBER);
+static FEATUREGROUP_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$CreationTime",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static FEATUREGROUP_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    6,
+);
+static FEATUREGROUP_MEMBER_ONLINE_STORE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$OnlineStoreConfig",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OnlineStoreConfig",
+    7,
+);
+static FEATUREGROUP_MEMBER_OFFLINE_STORE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$OfflineStoreConfig",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OfflineStoreConfig",
+    8,
+);
+static FEATUREGROUP_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#FeatureGroup$RoleArn", "com.amazonaws.sagemaker", "FeatureGroup"),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    9,
+);
+static FEATUREGROUP_MEMBER_FEATURE_GROUP_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$FeatureGroupStatus",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupStatus",
+    10,
+);
+static FEATUREGROUP_MEMBER_OFFLINE_STORE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$OfflineStoreStatus",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OfflineStoreStatus",
+    11,
+);
+static FEATUREGROUP_MEMBER_LAST_UPDATE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$LastUpdateStatus",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastUpdateStatus",
+    12,
+);
+static FEATUREGROUP_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$FailureReason",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    13,
+);
+static FEATUREGROUP_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureGroup$Description",
+        "com.amazonaws.sagemaker",
+        "FeatureGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    14,
+);
+static FEATUREGROUP_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static FEATUREGROUP_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#FeatureGroup$Tags", "com.amazonaws.sagemaker", "FeatureGroup"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    15,
+)
+.with_list_member(&FEATUREGROUP_MEMBER_TAGS_MEMBER);
+static FEATUREGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#FeatureGroup", "com.amazonaws.sagemaker", "FeatureGroup"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FEATUREGROUP_MEMBER_FEATURE_GROUP_ARN,
+        &FEATUREGROUP_MEMBER_FEATURE_GROUP_NAME,
+        &FEATUREGROUP_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME,
+        &FEATUREGROUP_MEMBER_EVENT_TIME_FEATURE_NAME,
+        &FEATUREGROUP_MEMBER_FEATURE_DEFINITIONS,
+        &FEATUREGROUP_MEMBER_CREATION_TIME,
+        &FEATUREGROUP_MEMBER_LAST_MODIFIED_TIME,
+        &FEATUREGROUP_MEMBER_ONLINE_STORE_CONFIG,
+        &FEATUREGROUP_MEMBER_OFFLINE_STORE_CONFIG,
+        &FEATUREGROUP_MEMBER_ROLE_ARN,
+        &FEATUREGROUP_MEMBER_FEATURE_GROUP_STATUS,
+        &FEATUREGROUP_MEMBER_OFFLINE_STORE_STATUS,
+        &FEATUREGROUP_MEMBER_LAST_UPDATE_STATUS,
+        &FEATUREGROUP_MEMBER_FAILURE_REASON,
+        &FEATUREGROUP_MEMBER_DESCRIPTION,
+        &FEATUREGROUP_MEMBER_TAGS,
+    ],
+);
+impl FeatureGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FEATUREGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FeatureGroup {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.feature_group_arn {
+            ser.write_string(&FEATUREGROUP_MEMBER_FEATURE_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.feature_group_name {
+            ser.write_string(&FEATUREGROUP_MEMBER_FEATURE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.record_identifier_feature_name {
+            ser.write_string(&FEATUREGROUP_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME, val)?;
+        }
+        if let Some(ref val) = self.event_time_feature_name {
+            ser.write_string(&FEATUREGROUP_MEMBER_EVENT_TIME_FEATURE_NAME, val)?;
+        }
+        if let Some(ref val) = self.feature_definitions {
+            ser.write_list(
+                &FEATUREGROUP_MEMBER_FEATURE_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FeatureDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&FEATUREGROUP_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&FEATUREGROUP_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.online_store_config {
+            ser.write_struct(&FEATUREGROUP_MEMBER_ONLINE_STORE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.offline_store_config {
+            ser.write_struct(&FEATUREGROUP_MEMBER_OFFLINE_STORE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&FEATUREGROUP_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.feature_group_status {
+            ser.write_string(&FEATUREGROUP_MEMBER_FEATURE_GROUP_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.offline_store_status {
+            ser.write_struct(&FEATUREGROUP_MEMBER_OFFLINE_STORE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.last_update_status {
+            ser.write_struct(&FEATUREGROUP_MEMBER_LAST_UPDATE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&FEATUREGROUP_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&FEATUREGROUP_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&FEATUREGROUP_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FeatureGroupBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FEATUREGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_identifier_feature_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_time_feature_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FeatureDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.online_store_config = Some(crate::types::OnlineStoreConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.offline_store_config = Some(crate::types::OfflineStoreConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_status = Some(crate::types::FeatureGroupStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.offline_store_status = Some(crate::types::OfflineStoreStatus::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_status = Some(crate::types::LastUpdateStatus::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FeatureGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FeatureGroup {
     /// Creates a new builder-style object to manufacture [`FeatureGroup`](crate::types::FeatureGroup).
     pub fn builder() -> crate::types::builders::FeatureGroupBuilder {

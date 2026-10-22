@@ -84,6 +84,284 @@ impl SearchTrainingPlanOfferingsInput {
         self.training_plan_arn.as_deref()
     }
 }
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$InstanceType",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    0,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$InstanceCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    1,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_ULTRA_SERVER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$UltraServerType",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UltraServerType",
+    2,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_ULTRA_SERVER_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$UltraServerCount",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UltraServerCount",
+    3,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_START_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$StartTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTimeAfter",
+    4,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_END_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$EndTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTimeBefore",
+    5,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_DURATION_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$DurationHours",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationHours",
+    6,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TARGET_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#SageMakerResourceNames$member",
+            "com.amazonaws.sagemaker",
+            "SageMakerResourceNames",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TARGET_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$TargetResources",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetResources",
+    7,
+)
+.with_list_member(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TARGET_RESOURCES_MEMBER);
+static SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TRAINING_PLAN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput$TrainingPlanArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingPlanArn",
+    8,
+);
+static SEARCHTRAININGPLANOFFERINGSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_INSTANCE_TYPE,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_INSTANCE_COUNT,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_ULTRA_SERVER_TYPE,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_ULTRA_SERVER_COUNT,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_START_TIME_AFTER,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_END_TIME_BEFORE,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_DURATION_HOURS,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TARGET_RESOURCES,
+        &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TRAINING_PLAN_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SearchTrainingPlanOfferingsRequest");
+impl SearchTrainingPlanOfferingsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SEARCHTRAININGPLANOFFERINGSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SearchTrainingPlanOfferingsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.ultra_server_type {
+            ser.write_string(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_ULTRA_SERVER_TYPE, val)?;
+        }
+        if let Some(ref val) = self.ultra_server_count {
+            ser.write_integer(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_ULTRA_SERVER_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.start_time_after {
+            ser.write_timestamp(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_START_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.end_time_before {
+            ser.write_timestamp(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_END_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.duration_hours {
+            ser.write_long(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_DURATION_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.target_resources {
+            ser.write_list(
+                &SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TARGET_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.training_plan_arn {
+            ser.write_string(&SEARCHTRAININGPLANOFFERINGSINPUT_MEMBER_TRAINING_PLAN_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::search_training_plan_offerings::builders::SearchTrainingPlanOfferingsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SEARCHTRAININGPLANOFFERINGSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::ReservedCapacityInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ultra_server_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ultra_server_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_hours = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SageMakerResourceName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SearchTrainingPlanOfferingsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SearchTrainingPlanOfferingsInput {
     /// Creates a new builder-style object to manufacture [`SearchTrainingPlanOfferingsInput`](crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsInput).
     pub fn builder() -> crate::operation::search_training_plan_offerings::builders::SearchTrainingPlanOfferingsInputBuilder {

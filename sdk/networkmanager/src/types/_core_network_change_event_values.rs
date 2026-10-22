@@ -18,7 +18,7 @@ pub struct CoreNetworkChangeEventValues {
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
-    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    /// <p>The names of the routing policies and other association details in a core network change event.</p>
     pub routing_policy_association_details: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
 }
 impl CoreNetworkChangeEventValues {
@@ -50,7 +50,7 @@ impl CoreNetworkChangeEventValues {
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
-    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    /// <p>The names of the routing policies and other association details in a core network change event.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.routing_policy_association_details.is_none()`.
     pub fn routing_policy_association_details(&self) -> &[crate::types::RoutingPolicyAssociationDetail] {
@@ -180,14 +180,14 @@ impl CoreNetworkChangeEventValuesBuilder {
     ///
     /// To override the contents of this collection use [`set_routing_policy_association_details`](Self::set_routing_policy_association_details).
     ///
-    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    /// <p>The names of the routing policies and other association details in a core network change event.</p>
     pub fn routing_policy_association_details(mut self, input: crate::types::RoutingPolicyAssociationDetail) -> Self {
         let mut v = self.routing_policy_association_details.unwrap_or_default();
         v.push(input);
         self.routing_policy_association_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    /// <p>The names of the routing policies and other association details in a core network change event.</p>
     pub fn set_routing_policy_association_details(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
@@ -195,7 +195,7 @@ impl CoreNetworkChangeEventValuesBuilder {
         self.routing_policy_association_details = input;
         self
     }
-    /// <p>The names of the routing policies and other association details in the core network change values.</p>
+    /// <p>The names of the routing policies and other association details in a core network change event.</p>
     pub fn get_routing_policy_association_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>> {
         &self.routing_policy_association_details
     }

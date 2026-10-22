@@ -74,6 +74,152 @@ impl DocumentReaderConfig {
         self.feature_types.as_deref().unwrap_or_default()
     }
 }
+static DOCUMENTREADERCONFIG_MEMBER_DOCUMENT_READ_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentReaderConfig$DocumentReadAction",
+        "com.amazonaws.comprehend",
+        "DocumentReaderConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentReadAction",
+    0,
+);
+static DOCUMENTREADERCONFIG_MEMBER_DOCUMENT_READ_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentReaderConfig$DocumentReadMode",
+        "com.amazonaws.comprehend",
+        "DocumentReaderConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentReadMode",
+    1,
+);
+static DOCUMENTREADERCONFIG_MEMBER_FEATURE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfDocumentReadFeatureTypes$member",
+        "com.amazonaws.comprehend",
+        "ListOfDocumentReadFeatureTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOCUMENTREADERCONFIG_MEMBER_FEATURE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentReaderConfig$FeatureTypes",
+        "com.amazonaws.comprehend",
+        "DocumentReaderConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FeatureTypes",
+    2,
+)
+.with_list_member(&DOCUMENTREADERCONFIG_MEMBER_FEATURE_TYPES_MEMBER);
+static DOCUMENTREADERCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentReaderConfig",
+        "com.amazonaws.comprehend",
+        "DocumentReaderConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCUMENTREADERCONFIG_MEMBER_DOCUMENT_READ_ACTION,
+        &DOCUMENTREADERCONFIG_MEMBER_DOCUMENT_READ_MODE,
+        &DOCUMENTREADERCONFIG_MEMBER_FEATURE_TYPES,
+    ],
+);
+impl DocumentReaderConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTREADERCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentReaderConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.document_read_action;
+            ser.write_string(&DOCUMENTREADERCONFIG_MEMBER_DOCUMENT_READ_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.document_read_mode {
+            ser.write_string(&DOCUMENTREADERCONFIG_MEMBER_DOCUMENT_READ_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.feature_types {
+            ser.write_list(
+                &DOCUMENTREADERCONFIG_MEMBER_FEATURE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentReaderConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENTREADERCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.document_read_action = Some(crate::types::DocumentReadAction::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_read_mode = Some(crate::types::DocumentReadMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentReadFeatureTypes::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DocumentReaderConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DocumentReaderConfig {
     /// Creates a new builder-style object to manufacture [`DocumentReaderConfig`](crate::types::DocumentReaderConfig).
     pub fn builder() -> crate::types::builders::DocumentReaderConfigBuilder {

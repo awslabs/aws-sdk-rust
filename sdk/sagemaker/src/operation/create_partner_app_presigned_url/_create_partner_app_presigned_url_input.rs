@@ -24,6 +24,131 @@ impl CreatePartnerAppPresignedUrlInput {
         self.session_expiration_duration_in_seconds
     }
 }
+static CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppPresignedUrlInput$Arn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppPresignedUrlInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_EXPIRES_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppPresignedUrlInput$ExpiresInSeconds",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppPresignedUrlInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ExpiresInSeconds",
+    1,
+);
+static CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_SESSION_EXPIRATION_DURATION_IN_SECONDS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreatePartnerAppPresignedUrlInput$SessionExpirationDurationInSeconds",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreatePartnerAppPresignedUrlInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "SessionExpirationDurationInSeconds",
+        2,
+    );
+static CREATEPARTNERAPPPRESIGNEDURLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppPresignedUrlInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppPresignedUrlInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_ARN,
+        &CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_EXPIRES_IN_SECONDS,
+        &CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_SESSION_EXPIRATION_DURATION_IN_SECONDS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePartnerAppPresignedUrlRequest");
+impl CreatePartnerAppPresignedUrlInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPARTNERAPPPRESIGNEDURLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePartnerAppPresignedUrlInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.expires_in_seconds {
+            ser.write_integer(&CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_EXPIRES_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.session_expiration_duration_in_seconds {
+            ser.write_integer(&CREATEPARTNERAPPPRESIGNEDURLINPUT_MEMBER_SESSION_EXPIRATION_DURATION_IN_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_partner_app_presigned_url::builders::CreatePartnerAppPresignedUrlInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPARTNERAPPPRESIGNEDURLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expires_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_expiration_duration_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePartnerAppPresignedUrlInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePartnerAppPresignedUrlInput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerAppPresignedUrlInput`](crate::operation::create_partner_app_presigned_url::CreatePartnerAppPresignedUrlInput).
     pub fn builder() -> crate::operation::create_partner_app_presigned_url::builders::CreatePartnerAppPresignedUrlInputBuilder {

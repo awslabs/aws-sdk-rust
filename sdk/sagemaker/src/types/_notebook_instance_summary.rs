@@ -71,6 +71,295 @@ impl NotebookInstanceSummary {
         self.additional_code_repositories.as_deref().unwrap_or_default()
     }
 }
+static NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$NotebookInstanceName",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookInstanceName",
+    0,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$NotebookInstanceArn",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookInstanceArn",
+    1,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$NotebookInstanceStatus",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookInstanceStatus",
+    2,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$Url",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    3,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$InstanceType",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    4,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    6,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#NotebookInstanceSummary$NotebookInstanceLifecycleConfigName",
+            "com.amazonaws.sagemaker",
+            "NotebookInstanceSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NotebookInstanceLifecycleConfigName",
+        7,
+    );
+static NOTEBOOKINSTANCESUMMARY_MEMBER_DEFAULT_CODE_REPOSITORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$DefaultCodeRepository",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultCodeRepository",
+    8,
+);
+static NOTEBOOKINSTANCESUMMARY_MEMBER_ADDITIONAL_CODE_REPOSITORIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AdditionalCodeRepositoryNamesOrUrls$member",
+            "com.amazonaws.sagemaker",
+            "AdditionalCodeRepositoryNamesOrUrls",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static NOTEBOOKINSTANCESUMMARY_MEMBER_ADDITIONAL_CODE_REPOSITORIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary$AdditionalCodeRepositories",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AdditionalCodeRepositories",
+    9,
+)
+.with_list_member(&NOTEBOOKINSTANCESUMMARY_MEMBER_ADDITIONAL_CODE_REPOSITORIES_MEMBER);
+static NOTEBOOKINSTANCESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceSummary",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_NAME,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_ARN,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_STATUS,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_URL,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_INSTANCE_TYPE,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_CREATION_TIME,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_LAST_MODIFIED_TIME,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_NAME,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_DEFAULT_CODE_REPOSITORY,
+        &NOTEBOOKINSTANCESUMMARY_MEMBER_ADDITIONAL_CODE_REPOSITORIES,
+    ],
+);
+impl NotebookInstanceSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NOTEBOOKINSTANCESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NotebookInstanceSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.notebook_instance_name {
+            ser.write_string(&NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.notebook_instance_arn {
+            ser.write_string(&NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.notebook_instance_status {
+            ser.write_string(&NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.url {
+            ser.write_string(&NOTEBOOKINSTANCESUMMARY_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&NOTEBOOKINSTANCESUMMARY_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&NOTEBOOKINSTANCESUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&NOTEBOOKINSTANCESUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.notebook_instance_lifecycle_config_name {
+            ser.write_string(&NOTEBOOKINSTANCESUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.default_code_repository {
+            ser.write_string(&NOTEBOOKINSTANCESUMMARY_MEMBER_DEFAULT_CODE_REPOSITORY, val)?;
+        }
+        if let Some(ref val) = self.additional_code_repositories {
+            ser.write_list(
+                &NOTEBOOKINSTANCESUMMARY_MEMBER_ADDITIONAL_CODE_REPOSITORIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NotebookInstanceSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NOTEBOOKINSTANCESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_status = Some(crate::types::NotebookInstanceStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::InstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_lifecycle_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_code_repository = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_code_repositories = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NotebookInstanceSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NotebookInstanceSummary {
     /// Creates a new builder-style object to manufacture [`NotebookInstanceSummary`](crate::types::NotebookInstanceSummary).
     pub fn builder() -> crate::types::builders::NotebookInstanceSummaryBuilder {

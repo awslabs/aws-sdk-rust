@@ -74,6 +74,278 @@ impl StartSentimentDetectionJobInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$InputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    0,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$OutputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    1,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    2,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$JobName",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    3,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    4,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    5,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$VolumeKmsKeyId",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    6,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$VpcConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    7,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_TAGS_MEMBER);
+static STARTSENTIMENTDETECTIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartSentimentDetectionJobInput",
+        "com.amazonaws.comprehend.synthetic",
+        "StartSentimentDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_JOB_NAME,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_VOLUME_KMS_KEY_ID,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_VPC_CONFIG,
+        &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartSentimentDetectionJobRequest");
+impl StartSentimentDetectionJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSENTIMENTDETECTIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartSentimentDetectionJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTSENTIMENTDETECTIONJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_sentiment_detection_job::builders::StartSentimentDetectionJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTSENTIMENTDETECTIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartSentimentDetectionJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartSentimentDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartSentimentDetectionJobInput`](crate::operation::start_sentiment_detection_job::StartSentimentDetectionJobInput).
     pub fn builder() -> crate::operation::start_sentiment_detection_job::builders::StartSentimentDetectionJobInputBuilder {

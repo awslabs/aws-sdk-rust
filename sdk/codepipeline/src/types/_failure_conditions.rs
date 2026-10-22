@@ -27,6 +27,153 @@ impl FailureConditions {
         self.conditions.as_deref().unwrap_or_default()
     }
 }
+static FAILURECONDITIONS_MEMBER_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#FailureConditions$result",
+        "com.amazonaws.codepipeline",
+        "FailureConditions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "result",
+    0,
+);
+static FAILURECONDITIONS_MEMBER_RETRY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#FailureConditions$retryConfiguration",
+        "com.amazonaws.codepipeline",
+        "FailureConditions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "retryConfiguration",
+    1,
+);
+static FAILURECONDITIONS_MEMBER_CONDITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionList$member",
+        "com.amazonaws.codepipeline",
+        "ConditionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static FAILURECONDITIONS_MEMBER_CONDITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#FailureConditions$conditions",
+        "com.amazonaws.codepipeline",
+        "FailureConditions",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "conditions",
+    2,
+)
+.with_list_member(&FAILURECONDITIONS_MEMBER_CONDITIONS_MEMBER);
+static FAILURECONDITIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#FailureConditions",
+        "com.amazonaws.codepipeline",
+        "FailureConditions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FAILURECONDITIONS_MEMBER_RESULT,
+        &FAILURECONDITIONS_MEMBER_RETRY_CONFIGURATION,
+        &FAILURECONDITIONS_MEMBER_CONDITIONS,
+    ],
+);
+impl FailureConditions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FAILURECONDITIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FailureConditions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.result {
+            ser.write_string(&FAILURECONDITIONS_MEMBER_RESULT, val.as_str())?;
+        }
+        if let Some(ref val) = self.retry_configuration {
+            ser.write_struct(&FAILURECONDITIONS_MEMBER_RETRY_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.conditions {
+            ser.write_list(
+                &FAILURECONDITIONS_MEMBER_CONDITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Condition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FailureConditionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FAILURECONDITIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result = Some(crate::types::Result::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_configuration = Some(crate::types::RetryConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conditions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Condition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FailureConditions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FailureConditions {
     /// Creates a new builder-style object to manufacture [`FailureConditions`](crate::types::FailureConditions).
     pub fn builder() -> crate::types::builders::FailureConditionsBuilder {

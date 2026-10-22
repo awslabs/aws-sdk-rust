@@ -77,6 +77,275 @@ impl SpaceSettings {
         self.remote_access.as_ref()
     }
 }
+static SPACESETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$JupyterServerAppSettings",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JupyterServerAppSettings",
+    0,
+);
+static SPACESETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$KernelGatewayAppSettings",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KernelGatewayAppSettings",
+    1,
+);
+static SPACESETTINGS_MEMBER_CODE_EDITOR_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$CodeEditorAppSettings",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CodeEditorAppSettings",
+    2,
+);
+static SPACESETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$JupyterLabAppSettings",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JupyterLabAppSettings",
+    3,
+);
+static SPACESETTINGS_MEMBER_APP_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$AppType",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppType",
+    4,
+);
+static SPACESETTINGS_MEMBER_SPACE_STORAGE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$SpaceStorageSettings",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SpaceStorageSettings",
+    5,
+);
+static SPACESETTINGS_MEMBER_SPACE_MANAGED_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$SpaceManagedResources",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpaceManagedResources",
+    6,
+);
+static SPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomFileSystems$member",
+        "com.amazonaws.sagemaker",
+        "CustomFileSystems",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static SPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$CustomFileSystems",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomFileSystems",
+    7,
+)
+.with_list_member(&SPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEMS_MEMBER);
+static SPACESETTINGS_MEMBER_REMOTE_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSettings$RemoteAccess",
+        "com.amazonaws.sagemaker",
+        "SpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RemoteAccess",
+    8,
+);
+static SPACESETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SpaceSettings", "com.amazonaws.sagemaker", "SpaceSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SPACESETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS,
+        &SPACESETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS,
+        &SPACESETTINGS_MEMBER_CODE_EDITOR_APP_SETTINGS,
+        &SPACESETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS,
+        &SPACESETTINGS_MEMBER_APP_TYPE,
+        &SPACESETTINGS_MEMBER_SPACE_STORAGE_SETTINGS,
+        &SPACESETTINGS_MEMBER_SPACE_MANAGED_RESOURCES,
+        &SPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEMS,
+        &SPACESETTINGS_MEMBER_REMOTE_ACCESS,
+    ],
+);
+impl SpaceSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SPACESETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SpaceSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.jupyter_server_app_settings {
+            ser.write_struct(&SPACESETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.kernel_gateway_app_settings {
+            ser.write_struct(&SPACESETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.code_editor_app_settings {
+            ser.write_struct(&SPACESETTINGS_MEMBER_CODE_EDITOR_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.jupyter_lab_app_settings {
+            ser.write_struct(&SPACESETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.app_type {
+            ser.write_string(&SPACESETTINGS_MEMBER_APP_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.space_storage_settings {
+            ser.write_struct(&SPACESETTINGS_MEMBER_SPACE_STORAGE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.space_managed_resources {
+            ser.write_string(&SPACESETTINGS_MEMBER_SPACE_MANAGED_RESOURCES, val.as_str())?;
+        }
+        if let Some(ref val) = self.custom_file_systems {
+            ser.write_list(
+                &SPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomFileSystem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.remote_access {
+            ser.write_string(&SPACESETTINGS_MEMBER_REMOTE_ACCESS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SpaceSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SPACESETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_server_app_settings = Some(crate::types::JupyterServerAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kernel_gateway_app_settings = Some(crate::types::KernelGatewayAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_editor_app_settings = Some(crate::types::SpaceCodeEditorAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_lab_app_settings = Some(crate::types::SpaceJupyterLabAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_type = Some(crate::types::AppType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_storage_settings = Some(crate::types::SpaceStorageSettings::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_managed_resources = Some(crate::types::FeatureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_file_systems = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomFileSystem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remote_access = Some(crate::types::FeatureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SpaceSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SpaceSettings {
     /// Creates a new builder-style object to manufacture [`SpaceSettings`](crate::types::SpaceSettings).
     pub fn builder() -> crate::types::builders::SpaceSettingsBuilder {

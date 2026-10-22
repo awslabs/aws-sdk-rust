@@ -24,6 +24,130 @@ impl ListAccountsForParentInput {
         self.max_results
     }
 }
+static LISTACCOUNTSFORPARENTINPUT_MEMBER_PARENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListAccountsForParentInput$ParentId",
+        "com.amazonaws.organizations.synthetic",
+        "ListAccountsForParentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParentId",
+    0,
+);
+static LISTACCOUNTSFORPARENTINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListAccountsForParentInput$NextToken",
+        "com.amazonaws.organizations.synthetic",
+        "ListAccountsForParentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTACCOUNTSFORPARENTINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListAccountsForParentInput$MaxResults",
+        "com.amazonaws.organizations.synthetic",
+        "ListAccountsForParentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTACCOUNTSFORPARENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListAccountsForParentInput",
+        "com.amazonaws.organizations.synthetic",
+        "ListAccountsForParentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTACCOUNTSFORPARENTINPUT_MEMBER_PARENT_ID,
+        &LISTACCOUNTSFORPARENTINPUT_MEMBER_NEXT_TOKEN,
+        &LISTACCOUNTSFORPARENTINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListAccountsForParentRequest");
+impl ListAccountsForParentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTACCOUNTSFORPARENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListAccountsForParentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.parent_id {
+            ser.write_string(&LISTACCOUNTSFORPARENTINPUT_MEMBER_PARENT_ID, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTACCOUNTSFORPARENTINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTACCOUNTSFORPARENTINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTACCOUNTSFORPARENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListAccountsForParentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.parent_id = builder.parent_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListAccountsForParentInput {
     /// Creates a new builder-style object to manufacture [`ListAccountsForParentInput`](crate::operation::list_accounts_for_parent::ListAccountsForParentInput).
     pub fn builder() -> crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder {

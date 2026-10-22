@@ -31,6 +31,128 @@ impl KeyPhrase {
         self.end_offset
     }
 }
+static KEYPHRASE_MEMBER_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#KeyPhrase$Score", "com.amazonaws.comprehend", "KeyPhrase"),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Score",
+    0,
+);
+static KEYPHRASE_MEMBER_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#KeyPhrase$Text", "com.amazonaws.comprehend", "KeyPhrase"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Text",
+    1,
+);
+static KEYPHRASE_MEMBER_BEGIN_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#KeyPhrase$BeginOffset", "com.amazonaws.comprehend", "KeyPhrase"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BeginOffset",
+    2,
+);
+static KEYPHRASE_MEMBER_END_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#KeyPhrase$EndOffset", "com.amazonaws.comprehend", "KeyPhrase"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EndOffset",
+    3,
+);
+static KEYPHRASE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#KeyPhrase", "com.amazonaws.comprehend", "KeyPhrase"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &KEYPHRASE_MEMBER_SCORE,
+        &KEYPHRASE_MEMBER_TEXT,
+        &KEYPHRASE_MEMBER_BEGIN_OFFSET,
+        &KEYPHRASE_MEMBER_END_OFFSET,
+    ],
+);
+impl KeyPhrase {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &KEYPHRASE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for KeyPhrase {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.score {
+            ser.write_float(&KEYPHRASE_MEMBER_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.text {
+            ser.write_string(&KEYPHRASE_MEMBER_TEXT, val)?;
+        }
+        if let Some(ref val) = self.begin_offset {
+            ser.write_integer(&KEYPHRASE_MEMBER_BEGIN_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.end_offset {
+            ser.write_integer(&KEYPHRASE_MEMBER_END_OFFSET, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::KeyPhraseBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&KEYPHRASE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.score = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.begin_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl KeyPhrase {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl KeyPhrase {
     /// Creates a new builder-style object to manufacture [`KeyPhrase`](crate::types::KeyPhrase).
     pub fn builder() -> crate::types::builders::KeyPhraseBuilder {

@@ -37,6 +37,145 @@ impl ActionTypeExecutor {
         self.job_timeout
     }
 }
+static ACTIONTYPEEXECUTOR_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeExecutor$configuration",
+        "com.amazonaws.codepipeline",
+        "ActionTypeExecutor",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "configuration",
+    0,
+);
+static ACTIONTYPEEXECUTOR_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeExecutor$type",
+        "com.amazonaws.codepipeline",
+        "ActionTypeExecutor",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    1,
+);
+static ACTIONTYPEEXECUTOR_MEMBER_POLICY_STATEMENTS_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeExecutor$policyStatementsTemplate",
+        "com.amazonaws.codepipeline",
+        "ActionTypeExecutor",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "policyStatementsTemplate",
+    2,
+);
+static ACTIONTYPEEXECUTOR_MEMBER_JOB_TIMEOUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeExecutor$jobTimeout",
+        "com.amazonaws.codepipeline",
+        "ActionTypeExecutor",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "jobTimeout",
+    3,
+);
+static ACTIONTYPEEXECUTOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeExecutor",
+        "com.amazonaws.codepipeline",
+        "ActionTypeExecutor",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONTYPEEXECUTOR_MEMBER_CONFIGURATION,
+        &ACTIONTYPEEXECUTOR_MEMBER_TYPE,
+        &ACTIONTYPEEXECUTOR_MEMBER_POLICY_STATEMENTS_TEMPLATE,
+        &ACTIONTYPEEXECUTOR_MEMBER_JOB_TIMEOUT,
+    ],
+);
+impl ActionTypeExecutor {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONTYPEEXECUTOR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionTypeExecutor {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.configuration {
+            ser.write_struct(&ACTIONTYPEEXECUTOR_MEMBER_CONFIGURATION, val)?;
+        }
+        {
+            let val = &self.r#type;
+            ser.write_string(&ACTIONTYPEEXECUTOR_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.policy_statements_template {
+            ser.write_string(&ACTIONTYPEEXECUTOR_MEMBER_POLICY_STATEMENTS_TEMPLATE, val)?;
+        }
+        if let Some(ref val) = self.job_timeout {
+            ser.write_integer(&ACTIONTYPEEXECUTOR_MEMBER_JOB_TIMEOUT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionTypeExecutorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONTYPEEXECUTOR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(crate::types::ExecutorConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    self.r#type = Some(crate::types::ExecutorType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_statements_template = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionTypeExecutor {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ActionTypeExecutor {
     /// Creates a new builder-style object to manufacture [`ActionTypeExecutor`](crate::types::ActionTypeExecutor).
     pub fn builder() -> crate::types::builders::ActionTypeExecutorBuilder {

@@ -37,6 +37,125 @@ impl AthenaError {
         self.error_message.as_deref()
     }
 }
+static ATHENAERROR_MEMBER_ERROR_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#AthenaError$ErrorCategory", "com.amazonaws.athena", "AthenaError"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ErrorCategory",
+    0,
+);
+static ATHENAERROR_MEMBER_ERROR_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#AthenaError$ErrorType", "com.amazonaws.athena", "AthenaError"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ErrorType",
+    1,
+);
+static ATHENAERROR_MEMBER_RETRYABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#AthenaError$Retryable", "com.amazonaws.athena", "AthenaError"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Retryable",
+    2,
+);
+static ATHENAERROR_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#AthenaError$ErrorMessage", "com.amazonaws.athena", "AthenaError"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    3,
+);
+static ATHENAERROR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#AthenaError", "com.amazonaws.athena", "AthenaError"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ATHENAERROR_MEMBER_ERROR_CATEGORY,
+        &ATHENAERROR_MEMBER_ERROR_TYPE,
+        &ATHENAERROR_MEMBER_RETRYABLE,
+        &ATHENAERROR_MEMBER_ERROR_MESSAGE,
+    ],
+);
+impl AthenaError {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ATHENAERROR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AthenaError {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.error_category {
+            ser.write_integer(&ATHENAERROR_MEMBER_ERROR_CATEGORY, *val)?;
+        }
+        if let Some(ref val) = self.error_type {
+            ser.write_integer(&ATHENAERROR_MEMBER_ERROR_TYPE, *val)?;
+        }
+        {
+            let val = &self.retryable;
+            ser.write_boolean(&ATHENAERROR_MEMBER_RETRYABLE, *val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&ATHENAERROR_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AthenaErrorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ATHENAERROR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_category = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_type = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.retryable = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AthenaError {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AthenaError {
     /// Creates a new builder-style object to manufacture [`AthenaError`](crate::types::AthenaError).
     pub fn builder() -> crate::types::builders::AthenaErrorBuilder {

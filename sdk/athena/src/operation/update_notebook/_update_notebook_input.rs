@@ -40,6 +40,173 @@ impl UpdateNotebookInput {
         self.client_request_token.as_deref()
     }
 }
+static UPDATENOTEBOOKINPUT_MEMBER_NOTEBOOK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateNotebookInput$NotebookId",
+        "com.amazonaws.athena.synthetic",
+        "UpdateNotebookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookId",
+    0,
+);
+static UPDATENOTEBOOKINPUT_MEMBER_PAYLOAD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateNotebookInput$Payload",
+        "com.amazonaws.athena.synthetic",
+        "UpdateNotebookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Payload",
+    1,
+);
+static UPDATENOTEBOOKINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateNotebookInput$Type",
+        "com.amazonaws.athena.synthetic",
+        "UpdateNotebookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static UPDATENOTEBOOKINPUT_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateNotebookInput$SessionId",
+        "com.amazonaws.athena.synthetic",
+        "UpdateNotebookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionId",
+    3,
+);
+static UPDATENOTEBOOKINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateNotebookInput$ClientRequestToken",
+        "com.amazonaws.athena.synthetic",
+        "UpdateNotebookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    4,
+);
+static UPDATENOTEBOOKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#UpdateNotebookInput",
+        "com.amazonaws.athena.synthetic",
+        "UpdateNotebookInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATENOTEBOOKINPUT_MEMBER_NOTEBOOK_ID,
+        &UPDATENOTEBOOKINPUT_MEMBER_PAYLOAD,
+        &UPDATENOTEBOOKINPUT_MEMBER_TYPE,
+        &UPDATENOTEBOOKINPUT_MEMBER_SESSION_ID,
+        &UPDATENOTEBOOKINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateNotebookInput");
+impl UpdateNotebookInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATENOTEBOOKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateNotebookInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.notebook_id {
+            ser.write_string(&UPDATENOTEBOOKINPUT_MEMBER_NOTEBOOK_ID, val)?;
+        }
+        if let Some(ref val) = self.payload {
+            ser.write_string(&UPDATENOTEBOOKINPUT_MEMBER_PAYLOAD, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&UPDATENOTEBOOKINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.session_id {
+            ser.write_string(&UPDATENOTEBOOKINPUT_MEMBER_SESSION_ID, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&UPDATENOTEBOOKINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_notebook::builders::UpdateNotebookInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATENOTEBOOKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.payload = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::NotebookType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateNotebookInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.notebook_id = builder.notebook_id.or(Some(String::new()));
+        builder.payload = builder.payload.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateNotebookInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotebookInput`](crate::operation::update_notebook::UpdateNotebookInput).
     pub fn builder() -> crate::operation::update_notebook::builders::UpdateNotebookInputBuilder {

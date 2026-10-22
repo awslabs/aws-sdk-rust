@@ -60,6 +60,277 @@ impl DefaultSpaceSettings {
         self.custom_file_system_configs.as_deref().unwrap_or_default()
     }
 }
+static DEFAULTSPACESETTINGS_MEMBER_EXECUTION_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$ExecutionRole",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRole",
+    0,
+);
+static DEFAULTSPACESETTINGS_MEMBER_SECURITY_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecurityGroupIds$member",
+        "com.amazonaws.sagemaker",
+        "SecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DEFAULTSPACESETTINGS_MEMBER_SECURITY_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$SecurityGroups",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroups",
+    1,
+)
+.with_list_member(&DEFAULTSPACESETTINGS_MEMBER_SECURITY_GROUPS_MEMBER);
+static DEFAULTSPACESETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$JupyterServerAppSettings",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JupyterServerAppSettings",
+    2,
+);
+static DEFAULTSPACESETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$KernelGatewayAppSettings",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KernelGatewayAppSettings",
+    3,
+);
+static DEFAULTSPACESETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$JupyterLabAppSettings",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JupyterLabAppSettings",
+    4,
+);
+static DEFAULTSPACESETTINGS_MEMBER_SPACE_STORAGE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$SpaceStorageSettings",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SpaceStorageSettings",
+    5,
+);
+static DEFAULTSPACESETTINGS_MEMBER_CUSTOM_POSIX_USER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$CustomPosixUserConfig",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomPosixUserConfig",
+    6,
+);
+static DEFAULTSPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomFileSystemConfigs$member",
+        "com.amazonaws.sagemaker",
+        "CustomFileSystemConfigs",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static DEFAULTSPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings$CustomFileSystemConfigs",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomFileSystemConfigs",
+    7,
+)
+.with_list_member(&DEFAULTSPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS_MEMBER);
+static DEFAULTSPACESETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultSpaceSettings",
+        "com.amazonaws.sagemaker",
+        "DefaultSpaceSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEFAULTSPACESETTINGS_MEMBER_EXECUTION_ROLE,
+        &DEFAULTSPACESETTINGS_MEMBER_SECURITY_GROUPS,
+        &DEFAULTSPACESETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS,
+        &DEFAULTSPACESETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS,
+        &DEFAULTSPACESETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS,
+        &DEFAULTSPACESETTINGS_MEMBER_SPACE_STORAGE_SETTINGS,
+        &DEFAULTSPACESETTINGS_MEMBER_CUSTOM_POSIX_USER_CONFIG,
+        &DEFAULTSPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS,
+    ],
+);
+impl DefaultSpaceSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEFAULTSPACESETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DefaultSpaceSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_role {
+            ser.write_string(&DEFAULTSPACESETTINGS_MEMBER_EXECUTION_ROLE, val)?;
+        }
+        if let Some(ref val) = self.security_groups {
+            ser.write_list(
+                &DEFAULTSPACESETTINGS_MEMBER_SECURITY_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.jupyter_server_app_settings {
+            ser.write_struct(&DEFAULTSPACESETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.kernel_gateway_app_settings {
+            ser.write_struct(&DEFAULTSPACESETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.jupyter_lab_app_settings {
+            ser.write_struct(&DEFAULTSPACESETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.space_storage_settings {
+            ser.write_struct(&DEFAULTSPACESETTINGS_MEMBER_SPACE_STORAGE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.custom_posix_user_config {
+            ser.write_struct(&DEFAULTSPACESETTINGS_MEMBER_CUSTOM_POSIX_USER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_file_system_configs {
+            ser.write_list(
+                &DEFAULTSPACESETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomFileSystemConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DefaultSpaceSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEFAULTSPACESETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_groups = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_server_app_settings = Some(crate::types::JupyterServerAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kernel_gateway_app_settings = Some(crate::types::KernelGatewayAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_lab_app_settings = Some(crate::types::JupyterLabAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_storage_settings = Some(crate::types::DefaultSpaceStorageSettings::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_posix_user_config = Some(crate::types::CustomPosixUserConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_file_system_configs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomFileSystemConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DefaultSpaceSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DefaultSpaceSettings {
     /// Creates a new builder-style object to manufacture [`DefaultSpaceSettings`](crate::types::DefaultSpaceSettings).
     pub fn builder() -> crate::types::builders::DefaultSpaceSettingsBuilder {

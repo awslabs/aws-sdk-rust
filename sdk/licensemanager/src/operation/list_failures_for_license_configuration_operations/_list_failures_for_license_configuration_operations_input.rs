@@ -24,6 +24,133 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         self.next_token.as_deref()
     }
 }
+static LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#ListFailuresForLicenseConfigurationOperationsInput$LicenseConfigurationArn",
+            "com.amazonaws.licensemanager.synthetic",
+            "ListFailuresForLicenseConfigurationOperationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "LicenseConfigurationArn",
+        0,
+    );
+static LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#ListFailuresForLicenseConfigurationOperationsInput$MaxResults",
+            "com.amazonaws.licensemanager.synthetic",
+            "ListFailuresForLicenseConfigurationOperationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MaxResults",
+        1,
+    );
+static LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#ListFailuresForLicenseConfigurationOperationsInput$NextToken",
+            "com.amazonaws.licensemanager.synthetic",
+            "ListFailuresForLicenseConfigurationOperationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NextToken",
+        2,
+    );
+static LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#ListFailuresForLicenseConfigurationOperationsInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "ListFailuresForLicenseConfigurationOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARN,
+        &LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListFailuresForLicenseConfigurationOperationsRequest");
+impl ListFailuresForLicenseConfigurationOperationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListFailuresForLicenseConfigurationOperationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_configuration_arn {
+            ser.write_string(&LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTFAILURESFORLICENSECONFIGURATIONOPERATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_configuration_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListFailuresForLicenseConfigurationOperationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.license_configuration_arn = builder.license_configuration_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
     pub fn builder(

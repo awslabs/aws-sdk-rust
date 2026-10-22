@@ -82,6 +82,352 @@ impl CreateEndpointGroupInput {
         self.port_overrides.as_deref().unwrap_or_default()
     }
 }
+static CREATEENDPOINTGROUPINPUT_MEMBER_LISTENER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$ListenerArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ListenerArn",
+    0,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$EndpointGroupRegion",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupRegion",
+    1,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointConfigurations$member",
+        "com.amazonaws.globalaccelerator",
+        "EndpointConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$EndpointConfigurations",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EndpointConfigurations",
+    2,
+)
+.with_list_member(&CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER);
+static CREATEENDPOINTGROUPINPUT_MEMBER_TRAFFIC_DIAL_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$TrafficDialPercentage",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "TrafficDialPercentage",
+    3,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$HealthCheckPort",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HealthCheckPort",
+    4,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$HealthCheckProtocol",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HealthCheckProtocol",
+    5,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$HealthCheckPath",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HealthCheckPath",
+    6,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_INTERVAL_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$HealthCheckIntervalSeconds",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HealthCheckIntervalSeconds",
+    7,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_THRESHOLD_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$ThresholdCount",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ThresholdCount",
+    8,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$IdempotencyToken",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    9,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortOverrides$member",
+        "com.amazonaws.globalaccelerator",
+        "PortOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput$PortOverrides",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PortOverrides",
+    10,
+)
+.with_list_member(&CREATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES_MEMBER);
+static CREATEENDPOINTGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateEndpointGroupInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEENDPOINTGROUPINPUT_MEMBER_LISTENER_ARN,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_REGION,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_TRAFFIC_DIAL_PERCENTAGE,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PORT,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PROTOCOL,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PATH,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_INTERVAL_SECONDS,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_THRESHOLD_COUNT,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &CREATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateEndpointGroupRequest");
+impl CreateEndpointGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEENDPOINTGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateEndpointGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.listener_arn {
+            ser.write_string(&CREATEENDPOINTGROUPINPUT_MEMBER_LISTENER_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_group_region {
+            ser.write_string(&CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_REGION, val)?;
+        }
+        if let Some(ref val) = self.endpoint_configurations {
+            ser.write_list(
+                &CREATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EndpointConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.traffic_dial_percentage {
+            ser.write_float(&CREATEENDPOINTGROUPINPUT_MEMBER_TRAFFIC_DIAL_PERCENTAGE, *val)?;
+        }
+        if let Some(ref val) = self.health_check_port {
+            ser.write_integer(&CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PORT, *val)?;
+        }
+        if let Some(ref val) = self.health_check_protocol {
+            ser.write_string(&CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.health_check_path {
+            ser.write_string(&CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PATH, val)?;
+        }
+        if let Some(ref val) = self.health_check_interval_seconds {
+            ser.write_integer(&CREATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_INTERVAL_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.threshold_count {
+            ser.write_integer(&CREATEENDPOINTGROUPINPUT_MEMBER_THRESHOLD_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&CREATEENDPOINTGROUPINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.port_overrides {
+            ser.write_list(
+                &CREATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PortOverride::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_endpoint_group::builders::CreateEndpointGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEENDPOINTGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.listener_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EndpointConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.traffic_dial_percentage = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_protocol = Some(crate::types::HealthCheckProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_interval_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.threshold_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.port_overrides = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PortOverride::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateEndpointGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.listener_arn = builder.listener_arn.or(Some(String::new()));
+        builder.endpoint_group_region = builder.endpoint_group_region.or(Some(String::new()));
+        builder.idempotency_token = builder.idempotency_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointGroupInput`](crate::operation::create_endpoint_group::CreateEndpointGroupInput).
     pub fn builder() -> crate::operation::create_endpoint_group::builders::CreateEndpointGroupInputBuilder {

@@ -32,6 +32,91 @@ impl TotalHits {
         self.relation.as_ref()
     }
 }
+static TOTALHITS_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TotalHits$Value", "com.amazonaws.sagemaker", "TotalHits"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Value",
+    0,
+);
+static TOTALHITS_MEMBER_RELATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TotalHits$Relation", "com.amazonaws.sagemaker", "TotalHits"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Relation",
+    1,
+);
+static TOTALHITS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TotalHits", "com.amazonaws.sagemaker", "TotalHits"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TOTALHITS_MEMBER_VALUE, &TOTALHITS_MEMBER_RELATION],
+);
+impl TotalHits {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TOTALHITS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TotalHits {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.value {
+            ser.write_long(&TOTALHITS_MEMBER_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.relation {
+            ser.write_string(&TOTALHITS_MEMBER_RELATION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TotalHitsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TOTALHITS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relation = Some(crate::types::Relation::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TotalHits {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TotalHits {
     /// Creates a new builder-style object to manufacture [`TotalHits`](crate::types::TotalHits).
     pub fn builder() -> crate::types::builders::TotalHitsBuilder {

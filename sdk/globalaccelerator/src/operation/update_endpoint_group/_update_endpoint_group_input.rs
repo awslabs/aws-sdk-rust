@@ -70,6 +70,308 @@ impl UpdateEndpointGroupInput {
         self.port_overrides.as_deref().unwrap_or_default()
     }
 }
+static UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$EndpointGroupArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupArn",
+    0,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointConfigurations$member",
+        "com.amazonaws.globalaccelerator",
+        "EndpointConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$EndpointConfigurations",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EndpointConfigurations",
+    1,
+)
+.with_list_member(&UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_TRAFFIC_DIAL_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$TrafficDialPercentage",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "TrafficDialPercentage",
+    2,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$HealthCheckPort",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HealthCheckPort",
+    3,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$HealthCheckProtocol",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HealthCheckProtocol",
+    4,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$HealthCheckPath",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HealthCheckPath",
+    5,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_INTERVAL_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$HealthCheckIntervalSeconds",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HealthCheckIntervalSeconds",
+    6,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_THRESHOLD_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$ThresholdCount",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ThresholdCount",
+    7,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortOverrides$member",
+        "com.amazonaws.globalaccelerator",
+        "PortOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput$PortOverrides",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PortOverrides",
+    8,
+)
+.with_list_member(&UPDATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES_MEMBER);
+static UPDATEENDPOINTGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateEndpointGroupInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateEndpointGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_ARN,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_TRAFFIC_DIAL_PERCENTAGE,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PORT,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PROTOCOL,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PATH,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_INTERVAL_SECONDS,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_THRESHOLD_COUNT,
+        &UPDATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateEndpointGroupRequest");
+impl UpdateEndpointGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEENDPOINTGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateEndpointGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_group_arn {
+            ser.write_string(&UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_configurations {
+            ser.write_list(
+                &UPDATEENDPOINTGROUPINPUT_MEMBER_ENDPOINT_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EndpointConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.traffic_dial_percentage {
+            ser.write_float(&UPDATEENDPOINTGROUPINPUT_MEMBER_TRAFFIC_DIAL_PERCENTAGE, *val)?;
+        }
+        if let Some(ref val) = self.health_check_port {
+            ser.write_integer(&UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PORT, *val)?;
+        }
+        if let Some(ref val) = self.health_check_protocol {
+            ser.write_string(&UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.health_check_path {
+            ser.write_string(&UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_PATH, val)?;
+        }
+        if let Some(ref val) = self.health_check_interval_seconds {
+            ser.write_integer(&UPDATEENDPOINTGROUPINPUT_MEMBER_HEALTH_CHECK_INTERVAL_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.threshold_count {
+            ser.write_integer(&UPDATEENDPOINTGROUPINPUT_MEMBER_THRESHOLD_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.port_overrides {
+            ser.write_list(
+                &UPDATEENDPOINTGROUPINPUT_MEMBER_PORT_OVERRIDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PortOverride::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEENDPOINTGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EndpointConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.traffic_dial_percentage = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_protocol = Some(crate::types::HealthCheckProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_interval_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.threshold_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.port_overrides = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PortOverride::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateEndpointGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_group_arn = builder.endpoint_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupInput`](crate::operation::update_endpoint_group::UpdateEndpointGroupInput).
     pub fn builder() -> crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder {

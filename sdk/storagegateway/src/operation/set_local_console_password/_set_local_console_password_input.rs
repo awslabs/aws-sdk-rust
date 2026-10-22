@@ -27,6 +27,110 @@ impl ::std::fmt::Debug for SetLocalConsolePasswordInput {
         formatter.finish()
     }
 }
+static SETLOCALCONSOLEPASSWORDINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#SetLocalConsolePasswordInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "SetLocalConsolePasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static SETLOCALCONSOLEPASSWORDINPUT_MEMBER_LOCAL_CONSOLE_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#SetLocalConsolePasswordInput$LocalConsolePassword",
+        "com.amazonaws.storagegateway.synthetic",
+        "SetLocalConsolePasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocalConsolePassword",
+    1,
+);
+static SETLOCALCONSOLEPASSWORDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#SetLocalConsolePasswordInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "SetLocalConsolePasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETLOCALCONSOLEPASSWORDINPUT_MEMBER_GATEWAY_ARN,
+        &SETLOCALCONSOLEPASSWORDINPUT_MEMBER_LOCAL_CONSOLE_PASSWORD,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SetLocalConsolePasswordInput");
+impl SetLocalConsolePasswordInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETLOCALCONSOLEPASSWORDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetLocalConsolePasswordInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&SETLOCALCONSOLEPASSWORDINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.local_console_password {
+            ser.write_string(&SETLOCALCONSOLEPASSWORDINPUT_MEMBER_LOCAL_CONSOLE_PASSWORD, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETLOCALCONSOLEPASSWORDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_console_password = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetLocalConsolePasswordInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.gateway_arn = builder.gateway_arn.or(Some(String::new()));
+        builder.local_console_password = builder.local_console_password.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SetLocalConsolePasswordInput {
     /// Creates a new builder-style object to manufacture [`SetLocalConsolePasswordInput`](crate::operation::set_local_console_password::SetLocalConsolePasswordInput).
     pub fn builder() -> crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder {

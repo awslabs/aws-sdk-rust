@@ -63,6 +63,190 @@ impl ModelCardVersionSummary {
         self.last_modified_time.as_ref()
     }
 }
+static MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardVersionSummary$ModelCardName",
+        "com.amazonaws.sagemaker",
+        "ModelCardVersionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    0,
+);
+static MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardVersionSummary$ModelCardArn",
+        "com.amazonaws.sagemaker",
+        "ModelCardVersionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardArn",
+    1,
+);
+static MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardVersionSummary$ModelCardStatus",
+        "com.amazonaws.sagemaker",
+        "ModelCardVersionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardStatus",
+    2,
+);
+static MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardVersionSummary$ModelCardVersion",
+        "com.amazonaws.sagemaker",
+        "ModelCardVersionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ModelCardVersion",
+    3,
+);
+static MODELCARDVERSIONSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardVersionSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "ModelCardVersionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static MODELCARDVERSIONSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardVersionSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "ModelCardVersionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    5,
+);
+static MODELCARDVERSIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardVersionSummary",
+        "com.amazonaws.sagemaker",
+        "ModelCardVersionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_NAME,
+        &MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_ARN,
+        &MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_STATUS,
+        &MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_VERSION,
+        &MODELCARDVERSIONSUMMARY_MEMBER_CREATION_TIME,
+        &MODELCARDVERSIONSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl ModelCardVersionSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELCARDVERSIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelCardVersionSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_card_arn {
+            ser.write_string(&MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_card_status {
+            ser.write_string(&MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_card_version {
+            ser.write_integer(&MODELCARDVERSIONSUMMARY_MEMBER_MODEL_CARD_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MODELCARDVERSIONSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&MODELCARDVERSIONSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelCardVersionSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELCARDVERSIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_status = Some(crate::types::ModelCardStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelCardVersionSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelCardVersionSummary {
     /// Creates a new builder-style object to manufacture [`ModelCardVersionSummary`](crate::types::ModelCardVersionSummary).
     pub fn builder() -> crate::types::builders::ModelCardVersionSummaryBuilder {

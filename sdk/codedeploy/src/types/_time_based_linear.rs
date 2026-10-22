@@ -19,6 +19,93 @@ impl TimeBasedLinear {
         self.linear_interval
     }
 }
+static TIMEBASEDLINEAR_MEMBER_LINEAR_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#TimeBasedLinear$linearPercentage",
+        "com.amazonaws.codedeploy",
+        "TimeBasedLinear",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "linearPercentage",
+    0,
+);
+static TIMEBASEDLINEAR_MEMBER_LINEAR_INTERVAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#TimeBasedLinear$linearInterval",
+        "com.amazonaws.codedeploy",
+        "TimeBasedLinear",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "linearInterval",
+    1,
+);
+static TIMEBASEDLINEAR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#TimeBasedLinear", "com.amazonaws.codedeploy", "TimeBasedLinear"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TIMEBASEDLINEAR_MEMBER_LINEAR_PERCENTAGE, &TIMEBASEDLINEAR_MEMBER_LINEAR_INTERVAL],
+);
+impl TimeBasedLinear {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TIMEBASEDLINEAR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TimeBasedLinear {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.linear_percentage;
+            ser.write_integer(&TIMEBASEDLINEAR_MEMBER_LINEAR_PERCENTAGE, *val)?;
+        }
+        {
+            let val = &self.linear_interval;
+            ser.write_integer(&TIMEBASEDLINEAR_MEMBER_LINEAR_INTERVAL, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TimeBasedLinearBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TIMEBASEDLINEAR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.linear_percentage = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.linear_interval = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TimeBasedLinear {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TimeBasedLinear {
     /// Creates a new builder-style object to manufacture [`TimeBasedLinear`](crate::types::TimeBasedLinear).
     pub fn builder() -> crate::types::builders::TimeBasedLinearBuilder {

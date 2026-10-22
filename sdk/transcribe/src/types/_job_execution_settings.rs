@@ -26,6 +26,106 @@ impl JobExecutionSettings {
         self.data_access_role_arn.as_deref()
     }
 }
+static JOBEXECUTIONSETTINGS_MEMBER_ALLOW_DEFERRED_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#JobExecutionSettings$AllowDeferredExecution",
+        "com.amazonaws.transcribe",
+        "JobExecutionSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AllowDeferredExecution",
+    0,
+);
+static JOBEXECUTIONSETTINGS_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#JobExecutionSettings$DataAccessRoleArn",
+        "com.amazonaws.transcribe",
+        "JobExecutionSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    1,
+);
+static JOBEXECUTIONSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#JobExecutionSettings",
+        "com.amazonaws.transcribe",
+        "JobExecutionSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &JOBEXECUTIONSETTINGS_MEMBER_ALLOW_DEFERRED_EXECUTION,
+        &JOBEXECUTIONSETTINGS_MEMBER_DATA_ACCESS_ROLE_ARN,
+    ],
+);
+impl JobExecutionSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &JOBEXECUTIONSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for JobExecutionSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.allow_deferred_execution {
+            ser.write_boolean(&JOBEXECUTIONSETTINGS_MEMBER_ALLOW_DEFERRED_EXECUTION, *val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&JOBEXECUTIONSETTINGS_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::JobExecutionSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&JOBEXECUTIONSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allow_deferred_execution = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl JobExecutionSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl JobExecutionSettings {
     /// Creates a new builder-style object to manufacture [`JobExecutionSettings`](crate::types::JobExecutionSettings).
     pub fn builder() -> crate::types::builders::JobExecutionSettingsBuilder {

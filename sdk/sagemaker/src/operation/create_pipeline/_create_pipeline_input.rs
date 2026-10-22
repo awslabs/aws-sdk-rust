@@ -62,6 +62,280 @@ impl CreatePipelineInput {
         self.parallelism_configuration.as_ref()
     }
 }
+static CREATEPIPELINEINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$PipelineName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineName",
+    0,
+);
+static CREATEPIPELINEINPUT_MEMBER_PIPELINE_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$PipelineDisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineDisplayName",
+    1,
+);
+static CREATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$PipelineDefinition",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineDefinition",
+    2,
+);
+static CREATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$PipelineDefinitionS3Location",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PipelineDefinitionS3Location",
+    3,
+);
+static CREATEPIPELINEINPUT_MEMBER_PIPELINE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$PipelineDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineDescription",
+    4,
+);
+static CREATEPIPELINEINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$ClientRequestToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    5,
+);
+static CREATEPIPELINEINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    6,
+);
+static CREATEPIPELINEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPIPELINEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&CREATEPIPELINEINPUT_MEMBER_TAGS_MEMBER);
+static CREATEPIPELINEINPUT_MEMBER_PARALLELISM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput$ParallelismConfiguration",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParallelismConfiguration",
+    8,
+);
+static CREATEPIPELINEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePipelineInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePipelineInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPIPELINEINPUT_MEMBER_PIPELINE_NAME,
+        &CREATEPIPELINEINPUT_MEMBER_PIPELINE_DISPLAY_NAME,
+        &CREATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION,
+        &CREATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION_S3_LOCATION,
+        &CREATEPIPELINEINPUT_MEMBER_PIPELINE_DESCRIPTION,
+        &CREATEPIPELINEINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEPIPELINEINPUT_MEMBER_ROLE_ARN,
+        &CREATEPIPELINEINPUT_MEMBER_TAGS,
+        &CREATEPIPELINEINPUT_MEMBER_PARALLELISM_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePipelineRequest");
+impl CreatePipelineInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPIPELINEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePipelineInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&CREATEPIPELINEINPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_display_name {
+            ser.write_string(&CREATEPIPELINEINPUT_MEMBER_PIPELINE_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_definition {
+            ser.write_string(&CREATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_definition_s3_location {
+            ser.write_struct(&CREATEPIPELINEINPUT_MEMBER_PIPELINE_DEFINITION_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_description {
+            ser.write_string(&CREATEPIPELINEINPUT_MEMBER_PIPELINE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEPIPELINEINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEPIPELINEINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEPIPELINEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parallelism_configuration {
+            ser.write_struct(&CREATEPIPELINEINPUT_MEMBER_PARALLELISM_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPIPELINEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_definition = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_definition_s3_location = Some(crate::types::PipelineDefinitionS3Location::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallelism_configuration = Some(crate::types::ParallelismConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePipelineInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
+        builder.client_request_token = builder.client_request_token.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePipelineInput {
     /// Creates a new builder-style object to manufacture [`CreatePipelineInput`](crate::operation::create_pipeline::CreatePipelineInput).
     pub fn builder() -> crate::operation::create_pipeline::builders::CreatePipelineInputBuilder {

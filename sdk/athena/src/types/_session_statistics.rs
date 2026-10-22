@@ -13,6 +13,79 @@ impl SessionStatistics {
         self.dpu_execution_in_millis
     }
 }
+static SESSIONSTATISTICS_MEMBER_DPU_EXECUTION_IN_MILLIS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SessionStatistics$DpuExecutionInMillis",
+        "com.amazonaws.athena",
+        "SessionStatistics",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DpuExecutionInMillis",
+    0,
+);
+static SESSIONSTATISTICS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#SessionStatistics", "com.amazonaws.athena", "SessionStatistics"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SESSIONSTATISTICS_MEMBER_DPU_EXECUTION_IN_MILLIS],
+);
+impl SessionStatistics {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SESSIONSTATISTICS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SessionStatistics {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.dpu_execution_in_millis {
+            ser.write_long(&SESSIONSTATISTICS_MEMBER_DPU_EXECUTION_IN_MILLIS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SessionStatisticsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SESSIONSTATISTICS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dpu_execution_in_millis = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SessionStatistics {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SessionStatistics {
     /// Creates a new builder-style object to manufacture [`SessionStatistics`](crate::types::SessionStatistics).
     pub fn builder() -> crate::types::builders::SessionStatisticsBuilder {

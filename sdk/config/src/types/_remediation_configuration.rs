@@ -89,6 +89,346 @@ impl RemediationConfiguration {
         self.created_by_service.as_deref()
     }
 }
+static REMEDIATIONCONFIGURATION_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$ConfigRuleName",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleName",
+    0,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_TARGET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$TargetType",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetType",
+    1,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$TargetId",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetId",
+    2,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_TARGET_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$TargetVersion",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetVersion",
+    3,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationParameters$key",
+        "com.amazonaws.configservice",
+        "RemediationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationParameters$value",
+        "com.amazonaws.configservice",
+        "RemediationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$Parameters",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    4,
+)
+.with_map_members(
+    &REMEDIATIONCONFIGURATION_MEMBER_PARAMETERS_KEY,
+    &REMEDIATIONCONFIGURATION_MEMBER_PARAMETERS_VALUE,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$ResourceType",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    5,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_AUTOMATIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$Automatic",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Automatic",
+    6,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_EXECUTION_CONTROLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$ExecutionControls",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExecutionControls",
+    7,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_MAXIMUM_AUTOMATIC_ATTEMPTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$MaximumAutomaticAttempts",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaximumAutomaticAttempts",
+    8,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_RETRY_ATTEMPT_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$RetryAttemptSeconds",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "RetryAttemptSeconds",
+    9,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$Arn",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    10,
+);
+static REMEDIATIONCONFIGURATION_MEMBER_CREATED_BY_SERVICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration$CreatedByService",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatedByService",
+    11,
+);
+static REMEDIATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationConfiguration",
+        "com.amazonaws.configservice",
+        "RemediationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REMEDIATIONCONFIGURATION_MEMBER_CONFIG_RULE_NAME,
+        &REMEDIATIONCONFIGURATION_MEMBER_TARGET_TYPE,
+        &REMEDIATIONCONFIGURATION_MEMBER_TARGET_ID,
+        &REMEDIATIONCONFIGURATION_MEMBER_TARGET_VERSION,
+        &REMEDIATIONCONFIGURATION_MEMBER_PARAMETERS,
+        &REMEDIATIONCONFIGURATION_MEMBER_RESOURCE_TYPE,
+        &REMEDIATIONCONFIGURATION_MEMBER_AUTOMATIC,
+        &REMEDIATIONCONFIGURATION_MEMBER_EXECUTION_CONTROLS,
+        &REMEDIATIONCONFIGURATION_MEMBER_MAXIMUM_AUTOMATIC_ATTEMPTS,
+        &REMEDIATIONCONFIGURATION_MEMBER_RETRY_ATTEMPT_SECONDS,
+        &REMEDIATIONCONFIGURATION_MEMBER_ARN,
+        &REMEDIATIONCONFIGURATION_MEMBER_CREATED_BY_SERVICE,
+    ],
+);
+impl RemediationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMEDIATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemediationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.config_rule_name;
+            ser.write_string(&REMEDIATIONCONFIGURATION_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        {
+            let val = &self.target_type;
+            ser.write_string(&REMEDIATIONCONFIGURATION_MEMBER_TARGET_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.target_id;
+            ser.write_string(&REMEDIATIONCONFIGURATION_MEMBER_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.target_version {
+            ser.write_string(&REMEDIATIONCONFIGURATION_MEMBER_TARGET_VERSION, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &REMEDIATIONCONFIGURATION_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::RemediationParameterValue::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&REMEDIATIONCONFIGURATION_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        {
+            let val = &self.automatic;
+            ser.write_boolean(&REMEDIATIONCONFIGURATION_MEMBER_AUTOMATIC, *val)?;
+        }
+        if let Some(ref val) = self.execution_controls {
+            ser.write_struct(&REMEDIATIONCONFIGURATION_MEMBER_EXECUTION_CONTROLS, val)?;
+        }
+        if let Some(ref val) = self.maximum_automatic_attempts {
+            ser.write_integer(&REMEDIATIONCONFIGURATION_MEMBER_MAXIMUM_AUTOMATIC_ATTEMPTS, *val)?;
+        }
+        if let Some(ref val) = self.retry_attempt_seconds {
+            ser.write_long(&REMEDIATIONCONFIGURATION_MEMBER_RETRY_ATTEMPT_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&REMEDIATIONCONFIGURATION_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.created_by_service {
+            ser.write_string(&REMEDIATIONCONFIGURATION_MEMBER_CREATED_BY_SERVICE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RemediationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REMEDIATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.config_rule_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.target_type = Some(crate::types::RemediationTargetType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.target_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::RemediationParameterValue::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    self.automatic = Some(deser.read_boolean(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_controls = Some(crate::types::ExecutionControls::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_automatic_attempts = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_attempt_seconds = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by_service = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RemediationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.config_rule_name = builder.config_rule_name.or(Some(String::new()));
+        builder.target_id = builder.target_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RemediationConfiguration {
     /// Creates a new builder-style object to manufacture [`RemediationConfiguration`](crate::types::RemediationConfiguration).
     pub fn builder() -> crate::types::builders::RemediationConfigurationBuilder {

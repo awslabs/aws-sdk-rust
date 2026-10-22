@@ -12,6 +12,86 @@ impl DeleteImageBuilderInput {
         self.name.as_deref()
     }
 }
+static DELETEIMAGEBUILDERINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DeleteImageBuilderInput$Name",
+        "com.amazonaws.appstream.synthetic",
+        "DeleteImageBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static DELETEIMAGEBUILDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DeleteImageBuilderInput",
+        "com.amazonaws.appstream.synthetic",
+        "DeleteImageBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEIMAGEBUILDERINPUT_MEMBER_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteImageBuilderRequest");
+impl DeleteImageBuilderInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEIMAGEBUILDERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteImageBuilderInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DELETEIMAGEBUILDERINPUT_MEMBER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEIMAGEBUILDERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteImageBuilderInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageBuilderInput`](crate::operation::delete_image_builder::DeleteImageBuilderInput).
     pub fn builder() -> crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder {

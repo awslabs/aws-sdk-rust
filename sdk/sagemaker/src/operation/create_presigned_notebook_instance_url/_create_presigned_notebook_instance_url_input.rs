@@ -18,6 +18,114 @@ impl CreatePresignedNotebookInstanceUrlInput {
         self.session_expiration_duration_in_seconds
     }
 }
+static CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreatePresignedNotebookInstanceUrlInput$NotebookInstanceName",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreatePresignedNotebookInstanceUrlInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NotebookInstanceName",
+        0,
+    );
+static CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_MEMBER_SESSION_EXPIRATION_DURATION_IN_SECONDS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreatePresignedNotebookInstanceUrlInput$SessionExpirationDurationInSeconds",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreatePresignedNotebookInstanceUrlInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "SessionExpirationDurationInSeconds",
+        1,
+    );
+static CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePresignedNotebookInstanceUrlInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePresignedNotebookInstanceUrlInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME,
+        &CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_MEMBER_SESSION_EXPIRATION_DURATION_IN_SECONDS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePresignedNotebookInstanceUrlInput");
+impl CreatePresignedNotebookInstanceUrlInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePresignedNotebookInstanceUrlInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.notebook_instance_name {
+            ser.write_string(&CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.session_expiration_duration_in_seconds {
+            ser.write_integer(
+                &CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_MEMBER_SESSION_EXPIRATION_DURATION_IN_SECONDS,
+                *val,
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPRESIGNEDNOTEBOOKINSTANCEURLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_expiration_duration_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePresignedNotebookInstanceUrlInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.notebook_instance_name = builder.notebook_instance_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePresignedNotebookInstanceUrlInput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookInstanceUrlInput`](crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlInput).
     pub fn builder() -> crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlInputBuilder {

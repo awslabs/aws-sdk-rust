@@ -203,6 +203,543 @@ impl ClusterInstanceGroupSpecification {
         self.network_interface.as_ref()
     }
 }
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$InstanceCount",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    0,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_MIN_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$MinInstanceCount",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MinInstanceCount",
+    1,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$InstanceGroupName",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceGroupName",
+    2,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$InstanceType",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    3,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_REQUIREMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$InstanceRequirements",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InstanceRequirements",
+    4,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_LIFE_CYCLE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$LifeCycleConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LifeCycleConfig",
+    5,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_EXECUTION_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$ExecutionRole",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRole",
+    6,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_THREADS_PER_CORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$ThreadsPerCore",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ThreadsPerCore",
+    7,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_STORAGE_CONFIGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterInstanceStorageConfigs$member",
+            "com.amazonaws.sagemaker",
+            "ClusterInstanceStorageConfigs",
+        ),
+        ::aws_smithy_schema::ShapeType::Union,
+        "member",
+        0,
+    );
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_STORAGE_CONFIGS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$InstanceStorageConfigs",
+            "com.amazonaws.sagemaker",
+            "ClusterInstanceGroupSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "InstanceStorageConfigs",
+        8,
+    )
+    .with_list_member(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_STORAGE_CONFIGS_MEMBER);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_ON_START_DEEP_HEALTH_CHECKS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#OnStartDeepHealthChecks$member",
+            "com.amazonaws.sagemaker",
+            "OnStartDeepHealthChecks",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_ON_START_DEEP_HEALTH_CHECKS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$OnStartDeepHealthChecks",
+            "com.amazonaws.sagemaker",
+            "ClusterInstanceGroupSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "OnStartDeepHealthChecks",
+        9,
+    )
+    .with_list_member(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_ON_START_DEEP_HEALTH_CHECKS_MEMBER);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_TRAINING_PLAN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$TrainingPlanArn",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingPlanArn",
+    10,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_OVERRIDE_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$OverrideVpcConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OverrideVpcConfig",
+    11,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_SCHEDULED_UPDATE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$ScheduledUpdateConfig",
+            "com.amazonaws.sagemaker",
+            "ClusterInstanceGroupSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ScheduledUpdateConfig",
+        12,
+    );
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$ImageId",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    13,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_AUTO_PATCH_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$AutoPatchConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoPatchConfig",
+    14,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_IMAGE_RELEASE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$ImageReleaseVersion",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageReleaseVersion",
+    15,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_KUBERNETES_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$KubernetesConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KubernetesConfig",
+    16,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_SLURM_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$SlurmConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SlurmConfig",
+    17,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_CAPACITY_REQUIREMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$CapacityRequirements",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CapacityRequirements",
+    18,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_NETWORK_INTERFACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification$NetworkInterface",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkInterface",
+    19,
+);
+static CLUSTERINSTANCEGROUPSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupSpecification",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_COUNT,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_MIN_INSTANCE_COUNT,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_GROUP_NAME,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_TYPE,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_REQUIREMENTS,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_LIFE_CYCLE_CONFIG,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_EXECUTION_ROLE,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_THREADS_PER_CORE,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_STORAGE_CONFIGS,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_ON_START_DEEP_HEALTH_CHECKS,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_TRAINING_PLAN_ARN,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_OVERRIDE_VPC_CONFIG,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_SCHEDULED_UPDATE_CONFIG,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_IMAGE_ID,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_AUTO_PATCH_CONFIG,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_IMAGE_RELEASE_VERSION,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_KUBERNETES_CONFIG,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_SLURM_CONFIG,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_CAPACITY_REQUIREMENTS,
+        &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_NETWORK_INTERFACE,
+    ],
+);
+impl ClusterInstanceGroupSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERINSTANCEGROUPSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterInstanceGroupSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.min_instance_count {
+            ser.write_integer(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_MIN_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.instance_group_name {
+            ser.write_string(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_requirements {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_REQUIREMENTS, val)?;
+        }
+        if let Some(ref val) = self.life_cycle_config {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_LIFE_CYCLE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.execution_role {
+            ser.write_string(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_EXECUTION_ROLE, val)?;
+        }
+        if let Some(ref val) = self.threads_per_core {
+            ser.write_integer(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_THREADS_PER_CORE, *val)?;
+        }
+        if let Some(ref val) = self.instance_storage_configs {
+            ser.write_list(
+                &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_INSTANCE_STORAGE_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ClusterInstanceStorageConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.on_start_deep_health_checks {
+            ser.write_list(
+                &CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_ON_START_DEEP_HEALTH_CHECKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.training_plan_arn {
+            ser.write_string(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_TRAINING_PLAN_ARN, val)?;
+        }
+        if let Some(ref val) = self.override_vpc_config {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_OVERRIDE_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.scheduled_update_config {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_SCHEDULED_UPDATE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.auto_patch_config {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_AUTO_PATCH_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.image_release_version {
+            ser.write_string(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_IMAGE_RELEASE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.kubernetes_config {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_KUBERNETES_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.slurm_config {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_SLURM_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.capacity_requirements {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_CAPACITY_REQUIREMENTS, val)?;
+        }
+        if let Some(ref val) = self.network_interface {
+            ser.write_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_MEMBER_NETWORK_INTERFACE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterInstanceGroupSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERINSTANCEGROUPSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::ClusterInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_requirements = Some(crate::types::ClusterInstanceRequirements::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.life_cycle_config = Some(crate::types::ClusterLifeCycleConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.threads_per_core = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_storage_configs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClusterInstanceStorageConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_start_deep_health_checks = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeepHealthCheckType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.override_vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scheduled_update_config = Some(crate::types::ScheduledUpdateConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_patch_config = Some(crate::types::ClusterAutoPatchConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_release_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kubernetes_config = Some(crate::types::ClusterKubernetesConfig::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.slurm_config = Some(crate::types::ClusterSlurmConfig::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_requirements = Some(crate::types::ClusterCapacityRequirements::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface = Some(crate::types::ClusterNetworkInterface::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterInstanceGroupSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn builder() -> crate::types::builders::ClusterInstanceGroupSpecificationBuilder {

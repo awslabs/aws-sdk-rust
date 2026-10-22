@@ -33,6 +33,148 @@ impl ConfigStreamDeliveryInfo {
         self.last_status_change_time.as_ref()
     }
 }
+static CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigStreamDeliveryInfo$lastStatus",
+        "com.amazonaws.configservice",
+        "ConfigStreamDeliveryInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastStatus",
+    0,
+);
+static CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigStreamDeliveryInfo$lastErrorCode",
+        "com.amazonaws.configservice",
+        "ConfigStreamDeliveryInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastErrorCode",
+    1,
+);
+static CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigStreamDeliveryInfo$lastErrorMessage",
+        "com.amazonaws.configservice",
+        "ConfigStreamDeliveryInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastErrorMessage",
+    2,
+);
+static CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_STATUS_CHANGE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigStreamDeliveryInfo$lastStatusChangeTime",
+        "com.amazonaws.configservice",
+        "ConfigStreamDeliveryInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastStatusChangeTime",
+    3,
+);
+static CONFIGSTREAMDELIVERYINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigStreamDeliveryInfo",
+        "com.amazonaws.configservice",
+        "ConfigStreamDeliveryInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_STATUS,
+        &CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_ERROR_CODE,
+        &CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_ERROR_MESSAGE,
+        &CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_STATUS_CHANGE_TIME,
+    ],
+);
+impl ConfigStreamDeliveryInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFIGSTREAMDELIVERYINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConfigStreamDeliveryInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.last_status {
+            ser.write_string(&CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_error_code {
+            ser.write_string(&CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.last_error_message {
+            ser.write_string(&CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.last_status_change_time {
+            ser.write_timestamp(&CONFIGSTREAMDELIVERYINFO_MEMBER_LAST_STATUS_CHANGE_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConfigStreamDeliveryInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFIGSTREAMDELIVERYINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status = Some(crate::types::DeliveryStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status_change_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConfigStreamDeliveryInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConfigStreamDeliveryInfo {
     /// Creates a new builder-style object to manufacture [`ConfigStreamDeliveryInfo`](crate::types::ConfigStreamDeliveryInfo).
     pub fn builder() -> crate::types::builders::ConfigStreamDeliveryInfoBuilder {

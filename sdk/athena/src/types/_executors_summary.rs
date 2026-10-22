@@ -56,6 +56,184 @@ impl ExecutorsSummary {
         self.executor_size
     }
 }
+static EXECUTORSSUMMARY_MEMBER_EXECUTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ExecutorsSummary$ExecutorId",
+        "com.amazonaws.athena",
+        "ExecutorsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutorId",
+    0,
+);
+static EXECUTORSSUMMARY_MEMBER_EXECUTOR_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ExecutorsSummary$ExecutorType",
+        "com.amazonaws.athena",
+        "ExecutorsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutorType",
+    1,
+);
+static EXECUTORSSUMMARY_MEMBER_START_DATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ExecutorsSummary$StartDateTime",
+        "com.amazonaws.athena",
+        "ExecutorsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "StartDateTime",
+    2,
+);
+static EXECUTORSSUMMARY_MEMBER_TERMINATION_DATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ExecutorsSummary$TerminationDateTime",
+        "com.amazonaws.athena",
+        "ExecutorsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TerminationDateTime",
+    3,
+);
+static EXECUTORSSUMMARY_MEMBER_EXECUTOR_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ExecutorsSummary$ExecutorState",
+        "com.amazonaws.athena",
+        "ExecutorsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutorState",
+    4,
+);
+static EXECUTORSSUMMARY_MEMBER_EXECUTOR_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ExecutorsSummary$ExecutorSize",
+        "com.amazonaws.athena",
+        "ExecutorsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ExecutorSize",
+    5,
+);
+static EXECUTORSSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ExecutorsSummary", "com.amazonaws.athena", "ExecutorsSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXECUTORSSUMMARY_MEMBER_EXECUTOR_ID,
+        &EXECUTORSSUMMARY_MEMBER_EXECUTOR_TYPE,
+        &EXECUTORSSUMMARY_MEMBER_START_DATE_TIME,
+        &EXECUTORSSUMMARY_MEMBER_TERMINATION_DATE_TIME,
+        &EXECUTORSSUMMARY_MEMBER_EXECUTOR_STATE,
+        &EXECUTORSSUMMARY_MEMBER_EXECUTOR_SIZE,
+    ],
+);
+impl ExecutorsSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXECUTORSSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExecutorsSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.executor_id;
+            ser.write_string(&EXECUTORSSUMMARY_MEMBER_EXECUTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.executor_type {
+            ser.write_string(&EXECUTORSSUMMARY_MEMBER_EXECUTOR_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.start_date_time {
+            ser.write_long(&EXECUTORSSUMMARY_MEMBER_START_DATE_TIME, *val)?;
+        }
+        if let Some(ref val) = self.termination_date_time {
+            ser.write_long(&EXECUTORSSUMMARY_MEMBER_TERMINATION_DATE_TIME, *val)?;
+        }
+        if let Some(ref val) = self.executor_state {
+            ser.write_string(&EXECUTORSSUMMARY_MEMBER_EXECUTOR_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.executor_size {
+            ser.write_long(&EXECUTORSSUMMARY_MEMBER_EXECUTOR_SIZE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExecutorsSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXECUTORSSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.executor_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.executor_type = Some(crate::types::ExecutorType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_date_time = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.termination_date_time = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.executor_state = Some(crate::types::ExecutorState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.executor_size = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExecutorsSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.executor_id = builder.executor_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ExecutorsSummary {
     /// Creates a new builder-style object to manufacture [`ExecutorsSummary`](crate::types::ExecutorsSummary).
     pub fn builder() -> crate::types::builders::ExecutorsSummaryBuilder {

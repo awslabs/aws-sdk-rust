@@ -39,6 +39,187 @@ impl ActionType {
         self.output_artifact_details.as_ref()
     }
 }
+static ACTIONTYPE_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#ActionType$id", "com.amazonaws.codepipeline", "ActionType"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "id",
+    0,
+);
+static ACTIONTYPE_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionType$settings",
+        "com.amazonaws.codepipeline",
+        "ActionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "settings",
+    1,
+);
+static ACTIONTYPE_MEMBER_ACTION_CONFIGURATION_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionConfigurationPropertyList$member",
+        "com.amazonaws.codepipeline",
+        "ActionConfigurationPropertyList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACTIONTYPE_MEMBER_ACTION_CONFIGURATION_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionType$actionConfigurationProperties",
+        "com.amazonaws.codepipeline",
+        "ActionType",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "actionConfigurationProperties",
+    2,
+)
+.with_list_member(&ACTIONTYPE_MEMBER_ACTION_CONFIGURATION_PROPERTIES_MEMBER);
+static ACTIONTYPE_MEMBER_INPUT_ARTIFACT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionType$inputArtifactDetails",
+        "com.amazonaws.codepipeline",
+        "ActionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "inputArtifactDetails",
+    3,
+);
+static ACTIONTYPE_MEMBER_OUTPUT_ARTIFACT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionType$outputArtifactDetails",
+        "com.amazonaws.codepipeline",
+        "ActionType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "outputArtifactDetails",
+    4,
+);
+static ACTIONTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#ActionType", "com.amazonaws.codepipeline", "ActionType"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONTYPE_MEMBER_ID,
+        &ACTIONTYPE_MEMBER_SETTINGS,
+        &ACTIONTYPE_MEMBER_ACTION_CONFIGURATION_PROPERTIES,
+        &ACTIONTYPE_MEMBER_INPUT_ARTIFACT_DETAILS,
+        &ACTIONTYPE_MEMBER_OUTPUT_ARTIFACT_DETAILS,
+    ],
+);
+impl ActionType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONTYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_struct(&ACTIONTYPE_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&ACTIONTYPE_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.action_configuration_properties {
+            ser.write_list(
+                &ACTIONTYPE_MEMBER_ACTION_CONFIGURATION_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ActionConfigurationProperty::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_artifact_details {
+            ser.write_struct(&ACTIONTYPE_MEMBER_INPUT_ARTIFACT_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.output_artifact_details {
+            ser.write_struct(&ACTIONTYPE_MEMBER_OUTPUT_ARTIFACT_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONTYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(crate::types::ActionTypeId::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::ActionTypeSettings::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_configuration_properties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ActionConfigurationProperty::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifact_details = Some(crate::types::ArtifactDetails::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_artifact_details = Some(crate::types::ArtifactDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActionType {
     /// Creates a new builder-style object to manufacture [`ActionType`](crate::types::ActionType).
     pub fn builder() -> crate::types::builders::ActionTypeBuilder {

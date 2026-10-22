@@ -37,6 +37,148 @@ impl OrganizationalUnit {
         self.path.as_deref()
     }
 }
+static ORGANIZATIONALUNIT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#OrganizationalUnit$Id",
+        "com.amazonaws.organizations",
+        "OrganizationalUnit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static ORGANIZATIONALUNIT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#OrganizationalUnit$Arn",
+        "com.amazonaws.organizations",
+        "OrganizationalUnit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static ORGANIZATIONALUNIT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#OrganizationalUnit$Name",
+        "com.amazonaws.organizations",
+        "OrganizationalUnit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    2,
+);
+static ORGANIZATIONALUNIT_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#OrganizationalUnit$Path",
+        "com.amazonaws.organizations",
+        "OrganizationalUnit",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Path",
+    3,
+);
+static ORGANIZATIONALUNIT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#OrganizationalUnit",
+        "com.amazonaws.organizations",
+        "OrganizationalUnit",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ORGANIZATIONALUNIT_MEMBER_ID,
+        &ORGANIZATIONALUNIT_MEMBER_ARN,
+        &ORGANIZATIONALUNIT_MEMBER_NAME,
+        &ORGANIZATIONALUNIT_MEMBER_PATH,
+    ],
+);
+impl OrganizationalUnit {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ORGANIZATIONALUNIT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OrganizationalUnit {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&ORGANIZATIONALUNIT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&ORGANIZATIONALUNIT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&ORGANIZATIONALUNIT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&ORGANIZATIONALUNIT_MEMBER_PATH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OrganizationalUnitBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ORGANIZATIONALUNIT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OrganizationalUnit {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OrganizationalUnit {
     /// Creates a new builder-style object to manufacture [`OrganizationalUnit`](crate::types::OrganizationalUnit).
     pub fn builder() -> crate::types::builders::OrganizationalUnitBuilder {

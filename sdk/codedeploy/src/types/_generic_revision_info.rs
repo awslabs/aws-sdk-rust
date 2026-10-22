@@ -39,6 +39,188 @@ impl GenericRevisionInfo {
         self.register_time.as_ref()
     }
 }
+static GENERICREVISIONINFO_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GenericRevisionInfo$description",
+        "com.amazonaws.codedeploy",
+        "GenericRevisionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    0,
+);
+static GENERICREVISIONINFO_MEMBER_DEPLOYMENT_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentGroupsList$member",
+        "com.amazonaws.codedeploy",
+        "DeploymentGroupsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GENERICREVISIONINFO_MEMBER_DEPLOYMENT_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GenericRevisionInfo$deploymentGroups",
+        "com.amazonaws.codedeploy",
+        "GenericRevisionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "deploymentGroups",
+    1,
+)
+.with_list_member(&GENERICREVISIONINFO_MEMBER_DEPLOYMENT_GROUPS_MEMBER);
+static GENERICREVISIONINFO_MEMBER_FIRST_USED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GenericRevisionInfo$firstUsedTime",
+        "com.amazonaws.codedeploy",
+        "GenericRevisionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "firstUsedTime",
+    2,
+);
+static GENERICREVISIONINFO_MEMBER_LAST_USED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GenericRevisionInfo$lastUsedTime",
+        "com.amazonaws.codedeploy",
+        "GenericRevisionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastUsedTime",
+    3,
+);
+static GENERICREVISIONINFO_MEMBER_REGISTER_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GenericRevisionInfo$registerTime",
+        "com.amazonaws.codedeploy",
+        "GenericRevisionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "registerTime",
+    4,
+);
+static GENERICREVISIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#GenericRevisionInfo",
+        "com.amazonaws.codedeploy",
+        "GenericRevisionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GENERICREVISIONINFO_MEMBER_DESCRIPTION,
+        &GENERICREVISIONINFO_MEMBER_DEPLOYMENT_GROUPS,
+        &GENERICREVISIONINFO_MEMBER_FIRST_USED_TIME,
+        &GENERICREVISIONINFO_MEMBER_LAST_USED_TIME,
+        &GENERICREVISIONINFO_MEMBER_REGISTER_TIME,
+    ],
+);
+impl GenericRevisionInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GENERICREVISIONINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GenericRevisionInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&GENERICREVISIONINFO_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.deployment_groups {
+            ser.write_list(
+                &GENERICREVISIONINFO_MEMBER_DEPLOYMENT_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.first_used_time {
+            ser.write_timestamp(&GENERICREVISIONINFO_MEMBER_FIRST_USED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_used_time {
+            ser.write_timestamp(&GENERICREVISIONINFO_MEMBER_LAST_USED_TIME, val)?;
+        }
+        if let Some(ref val) = self.register_time {
+            ser.write_timestamp(&GENERICREVISIONINFO_MEMBER_REGISTER_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GenericRevisionInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GENERICREVISIONINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_groups = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.first_used_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_used_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.register_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GenericRevisionInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GenericRevisionInfo {
     /// Creates a new builder-style object to manufacture [`GenericRevisionInfo`](crate::types::GenericRevisionInfo).
     pub fn builder() -> crate::types::builders::GenericRevisionInfoBuilder {

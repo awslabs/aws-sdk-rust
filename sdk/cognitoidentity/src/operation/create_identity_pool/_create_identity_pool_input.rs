@@ -69,6 +69,390 @@ impl CreateIdentityPoolInput {
         self.identity_pool_tags.as_ref()
     }
 }
+static CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$IdentityPoolName",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityPoolName",
+    0,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_ALLOW_UNAUTHENTICATED_IDENTITIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$AllowUnauthenticatedIdentities",
+            "com.amazonaws.cognitoidentity.synthetic",
+            "CreateIdentityPoolInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "AllowUnauthenticatedIdentities",
+        1,
+    );
+static CREATEIDENTITYPOOLINPUT_MEMBER_ALLOW_CLASSIC_FLOW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$AllowClassicFlow",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AllowClassicFlow",
+    2,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_SUPPORTED_LOGIN_PROVIDERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#IdentityProviders$key",
+        "com.amazonaws.cognitoidentity",
+        "IdentityProviders",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_SUPPORTED_LOGIN_PROVIDERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#IdentityProviders$value",
+        "com.amazonaws.cognitoidentity",
+        "IdentityProviders",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_SUPPORTED_LOGIN_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$SupportedLoginProviders",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "SupportedLoginProviders",
+    3,
+)
+.with_map_members(
+    &CREATEIDENTITYPOOLINPUT_MEMBER_SUPPORTED_LOGIN_PROVIDERS_KEY,
+    &CREATEIDENTITYPOOLINPUT_MEMBER_SUPPORTED_LOGIN_PROVIDERS_VALUE,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_DEVELOPER_PROVIDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$DeveloperProviderName",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeveloperProviderName",
+    4,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_OPEN_ID_CONNECT_PROVIDER_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentity#OIDCProviderList$member",
+            "com.amazonaws.cognitoidentity",
+            "OIDCProviderList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATEIDENTITYPOOLINPUT_MEMBER_OPEN_ID_CONNECT_PROVIDER_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$OpenIdConnectProviderARNs",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OpenIdConnectProviderARNs",
+    5,
+)
+.with_list_member(&CREATEIDENTITYPOOLINPUT_MEMBER_OPEN_ID_CONNECT_PROVIDER_ARNS_MEMBER);
+static CREATEIDENTITYPOOLINPUT_MEMBER_COGNITO_IDENTITY_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentity#CognitoIdentityProviderList$member",
+            "com.amazonaws.cognitoidentity",
+            "CognitoIdentityProviderList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEIDENTITYPOOLINPUT_MEMBER_COGNITO_IDENTITY_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$CognitoIdentityProviders",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CognitoIdentityProviders",
+    6,
+)
+.with_list_member(&CREATEIDENTITYPOOLINPUT_MEMBER_COGNITO_IDENTITY_PROVIDERS_MEMBER);
+static CREATEIDENTITYPOOLINPUT_MEMBER_SAML_PROVIDER_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#SAMLProviderList$member",
+        "com.amazonaws.cognitoidentity",
+        "SAMLProviderList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_SAML_PROVIDER_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$SamlProviderARNs",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SamlProviderARNs",
+    7,
+)
+.with_list_member(&CREATEIDENTITYPOOLINPUT_MEMBER_SAML_PROVIDER_ARNS_MEMBER);
+static CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#IdentityPoolTagsType$key",
+        "com.amazonaws.cognitoidentity",
+        "IdentityPoolTagsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#IdentityPoolTagsType$value",
+        "com.amazonaws.cognitoidentity",
+        "IdentityPoolTagsType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput$IdentityPoolTags",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "IdentityPoolTags",
+    8,
+)
+.with_map_members(
+    &CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_TAGS_KEY,
+    &CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_TAGS_VALUE,
+);
+static CREATEIDENTITYPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#CreateIdentityPoolInput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "CreateIdentityPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_NAME,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_ALLOW_UNAUTHENTICATED_IDENTITIES,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_ALLOW_CLASSIC_FLOW,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_SUPPORTED_LOGIN_PROVIDERS,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_DEVELOPER_PROVIDER_NAME,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_OPEN_ID_CONNECT_PROVIDER_ARNS,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_COGNITO_IDENTITY_PROVIDERS,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_SAML_PROVIDER_ARNS,
+        &CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateIdentityPoolInput");
+impl CreateIdentityPoolInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEIDENTITYPOOLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateIdentityPoolInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_pool_name {
+            ser.write_string(&CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_NAME, val)?;
+        }
+        if let Some(ref val) = self.allow_unauthenticated_identities {
+            ser.write_boolean(&CREATEIDENTITYPOOLINPUT_MEMBER_ALLOW_UNAUTHENTICATED_IDENTITIES, *val)?;
+        }
+        if let Some(ref val) = self.allow_classic_flow {
+            ser.write_boolean(&CREATEIDENTITYPOOLINPUT_MEMBER_ALLOW_CLASSIC_FLOW, *val)?;
+        }
+        if let Some(ref val) = self.supported_login_providers {
+            ser.write_map(
+                &CREATEIDENTITYPOOLINPUT_MEMBER_SUPPORTED_LOGIN_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.developer_provider_name {
+            ser.write_string(&CREATEIDENTITYPOOLINPUT_MEMBER_DEVELOPER_PROVIDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.open_id_connect_provider_arns {
+            ser.write_list(
+                &CREATEIDENTITYPOOLINPUT_MEMBER_OPEN_ID_CONNECT_PROVIDER_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cognito_identity_providers {
+            ser.write_list(
+                &CREATEIDENTITYPOOLINPUT_MEMBER_COGNITO_IDENTITY_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CognitoIdentityProvider::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.saml_provider_arns {
+            ser.write_list(
+                &CREATEIDENTITYPOOLINPUT_MEMBER_SAML_PROVIDER_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.identity_pool_tags {
+            ser.write_map(
+                &CREATEIDENTITYPOOLINPUT_MEMBER_IDENTITY_POOL_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_identity_pool::builders::CreateIdentityPoolInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEIDENTITYPOOLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_pool_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allow_unauthenticated_identities = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allow_classic_flow = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_login_providers = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.developer_provider_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.open_id_connect_provider_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cognito_identity_providers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CognitoIdentityProvider::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.saml_provider_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_pool_tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateIdentityPoolInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identity_pool_name = builder.identity_pool_name.or(Some(String::new()));
+        builder.allow_unauthenticated_identities = builder.allow_unauthenticated_identities.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateIdentityPoolInput {
     /// Creates a new builder-style object to manufacture [`CreateIdentityPoolInput`](crate::operation::create_identity_pool::CreateIdentityPoolInput).
     pub fn builder() -> crate::operation::create_identity_pool::builders::CreateIdentityPoolInputBuilder {

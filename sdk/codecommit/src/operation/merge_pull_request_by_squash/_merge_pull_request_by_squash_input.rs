@@ -66,6 +66,281 @@ impl MergePullRequestBySquashInput {
         self.conflict_resolution.as_ref()
     }
 }
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_PULL_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$pullRequestId",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pullRequestId",
+    0,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_SOURCE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$sourceCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceCommitId",
+    2,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_DETAIL_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$conflictDetailLevel",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "conflictDetailLevel",
+    3,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_RESOLUTION_STRATEGY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$conflictResolutionStrategy",
+            "com.amazonaws.codecommit.synthetic",
+            "MergePullRequestBySquashInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "conflictResolutionStrategy",
+        4,
+    );
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_COMMIT_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$commitMessage",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "commitMessage",
+    5,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_AUTHOR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$authorName",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "authorName",
+    6,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$email",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "email",
+    7,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_KEEP_EMPTY_FOLDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$keepEmptyFolders",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "keepEmptyFolders",
+    8,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_RESOLUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput$conflictResolution",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "conflictResolution",
+    9,
+);
+static MERGEPULLREQUESTBYSQUASHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestBySquashInput",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestBySquashInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_PULL_REQUEST_ID,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_REPOSITORY_NAME,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_SOURCE_COMMIT_ID,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_DETAIL_LEVEL,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_RESOLUTION_STRATEGY,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_COMMIT_MESSAGE,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_AUTHOR_NAME,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_EMAIL,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_KEEP_EMPTY_FOLDERS,
+        &MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_RESOLUTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("MergePullRequestBySquashInput");
+impl MergePullRequestBySquashInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MERGEPULLREQUESTBYSQUASHINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MergePullRequestBySquashInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pull_request_id {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_PULL_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_commit_id {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_SOURCE_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.conflict_detail_level {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_DETAIL_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.conflict_resolution_strategy {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_RESOLUTION_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.commit_message {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_COMMIT_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.author_name {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_AUTHOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.email {
+            ser.write_string(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.keep_empty_folders {
+            ser.write_boolean(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_KEEP_EMPTY_FOLDERS, *val)?;
+        }
+        if let Some(ref val) = self.conflict_resolution {
+            ser.write_struct(&MERGEPULLREQUESTBYSQUASHINPUT_MEMBER_CONFLICT_RESOLUTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MERGEPULLREQUESTBYSQUASHINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conflict_detail_level = Some(crate::types::ConflictDetailLevelTypeEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conflict_resolution_strategy = Some(crate::types::ConflictResolutionStrategyTypeEnum::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commit_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.author_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.keep_empty_folders = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conflict_resolution = Some(crate::types::ConflictResolution::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MergePullRequestBySquashInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pull_request_id = builder.pull_request_id.or(Some(String::new()));
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MergePullRequestBySquashInput {
     /// Creates a new builder-style object to manufacture [`MergePullRequestBySquashInput`](crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashInput).
     pub fn builder() -> crate::operation::merge_pull_request_by_squash::builders::MergePullRequestBySquashInputBuilder {

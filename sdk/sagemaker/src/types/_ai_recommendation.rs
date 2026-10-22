@@ -53,6 +53,259 @@ impl AiRecommendation {
         self.adapter_details.as_ref()
     }
 }
+static AIRECOMMENDATION_MEMBER_RECOMMENDATION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendation$RecommendationDescription",
+        "com.amazonaws.sagemaker",
+        "AIRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RecommendationDescription",
+    0,
+);
+static AIRECOMMENDATION_MEMBER_OPTIMIZATION_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationOptimizationDetailList$member",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationOptimizationDetailList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIRECOMMENDATION_MEMBER_OPTIMIZATION_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendation$OptimizationDetails",
+        "com.amazonaws.sagemaker",
+        "AIRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OptimizationDetails",
+    1,
+)
+.with_list_member(&AIRECOMMENDATION_MEMBER_OPTIMIZATION_DETAILS_MEMBER);
+static AIRECOMMENDATION_MEMBER_MODEL_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendation$ModelDetails",
+        "com.amazonaws.sagemaker",
+        "AIRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDetails",
+    2,
+);
+static AIRECOMMENDATION_MEMBER_DEPLOYMENT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendation$DeploymentConfiguration",
+        "com.amazonaws.sagemaker",
+        "AIRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentConfiguration",
+    3,
+);
+static AIRECOMMENDATION_MEMBER_AI_BENCHMARK_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendation$AIBenchmarkJobArn",
+        "com.amazonaws.sagemaker",
+        "AIRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AIBenchmarkJobArn",
+    4,
+);
+static AIRECOMMENDATION_MEMBER_EXPECTED_PERFORMANCE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExpectedPerformanceList$member",
+        "com.amazonaws.sagemaker",
+        "ExpectedPerformanceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIRECOMMENDATION_MEMBER_EXPECTED_PERFORMANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendation$ExpectedPerformance",
+        "com.amazonaws.sagemaker",
+        "AIRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExpectedPerformance",
+    5,
+)
+.with_list_member(&AIRECOMMENDATION_MEMBER_EXPECTED_PERFORMANCE_MEMBER);
+static AIRECOMMENDATION_MEMBER_ADAPTER_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendation$AdapterDetails",
+        "com.amazonaws.sagemaker",
+        "AIRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdapterDetails",
+    6,
+);
+static AIRECOMMENDATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AIRecommendation", "com.amazonaws.sagemaker", "AIRecommendation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AIRECOMMENDATION_MEMBER_RECOMMENDATION_DESCRIPTION,
+        &AIRECOMMENDATION_MEMBER_OPTIMIZATION_DETAILS,
+        &AIRECOMMENDATION_MEMBER_MODEL_DETAILS,
+        &AIRECOMMENDATION_MEMBER_DEPLOYMENT_CONFIGURATION,
+        &AIRECOMMENDATION_MEMBER_AI_BENCHMARK_JOB_ARN,
+        &AIRECOMMENDATION_MEMBER_EXPECTED_PERFORMANCE,
+        &AIRECOMMENDATION_MEMBER_ADAPTER_DETAILS,
+    ],
+);
+impl AiRecommendation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIRECOMMENDATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiRecommendation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.recommendation_description {
+            ser.write_string(&AIRECOMMENDATION_MEMBER_RECOMMENDATION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.optimization_details {
+            ser.write_list(
+                &AIRECOMMENDATION_MEMBER_OPTIMIZATION_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AiRecommendationOptimizationDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.model_details {
+            ser.write_struct(&AIRECOMMENDATION_MEMBER_MODEL_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.deployment_configuration {
+            ser.write_struct(&AIRECOMMENDATION_MEMBER_DEPLOYMENT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.ai_benchmark_job_arn {
+            ser.write_string(&AIRECOMMENDATION_MEMBER_AI_BENCHMARK_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.expected_performance {
+            ser.write_list(
+                &AIRECOMMENDATION_MEMBER_EXPECTED_PERFORMANCE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AiRecommendationPerformanceMetric::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.adapter_details {
+            ser.write_struct(&AIRECOMMENDATION_MEMBER_ADAPTER_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiRecommendationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIRECOMMENDATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recommendation_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.optimization_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AiRecommendationOptimizationDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_details = Some(crate::types::AiRecommendationModelDetails::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_configuration = Some(crate::types::AiRecommendationDeploymentConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_benchmark_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expected_performance = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AiRecommendationPerformanceMetric::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.adapter_details = Some(crate::types::AiRecommendationAdapterDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiRecommendation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiRecommendation {
     /// Creates a new builder-style object to manufacture [`AiRecommendation`](crate::types::AiRecommendation).
     pub fn builder() -> crate::types::builders::AiRecommendationBuilder {

@@ -20,6 +20,9 @@ const PRELUDE_LENGTH_BYTES: u32 = 3 * size_of::<u32>() as u32;
 const PRELUDE_LENGTH_BYTES_USIZE: usize = PRELUDE_LENGTH_BYTES as usize;
 const MESSAGE_CRC_LENGTH_BYTES: u32 = size_of::<u32>() as u32;
 const MAX_HEADER_NAME_LEN: usize = 255;
+// String and byte array values are prefixed with a 2-byte length, but the protocol limits them to
+// `i16::MAX` rather than the `u16::MAX` that field could hold (matching the CRT, Java, and Go).
+const MAX_HEADER_VALUE_LEN: usize = i16::MAX as usize;
 const MIN_HEADER_LEN: usize = 2;
 
 pub(crate) const TYPE_TRUE: u8 = 0;
@@ -206,15 +209,12 @@ fn write_header_value_to<B: BufMut>(value: &HeaderValue, mut buffer: B) -> Resul
         }
         ByteArray(val) => {
             buffer.put_u8(TYPE_BYTE_ARRAY);
-            buffer.put_u16(checked(val.len(), ErrorKind::HeaderValueTooLong.into())?);
+            buffer.put_u16(header_value_len(val.len())?);
             buffer.put_slice(&val[..]);
         }
         String(val) => {
             buffer.put_u8(TYPE_STRING);
-            buffer.put_u16(checked(
-                val.as_bytes().len(),
-                ErrorKind::HeaderValueTooLong.into(),
-            )?);
+            buffer.put_u16(header_value_len(val.as_bytes().len())?);
             buffer.put_slice(&val.as_bytes()[..]);
         }
         Timestamp(time) => {
@@ -267,10 +267,14 @@ fn write_header_to<B: BufMut>(header: &Header, mut buffer: B) -> Result<(), Erro
 }
 
 /// Writes the given `headers` to a `buffer`.
+///
+/// If any header fails to serialize, nothing is written to `buffer`.
 pub fn write_headers_to<B: BufMut>(headers: &[Header], mut buffer: B) -> Result<(), Error> {
+    let mut staged = Vec::with_capacity(headers.len());
     for header in headers {
-        write_header_to(header, &mut buffer)?;
+        write_header_to(header, &mut staged)?;
     }
+    buffer.put_slice(&staged);
     Ok(())
 }
 
@@ -376,6 +380,19 @@ fn checked<T: TryFrom<U>, U>(from: U, err: Error) -> Result<T, Error> {
     T::try_from(from).map_err(|_| err)
 }
 
+/// Returns `len` as the length prefix for a string or byte array header value.
+///
+/// This must error rather than truncate: the frame's lengths and CRCs are computed from the bytes
+/// actually written, so a frame with a truncated value length would still be valid, and a decoder
+/// would read the rest of the value as further headers.
+fn header_value_len(len: usize) -> Result<u16, Error> {
+    if len > MAX_HEADER_VALUE_LEN {
+        return Err(ErrorKind::HeaderValueTooLong.into());
+    }
+    // Lossless: `MAX_HEADER_VALUE_LEN` fits in a `u16`.
+    Ok(len as u16)
+}
+
 fn max_header_len(total_len: u32) -> Result<u32, Error> {
     total_len
         .checked_sub(PRELUDE_LENGTH_BYTES + MESSAGE_CRC_LENGTH_BYTES)
@@ -394,9 +411,14 @@ fn payload_len(total_len: u32, header_len: u32) -> Result<u32, Error> {
 
 #[cfg(test)]
 mod message_tests {
-    use super::read_message_from;
+    use super::{
+        read_message_from, MAX_HEADER_NAME_LEN, MAX_HEADER_VALUE_LEN, MESSAGE_CRC_LENGTH_BYTES,
+        PRELUDE_LENGTH_BYTES, TYPE_BYTE, TYPE_INT16, TYPE_INT32, TYPE_INT64, TYPE_STRING,
+        TYPE_TIMESTAMP, TYPE_UUID,
+    };
     use crate::error::ErrorKind;
-    use crate::frame::{write_message_to, Header, HeaderValue, Message};
+    use crate::frame::{write_headers_to, write_message_to, Header, HeaderValue, Message};
+    use aws_smithy_types::str_bytes::StrBytes;
     use aws_smithy_types::DateTime;
     use bytes::Bytes;
 
@@ -556,6 +578,433 @@ mod message_tests {
         let result = read_message_from(&mut Bytes::from(actual)).unwrap();
         assert_eq!(message.headers(), result.headers());
         assert_eq!(message.payload().as_ref(), result.payload().as_ref());
+    }
+
+    /// Asserts that serialization fails with `$err` and that nothing was written to the buffer.
+    macro_rules! write_message_expect_err {
+        ($message:expr, $err:pat) => {
+            let mut buffer = Vec::new();
+            let result = write_message_to(&$message, &mut buffer);
+            assert!(result.is_err(), "Expected error, got {:?}", result);
+            assert!(
+                matches!(result.as_ref().err().unwrap().kind(), $err),
+                "Expected {}, got {:?}",
+                stringify!($err),
+                result
+            );
+            assert!(
+                buffer.is_empty(),
+                "rejected message must not emit a partial frame, wrote {} bytes",
+                buffer.len()
+            );
+        };
+    }
+
+    fn message_with_header(name: impl Into<StrBytes>, value: HeaderValue) -> Message {
+        Message::new(&b"payload"[..]).add_header(Header::new(name, value))
+    }
+
+    #[test]
+    fn header_name_length_boundaries() {
+        let mut buffer = Vec::new();
+        let message = message_with_header("n".repeat(MAX_HEADER_NAME_LEN), HeaderValue::Bool(true));
+        write_message_to(&message, &mut buffer).unwrap();
+        assert_eq!(
+            message.headers(),
+            read_message_from(&mut Bytes::from(buffer))
+                .unwrap()
+                .headers()
+        );
+
+        write_message_expect_err!(
+            message_with_header("n".repeat(MAX_HEADER_NAME_LEN + 1), HeaderValue::Bool(true)),
+            ErrorKind::InvalidHeaderNameLength
+        );
+    }
+
+    #[test]
+    fn header_name_length_is_validated_in_bytes_not_chars() {
+        // Well under the limit in characters, over it in UTF-8 bytes.
+        let name = "€".repeat(MAX_HEADER_NAME_LEN / 2);
+        assert!(name.chars().count() < MAX_HEADER_NAME_LEN);
+        assert!(name.len() > MAX_HEADER_NAME_LEN);
+        write_message_expect_err!(
+            message_with_header(name, HeaderValue::Bool(true)),
+            ErrorKind::InvalidHeaderNameLength
+        );
+    }
+
+    #[test]
+    fn string_header_value_length_boundaries() {
+        let longest = "a".repeat(MAX_HEADER_VALUE_LEN);
+        let mut buffer = Vec::new();
+        let message = message_with_header("h", HeaderValue::String(longest.clone().into()));
+        write_message_to(&message, &mut buffer).unwrap();
+
+        // The max-length value must come back as exactly one header. If its length had been
+        // truncated into the 16-bit field, the decoder would resume inside the value and parse
+        // the overflow as additional headers.
+        let decoded = read_message_from(&mut Bytes::from(buffer)).unwrap();
+        assert_eq!(1, decoded.headers().len());
+        assert_eq!(message.headers(), decoded.headers());
+
+        write_message_expect_err!(
+            message_with_header(
+                "h",
+                HeaderValue::String("a".repeat(MAX_HEADER_VALUE_LEN + 1).into())
+            ),
+            ErrorKind::HeaderValueTooLong
+        );
+
+        // One past what the 2-byte length field itself can hold. This is the size that wraps to an
+        // encoded length of zero in the implementations that don't bound the value at all.
+        write_message_expect_err!(
+            message_with_header("h", HeaderValue::String("a".repeat(1 << 16).into())),
+            ErrorKind::HeaderValueTooLong
+        );
+    }
+
+    #[test]
+    fn byte_array_header_value_length_boundaries() {
+        let mut buffer = Vec::new();
+        let message = message_with_header(
+            "h",
+            HeaderValue::ByteArray(Bytes::from(vec![0u8; MAX_HEADER_VALUE_LEN])),
+        );
+        write_message_to(&message, &mut buffer).unwrap();
+        let decoded = read_message_from(&mut Bytes::from(buffer)).unwrap();
+        assert_eq!(1, decoded.headers().len());
+        assert_eq!(message.headers(), decoded.headers());
+
+        write_message_expect_err!(
+            message_with_header(
+                "h",
+                HeaderValue::ByteArray(Bytes::from(vec![0u8; MAX_HEADER_VALUE_LEN + 1]))
+            ),
+            ErrorKind::HeaderValueTooLong
+        );
+
+        // One past what the 2-byte length field itself can hold, which is the size that wraps to an
+        // encoded length of zero when the value isn't bounded at all.
+        write_message_expect_err!(
+            message_with_header("h", HeaderValue::ByteArray(Bytes::from(vec![0u8; 1 << 16]))),
+            ErrorKind::HeaderValueTooLong
+        );
+    }
+
+    #[test]
+    fn string_header_value_length_is_validated_in_bytes_not_chars() {
+        // Well under the limit in characters, over it in UTF-8 bytes.
+        let value = "€".repeat(MAX_HEADER_VALUE_LEN / 2);
+        assert!(value.chars().count() < MAX_HEADER_VALUE_LEN);
+        assert!(value.len() > MAX_HEADER_VALUE_LEN);
+        write_message_expect_err!(
+            message_with_header("h", HeaderValue::String(value.into())),
+            ErrorKind::HeaderValueTooLong
+        );
+    }
+
+    /// A value whose bytes spell out a well-formed header must not be encodable. At exactly 1 << 16
+    /// bytes the length field would hold 0, so a decoder would read an empty value and then parse
+    /// these bytes as the next header. The forged entry goes first because that is where the
+    /// decoder would resume.
+    #[test]
+    fn oversized_header_value_cannot_smuggle_a_header() {
+        let mut smuggled = Vec::new();
+        smuggled.push(b":event-type".len() as u8);
+        smuggled.extend_from_slice(b":event-type");
+        smuggled.push(TYPE_STRING);
+        smuggled.extend_from_slice(&(b"forged".len() as u16).to_be_bytes());
+        smuggled.extend_from_slice(b"forged");
+        smuggled.resize(1 << 16, b'a');
+
+        write_message_expect_err!(
+            message_with_header("DataType", HeaderValue::ByteArray(Bytes::from(smuggled))),
+            ErrorKind::HeaderValueTooLong
+        );
+    }
+
+    /// A timestamp whose millisecond representation overflows `i64` is the one fixed-width value
+    /// that can fail to serialize, so it must error rather than write a wrong-width field.
+    #[test]
+    fn write_message_rejects_timestamp_too_large() {
+        write_message_expect_err!(
+            message_with_header(
+                "time",
+                HeaderValue::Timestamp(DateTime::from_secs(i64::MAX))
+            ),
+            ErrorKind::TimestampValueTooLarge(_)
+        );
+    }
+
+    /// Fixed-width values are unrepresentable at the wrong width on the write side (they are
+    /// `i8`/`i16`/`i32`/`i64`/`u128`), so the only place a short one can appear is an inbound
+    /// frame. Assert the decoder rejects those rather than under-reading the next header.
+    #[test]
+    fn truncated_fixed_width_header_values_are_rejected() {
+        // (value type, bytes supplied, protocol width)
+        let cases = [
+            (TYPE_BYTE, 0, 1),
+            (TYPE_INT16, 1, 2),
+            (TYPE_INT32, 3, 4),
+            (TYPE_INT64, 7, 8),
+            (TYPE_TIMESTAMP, 7, 8),
+            (TYPE_UUID, 15, 16),
+        ];
+        for (value_type, supplied, width) in cases {
+            let mut headers = vec![1u8, b'h', value_type];
+            headers.extend_from_slice(&vec![0u8; supplied]);
+
+            let headers_len = u32::try_from(headers.len()).unwrap();
+            let total_len = PRELUDE_LENGTH_BYTES + headers_len + MESSAGE_CRC_LENGTH_BYTES;
+            let mut frame = Vec::new();
+            frame.extend_from_slice(&total_len.to_be_bytes());
+            frame.extend_from_slice(&headers_len.to_be_bytes());
+            frame.extend_from_slice(&crc32fast::hash(&frame).to_be_bytes());
+            frame.extend_from_slice(&headers);
+            frame.extend_from_slice(&crc32fast::hash(&frame).to_be_bytes());
+
+            let result = read_message_from(&mut Bytes::from(frame));
+            assert!(
+                result.is_err(),
+                "value type {value_type} with {supplied} of {width} bytes must be rejected, \
+                 got {result:?}"
+            );
+        }
+    }
+
+    /// `write_headers_to` is public and writes a header's name and value type before the value
+    /// length is validated, so a rejected header must not leave that prefix behind: a decoder would
+    /// read the orphaned name and type tag as a header whose value is whatever follows it.
+    #[test]
+    fn write_headers_to_leaves_no_partial_header() {
+        let headers = [
+            Header::new("ok", HeaderValue::String("fine".into())),
+            Header::new(
+                "toolong",
+                HeaderValue::String("a".repeat(MAX_HEADER_VALUE_LEN + 1).into()),
+            ),
+        ];
+        // Seeded so the assertion catches an append as well as a bare partial write.
+        let mut buffer = b"PREVIOUS-CONTENT".to_vec();
+        let result = write_headers_to(&headers, &mut buffer);
+        assert!(result.is_err(), "Expected error, got {result:?}");
+        assert_eq!(
+            b"PREVIOUS-CONTENT".to_vec(),
+            buffer,
+            "no bytes may be written when a header is rejected"
+        );
+    }
+}
+
+/// A decoder written against the wire specification rather than by reusing [`read_message_from`],
+/// so that what [`write_message_to`] produces is checked by a second implementation.
+#[cfg(test)]
+mod independent_decoder_tests {
+    use super::write_message_to;
+    use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
+    use aws_smithy_types::DateTime;
+    use bytes::Bytes;
+
+    #[derive(Debug, PartialEq)]
+    enum Value {
+        Bool(bool),
+        Byte(i8),
+        Int16(i16),
+        Int32(i32),
+        Int64(i64),
+        Bytes(Vec<u8>),
+        Str(String),
+        Timestamp(i64),
+        Uuid(u128),
+    }
+
+    fn u16_at(b: &[u8], i: usize) -> usize {
+        u16::from_be_bytes([b[i], b[i + 1]]) as usize
+    }
+    fn u32_at(b: &[u8], i: usize) -> usize {
+        u32::from_be_bytes([b[i], b[i + 1], b[i + 2], b[i + 3]]) as usize
+    }
+
+    /// The headers and payload of a successfully decoded frame.
+    type Decoded = (Vec<(String, Value)>, Vec<u8>);
+
+    /// Decodes a frame per the specification, returning the headers and payload, or the first
+    /// invariant it violates.
+    fn decode(frame: &[u8]) -> Result<Decoded, String> {
+        if frame.len() < 16 {
+            return Err("shorter than prelude plus message crc".into());
+        }
+        if u32_at(frame, 0) != frame.len() {
+            return Err(format!(
+                "total_length {} != actual {}",
+                u32_at(frame, 0),
+                frame.len()
+            ));
+        }
+        if crc32fast::hash(&frame[..8]) != u32_at(frame, 8) as u32 {
+            return Err("prelude crc mismatch".into());
+        }
+        let crc_start = frame.len() - 4;
+        if crc32fast::hash(&frame[..crc_start]) != u32_at(frame, crc_start) as u32 {
+            return Err("message crc mismatch".into());
+        }
+
+        let headers_len = u32_at(frame, 4);
+        if 12 + headers_len + 4 > frame.len() {
+            return Err("headers_length overruns the frame".into());
+        }
+        let block = &frame[12..12 + headers_len];
+
+        let mut headers = Vec::new();
+        let mut i = 0;
+        while i < block.len() {
+            let name_len = block[i] as usize;
+            i += 1;
+            if name_len == 0 || i + name_len > block.len() {
+                return Err(format!("bad header name length {name_len}"));
+            }
+            let name = String::from_utf8(block[i..i + name_len].to_vec())
+                .map_err(|_| "header name is not utf-8")?;
+            i += name_len;
+            if i >= block.len() {
+                return Err("header has no value type".into());
+            }
+            let value_type = block[i];
+            i += 1;
+            // Every fixed-width type must find exactly its protocol width remaining.
+            let mut take = |n: usize| -> Result<&[u8], String> {
+                if i + n > block.len() {
+                    return Err(format!(
+                        "type {value_type} needs {n} bytes, {} left",
+                        block.len() - i
+                    ));
+                }
+                let out = &block[i..i + n];
+                i += n;
+                Ok(out)
+            };
+            let value = match value_type {
+                0 => Value::Bool(true),
+                1 => Value::Bool(false),
+                2 => Value::Byte(take(1)?[0] as i8),
+                3 => Value::Int16(i16::from_be_bytes(take(2)?.try_into().unwrap())),
+                4 => Value::Int32(i32::from_be_bytes(take(4)?.try_into().unwrap())),
+                5 => Value::Int64(i64::from_be_bytes(take(8)?.try_into().unwrap())),
+                6 | 7 => {
+                    let len = u16_at(take(2)?, 0);
+                    let raw = take(len)?.to_vec();
+                    if value_type == 7 {
+                        Value::Str(String::from_utf8(raw).map_err(|_| "value is not utf-8")?)
+                    } else {
+                        Value::Bytes(raw)
+                    }
+                }
+                8 => Value::Timestamp(i64::from_be_bytes(take(8)?.try_into().unwrap())),
+                9 => Value::Uuid(u128::from_be_bytes(take(16)?.try_into().unwrap())),
+                other => return Err(format!("unknown value type {other}")),
+            };
+            headers.push((name, value));
+        }
+        // A value length that didn't match its bytes shows up here as leftover or overrun.
+        if i != block.len() {
+            return Err("header block was not consumed exactly".into());
+        }
+        Ok((headers, frame[12 + headers_len..crc_start].to_vec()))
+    }
+
+    /// Establish that the decoder above is correct, using the reference message from the CRT's own
+    /// test suite, before relying on it to judge our encoder.
+    #[test]
+    fn agrees_with_the_crt_reference_message() {
+        let data: &[u8] = &[
+            0x00, 0x00, 0x00, 0x3D, 0x00, 0x00, 0x00, 0x20, 0x07, 0xFD, 0x83, 0x96, 0x0C, b'c',
+            b'o', b'n', b't', b'e', b'n', b't', b'-', b't', b'y', b'p', b'e', 0x07, 0x00, 0x10,
+            b'a', b'p', b'p', b'l', b'i', b'c', b'a', b't', b'i', b'o', b'n', b'/', b'j', b's',
+            b'o', b'n', 0x7b, 0x27, 0x66, 0x6f, 0x6f, 0x27, 0x3a, 0x27, 0x62, 0x61, 0x72, 0x27,
+            0x7d, 0x8D, 0x9C, 0x08, 0xB1,
+        ];
+        let (headers, payload) = decode(data).expect("the reference message must decode");
+        assert_eq!(
+            vec![(
+                "content-type".to_string(),
+                Value::Str("application/json".into())
+            )],
+            headers
+        );
+        assert_eq!(b"{'foo':'bar'}".to_vec(), payload);
+    }
+
+    #[test]
+    fn every_header_type_survives_a_round_trip() {
+        let message = Message::new(&b"some payload"[..])
+            .add_header(Header::new("true", HeaderValue::Bool(true)))
+            .add_header(Header::new("false", HeaderValue::Bool(false)))
+            .add_header(Header::new("byte", HeaderValue::Byte(i8::MIN)))
+            .add_header(Header::new("short", HeaderValue::Int16(i16::MIN)))
+            .add_header(Header::new("int", HeaderValue::Int32(i32::MIN)))
+            .add_header(Header::new("long", HeaderValue::Int64(i64::MIN)))
+            .add_header(Header::new(
+                "bytes",
+                HeaderValue::ByteArray((&b"some bytes"[..]).into()),
+            ))
+            .add_header(Header::new("str", HeaderValue::String("some str".into())))
+            .add_header(Header::new(
+                "time",
+                HeaderValue::Timestamp(DateTime::from_secs(5_000_000)),
+            ))
+            .add_header(Header::new("uuid", HeaderValue::Uuid(u128::MAX)));
+
+        let mut buffer = Vec::new();
+        write_message_to(&message, &mut buffer).unwrap();
+        let (headers, payload) = decode(&buffer).expect("our output must satisfy the spec");
+
+        assert_eq!(
+            vec![
+                ("true".to_string(), Value::Bool(true)),
+                ("false".to_string(), Value::Bool(false)),
+                ("byte".to_string(), Value::Byte(i8::MIN)),
+                ("short".to_string(), Value::Int16(i16::MIN)),
+                ("int".to_string(), Value::Int32(i32::MIN)),
+                ("long".to_string(), Value::Int64(i64::MIN)),
+                ("bytes".to_string(), Value::Bytes(b"some bytes".to_vec())),
+                ("str".to_string(), Value::Str("some str".into())),
+                ("time".to_string(), Value::Timestamp(5_000_000_000)),
+                ("uuid".to_string(), Value::Uuid(u128::MAX)),
+            ],
+            headers
+        );
+        assert_eq!(b"some payload".to_vec(), payload);
+    }
+
+    /// The longest permitted value must decode as a single header. A truncated length would leave
+    /// the decoder reading the remainder of the value as further headers, which is the smuggling
+    /// primitive this bound exists to prevent.
+    #[test]
+    fn longest_permitted_value_decodes_as_one_header() {
+        let value = "a".repeat(super::MAX_HEADER_VALUE_LEN);
+        let message = Message::new(&b""[..])
+            .add_header(Header::new("h", HeaderValue::String(value.clone().into())));
+        let mut buffer = Vec::new();
+        write_message_to(&message, &mut buffer).unwrap();
+
+        let (headers, _) = decode(&buffer).expect("the longest permitted value must decode");
+        assert_eq!(vec![("h".to_string(), Value::Str(value))], headers);
+    }
+
+    /// The same check over a byte array, whose length field is the one the attack overflows.
+    #[test]
+    fn longest_permitted_byte_array_decodes_as_one_header() {
+        let value = vec![b'z'; super::MAX_HEADER_VALUE_LEN];
+        let message = Message::new(&b""[..]).add_header(Header::new(
+            "h",
+            HeaderValue::ByteArray(Bytes::from(value.clone())),
+        ));
+        let mut buffer = Vec::new();
+        write_message_to(&message, &mut buffer).unwrap();
+
+        let (headers, _) = decode(&buffer).expect("the longest permitted value must decode");
+        assert_eq!(vec![("h".to_string(), Value::Bytes(value))], headers);
     }
 }
 

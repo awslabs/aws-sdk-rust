@@ -63,7 +63,8 @@ pub struct JobUpdate {
     /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p></li>
     /// </ul>
     pub max_capacity: ::std::option::Option<f64>,
-    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.025X, G.1X, G.2X, G.4X, G.8X, G.12X, G.16X, R.1X, R.2X, R.4X, or R.8X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub worker_type: ::std::option::Option<crate::types::WorkerType>,
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
     pub number_of_workers: ::std::option::Option<i32>,
@@ -177,7 +178,8 @@ impl JobUpdate {
     pub fn max_capacity(&self) -> ::std::option::Option<f64> {
         self.max_capacity
     }
-    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.025X, G.1X, G.2X, G.4X, G.8X, G.12X, G.16X, R.1X, R.2X, R.4X, or R.8X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn worker_type(&self) -> ::std::option::Option<&crate::types::WorkerType> {
         self.worker_type.as_ref()
     }
@@ -603,17 +605,20 @@ impl JobUpdateBuilder {
     pub fn get_max_capacity(&self) -> &::std::option::Option<f64> {
         &self.max_capacity
     }
-    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.025X, G.1X, G.2X, G.4X, G.8X, G.12X, G.16X, R.1X, R.2X, R.4X, or R.8X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn worker_type(mut self, input: crate::types::WorkerType) -> Self {
         self.worker_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.025X, G.1X, G.2X, G.4X, G.8X, G.12X, G.16X, R.1X, R.2X, R.4X, or R.8X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn set_worker_type(mut self, input: ::std::option::Option<crate::types::WorkerType>) -> Self {
         self.worker_type = input;
         self
     }
-    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of G.025X, G.1X, G.2X, G.4X, G.8X, G.12X, G.16X, R.1X, R.2X, R.4X, or R.8X for Spark jobs. Accepts the value Z.2X for Ray jobs. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html#create-job">Defining job properties for Spark jobs </a></p>
+    /// <p>The <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through <code>R.8X</code> worker types are available only for Glue version 4.0 or later Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job properties for Spark jobs</a> in the developer guide.</p>
     pub fn get_worker_type(&self) -> &::std::option::Option<crate::types::WorkerType> {
         &self.worker_type
     }

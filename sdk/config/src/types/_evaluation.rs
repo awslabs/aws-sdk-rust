@@ -43,6 +43,156 @@ impl Evaluation {
         &self.ordering_timestamp
     }
 }
+static EVALUATION_MEMBER_COMPLIANCE_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Evaluation$ComplianceResourceType",
+        "com.amazonaws.configservice",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceResourceType",
+    0,
+);
+static EVALUATION_MEMBER_COMPLIANCE_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Evaluation$ComplianceResourceId",
+        "com.amazonaws.configservice",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceResourceId",
+    1,
+);
+static EVALUATION_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Evaluation$ComplianceType",
+        "com.amazonaws.configservice",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    2,
+);
+static EVALUATION_MEMBER_ANNOTATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Evaluation$Annotation",
+        "com.amazonaws.configservice",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Annotation",
+    3,
+);
+static EVALUATION_MEMBER_ORDERING_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Evaluation$OrderingTimestamp",
+        "com.amazonaws.configservice",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "OrderingTimestamp",
+    4,
+);
+static EVALUATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Evaluation", "com.amazonaws.configservice", "Evaluation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EVALUATION_MEMBER_COMPLIANCE_RESOURCE_TYPE,
+        &EVALUATION_MEMBER_COMPLIANCE_RESOURCE_ID,
+        &EVALUATION_MEMBER_COMPLIANCE_TYPE,
+        &EVALUATION_MEMBER_ANNOTATION,
+        &EVALUATION_MEMBER_ORDERING_TIMESTAMP,
+    ],
+);
+impl Evaluation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EVALUATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Evaluation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.compliance_resource_type;
+            ser.write_string(&EVALUATION_MEMBER_COMPLIANCE_RESOURCE_TYPE, val)?;
+        }
+        {
+            let val = &self.compliance_resource_id;
+            ser.write_string(&EVALUATION_MEMBER_COMPLIANCE_RESOURCE_ID, val)?;
+        }
+        {
+            let val = &self.compliance_type;
+            ser.write_string(&EVALUATION_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.annotation {
+            ser.write_string(&EVALUATION_MEMBER_ANNOTATION, val)?;
+        }
+        {
+            let val = &self.ordering_timestamp;
+            ser.write_timestamp(&EVALUATION_MEMBER_ORDERING_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EvaluationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EVALUATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.compliance_resource_type = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.compliance_resource_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.compliance_type = Some(crate::types::ComplianceType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.annotation = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.ordering_timestamp = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Evaluation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.compliance_resource_type = builder.compliance_resource_type.or(Some(String::new()));
+        builder.compliance_resource_id = builder.compliance_resource_id.or(Some(String::new()));
+        builder.ordering_timestamp = builder.ordering_timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Evaluation {
     /// Creates a new builder-style object to manufacture [`Evaluation`](crate::types::Evaluation).
     pub fn builder() -> crate::types::builders::EvaluationBuilder {

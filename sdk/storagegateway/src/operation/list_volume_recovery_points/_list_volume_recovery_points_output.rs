@@ -21,6 +21,135 @@ impl ListVolumeRecoveryPointsOutput {
         self.volume_recovery_point_infos.as_deref().unwrap_or_default()
     }
 }
+static LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListVolumeRecoveryPointsOutput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListVolumeRecoveryPointsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_VOLUME_RECOVERY_POINT_INFOS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#VolumeRecoveryPointInfos$member",
+            "com.amazonaws.storagegateway",
+            "VolumeRecoveryPointInfos",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_VOLUME_RECOVERY_POINT_INFOS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#ListVolumeRecoveryPointsOutput$VolumeRecoveryPointInfos",
+            "com.amazonaws.storagegateway.synthetic",
+            "ListVolumeRecoveryPointsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "VolumeRecoveryPointInfos",
+        1,
+    )
+    .with_list_member(&LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_VOLUME_RECOVERY_POINT_INFOS_MEMBER);
+static LISTVOLUMERECOVERYPOINTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListVolumeRecoveryPointsOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListVolumeRecoveryPointsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_GATEWAY_ARN,
+        &LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_VOLUME_RECOVERY_POINT_INFOS,
+    ],
+)
+.with_original_name("ListVolumeRecoveryPointsOutput");
+impl ListVolumeRecoveryPointsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTVOLUMERECOVERYPOINTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListVolumeRecoveryPointsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.volume_recovery_point_infos {
+            ser.write_list(
+                &LISTVOLUMERECOVERYPOINTSOUTPUT_MEMBER_VOLUME_RECOVERY_POINT_INFOS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::VolumeRecoveryPointInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTVOLUMERECOVERYPOINTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_recovery_point_infos = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VolumeRecoveryPointInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListVolumeRecoveryPointsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListVolumeRecoveryPointsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

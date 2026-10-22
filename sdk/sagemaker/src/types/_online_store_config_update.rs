@@ -19,6 +19,103 @@ impl OnlineStoreConfigUpdate {
         self.storage_type.as_ref()
     }
 }
+static ONLINESTORECONFIGUPDATE_MEMBER_TTL_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OnlineStoreConfigUpdate$TtlDuration",
+        "com.amazonaws.sagemaker",
+        "OnlineStoreConfigUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TtlDuration",
+    0,
+);
+static ONLINESTORECONFIGUPDATE_MEMBER_STORAGE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OnlineStoreConfigUpdate$StorageType",
+        "com.amazonaws.sagemaker",
+        "OnlineStoreConfigUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StorageType",
+    1,
+);
+static ONLINESTORECONFIGUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OnlineStoreConfigUpdate",
+        "com.amazonaws.sagemaker",
+        "OnlineStoreConfigUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ONLINESTORECONFIGUPDATE_MEMBER_TTL_DURATION, &ONLINESTORECONFIGUPDATE_MEMBER_STORAGE_TYPE],
+);
+impl OnlineStoreConfigUpdate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ONLINESTORECONFIGUPDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OnlineStoreConfigUpdate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ttl_duration {
+            ser.write_struct(&ONLINESTORECONFIGUPDATE_MEMBER_TTL_DURATION, val)?;
+        }
+        if let Some(ref val) = self.storage_type {
+            ser.write_string(&ONLINESTORECONFIGUPDATE_MEMBER_STORAGE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OnlineStoreConfigUpdateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ONLINESTORECONFIGUPDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ttl_duration = Some(crate::types::TtlDuration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_type = Some(crate::types::StorageType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OnlineStoreConfigUpdate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OnlineStoreConfigUpdate {
     /// Creates a new builder-style object to manufacture [`OnlineStoreConfigUpdate`](crate::types::OnlineStoreConfigUpdate).
     pub fn builder() -> crate::types::builders::OnlineStoreConfigUpdateBuilder {

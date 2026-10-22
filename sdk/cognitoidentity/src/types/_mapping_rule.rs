@@ -34,6 +34,139 @@ impl MappingRule {
         self.role_arn.deref()
     }
 }
+static MAPPINGRULE_MEMBER_CLAIM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#MappingRule$Claim",
+        "com.amazonaws.cognitoidentity",
+        "MappingRule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Claim",
+    0,
+);
+static MAPPINGRULE_MEMBER_MATCH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#MappingRule$MatchType",
+        "com.amazonaws.cognitoidentity",
+        "MappingRule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MatchType",
+    1,
+);
+static MAPPINGRULE_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#MappingRule$Value",
+        "com.amazonaws.cognitoidentity",
+        "MappingRule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    2,
+);
+static MAPPINGRULE_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#MappingRule$RoleARN",
+        "com.amazonaws.cognitoidentity",
+        "MappingRule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    3,
+);
+static MAPPINGRULE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#MappingRule",
+        "com.amazonaws.cognitoidentity",
+        "MappingRule",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MAPPINGRULE_MEMBER_CLAIM,
+        &MAPPINGRULE_MEMBER_MATCH_TYPE,
+        &MAPPINGRULE_MEMBER_VALUE,
+        &MAPPINGRULE_MEMBER_ROLE_ARN,
+    ],
+);
+impl MappingRule {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MAPPINGRULE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MappingRule {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.claim;
+            ser.write_string(&MAPPINGRULE_MEMBER_CLAIM, val)?;
+        }
+        {
+            let val = &self.match_type;
+            ser.write_string(&MAPPINGRULE_MEMBER_MATCH_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.value;
+            ser.write_string(&MAPPINGRULE_MEMBER_VALUE, val)?;
+        }
+        {
+            let val = &self.role_arn;
+            ser.write_string(&MAPPINGRULE_MEMBER_ROLE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MappingRuleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MAPPINGRULE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.claim = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.match_type = Some(crate::types::MappingRuleMatchType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    self.value = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.role_arn = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MappingRule {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.claim = builder.claim.or(Some(String::new()));
+        builder.value = builder.value.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MappingRule {
     /// Creates a new builder-style object to manufacture [`MappingRule`](crate::types::MappingRule).
     pub fn builder() -> crate::types::builders::MappingRuleBuilder {

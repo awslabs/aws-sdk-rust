@@ -26,6 +26,123 @@ impl PriceWithCurrency {
         self.price_type.as_ref()
     }
 }
+static PRICEWITHCURRENCY_MEMBER_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#PriceWithCurrency$Price",
+        "com.amazonaws.route53domains",
+        "PriceWithCurrency",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Price",
+    0,
+);
+static PRICEWITHCURRENCY_MEMBER_CURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#PriceWithCurrency$Currency",
+        "com.amazonaws.route53domains",
+        "PriceWithCurrency",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Currency",
+    1,
+);
+static PRICEWITHCURRENCY_MEMBER_PRICE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#PriceWithCurrency$PriceType",
+        "com.amazonaws.route53domains",
+        "PriceWithCurrency",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PriceType",
+    2,
+);
+static PRICEWITHCURRENCY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#PriceWithCurrency",
+        "com.amazonaws.route53domains",
+        "PriceWithCurrency",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRICEWITHCURRENCY_MEMBER_PRICE,
+        &PRICEWITHCURRENCY_MEMBER_CURRENCY,
+        &PRICEWITHCURRENCY_MEMBER_PRICE_TYPE,
+    ],
+);
+impl PriceWithCurrency {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRICEWITHCURRENCY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PriceWithCurrency {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.price;
+            ser.write_double(&PRICEWITHCURRENCY_MEMBER_PRICE, *val)?;
+        }
+        {
+            let val = &self.currency;
+            ser.write_string(&PRICEWITHCURRENCY_MEMBER_CURRENCY, val)?;
+        }
+        if let Some(ref val) = self.price_type {
+            ser.write_string(&PRICEWITHCURRENCY_MEMBER_PRICE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PriceWithCurrencyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRICEWITHCURRENCY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.price = Some(deser.read_double(member)?);
+                }
+                Some(1) => {
+                    self.currency = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.price_type = Some(crate::types::PriceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PriceWithCurrency {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.price = builder.price.or(Some(0.0f64));
+        builder.currency = builder.currency.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PriceWithCurrency {
     /// Creates a new builder-style object to manufacture [`PriceWithCurrency`](crate::types::PriceWithCurrency).
     pub fn builder() -> crate::types::builders::PriceWithCurrencyBuilder {

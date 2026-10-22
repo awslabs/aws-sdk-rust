@@ -13,6 +13,83 @@ impl SpaceSharingSettingsSummary {
         self.sharing_type.as_ref()
     }
 }
+static SPACESHARINGSETTINGSSUMMARY_MEMBER_SHARING_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSharingSettingsSummary$SharingType",
+        "com.amazonaws.sagemaker",
+        "SpaceSharingSettingsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SharingType",
+    0,
+);
+static SPACESHARINGSETTINGSSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceSharingSettingsSummary",
+        "com.amazonaws.sagemaker",
+        "SpaceSharingSettingsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SPACESHARINGSETTINGSSUMMARY_MEMBER_SHARING_TYPE],
+);
+impl SpaceSharingSettingsSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SPACESHARINGSETTINGSSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SpaceSharingSettingsSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sharing_type {
+            ser.write_string(&SPACESHARINGSETTINGSSUMMARY_MEMBER_SHARING_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SpaceSharingSettingsSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SPACESHARINGSETTINGSSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sharing_type = Some(crate::types::SharingType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SpaceSharingSettingsSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SpaceSharingSettingsSummary {
     /// Creates a new builder-style object to manufacture [`SpaceSharingSettingsSummary`](crate::types::SpaceSharingSettingsSummary).
     pub fn builder() -> crate::types::builders::SpaceSharingSettingsSummaryBuilder {

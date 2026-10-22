@@ -13,6 +13,123 @@ impl CrossRegionDiscoveryStatus {
         self.message.as_ref()
     }
 }
+static CROSSREGIONDISCOVERYSTATUS_MEMBER_MESSAGE_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#RegionStatusMap$key",
+        "com.amazonaws.licensemanager",
+        "RegionStatusMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CROSSREGIONDISCOVERYSTATUS_MEMBER_MESSAGE_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#RegionStatusMap$value",
+        "com.amazonaws.licensemanager",
+        "RegionStatusMap",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static CROSSREGIONDISCOVERYSTATUS_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#CrossRegionDiscoveryStatus$Message",
+        "com.amazonaws.licensemanager",
+        "CrossRegionDiscoveryStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Message",
+    0,
+)
+.with_map_members(
+    &CROSSREGIONDISCOVERYSTATUS_MEMBER_MESSAGE_KEY,
+    &CROSSREGIONDISCOVERYSTATUS_MEMBER_MESSAGE_VALUE,
+);
+static CROSSREGIONDISCOVERYSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#CrossRegionDiscoveryStatus",
+        "com.amazonaws.licensemanager",
+        "CrossRegionDiscoveryStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CROSSREGIONDISCOVERYSTATUS_MEMBER_MESSAGE],
+);
+impl CrossRegionDiscoveryStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CROSSREGIONDISCOVERYSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CrossRegionDiscoveryStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.message {
+            ser.write_map(
+                &CROSSREGIONDISCOVERYSTATUS_MEMBER_MESSAGE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::RegionStatus::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CrossRegionDiscoveryStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CROSSREGIONDISCOVERYSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::RegionStatus::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CrossRegionDiscoveryStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CrossRegionDiscoveryStatus {
     /// Creates a new builder-style object to manufacture [`CrossRegionDiscoveryStatus`](crate::types::CrossRegionDiscoveryStatus).
     pub fn builder() -> crate::types::builders::CrossRegionDiscoveryStatusBuilder {

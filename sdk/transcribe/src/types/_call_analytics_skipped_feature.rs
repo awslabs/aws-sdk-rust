@@ -28,6 +28,127 @@ impl CallAnalyticsSkippedFeature {
         self.message.as_deref()
     }
 }
+static CALLANALYTICSSKIPPEDFEATURE_MEMBER_FEATURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsSkippedFeature$Feature",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsSkippedFeature",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Feature",
+    0,
+);
+static CALLANALYTICSSKIPPEDFEATURE_MEMBER_REASON_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsSkippedFeature$ReasonCode",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsSkippedFeature",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReasonCode",
+    1,
+);
+static CALLANALYTICSSKIPPEDFEATURE_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsSkippedFeature$Message",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsSkippedFeature",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static CALLANALYTICSSKIPPEDFEATURE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsSkippedFeature",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsSkippedFeature",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CALLANALYTICSSKIPPEDFEATURE_MEMBER_FEATURE,
+        &CALLANALYTICSSKIPPEDFEATURE_MEMBER_REASON_CODE,
+        &CALLANALYTICSSKIPPEDFEATURE_MEMBER_MESSAGE,
+    ],
+);
+impl CallAnalyticsSkippedFeature {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CALLANALYTICSSKIPPEDFEATURE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CallAnalyticsSkippedFeature {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.feature {
+            ser.write_string(&CALLANALYTICSSKIPPEDFEATURE_MEMBER_FEATURE, val.as_str())?;
+        }
+        if let Some(ref val) = self.reason_code {
+            ser.write_string(&CALLANALYTICSSKIPPEDFEATURE_MEMBER_REASON_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&CALLANALYTICSSKIPPEDFEATURE_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CallAnalyticsSkippedFeatureBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CALLANALYTICSSKIPPEDFEATURE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature = Some(crate::types::CallAnalyticsFeature::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason_code = Some(crate::types::CallAnalyticsSkippedReasonCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CallAnalyticsSkippedFeature {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CallAnalyticsSkippedFeature {
     /// Creates a new builder-style object to manufacture [`CallAnalyticsSkippedFeature`](crate::types::CallAnalyticsSkippedFeature).
     pub fn builder() -> crate::types::builders::CallAnalyticsSkippedFeatureBuilder {

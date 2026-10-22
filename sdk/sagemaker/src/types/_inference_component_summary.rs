@@ -55,6 +55,232 @@ impl InferenceComponentSummary {
         self.last_modified_time.as_ref()
     }
 }
+static INFERENCECOMPONENTSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    0,
+);
+static INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$InferenceComponentArn",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InferenceComponentArn",
+    1,
+);
+static INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$InferenceComponentName",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InferenceComponentName",
+    2,
+);
+static INFERENCECOMPONENTSUMMARY_MEMBER_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$EndpointArn",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointArn",
+    3,
+);
+static INFERENCECOMPONENTSUMMARY_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$EndpointName",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointName",
+    4,
+);
+static INFERENCECOMPONENTSUMMARY_MEMBER_VARIANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$VariantName",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VariantName",
+    5,
+);
+static INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$InferenceComponentStatus",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InferenceComponentStatus",
+    6,
+);
+static INFERENCECOMPONENTSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static INFERENCECOMPONENTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSummary",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INFERENCECOMPONENTSUMMARY_MEMBER_CREATION_TIME,
+        &INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_ARN,
+        &INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_NAME,
+        &INFERENCECOMPONENTSUMMARY_MEMBER_ENDPOINT_ARN,
+        &INFERENCECOMPONENTSUMMARY_MEMBER_ENDPOINT_NAME,
+        &INFERENCECOMPONENTSUMMARY_MEMBER_VARIANT_NAME,
+        &INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_STATUS,
+        &INFERENCECOMPONENTSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl InferenceComponentSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INFERENCECOMPONENTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InferenceComponentSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&INFERENCECOMPONENTSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.inference_component_arn {
+            ser.write_string(&INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.inference_component_name {
+            ser.write_string(&INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.endpoint_arn {
+            ser.write_string(&INFERENCECOMPONENTSUMMARY_MEMBER_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&INFERENCECOMPONENTSUMMARY_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.variant_name {
+            ser.write_string(&INFERENCECOMPONENTSUMMARY_MEMBER_VARIANT_NAME, val)?;
+        }
+        if let Some(ref val) = self.inference_component_status {
+            ser.write_string(&INFERENCECOMPONENTSUMMARY_MEMBER_INFERENCE_COMPONENT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&INFERENCECOMPONENTSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InferenceComponentSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INFERENCECOMPONENTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.variant_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component_status = Some(crate::types::InferenceComponentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InferenceComponentSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InferenceComponentSummary {
     /// Creates a new builder-style object to manufacture [`InferenceComponentSummary`](crate::types::InferenceComponentSummary).
     pub fn builder() -> crate::types::builders::InferenceComponentSummaryBuilder {

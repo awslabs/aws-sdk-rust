@@ -14,7 +14,7 @@ pub struct McpGatewayConfiguration {
     pub session_configuration: ::std::option::Option<crate::types::SessionConfiguration>,
     /// <p>The streaming configuration for the MCP gateway. This configuration controls whether response streaming is enabled for the gateway.</p>
     pub streaming_configuration: ::std::option::Option<crate::types::StreamingConfiguration>,
-    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    /// <p>Specifies whether the gateway disables pagination for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses. For information about changing this value on an existing gateway, see <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html">UpdateGateway</a>.</p>
     pub disable_mcp_list_tools_pagination: ::std::option::Option<bool>,
 }
 impl McpGatewayConfiguration {
@@ -40,7 +40,7 @@ impl McpGatewayConfiguration {
     pub fn streaming_configuration(&self) -> ::std::option::Option<&crate::types::StreamingConfiguration> {
         self.streaming_configuration.as_ref()
     }
-    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    /// <p>Specifies whether the gateway disables pagination for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses. For information about changing this value on an existing gateway, see <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html">UpdateGateway</a>.</p>
     pub fn disable_mcp_list_tools_pagination(&self) -> ::std::option::Option<bool> {
         self.disable_mcp_list_tools_pagination
     }
@@ -152,17 +152,17 @@ impl McpGatewayConfigurationBuilder {
     pub fn get_streaming_configuration(&self) -> &::std::option::Option<crate::types::StreamingConfiguration> {
         &self.streaming_configuration
     }
-    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    /// <p>Specifies whether the gateway disables pagination for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses. For information about changing this value on an existing gateway, see <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html">UpdateGateway</a>.</p>
     pub fn disable_mcp_list_tools_pagination(mut self, input: bool) -> Self {
         self.disable_mcp_list_tools_pagination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    /// <p>Specifies whether the gateway disables pagination for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses. For information about changing this value on an existing gateway, see <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html">UpdateGateway</a>.</p>
     pub fn set_disable_mcp_list_tools_pagination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_mcp_list_tools_pagination = input;
         self
     }
-    /// <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses.</p>
+    /// <p>Specifies whether the gateway disables pagination for the Model Context Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>, the gateway returns the complete list of tools in a single response without a pagination cursor. When set to <code>false</code> or omitted, the gateway returns tools in paginated responses. For information about changing this value on an existing gateway, see <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html">UpdateGateway</a>.</p>
     pub fn get_disable_mcp_list_tools_pagination(&self) -> &::std::option::Option<bool> {
         &self.disable_mcp_list_tools_pagination
     }

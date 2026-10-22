@@ -38,6 +38,136 @@ impl SetResourceAccessForBucketInput {
         self.access.as_ref()
     }
 }
+static SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetResourceAccessForBucketInput$resourceName",
+        "com.amazonaws.lightsail.synthetic",
+        "SetResourceAccessForBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceName",
+    0,
+);
+static SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetResourceAccessForBucketInput$bucketName",
+        "com.amazonaws.lightsail.synthetic",
+        "SetResourceAccessForBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucketName",
+    1,
+);
+static SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetResourceAccessForBucketInput$access",
+        "com.amazonaws.lightsail.synthetic",
+        "SetResourceAccessForBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "access",
+    2,
+);
+static SETRESOURCEACCESSFORBUCKETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetResourceAccessForBucketInput",
+        "com.amazonaws.lightsail.synthetic",
+        "SetResourceAccessForBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_RESOURCE_NAME,
+        &SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_BUCKET_NAME,
+        &SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_ACCESS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/SetResourceAccessForBucket",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SetResourceAccessForBucketRequest");
+impl SetResourceAccessForBucketInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETRESOURCEACCESSFORBUCKETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetResourceAccessForBucketInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.bucket_name {
+            ser.write_string(&SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.access {
+            ser.write_string(&SETRESOURCEACCESSFORBUCKETINPUT_MEMBER_ACCESS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETRESOURCEACCESSFORBUCKETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access = Some(crate::types::ResourceBucketAccess::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetResourceAccessForBucketInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_name = builder.resource_name.or(Some(String::new()));
+        builder.bucket_name = builder.bucket_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SetResourceAccessForBucketInput {
     /// Creates a new builder-style object to manufacture [`SetResourceAccessForBucketInput`](crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketInput).
     pub fn builder() -> crate::operation::set_resource_access_for_bucket::builders::SetResourceAccessForBucketInputBuilder {

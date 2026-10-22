@@ -112,6 +112,261 @@ impl Handshake {
         self.resources.as_deref().unwrap_or_default()
     }
 }
+static HANDSHAKE_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Handshake$Id", "com.amazonaws.organizations", "Handshake"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static HANDSHAKE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Handshake$Arn", "com.amazonaws.organizations", "Handshake"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static HANDSHAKE_MEMBER_PARTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#HandshakeParties$member",
+        "com.amazonaws.organizations",
+        "HandshakeParties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static HANDSHAKE_MEMBER_PARTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Handshake$Parties",
+        "com.amazonaws.organizations",
+        "Handshake",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Parties",
+    2,
+)
+.with_list_member(&HANDSHAKE_MEMBER_PARTIES_MEMBER);
+static HANDSHAKE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Handshake$State", "com.amazonaws.organizations", "Handshake"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    3,
+);
+static HANDSHAKE_MEMBER_REQUESTED_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Handshake$RequestedTimestamp",
+        "com.amazonaws.organizations",
+        "Handshake",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestedTimestamp",
+    4,
+);
+static HANDSHAKE_MEMBER_EXPIRATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Handshake$ExpirationTimestamp",
+        "com.amazonaws.organizations",
+        "Handshake",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpirationTimestamp",
+    5,
+);
+static HANDSHAKE_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Handshake$Action", "com.amazonaws.organizations", "Handshake"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Action",
+    6,
+);
+static HANDSHAKE_MEMBER_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#HandshakeResources$member",
+        "com.amazonaws.organizations",
+        "HandshakeResources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static HANDSHAKE_MEMBER_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Handshake$Resources",
+        "com.amazonaws.organizations",
+        "Handshake",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Resources",
+    7,
+)
+.with_list_member(&HANDSHAKE_MEMBER_RESOURCES_MEMBER);
+static HANDSHAKE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Handshake", "com.amazonaws.organizations", "Handshake"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HANDSHAKE_MEMBER_ID,
+        &HANDSHAKE_MEMBER_ARN,
+        &HANDSHAKE_MEMBER_PARTIES,
+        &HANDSHAKE_MEMBER_STATE,
+        &HANDSHAKE_MEMBER_REQUESTED_TIMESTAMP,
+        &HANDSHAKE_MEMBER_EXPIRATION_TIMESTAMP,
+        &HANDSHAKE_MEMBER_ACTION,
+        &HANDSHAKE_MEMBER_RESOURCES,
+    ],
+);
+impl Handshake {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HANDSHAKE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Handshake {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&HANDSHAKE_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&HANDSHAKE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.parties {
+            ser.write_list(&HANDSHAKE_MEMBER_PARTIES, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::HandshakeParty::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&HANDSHAKE_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.requested_timestamp {
+            ser.write_timestamp(&HANDSHAKE_MEMBER_REQUESTED_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.expiration_timestamp {
+            ser.write_timestamp(&HANDSHAKE_MEMBER_EXPIRATION_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.action {
+            ser.write_string(&HANDSHAKE_MEMBER_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.resources {
+            ser.write_list(
+                &HANDSHAKE_MEMBER_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HandshakeResource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HandshakeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HANDSHAKE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HandshakeParty::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::HandshakeState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requested_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(crate::types::ActionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HandshakeResource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Handshake {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Handshake {
     /// Creates a new builder-style object to manufacture [`Handshake`](crate::types::Handshake).
     pub fn builder() -> crate::types::builders::HandshakeBuilder {

@@ -112,6 +112,502 @@ impl CreateStackInput {
         self.storage_connector_authentication.as_ref()
     }
 }
+static CREATESTACKINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$Name",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATESTACKINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$Description",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATESTACKINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$DisplayName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static CREATESTACKINPUT_MEMBER_STORAGE_CONNECTORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#StorageConnectorList$member",
+        "com.amazonaws.appstream",
+        "StorageConnectorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATESTACKINPUT_MEMBER_STORAGE_CONNECTORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$StorageConnectors",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StorageConnectors",
+    3,
+)
+.with_list_member(&CREATESTACKINPUT_MEMBER_STORAGE_CONNECTORS_MEMBER);
+static CREATESTACKINPUT_MEMBER_REDIRECT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$RedirectURL",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RedirectURL",
+    4,
+);
+static CREATESTACKINPUT_MEMBER_FEEDBACK_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$FeedbackURL",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeedbackURL",
+    5,
+);
+static CREATESTACKINPUT_MEMBER_USER_SETTINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UserSettingList$member",
+        "com.amazonaws.appstream",
+        "UserSettingList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATESTACKINPUT_MEMBER_USER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$UserSettings",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserSettings",
+    6,
+)
+.with_list_member(&CREATESTACKINPUT_MEMBER_USER_SETTINGS_MEMBER);
+static CREATESTACKINPUT_MEMBER_APPLICATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$ApplicationSettings",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApplicationSettings",
+    7,
+);
+static CREATESTACKINPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$key", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATESTACKINPUT_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$value", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATESTACKINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$Tags",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Tags",
+    8,
+)
+.with_map_members(&CREATESTACKINPUT_MEMBER_TAGS_KEY, &CREATESTACKINPUT_MEMBER_TAGS_VALUE);
+static CREATESTACKINPUT_MEMBER_ACCESS_ENDPOINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AccessEndpointList$member",
+        "com.amazonaws.appstream",
+        "AccessEndpointList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATESTACKINPUT_MEMBER_ACCESS_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$AccessEndpoints",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AccessEndpoints",
+    9,
+)
+.with_list_member(&CREATESTACKINPUT_MEMBER_ACCESS_ENDPOINTS_MEMBER);
+static CREATESTACKINPUT_MEMBER_EMBED_HOST_DOMAINS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#EmbedHostDomains$member",
+        "com.amazonaws.appstream",
+        "EmbedHostDomains",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATESTACKINPUT_MEMBER_EMBED_HOST_DOMAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$EmbedHostDomains",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EmbedHostDomains",
+    10,
+)
+.with_list_member(&CREATESTACKINPUT_MEMBER_EMBED_HOST_DOMAINS_MEMBER);
+static CREATESTACKINPUT_MEMBER_STREAMING_EXPERIENCE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$StreamingExperienceSettings",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StreamingExperienceSettings",
+    11,
+);
+static CREATESTACKINPUT_MEMBER_CONTENT_REDIRECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$ContentRedirection",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContentRedirection",
+    12,
+);
+static CREATESTACKINPUT_MEMBER_AGENT_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$AgentAccessConfig",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AgentAccessConfig",
+    13,
+);
+static CREATESTACKINPUT_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$StorageConnectorAuthentication",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StorageConnectorAuthentication",
+    14,
+);
+static CREATESTACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATESTACKINPUT_MEMBER_NAME,
+        &CREATESTACKINPUT_MEMBER_DESCRIPTION,
+        &CREATESTACKINPUT_MEMBER_DISPLAY_NAME,
+        &CREATESTACKINPUT_MEMBER_STORAGE_CONNECTORS,
+        &CREATESTACKINPUT_MEMBER_REDIRECT_URL,
+        &CREATESTACKINPUT_MEMBER_FEEDBACK_URL,
+        &CREATESTACKINPUT_MEMBER_USER_SETTINGS,
+        &CREATESTACKINPUT_MEMBER_APPLICATION_SETTINGS,
+        &CREATESTACKINPUT_MEMBER_TAGS,
+        &CREATESTACKINPUT_MEMBER_ACCESS_ENDPOINTS,
+        &CREATESTACKINPUT_MEMBER_EMBED_HOST_DOMAINS,
+        &CREATESTACKINPUT_MEMBER_STREAMING_EXPERIENCE_SETTINGS,
+        &CREATESTACKINPUT_MEMBER_CONTENT_REDIRECTION,
+        &CREATESTACKINPUT_MEMBER_AGENT_ACCESS_CONFIG,
+        &CREATESTACKINPUT_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateStackRequest");
+impl CreateStackInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATESTACKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateStackInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATESTACKINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATESTACKINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&CREATESTACKINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.storage_connectors {
+            ser.write_list(
+                &CREATESTACKINPUT_MEMBER_STORAGE_CONNECTORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::StorageConnector::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.redirect_url {
+            ser.write_string(&CREATESTACKINPUT_MEMBER_REDIRECT_URL, val)?;
+        }
+        if let Some(ref val) = self.feedback_url {
+            ser.write_string(&CREATESTACKINPUT_MEMBER_FEEDBACK_URL, val)?;
+        }
+        if let Some(ref val) = self.user_settings {
+            ser.write_list(
+                &CREATESTACKINPUT_MEMBER_USER_SETTINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UserSetting::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.application_settings {
+            ser.write_struct(&CREATESTACKINPUT_MEMBER_APPLICATION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &CREATESTACKINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.access_endpoints {
+            ser.write_list(
+                &CREATESTACKINPUT_MEMBER_ACCESS_ENDPOINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AccessEndpoint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.embed_host_domains {
+            ser.write_list(
+                &CREATESTACKINPUT_MEMBER_EMBED_HOST_DOMAINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.streaming_experience_settings {
+            ser.write_struct(&CREATESTACKINPUT_MEMBER_STREAMING_EXPERIENCE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.content_redirection {
+            ser.write_struct(&CREATESTACKINPUT_MEMBER_CONTENT_REDIRECTION, val)?;
+        }
+        if let Some(ref val) = self.agent_access_config {
+            ser.write_struct(&CREATESTACKINPUT_MEMBER_AGENT_ACCESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.storage_connector_authentication {
+            ser.write_string(&CREATESTACKINPUT_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_stack::builders::CreateStackInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATESTACKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_connectors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::StorageConnector::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.redirect_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feedback_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_settings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UserSetting::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_settings = Some(crate::types::ApplicationSettings::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_endpoints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AccessEndpoint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.embed_host_domains = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.streaming_experience_settings = Some(crate::types::StreamingExperienceSettings::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_redirection = Some(crate::types::ContentRedirection::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_access_config = Some(crate::types::AgentAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_connector_authentication =
+                            Some(crate::types::StorageConnectorAuthentication::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateStackInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateStackInput {
     /// Creates a new builder-style object to manufacture [`CreateStackInput`](crate::operation::create_stack::CreateStackInput).
     pub fn builder() -> crate::operation::create_stack::builders::CreateStackInputBuilder {

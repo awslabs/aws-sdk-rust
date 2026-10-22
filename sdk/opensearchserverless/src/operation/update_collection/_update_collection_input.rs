@@ -11,6 +11,8 @@ pub struct UpdateCollectionInput {
     pub vector_options: ::std::option::Option<crate::types::VectorOptions>,
     /// <p>Indicates whether to enable or disable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
     pub deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    /// <p>Encryption settings for a collection.</p>
+    pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -30,6 +32,10 @@ impl UpdateCollectionInput {
     /// <p>Indicates whether to enable or disable deletion protection for the collection. When set to <code>ENABLED</code>, the collection cannot be deleted.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<&crate::types::DeletionProtection> {
         self.deletion_protection.as_ref()
+    }
+    /// <p>Encryption settings for a collection.</p>
+    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
+        self.encryption_config.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -51,6 +57,7 @@ pub struct UpdateCollectionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) vector_options: ::std::option::Option<crate::types::VectorOptions>,
     pub(crate) deletion_protection: ::std::option::Option<crate::types::DeletionProtection>,
+    pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateCollectionInputBuilder {
@@ -111,6 +118,20 @@ impl UpdateCollectionInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<crate::types::DeletionProtection> {
         &self.deletion_protection
     }
+    /// <p>Encryption settings for a collection.</p>
+    pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
+        self.encryption_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Encryption settings for a collection.</p>
+    pub fn set_encryption_config(mut self, input: ::std::option::Option<crate::types::EncryptionConfig>) -> Self {
+        self.encryption_config = input;
+        self
+    }
+    /// <p>Encryption settings for a collection.</p>
+    pub fn get_encryption_config(&self) -> &::std::option::Option<crate::types::EncryptionConfig> {
+        &self.encryption_config
+    }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -134,6 +155,7 @@ impl UpdateCollectionInputBuilder {
             description: self.description,
             vector_options: self.vector_options,
             deletion_protection: self.deletion_protection,
+            encryption_config: self.encryption_config,
             client_token: self.client_token,
         })
     }

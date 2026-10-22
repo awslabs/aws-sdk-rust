@@ -58,6 +58,258 @@ impl CloudFormationStackRecord {
         self.destination_info.as_ref()
     }
 }
+static CLOUDFORMATIONSTACKRECORD_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$name",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$arn",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$createdAt",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    2,
+);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$location",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    3,
+);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$resourceType",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    4,
+);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$state",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "state",
+    5,
+);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_SOURCE_INFO_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecordSourceInfoList$member",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecordSourceInfoList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_SOURCE_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$sourceInfo",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "sourceInfo",
+    6,
+)
+.with_list_member(&CLOUDFORMATIONSTACKRECORD_MEMBER_SOURCE_INFO_MEMBER);
+static CLOUDFORMATIONSTACKRECORD_MEMBER_DESTINATION_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord$destinationInfo",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "destinationInfo",
+    7,
+);
+static CLOUDFORMATIONSTACKRECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CloudFormationStackRecord",
+        "com.amazonaws.lightsail",
+        "CloudFormationStackRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_NAME,
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_ARN,
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_CREATED_AT,
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_LOCATION,
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_RESOURCE_TYPE,
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_STATE,
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_SOURCE_INFO,
+        &CLOUDFORMATIONSTACKRECORD_MEMBER_DESTINATION_INFO,
+    ],
+);
+impl CloudFormationStackRecord {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLOUDFORMATIONSTACKRECORD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CloudFormationStackRecord {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CLOUDFORMATIONSTACKRECORD_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CLOUDFORMATIONSTACKRECORD_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&CLOUDFORMATIONSTACKRECORD_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&CLOUDFORMATIONSTACKRECORD_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&CLOUDFORMATIONSTACKRECORD_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&CLOUDFORMATIONSTACKRECORD_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_info {
+            ser.write_list(
+                &CLOUDFORMATIONSTACKRECORD_MEMBER_SOURCE_INFO,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CloudFormationStackRecordSourceInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.destination_info {
+            ser.write_struct(&CLOUDFORMATIONSTACKRECORD_MEMBER_DESTINATION_INFO, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CloudFormationStackRecordBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLOUDFORMATIONSTACKRECORD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::RecordState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_info = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CloudFormationStackRecordSourceInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_info = Some(crate::types::DestinationInfo::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CloudFormationStackRecord {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CloudFormationStackRecord {
     /// Creates a new builder-style object to manufacture [`CloudFormationStackRecord`](crate::types::CloudFormationStackRecord).
     pub fn builder() -> crate::types::builders::CloudFormationStackRecordBuilder {

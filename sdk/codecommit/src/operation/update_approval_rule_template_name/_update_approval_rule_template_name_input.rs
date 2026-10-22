@@ -18,6 +18,112 @@ impl UpdateApprovalRuleTemplateNameInput {
         self.new_approval_rule_template_name.as_deref()
     }
 }
+static UPDATEAPPROVALRULETEMPLATENAMEINPUT_MEMBER_OLD_APPROVAL_RULE_TEMPLATE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdateApprovalRuleTemplateNameInput$oldApprovalRuleTemplateName",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdateApprovalRuleTemplateNameInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "oldApprovalRuleTemplateName",
+        0,
+    );
+static UPDATEAPPROVALRULETEMPLATENAMEINPUT_MEMBER_NEW_APPROVAL_RULE_TEMPLATE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdateApprovalRuleTemplateNameInput$newApprovalRuleTemplateName",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdateApprovalRuleTemplateNameInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "newApprovalRuleTemplateName",
+        1,
+    );
+static UPDATEAPPROVALRULETEMPLATENAMEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateApprovalRuleTemplateNameInput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateApprovalRuleTemplateNameInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEAPPROVALRULETEMPLATENAMEINPUT_MEMBER_OLD_APPROVAL_RULE_TEMPLATE_NAME,
+        &UPDATEAPPROVALRULETEMPLATENAMEINPUT_MEMBER_NEW_APPROVAL_RULE_TEMPLATE_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateApprovalRuleTemplateNameInput");
+impl UpdateApprovalRuleTemplateNameInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEAPPROVALRULETEMPLATENAMEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateApprovalRuleTemplateNameInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.old_approval_rule_template_name {
+            ser.write_string(&UPDATEAPPROVALRULETEMPLATENAMEINPUT_MEMBER_OLD_APPROVAL_RULE_TEMPLATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.new_approval_rule_template_name {
+            ser.write_string(&UPDATEAPPROVALRULETEMPLATENAMEINPUT_MEMBER_NEW_APPROVAL_RULE_TEMPLATE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_approval_rule_template_name::builders::UpdateApprovalRuleTemplateNameInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEAPPROVALRULETEMPLATENAMEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.old_approval_rule_template_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.new_approval_rule_template_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateApprovalRuleTemplateNameInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.old_approval_rule_template_name = builder.old_approval_rule_template_name.or(Some(String::new()));
+        builder.new_approval_rule_template_name = builder.new_approval_rule_template_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateApprovalRuleTemplateNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateNameInput`](crate::operation::update_approval_rule_template_name::UpdateApprovalRuleTemplateNameInput).
     pub fn builder() -> crate::operation::update_approval_rule_template_name::builders::UpdateApprovalRuleTemplateNameInputBuilder {

@@ -31,6 +31,154 @@ impl UnlinkDeveloperIdentityInput {
         self.developer_user_identifier.as_deref()
     }
 }
+static UNLINKDEVELOPERIDENTITYINPUT_MEMBER_IDENTITY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkDeveloperIdentityInput$IdentityId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkDeveloperIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityId",
+    0,
+);
+static UNLINKDEVELOPERIDENTITYINPUT_MEMBER_IDENTITY_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkDeveloperIdentityInput$IdentityPoolId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkDeveloperIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityPoolId",
+    1,
+);
+static UNLINKDEVELOPERIDENTITYINPUT_MEMBER_DEVELOPER_PROVIDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkDeveloperIdentityInput$DeveloperProviderName",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkDeveloperIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeveloperProviderName",
+    2,
+);
+static UNLINKDEVELOPERIDENTITYINPUT_MEMBER_DEVELOPER_USER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkDeveloperIdentityInput$DeveloperUserIdentifier",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkDeveloperIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeveloperUserIdentifier",
+    3,
+);
+static UNLINKDEVELOPERIDENTITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkDeveloperIdentityInput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkDeveloperIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UNLINKDEVELOPERIDENTITYINPUT_MEMBER_IDENTITY_ID,
+        &UNLINKDEVELOPERIDENTITYINPUT_MEMBER_IDENTITY_POOL_ID,
+        &UNLINKDEVELOPERIDENTITYINPUT_MEMBER_DEVELOPER_PROVIDER_NAME,
+        &UNLINKDEVELOPERIDENTITYINPUT_MEMBER_DEVELOPER_USER_IDENTIFIER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UnlinkDeveloperIdentityInput");
+impl UnlinkDeveloperIdentityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UNLINKDEVELOPERIDENTITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UnlinkDeveloperIdentityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_id {
+            ser.write_string(&UNLINKDEVELOPERIDENTITYINPUT_MEMBER_IDENTITY_ID, val)?;
+        }
+        if let Some(ref val) = self.identity_pool_id {
+            ser.write_string(&UNLINKDEVELOPERIDENTITYINPUT_MEMBER_IDENTITY_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.developer_provider_name {
+            ser.write_string(&UNLINKDEVELOPERIDENTITYINPUT_MEMBER_DEVELOPER_PROVIDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.developer_user_identifier {
+            ser.write_string(&UNLINKDEVELOPERIDENTITYINPUT_MEMBER_DEVELOPER_USER_IDENTIFIER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UNLINKDEVELOPERIDENTITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.developer_provider_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.developer_user_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UnlinkDeveloperIdentityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identity_id = builder.identity_id.or(Some(String::new()));
+        builder.identity_pool_id = builder.identity_pool_id.or(Some(String::new()));
+        builder.developer_provider_name = builder.developer_provider_name.or(Some(String::new()));
+        builder.developer_user_identifier = builder.developer_user_identifier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UnlinkDeveloperIdentityInput {
     /// Creates a new builder-style object to manufacture [`UnlinkDeveloperIdentityInput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput).
     pub fn builder() -> crate::operation::unlink_developer_identity::builders::UnlinkDeveloperIdentityInputBuilder {

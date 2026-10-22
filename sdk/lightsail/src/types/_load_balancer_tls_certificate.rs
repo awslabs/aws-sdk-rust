@@ -242,6 +242,658 @@ impl LoadBalancerTlsCertificate {
         self.subject_alternative_names.as_deref().unwrap_or_default()
     }
 }
+static LOADBALANCERTLSCERTIFICATE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$name",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$arn",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$supportCode",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    2,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$createdAt",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$location",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    4,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$resourceType",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$tags",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    6,
+)
+.with_list_member(&LOADBALANCERTLSCERTIFICATE_MEMBER_TAGS_MEMBER);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_LOAD_BALANCER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$loadBalancerName",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "loadBalancerName",
+    7,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_IS_ATTACHED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$isAttached",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isAttached",
+    8,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$status",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    9,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$domainName",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domainName",
+    10,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_VALIDATION_RECORDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#LoadBalancerTlsCertificateDomainValidationRecordList$member",
+            "com.amazonaws.lightsail",
+            "LoadBalancerTlsCertificateDomainValidationRecordList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_VALIDATION_RECORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$domainValidationRecords",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "domainValidationRecords",
+    11,
+)
+.with_list_member(&LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_VALIDATION_RECORDS_MEMBER);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$failureReason",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "failureReason",
+    12,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_ISSUED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$issuedAt",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "issuedAt",
+    13,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_ISSUER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$issuer",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "issuer",
+    14,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_KEY_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$keyAlgorithm",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "keyAlgorithm",
+    15,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_NOT_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$notAfter",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "notAfter",
+    16,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_NOT_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$notBefore",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "notBefore",
+    17,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_RENEWAL_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$renewalSummary",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "renewalSummary",
+    18,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_REVOCATION_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$revocationReason",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revocationReason",
+    19,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_REVOKED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$revokedAt",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "revokedAt",
+    20,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_SERIAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$serial",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serial",
+    21,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_SIGNATURE_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$signatureAlgorithm",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "signatureAlgorithm",
+    22,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$subject",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "subject",
+    23,
+);
+static LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT_ALTERNATIVE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate$subjectAlternativeNames",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "subjectAlternativeNames",
+    24,
+)
+.with_list_member(&LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT_ALTERNATIVE_NAMES_MEMBER);
+static LOADBALANCERTLSCERTIFICATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificate",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_NAME,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_ARN,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_SUPPORT_CODE,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_CREATED_AT,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_LOCATION,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_RESOURCE_TYPE,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_TAGS,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_LOAD_BALANCER_NAME,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_IS_ATTACHED,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_STATUS,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_NAME,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_VALIDATION_RECORDS,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_FAILURE_REASON,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_ISSUED_AT,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_ISSUER,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_KEY_ALGORITHM,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_NOT_AFTER,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_NOT_BEFORE,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_RENEWAL_SUMMARY,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_REVOCATION_REASON,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_REVOKED_AT,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_SERIAL,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_SIGNATURE_ALGORITHM,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT,
+        &LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+    ],
+);
+impl LoadBalancerTlsCertificate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOADBALANCERTLSCERTIFICATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LoadBalancerTlsCertificate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&LOADBALANCERTLSCERTIFICATE_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&LOADBALANCERTLSCERTIFICATE_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &LOADBALANCERTLSCERTIFICATE_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.load_balancer_name {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_LOAD_BALANCER_NAME, val)?;
+        }
+        if let Some(ref val) = self.is_attached {
+            ser.write_boolean(&LOADBALANCERTLSCERTIFICATE_MEMBER_IS_ATTACHED, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.domain_validation_records {
+            ser.write_list(
+                &LOADBALANCERTLSCERTIFICATE_MEMBER_DOMAIN_VALIDATION_RECORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LoadBalancerTlsCertificateDomainValidationRecord::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_FAILURE_REASON, val.as_str())?;
+        }
+        if let Some(ref val) = self.issued_at {
+            ser.write_timestamp(&LOADBALANCERTLSCERTIFICATE_MEMBER_ISSUED_AT, val)?;
+        }
+        if let Some(ref val) = self.issuer {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_ISSUER, val)?;
+        }
+        if let Some(ref val) = self.key_algorithm {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_KEY_ALGORITHM, val)?;
+        }
+        if let Some(ref val) = self.not_after {
+            ser.write_timestamp(&LOADBALANCERTLSCERTIFICATE_MEMBER_NOT_AFTER, val)?;
+        }
+        if let Some(ref val) = self.not_before {
+            ser.write_timestamp(&LOADBALANCERTLSCERTIFICATE_MEMBER_NOT_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.renewal_summary {
+            ser.write_struct(&LOADBALANCERTLSCERTIFICATE_MEMBER_RENEWAL_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.revocation_reason {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_REVOCATION_REASON, val.as_str())?;
+        }
+        if let Some(ref val) = self.revoked_at {
+            ser.write_timestamp(&LOADBALANCERTLSCERTIFICATE_MEMBER_REVOKED_AT, val)?;
+        }
+        if let Some(ref val) = self.serial {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_SERIAL, val)?;
+        }
+        if let Some(ref val) = self.signature_algorithm {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_SIGNATURE_ALGORITHM, val)?;
+        }
+        if let Some(ref val) = self.subject {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT, val)?;
+        }
+        if let Some(ref val) = self.subject_alternative_names {
+            ser.write_list(
+                &LOADBALANCERTLSCERTIFICATE_MEMBER_SUBJECT_ALTERNATIVE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LoadBalancerTlsCertificateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOADBALANCERTLSCERTIFICATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_attached = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::LoadBalancerTlsCertificateStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_validation_records = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LoadBalancerTlsCertificateDomainValidationRecord::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(crate::types::LoadBalancerTlsCertificateFailureReason::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issued_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_algorithm = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.renewal_summary = Some(crate::types::LoadBalancerTlsCertificateRenewalSummary::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revocation_reason = Some(crate::types::LoadBalancerTlsCertificateRevocationReason::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revoked_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serial = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signature_algorithm = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subject_alternative_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LoadBalancerTlsCertificate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LoadBalancerTlsCertificate {
     /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificate`](crate::types::LoadBalancerTlsCertificate).
     pub fn builder() -> crate::types::builders::LoadBalancerTlsCertificateBuilder {

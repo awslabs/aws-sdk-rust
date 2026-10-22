@@ -38,6 +38,107 @@ impl DetachPolicyInput {
         self.target_id.as_deref()
     }
 }
+static DETACHPOLICYINPUT_MEMBER_POLICY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#DetachPolicyInput$PolicyId",
+        "com.amazonaws.organizations.synthetic",
+        "DetachPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyId",
+    0,
+);
+static DETACHPOLICYINPUT_MEMBER_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#DetachPolicyInput$TargetId",
+        "com.amazonaws.organizations.synthetic",
+        "DetachPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetId",
+    1,
+);
+static DETACHPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#DetachPolicyInput",
+        "com.amazonaws.organizations.synthetic",
+        "DetachPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DETACHPOLICYINPUT_MEMBER_POLICY_ID, &DETACHPOLICYINPUT_MEMBER_TARGET_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DetachPolicyRequest");
+impl DetachPolicyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DETACHPOLICYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DetachPolicyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.policy_id {
+            ser.write_string(&DETACHPOLICYINPUT_MEMBER_POLICY_ID, val)?;
+        }
+        if let Some(ref val) = self.target_id {
+            ser.write_string(&DETACHPOLICYINPUT_MEMBER_TARGET_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::detach_policy::builders::DetachPolicyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DETACHPOLICYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DetachPolicyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.policy_id = builder.policy_id.or(Some(String::new()));
+        builder.target_id = builder.target_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DetachPolicyInput {
     /// Creates a new builder-style object to manufacture [`DetachPolicyInput`](crate::operation::detach_policy::DetachPolicyInput).
     pub fn builder() -> crate::operation::detach_policy::builders::DetachPolicyInputBuilder {

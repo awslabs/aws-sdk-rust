@@ -100,6 +100,281 @@ impl DiscoverInstancesInput {
         self.owner_account.as_deref()
     }
 }
+static DISCOVERINSTANCESINPUT_MEMBER_NAMESPACE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput$NamespaceName",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NamespaceName",
+    0,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput$ServiceName",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceName",
+    1,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput$MaxResults",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_QUERY_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Attributes$key",
+        "com.amazonaws.servicediscovery",
+        "Attributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_QUERY_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Attributes$value",
+        "com.amazonaws.servicediscovery",
+        "Attributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_QUERY_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput$QueryParameters",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "QueryParameters",
+    3,
+)
+.with_map_members(
+    &DISCOVERINSTANCESINPUT_MEMBER_QUERY_PARAMETERS_KEY,
+    &DISCOVERINSTANCESINPUT_MEMBER_QUERY_PARAMETERS_VALUE,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_OPTIONAL_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Attributes$key",
+        "com.amazonaws.servicediscovery",
+        "Attributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_OPTIONAL_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Attributes$value",
+        "com.amazonaws.servicediscovery",
+        "Attributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_OPTIONAL_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput$OptionalParameters",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "OptionalParameters",
+    4,
+)
+.with_map_members(
+    &DISCOVERINSTANCESINPUT_MEMBER_OPTIONAL_PARAMETERS_KEY,
+    &DISCOVERINSTANCESINPUT_MEMBER_OPTIONAL_PARAMETERS_VALUE,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_HEALTH_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput$HealthStatus",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HealthStatus",
+    5,
+);
+static DISCOVERINSTANCESINPUT_MEMBER_OWNER_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput$OwnerAccount",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerAccount",
+    6,
+);
+static DISCOVERINSTANCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesInput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISCOVERINSTANCESINPUT_MEMBER_NAMESPACE_NAME,
+        &DISCOVERINSTANCESINPUT_MEMBER_SERVICE_NAME,
+        &DISCOVERINSTANCESINPUT_MEMBER_MAX_RESULTS,
+        &DISCOVERINSTANCESINPUT_MEMBER_QUERY_PARAMETERS,
+        &DISCOVERINSTANCESINPUT_MEMBER_OPTIONAL_PARAMETERS,
+        &DISCOVERINSTANCESINPUT_MEMBER_HEALTH_STATUS,
+        &DISCOVERINSTANCESINPUT_MEMBER_OWNER_ACCOUNT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DiscoverInstancesRequest");
+impl DiscoverInstancesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISCOVERINSTANCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DiscoverInstancesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.namespace_name {
+            ser.write_string(&DISCOVERINSTANCESINPUT_MEMBER_NAMESPACE_NAME, val)?;
+        }
+        if let Some(ref val) = self.service_name {
+            ser.write_string(&DISCOVERINSTANCESINPUT_MEMBER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&DISCOVERINSTANCESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.query_parameters {
+            ser.write_map(
+                &DISCOVERINSTANCESINPUT_MEMBER_QUERY_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.optional_parameters {
+            ser.write_map(
+                &DISCOVERINSTANCESINPUT_MEMBER_OPTIONAL_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.health_status {
+            ser.write_string(&DISCOVERINSTANCESINPUT_MEMBER_HEALTH_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.owner_account {
+            ser.write_string(&DISCOVERINSTANCESINPUT_MEMBER_OWNER_ACCOUNT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::discover_instances::builders::DiscoverInstancesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISCOVERINSTANCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.optional_parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_status = Some(crate::types::HealthStatusFilter::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_account = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DiscoverInstancesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.namespace_name = builder.namespace_name.or(Some(String::new()));
+        builder.service_name = builder.service_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DiscoverInstancesInput {
     /// Creates a new builder-style object to manufacture [`DiscoverInstancesInput`](crate::operation::discover_instances::DiscoverInstancesInput).
     pub fn builder() -> crate::operation::discover_instances::builders::DiscoverInstancesInputBuilder {

@@ -51,6 +51,234 @@ impl CloudFormationTarget {
         self.target_version_weight
     }
 }
+static CLOUDFORMATIONTARGET_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget$deploymentId",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static CLOUDFORMATIONTARGET_MEMBER_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget$targetId",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetId",
+    1,
+);
+static CLOUDFORMATIONTARGET_MEMBER_LAST_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget$lastUpdatedAt",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastUpdatedAt",
+    2,
+);
+static CLOUDFORMATIONTARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LifecycleEventList$member",
+        "com.amazonaws.codedeploy",
+        "LifecycleEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLOUDFORMATIONTARGET_MEMBER_LIFECYCLE_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget$lifecycleEvents",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "lifecycleEvents",
+    3,
+)
+.with_list_member(&CLOUDFORMATIONTARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER);
+static CLOUDFORMATIONTARGET_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget$status",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    4,
+);
+static CLOUDFORMATIONTARGET_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget$resourceType",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static CLOUDFORMATIONTARGET_MEMBER_TARGET_VERSION_WEIGHT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget$targetVersionWeight",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "targetVersionWeight",
+    6,
+);
+static CLOUDFORMATIONTARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#CloudFormationTarget",
+        "com.amazonaws.codedeploy",
+        "CloudFormationTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLOUDFORMATIONTARGET_MEMBER_DEPLOYMENT_ID,
+        &CLOUDFORMATIONTARGET_MEMBER_TARGET_ID,
+        &CLOUDFORMATIONTARGET_MEMBER_LAST_UPDATED_AT,
+        &CLOUDFORMATIONTARGET_MEMBER_LIFECYCLE_EVENTS,
+        &CLOUDFORMATIONTARGET_MEMBER_STATUS,
+        &CLOUDFORMATIONTARGET_MEMBER_RESOURCE_TYPE,
+        &CLOUDFORMATIONTARGET_MEMBER_TARGET_VERSION_WEIGHT,
+    ],
+);
+impl CloudFormationTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLOUDFORMATIONTARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CloudFormationTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&CLOUDFORMATIONTARGET_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.target_id {
+            ser.write_string(&CLOUDFORMATIONTARGET_MEMBER_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.last_updated_at {
+            ser.write_timestamp(&CLOUDFORMATIONTARGET_MEMBER_LAST_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_events {
+            ser.write_list(
+                &CLOUDFORMATIONTARGET_MEMBER_LIFECYCLE_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LifecycleEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CLOUDFORMATIONTARGET_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&CLOUDFORMATIONTARGET_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        {
+            let val = &self.target_version_weight;
+            ser.write_double(&CLOUDFORMATIONTARGET_MEMBER_TARGET_VERSION_WEIGHT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CloudFormationTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLOUDFORMATIONTARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LifecycleEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TargetStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    self.target_version_weight = Some(deser.read_double(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CloudFormationTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CloudFormationTarget {
     /// Creates a new builder-style object to manufacture [`CloudFormationTarget`](crate::types::CloudFormationTarget).
     pub fn builder() -> crate::types::builders::CloudFormationTargetBuilder {

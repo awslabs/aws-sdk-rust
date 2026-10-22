@@ -19,6 +19,104 @@ impl CreateUpdatedImageOutput {
         self.can_update_image
     }
 }
+static CREATEUPDATEDIMAGEOUTPUT_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUpdatedImageOutput$image",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUpdatedImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "image",
+    0,
+);
+static CREATEUPDATEDIMAGEOUTPUT_MEMBER_CAN_UPDATE_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUpdatedImageOutput$canUpdateImage",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUpdatedImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "canUpdateImage",
+    1,
+);
+static CREATEUPDATEDIMAGEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUpdatedImageOutput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUpdatedImageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEUPDATEDIMAGEOUTPUT_MEMBER_IMAGE, &CREATEUPDATEDIMAGEOUTPUT_MEMBER_CAN_UPDATE_IMAGE],
+)
+.with_original_name("CreateUpdatedImageResult");
+impl CreateUpdatedImageOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEUPDATEDIMAGEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateUpdatedImageOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image {
+            ser.write_struct(&CREATEUPDATEDIMAGEOUTPUT_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.can_update_image {
+            ser.write_boolean(&CREATEUPDATEDIMAGEOUTPUT_MEMBER_CAN_UPDATE_IMAGE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_updated_image::builders::CreateUpdatedImageOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEUPDATEDIMAGEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image = Some(crate::types::Image::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.can_update_image = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateUpdatedImageOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateUpdatedImageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

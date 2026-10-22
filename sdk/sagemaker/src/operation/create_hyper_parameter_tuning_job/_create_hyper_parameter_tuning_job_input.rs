@@ -88,6 +88,267 @@ impl CreateHyperParameterTuningJobInput {
         self.autotune.as_ref()
     }
 }
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_HYPER_PARAMETER_TUNING_JOB_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput$HyperParameterTuningJobName",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateHyperParameterTuningJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "HyperParameterTuningJobName",
+        0,
+    );
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_HYPER_PARAMETER_TUNING_JOB_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput$HyperParameterTuningJobConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateHyperParameterTuningJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "HyperParameterTuningJobConfig",
+        1,
+    );
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput$TrainingJobDefinition",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateHyperParameterTuningJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "TrainingJobDefinition",
+        2,
+    );
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTrainingJobDefinitions$member",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTrainingJobDefinitions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput$TrainingJobDefinitions",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateHyperParameterTuningJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "TrainingJobDefinitions",
+        3,
+    )
+    .with_list_member(&CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITIONS_MEMBER);
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_WARM_START_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput$WarmStartConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHyperParameterTuningJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WarmStartConfig",
+    4,
+);
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHyperParameterTuningJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_AUTOTUNE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput$Autotune",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHyperParameterTuningJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Autotune",
+    6,
+);
+static CREATEHYPERPARAMETERTUNINGJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHyperParameterTuningJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHyperParameterTuningJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_HYPER_PARAMETER_TUNING_JOB_NAME,
+        &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_HYPER_PARAMETER_TUNING_JOB_CONFIG,
+        &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITION,
+        &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITIONS,
+        &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_WARM_START_CONFIG,
+        &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TAGS,
+        &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_AUTOTUNE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateHyperParameterTuningJobRequest");
+impl CreateHyperParameterTuningJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEHYPERPARAMETERTUNINGJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateHyperParameterTuningJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hyper_parameter_tuning_job_name {
+            ser.write_string(&CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_HYPER_PARAMETER_TUNING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameter_tuning_job_config {
+            ser.write_struct(&CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_HYPER_PARAMETER_TUNING_JOB_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.training_job_definition {
+            ser.write_struct(&CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.training_job_definitions {
+            ser.write_list(
+                &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TRAINING_JOB_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HyperParameterTrainingJobDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.warm_start_config {
+            ser.write_struct(&CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_WARM_START_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.autotune {
+            ser.write_struct(&CREATEHYPERPARAMETERTUNINGJOBINPUT_MEMBER_AUTOTUNE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEHYPERPARAMETERTUNINGJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job_config = Some(crate::types::HyperParameterTuningJobConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_definition = Some(crate::types::HyperParameterTrainingJobDefinition::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HyperParameterTrainingJobDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.warm_start_config = Some(crate::types::HyperParameterTuningJobWarmStartConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.autotune = Some(crate::types::Autotune::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateHyperParameterTuningJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hyper_parameter_tuning_job_name = builder.hyper_parameter_tuning_job_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateHyperParameterTuningJobInput {
     /// Creates a new builder-style object to manufacture [`CreateHyperParameterTuningJobInput`](crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobInput).
     pub fn builder() -> crate::operation::create_hyper_parameter_tuning_job::builders::CreateHyperParameterTuningJobInputBuilder {

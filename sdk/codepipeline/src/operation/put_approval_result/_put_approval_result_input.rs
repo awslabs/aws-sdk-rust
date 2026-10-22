@@ -41,6 +41,175 @@ impl PutApprovalResultInput {
         self.token.as_deref()
     }
 }
+static PUTAPPROVALRESULTINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutApprovalResultInput$pipelineName",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutApprovalResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineName",
+    0,
+);
+static PUTAPPROVALRESULTINPUT_MEMBER_STAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutApprovalResultInput$stageName",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutApprovalResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "stageName",
+    1,
+);
+static PUTAPPROVALRESULTINPUT_MEMBER_ACTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutApprovalResultInput$actionName",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutApprovalResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "actionName",
+    2,
+);
+static PUTAPPROVALRESULTINPUT_MEMBER_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutApprovalResultInput$result",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutApprovalResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "result",
+    3,
+);
+static PUTAPPROVALRESULTINPUT_MEMBER_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutApprovalResultInput$token",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutApprovalResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "token",
+    4,
+);
+static PUTAPPROVALRESULTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutApprovalResultInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutApprovalResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTAPPROVALRESULTINPUT_MEMBER_PIPELINE_NAME,
+        &PUTAPPROVALRESULTINPUT_MEMBER_STAGE_NAME,
+        &PUTAPPROVALRESULTINPUT_MEMBER_ACTION_NAME,
+        &PUTAPPROVALRESULTINPUT_MEMBER_RESULT,
+        &PUTAPPROVALRESULTINPUT_MEMBER_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutApprovalResultInput");
+impl PutApprovalResultInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTAPPROVALRESULTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutApprovalResultInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&PUTAPPROVALRESULTINPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.stage_name {
+            ser.write_string(&PUTAPPROVALRESULTINPUT_MEMBER_STAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.action_name {
+            ser.write_string(&PUTAPPROVALRESULTINPUT_MEMBER_ACTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.result {
+            ser.write_struct(&PUTAPPROVALRESULTINPUT_MEMBER_RESULT, val)?;
+        }
+        if let Some(ref val) = self.token {
+            ser.write_string(&PUTAPPROVALRESULTINPUT_MEMBER_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTAPPROVALRESULTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result = Some(crate::types::ApprovalResult::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutApprovalResultInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
+        builder.stage_name = builder.stage_name.or(Some(String::new()));
+        builder.action_name = builder.action_name.or(Some(String::new()));
+        builder.token = builder.token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutApprovalResultInput {
     /// Creates a new builder-style object to manufacture [`PutApprovalResultInput`](crate::operation::put_approval_result::PutApprovalResultInput).
     pub fn builder() -> crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder {

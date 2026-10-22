@@ -28,6 +28,128 @@ impl ::std::fmt::Debug for BatchDetectSentimentInput {
         formatter.finish()
     }
 }
+static BATCHDETECTSENTIMENTINPUT_MEMBER_TEXT_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#CustomerInputStringList$member",
+        "com.amazonaws.comprehend",
+        "CustomerInputStringList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHDETECTSENTIMENTINPUT_MEMBER_TEXT_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#BatchDetectSentimentInput$TextList",
+        "com.amazonaws.comprehend.synthetic",
+        "BatchDetectSentimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TextList",
+    0,
+)
+.with_list_member(&BATCHDETECTSENTIMENTINPUT_MEMBER_TEXT_LIST_MEMBER);
+static BATCHDETECTSENTIMENTINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#BatchDetectSentimentInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "BatchDetectSentimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static BATCHDETECTSENTIMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#BatchDetectSentimentInput",
+        "com.amazonaws.comprehend.synthetic",
+        "BatchDetectSentimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDETECTSENTIMENTINPUT_MEMBER_TEXT_LIST,
+        &BATCHDETECTSENTIMENTINPUT_MEMBER_LANGUAGE_CODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchDetectSentimentRequest");
+impl BatchDetectSentimentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDETECTSENTIMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDetectSentimentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.text_list {
+            ser.write_list(
+                &BATCHDETECTSENTIMENTINPUT_MEMBER_TEXT_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&BATCHDETECTSENTIMENTINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDETECTSENTIMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDetectSentimentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.text_list = builder.text_list.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchDetectSentimentInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectSentimentInput`](crate::operation::batch_detect_sentiment::BatchDetectSentimentInput).
     pub fn builder() -> crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder {

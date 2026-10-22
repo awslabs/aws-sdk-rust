@@ -141,6 +141,338 @@ impl Service {
         self.created_by_account.as_deref()
     }
 }
+static SERVICE_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.servicediscovery#Service$Id", "com.amazonaws.servicediscovery", "Service"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static SERVICE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.servicediscovery#Service$Arn", "com.amazonaws.servicediscovery", "Service"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static SERVICE_MEMBER_RESOURCE_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$ResourceOwner",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceOwner",
+    2,
+);
+static SERVICE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.servicediscovery#Service$Name", "com.amazonaws.servicediscovery", "Service"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static SERVICE_MEMBER_NAMESPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$NamespaceId",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NamespaceId",
+    4,
+);
+static SERVICE_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$Description",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    5,
+);
+static SERVICE_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$InstanceCount",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    6,
+);
+static SERVICE_MEMBER_DNS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$DnsConfig",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DnsConfig",
+    7,
+);
+static SERVICE_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.servicediscovery#Service$Type", "com.amazonaws.servicediscovery", "Service"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    8,
+);
+static SERVICE_MEMBER_HEALTH_CHECK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$HealthCheckConfig",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HealthCheckConfig",
+    9,
+);
+static SERVICE_MEMBER_HEALTH_CHECK_CUSTOM_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$HealthCheckCustomConfig",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HealthCheckCustomConfig",
+    10,
+);
+static SERVICE_MEMBER_CREATE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$CreateDate",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateDate",
+    11,
+);
+static SERVICE_MEMBER_CREATOR_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$CreatorRequestId",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatorRequestId",
+    12,
+);
+static SERVICE_MEMBER_CREATED_BY_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#Service$CreatedByAccount",
+        "com.amazonaws.servicediscovery",
+        "Service",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatedByAccount",
+    13,
+);
+static SERVICE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.servicediscovery#Service", "com.amazonaws.servicediscovery", "Service"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICE_MEMBER_ID,
+        &SERVICE_MEMBER_ARN,
+        &SERVICE_MEMBER_RESOURCE_OWNER,
+        &SERVICE_MEMBER_NAME,
+        &SERVICE_MEMBER_NAMESPACE_ID,
+        &SERVICE_MEMBER_DESCRIPTION,
+        &SERVICE_MEMBER_INSTANCE_COUNT,
+        &SERVICE_MEMBER_DNS_CONFIG,
+        &SERVICE_MEMBER_TYPE,
+        &SERVICE_MEMBER_HEALTH_CHECK_CONFIG,
+        &SERVICE_MEMBER_HEALTH_CHECK_CUSTOM_CONFIG,
+        &SERVICE_MEMBER_CREATE_DATE,
+        &SERVICE_MEMBER_CREATOR_REQUEST_ID,
+        &SERVICE_MEMBER_CREATED_BY_ACCOUNT,
+    ],
+);
+impl Service {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Service {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&SERVICE_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&SERVICE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.resource_owner {
+            ser.write_string(&SERVICE_MEMBER_RESOURCE_OWNER, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&SERVICE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.namespace_id {
+            ser.write_string(&SERVICE_MEMBER_NAMESPACE_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&SERVICE_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&SERVICE_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.dns_config {
+            ser.write_struct(&SERVICE_MEMBER_DNS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&SERVICE_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.health_check_config {
+            ser.write_struct(&SERVICE_MEMBER_HEALTH_CHECK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.health_check_custom_config {
+            ser.write_struct(&SERVICE_MEMBER_HEALTH_CHECK_CUSTOM_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.create_date {
+            ser.write_timestamp(&SERVICE_MEMBER_CREATE_DATE, val)?;
+        }
+        if let Some(ref val) = self.creator_request_id {
+            ser.write_string(&SERVICE_MEMBER_CREATOR_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.created_by_account {
+            ser.write_string(&SERVICE_MEMBER_CREATED_BY_ACCOUNT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_config = Some(crate::types::DnsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ServiceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_config = Some(crate::types::HealthCheckConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_custom_config = Some(crate::types::HealthCheckCustomConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creator_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by_account = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Service {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::types::Service).
     pub fn builder() -> crate::types::builders::ServiceBuilder {

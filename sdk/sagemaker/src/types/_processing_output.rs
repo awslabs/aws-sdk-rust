@@ -31,6 +31,144 @@ impl ProcessingOutput {
         self.app_managed
     }
 }
+static PROCESSINGOUTPUT_MEMBER_OUTPUT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingOutput$OutputName",
+        "com.amazonaws.sagemaker",
+        "ProcessingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputName",
+    0,
+);
+static PROCESSINGOUTPUT_MEMBER_S3_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingOutput$S3Output",
+        "com.amazonaws.sagemaker",
+        "ProcessingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Output",
+    1,
+);
+static PROCESSINGOUTPUT_MEMBER_FEATURE_STORE_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingOutput$FeatureStoreOutput",
+        "com.amazonaws.sagemaker",
+        "ProcessingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FeatureStoreOutput",
+    2,
+);
+static PROCESSINGOUTPUT_MEMBER_APP_MANAGED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingOutput$AppManaged",
+        "com.amazonaws.sagemaker",
+        "ProcessingOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AppManaged",
+    3,
+);
+static PROCESSINGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ProcessingOutput", "com.amazonaws.sagemaker", "ProcessingOutput"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROCESSINGOUTPUT_MEMBER_OUTPUT_NAME,
+        &PROCESSINGOUTPUT_MEMBER_S3_OUTPUT,
+        &PROCESSINGOUTPUT_MEMBER_FEATURE_STORE_OUTPUT,
+        &PROCESSINGOUTPUT_MEMBER_APP_MANAGED,
+    ],
+);
+impl ProcessingOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROCESSINGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProcessingOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.output_name {
+            ser.write_string(&PROCESSINGOUTPUT_MEMBER_OUTPUT_NAME, val)?;
+        }
+        if let Some(ref val) = self.s3_output {
+            ser.write_struct(&PROCESSINGOUTPUT_MEMBER_S3_OUTPUT, val)?;
+        }
+        if let Some(ref val) = self.feature_store_output {
+            ser.write_struct(&PROCESSINGOUTPUT_MEMBER_FEATURE_STORE_OUTPUT, val)?;
+        }
+        if let Some(ref val) = self.app_managed {
+            ser.write_boolean(&PROCESSINGOUTPUT_MEMBER_APP_MANAGED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProcessingOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROCESSINGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_output = Some(crate::types::ProcessingS3Output::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_store_output = Some(crate::types::ProcessingFeatureStoreOutput::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_managed = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProcessingOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProcessingOutput {
     /// Creates a new builder-style object to manufacture [`ProcessingOutput`](crate::types::ProcessingOutput).
     pub fn builder() -> crate::types::builders::ProcessingOutputBuilder {

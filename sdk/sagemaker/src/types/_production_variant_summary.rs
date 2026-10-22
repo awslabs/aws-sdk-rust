@@ -91,6 +91,415 @@ impl ProductionVariantSummary {
         self.capacity_reservation_config.as_ref()
     }
 }
+static PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$VariantName",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VariantName",
+    0,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_DEPLOYED_IMAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeployedImages$member",
+        "com.amazonaws.sagemaker",
+        "DeployedImages",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_DEPLOYED_IMAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$DeployedImages",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DeployedImages",
+    1,
+)
+.with_list_member(&PRODUCTIONVARIANTSUMMARY_MEMBER_DEPLOYED_IMAGES_MEMBER);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_WEIGHT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$CurrentWeight",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "CurrentWeight",
+    2,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_WEIGHT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$DesiredWeight",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "DesiredWeight",
+    3,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$CurrentInstanceCount",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CurrentInstanceCount",
+    4,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$DesiredInstanceCount",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DesiredInstanceCount",
+    5,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_INSTANCE_POOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstancePoolSummaryList$member",
+        "com.amazonaws.sagemaker",
+        "InstancePoolSummaryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_INSTANCE_POOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$InstancePools",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstancePools",
+    6,
+)
+.with_list_member(&PRODUCTIONVARIANTSUMMARY_MEMBER_INSTANCE_POOLS_MEMBER);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_STATUS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantStatusList$member",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantStatusList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$VariantStatus",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "VariantStatus",
+    7,
+)
+.with_list_member(&PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_STATUS_MEMBER);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_SERVERLESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$CurrentServerlessConfig",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CurrentServerlessConfig",
+    8,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_SERVERLESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$DesiredServerlessConfig",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DesiredServerlessConfig",
+    9,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_MANAGED_INSTANCE_SCALING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$ManagedInstanceScaling",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManagedInstanceScaling",
+    10,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_ROUTING_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$RoutingConfig",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RoutingConfig",
+    11,
+);
+static PRODUCTIONVARIANTSUMMARY_MEMBER_CAPACITY_RESERVATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary$CapacityReservationConfig",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CapacityReservationConfig",
+    12,
+);
+static PRODUCTIONVARIANTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantSummary",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_NAME,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_DEPLOYED_IMAGES,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_WEIGHT,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_WEIGHT,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_INSTANCE_COUNT,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_INSTANCE_COUNT,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_INSTANCE_POOLS,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_STATUS,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_SERVERLESS_CONFIG,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_SERVERLESS_CONFIG,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_MANAGED_INSTANCE_SCALING,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_ROUTING_CONFIG,
+        &PRODUCTIONVARIANTSUMMARY_MEMBER_CAPACITY_RESERVATION_CONFIG,
+    ],
+);
+impl ProductionVariantSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRODUCTIONVARIANTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProductionVariantSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.variant_name {
+            ser.write_string(&PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_NAME, val)?;
+        }
+        if let Some(ref val) = self.deployed_images {
+            ser.write_list(
+                &PRODUCTIONVARIANTSUMMARY_MEMBER_DEPLOYED_IMAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DeployedImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.current_weight {
+            ser.write_float(&PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_WEIGHT, *val)?;
+        }
+        if let Some(ref val) = self.desired_weight {
+            ser.write_float(&PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_WEIGHT, *val)?;
+        }
+        if let Some(ref val) = self.current_instance_count {
+            ser.write_integer(&PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.desired_instance_count {
+            ser.write_integer(&PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.instance_pools {
+            ser.write_list(
+                &PRODUCTIONVARIANTSUMMARY_MEMBER_INSTANCE_POOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InstancePoolSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.variant_status {
+            ser.write_list(
+                &PRODUCTIONVARIANTSUMMARY_MEMBER_VARIANT_STATUS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProductionVariantStatus::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.current_serverless_config {
+            ser.write_struct(&PRODUCTIONVARIANTSUMMARY_MEMBER_CURRENT_SERVERLESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.desired_serverless_config {
+            ser.write_struct(&PRODUCTIONVARIANTSUMMARY_MEMBER_DESIRED_SERVERLESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.managed_instance_scaling {
+            ser.write_struct(&PRODUCTIONVARIANTSUMMARY_MEMBER_MANAGED_INSTANCE_SCALING, val)?;
+        }
+        if let Some(ref val) = self.routing_config {
+            ser.write_struct(&PRODUCTIONVARIANTSUMMARY_MEMBER_ROUTING_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.capacity_reservation_config {
+            ser.write_struct(&PRODUCTIONVARIANTSUMMARY_MEMBER_CAPACITY_RESERVATION_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProductionVariantSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRODUCTIONVARIANTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.variant_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployed_images = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeployedImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_weight = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_weight = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_pools = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstancePoolSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.variant_status = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProductionVariantStatus::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_serverless_config = Some(crate::types::ProductionVariantServerlessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_serverless_config = Some(crate::types::ProductionVariantServerlessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_instance_scaling = Some(crate::types::ProductionVariantManagedInstanceScaling::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.routing_config = Some(crate::types::ProductionVariantRoutingConfig::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation_config = Some(crate::types::ProductionVariantCapacityReservationSummary::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProductionVariantSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProductionVariantSummary {
     /// Creates a new builder-style object to manufacture [`ProductionVariantSummary`](crate::types::ProductionVariantSummary).
     pub fn builder() -> crate::types::builders::ProductionVariantSummaryBuilder {

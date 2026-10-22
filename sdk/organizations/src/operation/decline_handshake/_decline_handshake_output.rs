@@ -13,6 +13,84 @@ impl DeclineHandshakeOutput {
         self.handshake.as_ref()
     }
 }
+static DECLINEHANDSHAKEOUTPUT_MEMBER_HANDSHAKE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#DeclineHandshakeOutput$Handshake",
+        "com.amazonaws.organizations.synthetic",
+        "DeclineHandshakeOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Handshake",
+    0,
+);
+static DECLINEHANDSHAKEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#DeclineHandshakeOutput",
+        "com.amazonaws.organizations.synthetic",
+        "DeclineHandshakeOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DECLINEHANDSHAKEOUTPUT_MEMBER_HANDSHAKE],
+)
+.with_original_name("DeclineHandshakeResponse");
+impl DeclineHandshakeOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DECLINEHANDSHAKEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeclineHandshakeOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.handshake {
+            ser.write_struct(&DECLINEHANDSHAKEOUTPUT_MEMBER_HANDSHAKE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::decline_handshake::builders::DeclineHandshakeOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DECLINEHANDSHAKEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.handshake = Some(crate::types::Handshake::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeclineHandshakeOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DeclineHandshakeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

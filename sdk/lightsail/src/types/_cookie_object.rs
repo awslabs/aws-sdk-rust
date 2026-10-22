@@ -22,6 +22,110 @@ impl CookieObject {
         self.cookies_allow_list.as_deref().unwrap_or_default()
     }
 }
+static COOKIEOBJECT_MEMBER_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#CookieObject$option", "com.amazonaws.lightsail", "CookieObject"),
+    ::aws_smithy_schema::ShapeType::String,
+    "option",
+    0,
+);
+static COOKIEOBJECT_MEMBER_COOKIES_ALLOW_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static COOKIEOBJECT_MEMBER_COOKIES_ALLOW_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CookieObject$cookiesAllowList",
+        "com.amazonaws.lightsail",
+        "CookieObject",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "cookiesAllowList",
+    1,
+)
+.with_list_member(&COOKIEOBJECT_MEMBER_COOKIES_ALLOW_LIST_MEMBER);
+static COOKIEOBJECT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#CookieObject", "com.amazonaws.lightsail", "CookieObject"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&COOKIEOBJECT_MEMBER_OPTION, &COOKIEOBJECT_MEMBER_COOKIES_ALLOW_LIST],
+);
+impl CookieObject {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COOKIEOBJECT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CookieObject {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.option {
+            ser.write_string(&COOKIEOBJECT_MEMBER_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.cookies_allow_list {
+            ser.write_list(
+                &COOKIEOBJECT_MEMBER_COOKIES_ALLOW_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CookieObjectBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COOKIEOBJECT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.option = Some(crate::types::ForwardValues::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cookies_allow_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CookieObject {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CookieObject {
     /// Creates a new builder-style object to manufacture [`CookieObject`](crate::types::CookieObject).
     pub fn builder() -> crate::types::builders::CookieObjectBuilder {

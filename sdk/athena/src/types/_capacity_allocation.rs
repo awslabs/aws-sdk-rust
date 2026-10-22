@@ -31,6 +31,139 @@ impl CapacityAllocation {
         self.request_completion_time.as_ref()
     }
 }
+static CAPACITYALLOCATION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityAllocation$Status",
+        "com.amazonaws.athena",
+        "CapacityAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static CAPACITYALLOCATION_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityAllocation$StatusMessage",
+        "com.amazonaws.athena",
+        "CapacityAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    1,
+);
+static CAPACITYALLOCATION_MEMBER_REQUEST_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityAllocation$RequestTime",
+        "com.amazonaws.athena",
+        "CapacityAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestTime",
+    2,
+);
+static CAPACITYALLOCATION_MEMBER_REQUEST_COMPLETION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityAllocation$RequestCompletionTime",
+        "com.amazonaws.athena",
+        "CapacityAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestCompletionTime",
+    3,
+);
+static CAPACITYALLOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#CapacityAllocation", "com.amazonaws.athena", "CapacityAllocation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CAPACITYALLOCATION_MEMBER_STATUS,
+        &CAPACITYALLOCATION_MEMBER_STATUS_MESSAGE,
+        &CAPACITYALLOCATION_MEMBER_REQUEST_TIME,
+        &CAPACITYALLOCATION_MEMBER_REQUEST_COMPLETION_TIME,
+    ],
+);
+impl CapacityAllocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CAPACITYALLOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CapacityAllocation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.status;
+            ser.write_string(&CAPACITYALLOCATION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&CAPACITYALLOCATION_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        {
+            let val = &self.request_time;
+            ser.write_timestamp(&CAPACITYALLOCATION_MEMBER_REQUEST_TIME, val)?;
+        }
+        if let Some(ref val) = self.request_completion_time {
+            ser.write_timestamp(&CAPACITYALLOCATION_MEMBER_REQUEST_COMPLETION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CapacityAllocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CAPACITYALLOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.status = Some(crate::types::CapacityAllocationStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.request_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request_completion_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CapacityAllocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.request_time = builder.request_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CapacityAllocation {
     /// Creates a new builder-style object to manufacture [`CapacityAllocation`](crate::types::CapacityAllocation).
     pub fn builder() -> crate::types::builders::CapacityAllocationBuilder {

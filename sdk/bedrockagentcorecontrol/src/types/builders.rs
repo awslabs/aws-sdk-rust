@@ -347,6 +347,8 @@ pub use crate::types::_match_principals::MatchPrincipalsBuilder;
 
 pub use crate::types::_match_paths::MatchPathsBuilder;
 
+pub use crate::types::_match_models::MatchModelsBuilder;
+
 pub use crate::types::_mcp_lambda_target_configuration::McpLambdaTargetConfigurationBuilder;
 
 pub use crate::types::_mcp_server_target_configuration::McpServerTargetConfigurationBuilder;
@@ -523,9 +525,15 @@ pub use crate::types::_numerical_scale_definition::NumericalScaleDefinitionBuild
 
 pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinitionBuilder;
 
+pub use crate::types::_evaluation_dimension::EvaluationDimensionBuilder;
+
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 
 pub use crate::types::_reasoning_configuration::ReasoningConfigurationBuilder;
+
+pub use crate::types::_match_model_entry::MatchModelEntryBuilder;
+
+pub use crate::types::_fallback::FallbackBuilder;
 
 pub use crate::types::_connector_configuration::ConnectorConfigurationBuilder;
 
@@ -570,6 +578,10 @@ pub use crate::types::_capacity_reservation_target::CapacityReservationTargetBui
 pub use crate::types::_iam_principal::IamPrincipalBuilder;
 
 pub use crate::types::_traffic_split_entry::TrafficSplitEntryBuilder;
+
+pub use crate::types::_fallback_triggers::FallbackTriggersBuilder;
+
+pub use crate::types::_circuit_breaker_configuration::CircuitBreakerConfigurationBuilder;
 
 pub use crate::types::_target_traffic_split_entry::TargetTrafficSplitEntryBuilder;
 
@@ -616,6 +628,8 @@ pub use crate::types::_registry_record_iam_credential_provider::RegistryRecordIa
 pub use crate::types::_ephemeral_ebs_volume_configuration::EphemeralEbsVolumeConfigurationBuilder;
 
 pub use crate::types::_configuration_bundle_reference::ConfigurationBundleReferenceBuilder;
+
+pub use crate::types::_fallback_target::FallbackTargetBuilder;
 
 pub use crate::types::_schema_definition::SchemaDefinitionBuilder;
 

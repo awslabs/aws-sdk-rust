@@ -36,6 +36,173 @@ impl GetCommentsForComparedCommitInput {
         self.max_results
     }
 }
+static GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetCommentsForComparedCommitInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "GetCommentsForComparedCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_BEFORE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetCommentsForComparedCommitInput$beforeCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetCommentsForComparedCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforeCommitId",
+    1,
+);
+static GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_AFTER_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetCommentsForComparedCommitInput$afterCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetCommentsForComparedCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterCommitId",
+    2,
+);
+static GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetCommentsForComparedCommitInput$nextToken",
+        "com.amazonaws.codecommit.synthetic",
+        "GetCommentsForComparedCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    3,
+);
+static GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetCommentsForComparedCommitInput$maxResults",
+        "com.amazonaws.codecommit.synthetic",
+        "GetCommentsForComparedCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    4,
+);
+static GETCOMMENTSFORCOMPAREDCOMMITINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetCommentsForComparedCommitInput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetCommentsForComparedCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_REPOSITORY_NAME,
+        &GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_BEFORE_COMMIT_ID,
+        &GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_AFTER_COMMIT_ID,
+        &GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_NEXT_TOKEN,
+        &GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetCommentsForComparedCommitInput");
+impl GetCommentsForComparedCommitInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCOMMENTSFORCOMPAREDCOMMITINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetCommentsForComparedCommitInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.before_commit_id {
+            ser.write_string(&GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_BEFORE_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.after_commit_id {
+            ser.write_string(&GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_AFTER_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&GETCOMMENTSFORCOMPAREDCOMMITINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCOMMENTSFORCOMPAREDCOMMITINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetCommentsForComparedCommitInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.after_commit_id = builder.after_commit_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetCommentsForComparedCommitInput {
     /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitInput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput).
     pub fn builder() -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder {

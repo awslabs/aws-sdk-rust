@@ -81,6 +81,230 @@ impl CreateLocationS3Input {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATELOCATIONS3INPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationS3Input$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    0,
+);
+static CREATELOCATIONS3INPUT_MEMBER_S3_BUCKET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationS3Input$S3BucketArn",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketArn",
+    1,
+);
+static CREATELOCATIONS3INPUT_MEMBER_S3_STORAGE_CLASS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationS3Input$S3StorageClass",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3StorageClass",
+    2,
+);
+static CREATELOCATIONS3INPUT_MEMBER_S3_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationS3Input$S3Config",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Config",
+    3,
+);
+static CREATELOCATIONS3INPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATELOCATIONS3INPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationS3Input$AgentArns",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AgentArns",
+    4,
+)
+.with_list_member(&CREATELOCATIONS3INPUT_MEMBER_AGENT_ARNS_MEMBER);
+static CREATELOCATIONS3INPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#InputTagList$member", "com.amazonaws.datasync", "InputTagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELOCATIONS3INPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationS3Input$Tags",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATELOCATIONS3INPUT_MEMBER_TAGS_MEMBER);
+static CREATELOCATIONS3INPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationS3Input",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELOCATIONS3INPUT_MEMBER_SUBDIRECTORY,
+        &CREATELOCATIONS3INPUT_MEMBER_S3_BUCKET_ARN,
+        &CREATELOCATIONS3INPUT_MEMBER_S3_STORAGE_CLASS,
+        &CREATELOCATIONS3INPUT_MEMBER_S3_CONFIG,
+        &CREATELOCATIONS3INPUT_MEMBER_AGENT_ARNS,
+        &CREATELOCATIONS3INPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLocationS3Request");
+impl CreateLocationS3Input {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELOCATIONS3INPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLocationS3Input {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&CREATELOCATIONS3INPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.s3_bucket_arn {
+            ser.write_string(&CREATELOCATIONS3INPUT_MEMBER_S3_BUCKET_ARN, val)?;
+        }
+        if let Some(ref val) = self.s3_storage_class {
+            ser.write_string(&CREATELOCATIONS3INPUT_MEMBER_S3_STORAGE_CLASS, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_config {
+            ser.write_struct(&CREATELOCATIONS3INPUT_MEMBER_S3_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.agent_arns {
+            ser.write_list(
+                &CREATELOCATIONS3INPUT_MEMBER_AGENT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELOCATIONS3INPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TagListEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELOCATIONS3INPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_storage_class = Some(crate::types::S3StorageClass::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_config = Some(crate::types::S3Config::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TagListEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLocationS3Input {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.s3_bucket_arn = builder.s3_bucket_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLocationS3Input {
     /// Creates a new builder-style object to manufacture [`CreateLocationS3Input`](crate::operation::create_location_s3::CreateLocationS3Input).
     pub fn builder() -> crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder {

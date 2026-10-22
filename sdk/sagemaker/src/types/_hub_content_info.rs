@@ -87,6 +87,352 @@ impl HubContentInfo {
         self.original_creation_time.as_ref()
     }
 }
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentName",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentName",
+    0,
+);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentArn",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentArn",
+    1,
+);
+static HUBCONTENTINFO_MEMBER_SAGE_MAKER_PUBLIC_HUB_CONTENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$SageMakerPublicHubContentArn",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SageMakerPublicHubContentArn",
+    2,
+);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentVersion",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentVersion",
+    3,
+);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentType",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentType",
+    4,
+);
+static HUBCONTENTINFO_MEMBER_DOCUMENT_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$DocumentSchemaVersion",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentSchemaVersion",
+    5,
+);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentDisplayName",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentDisplayName",
+    6,
+);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentDescription",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentDescription",
+    7,
+);
+static HUBCONTENTINFO_MEMBER_SUPPORT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$SupportStatus",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SupportStatus",
+    8,
+);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentSearchKeywordList$member",
+        "com.amazonaws.sagemaker",
+        "HubContentSearchKeywordList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentSearchKeywords",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HubContentSearchKeywords",
+    9,
+)
+.with_list_member(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS_MEMBER);
+static HUBCONTENTINFO_MEMBER_HUB_CONTENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$HubContentStatus",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentStatus",
+    10,
+);
+static HUBCONTENTINFO_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$CreationTime",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    11,
+);
+static HUBCONTENTINFO_MEMBER_ORIGINAL_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContentInfo$OriginalCreationTime",
+        "com.amazonaws.sagemaker",
+        "HubContentInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "OriginalCreationTime",
+    12,
+);
+static HUBCONTENTINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#HubContentInfo", "com.amazonaws.sagemaker", "HubContentInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_NAME,
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_ARN,
+        &HUBCONTENTINFO_MEMBER_SAGE_MAKER_PUBLIC_HUB_CONTENT_ARN,
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_VERSION,
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_TYPE,
+        &HUBCONTENTINFO_MEMBER_DOCUMENT_SCHEMA_VERSION,
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_DISPLAY_NAME,
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_DESCRIPTION,
+        &HUBCONTENTINFO_MEMBER_SUPPORT_STATUS,
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS,
+        &HUBCONTENTINFO_MEMBER_HUB_CONTENT_STATUS,
+        &HUBCONTENTINFO_MEMBER_CREATION_TIME,
+        &HUBCONTENTINFO_MEMBER_ORIGINAL_CREATION_TIME,
+    ],
+);
+impl HubContentInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HUBCONTENTINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HubContentInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_content_name {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_arn {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.sage_maker_public_hub_content_arn {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_SAGE_MAKER_PUBLIC_HUB_CONTENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.hub_content_version {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.hub_content_type {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.document_schema_version {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_DOCUMENT_SCHEMA_VERSION, val)?;
+        }
+        if let Some(ref val) = self.hub_content_display_name {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_description {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.support_status {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_SUPPORT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.hub_content_search_keywords {
+            ser.write_list(
+                &HUBCONTENTINFO_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.hub_content_status {
+            ser.write_string(&HUBCONTENTINFO_MEMBER_HUB_CONTENT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&HUBCONTENTINFO_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.original_creation_time {
+            ser.write_timestamp(&HUBCONTENTINFO_MEMBER_ORIGINAL_CREATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HubContentInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HUBCONTENTINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sage_maker_public_hub_content_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_type = Some(crate::types::HubContentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_status = Some(crate::types::HubContentSupportStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_search_keywords = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_status = Some(crate::types::HubContentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.original_creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HubContentInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HubContentInfo {
     /// Creates a new builder-style object to manufacture [`HubContentInfo`](crate::types::HubContentInfo).
     pub fn builder() -> crate::types::builders::HubContentInfoBuilder {

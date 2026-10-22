@@ -13,6 +13,80 @@ impl ResultReuseInformation {
         self.reused_previous_result
     }
 }
+static RESULTREUSEINFORMATION_MEMBER_REUSED_PREVIOUS_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ResultReuseInformation$ReusedPreviousResult",
+        "com.amazonaws.athena",
+        "ResultReuseInformation",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ReusedPreviousResult",
+    0,
+);
+static RESULTREUSEINFORMATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ResultReuseInformation",
+        "com.amazonaws.athena",
+        "ResultReuseInformation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RESULTREUSEINFORMATION_MEMBER_REUSED_PREVIOUS_RESULT],
+);
+impl ResultReuseInformation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESULTREUSEINFORMATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResultReuseInformation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.reused_previous_result;
+            ser.write_boolean(&RESULTREUSEINFORMATION_MEMBER_REUSED_PREVIOUS_RESULT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResultReuseInformationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESULTREUSEINFORMATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.reused_previous_result = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResultReuseInformation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResultReuseInformation {
     /// Creates a new builder-style object to manufacture [`ResultReuseInformation`](crate::types::ResultReuseInformation).
     pub fn builder() -> crate::types::builders::ResultReuseInformationBuilder {

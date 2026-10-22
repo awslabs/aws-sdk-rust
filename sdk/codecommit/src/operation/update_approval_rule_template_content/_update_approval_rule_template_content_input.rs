@@ -24,6 +24,133 @@ impl UpdateApprovalRuleTemplateContentInput {
         self.existing_rule_content_sha256.as_deref()
     }
 }
+static UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdateApprovalRuleTemplateContentInput$approvalRuleTemplateName",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdateApprovalRuleTemplateContentInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "approvalRuleTemplateName",
+        0,
+    );
+static UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_NEW_RULE_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateApprovalRuleTemplateContentInput$newRuleContent",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateApprovalRuleTemplateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "newRuleContent",
+    1,
+);
+static UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_EXISTING_RULE_CONTENT_SHA256: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdateApprovalRuleTemplateContentInput$existingRuleContentSha256",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdateApprovalRuleTemplateContentInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "existingRuleContentSha256",
+        2,
+    );
+static UPDATEAPPROVALRULETEMPLATECONTENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateApprovalRuleTemplateContentInput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateApprovalRuleTemplateContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAME,
+        &UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_NEW_RULE_CONTENT,
+        &UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_EXISTING_RULE_CONTENT_SHA256,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateApprovalRuleTemplateContentInput");
+impl UpdateApprovalRuleTemplateContentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEAPPROVALRULETEMPLATECONTENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateApprovalRuleTemplateContentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.approval_rule_template_name {
+            ser.write_string(&UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.new_rule_content {
+            ser.write_string(&UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_NEW_RULE_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.existing_rule_content_sha256 {
+            ser.write_string(&UPDATEAPPROVALRULETEMPLATECONTENTINPUT_MEMBER_EXISTING_RULE_CONTENT_SHA256, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEAPPROVALRULETEMPLATECONTENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_template_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.new_rule_content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.existing_rule_content_sha256 = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateApprovalRuleTemplateContentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.approval_rule_template_name = builder.approval_rule_template_name.or(Some(String::new()));
+        builder.new_rule_content = builder.new_rule_content.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateApprovalRuleTemplateContentInput {
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateContentInput`](crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentInput).
     pub fn builder() -> crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentInputBuilder {

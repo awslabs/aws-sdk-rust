@@ -27,6 +27,186 @@ impl ActionExecutionOutput {
         self.output_variables.as_ref()
     }
 }
+static ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactDetailList$member",
+        "com.amazonaws.codepipeline",
+        "ArtifactDetailList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionOutput$outputArtifacts",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "outputArtifacts",
+    0,
+)
+.with_list_member(&ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_ARTIFACTS_MEMBER);
+static ACTIONEXECUTIONOUTPUT_MEMBER_EXECUTION_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionOutput$executionResult",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "executionResult",
+    1,
+);
+static ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_VARIABLES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#OutputVariablesMap$key",
+        "com.amazonaws.codepipeline",
+        "OutputVariablesMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_VARIABLES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#OutputVariablesMap$value",
+        "com.amazonaws.codepipeline",
+        "OutputVariablesMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionOutput$outputVariables",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "outputVariables",
+    2,
+)
+.with_map_members(
+    &ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_VARIABLES_KEY,
+    &ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_VARIABLES_VALUE,
+);
+static ACTIONEXECUTIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionOutput",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_ARTIFACTS,
+        &ACTIONEXECUTIONOUTPUT_MEMBER_EXECUTION_RESULT,
+        &ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_VARIABLES,
+    ],
+);
+impl ActionExecutionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONEXECUTIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionExecutionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.output_artifacts {
+            ser.write_list(
+                &ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ArtifactDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.execution_result {
+            ser.write_struct(&ACTIONEXECUTIONOUTPUT_MEMBER_EXECUTION_RESULT, val)?;
+        }
+        if let Some(ref val) = self.output_variables {
+            ser.write_map(
+                &ACTIONEXECUTIONOUTPUT_MEMBER_OUTPUT_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionExecutionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONEXECUTIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ArtifactDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_result = Some(crate::types::ActionExecutionResult::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_variables = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionExecutionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActionExecutionOutput {
     /// Creates a new builder-style object to manufacture [`ActionExecutionOutput`](crate::types::ActionExecutionOutput).
     pub fn builder() -> crate::types::builders::ActionExecutionOutputBuilder {

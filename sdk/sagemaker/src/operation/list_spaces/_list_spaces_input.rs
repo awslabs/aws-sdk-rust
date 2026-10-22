@@ -42,6 +42,192 @@ impl ListSpacesInput {
         self.space_name_contains.as_deref()
     }
 }
+static LISTSPACESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListSpacesInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListSpacesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTSPACESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListSpacesInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListSpacesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static LISTSPACESINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListSpacesInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListSpacesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    2,
+);
+static LISTSPACESINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListSpacesInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListSpacesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    3,
+);
+static LISTSPACESINPUT_MEMBER_DOMAIN_ID_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListSpacesInput$DomainIdEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListSpacesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainIdEquals",
+    4,
+);
+static LISTSPACESINPUT_MEMBER_SPACE_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListSpacesInput$SpaceNameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListSpacesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpaceNameContains",
+    5,
+);
+static LISTSPACESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListSpacesInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListSpacesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTSPACESINPUT_MEMBER_NEXT_TOKEN,
+        &LISTSPACESINPUT_MEMBER_MAX_RESULTS,
+        &LISTSPACESINPUT_MEMBER_SORT_ORDER,
+        &LISTSPACESINPUT_MEMBER_SORT_BY,
+        &LISTSPACESINPUT_MEMBER_DOMAIN_ID_EQUALS,
+        &LISTSPACESINPUT_MEMBER_SPACE_NAME_CONTAINS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListSpacesRequest");
+impl ListSpacesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTSPACESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListSpacesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTSPACESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTSPACESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTSPACESINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTSPACESINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.domain_id_equals {
+            ser.write_string(&LISTSPACESINPUT_MEMBER_DOMAIN_ID_EQUALS, val)?;
+        }
+        if let Some(ref val) = self.space_name_contains {
+            ser.write_string(&LISTSPACESINPUT_MEMBER_SPACE_NAME_CONTAINS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_spaces::builders::ListSpacesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTSPACESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::SpaceSortKey::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id_equals = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListSpacesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListSpacesInput {
     /// Creates a new builder-style object to manufacture [`ListSpacesInput`](crate::operation::list_spaces::ListSpacesInput).
     pub fn builder() -> crate::operation::list_spaces::builders::ListSpacesInputBuilder {

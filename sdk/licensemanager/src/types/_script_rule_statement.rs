@@ -21,6 +21,99 @@ impl ScriptRuleStatement {
         self.script.deref()
     }
 }
+static SCRIPTRULESTATEMENT_MEMBER_KEY_TO_MATCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ScriptRuleStatement$KeyToMatch",
+        "com.amazonaws.licensemanager",
+        "ScriptRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyToMatch",
+    0,
+);
+static SCRIPTRULESTATEMENT_MEMBER_SCRIPT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ScriptRuleStatement$Script",
+        "com.amazonaws.licensemanager",
+        "ScriptRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Script",
+    1,
+);
+static SCRIPTRULESTATEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ScriptRuleStatement",
+        "com.amazonaws.licensemanager",
+        "ScriptRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SCRIPTRULESTATEMENT_MEMBER_KEY_TO_MATCH, &SCRIPTRULESTATEMENT_MEMBER_SCRIPT],
+);
+impl ScriptRuleStatement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCRIPTRULESTATEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ScriptRuleStatement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key_to_match;
+            ser.write_string(&SCRIPTRULESTATEMENT_MEMBER_KEY_TO_MATCH, val)?;
+        }
+        {
+            let val = &self.script;
+            ser.write_string(&SCRIPTRULESTATEMENT_MEMBER_SCRIPT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScriptRuleStatementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCRIPTRULESTATEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.key_to_match = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.script = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ScriptRuleStatement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.key_to_match = builder.key_to_match.or(Some(String::new()));
+        builder.script = builder.script.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ScriptRuleStatement {
     /// Creates a new builder-style object to manufacture [`ScriptRuleStatement`](crate::types::ScriptRuleStatement).
     pub fn builder() -> crate::types::builders::ScriptRuleStatementBuilder {

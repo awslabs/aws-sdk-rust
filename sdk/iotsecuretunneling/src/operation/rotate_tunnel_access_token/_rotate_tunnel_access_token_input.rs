@@ -24,6 +24,132 @@ impl RotateTunnelAccessTokenInput {
         self.destination_config.as_ref()
     }
 }
+static ROTATETUNNELACCESSTOKENINPUT_MEMBER_TUNNEL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenInput$tunnelId",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tunnelId",
+    0,
+)
+.with_http_label();
+static ROTATETUNNELACCESSTOKENINPUT_MEMBER_CLIENT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenInput$clientMode",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientMode",
+    1,
+);
+static ROTATETUNNELACCESSTOKENINPUT_MEMBER_DESTINATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenInput$destinationConfig",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "destinationConfig",
+    2,
+);
+static ROTATETUNNELACCESSTOKENINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenInput",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ROTATETUNNELACCESSTOKENINPUT_MEMBER_TUNNEL_ID,
+        &ROTATETUNNELACCESSTOKENINPUT_MEMBER_CLIENT_MODE,
+        &ROTATETUNNELACCESSTOKENINPUT_MEMBER_DESTINATION_CONFIG,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/tunnel/{tunnelId}/rotate", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RotateTunnelAccessTokenRequest");
+impl RotateTunnelAccessTokenInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ROTATETUNNELACCESSTOKENINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RotateTunnelAccessTokenInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tunnel_id {
+            ser.write_string(&ROTATETUNNELACCESSTOKENINPUT_MEMBER_TUNNEL_ID, val)?;
+        }
+        if let Some(ref val) = self.client_mode {
+            ser.write_string(&ROTATETUNNELACCESSTOKENINPUT_MEMBER_CLIENT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.destination_config {
+            ser.write_struct(&ROTATETUNNELACCESSTOKENINPUT_MEMBER_DESTINATION_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ROTATETUNNELACCESSTOKENINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tunnel_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_mode = Some(crate::types::ClientMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_config = Some(crate::types::DestinationConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RotateTunnelAccessTokenInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tunnel_id = builder.tunnel_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RotateTunnelAccessTokenInput {
     /// Creates a new builder-style object to manufacture [`RotateTunnelAccessTokenInput`](crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenInput).
     pub fn builder() -> crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder {

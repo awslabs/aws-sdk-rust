@@ -19,6 +19,103 @@ impl TrialComponentSource {
         self.source_type.as_deref()
     }
 }
+static TRIALCOMPONENTSOURCE_MEMBER_SOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentSource$SourceArn",
+        "com.amazonaws.sagemaker",
+        "TrialComponentSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceArn",
+    0,
+);
+static TRIALCOMPONENTSOURCE_MEMBER_SOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentSource$SourceType",
+        "com.amazonaws.sagemaker",
+        "TrialComponentSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceType",
+    1,
+);
+static TRIALCOMPONENTSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentSource",
+        "com.amazonaws.sagemaker",
+        "TrialComponentSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&TRIALCOMPONENTSOURCE_MEMBER_SOURCE_ARN, &TRIALCOMPONENTSOURCE_MEMBER_SOURCE_TYPE],
+);
+impl TrialComponentSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRIALCOMPONENTSOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrialComponentSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_arn {
+            ser.write_string(&TRIALCOMPONENTSOURCE_MEMBER_SOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.source_type {
+            ser.write_string(&TRIALCOMPONENTSOURCE_MEMBER_SOURCE_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrialComponentSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRIALCOMPONENTSOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrialComponentSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrialComponentSource {
     /// Creates a new builder-style object to manufacture [`TrialComponentSource`](crate::types::TrialComponentSource).
     pub fn builder() -> crate::types::builders::TrialComponentSourceBuilder {

@@ -25,6 +25,127 @@ impl ModelQualityJobInput {
         self.ground_truth_s3_input.as_ref()
     }
 }
+static MODELQUALITYJOBINPUT_MEMBER_ENDPOINT_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityJobInput$EndpointInput",
+        "com.amazonaws.sagemaker",
+        "ModelQualityJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EndpointInput",
+    0,
+);
+static MODELQUALITYJOBINPUT_MEMBER_BATCH_TRANSFORM_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityJobInput$BatchTransformInput",
+        "com.amazonaws.sagemaker",
+        "ModelQualityJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BatchTransformInput",
+    1,
+);
+static MODELQUALITYJOBINPUT_MEMBER_GROUND_TRUTH_S3_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityJobInput$GroundTruthS3Input",
+        "com.amazonaws.sagemaker",
+        "ModelQualityJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GroundTruthS3Input",
+    2,
+);
+static MODELQUALITYJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityJobInput",
+        "com.amazonaws.sagemaker",
+        "ModelQualityJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELQUALITYJOBINPUT_MEMBER_ENDPOINT_INPUT,
+        &MODELQUALITYJOBINPUT_MEMBER_BATCH_TRANSFORM_INPUT,
+        &MODELQUALITYJOBINPUT_MEMBER_GROUND_TRUTH_S3_INPUT,
+    ],
+);
+impl ModelQualityJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELQUALITYJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelQualityJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_input {
+            ser.write_struct(&MODELQUALITYJOBINPUT_MEMBER_ENDPOINT_INPUT, val)?;
+        }
+        if let Some(ref val) = self.batch_transform_input {
+            ser.write_struct(&MODELQUALITYJOBINPUT_MEMBER_BATCH_TRANSFORM_INPUT, val)?;
+        }
+        if let Some(ref val) = self.ground_truth_s3_input {
+            ser.write_struct(&MODELQUALITYJOBINPUT_MEMBER_GROUND_TRUTH_S3_INPUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelQualityJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELQUALITYJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_input = Some(crate::types::EndpointInput::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.batch_transform_input = Some(crate::types::BatchTransformInput::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ground_truth_s3_input = Some(crate::types::MonitoringGroundTruthS3Input::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelQualityJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelQualityJobInput {
     /// Creates a new builder-style object to manufacture [`ModelQualityJobInput`](crate::types::ModelQualityJobInput).
     pub fn builder() -> crate::types::builders::ModelQualityJobInputBuilder {

@@ -13,6 +13,83 @@ impl AiWorkloadConfigs {
         self.workload_spec.as_ref()
     }
 }
+static AIWORKLOADCONFIGS_MEMBER_WORKLOAD_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIWorkloadConfigs$WorkloadSpec",
+        "com.amazonaws.sagemaker",
+        "AIWorkloadConfigs",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "WorkloadSpec",
+    0,
+);
+static AIWORKLOADCONFIGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIWorkloadConfigs",
+        "com.amazonaws.sagemaker",
+        "AIWorkloadConfigs",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AIWORKLOADCONFIGS_MEMBER_WORKLOAD_SPEC],
+);
+impl AiWorkloadConfigs {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIWORKLOADCONFIGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiWorkloadConfigs {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workload_spec {
+            ser.write_struct(&AIWORKLOADCONFIGS_MEMBER_WORKLOAD_SPEC, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiWorkloadConfigsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIWORKLOADCONFIGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workload_spec = Some(crate::types::WorkloadSpec::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiWorkloadConfigs {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiWorkloadConfigs {
     /// Creates a new builder-style object to manufacture [`AiWorkloadConfigs`](crate::types::AiWorkloadConfigs).
     pub fn builder() -> crate::types::builders::AiWorkloadConfigsBuilder {

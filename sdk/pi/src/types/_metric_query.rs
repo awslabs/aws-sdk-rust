@@ -66,6 +66,127 @@ impl MetricQuery {
         self.filter.as_ref()
     }
 }
+static METRICQUERY_MEMBER_METRIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#MetricQuery$Metric", "com.amazonaws.pi", "MetricQuery"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Metric",
+    0,
+);
+static METRICQUERY_MEMBER_GROUP_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#MetricQuery$GroupBy", "com.amazonaws.pi", "MetricQuery"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GroupBy",
+    1,
+);
+static METRICQUERY_MEMBER_FILTER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#MetricQueryFilterMap$key", "com.amazonaws.pi", "MetricQueryFilterMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static METRICQUERY_MEMBER_FILTER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#MetricQueryFilterMap$value", "com.amazonaws.pi", "MetricQueryFilterMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static METRICQUERY_MEMBER_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#MetricQuery$Filter", "com.amazonaws.pi", "MetricQuery"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Filter",
+    2,
+)
+.with_map_members(&METRICQUERY_MEMBER_FILTER_KEY, &METRICQUERY_MEMBER_FILTER_VALUE);
+static METRICQUERY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#MetricQuery", "com.amazonaws.pi", "MetricQuery"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&METRICQUERY_MEMBER_METRIC, &METRICQUERY_MEMBER_GROUP_BY, &METRICQUERY_MEMBER_FILTER],
+);
+impl MetricQuery {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METRICQUERY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MetricQuery {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.metric;
+            ser.write_string(&METRICQUERY_MEMBER_METRIC, val)?;
+        }
+        if let Some(ref val) = self.group_by {
+            ser.write_struct(&METRICQUERY_MEMBER_GROUP_BY, val)?;
+        }
+        if let Some(ref val) = self.filter {
+            ser.write_map(
+                &METRICQUERY_MEMBER_FILTER,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MetricQueryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METRICQUERY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.metric = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group_by = Some(crate::types::DimensionGroup::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MetricQuery {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.metric = builder.metric.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MetricQuery {
     /// Creates a new builder-style object to manufacture [`MetricQuery`](crate::types::MetricQuery).
     pub fn builder() -> crate::types::builders::MetricQueryBuilder {

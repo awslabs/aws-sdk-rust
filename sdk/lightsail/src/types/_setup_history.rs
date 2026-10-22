@@ -40,6 +40,179 @@ impl SetupHistory {
         self.status.as_ref()
     }
 }
+static SETUPHISTORY_MEMBER_OPERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistory$operationId",
+        "com.amazonaws.lightsail",
+        "SetupHistory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "operationId",
+    0,
+);
+static SETUPHISTORY_MEMBER_REQUEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#SetupHistory$request", "com.amazonaws.lightsail", "SetupHistory"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "request",
+    1,
+);
+static SETUPHISTORY_MEMBER_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#SetupHistory$resource", "com.amazonaws.lightsail", "SetupHistory"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "resource",
+    2,
+);
+static SETUPHISTORY_MEMBER_EXECUTION_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupExecutionDetailsList$member",
+        "com.amazonaws.lightsail",
+        "SetupExecutionDetailsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SETUPHISTORY_MEMBER_EXECUTION_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistory$executionDetails",
+        "com.amazonaws.lightsail",
+        "SetupHistory",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "executionDetails",
+    3,
+)
+.with_list_member(&SETUPHISTORY_MEMBER_EXECUTION_DETAILS_MEMBER);
+static SETUPHISTORY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#SetupHistory$status", "com.amazonaws.lightsail", "SetupHistory"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    4,
+);
+static SETUPHISTORY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#SetupHistory", "com.amazonaws.lightsail", "SetupHistory"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETUPHISTORY_MEMBER_OPERATION_ID,
+        &SETUPHISTORY_MEMBER_REQUEST,
+        &SETUPHISTORY_MEMBER_RESOURCE,
+        &SETUPHISTORY_MEMBER_EXECUTION_DETAILS,
+        &SETUPHISTORY_MEMBER_STATUS,
+    ],
+);
+impl SetupHistory {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETUPHISTORY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetupHistory {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.operation_id {
+            ser.write_string(&SETUPHISTORY_MEMBER_OPERATION_ID, val)?;
+        }
+        if let Some(ref val) = self.request {
+            ser.write_struct(&SETUPHISTORY_MEMBER_REQUEST, val)?;
+        }
+        if let Some(ref val) = self.resource {
+            ser.write_struct(&SETUPHISTORY_MEMBER_RESOURCE, val)?;
+        }
+        if let Some(ref val) = self.execution_details {
+            ser.write_list(
+                &SETUPHISTORY_MEMBER_EXECUTION_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SetupExecutionDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&SETUPHISTORY_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SetupHistoryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETUPHISTORY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.request = Some(crate::types::SetupRequest::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource = Some(crate::types::SetupHistoryResource::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SetupExecutionDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::SetupStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetupHistory {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SetupHistory {
     /// Creates a new builder-style object to manufacture [`SetupHistory`](crate::types::SetupHistory).
     pub fn builder() -> crate::types::builders::SetupHistoryBuilder {

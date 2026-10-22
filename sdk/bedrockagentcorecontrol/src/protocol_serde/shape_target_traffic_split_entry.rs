@@ -4,6 +4,18 @@ pub fn ser_target_traffic_split_entry(
     input: &crate::types::TargetTrafficSplitEntry,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
+        object.key("targetName").string(input.target_name.as_str());
+    }
+    if let Some(var_1) = &input.model {
+        object.key("model").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.fallback {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("fallback").start_object();
+        crate::protocol_serde::shape_fallback::ser_fallback(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    {
         object.key("name").string(input.name.as_str());
     }
     {
@@ -12,21 +24,18 @@ pub fn ser_target_traffic_split_entry(
             ::aws_smithy_types::Number::NegInt((input.weight).into()),
         );
     }
-    {
-        object.key("targetName").string(input.target_name.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("description").string(var_4.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.metadata {
+    if let Some(var_5) = &input.metadata {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("metadata").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_6 = object.key("metadata").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_3.finish();
+        object_6.finish();
     }
     Ok(())
 }
@@ -53,6 +62,23 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "targetName" => {
+                            builder = builder.set_target_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "model" => {
+                            builder = builder.set_model(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "fallback" => {
+                            builder = builder.set_fallback(crate::protocol_serde::shape_fallback::de_fallback(tokens, _value, depth + 1)?);
+                        }
                         "name" => {
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -64,13 +90,6 @@ where
                             builder = builder.set_weight(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "targetName" => {
-                            builder = builder.set_target_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

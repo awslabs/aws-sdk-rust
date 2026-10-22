@@ -13,6 +13,83 @@ impl AppLifecycleManagement {
         self.idle_settings.as_ref()
     }
 }
+static APPLIFECYCLEMANAGEMENT_MEMBER_IDLE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AppLifecycleManagement$IdleSettings",
+        "com.amazonaws.sagemaker",
+        "AppLifecycleManagement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IdleSettings",
+    0,
+);
+static APPLIFECYCLEMANAGEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AppLifecycleManagement",
+        "com.amazonaws.sagemaker",
+        "AppLifecycleManagement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&APPLIFECYCLEMANAGEMENT_MEMBER_IDLE_SETTINGS],
+);
+impl AppLifecycleManagement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPLIFECYCLEMANAGEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AppLifecycleManagement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.idle_settings {
+            ser.write_struct(&APPLIFECYCLEMANAGEMENT_MEMBER_IDLE_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AppLifecycleManagementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPLIFECYCLEMANAGEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idle_settings = Some(crate::types::IdleSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AppLifecycleManagement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AppLifecycleManagement {
     /// Creates a new builder-style object to manufacture [`AppLifecycleManagement`](crate::types::AppLifecycleManagement).
     pub fn builder() -> crate::types::builders::AppLifecycleManagementBuilder {

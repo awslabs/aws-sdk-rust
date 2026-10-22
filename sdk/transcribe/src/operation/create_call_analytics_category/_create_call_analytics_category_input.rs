@@ -44,6 +44,202 @@ impl CreateCallAnalyticsCategoryInput {
         self.input_type.as_ref()
     }
 }
+static CREATECALLANALYTICSCATEGORYINPUT_MEMBER_CATEGORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateCallAnalyticsCategoryInput$CategoryName",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateCallAnalyticsCategoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CategoryName",
+    0,
+)
+.with_http_label();
+static CREATECALLANALYTICSCATEGORYINPUT_MEMBER_RULES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#RuleList$member", "com.amazonaws.transcribe", "RuleList"),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static CREATECALLANALYTICSCATEGORYINPUT_MEMBER_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateCallAnalyticsCategoryInput$Rules",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateCallAnalyticsCategoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Rules",
+    1,
+)
+.with_list_member(&CREATECALLANALYTICSCATEGORYINPUT_MEMBER_RULES_MEMBER);
+static CREATECALLANALYTICSCATEGORYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#TagList$member", "com.amazonaws.transcribe", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECALLANALYTICSCATEGORYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateCallAnalyticsCategoryInput$Tags",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateCallAnalyticsCategoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    2,
+)
+.with_list_member(&CREATECALLANALYTICSCATEGORYINPUT_MEMBER_TAGS_MEMBER);
+static CREATECALLANALYTICSCATEGORYINPUT_MEMBER_INPUT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateCallAnalyticsCategoryInput$InputType",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateCallAnalyticsCategoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InputType",
+    3,
+);
+static CREATECALLANALYTICSCATEGORYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateCallAnalyticsCategoryInput",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateCallAnalyticsCategoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECALLANALYTICSCATEGORYINPUT_MEMBER_CATEGORY_NAME,
+        &CREATECALLANALYTICSCATEGORYINPUT_MEMBER_RULES,
+        &CREATECALLANALYTICSCATEGORYINPUT_MEMBER_TAGS,
+        &CREATECALLANALYTICSCATEGORYINPUT_MEMBER_INPUT_TYPE,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PUT",
+    "/callanalyticscategories/{CategoryName}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCallAnalyticsCategoryRequest");
+impl CreateCallAnalyticsCategoryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECALLANALYTICSCATEGORYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCallAnalyticsCategoryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.category_name {
+            ser.write_string(&CREATECALLANALYTICSCATEGORYINPUT_MEMBER_CATEGORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.rules {
+            ser.write_list(
+                &CREATECALLANALYTICSCATEGORYINPUT_MEMBER_RULES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Rule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECALLANALYTICSCATEGORYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_type {
+            ser.write_string(&CREATECALLANALYTICSCATEGORYINPUT_MEMBER_INPUT_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECALLANALYTICSCATEGORYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.category_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rules = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Rule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_type = Some(crate::types::InputType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCallAnalyticsCategoryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.category_name = builder.category_name.or(Some(String::new()));
+        builder.rules = builder.rules.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCallAnalyticsCategoryInput {
     /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryInput`](crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryInput).
     pub fn builder() -> crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder {

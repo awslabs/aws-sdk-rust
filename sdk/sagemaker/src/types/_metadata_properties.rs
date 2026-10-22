@@ -31,6 +31,148 @@ impl MetadataProperties {
         self.project_id.as_deref()
     }
 }
+static METADATAPROPERTIES_MEMBER_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetadataProperties$CommitId",
+        "com.amazonaws.sagemaker",
+        "MetadataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CommitId",
+    0,
+);
+static METADATAPROPERTIES_MEMBER_REPOSITORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetadataProperties$Repository",
+        "com.amazonaws.sagemaker",
+        "MetadataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Repository",
+    1,
+);
+static METADATAPROPERTIES_MEMBER_GENERATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetadataProperties$GeneratedBy",
+        "com.amazonaws.sagemaker",
+        "MetadataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GeneratedBy",
+    2,
+);
+static METADATAPROPERTIES_MEMBER_PROJECT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetadataProperties$ProjectId",
+        "com.amazonaws.sagemaker",
+        "MetadataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProjectId",
+    3,
+);
+static METADATAPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetadataProperties",
+        "com.amazonaws.sagemaker",
+        "MetadataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &METADATAPROPERTIES_MEMBER_COMMIT_ID,
+        &METADATAPROPERTIES_MEMBER_REPOSITORY,
+        &METADATAPROPERTIES_MEMBER_GENERATED_BY,
+        &METADATAPROPERTIES_MEMBER_PROJECT_ID,
+    ],
+);
+impl MetadataProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METADATAPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MetadataProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.commit_id {
+            ser.write_string(&METADATAPROPERTIES_MEMBER_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.repository {
+            ser.write_string(&METADATAPROPERTIES_MEMBER_REPOSITORY, val)?;
+        }
+        if let Some(ref val) = self.generated_by {
+            ser.write_string(&METADATAPROPERTIES_MEMBER_GENERATED_BY, val)?;
+        }
+        if let Some(ref val) = self.project_id {
+            ser.write_string(&METADATAPROPERTIES_MEMBER_PROJECT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MetadataPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METADATAPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.generated_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MetadataProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MetadataProperties {
     /// Creates a new builder-style object to manufacture [`MetadataProperties`](crate::types::MetadataProperties).
     pub fn builder() -> crate::types::builders::MetadataPropertiesBuilder {

@@ -72,6 +72,297 @@ impl ListAssociationsInput {
         self.max_results
     }
 }
+static LISTASSOCIATIONSINPUT_MEMBER_SOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$SourceArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceArn",
+    0,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$DestinationArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationArn",
+    1,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_SOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$SourceType",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceType",
+    2,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_DESTINATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$DestinationType",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationType",
+    3,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_ASSOCIATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$AssociationType",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationType",
+    4,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_CREATED_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$CreatedAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAfter",
+    5,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_CREATED_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$CreatedBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedBefore",
+    6,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    7,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    8,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    9,
+);
+static LISTASSOCIATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    10,
+);
+static LISTASSOCIATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListAssociationsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListAssociationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTASSOCIATIONSINPUT_MEMBER_SOURCE_ARN,
+        &LISTASSOCIATIONSINPUT_MEMBER_DESTINATION_ARN,
+        &LISTASSOCIATIONSINPUT_MEMBER_SOURCE_TYPE,
+        &LISTASSOCIATIONSINPUT_MEMBER_DESTINATION_TYPE,
+        &LISTASSOCIATIONSINPUT_MEMBER_ASSOCIATION_TYPE,
+        &LISTASSOCIATIONSINPUT_MEMBER_CREATED_AFTER,
+        &LISTASSOCIATIONSINPUT_MEMBER_CREATED_BEFORE,
+        &LISTASSOCIATIONSINPUT_MEMBER_SORT_BY,
+        &LISTASSOCIATIONSINPUT_MEMBER_SORT_ORDER,
+        &LISTASSOCIATIONSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTASSOCIATIONSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListAssociationsRequest");
+impl ListAssociationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTASSOCIATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListAssociationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_arn {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_SOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.destination_arn {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_DESTINATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.source_type {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_SOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.destination_type {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_DESTINATION_TYPE, val)?;
+        }
+        if let Some(ref val) = self.association_type {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_ASSOCIATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.created_after {
+            ser.write_timestamp(&LISTASSOCIATIONSINPUT_MEMBER_CREATED_AFTER, val)?;
+        }
+        if let Some(ref val) = self.created_before {
+            ser.write_timestamp(&LISTASSOCIATIONSINPUT_MEMBER_CREATED_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTASSOCIATIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTASSOCIATIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_associations::builders::ListAssociationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTASSOCIATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_type = Some(crate::types::AssociationEdgeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::SortAssociationsBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListAssociationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociationsInput`](crate::operation::list_associations::ListAssociationsInput).
     pub fn builder() -> crate::operation::list_associations::builders::ListAssociationsInputBuilder {

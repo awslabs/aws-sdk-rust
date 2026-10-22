@@ -20,6 +20,103 @@ impl ConformancePackComplianceSummary {
         &self.conformance_pack_compliance_status
     }
 }
+static CONFORMANCEPACKCOMPLIANCESUMMARY_MEMBER_CONFORMANCE_PACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceSummary$ConformancePackName",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConformancePackName",
+    0,
+);
+static CONFORMANCEPACKCOMPLIANCESUMMARY_MEMBER_CONFORMANCE_PACK_COMPLIANCE_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConformancePackComplianceSummary$ConformancePackComplianceStatus",
+            "com.amazonaws.configservice",
+            "ConformancePackComplianceSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConformancePackComplianceStatus",
+        1,
+    );
+static CONFORMANCEPACKCOMPLIANCESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceSummary",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFORMANCEPACKCOMPLIANCESUMMARY_MEMBER_CONFORMANCE_PACK_NAME,
+        &CONFORMANCEPACKCOMPLIANCESUMMARY_MEMBER_CONFORMANCE_PACK_COMPLIANCE_STATUS,
+    ],
+);
+impl ConformancePackComplianceSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFORMANCEPACKCOMPLIANCESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConformancePackComplianceSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.conformance_pack_name;
+            ser.write_string(&CONFORMANCEPACKCOMPLIANCESUMMARY_MEMBER_CONFORMANCE_PACK_NAME, val)?;
+        }
+        {
+            let val = &self.conformance_pack_compliance_status;
+            ser.write_string(&CONFORMANCEPACKCOMPLIANCESUMMARY_MEMBER_CONFORMANCE_PACK_COMPLIANCE_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConformancePackComplianceSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFORMANCEPACKCOMPLIANCESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.conformance_pack_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.conformance_pack_compliance_status =
+                        Some(crate::types::ConformancePackComplianceType::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConformancePackComplianceSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.conformance_pack_name = builder.conformance_pack_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ConformancePackComplianceSummary {
     /// Creates a new builder-style object to manufacture [`ConformancePackComplianceSummary`](crate::types::ConformancePackComplianceSummary).
     pub fn builder() -> crate::types::builders::ConformancePackComplianceSummaryBuilder {

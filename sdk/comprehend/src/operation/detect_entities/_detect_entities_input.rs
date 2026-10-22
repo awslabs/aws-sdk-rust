@@ -63,6 +63,171 @@ impl ::std::fmt::Debug for DetectEntitiesInput {
         formatter.finish()
     }
 }
+static DETECTENTITIESINPUT_MEMBER_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectEntitiesInput$Text",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Text",
+    0,
+);
+static DETECTENTITIESINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectEntitiesInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static DETECTENTITIESINPUT_MEMBER_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectEntitiesInput$EndpointArn",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointArn",
+    2,
+);
+static DETECTENTITIESINPUT_MEMBER_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectEntitiesInput$Bytes",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "Bytes",
+    3,
+);
+static DETECTENTITIESINPUT_MEMBER_DOCUMENT_READER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectEntitiesInput$DocumentReaderConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DocumentReaderConfig",
+    4,
+);
+static DETECTENTITIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectEntitiesInput",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DETECTENTITIESINPUT_MEMBER_TEXT,
+        &DETECTENTITIESINPUT_MEMBER_LANGUAGE_CODE,
+        &DETECTENTITIESINPUT_MEMBER_ENDPOINT_ARN,
+        &DETECTENTITIESINPUT_MEMBER_BYTES,
+        &DETECTENTITIESINPUT_MEMBER_DOCUMENT_READER_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DetectEntitiesRequest");
+impl DetectEntitiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DETECTENTITIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DetectEntitiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.text {
+            ser.write_string(&DETECTENTITIESINPUT_MEMBER_TEXT, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&DETECTENTITIESINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.endpoint_arn {
+            ser.write_string(&DETECTENTITIESINPUT_MEMBER_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.bytes {
+            ser.write_blob(&DETECTENTITIESINPUT_MEMBER_BYTES, val.clone())?;
+        }
+        if let Some(ref val) = self.document_reader_config {
+            ser.write_struct(&DETECTENTITIESINPUT_MEMBER_DOCUMENT_READER_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::detect_entities::builders::DetectEntitiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DETECTENTITIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bytes = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_reader_config = Some(crate::types::DocumentReaderConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DetectEntitiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DetectEntitiesInput {
     /// Creates a new builder-style object to manufacture [`DetectEntitiesInput`](crate::operation::detect_entities::DetectEntitiesInput).
     pub fn builder() -> crate::operation::detect_entities::builders::DetectEntitiesInputBuilder {

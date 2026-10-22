@@ -47,6 +47,239 @@ impl StageDeclaration {
         self.before_entry.as_ref()
     }
 }
+static STAGEDECLARATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageDeclaration$name",
+        "com.amazonaws.codepipeline",
+        "StageDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static STAGEDECLARATION_MEMBER_BLOCKERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageBlockerDeclarationList$member",
+        "com.amazonaws.codepipeline",
+        "StageBlockerDeclarationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STAGEDECLARATION_MEMBER_BLOCKERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageDeclaration$blockers",
+        "com.amazonaws.codepipeline",
+        "StageDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "blockers",
+    1,
+)
+.with_list_member(&STAGEDECLARATION_MEMBER_BLOCKERS_MEMBER);
+static STAGEDECLARATION_MEMBER_ACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageActionDeclarationList$member",
+        "com.amazonaws.codepipeline",
+        "StageActionDeclarationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STAGEDECLARATION_MEMBER_ACTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageDeclaration$actions",
+        "com.amazonaws.codepipeline",
+        "StageDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "actions",
+    2,
+)
+.with_list_member(&STAGEDECLARATION_MEMBER_ACTIONS_MEMBER);
+static STAGEDECLARATION_MEMBER_ON_FAILURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageDeclaration$onFailure",
+        "com.amazonaws.codepipeline",
+        "StageDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "onFailure",
+    3,
+);
+static STAGEDECLARATION_MEMBER_ON_SUCCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageDeclaration$onSuccess",
+        "com.amazonaws.codepipeline",
+        "StageDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "onSuccess",
+    4,
+);
+static STAGEDECLARATION_MEMBER_BEFORE_ENTRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageDeclaration$beforeEntry",
+        "com.amazonaws.codepipeline",
+        "StageDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "beforeEntry",
+    5,
+);
+static STAGEDECLARATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageDeclaration",
+        "com.amazonaws.codepipeline",
+        "StageDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STAGEDECLARATION_MEMBER_NAME,
+        &STAGEDECLARATION_MEMBER_BLOCKERS,
+        &STAGEDECLARATION_MEMBER_ACTIONS,
+        &STAGEDECLARATION_MEMBER_ON_FAILURE,
+        &STAGEDECLARATION_MEMBER_ON_SUCCESS,
+        &STAGEDECLARATION_MEMBER_BEFORE_ENTRY,
+    ],
+);
+impl StageDeclaration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STAGEDECLARATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StageDeclaration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&STAGEDECLARATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.blockers {
+            ser.write_list(
+                &STAGEDECLARATION_MEMBER_BLOCKERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BlockerDeclaration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.actions;
+
+            ser.write_list(
+                &STAGEDECLARATION_MEMBER_ACTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ActionDeclaration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.on_failure {
+            ser.write_struct(&STAGEDECLARATION_MEMBER_ON_FAILURE, val)?;
+        }
+        if let Some(ref val) = self.on_success {
+            ser.write_struct(&STAGEDECLARATION_MEMBER_ON_SUCCESS, val)?;
+        }
+        if let Some(ref val) = self.before_entry {
+            ser.write_struct(&STAGEDECLARATION_MEMBER_BEFORE_ENTRY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StageDeclarationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STAGEDECLARATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blockers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BlockerDeclaration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    self.actions = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::ActionDeclaration::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_failure = Some(crate::types::FailureConditions::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_success = Some(crate::types::SuccessConditions::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_entry = Some(crate::types::BeforeEntryConditions::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StageDeclaration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.actions = builder.actions.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StageDeclaration {
     /// Creates a new builder-style object to manufacture [`StageDeclaration`](crate::types::StageDeclaration).
     pub fn builder() -> crate::types::builders::StageDeclarationBuilder {

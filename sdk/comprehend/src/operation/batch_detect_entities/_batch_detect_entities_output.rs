@@ -30,6 +30,158 @@ impl ::std::fmt::Debug for BatchDetectEntitiesOutput {
         formatter.finish()
     }
 }
+static BATCHDETECTENTITIESOUTPUT_MEMBER_RESULT_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfDetectEntitiesResult$member",
+        "com.amazonaws.comprehend",
+        "ListOfDetectEntitiesResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHDETECTENTITIESOUTPUT_MEMBER_RESULT_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#BatchDetectEntitiesOutput$ResultList",
+        "com.amazonaws.comprehend.synthetic",
+        "BatchDetectEntitiesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResultList",
+    0,
+)
+.with_list_member(&BATCHDETECTENTITIESOUTPUT_MEMBER_RESULT_LIST_MEMBER);
+static BATCHDETECTENTITIESOUTPUT_MEMBER_ERROR_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BatchItemErrorList$member",
+        "com.amazonaws.comprehend",
+        "BatchItemErrorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHDETECTENTITIESOUTPUT_MEMBER_ERROR_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#BatchDetectEntitiesOutput$ErrorList",
+        "com.amazonaws.comprehend.synthetic",
+        "BatchDetectEntitiesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ErrorList",
+    1,
+)
+.with_list_member(&BATCHDETECTENTITIESOUTPUT_MEMBER_ERROR_LIST_MEMBER);
+static BATCHDETECTENTITIESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#BatchDetectEntitiesOutput",
+        "com.amazonaws.comprehend.synthetic",
+        "BatchDetectEntitiesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDETECTENTITIESOUTPUT_MEMBER_RESULT_LIST,
+        &BATCHDETECTENTITIESOUTPUT_MEMBER_ERROR_LIST,
+    ],
+)
+.with_sensitive()
+.with_original_name("BatchDetectEntitiesResponse");
+impl BatchDetectEntitiesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDETECTENTITIESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDetectEntitiesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.result_list;
+
+            ser.write_list(
+                &BATCHDETECTENTITIESOUTPUT_MEMBER_RESULT_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BatchDetectEntitiesItemResult::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.error_list;
+
+            ser.write_list(
+                &BATCHDETECTENTITIESOUTPUT_MEMBER_ERROR_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BatchItemError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_detect_entities::builders::BatchDetectEntitiesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDETECTENTITIESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.result_list = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::BatchDetectEntitiesItemResult::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(1) => {
+                    self.error_list = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::BatchItemError::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDetectEntitiesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.result_list = builder.result_list.or(Some(Vec::new()));
+        builder.error_list = builder.error_list.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchDetectEntitiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

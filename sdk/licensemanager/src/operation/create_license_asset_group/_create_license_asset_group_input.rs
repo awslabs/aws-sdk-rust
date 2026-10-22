@@ -56,6 +56,314 @@ impl CreateLicenseAssetGroupInput {
         self.client_token.as_deref()
     }
 }
+static CREATELICENSEASSETGROUPINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput$Name",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseAssetGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput$Description",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseAssetGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#LicenseAssetGroupConfigurationList$member",
+            "com.amazonaws.licensemanager",
+            "LicenseAssetGroupConfigurationList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATELICENSEASSETGROUPINPUT_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput$LicenseAssetGroupConfigurations",
+            "com.amazonaws.licensemanager.synthetic",
+            "CreateLicenseAssetGroupInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "LicenseAssetGroupConfigurations",
+        2,
+    )
+    .with_list_member(&CREATELICENSEASSETGROUPINPUT_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS_MEMBER);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#LicenseAssetRulesetArnList$member",
+            "com.amazonaws.licensemanager",
+            "LicenseAssetRulesetArnList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATELICENSEASSETGROUPINPUT_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput$AssociatedLicenseAssetRulesetARNs",
+            "com.amazonaws.licensemanager.synthetic",
+            "CreateLicenseAssetGroupInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AssociatedLicenseAssetRulesetARNs",
+        3,
+    )
+    .with_list_member(&CREATELICENSEASSETGROUPINPUT_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS_MEMBER);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroupPropertyList$member",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroupPropertyList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput$Properties",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseAssetGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Properties",
+    4,
+)
+.with_list_member(&CREATELICENSEASSETGROUPINPUT_MEMBER_PROPERTIES_MEMBER);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#TagList$member", "com.amazonaws.licensemanager", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput$Tags",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseAssetGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATELICENSEASSETGROUPINPUT_MEMBER_TAGS_MEMBER);
+static CREATELICENSEASSETGROUPINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput$ClientToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseAssetGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    6,
+);
+static CREATELICENSEASSETGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseAssetGroupInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseAssetGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELICENSEASSETGROUPINPUT_MEMBER_NAME,
+        &CREATELICENSEASSETGROUPINPUT_MEMBER_DESCRIPTION,
+        &CREATELICENSEASSETGROUPINPUT_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS,
+        &CREATELICENSEASSETGROUPINPUT_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS,
+        &CREATELICENSEASSETGROUPINPUT_MEMBER_PROPERTIES,
+        &CREATELICENSEASSETGROUPINPUT_MEMBER_TAGS,
+        &CREATELICENSEASSETGROUPINPUT_MEMBER_CLIENT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLicenseAssetGroupRequest");
+impl CreateLicenseAssetGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELICENSEASSETGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLicenseAssetGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATELICENSEASSETGROUPINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATELICENSEASSETGROUPINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.license_asset_group_configurations {
+            ser.write_list(
+                &CREATELICENSEASSETGROUPINPUT_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LicenseAssetGroupConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.associated_license_asset_ruleset_arns {
+            ser.write_list(
+                &CREATELICENSEASSETGROUPINPUT_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_list(
+                &CREATELICENSEASSETGROUPINPUT_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LicenseAssetGroupProperty::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELICENSEASSETGROUPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATELICENSEASSETGROUPINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_license_asset_group::builders::CreateLicenseAssetGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELICENSEASSETGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_asset_group_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LicenseAssetGroupConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.associated_license_asset_ruleset_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LicenseAssetGroupProperty::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLicenseAssetGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.license_asset_group_configurations = builder.license_asset_group_configurations.or(Some(Vec::new()));
+        builder.associated_license_asset_ruleset_arns = builder.associated_license_asset_ruleset_arns.or(Some(Vec::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLicenseAssetGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseAssetGroupInput`](crate::operation::create_license_asset_group::CreateLicenseAssetGroupInput).
     pub fn builder() -> crate::operation::create_license_asset_group::builders::CreateLicenseAssetGroupInputBuilder {

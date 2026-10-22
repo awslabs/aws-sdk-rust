@@ -62,6 +62,281 @@ impl StartPipelineExecutionInput {
         self.mlflow_experiment_name.as_deref()
     }
 }
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$PipelineName",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineName",
+    0,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$PipelineExecutionDisplayName",
+            "com.amazonaws.sagemaker.synthetic",
+            "StartPipelineExecutionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionDisplayName",
+        1,
+    );
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ParameterList$member", "com.amazonaws.sagemaker", "ParameterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$PipelineParameters",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PipelineParameters",
+    2,
+)
+.with_list_member(&STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_PARAMETERS_MEMBER);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$PipelineExecutionDescription",
+            "com.amazonaws.sagemaker.synthetic",
+            "StartPipelineExecutionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionDescription",
+        3,
+    );
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$ClientRequestToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    4,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_PARALLELISM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$ParallelismConfiguration",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParallelismConfiguration",
+    5,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_SELECTIVE_EXECUTION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$SelectiveExecutionConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SelectiveExecutionConfig",
+    6,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$PipelineVersionId",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "PipelineVersionId",
+    7,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_MLFLOW_EXPERIMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput$MlflowExperimentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MlflowExperimentName",
+    8,
+);
+static STARTPIPELINEEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartPipelineExecutionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_NAME,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_PARAMETERS,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_PARALLELISM_CONFIGURATION,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_SELECTIVE_EXECUTION_CONFIG,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_VERSION_ID,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_MLFLOW_EXPERIMENT_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartPipelineExecutionRequest");
+impl StartPipelineExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTPIPELINEEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartPipelineExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_display_name {
+            ser.write_string(&STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_parameters {
+            ser.write_list(
+                &STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Parameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.pipeline_execution_description {
+            ser.write_string(&STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTPIPELINEEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.parallelism_configuration {
+            ser.write_struct(&STARTPIPELINEEXECUTIONINPUT_MEMBER_PARALLELISM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.selective_execution_config {
+            ser.write_struct(&STARTPIPELINEEXECUTIONINPUT_MEMBER_SELECTIVE_EXECUTION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.pipeline_version_id {
+            ser.write_long(&STARTPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_VERSION_ID, *val)?;
+        }
+        if let Some(ref val) = self.mlflow_experiment_name {
+            ser.write_string(&STARTPIPELINEEXECUTIONINPUT_MEMBER_MLFLOW_EXPERIMENT_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTPIPELINEEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Parameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallelism_configuration = Some(crate::types::ParallelismConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selective_execution_config = Some(crate::types::SelectiveExecutionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version_id = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mlflow_experiment_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartPipelineExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
+        builder.client_request_token = builder.client_request_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn builder() -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder {

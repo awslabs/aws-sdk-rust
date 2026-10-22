@@ -27,6 +27,154 @@ impl DeploymentConfiguration {
         self.auto_rollback_configuration.as_deref().unwrap_or_default()
     }
 }
+static DEPLOYMENTCONFIGURATION_MEMBER_ROLLING_UPDATE_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentConfiguration$RollingUpdatePolicy",
+        "com.amazonaws.sagemaker",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RollingUpdatePolicy",
+    0,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_WAIT_INTERVAL_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentConfiguration$WaitIntervalInSeconds",
+        "com.amazonaws.sagemaker",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "WaitIntervalInSeconds",
+    1,
+);
+static DEPLOYMENTCONFIGURATION_MEMBER_AUTO_ROLLBACK_CONFIGURATION_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AutoRollbackAlarms$member",
+            "com.amazonaws.sagemaker",
+            "AutoRollbackAlarms",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DEPLOYMENTCONFIGURATION_MEMBER_AUTO_ROLLBACK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentConfiguration$AutoRollbackConfiguration",
+        "com.amazonaws.sagemaker",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AutoRollbackConfiguration",
+    2,
+)
+.with_list_member(&DEPLOYMENTCONFIGURATION_MEMBER_AUTO_ROLLBACK_CONFIGURATION_MEMBER);
+static DEPLOYMENTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentConfiguration",
+        "com.amazonaws.sagemaker",
+        "DeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTCONFIGURATION_MEMBER_ROLLING_UPDATE_POLICY,
+        &DEPLOYMENTCONFIGURATION_MEMBER_WAIT_INTERVAL_IN_SECONDS,
+        &DEPLOYMENTCONFIGURATION_MEMBER_AUTO_ROLLBACK_CONFIGURATION,
+    ],
+);
+impl DeploymentConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.rolling_update_policy {
+            ser.write_struct(&DEPLOYMENTCONFIGURATION_MEMBER_ROLLING_UPDATE_POLICY, val)?;
+        }
+        if let Some(ref val) = self.wait_interval_in_seconds {
+            ser.write_integer(&DEPLOYMENTCONFIGURATION_MEMBER_WAIT_INTERVAL_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.auto_rollback_configuration {
+            ser.write_list(
+                &DEPLOYMENTCONFIGURATION_MEMBER_AUTO_ROLLBACK_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AlarmDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rolling_update_policy = Some(crate::types::RollingDeploymentPolicy::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.wait_interval_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_rollback_configuration = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AlarmDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
     pub fn builder() -> crate::types::builders::DeploymentConfigurationBuilder {

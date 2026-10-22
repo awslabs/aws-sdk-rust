@@ -47,6 +47,153 @@ impl ResourceSharingConfig {
         self.absolute_borrow_limits.as_deref().unwrap_or_default()
     }
 }
+static RESOURCESHARINGCONFIG_MEMBER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceSharingConfig$Strategy",
+        "com.amazonaws.sagemaker",
+        "ResourceSharingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Strategy",
+    0,
+);
+static RESOURCESHARINGCONFIG_MEMBER_BORROW_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceSharingConfig$BorrowLimit",
+        "com.amazonaws.sagemaker",
+        "ResourceSharingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BorrowLimit",
+    1,
+);
+static RESOURCESHARINGCONFIG_MEMBER_ABSOLUTE_BORROW_LIMITS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AbsoluteBorrowLimitResourceList$member",
+        "com.amazonaws.sagemaker",
+        "AbsoluteBorrowLimitResourceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RESOURCESHARINGCONFIG_MEMBER_ABSOLUTE_BORROW_LIMITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceSharingConfig$AbsoluteBorrowLimits",
+        "com.amazonaws.sagemaker",
+        "ResourceSharingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AbsoluteBorrowLimits",
+    2,
+)
+.with_list_member(&RESOURCESHARINGCONFIG_MEMBER_ABSOLUTE_BORROW_LIMITS_MEMBER);
+static RESOURCESHARINGCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceSharingConfig",
+        "com.amazonaws.sagemaker",
+        "ResourceSharingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCESHARINGCONFIG_MEMBER_STRATEGY,
+        &RESOURCESHARINGCONFIG_MEMBER_BORROW_LIMIT,
+        &RESOURCESHARINGCONFIG_MEMBER_ABSOLUTE_BORROW_LIMITS,
+    ],
+);
+impl ResourceSharingConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCESHARINGCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceSharingConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.strategy {
+            ser.write_string(&RESOURCESHARINGCONFIG_MEMBER_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.borrow_limit {
+            ser.write_integer(&RESOURCESHARINGCONFIG_MEMBER_BORROW_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.absolute_borrow_limits {
+            ser.write_list(
+                &RESOURCESHARINGCONFIG_MEMBER_ABSOLUTE_BORROW_LIMITS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ComputeQuotaResourceConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceSharingConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCESHARINGCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.strategy = Some(crate::types::ResourceSharingStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.borrow_limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_borrow_limits = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ComputeQuotaResourceConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceSharingConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResourceSharingConfig {
     /// Creates a new builder-style object to manufacture [`ResourceSharingConfig`](crate::types::ResourceSharingConfig).
     pub fn builder() -> crate::types::builders::ResourceSharingConfigBuilder {

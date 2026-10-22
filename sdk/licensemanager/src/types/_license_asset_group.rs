@@ -74,6 +74,340 @@ impl LicenseAssetGroup {
         self.latest_resource_discovery_time.as_ref()
     }
 }
+static LICENSEASSETGROUP_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$Name",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static LICENSEASSETGROUP_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$Description",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#LicenseAssetGroupConfigurationList$member",
+            "com.amazonaws.licensemanager",
+            "LicenseAssetGroupConfigurationList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$LicenseAssetGroupConfigurations",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LicenseAssetGroupConfigurations",
+    2,
+)
+.with_list_member(&LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS_MEMBER);
+static LICENSEASSETGROUP_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#LicenseAssetRulesetArnList$member",
+            "com.amazonaws.licensemanager",
+            "LicenseAssetRulesetArnList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static LICENSEASSETGROUP_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#LicenseAssetGroup$AssociatedLicenseAssetRulesetARNs",
+            "com.amazonaws.licensemanager",
+            "LicenseAssetGroup",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AssociatedLicenseAssetRulesetARNs",
+        3,
+    )
+    .with_list_member(&LICENSEASSETGROUP_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS_MEMBER);
+static LICENSEASSETGROUP_MEMBER_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroupPropertyList$member",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroupPropertyList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LICENSEASSETGROUP_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$Properties",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Properties",
+    4,
+)
+.with_list_member(&LICENSEASSETGROUP_MEMBER_PROPERTIES_MEMBER);
+static LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$LicenseAssetGroupArn",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseAssetGroupArn",
+    5,
+);
+static LICENSEASSETGROUP_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$Status",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static LICENSEASSETGROUP_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$StatusMessage",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    7,
+);
+static LICENSEASSETGROUP_MEMBER_LATEST_USAGE_ANALYSIS_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$LatestUsageAnalysisTime",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LatestUsageAnalysisTime",
+    8,
+);
+static LICENSEASSETGROUP_MEMBER_LATEST_RESOURCE_DISCOVERY_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup$LatestResourceDiscoveryTime",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LatestResourceDiscoveryTime",
+    9,
+);
+static LICENSEASSETGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseAssetGroup",
+        "com.amazonaws.licensemanager",
+        "LicenseAssetGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LICENSEASSETGROUP_MEMBER_NAME,
+        &LICENSEASSETGROUP_MEMBER_DESCRIPTION,
+        &LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS,
+        &LICENSEASSETGROUP_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS,
+        &LICENSEASSETGROUP_MEMBER_PROPERTIES,
+        &LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_ARN,
+        &LICENSEASSETGROUP_MEMBER_STATUS,
+        &LICENSEASSETGROUP_MEMBER_STATUS_MESSAGE,
+        &LICENSEASSETGROUP_MEMBER_LATEST_USAGE_ANALYSIS_TIME,
+        &LICENSEASSETGROUP_MEMBER_LATEST_RESOURCE_DISCOVERY_TIME,
+    ],
+);
+impl LicenseAssetGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LICENSEASSETGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LicenseAssetGroup {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&LICENSEASSETGROUP_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&LICENSEASSETGROUP_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.license_asset_group_configurations {
+            ser.write_list(
+                &LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LicenseAssetGroupConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.associated_license_asset_ruleset_arns;
+
+            ser.write_list(
+                &LICENSEASSETGROUP_MEMBER_ASSOCIATED_LICENSE_ASSET_RULESET_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_list(
+                &LICENSEASSETGROUP_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LicenseAssetGroupProperty::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.license_asset_group_arn;
+            ser.write_string(&LICENSEASSETGROUP_MEMBER_LICENSE_ASSET_GROUP_ARN, val)?;
+        }
+        {
+            let val = &self.status;
+            ser.write_string(&LICENSEASSETGROUP_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&LICENSEASSETGROUP_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.latest_usage_analysis_time {
+            ser.write_timestamp(&LICENSEASSETGROUP_MEMBER_LATEST_USAGE_ANALYSIS_TIME, val)?;
+        }
+        if let Some(ref val) = self.latest_resource_discovery_time {
+            ser.write_timestamp(&LICENSEASSETGROUP_MEMBER_LATEST_RESOURCE_DISCOVERY_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LicenseAssetGroupBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LICENSEASSETGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_asset_group_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LicenseAssetGroupConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    self.associated_license_asset_ruleset_arns = Some(deser.read_string_list(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LicenseAssetGroupProperty::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    self.license_asset_group_arn = Some(deser.read_string(member)?);
+                }
+                Some(6) => {
+                    self.status = Some(crate::types::LicenseAssetGroupStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_usage_analysis_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_resource_discovery_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LicenseAssetGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.associated_license_asset_ruleset_arns = builder.associated_license_asset_ruleset_arns.or(Some(Vec::new()));
+        builder.license_asset_group_arn = builder.license_asset_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl LicenseAssetGroup {
     /// Creates a new builder-style object to manufacture [`LicenseAssetGroup`](crate::types::LicenseAssetGroup).
     pub fn builder() -> crate::types::builders::LicenseAssetGroupBuilder {

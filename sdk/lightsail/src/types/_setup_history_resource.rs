@@ -37,6 +37,169 @@ impl SetupHistoryResource {
         self.resource_type.as_ref()
     }
 }
+static SETUPHISTORYRESOURCE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistoryResource$name",
+        "com.amazonaws.lightsail",
+        "SetupHistoryResource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static SETUPHISTORYRESOURCE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistoryResource$arn",
+        "com.amazonaws.lightsail",
+        "SetupHistoryResource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static SETUPHISTORYRESOURCE_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistoryResource$createdAt",
+        "com.amazonaws.lightsail",
+        "SetupHistoryResource",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    2,
+);
+static SETUPHISTORYRESOURCE_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistoryResource$location",
+        "com.amazonaws.lightsail",
+        "SetupHistoryResource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    3,
+);
+static SETUPHISTORYRESOURCE_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistoryResource$resourceType",
+        "com.amazonaws.lightsail",
+        "SetupHistoryResource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    4,
+);
+static SETUPHISTORYRESOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupHistoryResource",
+        "com.amazonaws.lightsail",
+        "SetupHistoryResource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETUPHISTORYRESOURCE_MEMBER_NAME,
+        &SETUPHISTORYRESOURCE_MEMBER_ARN,
+        &SETUPHISTORYRESOURCE_MEMBER_CREATED_AT,
+        &SETUPHISTORYRESOURCE_MEMBER_LOCATION,
+        &SETUPHISTORYRESOURCE_MEMBER_RESOURCE_TYPE,
+    ],
+);
+impl SetupHistoryResource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETUPHISTORYRESOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetupHistoryResource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&SETUPHISTORYRESOURCE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&SETUPHISTORYRESOURCE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&SETUPHISTORYRESOURCE_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&SETUPHISTORYRESOURCE_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&SETUPHISTORYRESOURCE_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SetupHistoryResourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETUPHISTORYRESOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetupHistoryResource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SetupHistoryResource {
     /// Creates a new builder-style object to manufacture [`SetupHistoryResource`](crate::types::SetupHistoryResource).
     pub fn builder() -> crate::types::builders::SetupHistoryResourceBuilder {

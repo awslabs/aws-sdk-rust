@@ -24,6 +24,137 @@ impl EncryptionConfiguration {
         self.kms_key.deref()
     }
 }
+static ENCRYPTIONCONFIGURATION_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#KMSEncryptionContextMap$key",
+        "com.amazonaws.transcribe",
+        "KMSEncryptionContextMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ENCRYPTIONCONFIGURATION_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#KMSEncryptionContextMap$value",
+        "com.amazonaws.transcribe",
+        "KMSEncryptionContextMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ENCRYPTIONCONFIGURATION_MEMBER_KMS_ENCRYPTION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#EncryptionConfiguration$KMSEncryptionContext",
+        "com.amazonaws.transcribe",
+        "EncryptionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "KMSEncryptionContext",
+    0,
+)
+.with_map_members(
+    &ENCRYPTIONCONFIGURATION_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY,
+    &ENCRYPTIONCONFIGURATION_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE,
+);
+static ENCRYPTIONCONFIGURATION_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#EncryptionConfiguration$KMSKey",
+        "com.amazonaws.transcribe",
+        "EncryptionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    1,
+);
+static ENCRYPTIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#EncryptionConfiguration",
+        "com.amazonaws.transcribe",
+        "EncryptionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENCRYPTIONCONFIGURATION_MEMBER_KMS_ENCRYPTION_CONTEXT,
+        &ENCRYPTIONCONFIGURATION_MEMBER_KMS_KEY,
+    ],
+);
+impl EncryptionConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENCRYPTIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EncryptionConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.kms_encryption_context {
+            ser.write_map(
+                &ENCRYPTIONCONFIGURATION_MEMBER_KMS_ENCRYPTION_CONTEXT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.kms_key;
+            ser.write_string(&ENCRYPTIONCONFIGURATION_MEMBER_KMS_KEY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EncryptionConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENCRYPTIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_encryption_context = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.kms_key = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EncryptionConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.kms_key = builder.kms_key.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EncryptionConfiguration {
     /// Creates a new builder-style object to manufacture [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn builder() -> crate::types::builders::EncryptionConfigurationBuilder {

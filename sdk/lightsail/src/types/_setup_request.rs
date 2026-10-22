@@ -27,6 +27,142 @@ impl SetupRequest {
         self.certificate_provider.as_ref()
     }
 }
+static SETUPREQUEST_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupRequest$instanceName",
+        "com.amazonaws.lightsail",
+        "SetupRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceName",
+    0,
+);
+static SETUPREQUEST_MEMBER_DOMAIN_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupDomainNameList$member",
+        "com.amazonaws.lightsail",
+        "SetupDomainNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SETUPREQUEST_MEMBER_DOMAIN_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupRequest$domainNames",
+        "com.amazonaws.lightsail",
+        "SetupRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "domainNames",
+    1,
+)
+.with_list_member(&SETUPREQUEST_MEMBER_DOMAIN_NAMES_MEMBER);
+static SETUPREQUEST_MEMBER_CERTIFICATE_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupRequest$certificateProvider",
+        "com.amazonaws.lightsail",
+        "SetupRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateProvider",
+    2,
+);
+static SETUPREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#SetupRequest", "com.amazonaws.lightsail", "SetupRequest"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETUPREQUEST_MEMBER_INSTANCE_NAME,
+        &SETUPREQUEST_MEMBER_DOMAIN_NAMES,
+        &SETUPREQUEST_MEMBER_CERTIFICATE_PROVIDER,
+    ],
+);
+impl SetupRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETUPREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetupRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&SETUPREQUEST_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.domain_names {
+            ser.write_list(
+                &SETUPREQUEST_MEMBER_DOMAIN_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.certificate_provider {
+            ser.write_string(&SETUPREQUEST_MEMBER_CERTIFICATE_PROVIDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SetupRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETUPREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_provider = Some(crate::types::CertificateProvider::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetupRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SetupRequest {
     /// Creates a new builder-style object to manufacture [`SetupRequest`](crate::types::SetupRequest).
     pub fn builder() -> crate::types::builders::SetupRequestBuilder {

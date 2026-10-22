@@ -27,6 +27,107 @@ impl GitConfig {
         self.secret_arn.as_deref()
     }
 }
+static GITCONFIG_MEMBER_REPOSITORY_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#GitConfig$RepositoryUrl", "com.amazonaws.sagemaker", "GitConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "RepositoryUrl",
+    0,
+);
+static GITCONFIG_MEMBER_BRANCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#GitConfig$Branch", "com.amazonaws.sagemaker", "GitConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Branch",
+    1,
+);
+static GITCONFIG_MEMBER_SECRET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#GitConfig$SecretArn", "com.amazonaws.sagemaker", "GitConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretArn",
+    2,
+);
+static GITCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#GitConfig", "com.amazonaws.sagemaker", "GitConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GITCONFIG_MEMBER_REPOSITORY_URL, &GITCONFIG_MEMBER_BRANCH, &GITCONFIG_MEMBER_SECRET_ARN],
+);
+impl GitConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GITCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GitConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_url {
+            ser.write_string(&GITCONFIG_MEMBER_REPOSITORY_URL, val)?;
+        }
+        if let Some(ref val) = self.branch {
+            ser.write_string(&GITCONFIG_MEMBER_BRANCH, val)?;
+        }
+        if let Some(ref val) = self.secret_arn {
+            ser.write_string(&GITCONFIG_MEMBER_SECRET_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GitConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GITCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branch = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GitConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GitConfig {
     /// Creates a new builder-style object to manufacture [`GitConfig`](crate::types::GitConfig).
     pub fn builder() -> crate::types::builders::GitConfigBuilder {

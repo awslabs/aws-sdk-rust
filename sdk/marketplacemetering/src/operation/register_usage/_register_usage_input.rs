@@ -24,6 +24,131 @@ impl RegisterUsageInput {
         self.nonce.as_deref()
     }
 }
+static REGISTERUSAGEINPUT_MEMBER_PRODUCT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#RegisterUsageInput$ProductCode",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "RegisterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductCode",
+    0,
+);
+static REGISTERUSAGEINPUT_MEMBER_PUBLIC_KEY_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#RegisterUsageInput$PublicKeyVersion",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "RegisterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "PublicKeyVersion",
+    1,
+);
+static REGISTERUSAGEINPUT_MEMBER_NONCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#RegisterUsageInput$Nonce",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "RegisterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Nonce",
+    2,
+);
+static REGISTERUSAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#RegisterUsageInput",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "RegisterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERUSAGEINPUT_MEMBER_PRODUCT_CODE,
+        &REGISTERUSAGEINPUT_MEMBER_PUBLIC_KEY_VERSION,
+        &REGISTERUSAGEINPUT_MEMBER_NONCE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterUsageRequest");
+impl RegisterUsageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERUSAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterUsageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.product_code {
+            ser.write_string(&REGISTERUSAGEINPUT_MEMBER_PRODUCT_CODE, val)?;
+        }
+        if let Some(ref val) = self.public_key_version {
+            ser.write_integer(&REGISTERUSAGEINPUT_MEMBER_PUBLIC_KEY_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.nonce {
+            ser.write_string(&REGISTERUSAGEINPUT_MEMBER_NONCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_usage::builders::RegisterUsageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERUSAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_key_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nonce = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterUsageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.product_code = builder.product_code.or(Some(String::new()));
+        builder.public_key_version = builder.public_key_version.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterUsageInput {
     /// Creates a new builder-style object to manufacture [`RegisterUsageInput`](crate::operation::register_usage::RegisterUsageInput).
     pub fn builder() -> crate::operation::register_usage::builders::RegisterUsageInputBuilder {

@@ -13,6 +13,86 @@ impl GetDeploymentInput {
         self.deployment_id.as_deref()
     }
 }
+static GETDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#GetDeploymentInput$deploymentId",
+        "com.amazonaws.codedeploy.synthetic",
+        "GetDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static GETDEPLOYMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#GetDeploymentInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "GetDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetDeploymentInput");
+impl GetDeploymentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDEPLOYMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDeploymentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&GETDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_deployment::builders::GetDeploymentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDEPLOYMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDeploymentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.deployment_id = builder.deployment_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetDeploymentInput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
     pub fn builder() -> crate::operation::get_deployment::builders::GetDeploymentInputBuilder {

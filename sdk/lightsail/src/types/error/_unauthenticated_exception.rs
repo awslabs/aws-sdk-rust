@@ -28,6 +28,148 @@ impl UnauthenticatedException {
         self.tip.as_deref()
     }
 }
+static UNAUTHENTICATEDEXCEPTION_MEMBER_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#UnauthenticatedException$code",
+        "com.amazonaws.lightsail",
+        "UnauthenticatedException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "code",
+    0,
+);
+static UNAUTHENTICATEDEXCEPTION_MEMBER_DOCS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#UnauthenticatedException$docs",
+        "com.amazonaws.lightsail",
+        "UnauthenticatedException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "docs",
+    1,
+);
+static UNAUTHENTICATEDEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#UnauthenticatedException$message",
+        "com.amazonaws.lightsail",
+        "UnauthenticatedException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    2,
+);
+static UNAUTHENTICATEDEXCEPTION_MEMBER_TIP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#UnauthenticatedException$tip",
+        "com.amazonaws.lightsail",
+        "UnauthenticatedException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tip",
+    3,
+);
+static UNAUTHENTICATEDEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#UnauthenticatedException",
+        "com.amazonaws.lightsail",
+        "UnauthenticatedException",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UNAUTHENTICATEDEXCEPTION_MEMBER_CODE,
+        &UNAUTHENTICATEDEXCEPTION_MEMBER_DOCS,
+        &UNAUTHENTICATEDEXCEPTION_MEMBER_MESSAGE,
+        &UNAUTHENTICATEDEXCEPTION_MEMBER_TIP,
+    ],
+);
+impl UnauthenticatedException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UNAUTHENTICATEDEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UnauthenticatedException {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.code {
+            ser.write_string(&UNAUTHENTICATEDEXCEPTION_MEMBER_CODE, val)?;
+        }
+        if let Some(ref val) = self.docs {
+            ser.write_string(&UNAUTHENTICATEDEXCEPTION_MEMBER_DOCS, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&UNAUTHENTICATEDEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.tip {
+            ser.write_string(&UNAUTHENTICATEDEXCEPTION_MEMBER_TIP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::UnauthenticatedExceptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UNAUTHENTICATEDEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.docs = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tip = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UnauthenticatedException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UnauthenticatedException {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

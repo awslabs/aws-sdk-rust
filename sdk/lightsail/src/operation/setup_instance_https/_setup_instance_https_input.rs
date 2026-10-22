@@ -42,6 +42,177 @@ impl ::std::fmt::Debug for SetupInstanceHttpsInput {
         formatter.finish()
     }
 }
+static SETUPINSTANCEHTTPSINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetupInstanceHttpsInput$instanceName",
+        "com.amazonaws.lightsail.synthetic",
+        "SetupInstanceHttpsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceName",
+    0,
+);
+static SETUPINSTANCEHTTPSINPUT_MEMBER_EMAIL_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetupInstanceHttpsInput$emailAddress",
+        "com.amazonaws.lightsail.synthetic",
+        "SetupInstanceHttpsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "emailAddress",
+    1,
+);
+static SETUPINSTANCEHTTPSINPUT_MEMBER_DOMAIN_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#SetupDomainNameList$member",
+        "com.amazonaws.lightsail",
+        "SetupDomainNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SETUPINSTANCEHTTPSINPUT_MEMBER_DOMAIN_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetupInstanceHttpsInput$domainNames",
+        "com.amazonaws.lightsail.synthetic",
+        "SetupInstanceHttpsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "domainNames",
+    2,
+)
+.with_list_member(&SETUPINSTANCEHTTPSINPUT_MEMBER_DOMAIN_NAMES_MEMBER);
+static SETUPINSTANCEHTTPSINPUT_MEMBER_CERTIFICATE_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetupInstanceHttpsInput$certificateProvider",
+        "com.amazonaws.lightsail.synthetic",
+        "SetupInstanceHttpsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateProvider",
+    3,
+);
+static SETUPINSTANCEHTTPSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#SetupInstanceHttpsInput",
+        "com.amazonaws.lightsail.synthetic",
+        "SetupInstanceHttpsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETUPINSTANCEHTTPSINPUT_MEMBER_INSTANCE_NAME,
+        &SETUPINSTANCEHTTPSINPUT_MEMBER_EMAIL_ADDRESS,
+        &SETUPINSTANCEHTTPSINPUT_MEMBER_DOMAIN_NAMES,
+        &SETUPINSTANCEHTTPSINPUT_MEMBER_CERTIFICATE_PROVIDER,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/setup-instance-https",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SetupInstanceHttpsRequest");
+impl SetupInstanceHttpsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETUPINSTANCEHTTPSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetupInstanceHttpsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&SETUPINSTANCEHTTPSINPUT_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.email_address {
+            ser.write_string(&SETUPINSTANCEHTTPSINPUT_MEMBER_EMAIL_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.domain_names {
+            ser.write_list(
+                &SETUPINSTANCEHTTPSINPUT_MEMBER_DOMAIN_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.certificate_provider {
+            ser.write_string(&SETUPINSTANCEHTTPSINPUT_MEMBER_CERTIFICATE_PROVIDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::setup_instance_https::builders::SetupInstanceHttpsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETUPINSTANCEHTTPSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_provider = Some(crate::types::CertificateProvider::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetupInstanceHttpsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.instance_name = builder.instance_name.or(Some(String::new()));
+        builder.email_address = builder.email_address.or(Some(String::new()));
+        builder.domain_names = builder.domain_names.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SetupInstanceHttpsInput {
     /// Creates a new builder-style object to manufacture [`SetupInstanceHttpsInput`](crate::operation::setup_instance_https::SetupInstanceHttpsInput).
     pub fn builder() -> crate::operation::setup_instance_https::builders::SetupInstanceHttpsInputBuilder {

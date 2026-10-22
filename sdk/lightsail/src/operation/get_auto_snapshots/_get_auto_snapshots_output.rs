@@ -27,6 +27,154 @@ impl GetAutoSnapshotsOutput {
         self.auto_snapshots.as_deref().unwrap_or_default()
     }
 }
+static GETAUTOSNAPSHOTSOUTPUT_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetAutoSnapshotsOutput$resourceName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetAutoSnapshotsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceName",
+    0,
+);
+static GETAUTOSNAPSHOTSOUTPUT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetAutoSnapshotsOutput$resourceType",
+        "com.amazonaws.lightsail.synthetic",
+        "GetAutoSnapshotsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    1,
+);
+static GETAUTOSNAPSHOTSOUTPUT_MEMBER_AUTO_SNAPSHOTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AutoSnapshotDetailsList$member",
+        "com.amazonaws.lightsail",
+        "AutoSnapshotDetailsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETAUTOSNAPSHOTSOUTPUT_MEMBER_AUTO_SNAPSHOTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetAutoSnapshotsOutput$autoSnapshots",
+        "com.amazonaws.lightsail.synthetic",
+        "GetAutoSnapshotsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "autoSnapshots",
+    2,
+)
+.with_list_member(&GETAUTOSNAPSHOTSOUTPUT_MEMBER_AUTO_SNAPSHOTS_MEMBER);
+static GETAUTOSNAPSHOTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetAutoSnapshotsOutput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetAutoSnapshotsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETAUTOSNAPSHOTSOUTPUT_MEMBER_RESOURCE_NAME,
+        &GETAUTOSNAPSHOTSOUTPUT_MEMBER_RESOURCE_TYPE,
+        &GETAUTOSNAPSHOTSOUTPUT_MEMBER_AUTO_SNAPSHOTS,
+    ],
+)
+.with_original_name("GetAutoSnapshotsResult");
+impl GetAutoSnapshotsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETAUTOSNAPSHOTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetAutoSnapshotsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&GETAUTOSNAPSHOTSOUTPUT_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&GETAUTOSNAPSHOTSOUTPUT_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.auto_snapshots {
+            ser.write_list(
+                &GETAUTOSNAPSHOTSOUTPUT_MEMBER_AUTO_SNAPSHOTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AutoSnapshotDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_auto_snapshots::builders::GetAutoSnapshotsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETAUTOSNAPSHOTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_snapshots = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoSnapshotDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetAutoSnapshotsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetAutoSnapshotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

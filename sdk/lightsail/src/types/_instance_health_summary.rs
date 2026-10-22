@@ -93,6 +93,127 @@ impl InstanceHealthSummary {
         self.instance_health_reason.as_ref()
     }
 }
+static INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceHealthSummary$instanceName",
+        "com.amazonaws.lightsail",
+        "InstanceHealthSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceName",
+    0,
+);
+static INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_HEALTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceHealthSummary$instanceHealth",
+        "com.amazonaws.lightsail",
+        "InstanceHealthSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceHealth",
+    1,
+);
+static INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_HEALTH_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceHealthSummary$instanceHealthReason",
+        "com.amazonaws.lightsail",
+        "InstanceHealthSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceHealthReason",
+    2,
+);
+static INSTANCEHEALTHSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceHealthSummary",
+        "com.amazonaws.lightsail",
+        "InstanceHealthSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_NAME,
+        &INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_HEALTH,
+        &INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_HEALTH_REASON,
+    ],
+);
+impl InstanceHealthSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEHEALTHSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceHealthSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_health {
+            ser.write_string(&INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_HEALTH, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_health_reason {
+            ser.write_string(&INSTANCEHEALTHSUMMARY_MEMBER_INSTANCE_HEALTH_REASON, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceHealthSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEHEALTHSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_health = Some(crate::types::InstanceHealthState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_health_reason = Some(crate::types::InstanceHealthReason::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceHealthSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceHealthSummary {
     /// Creates a new builder-style object to manufacture [`InstanceHealthSummary`](crate::types::InstanceHealthSummary).
     pub fn builder() -> crate::types::builders::InstanceHealthSummaryBuilder {

@@ -85,6 +85,228 @@ impl TabularJobConfig {
         self.sample_weight_attribute_name.as_deref()
     }
 }
+static TABULARJOBCONFIG_MEMBER_CANDIDATE_GENERATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$CandidateGenerationConfig",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CandidateGenerationConfig",
+    0,
+);
+static TABULARJOBCONFIG_MEMBER_COMPLETION_CRITERIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$CompletionCriteria",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CompletionCriteria",
+    1,
+);
+static TABULARJOBCONFIG_MEMBER_FEATURE_SPECIFICATION_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$FeatureSpecificationS3Uri",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureSpecificationS3Uri",
+    2,
+);
+static TABULARJOBCONFIG_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$Mode",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    3,
+);
+static TABULARJOBCONFIG_MEMBER_GENERATE_CANDIDATE_DEFINITIONS_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$GenerateCandidateDefinitionsOnly",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "GenerateCandidateDefinitionsOnly",
+    4,
+);
+static TABULARJOBCONFIG_MEMBER_PROBLEM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$ProblemType",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProblemType",
+    5,
+);
+static TABULARJOBCONFIG_MEMBER_TARGET_ATTRIBUTE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$TargetAttributeName",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetAttributeName",
+    6,
+);
+static TABULARJOBCONFIG_MEMBER_SAMPLE_WEIGHT_ATTRIBUTE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TabularJobConfig$SampleWeightAttributeName",
+        "com.amazonaws.sagemaker",
+        "TabularJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SampleWeightAttributeName",
+    7,
+);
+static TABULARJOBCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TabularJobConfig", "com.amazonaws.sagemaker", "TabularJobConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TABULARJOBCONFIG_MEMBER_CANDIDATE_GENERATION_CONFIG,
+        &TABULARJOBCONFIG_MEMBER_COMPLETION_CRITERIA,
+        &TABULARJOBCONFIG_MEMBER_FEATURE_SPECIFICATION_S3_URI,
+        &TABULARJOBCONFIG_MEMBER_MODE,
+        &TABULARJOBCONFIG_MEMBER_GENERATE_CANDIDATE_DEFINITIONS_ONLY,
+        &TABULARJOBCONFIG_MEMBER_PROBLEM_TYPE,
+        &TABULARJOBCONFIG_MEMBER_TARGET_ATTRIBUTE_NAME,
+        &TABULARJOBCONFIG_MEMBER_SAMPLE_WEIGHT_ATTRIBUTE_NAME,
+    ],
+);
+impl TabularJobConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TABULARJOBCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TabularJobConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.candidate_generation_config {
+            ser.write_struct(&TABULARJOBCONFIG_MEMBER_CANDIDATE_GENERATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.completion_criteria {
+            ser.write_struct(&TABULARJOBCONFIG_MEMBER_COMPLETION_CRITERIA, val)?;
+        }
+        if let Some(ref val) = self.feature_specification_s3_uri {
+            ser.write_string(&TABULARJOBCONFIG_MEMBER_FEATURE_SPECIFICATION_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&TABULARJOBCONFIG_MEMBER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.generate_candidate_definitions_only {
+            ser.write_boolean(&TABULARJOBCONFIG_MEMBER_GENERATE_CANDIDATE_DEFINITIONS_ONLY, *val)?;
+        }
+        if let Some(ref val) = self.problem_type {
+            ser.write_string(&TABULARJOBCONFIG_MEMBER_PROBLEM_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_attribute_name {
+            ser.write_string(&TABULARJOBCONFIG_MEMBER_TARGET_ATTRIBUTE_NAME, val)?;
+        }
+        if let Some(ref val) = self.sample_weight_attribute_name {
+            ser.write_string(&TABULARJOBCONFIG_MEMBER_SAMPLE_WEIGHT_ATTRIBUTE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TabularJobConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TABULARJOBCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_generation_config = Some(crate::types::CandidateGenerationConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_criteria = Some(crate::types::AutoMlJobCompletionCriteria::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_specification_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::AutoMlMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.generate_candidate_definitions_only = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.problem_type = Some(crate::types::ProblemType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_attribute_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sample_weight_attribute_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TabularJobConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TabularJobConfig {
     /// Creates a new builder-style object to manufacture [`TabularJobConfig`](crate::types::TabularJobConfig).
     pub fn builder() -> crate::types::builders::TabularJobConfigBuilder {

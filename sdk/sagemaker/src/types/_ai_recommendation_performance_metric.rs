@@ -31,6 +31,148 @@ impl AiRecommendationPerformanceMetric {
         self.unit.as_deref()
     }
 }
+static AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_METRIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationPerformanceMetric$Metric",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationPerformanceMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Metric",
+    0,
+);
+static AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_STAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationPerformanceMetric$Stat",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationPerformanceMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Stat",
+    1,
+);
+static AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationPerformanceMetric$Value",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationPerformanceMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    2,
+);
+static AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationPerformanceMetric$Unit",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationPerformanceMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Unit",
+    3,
+);
+static AIRECOMMENDATIONPERFORMANCEMETRIC_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationPerformanceMetric",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationPerformanceMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_METRIC,
+        &AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_STAT,
+        &AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_VALUE,
+        &AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_UNIT,
+    ],
+);
+impl AiRecommendationPerformanceMetric {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIRECOMMENDATIONPERFORMANCEMETRIC_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiRecommendationPerformanceMetric {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.metric {
+            ser.write_string(&AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_METRIC, val)?;
+        }
+        if let Some(ref val) = self.stat {
+            ser.write_string(&AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_STAT, val)?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_string(&AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.unit {
+            ser.write_string(&AIRECOMMENDATIONPERFORMANCEMETRIC_MEMBER_UNIT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiRecommendationPerformanceMetricBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIRECOMMENDATIONPERFORMANCEMETRIC_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stat = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unit = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiRecommendationPerformanceMetric {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiRecommendationPerformanceMetric {
     /// Creates a new builder-style object to manufacture [`AiRecommendationPerformanceMetric`](crate::types::AiRecommendationPerformanceMetric).
     pub fn builder() -> crate::types::builders::AiRecommendationPerformanceMetricBuilder {

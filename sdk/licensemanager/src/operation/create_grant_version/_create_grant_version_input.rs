@@ -56,6 +56,264 @@ impl CreateGrantVersionInput {
         self.options.as_ref()
     }
 }
+static CREATEGRANTVERSIONINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$ClientToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    0,
+);
+static CREATEGRANTVERSIONINPUT_MEMBER_GRANT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$GrantArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantArn",
+    1,
+);
+static CREATEGRANTVERSIONINPUT_MEMBER_GRANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$GrantName",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantName",
+    2,
+);
+static CREATEGRANTVERSIONINPUT_MEMBER_ALLOWED_OPERATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#AllowedOperationList$member",
+        "com.amazonaws.licensemanager",
+        "AllowedOperationList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEGRANTVERSIONINPUT_MEMBER_ALLOWED_OPERATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$AllowedOperations",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AllowedOperations",
+    3,
+)
+.with_list_member(&CREATEGRANTVERSIONINPUT_MEMBER_ALLOWED_OPERATIONS_MEMBER);
+static CREATEGRANTVERSIONINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$Status",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static CREATEGRANTVERSIONINPUT_MEMBER_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$StatusReason",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusReason",
+    5,
+);
+static CREATEGRANTVERSIONINPUT_MEMBER_SOURCE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$SourceVersion",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceVersion",
+    6,
+);
+static CREATEGRANTVERSIONINPUT_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput$Options",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Options",
+    7,
+);
+static CREATEGRANTVERSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantVersionInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEGRANTVERSIONINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATEGRANTVERSIONINPUT_MEMBER_GRANT_ARN,
+        &CREATEGRANTVERSIONINPUT_MEMBER_GRANT_NAME,
+        &CREATEGRANTVERSIONINPUT_MEMBER_ALLOWED_OPERATIONS,
+        &CREATEGRANTVERSIONINPUT_MEMBER_STATUS,
+        &CREATEGRANTVERSIONINPUT_MEMBER_STATUS_REASON,
+        &CREATEGRANTVERSIONINPUT_MEMBER_SOURCE_VERSION,
+        &CREATEGRANTVERSIONINPUT_MEMBER_OPTIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateGrantVersionRequest");
+impl CreateGrantVersionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEGRANTVERSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateGrantVersionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATEGRANTVERSIONINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.grant_arn {
+            ser.write_string(&CREATEGRANTVERSIONINPUT_MEMBER_GRANT_ARN, val)?;
+        }
+        if let Some(ref val) = self.grant_name {
+            ser.write_string(&CREATEGRANTVERSIONINPUT_MEMBER_GRANT_NAME, val)?;
+        }
+        if let Some(ref val) = self.allowed_operations {
+            ser.write_list(
+                &CREATEGRANTVERSIONINPUT_MEMBER_ALLOWED_OPERATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CREATEGRANTVERSIONINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_reason {
+            ser.write_string(&CREATEGRANTVERSIONINPUT_MEMBER_STATUS_REASON, val)?;
+        }
+        if let Some(ref val) = self.source_version {
+            ser.write_string(&CREATEGRANTVERSIONINPUT_MEMBER_SOURCE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_struct(&CREATEGRANTVERSIONINPUT_MEMBER_OPTIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_grant_version::builders::CreateGrantVersionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEGRANTVERSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grant_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grant_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_operations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AllowedOperation::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::GrantStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some(crate::types::Options::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateGrantVersionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.grant_arn = builder.grant_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateGrantVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateGrantVersionInput`](crate::operation::create_grant_version::CreateGrantVersionInput).
     pub fn builder() -> crate::operation::create_grant_version::builders::CreateGrantVersionInputBuilder {

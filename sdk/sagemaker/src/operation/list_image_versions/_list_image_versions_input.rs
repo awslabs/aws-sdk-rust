@@ -60,6 +60,256 @@ impl ListImageVersionsInput {
         self.sort_order.as_ref()
     }
 }
+static LISTIMAGEVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    0,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    1,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$ImageName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageName",
+    2,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$LastModifiedTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTimeAfter",
+    3,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$LastModifiedTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTimeBefore",
+    4,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    7,
+);
+static LISTIMAGEVERSIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    8,
+);
+static LISTIMAGEVERSIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListImageVersionsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListImageVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTIMAGEVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_IMAGE_NAME,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_SORT_BY,
+        &LISTIMAGEVERSIONSINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListImageVersionsRequest");
+impl ListImageVersionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTIMAGEVERSIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListImageVersionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTIMAGEVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTIMAGEVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.image_name {
+            ser.write_string(&LISTIMAGEVERSIONSINPUT_MEMBER_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_after {
+            ser.write_timestamp(&LISTIMAGEVERSIONSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_before {
+            ser.write_timestamp(&LISTIMAGEVERSIONSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTIMAGEVERSIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTIMAGEVERSIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTIMAGEVERSIONSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTIMAGEVERSIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTIMAGEVERSIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ImageVersionSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::ImageVersionSortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListImageVersionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_name = builder.image_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListImageVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListImageVersionsInput`](crate::operation::list_image_versions::ListImageVersionsInput).
     pub fn builder() -> crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder {

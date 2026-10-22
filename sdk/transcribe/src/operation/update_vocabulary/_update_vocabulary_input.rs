@@ -60,6 +60,210 @@ impl UpdateVocabularyInput {
         self.encryption_configuration.as_ref()
     }
 }
+static UPDATEVOCABULARYINPUT_MEMBER_VOCABULARY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyInput$VocabularyName",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyName",
+    0,
+)
+.with_http_label();
+static UPDATEVOCABULARYINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyInput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static UPDATEVOCABULARYINPUT_MEMBER_PHRASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#Phrases$member", "com.amazonaws.transcribe", "Phrases"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEVOCABULARYINPUT_MEMBER_PHRASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyInput$Phrases",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Phrases",
+    2,
+)
+.with_list_member(&UPDATEVOCABULARYINPUT_MEMBER_PHRASES_MEMBER);
+static UPDATEVOCABULARYINPUT_MEMBER_VOCABULARY_FILE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyInput$VocabularyFileUri",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFileUri",
+    3,
+);
+static UPDATEVOCABULARYINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyInput$DataAccessRoleArn",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    4,
+);
+static UPDATEVOCABULARYINPUT_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyInput$EncryptionConfiguration",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    5,
+);
+static UPDATEVOCABULARYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyInput",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEVOCABULARYINPUT_MEMBER_VOCABULARY_NAME,
+        &UPDATEVOCABULARYINPUT_MEMBER_LANGUAGE_CODE,
+        &UPDATEVOCABULARYINPUT_MEMBER_PHRASES,
+        &UPDATEVOCABULARYINPUT_MEMBER_VOCABULARY_FILE_URI,
+        &UPDATEVOCABULARYINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &UPDATEVOCABULARYINPUT_MEMBER_ENCRYPTION_CONFIGURATION,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("PATCH", "/vocabularies/{VocabularyName}", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateVocabularyRequest");
+impl UpdateVocabularyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEVOCABULARYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateVocabularyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_name {
+            ser.write_string(&UPDATEVOCABULARYINPUT_MEMBER_VOCABULARY_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&UPDATEVOCABULARYINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.phrases {
+            ser.write_list(
+                &UPDATEVOCABULARYINPUT_MEMBER_PHRASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vocabulary_file_uri {
+            ser.write_string(&UPDATEVOCABULARYINPUT_MEMBER_VOCABULARY_FILE_URI, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&UPDATEVOCABULARYINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&UPDATEVOCABULARYINPUT_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_vocabulary::builders::UpdateVocabularyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEVOCABULARYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.phrases = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_file_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::EncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateVocabularyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.vocabulary_name = builder.vocabulary_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateVocabularyInput {
     /// Creates a new builder-style object to manufacture [`UpdateVocabularyInput`](crate::operation::update_vocabulary::UpdateVocabularyInput).
     pub fn builder() -> crate::operation::update_vocabulary::builders::UpdateVocabularyInputBuilder {

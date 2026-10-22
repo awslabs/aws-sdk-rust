@@ -229,6 +229,804 @@ impl DescribeModelPackageOutput {
         self.managed_storage_type.as_ref()
     }
 }
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageName",
+    0,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupName",
+    1,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ModelPackageVersion",
+    2,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_REGISTRATION_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageRegistrationType",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelPackageOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ModelPackageRegistrationType",
+        3,
+    );
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageArn",
+    4,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageDescription",
+    5,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_INFERENCE_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$InferenceSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InferenceSpecification",
+    7,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SOURCE_ALGORITHM_SPECIFICATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$SourceAlgorithmSpecification",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelPackageOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SourceAlgorithmSpecification",
+        8,
+    );
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_VALIDATION_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ValidationSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ValidationSpecification",
+    9,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageStatus",
+    10,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_STATUS_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelPackageStatusDetails",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelPackageStatusDetails",
+    11,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CERTIFY_FOR_MARKETPLACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$CertifyForMarketplace",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CertifyForMarketplace",
+    12,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_APPROVAL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelApprovalStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelApprovalStatus",
+    13,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    14,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_METADATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$MetadataProperties",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MetadataProperties",
+    15,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_METRICS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelMetrics",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelMetrics",
+    16,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    17,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    18,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_APPROVAL_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ApprovalDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ApprovalDescription",
+    19,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$Domain",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    20,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_TASK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$Task",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Task",
+    21,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SAMPLE_PAYLOAD_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$SamplePayloadUrl",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SamplePayloadUrl",
+    22,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#CustomerMetadataMap$key",
+            "com.amazonaws.sagemaker",
+            "CustomerMetadataMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#CustomerMetadataMap$value",
+            "com.amazonaws.sagemaker",
+            "CustomerMetadataMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$CustomerMetadataProperties",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelPackageOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Map,
+        "CustomerMetadataProperties",
+        23,
+    )
+    .with_map_members(
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_KEY,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_VALUE,
+    );
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_DRIFT_CHECK_BASELINES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$DriftCheckBaselines",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DriftCheckBaselines",
+    24,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AdditionalInferenceSpecifications$member",
+            "com.amazonaws.sagemaker",
+            "AdditionalInferenceSpecifications",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$AdditionalInferenceSpecifications",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelPackageOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AdditionalInferenceSpecifications",
+        25,
+    )
+    .with_list_member(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS_MEMBER);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SKIP_MODEL_VALIDATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$SkipModelValidation",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SkipModelValidation",
+    26,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SOURCE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$SourceUri",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceUri",
+    27,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SECURITY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$SecurityConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SecurityConfig",
+    28,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_CARD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelCard",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelCard",
+    29,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_LIFE_CYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ModelLifeCycle",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelLifeCycle",
+    30,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MANAGED_STORAGE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput$ManagedStorageType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedStorageType",
+    31,
+);
+static DESCRIBEMODELPACKAGEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelPackageOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelPackageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_NAME,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_GROUP_NAME,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_VERSION,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_REGISTRATION_TYPE,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_ARN,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_DESCRIPTION,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_INFERENCE_SPECIFICATION,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SOURCE_ALGORITHM_SPECIFICATION,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_VALIDATION_SPECIFICATION,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_STATUS,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_STATUS_DETAILS,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CERTIFY_FOR_MARKETPLACE,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_APPROVAL_STATUS,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_METADATA_PROPERTIES,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_METRICS,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_LAST_MODIFIED_BY,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_APPROVAL_DESCRIPTION,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_DOMAIN,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_TASK,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SAMPLE_PAYLOAD_URL,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_DRIFT_CHECK_BASELINES,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SKIP_MODEL_VALIDATION,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SOURCE_URI,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SECURITY_CONFIG,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_CARD,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_LIFE_CYCLE,
+        &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MANAGED_STORAGE_TYPE,
+    ],
+)
+.with_original_name("DescribeModelPackageOutput");
+impl DescribeModelPackageOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMODELPACKAGEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeModelPackageOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_package_name {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_name {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_package_version {
+            ser.write_integer(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.model_package_registration_type {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_REGISTRATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_package_arn {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_package_description {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.inference_specification {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_INFERENCE_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.source_algorithm_specification {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SOURCE_ALGORITHM_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.validation_specification {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_VALIDATION_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.model_package_status {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_package_status_details {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_PACKAGE_STATUS_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.certify_for_marketplace {
+            ser.write_boolean(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CERTIFY_FOR_MARKETPLACE, *val)?;
+        }
+        if let Some(ref val) = self.model_approval_status {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_APPROVAL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.metadata_properties {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_METADATA_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.model_metrics {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_METRICS, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.approval_description {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_APPROVAL_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.task {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_TASK, val)?;
+        }
+        if let Some(ref val) = self.sample_payload_url {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SAMPLE_PAYLOAD_URL, val)?;
+        }
+        if let Some(ref val) = self.customer_metadata_properties {
+            ser.write_map(
+                &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.drift_check_baselines {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_DRIFT_CHECK_BASELINES, val)?;
+        }
+        if let Some(ref val) = self.additional_inference_specifications {
+            ser.write_list(
+                &DESCRIBEMODELPACKAGEOUTPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AdditionalInferenceSpecificationDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.skip_model_validation {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SKIP_MODEL_VALIDATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_uri {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.security_config {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_SECURITY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_card {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_CARD, val)?;
+        }
+        if let Some(ref val) = self.model_life_cycle {
+            ser.write_struct(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MODEL_LIFE_CYCLE, val)?;
+        }
+        if let Some(ref val) = self.managed_storage_type {
+            ser.write_string(&DESCRIBEMODELPACKAGEOUTPUT_MEMBER_MANAGED_STORAGE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_model_package::builders::DescribeModelPackageOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEMODELPACKAGEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_registration_type =
+                            Some(crate::types::ModelPackageRegistrationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_specification = Some(crate::types::InferenceSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_algorithm_specification = Some(crate::types::SourceAlgorithmSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_specification = Some(crate::types::ModelPackageValidationSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_status = Some(crate::types::ModelPackageStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_status_details = Some(crate::types::ModelPackageStatusDetails::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certify_for_marketplace = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_approval_status = Some(crate::types::ModelApprovalStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata_properties = Some(crate::types::MetadataProperties::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_metrics = Some(crate::types::ModelMetrics::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sample_payload_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_metadata_properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.drift_check_baselines = Some(crate::types::DriftCheckBaselines::deserialize(deser)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_inference_specifications = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AdditionalInferenceSpecificationDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.skip_model_validation = Some(crate::types::SkipModelValidation::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_config = Some(crate::types::ModelPackageSecurityConfig::deserialize(deser)?);
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card = Some(crate::types::ModelPackageModelCard::deserialize(deser)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_life_cycle = Some(crate::types::ModelLifeCycle::deserialize(deser)?);
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_storage_type = Some(crate::types::ManagedStorageType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeModelPackageOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeModelPackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

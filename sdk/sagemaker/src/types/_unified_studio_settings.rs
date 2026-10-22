@@ -85,6 +85,232 @@ impl UnifiedStudioSettings {
         self.single_sign_on_application_arn.as_deref()
     }
 }
+static UNIFIEDSTUDIOSETTINGS_MEMBER_STUDIO_WEB_PORTAL_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$StudioWebPortalAccess",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StudioWebPortalAccess",
+    0,
+);
+static UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$DomainAccountId",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainAccountId",
+    1,
+);
+static UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$DomainRegion",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainRegion",
+    2,
+);
+static UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$DomainId",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    3,
+);
+static UNIFIEDSTUDIOSETTINGS_MEMBER_PROJECT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$ProjectId",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProjectId",
+    4,
+);
+static UNIFIEDSTUDIOSETTINGS_MEMBER_ENVIRONMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$EnvironmentId",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EnvironmentId",
+    5,
+);
+static UNIFIEDSTUDIOSETTINGS_MEMBER_PROJECT_S3_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$ProjectS3Path",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProjectS3Path",
+    6,
+);
+static UNIFIEDSTUDIOSETTINGS_MEMBER_SINGLE_SIGN_ON_APPLICATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings$SingleSignOnApplicationArn",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SingleSignOnApplicationArn",
+    7,
+);
+static UNIFIEDSTUDIOSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UnifiedStudioSettings",
+        "com.amazonaws.sagemaker",
+        "UnifiedStudioSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_STUDIO_WEB_PORTAL_ACCESS,
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_ACCOUNT_ID,
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_REGION,
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_ID,
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_PROJECT_ID,
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_ENVIRONMENT_ID,
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_PROJECT_S3_PATH,
+        &UNIFIEDSTUDIOSETTINGS_MEMBER_SINGLE_SIGN_ON_APPLICATION_ARN,
+    ],
+);
+impl UnifiedStudioSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UNIFIEDSTUDIOSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UnifiedStudioSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.studio_web_portal_access {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_STUDIO_WEB_PORTAL_ACCESS, val.as_str())?;
+        }
+        if let Some(ref val) = self.domain_account_id {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.domain_region {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_REGION, val)?;
+        }
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.project_id {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_PROJECT_ID, val)?;
+        }
+        if let Some(ref val) = self.environment_id {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_ENVIRONMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.project_s3_path {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_PROJECT_S3_PATH, val)?;
+        }
+        if let Some(ref val) = self.single_sign_on_application_arn {
+            ser.write_string(&UNIFIEDSTUDIOSETTINGS_MEMBER_SINGLE_SIGN_ON_APPLICATION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UnifiedStudioSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UNIFIEDSTUDIOSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.studio_web_portal_access = Some(crate::types::FeatureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_s3_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.single_sign_on_application_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UnifiedStudioSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UnifiedStudioSettings {
     /// Creates a new builder-style object to manufacture [`UnifiedStudioSettings`](crate::types::UnifiedStudioSettings).
     pub fn builder() -> crate::types::builders::UnifiedStudioSettingsBuilder {

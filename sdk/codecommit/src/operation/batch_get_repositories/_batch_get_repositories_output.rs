@@ -32,6 +32,200 @@ impl BatchGetRepositoriesOutput {
         self.errors.as_deref().unwrap_or_default()
     }
 }
+static BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadataList$member",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchGetRepositoriesOutput$repositories",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchGetRepositoriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "repositories",
+    0,
+)
+.with_list_member(&BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES_MEMBER);
+static BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES_NOT_FOUND_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#RepositoryNotFoundList$member",
+            "com.amazonaws.codecommit",
+            "RepositoryNotFoundList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES_NOT_FOUND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchGetRepositoriesOutput$repositoriesNotFound",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchGetRepositoriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "repositoriesNotFound",
+    1,
+)
+.with_list_member(&BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES_NOT_FOUND_MEMBER);
+static BATCHGETREPOSITORIESOUTPUT_MEMBER_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#BatchGetRepositoriesErrorsList$member",
+        "com.amazonaws.codecommit",
+        "BatchGetRepositoriesErrorsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHGETREPOSITORIESOUTPUT_MEMBER_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchGetRepositoriesOutput$errors",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchGetRepositoriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "errors",
+    2,
+)
+.with_list_member(&BATCHGETREPOSITORIESOUTPUT_MEMBER_ERRORS_MEMBER);
+static BATCHGETREPOSITORIESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchGetRepositoriesOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchGetRepositoriesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES,
+        &BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES_NOT_FOUND,
+        &BATCHGETREPOSITORIESOUTPUT_MEMBER_ERRORS,
+    ],
+)
+.with_original_name("BatchGetRepositoriesOutput");
+impl BatchGetRepositoriesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETREPOSITORIESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetRepositoriesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repositories {
+            ser.write_list(
+                &BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RepositoryMetadata::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.repositories_not_found {
+            ser.write_list(
+                &BATCHGETREPOSITORIESOUTPUT_MEMBER_REPOSITORIES_NOT_FOUND,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.errors {
+            ser.write_list(
+                &BATCHGETREPOSITORIESOUTPUT_MEMBER_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BatchGetRepositoriesError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETREPOSITORIESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repositories = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RepositoryMetadata::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repositories_not_found = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BatchGetRepositoriesError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetRepositoriesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchGetRepositoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

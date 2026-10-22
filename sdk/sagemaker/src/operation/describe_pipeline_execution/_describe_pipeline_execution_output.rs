@@ -97,6 +97,386 @@ impl DescribePipelineExecutionOutput {
         self.m_lflow_config.as_ref()
     }
 }
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$PipelineArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineArn",
+    0,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$PipelineExecutionArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineExecutionArn",
+    1,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$PipelineExecutionDisplayName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribePipelineExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionDisplayName",
+        2,
+    );
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$PipelineExecutionStatus",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribePipelineExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionStatus",
+        3,
+    );
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$PipelineExecutionDescription",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribePipelineExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionDescription",
+        4,
+    );
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXPERIMENT_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$PipelineExperimentConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribePipelineExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "PipelineExperimentConfig",
+        5,
+    );
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    6,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    7,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    9,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    10,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PARALLELISM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$ParallelismConfiguration",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribePipelineExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ParallelismConfiguration",
+        11,
+    );
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_SELECTIVE_EXECUTION_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$SelectiveExecutionConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribePipelineExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SelectiveExecutionConfig",
+        12,
+    );
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$PipelineVersionId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "PipelineVersionId",
+    13,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_M_LFLOW_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput$MLflowConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MLflowConfig",
+    14,
+);
+static DESCRIBEPIPELINEEXECUTIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribePipelineExecutionOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribePipelineExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_ARN,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_ARN,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_STATUS,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXPERIMENT_CONFIG,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_LAST_MODIFIED_BY,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PARALLELISM_CONFIGURATION,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_SELECTIVE_EXECUTION_CONFIG,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_VERSION_ID,
+        &DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_M_LFLOW_CONFIG,
+    ],
+)
+.with_original_name("DescribePipelineExecutionResponse");
+impl DescribePipelineExecutionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEPIPELINEEXECUTIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribePipelineExecutionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_arn {
+            ser.write_string(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_ARN, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_arn {
+            ser.write_string(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_ARN, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_display_name {
+            ser.write_string(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_status {
+            ser.write_string(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.pipeline_execution_description {
+            ser.write_string(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_experiment_config {
+            ser.write_struct(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_EXPERIMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.parallelism_configuration {
+            ser.write_struct(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PARALLELISM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.selective_execution_config {
+            ser.write_struct(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_SELECTIVE_EXECUTION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.pipeline_version_id {
+            ser.write_long(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_PIPELINE_VERSION_ID, *val)?;
+        }
+        if let Some(ref val) = self.m_lflow_config {
+            ser.write_struct(&DESCRIBEPIPELINEEXECUTIONOUTPUT_MEMBER_M_LFLOW_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_pipeline_execution::builders::DescribePipelineExecutionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEPIPELINEEXECUTIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_status = Some(crate::types::PipelineExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_experiment_config = Some(crate::types::PipelineExperimentConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallelism_configuration = Some(crate::types::ParallelismConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selective_execution_config = Some(crate::types::SelectiveExecutionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version_id = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.m_lflow_config = Some(crate::types::MLflowConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribePipelineExecutionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribePipelineExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

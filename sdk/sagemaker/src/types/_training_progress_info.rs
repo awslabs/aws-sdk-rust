@@ -31,6 +31,148 @@ impl TrainingProgressInfo {
         self.max_epoch
     }
 }
+static TRAININGPROGRESSINFO_MEMBER_TOTAL_STEP_COUNT_PER_EPOCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingProgressInfo$TotalStepCountPerEpoch",
+        "com.amazonaws.sagemaker",
+        "TrainingProgressInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TotalStepCountPerEpoch",
+    0,
+);
+static TRAININGPROGRESSINFO_MEMBER_CURRENT_STEP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingProgressInfo$CurrentStep",
+        "com.amazonaws.sagemaker",
+        "TrainingProgressInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "CurrentStep",
+    1,
+);
+static TRAININGPROGRESSINFO_MEMBER_CURRENT_EPOCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingProgressInfo$CurrentEpoch",
+        "com.amazonaws.sagemaker",
+        "TrainingProgressInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "CurrentEpoch",
+    2,
+);
+static TRAININGPROGRESSINFO_MEMBER_MAX_EPOCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingProgressInfo$MaxEpoch",
+        "com.amazonaws.sagemaker",
+        "TrainingProgressInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "MaxEpoch",
+    3,
+);
+static TRAININGPROGRESSINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingProgressInfo",
+        "com.amazonaws.sagemaker",
+        "TrainingProgressInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGPROGRESSINFO_MEMBER_TOTAL_STEP_COUNT_PER_EPOCH,
+        &TRAININGPROGRESSINFO_MEMBER_CURRENT_STEP,
+        &TRAININGPROGRESSINFO_MEMBER_CURRENT_EPOCH,
+        &TRAININGPROGRESSINFO_MEMBER_MAX_EPOCH,
+    ],
+);
+impl TrainingProgressInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGPROGRESSINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingProgressInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.total_step_count_per_epoch {
+            ser.write_long(&TRAININGPROGRESSINFO_MEMBER_TOTAL_STEP_COUNT_PER_EPOCH, *val)?;
+        }
+        if let Some(ref val) = self.current_step {
+            ser.write_long(&TRAININGPROGRESSINFO_MEMBER_CURRENT_STEP, *val)?;
+        }
+        if let Some(ref val) = self.current_epoch {
+            ser.write_long(&TRAININGPROGRESSINFO_MEMBER_CURRENT_EPOCH, *val)?;
+        }
+        if let Some(ref val) = self.max_epoch {
+            ser.write_long(&TRAININGPROGRESSINFO_MEMBER_MAX_EPOCH, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingProgressInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGPROGRESSINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_step_count_per_epoch = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_step = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_epoch = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_epoch = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingProgressInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingProgressInfo {
     /// Creates a new builder-style object to manufacture [`TrainingProgressInfo`](crate::types::TrainingProgressInfo).
     pub fn builder() -> crate::types::builders::TrainingProgressInfoBuilder {

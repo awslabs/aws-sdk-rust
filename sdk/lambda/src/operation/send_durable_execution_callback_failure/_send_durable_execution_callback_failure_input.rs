@@ -5,7 +5,7 @@
 pub struct SendDurableExecutionCallbackFailureInput {
     /// <p>The unique identifier for the callback operation.</p>
     pub callback_id: ::std::option::Option<::std::string::String>,
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub error: ::std::option::Option<crate::types::ErrorObject>,
 }
 impl SendDurableExecutionCallbackFailureInput {
@@ -13,7 +13,7 @@ impl SendDurableExecutionCallbackFailureInput {
     pub fn callback_id(&self) -> ::std::option::Option<&str> {
         self.callback_id.as_deref()
     }
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorObject> {
         self.error.as_ref()
     }
@@ -48,17 +48,17 @@ impl SendDurableExecutionCallbackFailureInputBuilder {
     pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.callback_id
     }
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(mut self, input: crate::types::ErrorObject) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorObject>) -> Self {
         self.error = input;
         self
     }
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorObject> {
         &self.error
     }

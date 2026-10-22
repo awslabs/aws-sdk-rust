@@ -99,6 +99,333 @@ impl ::std::fmt::Debug for Insight {
         formatter.finish()
     }
 }
+static INSIGHT_MEMBER_INSIGHT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$InsightId", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::String,
+    "InsightId",
+    0,
+);
+static INSIGHT_MEMBER_INSIGHT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$InsightType", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::String,
+    "InsightType",
+    1,
+);
+static INSIGHT_MEMBER_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$Context", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Context",
+    2,
+);
+static INSIGHT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$StartTime", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    3,
+);
+static INSIGHT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$EndTime", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    4,
+);
+static INSIGHT_MEMBER_SEVERITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$Severity", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Severity",
+    5,
+);
+static INSIGHT_MEMBER_SUPPORTING_INSIGHTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#InsightList$member", "com.amazonaws.pi", "InsightList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSIGHT_MEMBER_SUPPORTING_INSIGHTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$SupportingInsights", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::List,
+    "SupportingInsights",
+    6,
+)
+.with_list_member(&INSIGHT_MEMBER_SUPPORTING_INSIGHTS_MEMBER);
+static INSIGHT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$Description", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    7,
+);
+static INSIGHT_MEMBER_RECOMMENDATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#RecommendationList$member", "com.amazonaws.pi", "RecommendationList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSIGHT_MEMBER_RECOMMENDATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$Recommendations", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Recommendations",
+    8,
+)
+.with_list_member(&INSIGHT_MEMBER_RECOMMENDATIONS_MEMBER);
+static INSIGHT_MEMBER_INSIGHT_DATA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#DataList$member", "com.amazonaws.pi", "DataList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSIGHT_MEMBER_INSIGHT_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$InsightData", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::List,
+    "InsightData",
+    9,
+)
+.with_list_member(&INSIGHT_MEMBER_INSIGHT_DATA_MEMBER);
+static INSIGHT_MEMBER_BASELINE_DATA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#DataList$member", "com.amazonaws.pi", "DataList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSIGHT_MEMBER_BASELINE_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight$BaselineData", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::List,
+    "BaselineData",
+    10,
+)
+.with_list_member(&INSIGHT_MEMBER_BASELINE_DATA_MEMBER);
+static INSIGHT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Insight", "com.amazonaws.pi", "Insight"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSIGHT_MEMBER_INSIGHT_ID,
+        &INSIGHT_MEMBER_INSIGHT_TYPE,
+        &INSIGHT_MEMBER_CONTEXT,
+        &INSIGHT_MEMBER_START_TIME,
+        &INSIGHT_MEMBER_END_TIME,
+        &INSIGHT_MEMBER_SEVERITY,
+        &INSIGHT_MEMBER_SUPPORTING_INSIGHTS,
+        &INSIGHT_MEMBER_DESCRIPTION,
+        &INSIGHT_MEMBER_RECOMMENDATIONS,
+        &INSIGHT_MEMBER_INSIGHT_DATA,
+        &INSIGHT_MEMBER_BASELINE_DATA,
+    ],
+);
+impl Insight {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSIGHT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Insight {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.insight_id;
+            ser.write_string(&INSIGHT_MEMBER_INSIGHT_ID, val)?;
+        }
+        if let Some(ref val) = self.insight_type {
+            ser.write_string(&INSIGHT_MEMBER_INSIGHT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.context {
+            ser.write_string(&INSIGHT_MEMBER_CONTEXT, val.as_str())?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&INSIGHT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&INSIGHT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.severity {
+            ser.write_string(&INSIGHT_MEMBER_SEVERITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.supporting_insights {
+            ser.write_list(
+                &INSIGHT_MEMBER_SUPPORTING_INSIGHTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Insight::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&INSIGHT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.recommendations {
+            ser.write_list(
+                &INSIGHT_MEMBER_RECOMMENDATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Recommendation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.insight_data {
+            ser.write_list(
+                &INSIGHT_MEMBER_INSIGHT_DATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Data::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.baseline_data {
+            ser.write_list(
+                &INSIGHT_MEMBER_BASELINE_DATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Data::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InsightBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSIGHT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.insight_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.insight_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context = Some(crate::types::ContextType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.severity = Some(crate::types::Severity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supporting_insights = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Insight::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recommendations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Recommendation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.insight_data = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Data::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.baseline_data = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Data::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Insight {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.insight_id = builder.insight_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Insight {
     /// Creates a new builder-style object to manufacture [`Insight`](crate::types::Insight).
     pub fn builder() -> crate::types::builders::InsightBuilder {

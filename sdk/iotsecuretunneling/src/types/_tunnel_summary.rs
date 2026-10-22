@@ -43,6 +43,190 @@ impl TunnelSummary {
         self.last_updated_at.as_ref()
     }
 }
+static TUNNELSUMMARY_MEMBER_TUNNEL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TunnelSummary$tunnelId",
+        "com.amazonaws.iotsecuretunneling",
+        "TunnelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tunnelId",
+    0,
+);
+static TUNNELSUMMARY_MEMBER_TUNNEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TunnelSummary$tunnelArn",
+        "com.amazonaws.iotsecuretunneling",
+        "TunnelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tunnelArn",
+    1,
+);
+static TUNNELSUMMARY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TunnelSummary$status",
+        "com.amazonaws.iotsecuretunneling",
+        "TunnelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    2,
+);
+static TUNNELSUMMARY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TunnelSummary$description",
+        "com.amazonaws.iotsecuretunneling",
+        "TunnelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    3,
+);
+static TUNNELSUMMARY_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TunnelSummary$createdAt",
+        "com.amazonaws.iotsecuretunneling",
+        "TunnelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    4,
+);
+static TUNNELSUMMARY_MEMBER_LAST_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TunnelSummary$lastUpdatedAt",
+        "com.amazonaws.iotsecuretunneling",
+        "TunnelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastUpdatedAt",
+    5,
+);
+static TUNNELSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TunnelSummary",
+        "com.amazonaws.iotsecuretunneling",
+        "TunnelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TUNNELSUMMARY_MEMBER_TUNNEL_ID,
+        &TUNNELSUMMARY_MEMBER_TUNNEL_ARN,
+        &TUNNELSUMMARY_MEMBER_STATUS,
+        &TUNNELSUMMARY_MEMBER_DESCRIPTION,
+        &TUNNELSUMMARY_MEMBER_CREATED_AT,
+        &TUNNELSUMMARY_MEMBER_LAST_UPDATED_AT,
+    ],
+);
+impl TunnelSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TUNNELSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TunnelSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tunnel_id {
+            ser.write_string(&TUNNELSUMMARY_MEMBER_TUNNEL_ID, val)?;
+        }
+        if let Some(ref val) = self.tunnel_arn {
+            ser.write_string(&TUNNELSUMMARY_MEMBER_TUNNEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&TUNNELSUMMARY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&TUNNELSUMMARY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&TUNNELSUMMARY_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.last_updated_at {
+            ser.write_timestamp(&TUNNELSUMMARY_MEMBER_LAST_UPDATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TunnelSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TUNNELSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tunnel_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tunnel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TunnelStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TunnelSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TunnelSummary {
     /// Creates a new builder-style object to manufacture [`TunnelSummary`](crate::types::TunnelSummary).
     pub fn builder() -> crate::types::builders::TunnelSummaryBuilder {

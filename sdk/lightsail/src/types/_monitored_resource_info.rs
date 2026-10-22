@@ -28,6 +28,127 @@ impl MonitoredResourceInfo {
         self.resource_type.as_ref()
     }
 }
+static MONITOREDRESOURCEINFO_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MonitoredResourceInfo$arn",
+        "com.amazonaws.lightsail",
+        "MonitoredResourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static MONITOREDRESOURCEINFO_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MonitoredResourceInfo$name",
+        "com.amazonaws.lightsail",
+        "MonitoredResourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static MONITOREDRESOURCEINFO_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MonitoredResourceInfo$resourceType",
+        "com.amazonaws.lightsail",
+        "MonitoredResourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    2,
+);
+static MONITOREDRESOURCEINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MonitoredResourceInfo",
+        "com.amazonaws.lightsail",
+        "MonitoredResourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITOREDRESOURCEINFO_MEMBER_ARN,
+        &MONITOREDRESOURCEINFO_MEMBER_NAME,
+        &MONITOREDRESOURCEINFO_MEMBER_RESOURCE_TYPE,
+    ],
+);
+impl MonitoredResourceInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITOREDRESOURCEINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoredResourceInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&MONITOREDRESOURCEINFO_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&MONITOREDRESOURCEINFO_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&MONITOREDRESOURCEINFO_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoredResourceInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITOREDRESOURCEINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoredResourceInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoredResourceInfo {
     /// Creates a new builder-style object to manufacture [`MonitoredResourceInfo`](crate::types::MonitoredResourceInfo).
     pub fn builder() -> crate::types::builders::MonitoredResourceInfoBuilder {

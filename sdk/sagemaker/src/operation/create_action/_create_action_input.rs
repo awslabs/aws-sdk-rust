@@ -56,6 +56,288 @@ impl CreateActionInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEACTIONINPUT_MEMBER_ACTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$ActionName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActionName",
+    0,
+);
+static CREATEACTIONINPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$Source",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    1,
+);
+static CREATEACTIONINPUT_MEMBER_ACTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$ActionType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActionType",
+    2,
+);
+static CREATEACTIONINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static CREATEACTIONINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static CREATEACTIONINPUT_MEMBER_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$key",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEACTIONINPUT_MEMBER_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$value",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEACTIONINPUT_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$Properties",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Properties",
+    5,
+)
+.with_map_members(&CREATEACTIONINPUT_MEMBER_PROPERTIES_KEY, &CREATEACTIONINPUT_MEMBER_PROPERTIES_VALUE);
+static CREATEACTIONINPUT_MEMBER_METADATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$MetadataProperties",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MetadataProperties",
+    6,
+);
+static CREATEACTIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEACTIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&CREATEACTIONINPUT_MEMBER_TAGS_MEMBER);
+static CREATEACTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateActionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateActionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEACTIONINPUT_MEMBER_ACTION_NAME,
+        &CREATEACTIONINPUT_MEMBER_SOURCE,
+        &CREATEACTIONINPUT_MEMBER_ACTION_TYPE,
+        &CREATEACTIONINPUT_MEMBER_DESCRIPTION,
+        &CREATEACTIONINPUT_MEMBER_STATUS,
+        &CREATEACTIONINPUT_MEMBER_PROPERTIES,
+        &CREATEACTIONINPUT_MEMBER_METADATA_PROPERTIES,
+        &CREATEACTIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateActionRequest");
+impl CreateActionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEACTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateActionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action_name {
+            ser.write_string(&CREATEACTIONINPUT_MEMBER_ACTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&CREATEACTIONINPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.action_type {
+            ser.write_string(&CREATEACTIONINPUT_MEMBER_ACTION_TYPE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEACTIONINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CREATEACTIONINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_map(
+                &CREATEACTIONINPUT_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.metadata_properties {
+            ser.write_struct(&CREATEACTIONINPUT_MEMBER_METADATA_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEACTIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_action::builders::CreateActionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEACTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ActionSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ActionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata_properties = Some(crate::types::MetadataProperties::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateActionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.action_name = builder.action_name.or(Some(String::new()));
+        builder.action_type = builder.action_type.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateActionInput {
     /// Creates a new builder-style object to manufacture [`CreateActionInput`](crate::operation::create_action::CreateActionInput).
     pub fn builder() -> crate::operation::create_action::builders::CreateActionInputBuilder {

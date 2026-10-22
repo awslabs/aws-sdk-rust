@@ -20,6 +20,109 @@ impl UpdateCodeRepositoryInput {
         self.git_config.as_ref()
     }
 }
+static UPDATECODEREPOSITORYINPUT_MEMBER_CODE_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateCodeRepositoryInput$CodeRepositoryName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateCodeRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CodeRepositoryName",
+    0,
+);
+static UPDATECODEREPOSITORYINPUT_MEMBER_GIT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateCodeRepositoryInput$GitConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateCodeRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GitConfig",
+    1,
+);
+static UPDATECODEREPOSITORYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateCodeRepositoryInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateCodeRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECODEREPOSITORYINPUT_MEMBER_CODE_REPOSITORY_NAME,
+        &UPDATECODEREPOSITORYINPUT_MEMBER_GIT_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateCodeRepositoryInput");
+impl UpdateCodeRepositoryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECODEREPOSITORYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateCodeRepositoryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.code_repository_name {
+            ser.write_string(&UPDATECODEREPOSITORYINPUT_MEMBER_CODE_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.git_config {
+            ser.write_struct(&UPDATECODEREPOSITORYINPUT_MEMBER_GIT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECODEREPOSITORYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_config = Some(crate::types::GitConfigForUpdate::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateCodeRepositoryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.code_repository_name = builder.code_repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`UpdateCodeRepositoryInput`](crate::operation::update_code_repository::UpdateCodeRepositoryInput).
     pub fn builder() -> crate::operation::update_code_repository::builders::UpdateCodeRepositoryInputBuilder {

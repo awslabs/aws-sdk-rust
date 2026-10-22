@@ -148,6 +148,20 @@ impl UpdateConnectorFluentBuilder {
     pub fn get_connector_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_connector_configuration()
     }
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub fn skip_health_validation(mut self, input: bool) -> Self {
+        self.inner = self.inner.skip_health_validation(input);
+        self
+    }
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub fn set_skip_health_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_skip_health_validation(input);
+        self
+    }
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub fn get_skip_health_validation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_skip_health_validation()
+    }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.connector_arn(input.into());

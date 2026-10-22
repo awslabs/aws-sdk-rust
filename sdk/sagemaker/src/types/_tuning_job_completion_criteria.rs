@@ -25,6 +25,129 @@ impl TuningJobCompletionCriteria {
         self.convergence_detected.as_ref()
     }
 }
+static TUNINGJOBCOMPLETIONCRITERIA_MEMBER_TARGET_OBJECTIVE_METRIC_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TuningJobCompletionCriteria$TargetObjectiveMetricValue",
+            "com.amazonaws.sagemaker",
+            "TuningJobCompletionCriteria",
+        ),
+        ::aws_smithy_schema::ShapeType::Float,
+        "TargetObjectiveMetricValue",
+        0,
+    );
+static TUNINGJOBCOMPLETIONCRITERIA_MEMBER_BEST_OBJECTIVE_NOT_IMPROVING: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TuningJobCompletionCriteria$BestObjectiveNotImproving",
+            "com.amazonaws.sagemaker",
+            "TuningJobCompletionCriteria",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "BestObjectiveNotImproving",
+        1,
+    );
+static TUNINGJOBCOMPLETIONCRITERIA_MEMBER_CONVERGENCE_DETECTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TuningJobCompletionCriteria$ConvergenceDetected",
+        "com.amazonaws.sagemaker",
+        "TuningJobCompletionCriteria",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ConvergenceDetected",
+    2,
+);
+static TUNINGJOBCOMPLETIONCRITERIA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TuningJobCompletionCriteria",
+        "com.amazonaws.sagemaker",
+        "TuningJobCompletionCriteria",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TUNINGJOBCOMPLETIONCRITERIA_MEMBER_TARGET_OBJECTIVE_METRIC_VALUE,
+        &TUNINGJOBCOMPLETIONCRITERIA_MEMBER_BEST_OBJECTIVE_NOT_IMPROVING,
+        &TUNINGJOBCOMPLETIONCRITERIA_MEMBER_CONVERGENCE_DETECTED,
+    ],
+);
+impl TuningJobCompletionCriteria {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TUNINGJOBCOMPLETIONCRITERIA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TuningJobCompletionCriteria {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target_objective_metric_value {
+            ser.write_float(&TUNINGJOBCOMPLETIONCRITERIA_MEMBER_TARGET_OBJECTIVE_METRIC_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.best_objective_not_improving {
+            ser.write_struct(&TUNINGJOBCOMPLETIONCRITERIA_MEMBER_BEST_OBJECTIVE_NOT_IMPROVING, val)?;
+        }
+        if let Some(ref val) = self.convergence_detected {
+            ser.write_struct(&TUNINGJOBCOMPLETIONCRITERIA_MEMBER_CONVERGENCE_DETECTED, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TuningJobCompletionCriteriaBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TUNINGJOBCOMPLETIONCRITERIA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_objective_metric_value = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.best_objective_not_improving = Some(crate::types::BestObjectiveNotImproving::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.convergence_detected = Some(crate::types::ConvergenceDetected::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TuningJobCompletionCriteria {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TuningJobCompletionCriteria {
     /// Creates a new builder-style object to manufacture [`TuningJobCompletionCriteria`](crate::types::TuningJobCompletionCriteria).
     pub fn builder() -> crate::types::builders::TuningJobCompletionCriteriaBuilder {

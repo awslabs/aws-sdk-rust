@@ -112,6 +112,290 @@ impl CreateRelationalDatabaseFromSnapshotInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$relationalDatabaseName",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateRelationalDatabaseFromSnapshotInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "relationalDatabaseName",
+        0,
+    );
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$availabilityZone",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateRelationalDatabaseFromSnapshotInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "availabilityZone",
+        1,
+    );
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_PUBLICLY_ACCESSIBLE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$publiclyAccessible",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateRelationalDatabaseFromSnapshotInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "publiclyAccessible",
+        2,
+    );
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_SNAPSHOT_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$relationalDatabaseSnapshotName",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateRelationalDatabaseFromSnapshotInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "relationalDatabaseSnapshotName",
+        3,
+    );
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$relationalDatabaseBundleId",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateRelationalDatabaseFromSnapshotInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "relationalDatabaseBundleId",
+        4,
+    );
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_SOURCE_RELATIONAL_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$sourceRelationalDatabaseName",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateRelationalDatabaseFromSnapshotInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "sourceRelationalDatabaseName",
+        5,
+    );
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RESTORE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$restoreTime",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateRelationalDatabaseFromSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "restoreTime",
+    6,
+);
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_USE_LATEST_RESTORABLE_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$useLatestRestorableTime",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateRelationalDatabaseFromSnapshotInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "useLatestRestorableTime",
+        7,
+    );
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput$tags",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateRelationalDatabaseFromSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    8,
+)
+.with_list_member(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_TAGS_MEMBER);
+static CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateRelationalDatabaseFromSnapshotInput",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateRelationalDatabaseFromSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_NAME,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_AVAILABILITY_ZONE,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_PUBLICLY_ACCESSIBLE,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_SNAPSHOT_NAME,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_BUNDLE_ID,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_SOURCE_RELATIONAL_DATABASE_NAME,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RESTORE_TIME,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_USE_LATEST_RESTORABLE_TIME,
+        &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/CreateRelationalDatabaseFromSnapshot",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateRelationalDatabaseFromSnapshotRequest");
+impl CreateRelationalDatabaseFromSnapshotInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateRelationalDatabaseFromSnapshotInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_database_name {
+            ser.write_string(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.publicly_accessible {
+            ser.write_boolean(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_PUBLICLY_ACCESSIBLE, *val)?;
+        }
+        if let Some(ref val) = self.relational_database_snapshot_name {
+            ser.write_string(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_SNAPSHOT_NAME, val)?;
+        }
+        if let Some(ref val) = self.relational_database_bundle_id {
+            ser.write_string(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RELATIONAL_DATABASE_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.source_relational_database_name {
+            ser.write_string(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_SOURCE_RELATIONAL_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.restore_time {
+            ser.write_timestamp(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_RESTORE_TIME, val)?;
+        }
+        if let Some(ref val) = self.use_latest_restorable_time {
+            ser.write_boolean(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_USE_LATEST_RESTORABLE_TIME, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATERELATIONALDATABASEFROMSNAPSHOTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.publicly_accessible = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_snapshot_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_relational_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restore_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.use_latest_restorable_time = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateRelationalDatabaseFromSnapshotInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.relational_database_name = builder.relational_database_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateRelationalDatabaseFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseFromSnapshotInput`](crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshotInput).
     pub fn builder() -> crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder {

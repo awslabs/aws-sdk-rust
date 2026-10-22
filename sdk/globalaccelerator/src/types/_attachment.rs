@@ -47,6 +47,235 @@ impl Attachment {
         self.created_time.as_ref()
     }
 }
+static ATTACHMENT_MEMBER_ATTACHMENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Attachment$AttachmentArn",
+        "com.amazonaws.globalaccelerator",
+        "Attachment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AttachmentArn",
+    0,
+);
+static ATTACHMENT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Attachment$Name",
+        "com.amazonaws.globalaccelerator",
+        "Attachment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static ATTACHMENT_MEMBER_PRINCIPALS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Principals$member",
+        "com.amazonaws.globalaccelerator",
+        "Principals",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ATTACHMENT_MEMBER_PRINCIPALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Attachment$Principals",
+        "com.amazonaws.globalaccelerator",
+        "Attachment",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Principals",
+    2,
+)
+.with_list_member(&ATTACHMENT_MEMBER_PRINCIPALS_MEMBER);
+static ATTACHMENT_MEMBER_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Resources$member",
+        "com.amazonaws.globalaccelerator",
+        "Resources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ATTACHMENT_MEMBER_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Attachment$Resources",
+        "com.amazonaws.globalaccelerator",
+        "Attachment",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Resources",
+    3,
+)
+.with_list_member(&ATTACHMENT_MEMBER_RESOURCES_MEMBER);
+static ATTACHMENT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Attachment$LastModifiedTime",
+        "com.amazonaws.globalaccelerator",
+        "Attachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    4,
+);
+static ATTACHMENT_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Attachment$CreatedTime",
+        "com.amazonaws.globalaccelerator",
+        "Attachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    5,
+);
+static ATTACHMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Attachment",
+        "com.amazonaws.globalaccelerator",
+        "Attachment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ATTACHMENT_MEMBER_ATTACHMENT_ARN,
+        &ATTACHMENT_MEMBER_NAME,
+        &ATTACHMENT_MEMBER_PRINCIPALS,
+        &ATTACHMENT_MEMBER_RESOURCES,
+        &ATTACHMENT_MEMBER_LAST_MODIFIED_TIME,
+        &ATTACHMENT_MEMBER_CREATED_TIME,
+    ],
+);
+impl Attachment {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ATTACHMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Attachment {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.attachment_arn {
+            ser.write_string(&ATTACHMENT_MEMBER_ATTACHMENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&ATTACHMENT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.principals {
+            ser.write_list(
+                &ATTACHMENT_MEMBER_PRINCIPALS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resources {
+            ser.write_list(
+                &ATTACHMENT_MEMBER_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Resource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&ATTACHMENT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&ATTACHMENT_MEMBER_CREATED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AttachmentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ATTACHMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attachment_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principals = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Resource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Attachment {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Attachment {
     /// Creates a new builder-style object to manufacture [`Attachment`](crate::types::Attachment).
     pub fn builder() -> crate::types::builders::AttachmentBuilder {

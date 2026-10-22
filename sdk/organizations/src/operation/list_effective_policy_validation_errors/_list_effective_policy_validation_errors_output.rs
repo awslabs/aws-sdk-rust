@@ -97,6 +97,220 @@ impl ListEffectivePolicyValidationErrorsOutput {
         self.effective_policy_validation_errors.as_deref().unwrap_or_default()
     }
 }
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListEffectivePolicyValidationErrorsOutput$AccountId",
+        "com.amazonaws.organizations.synthetic",
+        "ListEffectivePolicyValidationErrorsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountId",
+    0,
+);
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_POLICY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListEffectivePolicyValidationErrorsOutput$PolicyType",
+        "com.amazonaws.organizations.synthetic",
+        "ListEffectivePolicyValidationErrorsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyType",
+    1,
+);
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListEffectivePolicyValidationErrorsOutput$Path",
+        "com.amazonaws.organizations.synthetic",
+        "ListEffectivePolicyValidationErrorsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Path",
+    2,
+);
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EVALUATION_TIMESTAMP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.organizations.synthetic#ListEffectivePolicyValidationErrorsOutput$EvaluationTimestamp",
+            "com.amazonaws.organizations.synthetic",
+            "ListEffectivePolicyValidationErrorsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "EvaluationTimestamp",
+        3,
+    );
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListEffectivePolicyValidationErrorsOutput$NextToken",
+        "com.amazonaws.organizations.synthetic",
+        "ListEffectivePolicyValidationErrorsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EFFECTIVE_POLICY_VALIDATION_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.organizations#EffectivePolicyValidationErrors$member",
+            "com.amazonaws.organizations",
+            "EffectivePolicyValidationErrors",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EFFECTIVE_POLICY_VALIDATION_ERRORS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.organizations.synthetic#ListEffectivePolicyValidationErrorsOutput$EffectivePolicyValidationErrors",
+            "com.amazonaws.organizations.synthetic",
+            "ListEffectivePolicyValidationErrorsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "EffectivePolicyValidationErrors",
+        5,
+    )
+    .with_list_member(&LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EFFECTIVE_POLICY_VALIDATION_ERRORS_MEMBER);
+static LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListEffectivePolicyValidationErrorsOutput",
+        "com.amazonaws.organizations.synthetic",
+        "ListEffectivePolicyValidationErrorsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_ACCOUNT_ID,
+        &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_POLICY_TYPE,
+        &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_PATH,
+        &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EVALUATION_TIMESTAMP,
+        &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EFFECTIVE_POLICY_VALIDATION_ERRORS,
+    ],
+)
+.with_original_name("ListEffectivePolicyValidationErrorsResponse");
+impl ListEffectivePolicyValidationErrorsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListEffectivePolicyValidationErrorsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.policy_type {
+            ser.write_string(&LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_POLICY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.evaluation_timestamp {
+            ser.write_timestamp(&LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EVALUATION_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.effective_policy_validation_errors {
+            ser.write_list(
+                &LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_MEMBER_EFFECTIVE_POLICY_VALIDATION_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EffectivePolicyValidationError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_effective_policy_validation_errors::builders::ListEffectivePolicyValidationErrorsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTEFFECTIVEPOLICYVALIDATIONERRORSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_type = Some(crate::types::EffectivePolicyType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.effective_policy_validation_errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EffectivePolicyValidationError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListEffectivePolicyValidationErrorsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListEffectivePolicyValidationErrorsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

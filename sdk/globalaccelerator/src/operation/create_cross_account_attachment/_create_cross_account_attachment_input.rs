@@ -44,6 +44,240 @@ impl CreateCrossAccountAttachmentInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCrossAccountAttachmentInput$Name",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCrossAccountAttachmentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_PRINCIPALS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Principals$member",
+        "com.amazonaws.globalaccelerator",
+        "Principals",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_PRINCIPALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCrossAccountAttachmentInput$Principals",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCrossAccountAttachmentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Principals",
+    1,
+)
+.with_list_member(&CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_PRINCIPALS_MEMBER);
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#Resources$member",
+        "com.amazonaws.globalaccelerator",
+        "Resources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCrossAccountAttachmentInput$Resources",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCrossAccountAttachmentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Resources",
+    2,
+)
+.with_list_member(&CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_RESOURCES_MEMBER);
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCrossAccountAttachmentInput$IdempotencyToken",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCrossAccountAttachmentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    3,
+);
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.globalaccelerator#Tags$member", "com.amazonaws.globalaccelerator", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCrossAccountAttachmentInput$Tags",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCrossAccountAttachmentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_TAGS_MEMBER);
+static CREATECROSSACCOUNTATTACHMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCrossAccountAttachmentInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCrossAccountAttachmentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_NAME,
+        &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_PRINCIPALS,
+        &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_RESOURCES,
+        &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCrossAccountAttachmentRequest");
+impl CreateCrossAccountAttachmentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECROSSACCOUNTATTACHMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCrossAccountAttachmentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.principals {
+            ser.write_list(
+                &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_PRINCIPALS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resources {
+            ser.write_list(
+                &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Resource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECROSSACCOUNTATTACHMENTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_cross_account_attachment::builders::CreateCrossAccountAttachmentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECROSSACCOUNTATTACHMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principals = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Resource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCrossAccountAttachmentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.idempotency_token = builder.idempotency_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCrossAccountAttachmentInput {
     /// Creates a new builder-style object to manufacture [`CreateCrossAccountAttachmentInput`](crate::operation::create_cross_account_attachment::CreateCrossAccountAttachmentInput).
     pub fn builder() -> crate::operation::create_cross_account_attachment::builders::CreateCrossAccountAttachmentInputBuilder {

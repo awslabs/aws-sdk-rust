@@ -167,6 +167,296 @@ impl ::std::fmt::Debug for DescribeModelCardOutput {
         formatter.finish()
     }
 }
+static DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$ModelCardArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardArn",
+    0,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$ModelCardName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    1,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$ModelCardVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ModelCardVersion",
+    2,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$Content",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    3,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$ModelCardStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardStatus",
+    4,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_SECURITY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$SecurityConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SecurityConfig",
+    5,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    7,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    9,
+);
+static DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_PROCESSING_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput$ModelCardProcessingStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardProcessingStatus",
+    10,
+);
+static DESCRIBEMODELCARDOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelCardOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelCardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_ARN,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_NAME,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_VERSION,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_CONTENT,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_STATUS,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_SECURITY_CONFIG,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_LAST_MODIFIED_BY,
+        &DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_PROCESSING_STATUS,
+    ],
+)
+.with_original_name("DescribeModelCardResponse");
+impl DescribeModelCardOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMODELCARDOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeModelCardOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_card_arn {
+            ser.write_string(&DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_card_version {
+            ser.write_integer(&DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&DESCRIBEMODELCARDOUTPUT_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.model_card_status {
+            ser.write_string(&DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.security_config {
+            ser.write_struct(&DESCRIBEMODELCARDOUTPUT_MEMBER_SECURITY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEMODELCARDOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBEMODELCARDOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEMODELCARDOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBEMODELCARDOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.model_card_processing_status {
+            ser.write_string(&DESCRIBEMODELCARDOUTPUT_MEMBER_MODEL_CARD_PROCESSING_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_model_card::builders::DescribeModelCardOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEMODELCARDOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_status = Some(crate::types::ModelCardStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_config = Some(crate::types::ModelCardSecurityConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_processing_status = Some(crate::types::ModelCardProcessingStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeModelCardOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeModelCardOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

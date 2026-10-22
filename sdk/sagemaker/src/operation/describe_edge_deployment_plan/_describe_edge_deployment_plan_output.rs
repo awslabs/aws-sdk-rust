@@ -77,6 +77,352 @@ impl DescribeEdgeDeploymentPlanOutput {
         self.last_modified_time.as_ref()
     }
 }
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$EdgeDeploymentPlanArn",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeEdgeDeploymentPlanOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EdgeDeploymentPlanArn",
+        0,
+    );
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$EdgeDeploymentPlanName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeEdgeDeploymentPlanOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EdgeDeploymentPlanName",
+        1,
+    );
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_MODEL_CONFIGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentModelConfigs$member",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentModelConfigs",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_MODEL_CONFIGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$ModelConfigs",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ModelConfigs",
+    2,
+)
+.with_list_member(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_MODEL_CONFIGS_MEMBER);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_DEVICE_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$DeviceFleetName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetName",
+    3,
+);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_SUCCESS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$EdgeDeploymentSuccess",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeEdgeDeploymentPlanOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "EdgeDeploymentSuccess",
+        4,
+    );
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PENDING: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$EdgeDeploymentPending",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeEdgeDeploymentPlanOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "EdgeDeploymentPending",
+        5,
+    );
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_FAILED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$EdgeDeploymentFailed",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EdgeDeploymentFailed",
+    6,
+);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_STAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStageStatusSummaries$member",
+        "com.amazonaws.sagemaker",
+        "DeploymentStageStatusSummaries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_STAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$Stages",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Stages",
+    7,
+)
+.with_list_member(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_STAGES_MEMBER);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    8,
+);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    9,
+);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    10,
+);
+static DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEdgeDeploymentPlanOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEdgeDeploymentPlanOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_ARN,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_MODEL_CONFIGS,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_DEVICE_FLEET_NAME,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_SUCCESS,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PENDING,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_FAILED,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_STAGES,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_NEXT_TOKEN,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+    ],
+)
+.with_original_name("DescribeEdgeDeploymentPlanResponse");
+impl DescribeEdgeDeploymentPlanOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeEdgeDeploymentPlanOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.edge_deployment_plan_arn {
+            ser.write_string(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_ARN, val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_plan_name {
+            ser.write_string(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_configs {
+            ser.write_list(
+                &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_MODEL_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EdgeDeploymentModelConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.device_fleet_name {
+            ser.write_string(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_DEVICE_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_success {
+            ser.write_integer(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_SUCCESS, *val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_pending {
+            ser.write_integer(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_PENDING, *val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_failed {
+            ser.write_integer(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_EDGE_DEPLOYMENT_FAILED, *val)?;
+        }
+        if let Some(ref val) = self.stages {
+            ser.write_list(
+                &DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_STAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DeploymentStageStatusSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_edge_deployment_plan::builders::DescribeEdgeDeploymentPlanOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEEDGEDEPLOYMENTPLANOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_plan_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_plan_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_configs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EdgeDeploymentModelConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_success = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_pending = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_failed = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stages = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeploymentStageStatusSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeEdgeDeploymentPlanOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeEdgeDeploymentPlanOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

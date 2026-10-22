@@ -31,6 +31,123 @@ impl Job {
         self.account_id.as_deref()
     }
 }
+static JOB_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#Job$id", "com.amazonaws.codepipeline", "Job"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static JOB_MEMBER_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#Job$data", "com.amazonaws.codepipeline", "Job"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "data",
+    1,
+);
+static JOB_MEMBER_NONCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#Job$nonce", "com.amazonaws.codepipeline", "Job"),
+    ::aws_smithy_schema::ShapeType::String,
+    "nonce",
+    2,
+);
+static JOB_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#Job$accountId", "com.amazonaws.codepipeline", "Job"),
+    ::aws_smithy_schema::ShapeType::String,
+    "accountId",
+    3,
+);
+static JOB_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#Job", "com.amazonaws.codepipeline", "Job"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&JOB_MEMBER_ID, &JOB_MEMBER_DATA, &JOB_MEMBER_NONCE, &JOB_MEMBER_ACCOUNT_ID],
+);
+impl Job {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &JOB_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Job {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&JOB_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.data {
+            ser.write_struct(&JOB_MEMBER_DATA, val)?;
+        }
+        if let Some(ref val) = self.nonce {
+            ser.write_string(&JOB_MEMBER_NONCE, val)?;
+        }
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&JOB_MEMBER_ACCOUNT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::JobBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&JOB_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data = Some(crate::types::JobData::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nonce = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Job {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::types::Job).
     pub fn builder() -> crate::types::builders::JobBuilder {

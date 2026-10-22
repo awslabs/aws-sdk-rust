@@ -30,6 +30,153 @@ impl UpdatePipelineVersionInput {
         self.pipeline_version_description.as_deref()
     }
 }
+static UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdatePipelineVersionInput$PipelineArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdatePipelineVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineArn",
+    0,
+);
+static UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdatePipelineVersionInput$PipelineVersionId",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdatePipelineVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "PipelineVersionId",
+    1,
+);
+static UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdatePipelineVersionInput$PipelineVersionDisplayName",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdatePipelineVersionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineVersionDisplayName",
+        2,
+    );
+static UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdatePipelineVersionInput$PipelineVersionDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdatePipelineVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineVersionDescription",
+    3,
+);
+static UPDATEPIPELINEVERSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdatePipelineVersionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdatePipelineVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_ARN,
+        &UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_ID,
+        &UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_DISPLAY_NAME,
+        &UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_DESCRIPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdatePipelineVersionRequest");
+impl UpdatePipelineVersionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPIPELINEVERSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePipelineVersionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_arn {
+            ser.write_string(&UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_ARN, val)?;
+        }
+        if let Some(ref val) = self.pipeline_version_id {
+            ser.write_long(&UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_ID, *val)?;
+        }
+        if let Some(ref val) = self.pipeline_version_display_name {
+            ser.write_string(&UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_version_description {
+            ser.write_string(&UPDATEPIPELINEVERSIONINPUT_MEMBER_PIPELINE_VERSION_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_pipeline_version::builders::UpdatePipelineVersionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPIPELINEVERSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version_id = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version_description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdatePipelineVersionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_arn = builder.pipeline_arn.or(Some(String::new()));
+        builder.pipeline_version_id = builder.pipeline_version_id.or(Some(0i64));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdatePipelineVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineVersionInput`](crate::operation::update_pipeline_version::UpdatePipelineVersionInput).
     pub fn builder() -> crate::operation::update_pipeline_version::builders::UpdatePipelineVersionInputBuilder {

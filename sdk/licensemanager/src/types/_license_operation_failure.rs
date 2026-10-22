@@ -57,6 +57,258 @@ impl LicenseOperationFailure {
         self.metadata_list.as_deref().unwrap_or_default()
     }
 }
+static LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$ResourceArn",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceArn",
+    0,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$ResourceType",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    1,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$ErrorMessage",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    2,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_FAILURE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$FailureTime",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "FailureTime",
+    3,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_OPERATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$OperationName",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperationName",
+    4,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_OWNER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$ResourceOwnerId",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceOwnerId",
+    5,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_OPERATION_REQUESTED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$OperationRequestedBy",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperationRequestedBy",
+    6,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_METADATA_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MetadataList$member",
+        "com.amazonaws.licensemanager",
+        "MetadataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LICENSEOPERATIONFAILURE_MEMBER_METADATA_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure$MetadataList",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MetadataList",
+    7,
+)
+.with_list_member(&LICENSEOPERATIONFAILURE_MEMBER_METADATA_LIST_MEMBER);
+static LICENSEOPERATIONFAILURE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#LicenseOperationFailure",
+        "com.amazonaws.licensemanager",
+        "LicenseOperationFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_ARN,
+        &LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_TYPE,
+        &LICENSEOPERATIONFAILURE_MEMBER_ERROR_MESSAGE,
+        &LICENSEOPERATIONFAILURE_MEMBER_FAILURE_TIME,
+        &LICENSEOPERATIONFAILURE_MEMBER_OPERATION_NAME,
+        &LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_OWNER_ID,
+        &LICENSEOPERATIONFAILURE_MEMBER_OPERATION_REQUESTED_BY,
+        &LICENSEOPERATIONFAILURE_MEMBER_METADATA_LIST,
+    ],
+);
+impl LicenseOperationFailure {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LICENSEOPERATIONFAILURE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LicenseOperationFailure {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&LICENSEOPERATIONFAILURE_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.failure_time {
+            ser.write_timestamp(&LICENSEOPERATIONFAILURE_MEMBER_FAILURE_TIME, val)?;
+        }
+        if let Some(ref val) = self.operation_name {
+            ser.write_string(&LICENSEOPERATIONFAILURE_MEMBER_OPERATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_owner_id {
+            ser.write_string(&LICENSEOPERATIONFAILURE_MEMBER_RESOURCE_OWNER_ID, val)?;
+        }
+        if let Some(ref val) = self.operation_requested_by {
+            ser.write_string(&LICENSEOPERATIONFAILURE_MEMBER_OPERATION_REQUESTED_BY, val)?;
+        }
+        if let Some(ref val) = self.metadata_list {
+            ser.write_list(
+                &LICENSEOPERATIONFAILURE_MEMBER_METADATA_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Metadata::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LicenseOperationFailureBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LICENSEOPERATIONFAILURE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owner_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_requested_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Metadata::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LicenseOperationFailure {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LicenseOperationFailure {
     /// Creates a new builder-style object to manufacture [`LicenseOperationFailure`](crate::types::LicenseOperationFailure).
     pub fn builder() -> crate::types::builders::LicenseOperationFailureBuilder {

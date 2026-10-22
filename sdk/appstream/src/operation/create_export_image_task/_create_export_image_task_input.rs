@@ -36,6 +36,199 @@ impl CreateExportImageTaskInput {
         self.ami_description.as_deref()
     }
 }
+static CREATEEXPORTIMAGETASKINPUT_MEMBER_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateExportImageTaskInput$ImageName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateExportImageTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageName",
+    0,
+);
+static CREATEEXPORTIMAGETASKINPUT_MEMBER_AMI_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateExportImageTaskInput$AmiName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateExportImageTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AmiName",
+    1,
+);
+static CREATEEXPORTIMAGETASKINPUT_MEMBER_IAM_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateExportImageTaskInput$IamRoleArn",
+        "com.amazonaws.appstream.synthetic",
+        "CreateExportImageTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IamRoleArn",
+    2,
+);
+static CREATEEXPORTIMAGETASKINPUT_MEMBER_TAG_SPECIFICATIONS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$key", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEEXPORTIMAGETASKINPUT_MEMBER_TAG_SPECIFICATIONS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Tags$value", "com.amazonaws.appstream", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEEXPORTIMAGETASKINPUT_MEMBER_TAG_SPECIFICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateExportImageTaskInput$TagSpecifications",
+        "com.amazonaws.appstream.synthetic",
+        "CreateExportImageTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "TagSpecifications",
+    3,
+)
+.with_map_members(
+    &CREATEEXPORTIMAGETASKINPUT_MEMBER_TAG_SPECIFICATIONS_KEY,
+    &CREATEEXPORTIMAGETASKINPUT_MEMBER_TAG_SPECIFICATIONS_VALUE,
+);
+static CREATEEXPORTIMAGETASKINPUT_MEMBER_AMI_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateExportImageTaskInput$AmiDescription",
+        "com.amazonaws.appstream.synthetic",
+        "CreateExportImageTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AmiDescription",
+    4,
+);
+static CREATEEXPORTIMAGETASKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateExportImageTaskInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateExportImageTaskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEEXPORTIMAGETASKINPUT_MEMBER_IMAGE_NAME,
+        &CREATEEXPORTIMAGETASKINPUT_MEMBER_AMI_NAME,
+        &CREATEEXPORTIMAGETASKINPUT_MEMBER_IAM_ROLE_ARN,
+        &CREATEEXPORTIMAGETASKINPUT_MEMBER_TAG_SPECIFICATIONS,
+        &CREATEEXPORTIMAGETASKINPUT_MEMBER_AMI_DESCRIPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateExportImageTaskRequest");
+impl CreateExportImageTaskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEEXPORTIMAGETASKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateExportImageTaskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_name {
+            ser.write_string(&CREATEEXPORTIMAGETASKINPUT_MEMBER_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.ami_name {
+            ser.write_string(&CREATEEXPORTIMAGETASKINPUT_MEMBER_AMI_NAME, val)?;
+        }
+        if let Some(ref val) = self.iam_role_arn {
+            ser.write_string(&CREATEEXPORTIMAGETASKINPUT_MEMBER_IAM_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tag_specifications {
+            ser.write_map(
+                &CREATEEXPORTIMAGETASKINPUT_MEMBER_TAG_SPECIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ami_description {
+            ser.write_string(&CREATEEXPORTIMAGETASKINPUT_MEMBER_AMI_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_export_image_task::builders::CreateExportImageTaskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEEXPORTIMAGETASKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ami_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_specifications = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ami_description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateExportImageTaskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_name = builder.image_name.or(Some(String::new()));
+        builder.ami_name = builder.ami_name.or(Some(String::new()));
+        builder.iam_role_arn = builder.iam_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateExportImageTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateExportImageTaskInput`](crate::operation::create_export_image_task::CreateExportImageTaskInput).
     pub fn builder() -> crate::operation::create_export_image_task::builders::CreateExportImageTaskInputBuilder {

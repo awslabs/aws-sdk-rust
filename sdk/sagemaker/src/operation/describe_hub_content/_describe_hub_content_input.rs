@@ -30,6 +30,152 @@ impl DescribeHubContentInput {
         self.hub_content_version.as_deref()
     }
 }
+static DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentInput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    0,
+);
+static DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentInput$HubContentType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentType",
+    1,
+);
+static DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentInput$HubContentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentName",
+    2,
+);
+static DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentInput$HubContentVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentVersion",
+    3,
+);
+static DESCRIBEHUBCONTENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_NAME,
+        &DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_TYPE,
+        &DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_NAME,
+        &DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_VERSION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeHubContentRequest");
+impl DescribeHubContentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEHUBCONTENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeHubContentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_type {
+            ser.write_string(&DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.hub_content_name {
+            ser.write_string(&DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_version {
+            ser.write_string(&DESCRIBEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEHUBCONTENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_type = Some(crate::types::HubContentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeHubContentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hub_name = builder.hub_name.or(Some(String::new()));
+        builder.hub_content_name = builder.hub_content_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeHubContentInput {
     /// Creates a new builder-style object to manufacture [`DescribeHubContentInput`](crate::operation::describe_hub_content::DescribeHubContentInput).
     pub fn builder() -> crate::operation::describe_hub_content::builders::DescribeHubContentInputBuilder {

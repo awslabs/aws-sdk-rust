@@ -13,6 +13,83 @@ impl UpdateTemplateProvider {
         self.cfn_template_provider.as_ref()
     }
 }
+static UPDATETEMPLATEPROVIDER_MEMBER_CFN_TEMPLATE_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UpdateTemplateProvider$CfnTemplateProvider",
+        "com.amazonaws.sagemaker",
+        "UpdateTemplateProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CfnTemplateProvider",
+    0,
+);
+static UPDATETEMPLATEPROVIDER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UpdateTemplateProvider",
+        "com.amazonaws.sagemaker",
+        "UpdateTemplateProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATETEMPLATEPROVIDER_MEMBER_CFN_TEMPLATE_PROVIDER],
+);
+impl UpdateTemplateProvider {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATETEMPLATEPROVIDER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateTemplateProvider {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cfn_template_provider {
+            ser.write_struct(&UPDATETEMPLATEPROVIDER_MEMBER_CFN_TEMPLATE_PROVIDER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UpdateTemplateProviderBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATETEMPLATEPROVIDER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cfn_template_provider = Some(crate::types::CfnUpdateTemplateProvider::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateTemplateProvider {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UpdateTemplateProvider {
     /// Creates a new builder-style object to manufacture [`UpdateTemplateProvider`](crate::types::UpdateTemplateProvider).
     pub fn builder() -> crate::types::builders::UpdateTemplateProviderBuilder {

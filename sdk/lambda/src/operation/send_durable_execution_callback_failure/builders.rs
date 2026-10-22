@@ -123,17 +123,17 @@ impl SendDurableExecutionCallbackFailureFluentBuilder {
     pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_callback_id()
     }
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(mut self, input: crate::types::ErrorObject) -> Self {
         self.inner = self.inner.error(input);
         self
     }
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorObject>) -> Self {
         self.inner = self.inner.set_error(input);
         self
     }
-    /// <p>Error details describing why the callback operation failed.</p>
+    /// <p>Error details describing why the callback operation failed. The combined size of all error fields is limited to 1 MB.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorObject> {
         self.inner.get_error()
     }

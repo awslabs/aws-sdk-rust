@@ -34,6 +34,123 @@ impl ZonalConfig {
         self.minimum_healthy_hosts_per_zone.as_ref()
     }
 }
+static ZONALCONFIG_MEMBER_FIRST_ZONE_MONITOR_DURATION_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ZonalConfig$firstZoneMonitorDurationInSeconds",
+        "com.amazonaws.codedeploy",
+        "ZonalConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "firstZoneMonitorDurationInSeconds",
+    0,
+);
+static ZONALCONFIG_MEMBER_MONITOR_DURATION_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ZonalConfig$monitorDurationInSeconds",
+        "com.amazonaws.codedeploy",
+        "ZonalConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "monitorDurationInSeconds",
+    1,
+);
+static ZONALCONFIG_MEMBER_MINIMUM_HEALTHY_HOSTS_PER_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ZonalConfig$minimumHealthyHostsPerZone",
+        "com.amazonaws.codedeploy",
+        "ZonalConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "minimumHealthyHostsPerZone",
+    2,
+);
+static ZONALCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ZonalConfig", "com.amazonaws.codedeploy", "ZonalConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ZONALCONFIG_MEMBER_FIRST_ZONE_MONITOR_DURATION_IN_SECONDS,
+        &ZONALCONFIG_MEMBER_MONITOR_DURATION_IN_SECONDS,
+        &ZONALCONFIG_MEMBER_MINIMUM_HEALTHY_HOSTS_PER_ZONE,
+    ],
+);
+impl ZonalConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ZONALCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ZonalConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.first_zone_monitor_duration_in_seconds {
+            ser.write_long(&ZONALCONFIG_MEMBER_FIRST_ZONE_MONITOR_DURATION_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.monitor_duration_in_seconds {
+            ser.write_long(&ZONALCONFIG_MEMBER_MONITOR_DURATION_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.minimum_healthy_hosts_per_zone {
+            ser.write_struct(&ZONALCONFIG_MEMBER_MINIMUM_HEALTHY_HOSTS_PER_ZONE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ZonalConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ZONALCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.first_zone_monitor_duration_in_seconds = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitor_duration_in_seconds = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.minimum_healthy_hosts_per_zone = Some(crate::types::MinimumHealthyHostsPerZone::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ZonalConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ZonalConfig {
     /// Creates a new builder-style object to manufacture [`ZonalConfig`](crate::types::ZonalConfig).
     pub fn builder() -> crate::types::builders::ZonalConfigBuilder {

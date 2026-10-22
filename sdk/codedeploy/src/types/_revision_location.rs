@@ -57,6 +57,169 @@ impl RevisionLocation {
         self.app_spec_content.as_ref()
     }
 }
+static REVISIONLOCATION_MEMBER_REVISION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RevisionLocation$revisionType",
+        "com.amazonaws.codedeploy",
+        "RevisionLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionType",
+    0,
+);
+static REVISIONLOCATION_MEMBER_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RevisionLocation$s3Location",
+        "com.amazonaws.codedeploy",
+        "RevisionLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "s3Location",
+    1,
+);
+static REVISIONLOCATION_MEMBER_GIT_HUB_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RevisionLocation$gitHubLocation",
+        "com.amazonaws.codedeploy",
+        "RevisionLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gitHubLocation",
+    2,
+);
+static REVISIONLOCATION_MEMBER_STRING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RevisionLocation$string",
+        "com.amazonaws.codedeploy",
+        "RevisionLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "string",
+    3,
+);
+static REVISIONLOCATION_MEMBER_APP_SPEC_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RevisionLocation$appSpecContent",
+        "com.amazonaws.codedeploy",
+        "RevisionLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "appSpecContent",
+    4,
+);
+static REVISIONLOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RevisionLocation",
+        "com.amazonaws.codedeploy",
+        "RevisionLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REVISIONLOCATION_MEMBER_REVISION_TYPE,
+        &REVISIONLOCATION_MEMBER_S3_LOCATION,
+        &REVISIONLOCATION_MEMBER_GIT_HUB_LOCATION,
+        &REVISIONLOCATION_MEMBER_STRING,
+        &REVISIONLOCATION_MEMBER_APP_SPEC_CONTENT,
+    ],
+);
+impl RevisionLocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REVISIONLOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RevisionLocation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.revision_type {
+            ser.write_string(&REVISIONLOCATION_MEMBER_REVISION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_location {
+            ser.write_struct(&REVISIONLOCATION_MEMBER_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.git_hub_location {
+            ser.write_struct(&REVISIONLOCATION_MEMBER_GIT_HUB_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.string {
+            ser.write_struct(&REVISIONLOCATION_MEMBER_STRING, val)?;
+        }
+        if let Some(ref val) = self.app_spec_content {
+            ser.write_struct(&REVISIONLOCATION_MEMBER_APP_SPEC_CONTENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RevisionLocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REVISIONLOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_type = Some(crate::types::RevisionLocationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_hub_location = Some(crate::types::GitHubLocation::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.string = Some(crate::types::RawString::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_spec_content = Some(crate::types::AppSpecContent::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RevisionLocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RevisionLocation {
     /// Creates a new builder-style object to manufacture [`RevisionLocation`](crate::types::RevisionLocation).
     pub fn builder() -> crate::types::builders::RevisionLocationBuilder {

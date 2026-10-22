@@ -20,6 +20,136 @@ impl AddEndpointsInput {
         self.endpoint_group_arn.as_deref()
     }
 }
+static ADDENDPOINTSINPUT_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointConfigurations$member",
+        "com.amazonaws.globalaccelerator",
+        "EndpointConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ADDENDPOINTSINPUT_MEMBER_ENDPOINT_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AddEndpointsInput$EndpointConfigurations",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AddEndpointsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EndpointConfigurations",
+    0,
+)
+.with_list_member(&ADDENDPOINTSINPUT_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER);
+static ADDENDPOINTSINPUT_MEMBER_ENDPOINT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AddEndpointsInput$EndpointGroupArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AddEndpointsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupArn",
+    1,
+);
+static ADDENDPOINTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AddEndpointsInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AddEndpointsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADDENDPOINTSINPUT_MEMBER_ENDPOINT_CONFIGURATIONS,
+        &ADDENDPOINTSINPUT_MEMBER_ENDPOINT_GROUP_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AddEndpointsRequest");
+impl AddEndpointsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADDENDPOINTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AddEndpointsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_configurations {
+            ser.write_list(
+                &ADDENDPOINTSINPUT_MEMBER_ENDPOINT_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EndpointConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.endpoint_group_arn {
+            ser.write_string(&ADDENDPOINTSINPUT_MEMBER_ENDPOINT_GROUP_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::add_endpoints::builders::AddEndpointsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADDENDPOINTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EndpointConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AddEndpointsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_configurations = builder.endpoint_configurations.or(Some(Vec::new()));
+        builder.endpoint_group_arn = builder.endpoint_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AddEndpointsInput {
     /// Creates a new builder-style object to manufacture [`AddEndpointsInput`](crate::operation::add_endpoints::AddEndpointsInput).
     pub fn builder() -> crate::operation::add_endpoints::builders::AddEndpointsInputBuilder {

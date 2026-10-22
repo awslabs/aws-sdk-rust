@@ -366,6 +366,812 @@ impl DescribeTaskExecutionOutput {
         self.end_time.as_ref()
     }
 }
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_EXECUTION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$TaskExecutionArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskExecutionArn",
+    0,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$Status",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$Options",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Options",
+    2,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_EXCLUDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#FilterList$member", "com.amazonaws.datasync", "FilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_EXCLUDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$Excludes",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Excludes",
+    3,
+)
+.with_list_member(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_EXCLUDES_MEMBER);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_INCLUDES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#FilterList$member", "com.amazonaws.datasync", "FilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_INCLUDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$Includes",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Includes",
+    4,
+)
+.with_list_member(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_INCLUDES_MEMBER);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_MANIFEST_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$ManifestConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManifestConfig",
+    5,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$StartTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    6,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FILES_TO_TRANSFER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$EstimatedFilesToTransfer",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "EstimatedFilesToTransfer",
+    7,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_BYTES_TO_TRANSFER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$EstimatedBytesToTransfer",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "EstimatedBytesToTransfer",
+    8,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_TRANSFERRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FilesTransferred",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FilesTransferred",
+    9,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_WRITTEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$BytesWritten",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "BytesWritten",
+    10,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_TRANSFERRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$BytesTransferred",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "BytesTransferred",
+    11,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_COMPRESSED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$BytesCompressed",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "BytesCompressed",
+    12,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$Result",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Result",
+    13,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_REPORT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$TaskReportConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TaskReportConfig",
+    14,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_DELETED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FilesDeleted",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FilesDeleted",
+    15,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_SKIPPED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FilesSkipped",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FilesSkipped",
+    16,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_VERIFIED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FilesVerified",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FilesVerified",
+    17,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_REPORT_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$ReportResult",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ReportResult",
+    18,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FILES_TO_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$EstimatedFilesToDelete",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "EstimatedFilesToDelete",
+    19,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$TaskMode",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskMode",
+    20,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_PREPARED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FilesPrepared",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FilesPrepared",
+    21,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_LISTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FilesListed",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FilesListed",
+    22,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_FAILED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FilesFailed",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FilesFailed",
+    23,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FOLDERS_TO_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$EstimatedFoldersToDelete",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "EstimatedFoldersToDelete",
+    24,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FOLDERS_TO_TRANSFER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$EstimatedFoldersToTransfer",
+            "com.amazonaws.datasync.synthetic",
+            "DescribeTaskExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "EstimatedFoldersToTransfer",
+        25,
+    );
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_SKIPPED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FoldersSkipped",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FoldersSkipped",
+    26,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_PREPARED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FoldersPrepared",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FoldersPrepared",
+    27,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_TRANSFERRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FoldersTransferred",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FoldersTransferred",
+    28,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_VERIFIED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FoldersVerified",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FoldersVerified",
+    29,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_DELETED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FoldersDeleted",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FoldersDeleted",
+    30,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_LISTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FoldersListed",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FoldersListed",
+    31,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_FAILED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$FoldersFailed",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FoldersFailed",
+    32,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_LAUNCH_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$LaunchTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LaunchTime",
+    33,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput$EndTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    34,
+);
+static DESCRIBETASKEXECUTIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeTaskExecutionOutput",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeTaskExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_EXECUTION_ARN,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_STATUS,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_OPTIONS,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_EXCLUDES,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_INCLUDES,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_MANIFEST_CONFIG,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_START_TIME,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FILES_TO_TRANSFER,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_BYTES_TO_TRANSFER,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_TRANSFERRED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_WRITTEN,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_TRANSFERRED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_COMPRESSED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_RESULT,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_REPORT_CONFIG,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_DELETED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_SKIPPED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_VERIFIED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_REPORT_RESULT,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FILES_TO_DELETE,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_MODE,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_PREPARED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_LISTED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_FAILED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FOLDERS_TO_DELETE,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FOLDERS_TO_TRANSFER,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_SKIPPED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_PREPARED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_TRANSFERRED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_VERIFIED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_DELETED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_LISTED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_FAILED,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_LAUNCH_TIME,
+        &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_END_TIME,
+    ],
+)
+.with_original_name("DescribeTaskExecutionResponse");
+impl DescribeTaskExecutionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBETASKEXECUTIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeTaskExecutionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.task_execution_arn {
+            ser.write_string(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_EXECUTION_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.excludes {
+            ser.write_list(
+                &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_EXCLUDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FilterRule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.includes {
+            ser.write_list(
+                &DESCRIBETASKEXECUTIONOUTPUT_MEMBER_INCLUDES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FilterRule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.manifest_config {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_MANIFEST_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_START_TIME, val)?;
+        }
+        {
+            let val = &self.estimated_files_to_transfer;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FILES_TO_TRANSFER, *val)?;
+        }
+        {
+            let val = &self.estimated_bytes_to_transfer;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_BYTES_TO_TRANSFER, *val)?;
+        }
+        {
+            let val = &self.files_transferred;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_TRANSFERRED, *val)?;
+        }
+        {
+            let val = &self.bytes_written;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_WRITTEN, *val)?;
+        }
+        {
+            let val = &self.bytes_transferred;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_TRANSFERRED, *val)?;
+        }
+        {
+            let val = &self.bytes_compressed;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_BYTES_COMPRESSED, *val)?;
+        }
+        if let Some(ref val) = self.result {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_RESULT, val)?;
+        }
+        if let Some(ref val) = self.task_report_config {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_REPORT_CONFIG, val)?;
+        }
+        {
+            let val = &self.files_deleted;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_DELETED, *val)?;
+        }
+        {
+            let val = &self.files_skipped;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_SKIPPED, *val)?;
+        }
+        {
+            let val = &self.files_verified;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_VERIFIED, *val)?;
+        }
+        if let Some(ref val) = self.report_result {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_REPORT_RESULT, val)?;
+        }
+        {
+            let val = &self.estimated_files_to_delete;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FILES_TO_DELETE, *val)?;
+        }
+        if let Some(ref val) = self.task_mode {
+            ser.write_string(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_TASK_MODE, val.as_str())?;
+        }
+        {
+            let val = &self.files_prepared;
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_PREPARED, *val)?;
+        }
+        if let Some(ref val) = self.files_listed {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_LISTED, val)?;
+        }
+        if let Some(ref val) = self.files_failed {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FILES_FAILED, val)?;
+        }
+        if let Some(ref val) = self.estimated_folders_to_delete {
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FOLDERS_TO_DELETE, *val)?;
+        }
+        if let Some(ref val) = self.estimated_folders_to_transfer {
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_ESTIMATED_FOLDERS_TO_TRANSFER, *val)?;
+        }
+        if let Some(ref val) = self.folders_skipped {
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_SKIPPED, *val)?;
+        }
+        if let Some(ref val) = self.folders_prepared {
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_PREPARED, *val)?;
+        }
+        if let Some(ref val) = self.folders_transferred {
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_TRANSFERRED, *val)?;
+        }
+        if let Some(ref val) = self.folders_verified {
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_VERIFIED, *val)?;
+        }
+        if let Some(ref val) = self.folders_deleted {
+            ser.write_long(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_DELETED, *val)?;
+        }
+        if let Some(ref val) = self.folders_listed {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_LISTED, val)?;
+        }
+        if let Some(ref val) = self.folders_failed {
+            ser.write_struct(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_FOLDERS_FAILED, val)?;
+        }
+        if let Some(ref val) = self.launch_time {
+            ser.write_timestamp(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_LAUNCH_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&DESCRIBETASKEXECUTIONOUTPUT_MEMBER_END_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_task_execution::builders::DescribeTaskExecutionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBETASKEXECUTIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_execution_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TaskExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some(crate::types::Options::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.excludes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FilterRule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.includes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FilterRule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manifest_config = Some(crate::types::ManifestConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    self.estimated_files_to_transfer = Some(deser.read_long(member)?);
+                }
+                Some(8) => {
+                    self.estimated_bytes_to_transfer = Some(deser.read_long(member)?);
+                }
+                Some(9) => {
+                    self.files_transferred = Some(deser.read_long(member)?);
+                }
+                Some(10) => {
+                    self.bytes_written = Some(deser.read_long(member)?);
+                }
+                Some(11) => {
+                    self.bytes_transferred = Some(deser.read_long(member)?);
+                }
+                Some(12) => {
+                    self.bytes_compressed = Some(deser.read_long(member)?);
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result = Some(crate::types::TaskExecutionResultDetail::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_report_config = Some(crate::types::TaskReportConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    self.files_deleted = Some(deser.read_long(member)?);
+                }
+                Some(16) => {
+                    self.files_skipped = Some(deser.read_long(member)?);
+                }
+                Some(17) => {
+                    self.files_verified = Some(deser.read_long(member)?);
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_result = Some(crate::types::ReportResult::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    self.estimated_files_to_delete = Some(deser.read_long(member)?);
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_mode = Some(crate::types::TaskMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(21) => {
+                    self.files_prepared = Some(deser.read_long(member)?);
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.files_listed = Some(crate::types::TaskExecutionFilesListedDetail::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.files_failed = Some(crate::types::TaskExecutionFilesFailedDetail::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.estimated_folders_to_delete = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.estimated_folders_to_transfer = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folders_skipped = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folders_prepared = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folders_transferred = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folders_verified = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folders_deleted = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folders_listed = Some(crate::types::TaskExecutionFoldersListedDetail::deserialize(deser)?);
+                    }
+                }
+                Some(32) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folders_failed = Some(crate::types::TaskExecutionFoldersFailedDetail::deserialize(deser)?);
+                    }
+                }
+                Some(33) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(34) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeTaskExecutionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeTaskExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

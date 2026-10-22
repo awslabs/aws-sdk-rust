@@ -28,6 +28,158 @@ impl CreateInstanceSnapshotInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEINSTANCESNAPSHOTINPUT_MEMBER_INSTANCE_SNAPSHOT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstanceSnapshotInput$instanceSnapshotName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstanceSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceSnapshotName",
+    0,
+);
+static CREATEINSTANCESNAPSHOTINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstanceSnapshotInput$instanceName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstanceSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceName",
+    1,
+);
+static CREATEINSTANCESNAPSHOTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEINSTANCESNAPSHOTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstanceSnapshotInput$tags",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstanceSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    2,
+)
+.with_list_member(&CREATEINSTANCESNAPSHOTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEINSTANCESNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstanceSnapshotInput",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstanceSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEINSTANCESNAPSHOTINPUT_MEMBER_INSTANCE_SNAPSHOT_NAME,
+        &CREATEINSTANCESNAPSHOTINPUT_MEMBER_INSTANCE_NAME,
+        &CREATEINSTANCESNAPSHOTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/CreateInstanceSnapshot",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateInstanceSnapshotRequest");
+impl CreateInstanceSnapshotInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEINSTANCESNAPSHOTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateInstanceSnapshotInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_snapshot_name {
+            ser.write_string(&CREATEINSTANCESNAPSHOTINPUT_MEMBER_INSTANCE_SNAPSHOT_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&CREATEINSTANCESNAPSHOTINPUT_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEINSTANCESNAPSHOTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEINSTANCESNAPSHOTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_snapshot_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateInstanceSnapshotInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.instance_snapshot_name = builder.instance_snapshot_name.or(Some(String::new()));
+        builder.instance_name = builder.instance_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateInstanceSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceSnapshotInput`](crate::operation::create_instance_snapshot::CreateInstanceSnapshotInput).
     pub fn builder() -> crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder {

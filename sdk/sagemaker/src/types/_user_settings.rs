@@ -156,6 +156,483 @@ impl UserSettings {
         self.auto_mount_home_efs.as_ref()
     }
 }
+static USERSETTINGS_MEMBER_EXECUTION_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$ExecutionRole",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRole",
+    0,
+);
+static USERSETTINGS_MEMBER_SECURITY_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecurityGroupIds$member",
+        "com.amazonaws.sagemaker",
+        "SecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static USERSETTINGS_MEMBER_SECURITY_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$SecurityGroups",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroups",
+    1,
+)
+.with_list_member(&USERSETTINGS_MEMBER_SECURITY_GROUPS_MEMBER);
+static USERSETTINGS_MEMBER_SHARING_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$SharingSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SharingSettings",
+    2,
+);
+static USERSETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$JupyterServerAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JupyterServerAppSettings",
+    3,
+);
+static USERSETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$KernelGatewayAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KernelGatewayAppSettings",
+    4,
+);
+static USERSETTINGS_MEMBER_TENSOR_BOARD_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$TensorBoardAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TensorBoardAppSettings",
+    5,
+);
+static USERSETTINGS_MEMBER_R_STUDIO_SERVER_PRO_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$RStudioServerProAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RStudioServerProAppSettings",
+    6,
+);
+static USERSETTINGS_MEMBER_R_SESSION_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$RSessionAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RSessionAppSettings",
+    7,
+);
+static USERSETTINGS_MEMBER_CANVAS_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$CanvasAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CanvasAppSettings",
+    8,
+);
+static USERSETTINGS_MEMBER_CODE_EDITOR_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$CodeEditorAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CodeEditorAppSettings",
+    9,
+);
+static USERSETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$JupyterLabAppSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JupyterLabAppSettings",
+    10,
+);
+static USERSETTINGS_MEMBER_SPACE_STORAGE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$SpaceStorageSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SpaceStorageSettings",
+    11,
+);
+static USERSETTINGS_MEMBER_DEFAULT_LANDING_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$DefaultLandingUri",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultLandingUri",
+    12,
+);
+static USERSETTINGS_MEMBER_STUDIO_WEB_PORTAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$StudioWebPortal",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StudioWebPortal",
+    13,
+);
+static USERSETTINGS_MEMBER_CUSTOM_POSIX_USER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$CustomPosixUserConfig",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomPosixUserConfig",
+    14,
+);
+static USERSETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomFileSystemConfigs$member",
+        "com.amazonaws.sagemaker",
+        "CustomFileSystemConfigs",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static USERSETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$CustomFileSystemConfigs",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomFileSystemConfigs",
+    15,
+)
+.with_list_member(&USERSETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS_MEMBER);
+static USERSETTINGS_MEMBER_STUDIO_WEB_PORTAL_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$StudioWebPortalSettings",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StudioWebPortalSettings",
+    16,
+);
+static USERSETTINGS_MEMBER_AUTO_MOUNT_HOME_EFS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UserSettings$AutoMountHomeEFS",
+        "com.amazonaws.sagemaker",
+        "UserSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMountHomeEFS",
+    17,
+);
+static USERSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#UserSettings", "com.amazonaws.sagemaker", "UserSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &USERSETTINGS_MEMBER_EXECUTION_ROLE,
+        &USERSETTINGS_MEMBER_SECURITY_GROUPS,
+        &USERSETTINGS_MEMBER_SHARING_SETTINGS,
+        &USERSETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_TENSOR_BOARD_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_R_STUDIO_SERVER_PRO_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_R_SESSION_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_CANVAS_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_CODE_EDITOR_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS,
+        &USERSETTINGS_MEMBER_SPACE_STORAGE_SETTINGS,
+        &USERSETTINGS_MEMBER_DEFAULT_LANDING_URI,
+        &USERSETTINGS_MEMBER_STUDIO_WEB_PORTAL,
+        &USERSETTINGS_MEMBER_CUSTOM_POSIX_USER_CONFIG,
+        &USERSETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS,
+        &USERSETTINGS_MEMBER_STUDIO_WEB_PORTAL_SETTINGS,
+        &USERSETTINGS_MEMBER_AUTO_MOUNT_HOME_EFS,
+    ],
+);
+impl UserSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USERSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UserSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_role {
+            ser.write_string(&USERSETTINGS_MEMBER_EXECUTION_ROLE, val)?;
+        }
+        if let Some(ref val) = self.security_groups {
+            ser.write_list(
+                &USERSETTINGS_MEMBER_SECURITY_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.sharing_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_SHARING_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.jupyter_server_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_JUPYTER_SERVER_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.kernel_gateway_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_KERNEL_GATEWAY_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.tensor_board_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_TENSOR_BOARD_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.r_studio_server_pro_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_R_STUDIO_SERVER_PRO_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.r_session_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_R_SESSION_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.canvas_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_CANVAS_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.code_editor_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_CODE_EDITOR_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.jupyter_lab_app_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_JUPYTER_LAB_APP_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.space_storage_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_SPACE_STORAGE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.default_landing_uri {
+            ser.write_string(&USERSETTINGS_MEMBER_DEFAULT_LANDING_URI, val)?;
+        }
+        if let Some(ref val) = self.studio_web_portal {
+            ser.write_string(&USERSETTINGS_MEMBER_STUDIO_WEB_PORTAL, val.as_str())?;
+        }
+        if let Some(ref val) = self.custom_posix_user_config {
+            ser.write_struct(&USERSETTINGS_MEMBER_CUSTOM_POSIX_USER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_file_system_configs {
+            ser.write_list(
+                &USERSETTINGS_MEMBER_CUSTOM_FILE_SYSTEM_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomFileSystemConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.studio_web_portal_settings {
+            ser.write_struct(&USERSETTINGS_MEMBER_STUDIO_WEB_PORTAL_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.auto_mount_home_efs {
+            ser.write_string(&USERSETTINGS_MEMBER_AUTO_MOUNT_HOME_EFS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UserSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USERSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_groups = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sharing_settings = Some(crate::types::SharingSettings::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_server_app_settings = Some(crate::types::JupyterServerAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kernel_gateway_app_settings = Some(crate::types::KernelGatewayAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tensor_board_app_settings = Some(crate::types::TensorBoardAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r_studio_server_pro_app_settings = Some(crate::types::RStudioServerProAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r_session_app_settings = Some(crate::types::RSessionAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.canvas_app_settings = Some(crate::types::CanvasAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_editor_app_settings = Some(crate::types::CodeEditorAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_lab_app_settings = Some(crate::types::JupyterLabAppSettings::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_storage_settings = Some(crate::types::DefaultSpaceStorageSettings::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_landing_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.studio_web_portal = Some(crate::types::StudioWebPortal::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_posix_user_config = Some(crate::types::CustomPosixUserConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_file_system_configs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomFileSystemConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.studio_web_portal_settings = Some(crate::types::StudioWebPortalSettings::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_mount_home_efs = Some(crate::types::AutoMountHomeEfs::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UserSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UserSettings {
     /// Creates a new builder-style object to manufacture [`UserSettings`](crate::types::UserSettings).
     pub fn builder() -> crate::types::builders::UserSettingsBuilder {

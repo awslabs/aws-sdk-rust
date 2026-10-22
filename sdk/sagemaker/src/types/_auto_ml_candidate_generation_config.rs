@@ -63,6 +63,134 @@ impl AutoMlCandidateGenerationConfig {
         self.algorithms_config.as_deref().unwrap_or_default()
     }
 }
+static AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_FEATURE_SPECIFICATION_S3_URI: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AutoMLCandidateGenerationConfig$FeatureSpecificationS3Uri",
+            "com.amazonaws.sagemaker",
+            "AutoMLCandidateGenerationConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FeatureSpecificationS3Uri",
+        0,
+    );
+static AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_ALGORITHMS_CONFIG_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AutoMLAlgorithmsConfig$member",
+            "com.amazonaws.sagemaker",
+            "AutoMLAlgorithmsConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_ALGORITHMS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidateGenerationConfig$AlgorithmsConfig",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidateGenerationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AlgorithmsConfig",
+    1,
+)
+.with_list_member(&AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_ALGORITHMS_CONFIG_MEMBER);
+static AUTOMLCANDIDATEGENERATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidateGenerationConfig",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidateGenerationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_FEATURE_SPECIFICATION_S3_URI,
+        &AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_ALGORITHMS_CONFIG,
+    ],
+);
+impl AutoMlCandidateGenerationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOMLCANDIDATEGENERATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutoMlCandidateGenerationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.feature_specification_s3_uri {
+            ser.write_string(&AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_FEATURE_SPECIFICATION_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.algorithms_config {
+            ser.write_list(
+                &AUTOMLCANDIDATEGENERATIONCONFIG_MEMBER_ALGORITHMS_CONFIG,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AutoMlAlgorithmConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutoMlCandidateGenerationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTOMLCANDIDATEGENERATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_specification_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithms_config = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoMlAlgorithmConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AutoMlCandidateGenerationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AutoMlCandidateGenerationConfig {
     /// Creates a new builder-style object to manufacture [`AutoMlCandidateGenerationConfig`](crate::types::AutoMlCandidateGenerationConfig).
     pub fn builder() -> crate::types::builders::AutoMlCandidateGenerationConfigBuilder {

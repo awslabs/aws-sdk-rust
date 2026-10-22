@@ -25,6 +25,125 @@ impl QueryResultsS3AccessGrantsConfiguration {
         &self.authentication_type
     }
 }
+static QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_ENABLE_S3_ACCESS_GRANTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryResultsS3AccessGrantsConfiguration$EnableS3AccessGrants",
+            "com.amazonaws.athena",
+            "QueryResultsS3AccessGrantsConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableS3AccessGrants",
+        0,
+    );
+static QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_CREATE_USER_LEVEL_PREFIX: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryResultsS3AccessGrantsConfiguration$CreateUserLevelPrefix",
+            "com.amazonaws.athena",
+            "QueryResultsS3AccessGrantsConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "CreateUserLevelPrefix",
+        1,
+    );
+static QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryResultsS3AccessGrantsConfiguration$AuthenticationType",
+            "com.amazonaws.athena",
+            "QueryResultsS3AccessGrantsConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AuthenticationType",
+        2,
+    );
+static QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryResultsS3AccessGrantsConfiguration",
+        "com.amazonaws.athena",
+        "QueryResultsS3AccessGrantsConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_ENABLE_S3_ACCESS_GRANTS,
+        &QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_CREATE_USER_LEVEL_PREFIX,
+        &QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_AUTHENTICATION_TYPE,
+    ],
+);
+impl QueryResultsS3AccessGrantsConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryResultsS3AccessGrantsConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enable_s3_access_grants;
+            ser.write_boolean(&QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_ENABLE_S3_ACCESS_GRANTS, *val)?;
+        }
+        if let Some(ref val) = self.create_user_level_prefix {
+            ser.write_boolean(&QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_CREATE_USER_LEVEL_PREFIX, *val)?;
+        }
+        {
+            let val = &self.authentication_type;
+            ser.write_string(&QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYRESULTSS3ACCESSGRANTSCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enable_s3_access_grants = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_user_level_prefix = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.authentication_type = Some(crate::types::AuthenticationType::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryResultsS3AccessGrantsConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.enable_s3_access_grants = builder.enable_s3_access_grants.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl QueryResultsS3AccessGrantsConfiguration {
     /// Creates a new builder-style object to manufacture [`QueryResultsS3AccessGrantsConfiguration`](crate::types::QueryResultsS3AccessGrantsConfiguration).
     pub fn builder() -> crate::types::builders::QueryResultsS3AccessGrantsConfigurationBuilder {

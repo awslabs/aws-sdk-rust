@@ -42,6 +42,173 @@ impl StartCalculationExecutionInput {
         self.client_request_token.as_deref()
     }
 }
+static STARTCALCULATIONEXECUTIONINPUT_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartCalculationExecutionInput$SessionId",
+        "com.amazonaws.athena.synthetic",
+        "StartCalculationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionId",
+    0,
+);
+static STARTCALCULATIONEXECUTIONINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartCalculationExecutionInput$Description",
+        "com.amazonaws.athena.synthetic",
+        "StartCalculationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static STARTCALCULATIONEXECUTIONINPUT_MEMBER_CALCULATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena.synthetic#StartCalculationExecutionInput$CalculationConfiguration",
+            "com.amazonaws.athena.synthetic",
+            "StartCalculationExecutionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CalculationConfiguration",
+        2,
+    );
+static STARTCALCULATIONEXECUTIONINPUT_MEMBER_CODE_BLOCK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartCalculationExecutionInput$CodeBlock",
+        "com.amazonaws.athena.synthetic",
+        "StartCalculationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CodeBlock",
+    3,
+);
+static STARTCALCULATIONEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartCalculationExecutionInput$ClientRequestToken",
+        "com.amazonaws.athena.synthetic",
+        "StartCalculationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    4,
+);
+static STARTCALCULATIONEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartCalculationExecutionInput",
+        "com.amazonaws.athena.synthetic",
+        "StartCalculationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTCALCULATIONEXECUTIONINPUT_MEMBER_SESSION_ID,
+        &STARTCALCULATIONEXECUTIONINPUT_MEMBER_DESCRIPTION,
+        &STARTCALCULATIONEXECUTIONINPUT_MEMBER_CALCULATION_CONFIGURATION,
+        &STARTCALCULATIONEXECUTIONINPUT_MEMBER_CODE_BLOCK,
+        &STARTCALCULATIONEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartCalculationExecutionRequest");
+impl StartCalculationExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTCALCULATIONEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartCalculationExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.session_id {
+            ser.write_string(&STARTCALCULATIONEXECUTIONINPUT_MEMBER_SESSION_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&STARTCALCULATIONEXECUTIONINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.calculation_configuration {
+            ser.write_struct(&STARTCALCULATIONEXECUTIONINPUT_MEMBER_CALCULATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.code_block {
+            ser.write_string(&STARTCALCULATIONEXECUTIONINPUT_MEMBER_CODE_BLOCK, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTCALCULATIONEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTCALCULATIONEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.calculation_configuration = Some(crate::types::CalculationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_block = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartCalculationExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.session_id = builder.session_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartCalculationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartCalculationExecutionInput`](crate::operation::start_calculation_execution::StartCalculationExecutionInput).
     pub fn builder() -> crate::operation::start_calculation_execution::builders::StartCalculationExecutionInputBuilder {

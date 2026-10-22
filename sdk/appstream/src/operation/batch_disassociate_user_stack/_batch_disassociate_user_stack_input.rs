@@ -14,6 +14,114 @@ impl BatchDisassociateUserStackInput {
         self.user_stack_associations.as_deref().unwrap_or_default()
     }
 }
+static BATCHDISASSOCIATEUSERSTACKINPUT_MEMBER_USER_STACK_ASSOCIATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.appstream#UserStackAssociationList$member",
+            "com.amazonaws.appstream",
+            "UserStackAssociationList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static BATCHDISASSOCIATEUSERSTACKINPUT_MEMBER_USER_STACK_ASSOCIATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.appstream.synthetic#BatchDisassociateUserStackInput$UserStackAssociations",
+            "com.amazonaws.appstream.synthetic",
+            "BatchDisassociateUserStackInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "UserStackAssociations",
+        0,
+    )
+    .with_list_member(&BATCHDISASSOCIATEUSERSTACKINPUT_MEMBER_USER_STACK_ASSOCIATIONS_MEMBER);
+static BATCHDISASSOCIATEUSERSTACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#BatchDisassociateUserStackInput",
+        "com.amazonaws.appstream.synthetic",
+        "BatchDisassociateUserStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BATCHDISASSOCIATEUSERSTACKINPUT_MEMBER_USER_STACK_ASSOCIATIONS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchDisassociateUserStackRequest");
+impl BatchDisassociateUserStackInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDISASSOCIATEUSERSTACKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDisassociateUserStackInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_stack_associations {
+            ser.write_list(
+                &BATCHDISASSOCIATEUSERSTACKINPUT_MEMBER_USER_STACK_ASSOCIATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UserStackAssociation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDISASSOCIATEUSERSTACKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_stack_associations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UserStackAssociation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDisassociateUserStackInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_stack_associations = builder.user_stack_associations.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchDisassociateUserStackInput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateUserStackInput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackInput).
     pub fn builder() -> crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackInputBuilder {

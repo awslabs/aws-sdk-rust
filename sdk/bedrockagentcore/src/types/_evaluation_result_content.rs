@@ -10,6 +10,8 @@ pub struct EvaluationResultContent {
     pub evaluator_id: ::std::string::String,
     /// <p>The human-readable name of the evaluator used for this evaluation. For built-in evaluators, this is the descriptive name (e.g., "Helpfulness", "Correctness"); for custom evaluators, this is the user-defined name.</p>
     pub evaluator_name: ::std::string::String,
+    /// <p>The name of the dimension that this result scores. This field is set only on results produced by an evaluator that uses a multi-dimensional rating scale, where each dimension is scored independently. For evaluators with a single rating scale, this field is absent.</p>
+    pub evaluation_dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The detailed explanation provided by the evaluator describing the reasoning behind the assigned score. This qualitative feedback helps understand why specific ratings were given and provides actionable insights for improvement.</p>
     pub explanation: ::std::option::Option<::std::string::String>,
     /// <p>The contextual information associated with this evaluation result, including span context details that identify the specific traces and sessions that were evaluated.</p>
@@ -42,6 +44,10 @@ impl EvaluationResultContent {
     pub fn evaluator_name(&self) -> &str {
         use std::ops::Deref;
         self.evaluator_name.deref()
+    }
+    /// <p>The name of the dimension that this result scores. This field is set only on results produced by an evaluator that uses a multi-dimensional rating scale, where each dimension is scored independently. For evaluators with a single rating scale, this field is absent.</p>
+    pub fn evaluation_dimension_name(&self) -> ::std::option::Option<&str> {
+        self.evaluation_dimension_name.as_deref()
     }
     /// <p>The detailed explanation provided by the evaluator describing the reasoning behind the assigned score. This qualitative feedback helps understand why specific ratings were given and provides actionable insights for improvement.</p>
     pub fn explanation(&self) -> ::std::option::Option<&str> {
@@ -84,6 +90,7 @@ impl ::std::fmt::Debug for EvaluationResultContent {
         formatter.field("evaluator_arn", &self.evaluator_arn);
         formatter.field("evaluator_id", &self.evaluator_id);
         formatter.field("evaluator_name", &self.evaluator_name);
+        formatter.field("evaluation_dimension_name", &self.evaluation_dimension_name);
         formatter.field("explanation", &"*** Sensitive Data Redacted ***");
         formatter.field("context", &self.context);
         formatter.field("value", &self.value);
@@ -109,6 +116,7 @@ pub struct EvaluationResultContentBuilder {
     pub(crate) evaluator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_name: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_dimension_name: ::std::option::Option<::std::string::String>,
     pub(crate) explanation: ::std::option::Option<::std::string::String>,
     pub(crate) context: ::std::option::Option<crate::types::Context>,
     pub(crate) value: ::std::option::Option<f64>,
@@ -163,6 +171,20 @@ impl EvaluationResultContentBuilder {
     /// <p>The human-readable name of the evaluator used for this evaluation. For built-in evaluators, this is the descriptive name (e.g., "Helpfulness", "Correctness"); for custom evaluators, this is the user-defined name.</p>
     pub fn get_evaluator_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.evaluator_name
+    }
+    /// <p>The name of the dimension that this result scores. This field is set only on results produced by an evaluator that uses a multi-dimensional rating scale, where each dimension is scored independently. For evaluators with a single rating scale, this field is absent.</p>
+    pub fn evaluation_dimension_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.evaluation_dimension_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the dimension that this result scores. This field is set only on results produced by an evaluator that uses a multi-dimensional rating scale, where each dimension is scored independently. For evaluators with a single rating scale, this field is absent.</p>
+    pub fn set_evaluation_dimension_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.evaluation_dimension_name = input;
+        self
+    }
+    /// <p>The name of the dimension that this result scores. This field is set only on results produced by an evaluator that uses a multi-dimensional rating scale, where each dimension is scored independently. For evaluators with a single rating scale, this field is absent.</p>
+    pub fn get_evaluation_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.evaluation_dimension_name
     }
     /// <p>The detailed explanation provided by the evaluator describing the reasoning behind the assigned score. This qualitative feedback helps understand why specific ratings were given and provides actionable insights for improvement.</p>
     pub fn explanation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -308,6 +330,7 @@ impl EvaluationResultContentBuilder {
                     "evaluator_name was not specified but it is required when building EvaluationResultContent",
                 )
             })?,
+            evaluation_dimension_name: self.evaluation_dimension_name,
             explanation: self.explanation,
             context: self.context,
             value: self.value,
@@ -325,6 +348,7 @@ impl ::std::fmt::Debug for EvaluationResultContentBuilder {
         formatter.field("evaluator_arn", &self.evaluator_arn);
         formatter.field("evaluator_id", &self.evaluator_id);
         formatter.field("evaluator_name", &self.evaluator_name);
+        formatter.field("evaluation_dimension_name", &self.evaluation_dimension_name);
         formatter.field("explanation", &"*** Sensitive Data Redacted ***");
         formatter.field("context", &self.context);
         formatter.field("value", &self.value);

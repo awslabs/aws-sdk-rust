@@ -18,6 +18,106 @@ impl DeleteJobInput {
         self.job_category.as_ref()
     }
 }
+static DELETEJOBINPUT_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteJobInput$JobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    0,
+);
+static DELETEJOBINPUT_MEMBER_JOB_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteJobInput$JobCategory",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobCategory",
+    1,
+);
+static DELETEJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEJOBINPUT_MEMBER_JOB_NAME, &DELETEJOBINPUT_MEMBER_JOB_CATEGORY],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteJobRequest");
+impl DeleteJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&DELETEJOBINPUT_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_category {
+            ser.write_string(&DELETEJOBINPUT_MEMBER_JOB_CATEGORY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_job::builders::DeleteJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_category = Some(crate::types::JobCategory::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_name = builder.job_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
     pub fn builder() -> crate::operation::delete_job::builders::DeleteJobInputBuilder {

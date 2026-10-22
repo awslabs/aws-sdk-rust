@@ -41,6 +41,159 @@ impl Registry {
         self.aliases.deref()
     }
 }
+static REGISTRY_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Registry$registryId", "com.amazonaws.ecrpublic", "Registry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static REGISTRY_MEMBER_REGISTRY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Registry$registryArn", "com.amazonaws.ecrpublic", "Registry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryArn",
+    1,
+);
+static REGISTRY_MEMBER_REGISTRY_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Registry$registryUri", "com.amazonaws.ecrpublic", "Registry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryUri",
+    2,
+);
+static REGISTRY_MEMBER_VERIFIED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Registry$verified", "com.amazonaws.ecrpublic", "Registry"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "verified",
+    3,
+);
+static REGISTRY_MEMBER_ALIASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RegistryAliasList$member",
+        "com.amazonaws.ecrpublic",
+        "RegistryAliasList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REGISTRY_MEMBER_ALIASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Registry$aliases", "com.amazonaws.ecrpublic", "Registry"),
+    ::aws_smithy_schema::ShapeType::List,
+    "aliases",
+    4,
+)
+.with_list_member(&REGISTRY_MEMBER_ALIASES_MEMBER);
+static REGISTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Registry", "com.amazonaws.ecrpublic", "Registry"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTRY_MEMBER_REGISTRY_ID,
+        &REGISTRY_MEMBER_REGISTRY_ARN,
+        &REGISTRY_MEMBER_REGISTRY_URI,
+        &REGISTRY_MEMBER_VERIFIED,
+        &REGISTRY_MEMBER_ALIASES,
+    ],
+);
+impl Registry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Registry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.registry_id;
+            ser.write_string(&REGISTRY_MEMBER_REGISTRY_ID, val)?;
+        }
+        {
+            let val = &self.registry_arn;
+            ser.write_string(&REGISTRY_MEMBER_REGISTRY_ARN, val)?;
+        }
+        {
+            let val = &self.registry_uri;
+            ser.write_string(&REGISTRY_MEMBER_REGISTRY_URI, val)?;
+        }
+        {
+            let val = &self.verified;
+            ser.write_boolean(&REGISTRY_MEMBER_VERIFIED, *val)?;
+        }
+        {
+            let val = &self.aliases;
+
+            ser.write_list(&REGISTRY_MEMBER_ALIASES, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::RegistryAlias::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RegistryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.registry_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.registry_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.registry_uri = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.verified = Some(deser.read_boolean(member)?);
+                }
+                Some(4) => {
+                    self.aliases = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::RegistryAlias::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Registry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.registry_id = builder.registry_id.or(Some(String::new()));
+        builder.registry_arn = builder.registry_arn.or(Some(String::new()));
+        builder.registry_uri = builder.registry_uri.or(Some(String::new()));
+        builder.verified = builder.verified.or(Some(false));
+        builder.aliases = builder.aliases.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Registry {
     /// Creates a new builder-style object to manufacture [`Registry`](crate::types::Registry).
     pub fn builder() -> crate::types::builders::RegistryBuilder {

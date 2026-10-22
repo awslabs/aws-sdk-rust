@@ -293,6 +293,8 @@ mod get_transit_gateway_route_table_attachment;
 
 mod get_vpc_attachment;
 
+mod list_attachment_nat_configurations;
+
 mod list_attachment_routing_policy_associations;
 
 mod list_attachments;
@@ -334,6 +336,8 @@ mod start_route_analysis;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_attachment_nat_configuration;
 
 mod update_connection;
 

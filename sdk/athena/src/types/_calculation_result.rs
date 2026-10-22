@@ -31,6 +31,144 @@ impl CalculationResult {
         self.result_type.as_deref()
     }
 }
+static CALCULATIONRESULT_MEMBER_STD_OUT_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationResult$StdOutS3Uri",
+        "com.amazonaws.athena",
+        "CalculationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StdOutS3Uri",
+    0,
+);
+static CALCULATIONRESULT_MEMBER_STD_ERROR_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationResult$StdErrorS3Uri",
+        "com.amazonaws.athena",
+        "CalculationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StdErrorS3Uri",
+    1,
+);
+static CALCULATIONRESULT_MEMBER_RESULT_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationResult$ResultS3Uri",
+        "com.amazonaws.athena",
+        "CalculationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResultS3Uri",
+    2,
+);
+static CALCULATIONRESULT_MEMBER_RESULT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationResult$ResultType",
+        "com.amazonaws.athena",
+        "CalculationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResultType",
+    3,
+);
+static CALCULATIONRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#CalculationResult", "com.amazonaws.athena", "CalculationResult"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CALCULATIONRESULT_MEMBER_STD_OUT_S3_URI,
+        &CALCULATIONRESULT_MEMBER_STD_ERROR_S3_URI,
+        &CALCULATIONRESULT_MEMBER_RESULT_S3_URI,
+        &CALCULATIONRESULT_MEMBER_RESULT_TYPE,
+    ],
+);
+impl CalculationResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CALCULATIONRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CalculationResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.std_out_s3_uri {
+            ser.write_string(&CALCULATIONRESULT_MEMBER_STD_OUT_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.std_error_s3_uri {
+            ser.write_string(&CALCULATIONRESULT_MEMBER_STD_ERROR_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.result_s3_uri {
+            ser.write_string(&CALCULATIONRESULT_MEMBER_RESULT_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.result_type {
+            ser.write_string(&CALCULATIONRESULT_MEMBER_RESULT_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CalculationResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CALCULATIONRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.std_out_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.std_error_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CalculationResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CalculationResult {
     /// Creates a new builder-style object to manufacture [`CalculationResult`](crate::types::CalculationResult).
     pub fn builder() -> crate::types::builders::CalculationResultBuilder {

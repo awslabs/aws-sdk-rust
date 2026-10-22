@@ -18,6 +18,109 @@ impl UpdatePullRequestStatusInput {
         self.pull_request_status.as_ref()
     }
 }
+static UPDATEPULLREQUESTSTATUSINPUT_MEMBER_PULL_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdatePullRequestStatusInput$pullRequestId",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdatePullRequestStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pullRequestId",
+    0,
+);
+static UPDATEPULLREQUESTSTATUSINPUT_MEMBER_PULL_REQUEST_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdatePullRequestStatusInput$pullRequestStatus",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdatePullRequestStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pullRequestStatus",
+    1,
+);
+static UPDATEPULLREQUESTSTATUSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdatePullRequestStatusInput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdatePullRequestStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPULLREQUESTSTATUSINPUT_MEMBER_PULL_REQUEST_ID,
+        &UPDATEPULLREQUESTSTATUSINPUT_MEMBER_PULL_REQUEST_STATUS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdatePullRequestStatusInput");
+impl UpdatePullRequestStatusInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPULLREQUESTSTATUSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePullRequestStatusInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pull_request_id {
+            ser.write_string(&UPDATEPULLREQUESTSTATUSINPUT_MEMBER_PULL_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.pull_request_status {
+            ser.write_string(&UPDATEPULLREQUESTSTATUSINPUT_MEMBER_PULL_REQUEST_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPULLREQUESTSTATUSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_status = Some(crate::types::PullRequestStatusEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdatePullRequestStatusInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pull_request_id = builder.pull_request_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdatePullRequestStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
     pub fn builder() -> crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder {

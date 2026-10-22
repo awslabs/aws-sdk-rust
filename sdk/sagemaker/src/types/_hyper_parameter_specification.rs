@@ -49,6 +49,211 @@ impl HyperParameterSpecification {
         self.default_value.as_deref()
     }
 }
+static HYPERPARAMETERSPECIFICATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification$Name",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static HYPERPARAMETERSPECIFICATION_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification$Description",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static HYPERPARAMETERSPECIFICATION_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification$Type",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static HYPERPARAMETERSPECIFICATION_MEMBER_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification$Range",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Range",
+    3,
+);
+static HYPERPARAMETERSPECIFICATION_MEMBER_IS_TUNABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification$IsTunable",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IsTunable",
+    4,
+);
+static HYPERPARAMETERSPECIFICATION_MEMBER_IS_REQUIRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification$IsRequired",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IsRequired",
+    5,
+);
+static HYPERPARAMETERSPECIFICATION_MEMBER_DEFAULT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification$DefaultValue",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultValue",
+    6,
+);
+static HYPERPARAMETERSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecification",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HYPERPARAMETERSPECIFICATION_MEMBER_NAME,
+        &HYPERPARAMETERSPECIFICATION_MEMBER_DESCRIPTION,
+        &HYPERPARAMETERSPECIFICATION_MEMBER_TYPE,
+        &HYPERPARAMETERSPECIFICATION_MEMBER_RANGE,
+        &HYPERPARAMETERSPECIFICATION_MEMBER_IS_TUNABLE,
+        &HYPERPARAMETERSPECIFICATION_MEMBER_IS_REQUIRED,
+        &HYPERPARAMETERSPECIFICATION_MEMBER_DEFAULT_VALUE,
+    ],
+);
+impl HyperParameterSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HYPERPARAMETERSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HyperParameterSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&HYPERPARAMETERSPECIFICATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&HYPERPARAMETERSPECIFICATION_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&HYPERPARAMETERSPECIFICATION_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.range {
+            ser.write_struct(&HYPERPARAMETERSPECIFICATION_MEMBER_RANGE, val)?;
+        }
+        if let Some(ref val) = self.is_tunable {
+            ser.write_boolean(&HYPERPARAMETERSPECIFICATION_MEMBER_IS_TUNABLE, *val)?;
+        }
+        if let Some(ref val) = self.is_required {
+            ser.write_boolean(&HYPERPARAMETERSPECIFICATION_MEMBER_IS_REQUIRED, *val)?;
+        }
+        if let Some(ref val) = self.default_value {
+            ser.write_string(&HYPERPARAMETERSPECIFICATION_MEMBER_DEFAULT_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HyperParameterSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HYPERPARAMETERSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ParameterType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.range = Some(crate::types::ParameterRange::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_tunable = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_required = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HyperParameterSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HyperParameterSpecification {
     /// Creates a new builder-style object to manufacture [`HyperParameterSpecification`](crate::types::HyperParameterSpecification).
     pub fn builder() -> crate::types::builders::HyperParameterSpecificationBuilder {

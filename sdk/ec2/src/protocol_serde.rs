@@ -2483,6 +2483,10 @@ pub(crate) mod shape_get_subnet_cidr_reservations;
 
 pub(crate) mod shape_get_subnet_cidr_reservations_input;
 
+pub(crate) mod shape_get_transit_gateway_attachment_nat_configuration;
+
+pub(crate) mod shape_get_transit_gateway_attachment_nat_configuration_input;
+
 pub(crate) mod shape_get_transit_gateway_attachment_propagations;
 
 pub(crate) mod shape_get_transit_gateway_attachment_propagations_input;
@@ -2804,6 +2808,10 @@ pub(crate) mod shape_modify_traffic_mirror_session;
 pub(crate) mod shape_modify_traffic_mirror_session_input;
 
 pub(crate) mod shape_modify_transit_gateway;
+
+pub(crate) mod shape_modify_transit_gateway_attachment_nat_configuration;
+
+pub(crate) mod shape_modify_transit_gateway_attachment_nat_configuration_input;
 
 pub(crate) mod shape_modify_transit_gateway_input;
 
@@ -3552,6 +3560,8 @@ pub(crate) mod shape_traffic_mirror_port_range_request;
 pub(crate) mod shape_transit_gateway_configuration_input_structure;
 
 pub(crate) mod shape_transit_gateway_connect_request_bgp_options;
+
+pub(crate) mod shape_transit_gateway_nat_rule_request;
 
 pub(crate) mod shape_transit_gateway_request_options;
 
@@ -4485,6 +4495,8 @@ pub(crate) mod shape_transit_gateway_multicast_registered_group_members;
 
 pub(crate) mod shape_transit_gateway_multicast_registered_group_sources;
 
+pub(crate) mod shape_transit_gateway_nat_rule_list;
+
 pub(crate) mod shape_transit_gateway_peering_attachment;
 
 pub(crate) mod shape_transit_gateway_peering_attachment_list;
@@ -5250,6 +5262,8 @@ pub(crate) mod shape_transit_gateway_multicast_domain_association;
 pub(crate) mod shape_transit_gateway_multicast_domain_options;
 
 pub(crate) mod shape_transit_gateway_multicast_group;
+
+pub(crate) mod shape_transit_gateway_nat_rule;
 
 pub(crate) mod shape_transit_gateway_options;
 

@@ -44,6 +44,194 @@ impl UpdateComputeQuotaInput {
         self.description.as_deref()
     }
 }
+static UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaInput$ComputeQuotaId",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComputeQuotaId",
+    0,
+);
+static UPDATECOMPUTEQUOTAINPUT_MEMBER_TARGET_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaInput$TargetVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TargetVersion",
+    1,
+);
+static UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaInput$ComputeQuotaConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComputeQuotaConfig",
+    2,
+);
+static UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaInput$ComputeQuotaTarget",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComputeQuotaTarget",
+    3,
+);
+static UPDATECOMPUTEQUOTAINPUT_MEMBER_ACTIVATION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaInput$ActivationState",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActivationState",
+    4,
+);
+static UPDATECOMPUTEQUOTAINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    5,
+);
+static UPDATECOMPUTEQUOTAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_ID,
+        &UPDATECOMPUTEQUOTAINPUT_MEMBER_TARGET_VERSION,
+        &UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_CONFIG,
+        &UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_TARGET,
+        &UPDATECOMPUTEQUOTAINPUT_MEMBER_ACTIVATION_STATE,
+        &UPDATECOMPUTEQUOTAINPUT_MEMBER_DESCRIPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateComputeQuotaRequest");
+impl UpdateComputeQuotaInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECOMPUTEQUOTAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateComputeQuotaInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compute_quota_id {
+            ser.write_string(&UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_ID, val)?;
+        }
+        if let Some(ref val) = self.target_version {
+            ser.write_integer(&UPDATECOMPUTEQUOTAINPUT_MEMBER_TARGET_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.compute_quota_config {
+            ser.write_struct(&UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.compute_quota_target {
+            ser.write_struct(&UPDATECOMPUTEQUOTAINPUT_MEMBER_COMPUTE_QUOTA_TARGET, val)?;
+        }
+        if let Some(ref val) = self.activation_state {
+            ser.write_string(&UPDATECOMPUTEQUOTAINPUT_MEMBER_ACTIVATION_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATECOMPUTEQUOTAINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_compute_quota::builders::UpdateComputeQuotaInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECOMPUTEQUOTAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_config = Some(crate::types::ComputeQuotaConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_target = Some(crate::types::ComputeQuotaTarget::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.activation_state = Some(crate::types::ActivationState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateComputeQuotaInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.compute_quota_id = builder.compute_quota_id.or(Some(String::new()));
+        builder.target_version = builder.target_version.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateComputeQuotaInput {
     /// Creates a new builder-style object to manufacture [`UpdateComputeQuotaInput`](crate::operation::update_compute_quota::UpdateComputeQuotaInput).
     pub fn builder() -> crate::operation::update_compute_quota::builders::UpdateComputeQuotaInputBuilder {

@@ -37,6 +37,173 @@ impl PutThirdPartyJobSuccessResultInput {
         self.execution_details.as_ref()
     }
 }
+static PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutThirdPartyJobSuccessResultInput$jobId",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutThirdPartyJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "jobId",
+    0,
+);
+static PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutThirdPartyJobSuccessResultInput$clientToken",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutThirdPartyJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientToken",
+    1,
+);
+static PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CURRENT_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutThirdPartyJobSuccessResultInput$currentRevision",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutThirdPartyJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "currentRevision",
+    2,
+);
+static PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CONTINUATION_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutThirdPartyJobSuccessResultInput$continuationToken",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutThirdPartyJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "continuationToken",
+    3,
+);
+static PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_EXECUTION_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutThirdPartyJobSuccessResultInput$executionDetails",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutThirdPartyJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "executionDetails",
+    4,
+);
+static PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutThirdPartyJobSuccessResultInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutThirdPartyJobSuccessResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_JOB_ID,
+        &PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CLIENT_TOKEN,
+        &PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CURRENT_REVISION,
+        &PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CONTINUATION_TOKEN,
+        &PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_EXECUTION_DETAILS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutThirdPartyJobSuccessResultInput");
+impl PutThirdPartyJobSuccessResultInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutThirdPartyJobSuccessResultInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_id {
+            ser.write_string(&PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_JOB_ID, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.current_revision {
+            ser.write_struct(&PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CURRENT_REVISION, val)?;
+        }
+        if let Some(ref val) = self.continuation_token {
+            ser.write_string(&PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_CONTINUATION_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.execution_details {
+            ser.write_struct(&PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_MEMBER_EXECUTION_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTTHIRDPARTYJOBSUCCESSRESULTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_revision = Some(crate::types::CurrentRevision::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.continuation_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_details = Some(crate::types::ExecutionDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutThirdPartyJobSuccessResultInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_id = builder.job_id.or(Some(String::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutThirdPartyJobSuccessResultInput {
     /// Creates a new builder-style object to manufacture [`PutThirdPartyJobSuccessResultInput`](crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResultInput).
     pub fn builder() -> crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultInputBuilder {

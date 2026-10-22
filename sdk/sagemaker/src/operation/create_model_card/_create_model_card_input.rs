@@ -69,6 +69,195 @@ impl ::std::fmt::Debug for CreateModelCardInput {
         formatter.finish()
     }
 }
+static CREATEMODELCARDINPUT_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelCardInput$ModelCardName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    0,
+);
+static CREATEMODELCARDINPUT_MEMBER_SECURITY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelCardInput$SecurityConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SecurityConfig",
+    1,
+);
+static CREATEMODELCARDINPUT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelCardInput$Content",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    2,
+);
+static CREATEMODELCARDINPUT_MEMBER_MODEL_CARD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelCardInput$ModelCardStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardStatus",
+    3,
+);
+static CREATEMODELCARDINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMODELCARDINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelCardInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEMODELCARDINPUT_MEMBER_TAGS_MEMBER);
+static CREATEMODELCARDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelCardInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMODELCARDINPUT_MEMBER_MODEL_CARD_NAME,
+        &CREATEMODELCARDINPUT_MEMBER_SECURITY_CONFIG,
+        &CREATEMODELCARDINPUT_MEMBER_CONTENT,
+        &CREATEMODELCARDINPUT_MEMBER_MODEL_CARD_STATUS,
+        &CREATEMODELCARDINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateModelCardRequest");
+impl CreateModelCardInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMODELCARDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateModelCardInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&CREATEMODELCARDINPUT_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.security_config {
+            ser.write_struct(&CREATEMODELCARDINPUT_MEMBER_SECURITY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&CREATEMODELCARDINPUT_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.model_card_status {
+            ser.write_string(&CREATEMODELCARDINPUT_MEMBER_MODEL_CARD_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEMODELCARDINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_model_card::builders::CreateModelCardInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMODELCARDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_config = Some(crate::types::ModelCardSecurityConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_status = Some(crate::types::ModelCardStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateModelCardInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.model_card_name = builder.model_card_name.or(Some(String::new()));
+        builder.content = builder.content.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateModelCardInput {
     /// Creates a new builder-style object to manufacture [`CreateModelCardInput`](crate::operation::create_model_card::CreateModelCardInput).
     pub fn builder() -> crate::operation::create_model_card::builders::CreateModelCardInputBuilder {

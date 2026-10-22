@@ -55,6 +55,232 @@ impl EdgeDeploymentPlanSummary {
         self.last_modified_time.as_ref()
     }
 }
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PLAN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$EdgeDeploymentPlanArn",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EdgeDeploymentPlanArn",
+    0,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$EdgeDeploymentPlanName",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EdgeDeploymentPlanName",
+    1,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_DEVICE_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$DeviceFleetName",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetName",
+    2,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_SUCCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$EdgeDeploymentSuccess",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EdgeDeploymentSuccess",
+    3,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PENDING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$EdgeDeploymentPending",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EdgeDeploymentPending",
+    4,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_FAILED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$EdgeDeploymentFailed",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EdgeDeploymentFailed",
+    5,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static EDGEDEPLOYMENTPLANSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeDeploymentPlanSummary",
+        "com.amazonaws.sagemaker",
+        "EdgeDeploymentPlanSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PLAN_ARN,
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME,
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_DEVICE_FLEET_NAME,
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_SUCCESS,
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PENDING,
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_FAILED,
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_CREATION_TIME,
+        &EDGEDEPLOYMENTPLANSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl EdgeDeploymentPlanSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EDGEDEPLOYMENTPLANSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EdgeDeploymentPlanSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.edge_deployment_plan_arn {
+            ser.write_string(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PLAN_ARN, val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_plan_name {
+            ser.write_string(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PLAN_NAME, val)?;
+        }
+        if let Some(ref val) = self.device_fleet_name {
+            ser.write_string(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_DEVICE_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_success {
+            ser.write_integer(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_SUCCESS, *val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_pending {
+            ser.write_integer(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_PENDING, *val)?;
+        }
+        if let Some(ref val) = self.edge_deployment_failed {
+            ser.write_integer(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_EDGE_DEPLOYMENT_FAILED, *val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&EDGEDEPLOYMENTPLANSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EdgeDeploymentPlanSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EDGEDEPLOYMENTPLANSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_plan_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_plan_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_success = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_pending = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_deployment_failed = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EdgeDeploymentPlanSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EdgeDeploymentPlanSummary {
     /// Creates a new builder-style object to manufacture [`EdgeDeploymentPlanSummary`](crate::types::EdgeDeploymentPlanSummary).
     pub fn builder() -> crate::types::builders::EdgeDeploymentPlanSummaryBuilder {

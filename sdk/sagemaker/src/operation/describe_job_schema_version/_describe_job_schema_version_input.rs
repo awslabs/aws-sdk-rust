@@ -18,6 +18,108 @@ impl DescribeJobSchemaVersionInput {
         self.job_config_schema_version.as_deref()
     }
 }
+static DESCRIBEJOBSCHEMAVERSIONINPUT_MEMBER_JOB_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobSchemaVersionInput$JobCategory",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobSchemaVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobCategory",
+    0,
+);
+static DESCRIBEJOBSCHEMAVERSIONINPUT_MEMBER_JOB_CONFIG_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobSchemaVersionInput$JobConfigSchemaVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobSchemaVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobConfigSchemaVersion",
+    1,
+);
+static DESCRIBEJOBSCHEMAVERSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeJobSchemaVersionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeJobSchemaVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEJOBSCHEMAVERSIONINPUT_MEMBER_JOB_CATEGORY,
+        &DESCRIBEJOBSCHEMAVERSIONINPUT_MEMBER_JOB_CONFIG_SCHEMA_VERSION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeJobSchemaVersionRequest");
+impl DescribeJobSchemaVersionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEJOBSCHEMAVERSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeJobSchemaVersionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_category {
+            ser.write_string(&DESCRIBEJOBSCHEMAVERSIONINPUT_MEMBER_JOB_CATEGORY, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_config_schema_version {
+            ser.write_string(&DESCRIBEJOBSCHEMAVERSIONINPUT_MEMBER_JOB_CONFIG_SCHEMA_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_job_schema_version::builders::DescribeJobSchemaVersionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEJOBSCHEMAVERSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_category = Some(crate::types::JobCategory::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_config_schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeJobSchemaVersionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeJobSchemaVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobSchemaVersionInput`](crate::operation::describe_job_schema_version::DescribeJobSchemaVersionInput).
     pub fn builder() -> crate::operation::describe_job_schema_version::builders::DescribeJobSchemaVersionInputBuilder {

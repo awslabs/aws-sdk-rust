@@ -18,6 +18,106 @@ impl DetectPiiEntitiesInput {
         self.language_code.as_ref()
     }
 }
+static DETECTPIIENTITIESINPUT_MEMBER_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectPiiEntitiesInput$Text",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectPiiEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Text",
+    0,
+);
+static DETECTPIIENTITIESINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectPiiEntitiesInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectPiiEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static DETECTPIIENTITIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DetectPiiEntitiesInput",
+        "com.amazonaws.comprehend.synthetic",
+        "DetectPiiEntitiesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DETECTPIIENTITIESINPUT_MEMBER_TEXT, &DETECTPIIENTITIESINPUT_MEMBER_LANGUAGE_CODE],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DetectPiiEntitiesRequest");
+impl DetectPiiEntitiesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DETECTPIIENTITIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DetectPiiEntitiesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.text {
+            ser.write_string(&DETECTPIIENTITIESINPUT_MEMBER_TEXT, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&DETECTPIIENTITIESINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::detect_pii_entities::builders::DetectPiiEntitiesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DETECTPIIENTITIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DetectPiiEntitiesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.text = builder.text.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DetectPiiEntitiesInput {
     /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesInput`](crate::operation::detect_pii_entities::DetectPiiEntitiesInput).
     pub fn builder() -> crate::operation::detect_pii_entities::builders::DetectPiiEntitiesInputBuilder {

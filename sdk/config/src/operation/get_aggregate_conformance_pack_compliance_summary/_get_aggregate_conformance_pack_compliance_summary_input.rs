@@ -36,6 +36,181 @@ impl GetAggregateConformancePackComplianceSummaryInput {
         self.next_token.as_deref()
     }
 }
+static GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateConformancePackComplianceSummaryInput$ConfigurationAggregatorName",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateConformancePackComplianceSummaryInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConfigurationAggregatorName",
+        0,
+    );
+static GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateConformancePackComplianceSummaryInput$Filters",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateConformancePackComplianceSummaryInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "Filters",
+        1,
+    );
+static GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_GROUP_BY_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateConformancePackComplianceSummaryInput$GroupByKey",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateConformancePackComplianceSummaryInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "GroupByKey",
+        2,
+    );
+static GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateConformancePackComplianceSummaryInput$Limit",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateConformancePackComplianceSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    3,
+);
+static GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateConformancePackComplianceSummaryInput$NextToken",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateConformancePackComplianceSummaryInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NextToken",
+        4,
+    );
+static GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateConformancePackComplianceSummaryInput",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateConformancePackComplianceSummaryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME,
+        &GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_FILTERS,
+        &GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_GROUP_BY_KEY,
+        &GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_LIMIT,
+        &GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetAggregateConformancePackComplianceSummaryRequest");
+impl GetAggregateConformancePackComplianceSummaryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetAggregateConformancePackComplianceSummaryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.configuration_aggregator_name {
+            ser.write_string(
+                &GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_struct(&GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_FILTERS, val)?;
+        }
+        if let Some(ref val) = self.group_by_key {
+            ser.write_string(&GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_GROUP_BY_KEY, val.as_str())?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETAGGREGATECONFORMANCEPACKCOMPLIANCESUMMARYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_aggregator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some(crate::types::AggregateConformancePackComplianceSummaryFilters::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group_by_key = Some(crate::types::AggregateConformancePackComplianceSummaryGroupKey::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetAggregateConformancePackComplianceSummaryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.configuration_aggregator_name = builder.configuration_aggregator_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetAggregateConformancePackComplianceSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetAggregateConformancePackComplianceSummaryInput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput).
     pub fn builder(

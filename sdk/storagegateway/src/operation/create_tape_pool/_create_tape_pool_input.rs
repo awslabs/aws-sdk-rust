@@ -42,6 +42,194 @@ impl CreateTapePoolInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATETAPEPOOLINPUT_MEMBER_POOL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateTapePoolInput$PoolName",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolName",
+    0,
+);
+static CREATETAPEPOOLINPUT_MEMBER_STORAGE_CLASS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateTapePoolInput$StorageClass",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StorageClass",
+    1,
+);
+static CREATETAPEPOOLINPUT_MEMBER_RETENTION_LOCK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateTapePoolInput$RetentionLockType",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RetentionLockType",
+    2,
+);
+static CREATETAPEPOOLINPUT_MEMBER_RETENTION_LOCK_TIME_IN_DAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateTapePoolInput$RetentionLockTimeInDays",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RetentionLockTimeInDays",
+    3,
+);
+static CREATETAPEPOOLINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETAPEPOOLINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateTapePoolInput$Tags",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATETAPEPOOLINPUT_MEMBER_TAGS_MEMBER);
+static CREATETAPEPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateTapePoolInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATETAPEPOOLINPUT_MEMBER_POOL_NAME,
+        &CREATETAPEPOOLINPUT_MEMBER_STORAGE_CLASS,
+        &CREATETAPEPOOLINPUT_MEMBER_RETENTION_LOCK_TYPE,
+        &CREATETAPEPOOLINPUT_MEMBER_RETENTION_LOCK_TIME_IN_DAYS,
+        &CREATETAPEPOOLINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateTapePoolInput");
+impl CreateTapePoolInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATETAPEPOOLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateTapePoolInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pool_name {
+            ser.write_string(&CREATETAPEPOOLINPUT_MEMBER_POOL_NAME, val)?;
+        }
+        if let Some(ref val) = self.storage_class {
+            ser.write_string(&CREATETAPEPOOLINPUT_MEMBER_STORAGE_CLASS, val.as_str())?;
+        }
+        if let Some(ref val) = self.retention_lock_type {
+            ser.write_string(&CREATETAPEPOOLINPUT_MEMBER_RETENTION_LOCK_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.retention_lock_time_in_days {
+            ser.write_integer(&CREATETAPEPOOLINPUT_MEMBER_RETENTION_LOCK_TIME_IN_DAYS, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATETAPEPOOLINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_tape_pool::builders::CreateTapePoolInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATETAPEPOOLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_class = Some(crate::types::TapeStorageClass::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_lock_type = Some(crate::types::RetentionLockType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_lock_time_in_days = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateTapePoolInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pool_name = builder.pool_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateTapePoolInput {
     /// Creates a new builder-style object to manufacture [`CreateTapePoolInput`](crate::operation::create_tape_pool::CreateTapePoolInput).
     pub fn builder() -> crate::operation::create_tape_pool::builders::CreateTapePoolInputBuilder {

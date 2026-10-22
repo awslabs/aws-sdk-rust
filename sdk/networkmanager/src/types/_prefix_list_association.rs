@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrefixListAssociation {
-    /// <p>The core network id in the association.</p>
+    /// <p>The ID of the core network in the association.</p>
     pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the prefix list in the association.</p>
     pub prefix_list_arn: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct PrefixListAssociation {
     pub prefix_list_alias: ::std::option::Option<::std::string::String>,
 }
 impl PrefixListAssociation {
-    /// <p>The core network id in the association.</p>
+    /// <p>The ID of the core network in the association.</p>
     pub fn core_network_id(&self) -> ::std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct PrefixListAssociationBuilder {
     pub(crate) prefix_list_alias: ::std::option::Option<::std::string::String>,
 }
 impl PrefixListAssociationBuilder {
-    /// <p>The core network id in the association.</p>
+    /// <p>The ID of the core network in the association.</p>
     pub fn core_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The core network id in the association.</p>
+    /// <p>The ID of the core network in the association.</p>
     pub fn set_core_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.core_network_id = input;
         self
     }
-    /// <p>The core network id in the association.</p>
+    /// <p>The ID of the core network in the association.</p>
     pub fn get_core_network_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.core_network_id
     }

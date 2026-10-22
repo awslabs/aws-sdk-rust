@@ -27,6 +27,145 @@ impl TrafficPattern {
         self.stairs.as_ref()
     }
 }
+static TRAFFICPATTERN_MEMBER_TRAFFIC_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficPattern$TrafficType",
+        "com.amazonaws.sagemaker",
+        "TrafficPattern",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrafficType",
+    0,
+);
+static TRAFFICPATTERN_MEMBER_PHASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Phases$member", "com.amazonaws.sagemaker", "Phases"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAFFICPATTERN_MEMBER_PHASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficPattern$Phases",
+        "com.amazonaws.sagemaker",
+        "TrafficPattern",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Phases",
+    1,
+)
+.with_list_member(&TRAFFICPATTERN_MEMBER_PHASES_MEMBER);
+static TRAFFICPATTERN_MEMBER_STAIRS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficPattern$Stairs",
+        "com.amazonaws.sagemaker",
+        "TrafficPattern",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Stairs",
+    2,
+);
+static TRAFFICPATTERN_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TrafficPattern", "com.amazonaws.sagemaker", "TrafficPattern"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAFFICPATTERN_MEMBER_TRAFFIC_TYPE,
+        &TRAFFICPATTERN_MEMBER_PHASES,
+        &TRAFFICPATTERN_MEMBER_STAIRS,
+    ],
+);
+impl TrafficPattern {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAFFICPATTERN_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrafficPattern {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.traffic_type {
+            ser.write_string(&TRAFFICPATTERN_MEMBER_TRAFFIC_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.phases {
+            ser.write_list(
+                &TRAFFICPATTERN_MEMBER_PHASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Phase::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.stairs {
+            ser.write_struct(&TRAFFICPATTERN_MEMBER_STAIRS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrafficPatternBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAFFICPATTERN_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.traffic_type = Some(crate::types::TrafficType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.phases = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Phase::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stairs = Some(crate::types::Stairs::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrafficPattern {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrafficPattern {
     /// Creates a new builder-style object to manufacture [`TrafficPattern`](crate::types::TrafficPattern).
     pub fn builder() -> crate::types::builders::TrafficPatternBuilder {

@@ -25,6 +25,123 @@ impl SharingSettings {
         self.s3_kms_key_id.as_deref()
     }
 }
+static SHARINGSETTINGS_MEMBER_NOTEBOOK_OUTPUT_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SharingSettings$NotebookOutputOption",
+        "com.amazonaws.sagemaker",
+        "SharingSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookOutputOption",
+    0,
+);
+static SHARINGSETTINGS_MEMBER_S3_OUTPUT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SharingSettings$S3OutputPath",
+        "com.amazonaws.sagemaker",
+        "SharingSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3OutputPath",
+    1,
+);
+static SHARINGSETTINGS_MEMBER_S3_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SharingSettings$S3KmsKeyId",
+        "com.amazonaws.sagemaker",
+        "SharingSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3KmsKeyId",
+    2,
+);
+static SHARINGSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SharingSettings", "com.amazonaws.sagemaker", "SharingSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SHARINGSETTINGS_MEMBER_NOTEBOOK_OUTPUT_OPTION,
+        &SHARINGSETTINGS_MEMBER_S3_OUTPUT_PATH,
+        &SHARINGSETTINGS_MEMBER_S3_KMS_KEY_ID,
+    ],
+);
+impl SharingSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SHARINGSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SharingSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.notebook_output_option {
+            ser.write_string(&SHARINGSETTINGS_MEMBER_NOTEBOOK_OUTPUT_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_output_path {
+            ser.write_string(&SHARINGSETTINGS_MEMBER_S3_OUTPUT_PATH, val)?;
+        }
+        if let Some(ref val) = self.s3_kms_key_id {
+            ser.write_string(&SHARINGSETTINGS_MEMBER_S3_KMS_KEY_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SharingSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SHARINGSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_output_option = Some(crate::types::NotebookOutputOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_output_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SharingSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SharingSettings {
     /// Creates a new builder-style object to manufacture [`SharingSettings`](crate::types::SharingSettings).
     pub fn builder() -> crate::types::builders::SharingSettingsBuilder {

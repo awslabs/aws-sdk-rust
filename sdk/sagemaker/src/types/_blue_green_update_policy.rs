@@ -25,6 +25,128 @@ impl BlueGreenUpdatePolicy {
         self.maximum_execution_timeout_in_seconds
     }
 }
+static BLUEGREENUPDATEPOLICY_MEMBER_TRAFFIC_ROUTING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BlueGreenUpdatePolicy$TrafficRoutingConfiguration",
+        "com.amazonaws.sagemaker",
+        "BlueGreenUpdatePolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrafficRoutingConfiguration",
+    0,
+);
+static BLUEGREENUPDATEPOLICY_MEMBER_TERMINATION_WAIT_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BlueGreenUpdatePolicy$TerminationWaitInSeconds",
+        "com.amazonaws.sagemaker",
+        "BlueGreenUpdatePolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TerminationWaitInSeconds",
+    1,
+);
+static BLUEGREENUPDATEPOLICY_MEMBER_MAXIMUM_EXECUTION_TIMEOUT_IN_SECONDS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#BlueGreenUpdatePolicy$MaximumExecutionTimeoutInSeconds",
+            "com.amazonaws.sagemaker",
+            "BlueGreenUpdatePolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MaximumExecutionTimeoutInSeconds",
+        2,
+    );
+static BLUEGREENUPDATEPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BlueGreenUpdatePolicy",
+        "com.amazonaws.sagemaker",
+        "BlueGreenUpdatePolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BLUEGREENUPDATEPOLICY_MEMBER_TRAFFIC_ROUTING_CONFIGURATION,
+        &BLUEGREENUPDATEPOLICY_MEMBER_TERMINATION_WAIT_IN_SECONDS,
+        &BLUEGREENUPDATEPOLICY_MEMBER_MAXIMUM_EXECUTION_TIMEOUT_IN_SECONDS,
+    ],
+);
+impl BlueGreenUpdatePolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BLUEGREENUPDATEPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BlueGreenUpdatePolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.traffic_routing_configuration {
+            ser.write_struct(&BLUEGREENUPDATEPOLICY_MEMBER_TRAFFIC_ROUTING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.termination_wait_in_seconds {
+            ser.write_integer(&BLUEGREENUPDATEPOLICY_MEMBER_TERMINATION_WAIT_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.maximum_execution_timeout_in_seconds {
+            ser.write_integer(&BLUEGREENUPDATEPOLICY_MEMBER_MAXIMUM_EXECUTION_TIMEOUT_IN_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BlueGreenUpdatePolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BLUEGREENUPDATEPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.traffic_routing_configuration = Some(crate::types::TrafficRoutingConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.termination_wait_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_execution_timeout_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BlueGreenUpdatePolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BlueGreenUpdatePolicy {
     /// Creates a new builder-style object to manufacture [`BlueGreenUpdatePolicy`](crate::types::BlueGreenUpdatePolicy).
     pub fn builder() -> crate::types::builders::BlueGreenUpdatePolicyBuilder {

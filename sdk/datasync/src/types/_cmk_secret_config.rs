@@ -21,6 +21,99 @@ impl CmkSecretConfig {
         self.kms_key_arn.as_deref()
     }
 }
+static CMKSECRETCONFIG_MEMBER_SECRET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#CmkSecretConfig$SecretArn",
+        "com.amazonaws.datasync",
+        "CmkSecretConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretArn",
+    0,
+);
+static CMKSECRETCONFIG_MEMBER_KMS_KEY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#CmkSecretConfig$KmsKeyArn",
+        "com.amazonaws.datasync",
+        "CmkSecretConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyArn",
+    1,
+);
+static CMKSECRETCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#CmkSecretConfig", "com.amazonaws.datasync", "CmkSecretConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CMKSECRETCONFIG_MEMBER_SECRET_ARN, &CMKSECRETCONFIG_MEMBER_KMS_KEY_ARN],
+);
+impl CmkSecretConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CMKSECRETCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CmkSecretConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.secret_arn {
+            ser.write_string(&CMKSECRETCONFIG_MEMBER_SECRET_ARN, val)?;
+        }
+        if let Some(ref val) = self.kms_key_arn {
+            ser.write_string(&CMKSECRETCONFIG_MEMBER_KMS_KEY_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CmkSecretConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CMKSECRETCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CmkSecretConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CmkSecretConfig {
     /// Creates a new builder-style object to manufacture [`CmkSecretConfig`](crate::types::CmkSecretConfig).
     pub fn builder() -> crate::types::builders::CmkSecretConfigBuilder {

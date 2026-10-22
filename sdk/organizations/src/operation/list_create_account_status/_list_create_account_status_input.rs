@@ -26,6 +26,157 @@ impl ListCreateAccountStatusInput {
         self.max_results
     }
 }
+static LISTCREATEACCOUNTSTATUSINPUT_MEMBER_STATES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#CreateAccountStates$member",
+        "com.amazonaws.organizations",
+        "CreateAccountStates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTCREATEACCOUNTSTATUSINPUT_MEMBER_STATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListCreateAccountStatusInput$States",
+        "com.amazonaws.organizations.synthetic",
+        "ListCreateAccountStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "States",
+    0,
+)
+.with_list_member(&LISTCREATEACCOUNTSTATUSINPUT_MEMBER_STATES_MEMBER);
+static LISTCREATEACCOUNTSTATUSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListCreateAccountStatusInput$NextToken",
+        "com.amazonaws.organizations.synthetic",
+        "ListCreateAccountStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTCREATEACCOUNTSTATUSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListCreateAccountStatusInput$MaxResults",
+        "com.amazonaws.organizations.synthetic",
+        "ListCreateAccountStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTCREATEACCOUNTSTATUSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#ListCreateAccountStatusInput",
+        "com.amazonaws.organizations.synthetic",
+        "ListCreateAccountStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCREATEACCOUNTSTATUSINPUT_MEMBER_STATES,
+        &LISTCREATEACCOUNTSTATUSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTCREATEACCOUNTSTATUSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListCreateAccountStatusRequest");
+impl ListCreateAccountStatusInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCREATEACCOUNTSTATUSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCreateAccountStatusInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.states {
+            ser.write_list(
+                &LISTCREATEACCOUNTSTATUSINPUT_MEMBER_STATES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCREATEACCOUNTSTATUSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTCREATEACCOUNTSTATUSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCREATEACCOUNTSTATUSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.states = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CreateAccountState::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCreateAccountStatusInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListCreateAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`ListCreateAccountStatusInput`](crate::operation::list_create_account_status::ListCreateAccountStatusInput).
     pub fn builder() -> crate::operation::list_create_account_status::builders::ListCreateAccountStatusInputBuilder {

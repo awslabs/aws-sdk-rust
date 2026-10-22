@@ -46,6 +46,151 @@ impl ListCalculationExecutionsInput {
         self.next_token.as_deref()
     }
 }
+static LISTCALCULATIONEXECUTIONSINPUT_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCalculationExecutionsInput$SessionId",
+        "com.amazonaws.athena.synthetic",
+        "ListCalculationExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionId",
+    0,
+);
+static LISTCALCULATIONEXECUTIONSINPUT_MEMBER_STATE_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCalculationExecutionsInput$StateFilter",
+        "com.amazonaws.athena.synthetic",
+        "ListCalculationExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StateFilter",
+    1,
+);
+static LISTCALCULATIONEXECUTIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCalculationExecutionsInput$MaxResults",
+        "com.amazonaws.athena.synthetic",
+        "ListCalculationExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTCALCULATIONEXECUTIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCalculationExecutionsInput$NextToken",
+        "com.amazonaws.athena.synthetic",
+        "ListCalculationExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static LISTCALCULATIONEXECUTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCalculationExecutionsInput",
+        "com.amazonaws.athena.synthetic",
+        "ListCalculationExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCALCULATIONEXECUTIONSINPUT_MEMBER_SESSION_ID,
+        &LISTCALCULATIONEXECUTIONSINPUT_MEMBER_STATE_FILTER,
+        &LISTCALCULATIONEXECUTIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTCALCULATIONEXECUTIONSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListCalculationExecutionsRequest");
+impl ListCalculationExecutionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCALCULATIONEXECUTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCalculationExecutionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.session_id {
+            ser.write_string(&LISTCALCULATIONEXECUTIONSINPUT_MEMBER_SESSION_ID, val)?;
+        }
+        if let Some(ref val) = self.state_filter {
+            ser.write_string(&LISTCALCULATIONEXECUTIONSINPUT_MEMBER_STATE_FILTER, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTCALCULATIONEXECUTIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCALCULATIONEXECUTIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCALCULATIONEXECUTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_filter = Some(crate::types::CalculationExecutionState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCalculationExecutionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.session_id = builder.session_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListCalculationExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListCalculationExecutionsInput`](crate::operation::list_calculation_executions::ListCalculationExecutionsInput).
     pub fn builder() -> crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder {

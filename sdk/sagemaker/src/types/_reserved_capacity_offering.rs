@@ -80,6 +80,316 @@ impl ReservedCapacityOffering {
         self.extension_end_time.as_ref()
     }
 }
+static RESERVEDCAPACITYOFFERING_MEMBER_RESERVED_CAPACITY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$ReservedCapacityType",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReservedCapacityType",
+    0,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_ULTRA_SERVER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$UltraServerType",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UltraServerType",
+    1,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_ULTRA_SERVER_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$UltraServerCount",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UltraServerCount",
+    2,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$InstanceType",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    3,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$InstanceCount",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    4,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$AvailabilityZone",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AvailabilityZone",
+    5,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_DURATION_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$DurationHours",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationHours",
+    6,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_DURATION_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$DurationMinutes",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationMinutes",
+    7,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$StartTime",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    8,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$EndTime",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    9,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_EXTENSION_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$ExtensionStartTime",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExtensionStartTime",
+    10,
+);
+static RESERVEDCAPACITYOFFERING_MEMBER_EXTENSION_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering$ExtensionEndTime",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExtensionEndTime",
+    11,
+);
+static RESERVEDCAPACITYOFFERING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOffering",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESERVEDCAPACITYOFFERING_MEMBER_RESERVED_CAPACITY_TYPE,
+        &RESERVEDCAPACITYOFFERING_MEMBER_ULTRA_SERVER_TYPE,
+        &RESERVEDCAPACITYOFFERING_MEMBER_ULTRA_SERVER_COUNT,
+        &RESERVEDCAPACITYOFFERING_MEMBER_INSTANCE_TYPE,
+        &RESERVEDCAPACITYOFFERING_MEMBER_INSTANCE_COUNT,
+        &RESERVEDCAPACITYOFFERING_MEMBER_AVAILABILITY_ZONE,
+        &RESERVEDCAPACITYOFFERING_MEMBER_DURATION_HOURS,
+        &RESERVEDCAPACITYOFFERING_MEMBER_DURATION_MINUTES,
+        &RESERVEDCAPACITYOFFERING_MEMBER_START_TIME,
+        &RESERVEDCAPACITYOFFERING_MEMBER_END_TIME,
+        &RESERVEDCAPACITYOFFERING_MEMBER_EXTENSION_START_TIME,
+        &RESERVEDCAPACITYOFFERING_MEMBER_EXTENSION_END_TIME,
+    ],
+);
+impl ReservedCapacityOffering {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESERVEDCAPACITYOFFERING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ReservedCapacityOffering {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reserved_capacity_type {
+            ser.write_string(&RESERVEDCAPACITYOFFERING_MEMBER_RESERVED_CAPACITY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ultra_server_type {
+            ser.write_string(&RESERVEDCAPACITYOFFERING_MEMBER_ULTRA_SERVER_TYPE, val)?;
+        }
+        if let Some(ref val) = self.ultra_server_count {
+            ser.write_integer(&RESERVEDCAPACITYOFFERING_MEMBER_ULTRA_SERVER_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&RESERVEDCAPACITYOFFERING_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&RESERVEDCAPACITYOFFERING_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&RESERVEDCAPACITYOFFERING_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.duration_hours {
+            ser.write_long(&RESERVEDCAPACITYOFFERING_MEMBER_DURATION_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.duration_minutes {
+            ser.write_long(&RESERVEDCAPACITYOFFERING_MEMBER_DURATION_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&RESERVEDCAPACITYOFFERING_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&RESERVEDCAPACITYOFFERING_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.extension_start_time {
+            ser.write_timestamp(&RESERVEDCAPACITYOFFERING_MEMBER_EXTENSION_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.extension_end_time {
+            ser.write_timestamp(&RESERVEDCAPACITYOFFERING_MEMBER_EXTENSION_END_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ReservedCapacityOfferingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESERVEDCAPACITYOFFERING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reserved_capacity_type = Some(crate::types::ReservedCapacityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ultra_server_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ultra_server_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::ReservedCapacityInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_hours = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_minutes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extension_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extension_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ReservedCapacityOffering {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ReservedCapacityOffering {
     /// Creates a new builder-style object to manufacture [`ReservedCapacityOffering`](crate::types::ReservedCapacityOffering).
     pub fn builder() -> crate::types::builders::ReservedCapacityOfferingBuilder {

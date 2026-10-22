@@ -52,6 +52,211 @@ impl RepositoryTrigger {
         self.events.deref()
     }
 }
+static REPOSITORYTRIGGER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTrigger$name",
+        "com.amazonaws.codecommit",
+        "RepositoryTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static REPOSITORYTRIGGER_MEMBER_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTrigger$destinationArn",
+        "com.amazonaws.codecommit",
+        "RepositoryTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "destinationArn",
+    1,
+);
+static REPOSITORYTRIGGER_MEMBER_CUSTOM_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTrigger$customData",
+        "com.amazonaws.codecommit",
+        "RepositoryTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "customData",
+    2,
+);
+static REPOSITORYTRIGGER_MEMBER_BRANCHES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#BranchNameList$member",
+        "com.amazonaws.codecommit",
+        "BranchNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REPOSITORYTRIGGER_MEMBER_BRANCHES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTrigger$branches",
+        "com.amazonaws.codecommit",
+        "RepositoryTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "branches",
+    3,
+)
+.with_list_member(&REPOSITORYTRIGGER_MEMBER_BRANCHES_MEMBER);
+static REPOSITORYTRIGGER_MEMBER_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTriggerEventList$member",
+        "com.amazonaws.codecommit",
+        "RepositoryTriggerEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REPOSITORYTRIGGER_MEMBER_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTrigger$events",
+        "com.amazonaws.codecommit",
+        "RepositoryTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "events",
+    4,
+)
+.with_list_member(&REPOSITORYTRIGGER_MEMBER_EVENTS_MEMBER);
+static REPOSITORYTRIGGER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTrigger",
+        "com.amazonaws.codecommit",
+        "RepositoryTrigger",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPOSITORYTRIGGER_MEMBER_NAME,
+        &REPOSITORYTRIGGER_MEMBER_DESTINATION_ARN,
+        &REPOSITORYTRIGGER_MEMBER_CUSTOM_DATA,
+        &REPOSITORYTRIGGER_MEMBER_BRANCHES,
+        &REPOSITORYTRIGGER_MEMBER_EVENTS,
+    ],
+);
+impl RepositoryTrigger {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPOSITORYTRIGGER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RepositoryTrigger {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&REPOSITORYTRIGGER_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.destination_arn;
+            ser.write_string(&REPOSITORYTRIGGER_MEMBER_DESTINATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.custom_data {
+            ser.write_string(&REPOSITORYTRIGGER_MEMBER_CUSTOM_DATA, val)?;
+        }
+        if let Some(ref val) = self.branches {
+            ser.write_list(
+                &REPOSITORYTRIGGER_MEMBER_BRANCHES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.events;
+
+            ser.write_list(
+                &REPOSITORYTRIGGER_MEMBER_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RepositoryTriggerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPOSITORYTRIGGER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.destination_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_data = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branches = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.events = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::RepositoryTriggerEventEnum::from(
+                                deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                            ));
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RepositoryTrigger {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.destination_arn = builder.destination_arn.or(Some(String::new()));
+        builder.events = builder.events.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RepositoryTrigger {
     /// Creates a new builder-style object to manufacture [`RepositoryTrigger`](crate::types::RepositoryTrigger).
     pub fn builder() -> crate::types::builders::RepositoryTriggerBuilder {

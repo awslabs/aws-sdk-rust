@@ -27,6 +27,153 @@ impl AiBenchmarkOutputResult {
         self.mlflow_config.as_ref()
     }
 }
+static AIBENCHMARKOUTPUTRESULT_MEMBER_S3_OUTPUT_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIBenchmarkOutputResult$S3OutputLocation",
+        "com.amazonaws.sagemaker",
+        "AIBenchmarkOutputResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3OutputLocation",
+    0,
+);
+static AIBENCHMARKOUTPUTRESULT_MEMBER_CLOUD_WATCH_LOGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AICloudWatchLogsList$member",
+        "com.amazonaws.sagemaker",
+        "AICloudWatchLogsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIBENCHMARKOUTPUTRESULT_MEMBER_CLOUD_WATCH_LOGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIBenchmarkOutputResult$CloudWatchLogs",
+        "com.amazonaws.sagemaker",
+        "AIBenchmarkOutputResult",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CloudWatchLogs",
+    1,
+)
+.with_list_member(&AIBENCHMARKOUTPUTRESULT_MEMBER_CLOUD_WATCH_LOGS_MEMBER);
+static AIBENCHMARKOUTPUTRESULT_MEMBER_MLFLOW_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIBenchmarkOutputResult$MlflowConfig",
+        "com.amazonaws.sagemaker",
+        "AIBenchmarkOutputResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MlflowConfig",
+    2,
+);
+static AIBENCHMARKOUTPUTRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIBenchmarkOutputResult",
+        "com.amazonaws.sagemaker",
+        "AIBenchmarkOutputResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AIBENCHMARKOUTPUTRESULT_MEMBER_S3_OUTPUT_LOCATION,
+        &AIBENCHMARKOUTPUTRESULT_MEMBER_CLOUD_WATCH_LOGS,
+        &AIBENCHMARKOUTPUTRESULT_MEMBER_MLFLOW_CONFIG,
+    ],
+);
+impl AiBenchmarkOutputResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIBENCHMARKOUTPUTRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiBenchmarkOutputResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_output_location {
+            ser.write_string(&AIBENCHMARKOUTPUTRESULT_MEMBER_S3_OUTPUT_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_logs {
+            ser.write_list(
+                &AIBENCHMARKOUTPUTRESULT_MEMBER_CLOUD_WATCH_LOGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AiCloudWatchLogs::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.mlflow_config {
+            ser.write_struct(&AIBENCHMARKOUTPUTRESULT_MEMBER_MLFLOW_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiBenchmarkOutputResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIBENCHMARKOUTPUTRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_output_location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_logs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AiCloudWatchLogs::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mlflow_config = Some(crate::types::AiMlflowConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiBenchmarkOutputResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiBenchmarkOutputResult {
     /// Creates a new builder-style object to manufacture [`AiBenchmarkOutputResult`](crate::types::AiBenchmarkOutputResult).
     pub fn builder() -> crate::types::builders::AiBenchmarkOutputResultBuilder {

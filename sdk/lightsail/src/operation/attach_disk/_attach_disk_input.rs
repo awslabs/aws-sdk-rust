@@ -34,6 +34,154 @@ impl AttachDiskInput {
         self.auto_mounting
     }
 }
+static ATTACHDISKINPUT_MEMBER_DISK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#AttachDiskInput$diskName",
+        "com.amazonaws.lightsail.synthetic",
+        "AttachDiskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "diskName",
+    0,
+);
+static ATTACHDISKINPUT_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#AttachDiskInput$instanceName",
+        "com.amazonaws.lightsail.synthetic",
+        "AttachDiskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceName",
+    1,
+);
+static ATTACHDISKINPUT_MEMBER_DISK_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#AttachDiskInput$diskPath",
+        "com.amazonaws.lightsail.synthetic",
+        "AttachDiskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "diskPath",
+    2,
+);
+static ATTACHDISKINPUT_MEMBER_AUTO_MOUNTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#AttachDiskInput$autoMounting",
+        "com.amazonaws.lightsail.synthetic",
+        "AttachDiskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "autoMounting",
+    3,
+);
+static ATTACHDISKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#AttachDiskInput",
+        "com.amazonaws.lightsail.synthetic",
+        "AttachDiskInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ATTACHDISKINPUT_MEMBER_DISK_NAME,
+        &ATTACHDISKINPUT_MEMBER_INSTANCE_NAME,
+        &ATTACHDISKINPUT_MEMBER_DISK_PATH,
+        &ATTACHDISKINPUT_MEMBER_AUTO_MOUNTING,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/AttachDisk", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AttachDiskRequest");
+impl AttachDiskInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ATTACHDISKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AttachDiskInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.disk_name {
+            ser.write_string(&ATTACHDISKINPUT_MEMBER_DISK_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&ATTACHDISKINPUT_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.disk_path {
+            ser.write_string(&ATTACHDISKINPUT_MEMBER_DISK_PATH, val)?;
+        }
+        if let Some(ref val) = self.auto_mounting {
+            ser.write_boolean(&ATTACHDISKINPUT_MEMBER_AUTO_MOUNTING, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::attach_disk::builders::AttachDiskInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ATTACHDISKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_mounting = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AttachDiskInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.disk_name = builder.disk_name.or(Some(String::new()));
+        builder.instance_name = builder.instance_name.or(Some(String::new()));
+        builder.disk_path = builder.disk_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AttachDiskInput {
     /// Creates a new builder-style object to manufacture [`AttachDiskInput`](crate::operation::attach_disk::AttachDiskInput).
     pub fn builder() -> crate::operation::attach_disk::builders::AttachDiskInputBuilder {

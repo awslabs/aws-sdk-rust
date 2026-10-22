@@ -50,6 +50,239 @@ impl ListTrainingPlansInput {
         self.filters.as_deref().unwrap_or_default()
     }
 }
+static LISTTRAININGPLANSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTTRAININGPLANSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static LISTTRAININGPLANSINPUT_MEMBER_START_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput$StartTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTimeAfter",
+    2,
+);
+static LISTTRAININGPLANSINPUT_MEMBER_START_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput$StartTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTimeBefore",
+    3,
+);
+static LISTTRAININGPLANSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    4,
+);
+static LISTTRAININGPLANSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    5,
+);
+static LISTTRAININGPLANSINPUT_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanFilters$member",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTTRAININGPLANSINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput$Filters",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Filters",
+    6,
+)
+.with_list_member(&LISTTRAININGPLANSINPUT_MEMBER_FILTERS_MEMBER);
+static LISTTRAININGPLANSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListTrainingPlansInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListTrainingPlansInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTTRAININGPLANSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTTRAININGPLANSINPUT_MEMBER_MAX_RESULTS,
+        &LISTTRAININGPLANSINPUT_MEMBER_START_TIME_AFTER,
+        &LISTTRAININGPLANSINPUT_MEMBER_START_TIME_BEFORE,
+        &LISTTRAININGPLANSINPUT_MEMBER_SORT_BY,
+        &LISTTRAININGPLANSINPUT_MEMBER_SORT_ORDER,
+        &LISTTRAININGPLANSINPUT_MEMBER_FILTERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListTrainingPlansRequest");
+impl ListTrainingPlansInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTTRAININGPLANSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListTrainingPlansInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTTRAININGPLANSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTTRAININGPLANSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.start_time_after {
+            ser.write_timestamp(&LISTTRAININGPLANSINPUT_MEMBER_START_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.start_time_before {
+            ser.write_timestamp(&LISTTRAININGPLANSINPUT_MEMBER_START_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTTRAININGPLANSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTTRAININGPLANSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &LISTTRAININGPLANSINPUT_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TrainingPlanFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_training_plans::builders::ListTrainingPlansInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTTRAININGPLANSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::TrainingPlanSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::TrainingPlanSortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TrainingPlanFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListTrainingPlansInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListTrainingPlansInput {
     /// Creates a new builder-style object to manufacture [`ListTrainingPlansInput`](crate::operation::list_training_plans::ListTrainingPlansInput).
     pub fn builder() -> crate::operation::list_training_plans::builders::ListTrainingPlansInputBuilder {

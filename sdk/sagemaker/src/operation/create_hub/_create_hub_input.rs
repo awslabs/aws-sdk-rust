@@ -46,6 +46,235 @@ impl CreateHubInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEHUBINPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubInput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    0,
+);
+static CREATEHUBINPUT_MEMBER_HUB_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubInput$HubDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubDescription",
+    1,
+);
+static CREATEHUBINPUT_MEMBER_HUB_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubInput$HubDisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubDisplayName",
+    2,
+);
+static CREATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubSearchKeywordList$member",
+        "com.amazonaws.sagemaker",
+        "HubSearchKeywordList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubInput$HubSearchKeywords",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HubSearchKeywords",
+    3,
+)
+.with_list_member(&CREATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS_MEMBER);
+static CREATEHUBINPUT_MEMBER_S3_STORAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubInput$S3StorageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3StorageConfig",
+    4,
+);
+static CREATEHUBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEHUBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEHUBINPUT_MEMBER_TAGS_MEMBER);
+static CREATEHUBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEHUBINPUT_MEMBER_HUB_NAME,
+        &CREATEHUBINPUT_MEMBER_HUB_DESCRIPTION,
+        &CREATEHUBINPUT_MEMBER_HUB_DISPLAY_NAME,
+        &CREATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS,
+        &CREATEHUBINPUT_MEMBER_S3_STORAGE_CONFIG,
+        &CREATEHUBINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateHubRequest");
+impl CreateHubInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEHUBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateHubInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&CREATEHUBINPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_description {
+            ser.write_string(&CREATEHUBINPUT_MEMBER_HUB_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.hub_display_name {
+            ser.write_string(&CREATEHUBINPUT_MEMBER_HUB_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_search_keywords {
+            ser.write_list(
+                &CREATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_storage_config {
+            ser.write_struct(&CREATEHUBINPUT_MEMBER_S3_STORAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEHUBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_hub::builders::CreateHubInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEHUBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_search_keywords = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_storage_config = Some(crate::types::HubS3StorageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateHubInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hub_name = builder.hub_name.or(Some(String::new()));
+        builder.hub_description = builder.hub_description.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateHubInput {
     /// Creates a new builder-style object to manufacture [`CreateHubInput`](crate::operation::create_hub::CreateHubInput).
     pub fn builder() -> crate::operation::create_hub::builders::CreateHubInputBuilder {

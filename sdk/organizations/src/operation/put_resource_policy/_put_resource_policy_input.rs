@@ -24,6 +24,128 @@ impl PutResourcePolicyInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static PUTRESOURCEPOLICYINPUT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#PutResourcePolicyInput$Content",
+        "com.amazonaws.organizations.synthetic",
+        "PutResourcePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    0,
+);
+static PUTRESOURCEPOLICYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Tags$member", "com.amazonaws.organizations", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTRESOURCEPOLICYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#PutResourcePolicyInput$Tags",
+        "com.amazonaws.organizations.synthetic",
+        "PutResourcePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&PUTRESOURCEPOLICYINPUT_MEMBER_TAGS_MEMBER);
+static PUTRESOURCEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#PutResourcePolicyInput",
+        "com.amazonaws.organizations.synthetic",
+        "PutResourcePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUTRESOURCEPOLICYINPUT_MEMBER_CONTENT, &PUTRESOURCEPOLICYINPUT_MEMBER_TAGS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutResourcePolicyRequest");
+impl PutResourcePolicyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTRESOURCEPOLICYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutResourcePolicyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.content {
+            ser.write_string(&PUTRESOURCEPOLICYINPUT_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &PUTRESOURCEPOLICYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTRESOURCEPOLICYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutResourcePolicyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.content = builder.content.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
     pub fn builder() -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {

@@ -24,6 +24,131 @@ impl DiscoverInstancesRevisionInput {
         self.owner_account.as_deref()
     }
 }
+static DISCOVERINSTANCESREVISIONINPUT_MEMBER_NAMESPACE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesRevisionInput$NamespaceName",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesRevisionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NamespaceName",
+    0,
+);
+static DISCOVERINSTANCESREVISIONINPUT_MEMBER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesRevisionInput$ServiceName",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesRevisionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceName",
+    1,
+);
+static DISCOVERINSTANCESREVISIONINPUT_MEMBER_OWNER_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesRevisionInput$OwnerAccount",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesRevisionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerAccount",
+    2,
+);
+static DISCOVERINSTANCESREVISIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesRevisionInput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesRevisionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISCOVERINSTANCESREVISIONINPUT_MEMBER_NAMESPACE_NAME,
+        &DISCOVERINSTANCESREVISIONINPUT_MEMBER_SERVICE_NAME,
+        &DISCOVERINSTANCESREVISIONINPUT_MEMBER_OWNER_ACCOUNT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DiscoverInstancesRevisionRequest");
+impl DiscoverInstancesRevisionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISCOVERINSTANCESREVISIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DiscoverInstancesRevisionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.namespace_name {
+            ser.write_string(&DISCOVERINSTANCESREVISIONINPUT_MEMBER_NAMESPACE_NAME, val)?;
+        }
+        if let Some(ref val) = self.service_name {
+            ser.write_string(&DISCOVERINSTANCESREVISIONINPUT_MEMBER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.owner_account {
+            ser.write_string(&DISCOVERINSTANCESREVISIONINPUT_MEMBER_OWNER_ACCOUNT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::discover_instances_revision::builders::DiscoverInstancesRevisionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISCOVERINSTANCESREVISIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_account = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DiscoverInstancesRevisionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.namespace_name = builder.namespace_name.or(Some(String::new()));
+        builder.service_name = builder.service_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DiscoverInstancesRevisionInput {
     /// Creates a new builder-style object to manufacture [`DiscoverInstancesRevisionInput`](crate::operation::discover_instances_revision::DiscoverInstancesRevisionInput).
     pub fn builder() -> crate::operation::discover_instances_revision::builders::DiscoverInstancesRevisionInputBuilder {

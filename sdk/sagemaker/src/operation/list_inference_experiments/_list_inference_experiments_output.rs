@@ -21,6 +21,134 @@ impl ListInferenceExperimentsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_INFERENCE_EXPERIMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceExperimentList$member",
+            "com.amazonaws.sagemaker",
+            "InferenceExperimentList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_INFERENCE_EXPERIMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceExperimentsOutput$InferenceExperiments",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceExperimentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InferenceExperiments",
+    0,
+)
+.with_list_member(&LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_INFERENCE_EXPERIMENTS_MEMBER);
+static LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceExperimentsOutput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceExperimentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTINFERENCEEXPERIMENTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceExperimentsOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceExperimentsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_INFERENCE_EXPERIMENTS,
+        &LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListInferenceExperimentsResponse");
+impl ListInferenceExperimentsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTINFERENCEEXPERIMENTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListInferenceExperimentsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.inference_experiments {
+            ser.write_list(
+                &LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_INFERENCE_EXPERIMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InferenceExperimentSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTINFERENCEEXPERIMENTSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_inference_experiments::builders::ListInferenceExperimentsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTINFERENCEEXPERIMENTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_experiments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InferenceExperimentSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListInferenceExperimentsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListInferenceExperimentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

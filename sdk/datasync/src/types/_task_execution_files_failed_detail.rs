@@ -33,6 +33,136 @@ impl TaskExecutionFilesFailedDetail {
         self.delete
     }
 }
+static TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_PREPARE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFilesFailedDetail$Prepare",
+        "com.amazonaws.datasync",
+        "TaskExecutionFilesFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Prepare",
+    0,
+);
+static TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_TRANSFER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFilesFailedDetail$Transfer",
+        "com.amazonaws.datasync",
+        "TaskExecutionFilesFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Transfer",
+    1,
+);
+static TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_VERIFY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFilesFailedDetail$Verify",
+        "com.amazonaws.datasync",
+        "TaskExecutionFilesFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Verify",
+    2,
+);
+static TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFilesFailedDetail$Delete",
+        "com.amazonaws.datasync",
+        "TaskExecutionFilesFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Delete",
+    3,
+);
+static TASKEXECUTIONFILESFAILEDDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFilesFailedDetail",
+        "com.amazonaws.datasync",
+        "TaskExecutionFilesFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_PREPARE,
+        &TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_TRANSFER,
+        &TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_VERIFY,
+        &TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_DELETE,
+    ],
+);
+impl TaskExecutionFilesFailedDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKEXECUTIONFILESFAILEDDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskExecutionFilesFailedDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.prepare;
+            ser.write_long(&TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_PREPARE, *val)?;
+        }
+        {
+            let val = &self.transfer;
+            ser.write_long(&TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_TRANSFER, *val)?;
+        }
+        {
+            let val = &self.verify;
+            ser.write_long(&TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_VERIFY, *val)?;
+        }
+        {
+            let val = &self.delete;
+            ser.write_long(&TASKEXECUTIONFILESFAILEDDETAIL_MEMBER_DELETE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskExecutionFilesFailedDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKEXECUTIONFILESFAILEDDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.prepare = Some(deser.read_long(member)?);
+                }
+                Some(1) => {
+                    self.transfer = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.verify = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    self.delete = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskExecutionFilesFailedDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TaskExecutionFilesFailedDetail {
     /// Creates a new builder-style object to manufacture [`TaskExecutionFilesFailedDetail`](crate::types::TaskExecutionFilesFailedDetail).
     pub fn builder() -> crate::types::builders::TaskExecutionFilesFailedDetailBuilder {

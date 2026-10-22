@@ -53,7 +53,11 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_worker_configurations;
 
+pub(crate) mod shape_pause_connector;
+
 pub(crate) mod shape_restart_connector;
+
+pub(crate) mod shape_resume_connector;
 
 pub(crate) mod shape_tag_resource;
 

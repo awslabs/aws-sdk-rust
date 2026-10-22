@@ -36,6 +36,119 @@ impl InputDataConfig {
         self.data_access_role_arn.deref()
     }
 }
+static INPUTDATACONFIG_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InputDataConfig$S3Uri",
+        "com.amazonaws.transcribe",
+        "InputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    0,
+);
+static INPUTDATACONFIG_MEMBER_TUNING_DATA_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InputDataConfig$TuningDataS3Uri",
+        "com.amazonaws.transcribe",
+        "InputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TuningDataS3Uri",
+    1,
+);
+static INPUTDATACONFIG_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InputDataConfig$DataAccessRoleArn",
+        "com.amazonaws.transcribe",
+        "InputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    2,
+);
+static INPUTDATACONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#InputDataConfig", "com.amazonaws.transcribe", "InputDataConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INPUTDATACONFIG_MEMBER_S3_URI,
+        &INPUTDATACONFIG_MEMBER_TUNING_DATA_S3_URI,
+        &INPUTDATACONFIG_MEMBER_DATA_ACCESS_ROLE_ARN,
+    ],
+);
+impl InputDataConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INPUTDATACONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InputDataConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.s3_uri;
+            ser.write_string(&INPUTDATACONFIG_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.tuning_data_s3_uri {
+            ser.write_string(&INPUTDATACONFIG_MEMBER_TUNING_DATA_S3_URI, val)?;
+        }
+        {
+            let val = &self.data_access_role_arn;
+            ser.write_string(&INPUTDATACONFIG_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InputDataConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INPUTDATACONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.s3_uri = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tuning_data_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.data_access_role_arn = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InputDataConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.s3_uri = builder.s3_uri.or(Some(String::new()));
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl InputDataConfig {
     /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::types::InputDataConfig).
     pub fn builder() -> crate::types::builders::InputDataConfigBuilder {

@@ -20,6 +20,129 @@ impl RemoveCustomRoutingEndpointsInput {
         self.endpoint_group_arn.as_deref()
     }
 }
+static REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointIds$member",
+        "com.amazonaws.globalaccelerator",
+        "EndpointIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#RemoveCustomRoutingEndpointsInput$EndpointIds",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "RemoveCustomRoutingEndpointsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EndpointIds",
+    0,
+)
+.with_list_member(&REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_IDS_MEMBER);
+static REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#RemoveCustomRoutingEndpointsInput$EndpointGroupArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "RemoveCustomRoutingEndpointsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupArn",
+    1,
+);
+static REMOVECUSTOMROUTINGENDPOINTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#RemoveCustomRoutingEndpointsInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "RemoveCustomRoutingEndpointsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_IDS,
+        &REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_GROUP_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RemoveCustomRoutingEndpointsRequest");
+impl RemoveCustomRoutingEndpointsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMOVECUSTOMROUTINGENDPOINTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemoveCustomRoutingEndpointsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_ids {
+            ser.write_list(
+                &REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.endpoint_group_arn {
+            ser.write_string(&REMOVECUSTOMROUTINGENDPOINTSINPUT_MEMBER_ENDPOINT_GROUP_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REMOVECUSTOMROUTINGENDPOINTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RemoveCustomRoutingEndpointsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_ids = builder.endpoint_ids.or(Some(Vec::new()));
+        builder.endpoint_group_arn = builder.endpoint_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RemoveCustomRoutingEndpointsInput {
     /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsInput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsInput).
     pub fn builder() -> crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder {

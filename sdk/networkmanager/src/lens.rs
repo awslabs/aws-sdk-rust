@@ -119,6 +119,16 @@ pub(crate) fn reflens_get_network_resources_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_network_routes_output_output_next_token(
+    input: &crate::operation::get_network_routes::GetNetworkRoutesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_network_telemetry_output_output_next_token(
     input: &crate::operation::get_network_telemetry::GetNetworkTelemetryOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -151,6 +161,16 @@ pub(crate) fn reflens_get_transit_gateway_connect_peer_associations_output_outpu
 
 pub(crate) fn reflens_get_transit_gateway_registrations_output_output_next_token(
     input: &crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_attachment_nat_configurations_output_output_next_token(
+    input: &crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -323,6 +343,13 @@ pub(crate) fn lens_get_network_resources_output_output_network_resources(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_get_network_routes_output_output_network_routes(
+    input: crate::operation::get_network_routes::GetNetworkRoutesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkRoute>> {
+    let input = input.network_routes?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_network_telemetry_output_output_network_telemetry(
     input: crate::operation::get_network_telemetry::GetNetworkTelemetryOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkTelemetry>> {
@@ -348,6 +375,13 @@ pub(crate) fn lens_get_transit_gateway_registrations_output_output_transit_gatew
     input: crate::operation::get_transit_gateway_registrations::GetTransitGatewayRegistrationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayRegistration>> {
     let input = input.transit_gateway_registrations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_attachment_nat_configurations_output_output_attachment_nat_configurations(
+    input: crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AttachmentNatConfiguration>> {
+    let input = input.attachment_nat_configurations;
     ::std::option::Option::Some(input)
 }
 

@@ -57,6 +57,211 @@ impl MedicalScribeJobSummary {
         self.failure_reason.as_deref()
     }
 }
+static MEDICALSCRIBEJOBSUMMARY_MEMBER_MEDICAL_SCRIBE_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary$MedicalScribeJobName",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MedicalScribeJobName",
+    0,
+);
+static MEDICALSCRIBEJOBSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary$CreationTime",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    1,
+);
+static MEDICALSCRIBEJOBSUMMARY_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary$StartTime",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    2,
+);
+static MEDICALSCRIBEJOBSUMMARY_MEMBER_COMPLETION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary$CompletionTime",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompletionTime",
+    3,
+);
+static MEDICALSCRIBEJOBSUMMARY_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary$LanguageCode",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    4,
+);
+static MEDICALSCRIBEJOBSUMMARY_MEMBER_MEDICAL_SCRIBE_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary$MedicalScribeJobStatus",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MedicalScribeJobStatus",
+    5,
+);
+static MEDICALSCRIBEJOBSUMMARY_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary$FailureReason",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    6,
+);
+static MEDICALSCRIBEJOBSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeJobSummary",
+        "com.amazonaws.transcribe",
+        "MedicalScribeJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MEDICALSCRIBEJOBSUMMARY_MEMBER_MEDICAL_SCRIBE_JOB_NAME,
+        &MEDICALSCRIBEJOBSUMMARY_MEMBER_CREATION_TIME,
+        &MEDICALSCRIBEJOBSUMMARY_MEMBER_START_TIME,
+        &MEDICALSCRIBEJOBSUMMARY_MEMBER_COMPLETION_TIME,
+        &MEDICALSCRIBEJOBSUMMARY_MEMBER_LANGUAGE_CODE,
+        &MEDICALSCRIBEJOBSUMMARY_MEMBER_MEDICAL_SCRIBE_JOB_STATUS,
+        &MEDICALSCRIBEJOBSUMMARY_MEMBER_FAILURE_REASON,
+    ],
+);
+impl MedicalScribeJobSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MEDICALSCRIBEJOBSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MedicalScribeJobSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.medical_scribe_job_name {
+            ser.write_string(&MEDICALSCRIBEJOBSUMMARY_MEMBER_MEDICAL_SCRIBE_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MEDICALSCRIBEJOBSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&MEDICALSCRIBEJOBSUMMARY_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.completion_time {
+            ser.write_timestamp(&MEDICALSCRIBEJOBSUMMARY_MEMBER_COMPLETION_TIME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&MEDICALSCRIBEJOBSUMMARY_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.medical_scribe_job_status {
+            ser.write_string(&MEDICALSCRIBEJOBSUMMARY_MEMBER_MEDICAL_SCRIBE_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&MEDICALSCRIBEJOBSUMMARY_MEMBER_FAILURE_REASON, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MedicalScribeJobSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MEDICALSCRIBEJOBSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::MedicalScribeLanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_job_status = Some(crate::types::MedicalScribeJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MedicalScribeJobSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MedicalScribeJobSummary {
     /// Creates a new builder-style object to manufacture [`MedicalScribeJobSummary`](crate::types::MedicalScribeJobSummary).
     pub fn builder() -> crate::types::builders::MedicalScribeJobSummaryBuilder {

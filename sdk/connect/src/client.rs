@@ -639,6 +639,8 @@ mod list_quick_connects;
 
 mod list_realtime_contact_analysis_segments_v2;
 
+mod list_replication_findings;
+
 mod list_routing_profile_manual_assignment_queues;
 
 mod list_routing_profile_queues;

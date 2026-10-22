@@ -59,6 +59,149 @@ impl ::std::fmt::Debug for AccessKey {
         formatter.finish()
     }
 }
+static ACCESSKEY_MEMBER_ACCESS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#AccessKey$accessKeyId", "com.amazonaws.lightsail", "AccessKey"),
+    ::aws_smithy_schema::ShapeType::String,
+    "accessKeyId",
+    0,
+);
+static ACCESSKEY_MEMBER_SECRET_ACCESS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AccessKey$secretAccessKey",
+        "com.amazonaws.lightsail",
+        "AccessKey",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "secretAccessKey",
+    1,
+);
+static ACCESSKEY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#AccessKey$status", "com.amazonaws.lightsail", "AccessKey"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    2,
+);
+static ACCESSKEY_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#AccessKey$createdAt", "com.amazonaws.lightsail", "AccessKey"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static ACCESSKEY_MEMBER_LAST_USED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#AccessKey$lastUsed", "com.amazonaws.lightsail", "AccessKey"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lastUsed",
+    4,
+);
+static ACCESSKEY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#AccessKey", "com.amazonaws.lightsail", "AccessKey"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACCESSKEY_MEMBER_ACCESS_KEY_ID,
+        &ACCESSKEY_MEMBER_SECRET_ACCESS_KEY,
+        &ACCESSKEY_MEMBER_STATUS,
+        &ACCESSKEY_MEMBER_CREATED_AT,
+        &ACCESSKEY_MEMBER_LAST_USED,
+    ],
+);
+impl AccessKey {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCESSKEY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AccessKey {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.access_key_id {
+            ser.write_string(&ACCESSKEY_MEMBER_ACCESS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.secret_access_key {
+            ser.write_string(&ACCESSKEY_MEMBER_SECRET_ACCESS_KEY, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ACCESSKEY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&ACCESSKEY_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.last_used {
+            ser.write_struct(&ACCESSKEY_MEMBER_LAST_USED, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccessKeyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCESSKEY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_access_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::StatusType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_used = Some(crate::types::AccessKeyLastUsed::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AccessKey {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AccessKey {
     /// Creates a new builder-style object to manufacture [`AccessKey`](crate::types::AccessKey).
     pub fn builder() -> crate::types::builders::AccessKeyBuilder {

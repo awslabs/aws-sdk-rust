@@ -57,6 +57,127 @@ impl UsageRecordResult {
         self.status.as_ref()
     }
 }
+static USAGERECORDRESULT_MEMBER_USAGE_RECORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecordResult$UsageRecord",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecordResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UsageRecord",
+    0,
+);
+static USAGERECORDRESULT_MEMBER_METERING_RECORD_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecordResult$MeteringRecordId",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecordResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MeteringRecordId",
+    1,
+);
+static USAGERECORDRESULT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecordResult$Status",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecordResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static USAGERECORDRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecordResult",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecordResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &USAGERECORDRESULT_MEMBER_USAGE_RECORD,
+        &USAGERECORDRESULT_MEMBER_METERING_RECORD_ID,
+        &USAGERECORDRESULT_MEMBER_STATUS,
+    ],
+);
+impl UsageRecordResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USAGERECORDRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UsageRecordResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.usage_record {
+            ser.write_struct(&USAGERECORDRESULT_MEMBER_USAGE_RECORD, val)?;
+        }
+        if let Some(ref val) = self.metering_record_id {
+            ser.write_string(&USAGERECORDRESULT_MEMBER_METERING_RECORD_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&USAGERECORDRESULT_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UsageRecordResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USAGERECORDRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_record = Some(crate::types::UsageRecord::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metering_record_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::UsageRecordResultStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UsageRecordResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UsageRecordResult {
     /// Creates a new builder-style object to manufacture [`UsageRecordResult`](crate::types::UsageRecordResult).
     pub fn builder() -> crate::types::builders::UsageRecordResultBuilder {

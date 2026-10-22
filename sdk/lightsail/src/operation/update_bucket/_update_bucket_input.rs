@@ -64,6 +64,209 @@ impl UpdateBucketInput {
         self.cors.as_ref()
     }
 }
+static UPDATEBUCKETINPUT_MEMBER_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketInput$bucketName",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucketName",
+    0,
+);
+static UPDATEBUCKETINPUT_MEMBER_ACCESS_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketInput$accessRules",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "accessRules",
+    1,
+);
+static UPDATEBUCKETINPUT_MEMBER_VERSIONING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketInput$versioning",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "versioning",
+    2,
+);
+static UPDATEBUCKETINPUT_MEMBER_READONLY_ACCESS_ACCOUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#PartnerIdList$member", "com.amazonaws.lightsail", "PartnerIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEBUCKETINPUT_MEMBER_READONLY_ACCESS_ACCOUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketInput$readonlyAccessAccounts",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "readonlyAccessAccounts",
+    3,
+)
+.with_list_member(&UPDATEBUCKETINPUT_MEMBER_READONLY_ACCESS_ACCOUNTS_MEMBER);
+static UPDATEBUCKETINPUT_MEMBER_ACCESS_LOG_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketInput$accessLogConfig",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "accessLogConfig",
+    4,
+);
+static UPDATEBUCKETINPUT_MEMBER_CORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketInput$cors",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cors",
+    5,
+);
+static UPDATEBUCKETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketInput",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEBUCKETINPUT_MEMBER_BUCKET_NAME,
+        &UPDATEBUCKETINPUT_MEMBER_ACCESS_RULES,
+        &UPDATEBUCKETINPUT_MEMBER_VERSIONING,
+        &UPDATEBUCKETINPUT_MEMBER_READONLY_ACCESS_ACCOUNTS,
+        &UPDATEBUCKETINPUT_MEMBER_ACCESS_LOG_CONFIG,
+        &UPDATEBUCKETINPUT_MEMBER_CORS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/UpdateBucket", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateBucketRequest");
+impl UpdateBucketInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEBUCKETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateBucketInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bucket_name {
+            ser.write_string(&UPDATEBUCKETINPUT_MEMBER_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.access_rules {
+            ser.write_struct(&UPDATEBUCKETINPUT_MEMBER_ACCESS_RULES, val)?;
+        }
+        if let Some(ref val) = self.versioning {
+            ser.write_string(&UPDATEBUCKETINPUT_MEMBER_VERSIONING, val)?;
+        }
+        if let Some(ref val) = self.readonly_access_accounts {
+            ser.write_list(
+                &UPDATEBUCKETINPUT_MEMBER_READONLY_ACCESS_ACCOUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.access_log_config {
+            ser.write_struct(&UPDATEBUCKETINPUT_MEMBER_ACCESS_LOG_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cors {
+            ser.write_struct(&UPDATEBUCKETINPUT_MEMBER_CORS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_bucket::builders::UpdateBucketInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEBUCKETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_rules = Some(crate::types::AccessRules::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.versioning = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.readonly_access_accounts = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_log_config = Some(crate::types::BucketAccessLogConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cors = Some(crate::types::BucketCorsConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateBucketInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.bucket_name = builder.bucket_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateBucketInput {
     /// Creates a new builder-style object to manufacture [`UpdateBucketInput`](crate::operation::update_bucket::UpdateBucketInput).
     pub fn builder() -> crate::operation::update_bucket::builders::UpdateBucketInputBuilder {

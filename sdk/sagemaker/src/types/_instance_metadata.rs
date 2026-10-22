@@ -51,6 +51,235 @@ impl InstanceMetadata {
         self.node_logical_id.as_deref()
     }
 }
+static INSTANCEMETADATA_MEMBER_CUSTOMER_ENI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceMetadata$CustomerEni",
+        "com.amazonaws.sagemaker",
+        "InstanceMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerEni",
+    0,
+);
+static INSTANCEMETADATA_MEMBER_ADDITIONAL_ENIS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceMetadata$AdditionalEnis",
+        "com.amazonaws.sagemaker",
+        "InstanceMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdditionalEnis",
+    1,
+);
+static INSTANCEMETADATA_MEMBER_INSTANCE_REQUIREMENTS_ENI_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InstanceRequirementsEniConfigurations$member",
+            "com.amazonaws.sagemaker",
+            "InstanceRequirementsEniConfigurations",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static INSTANCEMETADATA_MEMBER_INSTANCE_REQUIREMENTS_ENI_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InstanceMetadata$InstanceRequirementsEniConfigurations",
+            "com.amazonaws.sagemaker",
+            "InstanceMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "InstanceRequirementsEniConfigurations",
+        2,
+    )
+    .with_list_member(&INSTANCEMETADATA_MEMBER_INSTANCE_REQUIREMENTS_ENI_CONFIGURATIONS_MEMBER);
+static INSTANCEMETADATA_MEMBER_CAPACITY_RESERVATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceMetadata$CapacityReservation",
+        "com.amazonaws.sagemaker",
+        "InstanceMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CapacityReservation",
+    3,
+);
+static INSTANCEMETADATA_MEMBER_FAILURE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceMetadata$FailureMessage",
+        "com.amazonaws.sagemaker",
+        "InstanceMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureMessage",
+    4,
+);
+static INSTANCEMETADATA_MEMBER_LCS_EXECUTION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceMetadata$LcsExecutionState",
+        "com.amazonaws.sagemaker",
+        "InstanceMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LcsExecutionState",
+    5,
+);
+static INSTANCEMETADATA_MEMBER_NODE_LOGICAL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceMetadata$NodeLogicalId",
+        "com.amazonaws.sagemaker",
+        "InstanceMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeLogicalId",
+    6,
+);
+static INSTANCEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#InstanceMetadata", "com.amazonaws.sagemaker", "InstanceMetadata"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEMETADATA_MEMBER_CUSTOMER_ENI,
+        &INSTANCEMETADATA_MEMBER_ADDITIONAL_ENIS,
+        &INSTANCEMETADATA_MEMBER_INSTANCE_REQUIREMENTS_ENI_CONFIGURATIONS,
+        &INSTANCEMETADATA_MEMBER_CAPACITY_RESERVATION,
+        &INSTANCEMETADATA_MEMBER_FAILURE_MESSAGE,
+        &INSTANCEMETADATA_MEMBER_LCS_EXECUTION_STATE,
+        &INSTANCEMETADATA_MEMBER_NODE_LOGICAL_ID,
+    ],
+);
+impl InstanceMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.customer_eni {
+            ser.write_string(&INSTANCEMETADATA_MEMBER_CUSTOMER_ENI, val)?;
+        }
+        if let Some(ref val) = self.additional_enis {
+            ser.write_struct(&INSTANCEMETADATA_MEMBER_ADDITIONAL_ENIS, val)?;
+        }
+        if let Some(ref val) = self.instance_requirements_eni_configurations {
+            ser.write_list(
+                &INSTANCEMETADATA_MEMBER_INSTANCE_REQUIREMENTS_ENI_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InstanceRequirementsEniConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.capacity_reservation {
+            ser.write_struct(&INSTANCEMETADATA_MEMBER_CAPACITY_RESERVATION, val)?;
+        }
+        if let Some(ref val) = self.failure_message {
+            ser.write_string(&INSTANCEMETADATA_MEMBER_FAILURE_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.lcs_execution_state {
+            ser.write_string(&INSTANCEMETADATA_MEMBER_LCS_EXECUTION_STATE, val)?;
+        }
+        if let Some(ref val) = self.node_logical_id {
+            ser.write_string(&INSTANCEMETADATA_MEMBER_NODE_LOGICAL_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_eni = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_enis = Some(crate::types::AdditionalEnis::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_requirements_eni_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstanceRequirementsEniConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation = Some(crate::types::CapacityReservation::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lcs_execution_state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_logical_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceMetadata {
     /// Creates a new builder-style object to manufacture [`InstanceMetadata`](crate::types::InstanceMetadata).
     pub fn builder() -> crate::types::builders::InstanceMetadataBuilder {

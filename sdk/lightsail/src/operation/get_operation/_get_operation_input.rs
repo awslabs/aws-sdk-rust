@@ -12,6 +12,87 @@ impl GetOperationInput {
         self.operation_id.as_deref()
     }
 }
+static GETOPERATIONINPUT_MEMBER_OPERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetOperationInput$operationId",
+        "com.amazonaws.lightsail.synthetic",
+        "GetOperationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "operationId",
+    0,
+);
+static GETOPERATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetOperationInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetOperationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETOPERATIONINPUT_MEMBER_OPERATION_ID],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/GetOperation", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetOperationRequest");
+impl GetOperationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETOPERATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetOperationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.operation_id {
+            ser.write_string(&GETOPERATIONINPUT_MEMBER_OPERATION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_operation::builders::GetOperationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETOPERATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetOperationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.operation_id = builder.operation_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetOperationInput {
     /// Creates a new builder-style object to manufacture [`GetOperationInput`](crate::operation::get_operation::GetOperationInput).
     pub fn builder() -> crate::operation::get_operation::builders::GetOperationInputBuilder {

@@ -31,6 +31,150 @@ impl MonitoringJobDefinitionSummary {
         self.endpoint_name.as_deref()
     }
 }
+static MONITORINGJOBDEFINITIONSUMMARY_MEMBER_MONITORING_JOB_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#MonitoringJobDefinitionSummary$MonitoringJobDefinitionName",
+            "com.amazonaws.sagemaker",
+            "MonitoringJobDefinitionSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "MonitoringJobDefinitionName",
+        0,
+    );
+static MONITORINGJOBDEFINITIONSUMMARY_MEMBER_MONITORING_JOB_DEFINITION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#MonitoringJobDefinitionSummary$MonitoringJobDefinitionArn",
+            "com.amazonaws.sagemaker",
+            "MonitoringJobDefinitionSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "MonitoringJobDefinitionArn",
+        1,
+    );
+static MONITORINGJOBDEFINITIONSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinitionSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    2,
+);
+static MONITORINGJOBDEFINITIONSUMMARY_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinitionSummary$EndpointName",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointName",
+    3,
+);
+static MONITORINGJOBDEFINITIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinitionSummary",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinitionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGJOBDEFINITIONSUMMARY_MEMBER_MONITORING_JOB_DEFINITION_NAME,
+        &MONITORINGJOBDEFINITIONSUMMARY_MEMBER_MONITORING_JOB_DEFINITION_ARN,
+        &MONITORINGJOBDEFINITIONSUMMARY_MEMBER_CREATION_TIME,
+        &MONITORINGJOBDEFINITIONSUMMARY_MEMBER_ENDPOINT_NAME,
+    ],
+);
+impl MonitoringJobDefinitionSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGJOBDEFINITIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringJobDefinitionSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.monitoring_job_definition_name {
+            ser.write_string(&MONITORINGJOBDEFINITIONSUMMARY_MEMBER_MONITORING_JOB_DEFINITION_NAME, val)?;
+        }
+        if let Some(ref val) = self.monitoring_job_definition_arn {
+            ser.write_string(&MONITORINGJOBDEFINITIONSUMMARY_MEMBER_MONITORING_JOB_DEFINITION_ARN, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MONITORINGJOBDEFINITIONSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&MONITORINGJOBDEFINITIONSUMMARY_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringJobDefinitionSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGJOBDEFINITIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_job_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_job_definition_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringJobDefinitionSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringJobDefinitionSummary {
     /// Creates a new builder-style object to manufacture [`MonitoringJobDefinitionSummary`](crate::types::MonitoringJobDefinitionSummary).
     pub fn builder() -> crate::types::builders::MonitoringJobDefinitionSummaryBuilder {

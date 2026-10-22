@@ -128,6 +128,516 @@ impl CreateNotebookInstanceInput {
         self.instance_metadata_service_configuration.as_ref()
     }
 }
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$NotebookInstanceName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookInstanceName",
+    0,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$InstanceType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    1,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_SUBNET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$SubnetId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubnetId",
+    2,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecurityGroupIds$member",
+        "com.amazonaws.sagemaker",
+        "SecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$SecurityGroupIds",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    3,
+)
+.with_list_member(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$IpAddressType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    4,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    5,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$KmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    6,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_TAGS_MEMBER);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_LIFECYCLE_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$LifecycleConfigName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LifecycleConfigName",
+    8,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_DIRECT_INTERNET_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$DirectInternetAccess",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DirectInternetAccess",
+    9,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_VOLUME_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$VolumeSizeInGB",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "VolumeSizeInGB",
+    10,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceAcceleratorTypes$member",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceAcceleratorTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$AcceleratorTypes",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AcceleratorTypes",
+    11,
+)
+.with_list_member(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES_MEMBER);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_DEFAULT_CODE_REPOSITORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$DefaultCodeRepository",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultCodeRepository",
+    12,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AdditionalCodeRepositoryNamesOrUrls$member",
+            "com.amazonaws.sagemaker",
+            "AdditionalCodeRepositoryNamesOrUrls",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$AdditionalCodeRepositories",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AdditionalCodeRepositories",
+        13,
+    )
+    .with_list_member(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES_MEMBER);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_ROOT_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$RootAccess",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootAccess",
+    14,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_PLATFORM_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$PlatformIdentifier",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PlatformIdentifier",
+    15,
+);
+static CREATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_METADATA_SERVICE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput$InstanceMetadataServiceConfiguration",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "InstanceMetadataServiceConfiguration",
+        16,
+    );
+static CREATENOTEBOOKINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateNotebookInstanceInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_TYPE,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_SUBNET_ID,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_SECURITY_GROUP_IDS,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_IP_ADDRESS_TYPE,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_ROLE_ARN,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_KMS_KEY_ID,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_TAGS,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_LIFECYCLE_CONFIG_NAME,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_DIRECT_INTERNET_ACCESS,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_VOLUME_SIZE_IN_GB,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_DEFAULT_CODE_REPOSITORY,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_ROOT_ACCESS,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_PLATFORM_IDENTIFIER,
+        &CREATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_METADATA_SERVICE_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateNotebookInstanceInput");
+impl CreateNotebookInstanceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATENOTEBOOKINSTANCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateNotebookInstanceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.notebook_instance_name {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.subnet_id {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_SUBNET_ID, val)?;
+        }
+        if let Some(ref val) = self.security_group_ids {
+            ser.write_list(
+                &CREATENOTEBOOKINSTANCEINPUT_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATENOTEBOOKINSTANCEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.lifecycle_config_name {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_LIFECYCLE_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.direct_internet_access {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_DIRECT_INTERNET_ACCESS, val.as_str())?;
+        }
+        if let Some(ref val) = self.volume_size_in_gb {
+            ser.write_integer(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_VOLUME_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.accelerator_types {
+            ser.write_list(
+                &CREATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.default_code_repository {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_DEFAULT_CODE_REPOSITORY, val)?;
+        }
+        if let Some(ref val) = self.additional_code_repositories {
+            ser.write_list(
+                &CREATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.root_access {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_ROOT_ACCESS, val.as_str())?;
+        }
+        if let Some(ref val) = self.platform_identifier {
+            ser.write_string(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_PLATFORM_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.instance_metadata_service_configuration {
+            ser.write_struct(&CREATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_METADATA_SERVICE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_notebook_instance::builders::CreateNotebookInstanceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATENOTEBOOKINSTANCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::InstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.direct_internet_access = Some(crate::types::DirectInternetAccess::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NotebookInstanceAcceleratorType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_code_repository = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_code_repositories = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_access = Some(crate::types::RootAccess::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_metadata_service_configuration = Some(crate::types::InstanceMetadataServiceConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateNotebookInstanceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.notebook_instance_name = builder.notebook_instance_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateNotebookInstanceInput {
     /// Creates a new builder-style object to manufacture [`CreateNotebookInstanceInput`](crate::operation::create_notebook_instance::CreateNotebookInstanceInput).
     pub fn builder() -> crate::operation::create_notebook_instance::builders::CreateNotebookInstanceInputBuilder {

@@ -21,6 +21,135 @@ impl ListEntitiesDetectionJobsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_ENTITIES_DETECTION_JOB_PROPERTIES_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#EntitiesDetectionJobPropertiesList$member",
+            "com.amazonaws.comprehend",
+            "EntitiesDetectionJobPropertiesList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_ENTITIES_DETECTION_JOB_PROPERTIES_LIST: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend.synthetic#ListEntitiesDetectionJobsOutput$EntitiesDetectionJobPropertiesList",
+            "com.amazonaws.comprehend.synthetic",
+            "ListEntitiesDetectionJobsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "EntitiesDetectionJobPropertiesList",
+        0,
+    )
+    .with_list_member(&LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_ENTITIES_DETECTION_JOB_PROPERTIES_LIST_MEMBER);
+static LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ListEntitiesDetectionJobsOutput$NextToken",
+        "com.amazonaws.comprehend.synthetic",
+        "ListEntitiesDetectionJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTENTITIESDETECTIONJOBSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ListEntitiesDetectionJobsOutput",
+        "com.amazonaws.comprehend.synthetic",
+        "ListEntitiesDetectionJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_ENTITIES_DETECTION_JOB_PROPERTIES_LIST,
+        &LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListEntitiesDetectionJobsResponse");
+impl ListEntitiesDetectionJobsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTENTITIESDETECTIONJOBSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListEntitiesDetectionJobsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.entities_detection_job_properties_list {
+            ser.write_list(
+                &LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_ENTITIES_DETECTION_JOB_PROPERTIES_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EntitiesDetectionJobProperties::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTENTITIESDETECTIONJOBSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_entities_detection_jobs::builders::ListEntitiesDetectionJobsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTENTITIESDETECTIONJOBSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entities_detection_job_properties_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EntitiesDetectionJobProperties::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListEntitiesDetectionJobsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListEntitiesDetectionJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -25,6 +25,127 @@ impl PendingMaintenanceAction {
         self.current_apply_date.as_ref()
     }
 }
+static PENDINGMAINTENANCEACTION_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PendingMaintenanceAction$action",
+        "com.amazonaws.lightsail",
+        "PendingMaintenanceAction",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "action",
+    0,
+);
+static PENDINGMAINTENANCEACTION_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PendingMaintenanceAction$description",
+        "com.amazonaws.lightsail",
+        "PendingMaintenanceAction",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    1,
+);
+static PENDINGMAINTENANCEACTION_MEMBER_CURRENT_APPLY_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PendingMaintenanceAction$currentApplyDate",
+        "com.amazonaws.lightsail",
+        "PendingMaintenanceAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "currentApplyDate",
+    2,
+);
+static PENDINGMAINTENANCEACTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PendingMaintenanceAction",
+        "com.amazonaws.lightsail",
+        "PendingMaintenanceAction",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PENDINGMAINTENANCEACTION_MEMBER_ACTION,
+        &PENDINGMAINTENANCEACTION_MEMBER_DESCRIPTION,
+        &PENDINGMAINTENANCEACTION_MEMBER_CURRENT_APPLY_DATE,
+    ],
+);
+impl PendingMaintenanceAction {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PENDINGMAINTENANCEACTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PendingMaintenanceAction {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action {
+            ser.write_string(&PENDINGMAINTENANCEACTION_MEMBER_ACTION, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&PENDINGMAINTENANCEACTION_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.current_apply_date {
+            ser.write_timestamp(&PENDINGMAINTENANCEACTION_MEMBER_CURRENT_APPLY_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PendingMaintenanceActionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PENDINGMAINTENANCEACTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_apply_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PendingMaintenanceAction {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PendingMaintenanceAction {
     /// Creates a new builder-style object to manufacture [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
     pub fn builder() -> crate::types::builders::PendingMaintenanceActionBuilder {

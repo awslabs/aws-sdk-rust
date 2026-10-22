@@ -67,6 +67,237 @@ impl ProcessingClusterConfig {
         self.selected_instance_count
     }
 }
+static PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig$InstanceCount",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    0,
+);
+static PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig$InstanceType",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    1,
+);
+static PROCESSINGCLUSTERCONFIG_MEMBER_VOLUME_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig$VolumeSizeInGB",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "VolumeSizeInGB",
+    2,
+);
+static PROCESSINGCLUSTERCONFIG_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig$VolumeKmsKeyId",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    3,
+);
+static PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_PREFERENCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingInstancePreferenceList$member",
+        "com.amazonaws.sagemaker",
+        "ProcessingInstancePreferenceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_PREFERENCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig$InstancePreferences",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstancePreferences",
+    4,
+)
+.with_list_member(&PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_PREFERENCES_MEMBER);
+static PROCESSINGCLUSTERCONFIG_MEMBER_SELECTED_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig$SelectedInstanceType",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SelectedInstanceType",
+    5,
+);
+static PROCESSINGCLUSTERCONFIG_MEMBER_SELECTED_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig$SelectedInstanceCount",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SelectedInstanceCount",
+    6,
+);
+static PROCESSINGCLUSTERCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingClusterConfig",
+        "com.amazonaws.sagemaker",
+        "ProcessingClusterConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_COUNT,
+        &PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_TYPE,
+        &PROCESSINGCLUSTERCONFIG_MEMBER_VOLUME_SIZE_IN_GB,
+        &PROCESSINGCLUSTERCONFIG_MEMBER_VOLUME_KMS_KEY_ID,
+        &PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_PREFERENCES,
+        &PROCESSINGCLUSTERCONFIG_MEMBER_SELECTED_INSTANCE_TYPE,
+        &PROCESSINGCLUSTERCONFIG_MEMBER_SELECTED_INSTANCE_COUNT,
+    ],
+);
+impl ProcessingClusterConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROCESSINGCLUSTERCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProcessingClusterConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.volume_size_in_gb {
+            ser.write_integer(&PROCESSINGCLUSTERCONFIG_MEMBER_VOLUME_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&PROCESSINGCLUSTERCONFIG_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_preferences {
+            ser.write_list(
+                &PROCESSINGCLUSTERCONFIG_MEMBER_INSTANCE_PREFERENCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProcessingInstancePreference::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.selected_instance_type {
+            ser.write_string(&PROCESSINGCLUSTERCONFIG_MEMBER_SELECTED_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.selected_instance_count {
+            ser.write_integer(&PROCESSINGCLUSTERCONFIG_MEMBER_SELECTED_INSTANCE_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProcessingClusterConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROCESSINGCLUSTERCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::ProcessingInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_preferences = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProcessingInstancePreference::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selected_instance_type = Some(crate::types::ProcessingInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selected_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProcessingClusterConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProcessingClusterConfig {
     /// Creates a new builder-style object to manufacture [`ProcessingClusterConfig`](crate::types::ProcessingClusterConfig).
     pub fn builder() -> crate::types::builders::ProcessingClusterConfigBuilder {

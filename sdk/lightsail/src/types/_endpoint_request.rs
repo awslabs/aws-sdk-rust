@@ -26,6 +26,119 @@ impl EndpointRequest {
         self.health_check.as_ref()
     }
 }
+static ENDPOINTREQUEST_MEMBER_CONTAINER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#EndpointRequest$containerName",
+        "com.amazonaws.lightsail",
+        "EndpointRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerName",
+    0,
+);
+static ENDPOINTREQUEST_MEMBER_CONTAINER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#EndpointRequest$containerPort",
+        "com.amazonaws.lightsail",
+        "EndpointRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "containerPort",
+    1,
+);
+static ENDPOINTREQUEST_MEMBER_HEALTH_CHECK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#EndpointRequest$healthCheck",
+        "com.amazonaws.lightsail",
+        "EndpointRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "healthCheck",
+    2,
+);
+static ENDPOINTREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#EndpointRequest", "com.amazonaws.lightsail", "EndpointRequest"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENDPOINTREQUEST_MEMBER_CONTAINER_NAME,
+        &ENDPOINTREQUEST_MEMBER_CONTAINER_PORT,
+        &ENDPOINTREQUEST_MEMBER_HEALTH_CHECK,
+    ],
+);
+impl EndpointRequest {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENDPOINTREQUEST_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EndpointRequest {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.container_name;
+            ser.write_string(&ENDPOINTREQUEST_MEMBER_CONTAINER_NAME, val)?;
+        }
+        {
+            let val = &self.container_port;
+            ser.write_integer(&ENDPOINTREQUEST_MEMBER_CONTAINER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.health_check {
+            ser.write_struct(&ENDPOINTREQUEST_MEMBER_HEALTH_CHECK, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EndpointRequestBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENDPOINTREQUEST_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.container_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.container_port = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check = Some(crate::types::ContainerServiceHealthCheckConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EndpointRequest {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.container_name = builder.container_name.or(Some(String::new()));
+        builder.container_port = builder.container_port.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EndpointRequest {
     /// Creates a new builder-style object to manufacture [`EndpointRequest`](crate::types::EndpointRequest).
     pub fn builder() -> crate::types::builders::EndpointRequestBuilder {

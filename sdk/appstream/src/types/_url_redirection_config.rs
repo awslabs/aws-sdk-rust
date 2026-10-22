@@ -29,6 +29,165 @@ impl UrlRedirectionConfig {
         self.denied_urls.as_deref().unwrap_or_default()
     }
 }
+static URLREDIRECTIONCONFIG_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UrlRedirectionConfig$Enabled",
+        "com.amazonaws.appstream",
+        "UrlRedirectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    0,
+);
+static URLREDIRECTIONCONFIG_MEMBER_ALLOWED_URLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UrlPatternList$member",
+        "com.amazonaws.appstream",
+        "UrlPatternList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static URLREDIRECTIONCONFIG_MEMBER_ALLOWED_URLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UrlRedirectionConfig$AllowedUrls",
+        "com.amazonaws.appstream",
+        "UrlRedirectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AllowedUrls",
+    1,
+)
+.with_list_member(&URLREDIRECTIONCONFIG_MEMBER_ALLOWED_URLS_MEMBER);
+static URLREDIRECTIONCONFIG_MEMBER_DENIED_URLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UrlPatternList$member",
+        "com.amazonaws.appstream",
+        "UrlPatternList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static URLREDIRECTIONCONFIG_MEMBER_DENIED_URLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UrlRedirectionConfig$DeniedUrls",
+        "com.amazonaws.appstream",
+        "UrlRedirectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DeniedUrls",
+    2,
+)
+.with_list_member(&URLREDIRECTIONCONFIG_MEMBER_DENIED_URLS_MEMBER);
+static URLREDIRECTIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UrlRedirectionConfig",
+        "com.amazonaws.appstream",
+        "UrlRedirectionConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &URLREDIRECTIONCONFIG_MEMBER_ENABLED,
+        &URLREDIRECTIONCONFIG_MEMBER_ALLOWED_URLS,
+        &URLREDIRECTIONCONFIG_MEMBER_DENIED_URLS,
+    ],
+);
+impl UrlRedirectionConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &URLREDIRECTIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UrlRedirectionConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enabled {
+            ser.write_boolean(&URLREDIRECTIONCONFIG_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.allowed_urls {
+            ser.write_list(
+                &URLREDIRECTIONCONFIG_MEMBER_ALLOWED_URLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.denied_urls {
+            ser.write_list(
+                &URLREDIRECTIONCONFIG_MEMBER_DENIED_URLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UrlRedirectionConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&URLREDIRECTIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_urls = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.denied_urls = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UrlRedirectionConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UrlRedirectionConfig {
     /// Creates a new builder-style object to manufacture [`UrlRedirectionConfig`](crate::types::UrlRedirectionConfig).
     pub fn builder() -> crate::types::builders::UrlRedirectionConfigBuilder {

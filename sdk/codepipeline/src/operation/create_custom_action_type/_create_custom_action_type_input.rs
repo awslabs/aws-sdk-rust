@@ -63,6 +63,285 @@ impl CreateCustomActionTypeInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$category",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "category",
+    0,
+);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$provider",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "provider",
+    1,
+);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$version",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "version",
+    2,
+);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$settings",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "settings",
+    3,
+);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_CONFIGURATION_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codepipeline#ActionConfigurationPropertyList$member",
+            "com.amazonaws.codepipeline",
+            "ActionConfigurationPropertyList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_CONFIGURATION_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$configurationProperties",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "configurationProperties",
+    4,
+)
+.with_list_member(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_CONFIGURATION_PROPERTIES_MEMBER);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_INPUT_ARTIFACT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$inputArtifactDetails",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "inputArtifactDetails",
+    5,
+);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_OUTPUT_ARTIFACT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$outputArtifactDetails",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "outputArtifactDetails",
+    6,
+);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#TagList$member", "com.amazonaws.codepipeline", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECUSTOMACTIONTYPEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput$tags",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    7,
+)
+.with_list_member(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_TAGS_MEMBER);
+static CREATECUSTOMACTIONTYPEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#CreateCustomActionTypeInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "CreateCustomActionTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_CATEGORY,
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_PROVIDER,
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_VERSION,
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_SETTINGS,
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_CONFIGURATION_PROPERTIES,
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_INPUT_ARTIFACT_DETAILS,
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_OUTPUT_ARTIFACT_DETAILS,
+        &CREATECUSTOMACTIONTYPEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCustomActionTypeInput");
+impl CreateCustomActionTypeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECUSTOMACTIONTYPEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCustomActionTypeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.category {
+            ser.write_string(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_CATEGORY, val.as_str())?;
+        }
+        if let Some(ref val) = self.provider {
+            ser.write_string(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_PROVIDER, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_string(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.configuration_properties {
+            ser.write_list(
+                &CREATECUSTOMACTIONTYPEINPUT_MEMBER_CONFIGURATION_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ActionConfigurationProperty::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_artifact_details {
+            ser.write_struct(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_INPUT_ARTIFACT_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.output_artifact_details {
+            ser.write_struct(&CREATECUSTOMACTIONTYPEINPUT_MEMBER_OUTPUT_ARTIFACT_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECUSTOMACTIONTYPEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECUSTOMACTIONTYPEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.category = Some(crate::types::ActionCategory::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::ActionTypeSettings::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_properties = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ActionConfigurationProperty::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifact_details = Some(crate::types::ArtifactDetails::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_artifact_details = Some(crate::types::ArtifactDetails::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCustomActionTypeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.provider = builder.provider.or(Some(String::new()));
+        builder.version = builder.version.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCustomActionTypeInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomActionTypeInput`](crate::operation::create_custom_action_type::CreateCustomActionTypeInput).
     pub fn builder() -> crate::operation::create_custom_action_type::builders::CreateCustomActionTypeInputBuilder {

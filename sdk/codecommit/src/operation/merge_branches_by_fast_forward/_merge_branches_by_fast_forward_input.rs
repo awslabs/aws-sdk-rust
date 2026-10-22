@@ -30,6 +30,154 @@ impl MergeBranchesByFastForwardInput {
         self.target_branch.as_deref()
     }
 }
+static MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergeBranchesByFastForwardInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "MergeBranchesByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_SOURCE_COMMIT_SPECIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergeBranchesByFastForwardInput$sourceCommitSpecifier",
+        "com.amazonaws.codecommit.synthetic",
+        "MergeBranchesByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceCommitSpecifier",
+    1,
+);
+static MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_DESTINATION_COMMIT_SPECIFIER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#MergeBranchesByFastForwardInput$destinationCommitSpecifier",
+            "com.amazonaws.codecommit.synthetic",
+            "MergeBranchesByFastForwardInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "destinationCommitSpecifier",
+        2,
+    );
+static MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_TARGET_BRANCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergeBranchesByFastForwardInput$targetBranch",
+        "com.amazonaws.codecommit.synthetic",
+        "MergeBranchesByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetBranch",
+    3,
+);
+static MERGEBRANCHESBYFASTFORWARDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergeBranchesByFastForwardInput",
+        "com.amazonaws.codecommit.synthetic",
+        "MergeBranchesByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_REPOSITORY_NAME,
+        &MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_SOURCE_COMMIT_SPECIFIER,
+        &MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_DESTINATION_COMMIT_SPECIFIER,
+        &MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_TARGET_BRANCH,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("MergeBranchesByFastForwardInput");
+impl MergeBranchesByFastForwardInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MERGEBRANCHESBYFASTFORWARDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MergeBranchesByFastForwardInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_commit_specifier {
+            ser.write_string(&MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_SOURCE_COMMIT_SPECIFIER, val)?;
+        }
+        if let Some(ref val) = self.destination_commit_specifier {
+            ser.write_string(&MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_DESTINATION_COMMIT_SPECIFIER, val)?;
+        }
+        if let Some(ref val) = self.target_branch {
+            ser.write_string(&MERGEBRANCHESBYFASTFORWARDINPUT_MEMBER_TARGET_BRANCH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MERGEBRANCHESBYFASTFORWARDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_commit_specifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_commit_specifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_branch = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MergeBranchesByFastForwardInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.source_commit_specifier = builder.source_commit_specifier.or(Some(String::new()));
+        builder.destination_commit_specifier = builder.destination_commit_specifier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MergeBranchesByFastForwardInput {
     /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardInput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput).
     pub fn builder() -> crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder {

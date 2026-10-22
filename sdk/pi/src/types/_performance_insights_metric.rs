@@ -37,6 +37,219 @@ impl PerformanceInsightsMetric {
         self.value
     }
 }
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_METRIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#PerformanceInsightsMetric$Metric",
+        "com.amazonaws.pi",
+        "PerformanceInsightsMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Metric",
+    0,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#PerformanceInsightsMetric$DisplayName",
+        "com.amazonaws.pi",
+        "PerformanceInsightsMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    1,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_DIMENSIONS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#DescriptiveMap$key", "com.amazonaws.pi", "DescriptiveMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_DIMENSIONS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#DescriptiveMap$value", "com.amazonaws.pi", "DescriptiveMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_DIMENSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#PerformanceInsightsMetric$Dimensions",
+        "com.amazonaws.pi",
+        "PerformanceInsightsMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Dimensions",
+    2,
+)
+.with_map_members(
+    &PERFORMANCEINSIGHTSMETRIC_MEMBER_DIMENSIONS_KEY,
+    &PERFORMANCEINSIGHTSMETRIC_MEMBER_DIMENSIONS_VALUE,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_FILTER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#DescriptiveMap$key", "com.amazonaws.pi", "DescriptiveMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_FILTER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#DescriptiveMap$value", "com.amazonaws.pi", "DescriptiveMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#PerformanceInsightsMetric$Filter",
+        "com.amazonaws.pi",
+        "PerformanceInsightsMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Filter",
+    3,
+)
+.with_map_members(
+    &PERFORMANCEINSIGHTSMETRIC_MEMBER_FILTER_KEY,
+    &PERFORMANCEINSIGHTSMETRIC_MEMBER_FILTER_VALUE,
+);
+static PERFORMANCEINSIGHTSMETRIC_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#PerformanceInsightsMetric$Value",
+        "com.amazonaws.pi",
+        "PerformanceInsightsMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Value",
+    4,
+);
+static PERFORMANCEINSIGHTSMETRIC_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#PerformanceInsightsMetric",
+        "com.amazonaws.pi",
+        "PerformanceInsightsMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PERFORMANCEINSIGHTSMETRIC_MEMBER_METRIC,
+        &PERFORMANCEINSIGHTSMETRIC_MEMBER_DISPLAY_NAME,
+        &PERFORMANCEINSIGHTSMETRIC_MEMBER_DIMENSIONS,
+        &PERFORMANCEINSIGHTSMETRIC_MEMBER_FILTER,
+        &PERFORMANCEINSIGHTSMETRIC_MEMBER_VALUE,
+    ],
+);
+impl PerformanceInsightsMetric {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PERFORMANCEINSIGHTSMETRIC_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PerformanceInsightsMetric {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.metric {
+            ser.write_string(&PERFORMANCEINSIGHTSMETRIC_MEMBER_METRIC, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&PERFORMANCEINSIGHTSMETRIC_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.dimensions {
+            ser.write_map(
+                &PERFORMANCEINSIGHTSMETRIC_MEMBER_DIMENSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.filter {
+            ser.write_map(
+                &PERFORMANCEINSIGHTSMETRIC_MEMBER_FILTER,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_double(&PERFORMANCEINSIGHTSMETRIC_MEMBER_VALUE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PerformanceInsightsMetricBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PERFORMANCEINSIGHTSMETRIC_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dimensions = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_double(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PerformanceInsightsMetric {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PerformanceInsightsMetric {
     /// Creates a new builder-style object to manufacture [`PerformanceInsightsMetric`](crate::types::PerformanceInsightsMetric).
     pub fn builder() -> crate::types::builders::PerformanceInsightsMetricBuilder {

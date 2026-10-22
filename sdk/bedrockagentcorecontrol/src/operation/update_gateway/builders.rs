@@ -23,6 +23,7 @@ impl crate::operation::update_gateway::builders::UpdateGatewayInputBuilder {
 /// Fluent builder constructing a request to `UpdateGateway`.
 ///
 /// <p>Updates an existing gateway.</p>
+/// <p>Replaces the entire gateway configuration. Any optional field that you omit, including fields in <code>protocolConfiguration</code>, is reset. For information about retrieving the current configuration, see <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGateway.html">GetGateway</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGatewayFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

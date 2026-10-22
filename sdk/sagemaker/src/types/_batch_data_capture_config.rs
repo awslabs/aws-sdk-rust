@@ -47,6 +47,127 @@ impl BatchDataCaptureConfig {
         self.generate_inference_id
     }
 }
+static BATCHDATACAPTURECONFIG_MEMBER_DESTINATION_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchDataCaptureConfig$DestinationS3Uri",
+        "com.amazonaws.sagemaker",
+        "BatchDataCaptureConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationS3Uri",
+    0,
+);
+static BATCHDATACAPTURECONFIG_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchDataCaptureConfig$KmsKeyId",
+        "com.amazonaws.sagemaker",
+        "BatchDataCaptureConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    1,
+);
+static BATCHDATACAPTURECONFIG_MEMBER_GENERATE_INFERENCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchDataCaptureConfig$GenerateInferenceId",
+        "com.amazonaws.sagemaker",
+        "BatchDataCaptureConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "GenerateInferenceId",
+    2,
+);
+static BATCHDATACAPTURECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchDataCaptureConfig",
+        "com.amazonaws.sagemaker",
+        "BatchDataCaptureConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDATACAPTURECONFIG_MEMBER_DESTINATION_S3_URI,
+        &BATCHDATACAPTURECONFIG_MEMBER_KMS_KEY_ID,
+        &BATCHDATACAPTURECONFIG_MEMBER_GENERATE_INFERENCE_ID,
+    ],
+);
+impl BatchDataCaptureConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDATACAPTURECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDataCaptureConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.destination_s3_uri {
+            ser.write_string(&BATCHDATACAPTURECONFIG_MEMBER_DESTINATION_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&BATCHDATACAPTURECONFIG_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.generate_inference_id {
+            ser.write_boolean(&BATCHDATACAPTURECONFIG_MEMBER_GENERATE_INFERENCE_ID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BatchDataCaptureConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDATACAPTURECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.generate_inference_id = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDataCaptureConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BatchDataCaptureConfig {
     /// Creates a new builder-style object to manufacture [`BatchDataCaptureConfig`](crate::types::BatchDataCaptureConfig).
     pub fn builder() -> crate::types::builders::BatchDataCaptureConfigBuilder {

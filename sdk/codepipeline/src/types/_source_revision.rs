@@ -32,6 +32,146 @@ impl SourceRevision {
         self.revision_url.as_deref()
     }
 }
+static SOURCEREVISION_MEMBER_ACTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#SourceRevision$actionName",
+        "com.amazonaws.codepipeline",
+        "SourceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "actionName",
+    0,
+);
+static SOURCEREVISION_MEMBER_REVISION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#SourceRevision$revisionId",
+        "com.amazonaws.codepipeline",
+        "SourceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionId",
+    1,
+);
+static SOURCEREVISION_MEMBER_REVISION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#SourceRevision$revisionSummary",
+        "com.amazonaws.codepipeline",
+        "SourceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionSummary",
+    2,
+);
+static SOURCEREVISION_MEMBER_REVISION_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#SourceRevision$revisionUrl",
+        "com.amazonaws.codepipeline",
+        "SourceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionUrl",
+    3,
+);
+static SOURCEREVISION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#SourceRevision",
+        "com.amazonaws.codepipeline",
+        "SourceRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SOURCEREVISION_MEMBER_ACTION_NAME,
+        &SOURCEREVISION_MEMBER_REVISION_ID,
+        &SOURCEREVISION_MEMBER_REVISION_SUMMARY,
+        &SOURCEREVISION_MEMBER_REVISION_URL,
+    ],
+);
+impl SourceRevision {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SOURCEREVISION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SourceRevision {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.action_name;
+            ser.write_string(&SOURCEREVISION_MEMBER_ACTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.revision_id {
+            ser.write_string(&SOURCEREVISION_MEMBER_REVISION_ID, val)?;
+        }
+        if let Some(ref val) = self.revision_summary {
+            ser.write_string(&SOURCEREVISION_MEMBER_REVISION_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.revision_url {
+            ser.write_string(&SOURCEREVISION_MEMBER_REVISION_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SourceRevisionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SOURCEREVISION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.action_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SourceRevision {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.action_name = builder.action_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SourceRevision {
     /// Creates a new builder-style object to manufacture [`SourceRevision`](crate::types::SourceRevision).
     pub fn builder() -> crate::types::builders::SourceRevisionBuilder {

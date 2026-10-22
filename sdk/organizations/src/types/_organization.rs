@@ -78,6 +78,233 @@ impl ::std::fmt::Debug for Organization {
         formatter.finish()
     }
 }
+static ORGANIZATION_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Organization$Id",
+        "com.amazonaws.organizations",
+        "Organization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static ORGANIZATION_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Organization$Arn",
+        "com.amazonaws.organizations",
+        "Organization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static ORGANIZATION_MEMBER_FEATURE_SET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Organization$FeatureSet",
+        "com.amazonaws.organizations",
+        "Organization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureSet",
+    2,
+);
+static ORGANIZATION_MEMBER_MASTER_ACCOUNT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Organization$MasterAccountArn",
+        "com.amazonaws.organizations",
+        "Organization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MasterAccountArn",
+    3,
+);
+static ORGANIZATION_MEMBER_MASTER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Organization$MasterAccountId",
+        "com.amazonaws.organizations",
+        "Organization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MasterAccountId",
+    4,
+);
+static ORGANIZATION_MEMBER_MASTER_ACCOUNT_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Organization$MasterAccountEmail",
+        "com.amazonaws.organizations",
+        "Organization",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MasterAccountEmail",
+    5,
+);
+static ORGANIZATION_MEMBER_AVAILABLE_POLICY_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#PolicyTypes$member",
+        "com.amazonaws.organizations",
+        "PolicyTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ORGANIZATION_MEMBER_AVAILABLE_POLICY_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Organization$AvailablePolicyTypes",
+        "com.amazonaws.organizations",
+        "Organization",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AvailablePolicyTypes",
+    6,
+)
+.with_list_member(&ORGANIZATION_MEMBER_AVAILABLE_POLICY_TYPES_MEMBER);
+static ORGANIZATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Organization", "com.amazonaws.organizations", "Organization"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ORGANIZATION_MEMBER_ID,
+        &ORGANIZATION_MEMBER_ARN,
+        &ORGANIZATION_MEMBER_FEATURE_SET,
+        &ORGANIZATION_MEMBER_MASTER_ACCOUNT_ARN,
+        &ORGANIZATION_MEMBER_MASTER_ACCOUNT_ID,
+        &ORGANIZATION_MEMBER_MASTER_ACCOUNT_EMAIL,
+        &ORGANIZATION_MEMBER_AVAILABLE_POLICY_TYPES,
+    ],
+);
+impl Organization {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ORGANIZATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Organization {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&ORGANIZATION_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&ORGANIZATION_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.feature_set {
+            ser.write_string(&ORGANIZATION_MEMBER_FEATURE_SET, val.as_str())?;
+        }
+        if let Some(ref val) = self.master_account_arn {
+            ser.write_string(&ORGANIZATION_MEMBER_MASTER_ACCOUNT_ARN, val)?;
+        }
+        if let Some(ref val) = self.master_account_id {
+            ser.write_string(&ORGANIZATION_MEMBER_MASTER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.master_account_email {
+            ser.write_string(&ORGANIZATION_MEMBER_MASTER_ACCOUNT_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.available_policy_types {
+            ser.write_list(
+                &ORGANIZATION_MEMBER_AVAILABLE_POLICY_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PolicyTypeSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OrganizationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ORGANIZATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_set = Some(crate::types::OrganizationFeatureSet::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_account_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_account_email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.available_policy_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PolicyTypeSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Organization {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Organization {
     /// Creates a new builder-style object to manufacture [`Organization`](crate::types::Organization).
     pub fn builder() -> crate::types::builders::OrganizationBuilder {

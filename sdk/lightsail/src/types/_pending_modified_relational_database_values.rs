@@ -25,6 +25,129 @@ impl PendingModifiedRelationalDatabaseValues {
         self.backup_retention_enabled
     }
 }
+static PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_MASTER_USER_PASSWORD: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#PendingModifiedRelationalDatabaseValues$masterUserPassword",
+            "com.amazonaws.lightsail",
+            "PendingModifiedRelationalDatabaseValues",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "masterUserPassword",
+        0,
+    );
+static PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_ENGINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PendingModifiedRelationalDatabaseValues$engineVersion",
+        "com.amazonaws.lightsail",
+        "PendingModifiedRelationalDatabaseValues",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "engineVersion",
+    1,
+);
+static PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_BACKUP_RETENTION_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#PendingModifiedRelationalDatabaseValues$backupRetentionEnabled",
+            "com.amazonaws.lightsail",
+            "PendingModifiedRelationalDatabaseValues",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "backupRetentionEnabled",
+        2,
+    );
+static PENDINGMODIFIEDRELATIONALDATABASEVALUES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PendingModifiedRelationalDatabaseValues",
+        "com.amazonaws.lightsail",
+        "PendingModifiedRelationalDatabaseValues",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_MASTER_USER_PASSWORD,
+        &PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_ENGINE_VERSION,
+        &PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_BACKUP_RETENTION_ENABLED,
+    ],
+);
+impl PendingModifiedRelationalDatabaseValues {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PENDINGMODIFIEDRELATIONALDATABASEVALUES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PendingModifiedRelationalDatabaseValues {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.master_user_password {
+            ser.write_string(&PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_MASTER_USER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.engine_version {
+            ser.write_string(&PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_ENGINE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.backup_retention_enabled {
+            ser.write_boolean(&PENDINGMODIFIEDRELATIONALDATABASEVALUES_MEMBER_BACKUP_RETENTION_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PendingModifiedRelationalDatabaseValuesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PENDINGMODIFIEDRELATIONALDATABASEVALUES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_user_password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.backup_retention_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PendingModifiedRelationalDatabaseValues {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PendingModifiedRelationalDatabaseValues {
     /// Creates a new builder-style object to manufacture [`PendingModifiedRelationalDatabaseValues`](crate::types::PendingModifiedRelationalDatabaseValues).
     pub fn builder() -> crate::types::builders::PendingModifiedRelationalDatabaseValuesBuilder {

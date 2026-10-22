@@ -50,6 +50,237 @@ impl CreateEndpointInput {
         self.flywheel_arn.as_deref()
     }
 }
+static CREATEENDPOINTINPUT_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput$EndpointName",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointName",
+    0,
+);
+static CREATEENDPOINTINPUT_MEMBER_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput$ModelArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelArn",
+    1,
+);
+static CREATEENDPOINTINPUT_MEMBER_DESIRED_INFERENCE_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput$DesiredInferenceUnits",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DesiredInferenceUnits",
+    2,
+);
+static CREATEENDPOINTINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    3,
+);
+static CREATEENDPOINTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEENDPOINTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEENDPOINTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEENDPOINTINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    5,
+);
+static CREATEENDPOINTINPUT_MEMBER_FLYWHEEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput$FlywheelArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelArn",
+    6,
+);
+static CREATEENDPOINTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateEndpointInput",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateEndpointInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEENDPOINTINPUT_MEMBER_ENDPOINT_NAME,
+        &CREATEENDPOINTINPUT_MEMBER_MODEL_ARN,
+        &CREATEENDPOINTINPUT_MEMBER_DESIRED_INFERENCE_UNITS,
+        &CREATEENDPOINTINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEENDPOINTINPUT_MEMBER_TAGS,
+        &CREATEENDPOINTINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &CREATEENDPOINTINPUT_MEMBER_FLYWHEEL_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateEndpointRequest");
+impl CreateEndpointInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEENDPOINTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateEndpointInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&CREATEENDPOINTINPUT_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_arn {
+            ser.write_string(&CREATEENDPOINTINPUT_MEMBER_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.desired_inference_units {
+            ser.write_integer(&CREATEENDPOINTINPUT_MEMBER_DESIRED_INFERENCE_UNITS, *val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEENDPOINTINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEENDPOINTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&CREATEENDPOINTINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.flywheel_arn {
+            ser.write_string(&CREATEENDPOINTINPUT_MEMBER_FLYWHEEL_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEENDPOINTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_inference_units = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateEndpointInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_name = builder.endpoint_name.or(Some(String::new()));
+        builder.desired_inference_units = builder.desired_inference_units.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateEndpointInput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
     pub fn builder() -> crate::operation::create_endpoint::builders::CreateEndpointInputBuilder {

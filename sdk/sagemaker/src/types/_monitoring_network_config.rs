@@ -25,6 +25,128 @@ impl MonitoringNetworkConfig {
         self.vpc_config.as_ref()
     }
 }
+static MONITORINGNETWORKCONFIG_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#MonitoringNetworkConfig$EnableInterContainerTrafficEncryption",
+            "com.amazonaws.sagemaker",
+            "MonitoringNetworkConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableInterContainerTrafficEncryption",
+        0,
+    );
+static MONITORINGNETWORKCONFIG_MEMBER_ENABLE_NETWORK_ISOLATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringNetworkConfig$EnableNetworkIsolation",
+        "com.amazonaws.sagemaker",
+        "MonitoringNetworkConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNetworkIsolation",
+    1,
+);
+static MONITORINGNETWORKCONFIG_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringNetworkConfig$VpcConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringNetworkConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    2,
+);
+static MONITORINGNETWORKCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringNetworkConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringNetworkConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGNETWORKCONFIG_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION,
+        &MONITORINGNETWORKCONFIG_MEMBER_ENABLE_NETWORK_ISOLATION,
+        &MONITORINGNETWORKCONFIG_MEMBER_VPC_CONFIG,
+    ],
+);
+impl MonitoringNetworkConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGNETWORKCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringNetworkConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_inter_container_traffic_encryption {
+            ser.write_boolean(&MONITORINGNETWORKCONFIG_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION, *val)?;
+        }
+        if let Some(ref val) = self.enable_network_isolation {
+            ser.write_boolean(&MONITORINGNETWORKCONFIG_MEMBER_ENABLE_NETWORK_ISOLATION, *val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&MONITORINGNETWORKCONFIG_MEMBER_VPC_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringNetworkConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGNETWORKCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_inter_container_traffic_encryption = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_network_isolation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringNetworkConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringNetworkConfig {
     /// Creates a new builder-style object to manufacture [`MonitoringNetworkConfig`](crate::types::MonitoringNetworkConfig).
     pub fn builder() -> crate::types::builders::MonitoringNetworkConfigBuilder {

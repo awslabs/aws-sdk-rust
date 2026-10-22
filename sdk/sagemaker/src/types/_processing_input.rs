@@ -31,6 +31,144 @@ impl ProcessingInput {
         self.dataset_definition.as_ref()
     }
 }
+static PROCESSINGINPUT_MEMBER_INPUT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingInput$InputName",
+        "com.amazonaws.sagemaker",
+        "ProcessingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InputName",
+    0,
+);
+static PROCESSINGINPUT_MEMBER_APP_MANAGED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingInput$AppManaged",
+        "com.amazonaws.sagemaker",
+        "ProcessingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AppManaged",
+    1,
+);
+static PROCESSINGINPUT_MEMBER_S3_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingInput$S3Input",
+        "com.amazonaws.sagemaker",
+        "ProcessingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Input",
+    2,
+);
+static PROCESSINGINPUT_MEMBER_DATASET_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingInput$DatasetDefinition",
+        "com.amazonaws.sagemaker",
+        "ProcessingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DatasetDefinition",
+    3,
+);
+static PROCESSINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ProcessingInput", "com.amazonaws.sagemaker", "ProcessingInput"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROCESSINGINPUT_MEMBER_INPUT_NAME,
+        &PROCESSINGINPUT_MEMBER_APP_MANAGED,
+        &PROCESSINGINPUT_MEMBER_S3_INPUT,
+        &PROCESSINGINPUT_MEMBER_DATASET_DEFINITION,
+    ],
+);
+impl ProcessingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROCESSINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProcessingInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.input_name {
+            ser.write_string(&PROCESSINGINPUT_MEMBER_INPUT_NAME, val)?;
+        }
+        if let Some(ref val) = self.app_managed {
+            ser.write_boolean(&PROCESSINGINPUT_MEMBER_APP_MANAGED, *val)?;
+        }
+        if let Some(ref val) = self.s3_input {
+            ser.write_struct(&PROCESSINGINPUT_MEMBER_S3_INPUT, val)?;
+        }
+        if let Some(ref val) = self.dataset_definition {
+            ser.write_struct(&PROCESSINGINPUT_MEMBER_DATASET_DEFINITION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProcessingInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROCESSINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_managed = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_input = Some(crate::types::ProcessingS3Input::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dataset_definition = Some(crate::types::DatasetDefinition::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProcessingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProcessingInput {
     /// Creates a new builder-style object to manufacture [`ProcessingInput`](crate::types::ProcessingInput).
     pub fn builder() -> crate::types::builders::ProcessingInputBuilder {

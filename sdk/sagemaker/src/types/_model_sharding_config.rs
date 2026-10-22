@@ -19,6 +19,136 @@ impl ModelShardingConfig {
         self.override_environment.as_ref()
     }
 }
+static MODELSHARDINGCONFIG_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelShardingConfig$Image",
+        "com.amazonaws.sagemaker",
+        "ModelShardingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Image",
+    0,
+);
+static MODELSHARDINGCONFIG_MEMBER_OVERRIDE_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobEnvironmentVariables$key",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobEnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static MODELSHARDINGCONFIG_MEMBER_OVERRIDE_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobEnvironmentVariables$value",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobEnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static MODELSHARDINGCONFIG_MEMBER_OVERRIDE_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelShardingConfig$OverrideEnvironment",
+        "com.amazonaws.sagemaker",
+        "ModelShardingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "OverrideEnvironment",
+    1,
+)
+.with_map_members(
+    &MODELSHARDINGCONFIG_MEMBER_OVERRIDE_ENVIRONMENT_KEY,
+    &MODELSHARDINGCONFIG_MEMBER_OVERRIDE_ENVIRONMENT_VALUE,
+);
+static MODELSHARDINGCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelShardingConfig",
+        "com.amazonaws.sagemaker",
+        "ModelShardingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&MODELSHARDINGCONFIG_MEMBER_IMAGE, &MODELSHARDINGCONFIG_MEMBER_OVERRIDE_ENVIRONMENT],
+);
+impl ModelShardingConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELSHARDINGCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelShardingConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image {
+            ser.write_string(&MODELSHARDINGCONFIG_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.override_environment {
+            ser.write_map(
+                &MODELSHARDINGCONFIG_MEMBER_OVERRIDE_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelShardingConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELSHARDINGCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.override_environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelShardingConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelShardingConfig {
     /// Creates a new builder-style object to manufacture [`ModelShardingConfig`](crate::types::ModelShardingConfig).
     pub fn builder() -> crate::types::builders::ModelShardingConfigBuilder {

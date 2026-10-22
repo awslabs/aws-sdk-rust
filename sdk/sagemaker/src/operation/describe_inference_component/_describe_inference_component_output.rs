@@ -87,6 +87,367 @@ impl DescribeInferenceComponentOutput {
         self.last_deployment_config.as_ref()
     }
 }
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$InferenceComponentName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeInferenceComponentOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InferenceComponentName",
+        0,
+    );
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$InferenceComponentArn",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeInferenceComponentOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InferenceComponentArn",
+        1,
+    );
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$EndpointName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointName",
+    2,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$EndpointArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointArn",
+    3,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_VARIANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$VariantName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VariantName",
+    4,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    5,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$Specification",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Specification",
+    6,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentSpecificationSummaryList$member",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentSpecificationSummaryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$Specifications",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Specifications",
+    7,
+)
+.with_list_member(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATIONS_MEMBER);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_RUNTIME_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$RuntimeConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RuntimeConfig",
+    8,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    9,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    10,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$InferenceComponentStatus",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeInferenceComponentOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InferenceComponentStatus",
+        11,
+    );
+static DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_LAST_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput$LastDeploymentConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastDeploymentConfig",
+    12,
+);
+static DESCRIBEINFERENCECOMPONENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeInferenceComponentOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeInferenceComponentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_NAME,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_ARN,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_ENDPOINT_NAME,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_ENDPOINT_ARN,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_VARIANT_NAME,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATION,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATIONS,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_RUNTIME_CONFIG,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_STATUS,
+        &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_LAST_DEPLOYMENT_CONFIG,
+    ],
+)
+.with_original_name("DescribeInferenceComponentOutput");
+impl DescribeInferenceComponentOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEINFERENCECOMPONENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeInferenceComponentOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.inference_component_name {
+            ser.write_string(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.inference_component_arn {
+            ser.write_string(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.endpoint_arn {
+            ser.write_string(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.variant_name {
+            ser.write_string(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_VARIANT_NAME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.specification {
+            ser.write_struct(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.specifications {
+            ser.write_list(
+                &DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_SPECIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InferenceComponentSpecificationSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.runtime_config {
+            ser.write_struct(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_RUNTIME_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.inference_component_status {
+            ser.write_string(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_INFERENCE_COMPONENT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_deployment_config {
+            ser.write_struct(&DESCRIBEINFERENCECOMPONENTOUTPUT_MEMBER_LAST_DEPLOYMENT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_inference_component::builders::DescribeInferenceComponentOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEINFERENCECOMPONENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.variant_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.specification = Some(crate::types::InferenceComponentSpecificationSummary::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.specifications = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InferenceComponentSpecificationSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_config = Some(crate::types::InferenceComponentRuntimeConfigSummary::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component_status = Some(crate::types::InferenceComponentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_deployment_config = Some(crate::types::InferenceComponentDeploymentConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeInferenceComponentOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeInferenceComponentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

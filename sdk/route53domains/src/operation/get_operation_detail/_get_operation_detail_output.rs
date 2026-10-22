@@ -80,6 +80,233 @@ impl GetOperationDetailOutput {
         self.status_flag.as_ref()
     }
 }
+static GETOPERATIONDETAILOUTPUT_MEMBER_OPERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$OperationId",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperationId",
+    0,
+);
+static GETOPERATIONDETAILOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$Status",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static GETOPERATIONDETAILOUTPUT_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$Message",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static GETOPERATIONDETAILOUTPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    3,
+);
+static GETOPERATIONDETAILOUTPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$Type",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    4,
+);
+static GETOPERATIONDETAILOUTPUT_MEMBER_SUBMITTED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$SubmittedDate",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SubmittedDate",
+    5,
+);
+static GETOPERATIONDETAILOUTPUT_MEMBER_LAST_UPDATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$LastUpdatedDate",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedDate",
+    6,
+);
+static GETOPERATIONDETAILOUTPUT_MEMBER_STATUS_FLAG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput$StatusFlag",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusFlag",
+    7,
+);
+static GETOPERATIONDETAILOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetOperationDetailOutput",
+        "com.amazonaws.route53domains.synthetic",
+        "GetOperationDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETOPERATIONDETAILOUTPUT_MEMBER_OPERATION_ID,
+        &GETOPERATIONDETAILOUTPUT_MEMBER_STATUS,
+        &GETOPERATIONDETAILOUTPUT_MEMBER_MESSAGE,
+        &GETOPERATIONDETAILOUTPUT_MEMBER_DOMAIN_NAME,
+        &GETOPERATIONDETAILOUTPUT_MEMBER_TYPE,
+        &GETOPERATIONDETAILOUTPUT_MEMBER_SUBMITTED_DATE,
+        &GETOPERATIONDETAILOUTPUT_MEMBER_LAST_UPDATED_DATE,
+        &GETOPERATIONDETAILOUTPUT_MEMBER_STATUS_FLAG,
+    ],
+)
+.with_original_name("GetOperationDetailResponse");
+impl GetOperationDetailOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETOPERATIONDETAILOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetOperationDetailOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.operation_id {
+            ser.write_string(&GETOPERATIONDETAILOUTPUT_MEMBER_OPERATION_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&GETOPERATIONDETAILOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&GETOPERATIONDETAILOUTPUT_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&GETOPERATIONDETAILOUTPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&GETOPERATIONDETAILOUTPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.submitted_date {
+            ser.write_timestamp(&GETOPERATIONDETAILOUTPUT_MEMBER_SUBMITTED_DATE, val)?;
+        }
+        if let Some(ref val) = self.last_updated_date {
+            ser.write_timestamp(&GETOPERATIONDETAILOUTPUT_MEMBER_LAST_UPDATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.status_flag {
+            ser.write_string(&GETOPERATIONDETAILOUTPUT_MEMBER_STATUS_FLAG, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_operation_detail::builders::GetOperationDetailOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETOPERATIONDETAILOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::OperationStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::OperationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submitted_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_flag = Some(crate::types::StatusFlag::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetOperationDetailOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetOperationDetailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

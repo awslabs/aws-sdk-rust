@@ -33,6 +33,175 @@ impl GetAggregateDiscoveredResourceCountsOutput {
         self.next_token.as_deref()
     }
 }
+static GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_TOTAL_DISCOVERED_RESOURCES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateDiscoveredResourceCountsOutput$TotalDiscoveredResources",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateDiscoveredResourceCountsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "TotalDiscoveredResources",
+        0,
+    );
+static GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUP_BY_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateDiscoveredResourceCountsOutput$GroupByKey",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateDiscoveredResourceCountsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GroupByKey",
+    1,
+);
+static GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUPED_RESOURCE_COUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#GroupedResourceCountList$member",
+            "com.amazonaws.configservice",
+            "GroupedResourceCountList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUPED_RESOURCE_COUNTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetAggregateDiscoveredResourceCountsOutput$GroupedResourceCounts",
+            "com.amazonaws.configservice.synthetic",
+            "GetAggregateDiscoveredResourceCountsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "GroupedResourceCounts",
+        2,
+    )
+    .with_list_member(&GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUPED_RESOURCE_COUNTS_MEMBER);
+static GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateDiscoveredResourceCountsOutput$NextToken",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateDiscoveredResourceCountsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateDiscoveredResourceCountsOutput",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateDiscoveredResourceCountsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_TOTAL_DISCOVERED_RESOURCES,
+        &GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUP_BY_KEY,
+        &GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUPED_RESOURCE_COUNTS,
+        &GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("GetAggregateDiscoveredResourceCountsResponse");
+impl GetAggregateDiscoveredResourceCountsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetAggregateDiscoveredResourceCountsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.total_discovered_resources;
+            ser.write_long(&GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_TOTAL_DISCOVERED_RESOURCES, *val)?;
+        }
+        if let Some(ref val) = self.group_by_key {
+            ser.write_string(&GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUP_BY_KEY, val)?;
+        }
+        if let Some(ref val) = self.grouped_resource_counts {
+            ser.write_list(
+                &GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_GROUPED_RESOURCE_COUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GroupedResourceCount::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETAGGREGATEDISCOVEREDRESOURCECOUNTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.total_discovered_resources = Some(deser.read_long(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group_by_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grouped_resource_counts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GroupedResourceCount::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetAggregateDiscoveredResourceCountsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetAggregateDiscoveredResourceCountsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

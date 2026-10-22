@@ -27,6 +27,156 @@ impl ListCallAnalyticsJobsOutput {
         self.call_analytics_job_summaries.as_deref().unwrap_or_default()
     }
 }
+static LISTCALLANALYTICSJOBSOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListCallAnalyticsJobsOutput$Status",
+        "com.amazonaws.transcribe.synthetic",
+        "ListCallAnalyticsJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static LISTCALLANALYTICSJOBSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListCallAnalyticsJobsOutput$NextToken",
+        "com.amazonaws.transcribe.synthetic",
+        "ListCallAnalyticsJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTCALLANALYTICSJOBSOUTPUT_MEMBER_CALL_ANALYTICS_JOB_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe#CallAnalyticsJobSummaries$member",
+            "com.amazonaws.transcribe",
+            "CallAnalyticsJobSummaries",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTCALLANALYTICSJOBSOUTPUT_MEMBER_CALL_ANALYTICS_JOB_SUMMARIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe.synthetic#ListCallAnalyticsJobsOutput$CallAnalyticsJobSummaries",
+            "com.amazonaws.transcribe.synthetic",
+            "ListCallAnalyticsJobsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CallAnalyticsJobSummaries",
+        2,
+    )
+    .with_list_member(&LISTCALLANALYTICSJOBSOUTPUT_MEMBER_CALL_ANALYTICS_JOB_SUMMARIES_MEMBER);
+static LISTCALLANALYTICSJOBSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListCallAnalyticsJobsOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "ListCallAnalyticsJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCALLANALYTICSJOBSOUTPUT_MEMBER_STATUS,
+        &LISTCALLANALYTICSJOBSOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTCALLANALYTICSJOBSOUTPUT_MEMBER_CALL_ANALYTICS_JOB_SUMMARIES,
+    ],
+)
+.with_original_name("ListCallAnalyticsJobsResponse");
+impl ListCallAnalyticsJobsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCALLANALYTICSJOBSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCallAnalyticsJobsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&LISTCALLANALYTICSJOBSOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCALLANALYTICSJOBSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.call_analytics_job_summaries {
+            ser.write_list(
+                &LISTCALLANALYTICSJOBSOUTPUT_MEMBER_CALL_ANALYTICS_JOB_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CallAnalyticsJobSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCALLANALYTICSJOBSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CallAnalyticsJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.call_analytics_job_summaries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CallAnalyticsJobSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCallAnalyticsJobsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListCallAnalyticsJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

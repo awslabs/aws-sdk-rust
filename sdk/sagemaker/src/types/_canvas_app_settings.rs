@@ -57,6 +57,259 @@ impl CanvasAppSettings {
         self.emr_serverless_settings.as_ref()
     }
 }
+static CANVASAPPSETTINGS_MEMBER_TIME_SERIES_FORECASTING_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$TimeSeriesForecastingSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TimeSeriesForecastingSettings",
+    0,
+);
+static CANVASAPPSETTINGS_MEMBER_MODEL_REGISTER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$ModelRegisterSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelRegisterSettings",
+    1,
+);
+static CANVASAPPSETTINGS_MEMBER_WORKSPACE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$WorkspaceSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkspaceSettings",
+    2,
+);
+static CANVASAPPSETTINGS_MEMBER_IDENTITY_PROVIDER_O_AUTH_SETTINGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#IdentityProviderOAuthSettings$member",
+            "com.amazonaws.sagemaker",
+            "IdentityProviderOAuthSettings",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CANVASAPPSETTINGS_MEMBER_IDENTITY_PROVIDER_O_AUTH_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$IdentityProviderOAuthSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IdentityProviderOAuthSettings",
+    3,
+)
+.with_list_member(&CANVASAPPSETTINGS_MEMBER_IDENTITY_PROVIDER_O_AUTH_SETTINGS_MEMBER);
+static CANVASAPPSETTINGS_MEMBER_DIRECT_DEPLOY_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$DirectDeploySettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DirectDeploySettings",
+    4,
+);
+static CANVASAPPSETTINGS_MEMBER_KENDRA_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$KendraSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KendraSettings",
+    5,
+);
+static CANVASAPPSETTINGS_MEMBER_GENERATIVE_AI_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$GenerativeAiSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GenerativeAiSettings",
+    6,
+);
+static CANVASAPPSETTINGS_MEMBER_EMR_SERVERLESS_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings$EmrServerlessSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EmrServerlessSettings",
+    7,
+);
+static CANVASAPPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CanvasAppSettings",
+        "com.amazonaws.sagemaker",
+        "CanvasAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CANVASAPPSETTINGS_MEMBER_TIME_SERIES_FORECASTING_SETTINGS,
+        &CANVASAPPSETTINGS_MEMBER_MODEL_REGISTER_SETTINGS,
+        &CANVASAPPSETTINGS_MEMBER_WORKSPACE_SETTINGS,
+        &CANVASAPPSETTINGS_MEMBER_IDENTITY_PROVIDER_O_AUTH_SETTINGS,
+        &CANVASAPPSETTINGS_MEMBER_DIRECT_DEPLOY_SETTINGS,
+        &CANVASAPPSETTINGS_MEMBER_KENDRA_SETTINGS,
+        &CANVASAPPSETTINGS_MEMBER_GENERATIVE_AI_SETTINGS,
+        &CANVASAPPSETTINGS_MEMBER_EMR_SERVERLESS_SETTINGS,
+    ],
+);
+impl CanvasAppSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CANVASAPPSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CanvasAppSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.time_series_forecasting_settings {
+            ser.write_struct(&CANVASAPPSETTINGS_MEMBER_TIME_SERIES_FORECASTING_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.model_register_settings {
+            ser.write_struct(&CANVASAPPSETTINGS_MEMBER_MODEL_REGISTER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.workspace_settings {
+            ser.write_struct(&CANVASAPPSETTINGS_MEMBER_WORKSPACE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.identity_provider_o_auth_settings {
+            ser.write_list(
+                &CANVASAPPSETTINGS_MEMBER_IDENTITY_PROVIDER_O_AUTH_SETTINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::IdentityProviderOAuthSetting::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.direct_deploy_settings {
+            ser.write_struct(&CANVASAPPSETTINGS_MEMBER_DIRECT_DEPLOY_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.kendra_settings {
+            ser.write_struct(&CANVASAPPSETTINGS_MEMBER_KENDRA_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.generative_ai_settings {
+            ser.write_struct(&CANVASAPPSETTINGS_MEMBER_GENERATIVE_AI_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.emr_serverless_settings {
+            ser.write_struct(&CANVASAPPSETTINGS_MEMBER_EMR_SERVERLESS_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CanvasAppSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CANVASAPPSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.time_series_forecasting_settings = Some(crate::types::TimeSeriesForecastingSettings::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_register_settings = Some(crate::types::ModelRegisterSettings::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_settings = Some(crate::types::WorkspaceSettings::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_provider_o_auth_settings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::IdentityProviderOAuthSetting::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.direct_deploy_settings = Some(crate::types::DirectDeploySettings::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kendra_settings = Some(crate::types::KendraSettings::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.generative_ai_settings = Some(crate::types::GenerativeAiSettings::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.emr_serverless_settings = Some(crate::types::EmrServerlessSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CanvasAppSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CanvasAppSettings {
     /// Creates a new builder-style object to manufacture [`CanvasAppSettings`](crate::types::CanvasAppSettings).
     pub fn builder() -> crate::types::builders::CanvasAppSettingsBuilder {

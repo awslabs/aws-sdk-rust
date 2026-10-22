@@ -30,6 +30,152 @@ impl ListCrossAccountResourcesInput {
         self.next_token.as_deref()
     }
 }
+static LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_ACCELERATOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#ListCrossAccountResourcesInput$AcceleratorArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "ListCrossAccountResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcceleratorArn",
+    0,
+);
+static LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_RESOURCE_OWNER_AWS_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.globalaccelerator.synthetic#ListCrossAccountResourcesInput$ResourceOwnerAwsAccountId",
+            "com.amazonaws.globalaccelerator.synthetic",
+            "ListCrossAccountResourcesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ResourceOwnerAwsAccountId",
+        1,
+    );
+static LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#ListCrossAccountResourcesInput$MaxResults",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "ListCrossAccountResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#ListCrossAccountResourcesInput$NextToken",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "ListCrossAccountResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static LISTCROSSACCOUNTRESOURCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#ListCrossAccountResourcesInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "ListCrossAccountResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_ACCELERATOR_ARN,
+        &LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_RESOURCE_OWNER_AWS_ACCOUNT_ID,
+        &LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_MAX_RESULTS,
+        &LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListCrossAccountResourcesRequest");
+impl ListCrossAccountResourcesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCROSSACCOUNTRESOURCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCrossAccountResourcesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.accelerator_arn {
+            ser.write_string(&LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_ACCELERATOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.resource_owner_aws_account_id {
+            ser.write_string(&LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_RESOURCE_OWNER_AWS_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCROSSACCOUNTRESOURCESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCROSSACCOUNTRESOURCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owner_aws_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCrossAccountResourcesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_owner_aws_account_id = builder.resource_owner_aws_account_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListCrossAccountResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListCrossAccountResourcesInput`](crate::operation::list_cross_account_resources::ListCrossAccountResourcesInput).
     pub fn builder() -> crate::operation::list_cross_account_resources::builders::ListCrossAccountResourcesInputBuilder {

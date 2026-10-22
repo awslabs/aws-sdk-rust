@@ -60,6 +60,151 @@ impl UpdateLocationS3Input {
         self.s3_config.as_ref()
     }
 }
+static UPDATELOCATIONS3INPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationS3Input$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static UPDATELOCATIONS3INPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationS3Input$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    1,
+);
+static UPDATELOCATIONS3INPUT_MEMBER_S3_STORAGE_CLASS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationS3Input$S3StorageClass",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3StorageClass",
+    2,
+);
+static UPDATELOCATIONS3INPUT_MEMBER_S3_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationS3Input$S3Config",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Config",
+    3,
+);
+static UPDATELOCATIONS3INPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationS3Input",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationS3Input",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATELOCATIONS3INPUT_MEMBER_LOCATION_ARN,
+        &UPDATELOCATIONS3INPUT_MEMBER_SUBDIRECTORY,
+        &UPDATELOCATIONS3INPUT_MEMBER_S3_STORAGE_CLASS,
+        &UPDATELOCATIONS3INPUT_MEMBER_S3_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateLocationS3Request");
+impl UpdateLocationS3Input {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATELOCATIONS3INPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLocationS3Input {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&UPDATELOCATIONS3INPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&UPDATELOCATIONS3INPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.s3_storage_class {
+            ser.write_string(&UPDATELOCATIONS3INPUT_MEMBER_S3_STORAGE_CLASS, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_config {
+            ser.write_struct(&UPDATELOCATIONS3INPUT_MEMBER_S3_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_location_s3::builders::UpdateLocationS3InputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATELOCATIONS3INPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_storage_class = Some(crate::types::S3StorageClass::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_config = Some(crate::types::S3Config::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateLocationS3Input {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.location_arn = builder.location_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateLocationS3Input {
     /// Creates a new builder-style object to manufacture [`UpdateLocationS3Input`](crate::operation::update_location_s3::UpdateLocationS3Input).
     pub fn builder() -> crate::operation::update_location_s3::builders::UpdateLocationS3InputBuilder {

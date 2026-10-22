@@ -66,6 +66,223 @@ impl BandwidthRateLimitInterval {
         self.average_download_rate_limit_in_bits_per_sec
     }
 }
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_START_HOUR_OF_DAY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#BandwidthRateLimitInterval$StartHourOfDay",
+        "com.amazonaws.storagegateway",
+        "BandwidthRateLimitInterval",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "StartHourOfDay",
+    0,
+);
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_START_MINUTE_OF_HOUR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#BandwidthRateLimitInterval$StartMinuteOfHour",
+        "com.amazonaws.storagegateway",
+        "BandwidthRateLimitInterval",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "StartMinuteOfHour",
+    1,
+);
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_END_HOUR_OF_DAY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#BandwidthRateLimitInterval$EndHourOfDay",
+        "com.amazonaws.storagegateway",
+        "BandwidthRateLimitInterval",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EndHourOfDay",
+    2,
+);
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_END_MINUTE_OF_HOUR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#BandwidthRateLimitInterval$EndMinuteOfHour",
+        "com.amazonaws.storagegateway",
+        "BandwidthRateLimitInterval",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EndMinuteOfHour",
+    3,
+);
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_DAYS_OF_WEEK_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#DaysOfWeek$member",
+        "com.amazonaws.storagegateway",
+        "DaysOfWeek",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "member",
+    0,
+);
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_DAYS_OF_WEEK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#BandwidthRateLimitInterval$DaysOfWeek",
+        "com.amazonaws.storagegateway",
+        "BandwidthRateLimitInterval",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DaysOfWeek",
+    4,
+)
+.with_list_member(&BANDWIDTHRATELIMITINTERVAL_MEMBER_DAYS_OF_WEEK_MEMBER);
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_AVERAGE_UPLOAD_RATE_LIMIT_IN_BITS_PER_SEC: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#BandwidthRateLimitInterval$AverageUploadRateLimitInBitsPerSec",
+            "com.amazonaws.storagegateway",
+            "BandwidthRateLimitInterval",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "AverageUploadRateLimitInBitsPerSec",
+        5,
+    );
+static BANDWIDTHRATELIMITINTERVAL_MEMBER_AVERAGE_DOWNLOAD_RATE_LIMIT_IN_BITS_PER_SEC: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#BandwidthRateLimitInterval$AverageDownloadRateLimitInBitsPerSec",
+            "com.amazonaws.storagegateway",
+            "BandwidthRateLimitInterval",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "AverageDownloadRateLimitInBitsPerSec",
+        6,
+    );
+static BANDWIDTHRATELIMITINTERVAL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#BandwidthRateLimitInterval",
+        "com.amazonaws.storagegateway",
+        "BandwidthRateLimitInterval",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BANDWIDTHRATELIMITINTERVAL_MEMBER_START_HOUR_OF_DAY,
+        &BANDWIDTHRATELIMITINTERVAL_MEMBER_START_MINUTE_OF_HOUR,
+        &BANDWIDTHRATELIMITINTERVAL_MEMBER_END_HOUR_OF_DAY,
+        &BANDWIDTHRATELIMITINTERVAL_MEMBER_END_MINUTE_OF_HOUR,
+        &BANDWIDTHRATELIMITINTERVAL_MEMBER_DAYS_OF_WEEK,
+        &BANDWIDTHRATELIMITINTERVAL_MEMBER_AVERAGE_UPLOAD_RATE_LIMIT_IN_BITS_PER_SEC,
+        &BANDWIDTHRATELIMITINTERVAL_MEMBER_AVERAGE_DOWNLOAD_RATE_LIMIT_IN_BITS_PER_SEC,
+    ],
+);
+impl BandwidthRateLimitInterval {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BANDWIDTHRATELIMITINTERVAL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BandwidthRateLimitInterval {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.start_hour_of_day;
+            ser.write_integer(&BANDWIDTHRATELIMITINTERVAL_MEMBER_START_HOUR_OF_DAY, *val)?;
+        }
+        {
+            let val = &self.start_minute_of_hour;
+            ser.write_integer(&BANDWIDTHRATELIMITINTERVAL_MEMBER_START_MINUTE_OF_HOUR, *val)?;
+        }
+        {
+            let val = &self.end_hour_of_day;
+            ser.write_integer(&BANDWIDTHRATELIMITINTERVAL_MEMBER_END_HOUR_OF_DAY, *val)?;
+        }
+        {
+            let val = &self.end_minute_of_hour;
+            ser.write_integer(&BANDWIDTHRATELIMITINTERVAL_MEMBER_END_MINUTE_OF_HOUR, *val)?;
+        }
+        {
+            let val = &self.days_of_week;
+
+            ser.write_list(
+                &BANDWIDTHRATELIMITINTERVAL_MEMBER_DAYS_OF_WEEK,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_integer(&aws_smithy_schema::prelude::INTEGER, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.average_upload_rate_limit_in_bits_per_sec {
+            ser.write_long(&BANDWIDTHRATELIMITINTERVAL_MEMBER_AVERAGE_UPLOAD_RATE_LIMIT_IN_BITS_PER_SEC, *val)?;
+        }
+        if let Some(ref val) = self.average_download_rate_limit_in_bits_per_sec {
+            ser.write_long(&BANDWIDTHRATELIMITINTERVAL_MEMBER_AVERAGE_DOWNLOAD_RATE_LIMIT_IN_BITS_PER_SEC, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BandwidthRateLimitIntervalBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BANDWIDTHRATELIMITINTERVAL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.start_hour_of_day = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.start_minute_of_hour = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.end_hour_of_day = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.end_minute_of_hour = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    self.days_of_week = Some(deser.read_integer_list(member)?);
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.average_upload_rate_limit_in_bits_per_sec = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.average_download_rate_limit_in_bits_per_sec = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BandwidthRateLimitInterval {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.start_hour_of_day = builder.start_hour_of_day.or(Some(0i32));
+        builder.start_minute_of_hour = builder.start_minute_of_hour.or(Some(0i32));
+        builder.end_hour_of_day = builder.end_hour_of_day.or(Some(0i32));
+        builder.end_minute_of_hour = builder.end_minute_of_hour.or(Some(0i32));
+        builder.days_of_week = builder.days_of_week.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BandwidthRateLimitInterval {
     /// Creates a new builder-style object to manufacture [`BandwidthRateLimitInterval`](crate::types::BandwidthRateLimitInterval).
     pub fn builder() -> crate::types::builders::BandwidthRateLimitIntervalBuilder {

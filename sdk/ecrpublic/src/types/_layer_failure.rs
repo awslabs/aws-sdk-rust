@@ -25,6 +25,123 @@ impl LayerFailure {
         self.failure_reason.as_deref()
     }
 }
+static LAYERFAILURE_MEMBER_LAYER_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#LayerFailure$layerDigest",
+        "com.amazonaws.ecrpublic",
+        "LayerFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "layerDigest",
+    0,
+);
+static LAYERFAILURE_MEMBER_FAILURE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#LayerFailure$failureCode",
+        "com.amazonaws.ecrpublic",
+        "LayerFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "failureCode",
+    1,
+);
+static LAYERFAILURE_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#LayerFailure$failureReason",
+        "com.amazonaws.ecrpublic",
+        "LayerFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "failureReason",
+    2,
+);
+static LAYERFAILURE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#LayerFailure", "com.amazonaws.ecrpublic", "LayerFailure"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LAYERFAILURE_MEMBER_LAYER_DIGEST,
+        &LAYERFAILURE_MEMBER_FAILURE_CODE,
+        &LAYERFAILURE_MEMBER_FAILURE_REASON,
+    ],
+);
+impl LayerFailure {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LAYERFAILURE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LayerFailure {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.layer_digest {
+            ser.write_string(&LAYERFAILURE_MEMBER_LAYER_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.failure_code {
+            ser.write_string(&LAYERFAILURE_MEMBER_FAILURE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&LAYERFAILURE_MEMBER_FAILURE_REASON, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LayerFailureBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LAYERFAILURE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.layer_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_code = Some(crate::types::LayerFailureCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LayerFailure {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LayerFailure {
     /// Creates a new builder-style object to manufacture [`LayerFailure`](crate::types::LayerFailure).
     pub fn builder() -> crate::types::builders::LayerFailureBuilder {

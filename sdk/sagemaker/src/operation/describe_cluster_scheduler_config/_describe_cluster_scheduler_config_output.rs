@@ -94,6 +94,406 @@ impl DescribeClusterSchedulerConfigOutput {
         self.last_modified_by.as_ref()
     }
 }
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$ClusterSchedulerConfigArn",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeClusterSchedulerConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ClusterSchedulerConfigArn",
+        0,
+    );
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$ClusterSchedulerConfigId",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeClusterSchedulerConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ClusterSchedulerConfigId",
+        1,
+    );
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$Name",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    2,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_VERSION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$ClusterSchedulerConfigVersion",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeClusterSchedulerConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "ClusterSchedulerConfigVersion",
+        3,
+    );
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    5,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS_DETAILS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#StatusDetailsMap$key",
+        "com.amazonaws.sagemaker",
+        "StatusDetailsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS_DETAILS_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#StatusDetailsMap$value",
+            "com.amazonaws.sagemaker",
+            "StatusDetailsMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$StatusDetails",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "StatusDetails",
+    6,
+)
+.with_map_members(
+    &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS_DETAILS_KEY,
+    &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS_DETAILS_VALUE,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$ClusterArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterArn",
+    7,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_SCHEDULER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$SchedulerConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SchedulerConfig",
+    8,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    9,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    10,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    11,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    12,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    13,
+);
+static DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterSchedulerConfigOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterSchedulerConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ARN,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ID,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_NAME,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_VERSION,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS_DETAILS,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_ARN,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_SCHEDULER_CONFIG,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_LAST_MODIFIED_BY,
+    ],
+)
+.with_original_name("DescribeClusterSchedulerConfigResponse");
+impl DescribeClusterSchedulerConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeClusterSchedulerConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_scheduler_config_arn {
+            ser.write_string(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ARN, val)?;
+        }
+        if let Some(ref val) = self.cluster_scheduler_config_id {
+            ser.write_string(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.cluster_scheduler_config_version {
+            ser.write_integer(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.status_details {
+            ser.write_map(
+                &DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_STATUS_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key.as_str())?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cluster_arn {
+            ser.write_string(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CLUSTER_ARN, val)?;
+        }
+        if let Some(ref val) = self.scheduler_config {
+            ser.write_struct(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_SCHEDULER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_cluster_scheduler_config::builders::DescribeClusterSchedulerConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECLUSTERSCHEDULERCONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_scheduler_config_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_scheduler_config_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_scheduler_config_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::SchedulerResourceStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_details = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(
+                                    crate::types::SchedulerConfigComponent::from(key.as_str()),
+                                    crate::types::SchedulerResourceStatus::from(deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str()),
+                                );
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scheduler_config = Some(crate::types::SchedulerConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeClusterSchedulerConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeClusterSchedulerConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

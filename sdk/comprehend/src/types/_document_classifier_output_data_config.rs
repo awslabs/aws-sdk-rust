@@ -47,6 +47,128 @@ impl DocumentClassifierOutputDataConfig {
         self.flywheel_stats_s3_prefix.as_deref()
     }
 }
+static DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierOutputDataConfig$S3Uri",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierOutputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    0,
+);
+static DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierOutputDataConfig$KmsKeyId",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierOutputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    1,
+);
+static DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_FLYWHEEL_STATS_S3_PREFIX: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#DocumentClassifierOutputDataConfig$FlywheelStatsS3Prefix",
+            "com.amazonaws.comprehend",
+            "DocumentClassifierOutputDataConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FlywheelStatsS3Prefix",
+        2,
+    );
+static DOCUMENTCLASSIFIEROUTPUTDATACONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierOutputDataConfig",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierOutputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_S3_URI,
+        &DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_KMS_KEY_ID,
+        &DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_FLYWHEEL_STATS_S3_PREFIX,
+    ],
+);
+impl DocumentClassifierOutputDataConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTCLASSIFIEROUTPUTDATACONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentClassifierOutputDataConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_uri {
+            ser.write_string(&DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.flywheel_stats_s3_prefix {
+            ser.write_string(&DOCUMENTCLASSIFIEROUTPUTDATACONFIG_MEMBER_FLYWHEEL_STATS_S3_PREFIX, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentClassifierOutputDataConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENTCLASSIFIEROUTPUTDATACONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_stats_s3_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DocumentClassifierOutputDataConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DocumentClassifierOutputDataConfig {
     /// Creates a new builder-style object to manufacture [`DocumentClassifierOutputDataConfig`](crate::types::DocumentClassifierOutputDataConfig).
     pub fn builder() -> crate::types::builders::DocumentClassifierOutputDataConfigBuilder {

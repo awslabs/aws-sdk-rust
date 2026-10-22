@@ -183,6 +183,11 @@ pub(crate) fn de_get_network_routes(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "CoreNetworkNetworkFunctionGroup" => {
+                    builder = builder.set_core_network_network_function_group(
+                            crate::protocol_serde::shape_core_network_network_function_group_identifier::de_core_network_network_function_group_identifier(tokens, _value, depth + 1)?
+                        );
+                }
                 "CoreNetworkSegmentEdge" => {
                     builder = builder.set_core_network_segment_edge(
                         crate::protocol_serde::shape_core_network_segment_edge_identifier::de_core_network_segment_edge_identifier(
@@ -198,6 +203,13 @@ pub(crate) fn de_get_network_routes(
                         _value,
                         depth + 1,
                     )?);
+                }
+                "NextToken" => {
+                    builder = builder.set_next_token(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
                 "RouteTableArn" => {
                     builder = builder.set_route_table_arn(

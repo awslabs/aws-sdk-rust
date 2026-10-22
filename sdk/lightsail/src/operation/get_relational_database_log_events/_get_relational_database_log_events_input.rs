@@ -82,6 +82,200 @@ impl GetRelationalDatabaseLogEventsInput {
         self.page_token.as_deref()
     }
 }
+static GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_RELATIONAL_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseLogEventsInput$relationalDatabaseName",
+            "com.amazonaws.lightsail.synthetic",
+            "GetRelationalDatabaseLogEventsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "relationalDatabaseName",
+        0,
+    );
+static GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_LOG_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseLogEventsInput$logStreamName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseLogEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "logStreamName",
+    1,
+);
+static GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseLogEventsInput$startTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseLogEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    2,
+);
+static GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseLogEventsInput$endTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseLogEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    3,
+);
+static GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_START_FROM_HEAD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseLogEventsInput$startFromHead",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseLogEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "startFromHead",
+    4,
+);
+static GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseLogEventsInput$pageToken",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseLogEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pageToken",
+    5,
+);
+static GETRELATIONALDATABASELOGEVENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseLogEventsInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseLogEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_RELATIONAL_DATABASE_NAME,
+        &GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_LOG_STREAM_NAME,
+        &GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_START_TIME,
+        &GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_END_TIME,
+        &GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_START_FROM_HEAD,
+        &GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_PAGE_TOKEN,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/GetRelationalDatabaseLogEvents",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetRelationalDatabaseLogEventsRequest");
+impl GetRelationalDatabaseLogEventsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRELATIONALDATABASELOGEVENTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRelationalDatabaseLogEventsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_database_name {
+            ser.write_string(&GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_RELATIONAL_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.log_stream_name {
+            ser.write_string(&GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_LOG_STREAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_from_head {
+            ser.write_boolean(&GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_START_FROM_HEAD, *val)?;
+        }
+        if let Some(ref val) = self.page_token {
+            ser.write_string(&GETRELATIONALDATABASELOGEVENTSINPUT_MEMBER_PAGE_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRELATIONALDATABASELOGEVENTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_from_head = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRelationalDatabaseLogEventsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.relational_database_name = builder.relational_database_name.or(Some(String::new()));
+        builder.log_stream_name = builder.log_stream_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetRelationalDatabaseLogEventsInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogEventsInput`](crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsInput).
     pub fn builder() -> crate::operation::get_relational_database_log_events::builders::GetRelationalDatabaseLogEventsInputBuilder {

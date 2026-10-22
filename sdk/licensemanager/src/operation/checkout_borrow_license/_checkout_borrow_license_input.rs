@@ -46,6 +46,247 @@ impl CheckoutBorrowLicenseInput {
         self.client_token.as_deref()
     }
 }
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutBorrowLicenseInput$LicenseArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutBorrowLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    0,
+);
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_ENTITLEMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementDataList$member",
+        "com.amazonaws.licensemanager",
+        "EntitlementDataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_ENTITLEMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutBorrowLicenseInput$Entitlements",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutBorrowLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Entitlements",
+    1,
+)
+.with_list_member(&CHECKOUTBORROWLICENSEINPUT_MEMBER_ENTITLEMENTS_MEMBER);
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_DIGITAL_SIGNATURE_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutBorrowLicenseInput$DigitalSignatureMethod",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutBorrowLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DigitalSignatureMethod",
+    2,
+);
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_NODE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutBorrowLicenseInput$NodeId",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutBorrowLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeId",
+    3,
+);
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_CHECKOUT_METADATA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MetadataList$member",
+        "com.amazonaws.licensemanager",
+        "MetadataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_CHECKOUT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutBorrowLicenseInput$CheckoutMetadata",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutBorrowLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CheckoutMetadata",
+    4,
+)
+.with_list_member(&CHECKOUTBORROWLICENSEINPUT_MEMBER_CHECKOUT_METADATA_MEMBER);
+static CHECKOUTBORROWLICENSEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutBorrowLicenseInput$ClientToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutBorrowLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    5,
+);
+static CHECKOUTBORROWLICENSEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutBorrowLicenseInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutBorrowLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHECKOUTBORROWLICENSEINPUT_MEMBER_LICENSE_ARN,
+        &CHECKOUTBORROWLICENSEINPUT_MEMBER_ENTITLEMENTS,
+        &CHECKOUTBORROWLICENSEINPUT_MEMBER_DIGITAL_SIGNATURE_METHOD,
+        &CHECKOUTBORROWLICENSEINPUT_MEMBER_NODE_ID,
+        &CHECKOUTBORROWLICENSEINPUT_MEMBER_CHECKOUT_METADATA,
+        &CHECKOUTBORROWLICENSEINPUT_MEMBER_CLIENT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CheckoutBorrowLicenseRequest");
+impl CheckoutBorrowLicenseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHECKOUTBORROWLICENSEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CheckoutBorrowLicenseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&CHECKOUTBORROWLICENSEINPUT_MEMBER_LICENSE_ARN, val)?;
+        }
+        if let Some(ref val) = self.entitlements {
+            ser.write_list(
+                &CHECKOUTBORROWLICENSEINPUT_MEMBER_ENTITLEMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EntitlementData::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.digital_signature_method {
+            ser.write_string(&CHECKOUTBORROWLICENSEINPUT_MEMBER_DIGITAL_SIGNATURE_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.node_id {
+            ser.write_string(&CHECKOUTBORROWLICENSEINPUT_MEMBER_NODE_ID, val)?;
+        }
+        if let Some(ref val) = self.checkout_metadata {
+            ser.write_list(
+                &CHECKOUTBORROWLICENSEINPUT_MEMBER_CHECKOUT_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Metadata::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CHECKOUTBORROWLICENSEINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHECKOUTBORROWLICENSEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entitlements = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EntitlementData::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.digital_signature_method = Some(crate::types::DigitalSignatureMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checkout_metadata = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Metadata::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CheckoutBorrowLicenseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.license_arn = builder.license_arn.or(Some(String::new()));
+        builder.entitlements = builder.entitlements.or(Some(Vec::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CheckoutBorrowLicenseInput {
     /// Creates a new builder-style object to manufacture [`CheckoutBorrowLicenseInput`](crate::operation::checkout_borrow_license::CheckoutBorrowLicenseInput).
     pub fn builder() -> crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder {

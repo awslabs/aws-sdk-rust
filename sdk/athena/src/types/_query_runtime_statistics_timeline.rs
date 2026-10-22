@@ -43,6 +43,196 @@ impl QueryRuntimeStatisticsTimeline {
         self.total_execution_time_in_millis
     }
 }
+static QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_QUERY_QUEUE_TIME_IN_MILLIS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryRuntimeStatisticsTimeline$QueryQueueTimeInMillis",
+            "com.amazonaws.athena",
+            "QueryRuntimeStatisticsTimeline",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "QueryQueueTimeInMillis",
+        0,
+    );
+static QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_SERVICE_PRE_PROCESSING_TIME_IN_MILLIS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryRuntimeStatisticsTimeline$ServicePreProcessingTimeInMillis",
+            "com.amazonaws.athena",
+            "QueryRuntimeStatisticsTimeline",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "ServicePreProcessingTimeInMillis",
+        1,
+    );
+static QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_QUERY_PLANNING_TIME_IN_MILLIS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryRuntimeStatisticsTimeline$QueryPlanningTimeInMillis",
+            "com.amazonaws.athena",
+            "QueryRuntimeStatisticsTimeline",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "QueryPlanningTimeInMillis",
+        2,
+    );
+static QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_ENGINE_EXECUTION_TIME_IN_MILLIS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryRuntimeStatisticsTimeline$EngineExecutionTimeInMillis",
+            "com.amazonaws.athena",
+            "QueryRuntimeStatisticsTimeline",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "EngineExecutionTimeInMillis",
+        3,
+    );
+static QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_SERVICE_PROCESSING_TIME_IN_MILLIS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryRuntimeStatisticsTimeline$ServiceProcessingTimeInMillis",
+            "com.amazonaws.athena",
+            "QueryRuntimeStatisticsTimeline",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "ServiceProcessingTimeInMillis",
+        4,
+    );
+static QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_TOTAL_EXECUTION_TIME_IN_MILLIS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryRuntimeStatisticsTimeline$TotalExecutionTimeInMillis",
+            "com.amazonaws.athena",
+            "QueryRuntimeStatisticsTimeline",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "TotalExecutionTimeInMillis",
+        5,
+    );
+static QUERYRUNTIMESTATISTICSTIMELINE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryRuntimeStatisticsTimeline",
+        "com.amazonaws.athena",
+        "QueryRuntimeStatisticsTimeline",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_QUERY_QUEUE_TIME_IN_MILLIS,
+        &QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_SERVICE_PRE_PROCESSING_TIME_IN_MILLIS,
+        &QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_QUERY_PLANNING_TIME_IN_MILLIS,
+        &QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_ENGINE_EXECUTION_TIME_IN_MILLIS,
+        &QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_SERVICE_PROCESSING_TIME_IN_MILLIS,
+        &QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_TOTAL_EXECUTION_TIME_IN_MILLIS,
+    ],
+);
+impl QueryRuntimeStatisticsTimeline {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYRUNTIMESTATISTICSTIMELINE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryRuntimeStatisticsTimeline {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.query_queue_time_in_millis {
+            ser.write_long(&QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_QUERY_QUEUE_TIME_IN_MILLIS, *val)?;
+        }
+        if let Some(ref val) = self.service_pre_processing_time_in_millis {
+            ser.write_long(&QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_SERVICE_PRE_PROCESSING_TIME_IN_MILLIS, *val)?;
+        }
+        if let Some(ref val) = self.query_planning_time_in_millis {
+            ser.write_long(&QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_QUERY_PLANNING_TIME_IN_MILLIS, *val)?;
+        }
+        if let Some(ref val) = self.engine_execution_time_in_millis {
+            ser.write_long(&QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_ENGINE_EXECUTION_TIME_IN_MILLIS, *val)?;
+        }
+        if let Some(ref val) = self.service_processing_time_in_millis {
+            ser.write_long(&QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_SERVICE_PROCESSING_TIME_IN_MILLIS, *val)?;
+        }
+        if let Some(ref val) = self.total_execution_time_in_millis {
+            ser.write_long(&QUERYRUNTIMESTATISTICSTIMELINE_MEMBER_TOTAL_EXECUTION_TIME_IN_MILLIS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QueryRuntimeStatisticsTimelineBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYRUNTIMESTATISTICSTIMELINE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_queue_time_in_millis = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_pre_processing_time_in_millis = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_planning_time_in_millis = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_execution_time_in_millis = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_processing_time_in_millis = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_execution_time_in_millis = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryRuntimeStatisticsTimeline {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QueryRuntimeStatisticsTimeline {
     /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsTimeline`](crate::types::QueryRuntimeStatisticsTimeline).
     pub fn builder() -> crate::types::builders::QueryRuntimeStatisticsTimelineBuilder {

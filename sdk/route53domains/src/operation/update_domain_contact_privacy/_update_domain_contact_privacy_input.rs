@@ -53,6 +53,172 @@ impl UpdateDomainContactPrivacyInput {
         self.billing_privacy
     }
 }
+static UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactPrivacyInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactPrivacyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_ADMIN_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactPrivacyInput$AdminPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactPrivacyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AdminPrivacy",
+    1,
+);
+static UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_REGISTRANT_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactPrivacyInput$RegistrantPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactPrivacyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RegistrantPrivacy",
+    2,
+);
+static UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_TECH_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactPrivacyInput$TechPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactPrivacyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "TechPrivacy",
+    3,
+);
+static UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_BILLING_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactPrivacyInput$BillingPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactPrivacyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "BillingPrivacy",
+    4,
+);
+static UPDATEDOMAINCONTACTPRIVACYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#UpdateDomainContactPrivacyInput",
+        "com.amazonaws.route53domains.synthetic",
+        "UpdateDomainContactPrivacyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_DOMAIN_NAME,
+        &UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_ADMIN_PRIVACY,
+        &UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_REGISTRANT_PRIVACY,
+        &UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_TECH_PRIVACY,
+        &UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_BILLING_PRIVACY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDomainContactPrivacyRequest");
+impl UpdateDomainContactPrivacyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDOMAINCONTACTPRIVACYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDomainContactPrivacyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.admin_privacy {
+            ser.write_boolean(&UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_ADMIN_PRIVACY, *val)?;
+        }
+        if let Some(ref val) = self.registrant_privacy {
+            ser.write_boolean(&UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_REGISTRANT_PRIVACY, *val)?;
+        }
+        if let Some(ref val) = self.tech_privacy {
+            ser.write_boolean(&UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_TECH_PRIVACY, *val)?;
+        }
+        if let Some(ref val) = self.billing_privacy {
+            ser.write_boolean(&UPDATEDOMAINCONTACTPRIVACYINPUT_MEMBER_BILLING_PRIVACY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDOMAINCONTACTPRIVACYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrant_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tech_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billing_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDomainContactPrivacyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateDomainContactPrivacyInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainContactPrivacyInput`](crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyInput).
     pub fn builder() -> crate::operation::update_domain_contact_privacy::builders::UpdateDomainContactPrivacyInputBuilder {

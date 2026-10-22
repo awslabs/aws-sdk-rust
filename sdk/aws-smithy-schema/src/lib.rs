@@ -912,6 +912,16 @@ impl<'a> Schema<'a> {
         self.http.as_ref()
     }
 
+    /// Returns the `@eventHeader` trait if present.
+    pub fn event_header(&self) -> Option<&trait_types::EventHeaderTrait> {
+        self.event_header.as_ref()
+    }
+
+    /// Returns the `@eventPayload` trait if present.
+    pub fn event_payload(&self) -> Option<&trait_types::EventPayloadTrait> {
+        self.event_payload.as_ref()
+    }
+
     // -- Const setters for builder-style construction in generated code --
 
     /// Sets the original (pre-synthesis) shape name for synthetic operation

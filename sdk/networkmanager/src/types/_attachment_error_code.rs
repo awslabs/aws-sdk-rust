@@ -12,19 +12,25 @@
 /// ```text
 /// # let attachmenterrorcode = unimplemented!();
 /// match attachmenterrorcode {
+///     AttachmentErrorCode::CreationFailed => { /* ... */ },
+///     AttachmentErrorCode::DeletionFailed => { /* ... */ },
 ///     AttachmentErrorCode::DirectConnectGatewayExistingAttachments => { /* ... */ },
 ///     AttachmentErrorCode::DirectConnectGatewayNotFound => { /* ... */ },
 ///     AttachmentErrorCode::DirectConnectGatewayNoPrivateVif => { /* ... */ },
+///     AttachmentErrorCode::DirectConnectGatewayTopologyRestrictions => { /* ... */ },
 ///     AttachmentErrorCode::MaximumNoEncapLimitExceeded => { /* ... */ },
+///     AttachmentErrorCode::SecurityGroupReferencingUnsupportedAvailabilityZone => { /* ... */ },
 ///     AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone => { /* ... */ },
 ///     AttachmentErrorCode::SubnetNotFound => { /* ... */ },
 ///     AttachmentErrorCode::SubnetNoFreeAddresses => { /* ... */ },
 ///     AttachmentErrorCode::SubnetNoIpv6Cidrs => { /* ... */ },
 ///     AttachmentErrorCode::SubnetUnsupportedAvailabilityZone => { /* ... */ },
+///     AttachmentErrorCode::UpdateFailed => { /* ... */ },
 ///     AttachmentErrorCode::VpcNotFound => { /* ... */ },
 ///     AttachmentErrorCode::VpcUnsupportedFeatures => { /* ... */ },
 ///     AttachmentErrorCode::VpnConnectionNotFound => { /* ... */ },
 ///     AttachmentErrorCode::VpnExistingAssociations => { /* ... */ },
+///     AttachmentErrorCode::VpnStaticRoutesNatUnsupported => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -54,13 +60,21 @@
 )]
 pub enum AttachmentErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeletionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DirectConnectGatewayExistingAttachments,
     #[allow(missing_docs)] // documentation missing in model
     DirectConnectGatewayNotFound,
     #[allow(missing_docs)] // documentation missing in model
     DirectConnectGatewayNoPrivateVif,
     #[allow(missing_docs)] // documentation missing in model
+    DirectConnectGatewayTopologyRestrictions,
+    #[allow(missing_docs)] // documentation missing in model
     MaximumNoEncapLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    SecurityGroupReferencingUnsupportedAvailabilityZone,
     #[allow(missing_docs)] // documentation missing in model
     SubnetDuplicatedInAvailabilityZone,
     #[allow(missing_docs)] // documentation missing in model
@@ -72,6 +86,8 @@ pub enum AttachmentErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     SubnetUnsupportedAvailabilityZone,
     #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     VpcNotFound,
     #[allow(missing_docs)] // documentation missing in model
     VpcUnsupportedFeatures,
@@ -79,6 +95,8 @@ pub enum AttachmentErrorCode {
     VpnConnectionNotFound,
     #[allow(missing_docs)] // documentation missing in model
     VpnExistingAssociations,
+    #[allow(missing_docs)] // documentation missing in model
+    VpnStaticRoutesNatUnsupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -86,19 +104,25 @@ pub enum AttachmentErrorCode {
 impl ::std::convert::From<&str> for AttachmentErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "CREATION_FAILED" => AttachmentErrorCode::CreationFailed,
+            "DELETION_FAILED" => AttachmentErrorCode::DeletionFailed,
             "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS" => AttachmentErrorCode::DirectConnectGatewayExistingAttachments,
             "DIRECT_CONNECT_GATEWAY_NOT_FOUND" => AttachmentErrorCode::DirectConnectGatewayNotFound,
             "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF" => AttachmentErrorCode::DirectConnectGatewayNoPrivateVif,
+            "DIRECT_CONNECT_GATEWAY_TOPOLOGY_RESTRICTIONS" => AttachmentErrorCode::DirectConnectGatewayTopologyRestrictions,
             "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED" => AttachmentErrorCode::MaximumNoEncapLimitExceeded,
+            "SECURITY_GROUP_REFERENCING_UNSUPPORTED_AVAILABILITY_ZONE" => AttachmentErrorCode::SecurityGroupReferencingUnsupportedAvailabilityZone,
             "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE" => AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone,
             "SUBNET_NOT_FOUND" => AttachmentErrorCode::SubnetNotFound,
             "SUBNET_NO_FREE_ADDRESSES" => AttachmentErrorCode::SubnetNoFreeAddresses,
             "SUBNET_NO_IPV6_CIDRS" => AttachmentErrorCode::SubnetNoIpv6Cidrs,
             "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE" => AttachmentErrorCode::SubnetUnsupportedAvailabilityZone,
+            "UPDATE_FAILED" => AttachmentErrorCode::UpdateFailed,
             "VPC_NOT_FOUND" => AttachmentErrorCode::VpcNotFound,
             "VPC_UNSUPPORTED_FEATURES" => AttachmentErrorCode::VpcUnsupportedFeatures,
             "VPN_CONNECTION_NOT_FOUND" => AttachmentErrorCode::VpnConnectionNotFound,
             "VPN_EXISTING_ASSOCIATIONS" => AttachmentErrorCode::VpnExistingAssociations,
+            "VPN_STATIC_ROUTES_NAT_UNSUPPORTED" => AttachmentErrorCode::VpnStaticRoutesNatUnsupported,
             other => AttachmentErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -114,38 +138,50 @@ impl AttachmentErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AttachmentErrorCode::CreationFailed => "CREATION_FAILED",
+            AttachmentErrorCode::DeletionFailed => "DELETION_FAILED",
             AttachmentErrorCode::DirectConnectGatewayExistingAttachments => "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS",
             AttachmentErrorCode::DirectConnectGatewayNotFound => "DIRECT_CONNECT_GATEWAY_NOT_FOUND",
             AttachmentErrorCode::DirectConnectGatewayNoPrivateVif => "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF",
+            AttachmentErrorCode::DirectConnectGatewayTopologyRestrictions => "DIRECT_CONNECT_GATEWAY_TOPOLOGY_RESTRICTIONS",
             AttachmentErrorCode::MaximumNoEncapLimitExceeded => "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED",
+            AttachmentErrorCode::SecurityGroupReferencingUnsupportedAvailabilityZone => "SECURITY_GROUP_REFERENCING_UNSUPPORTED_AVAILABILITY_ZONE",
             AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone => "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE",
             AttachmentErrorCode::SubnetNotFound => "SUBNET_NOT_FOUND",
             AttachmentErrorCode::SubnetNoFreeAddresses => "SUBNET_NO_FREE_ADDRESSES",
             AttachmentErrorCode::SubnetNoIpv6Cidrs => "SUBNET_NO_IPV6_CIDRS",
             AttachmentErrorCode::SubnetUnsupportedAvailabilityZone => "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE",
+            AttachmentErrorCode::UpdateFailed => "UPDATE_FAILED",
             AttachmentErrorCode::VpcNotFound => "VPC_NOT_FOUND",
             AttachmentErrorCode::VpcUnsupportedFeatures => "VPC_UNSUPPORTED_FEATURES",
             AttachmentErrorCode::VpnConnectionNotFound => "VPN_CONNECTION_NOT_FOUND",
             AttachmentErrorCode::VpnExistingAssociations => "VPN_EXISTING_ASSOCIATIONS",
+            AttachmentErrorCode::VpnStaticRoutesNatUnsupported => "VPN_STATIC_ROUTES_NAT_UNSUPPORTED",
             AttachmentErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CREATION_FAILED",
+            "DELETION_FAILED",
             "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS",
             "DIRECT_CONNECT_GATEWAY_NOT_FOUND",
             "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF",
+            "DIRECT_CONNECT_GATEWAY_TOPOLOGY_RESTRICTIONS",
             "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED",
+            "SECURITY_GROUP_REFERENCING_UNSUPPORTED_AVAILABILITY_ZONE",
             "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE",
             "SUBNET_NOT_FOUND",
             "SUBNET_NO_FREE_ADDRESSES",
             "SUBNET_NO_IPV6_CIDRS",
             "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE",
+            "UPDATE_FAILED",
             "VPC_NOT_FOUND",
             "VPC_UNSUPPORTED_FEATURES",
             "VPN_CONNECTION_NOT_FOUND",
             "VPN_EXISTING_ASSOCIATIONS",
+            "VPN_STATIC_ROUTES_NAT_UNSUPPORTED",
         ]
     }
 }
@@ -169,19 +205,27 @@ impl AttachmentErrorCode {
 impl ::std::fmt::Display for AttachmentErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AttachmentErrorCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            AttachmentErrorCode::DeletionFailed => write!(f, "DELETION_FAILED"),
             AttachmentErrorCode::DirectConnectGatewayExistingAttachments => write!(f, "DIRECT_CONNECT_GATEWAY_EXISTING_ATTACHMENTS"),
             AttachmentErrorCode::DirectConnectGatewayNotFound => write!(f, "DIRECT_CONNECT_GATEWAY_NOT_FOUND"),
             AttachmentErrorCode::DirectConnectGatewayNoPrivateVif => write!(f, "DIRECT_CONNECT_GATEWAY_NO_PRIVATE_VIF"),
+            AttachmentErrorCode::DirectConnectGatewayTopologyRestrictions => write!(f, "DIRECT_CONNECT_GATEWAY_TOPOLOGY_RESTRICTIONS"),
             AttachmentErrorCode::MaximumNoEncapLimitExceeded => write!(f, "MAXIMUM_NO_ENCAP_LIMIT_EXCEEDED"),
+            AttachmentErrorCode::SecurityGroupReferencingUnsupportedAvailabilityZone => {
+                write!(f, "SECURITY_GROUP_REFERENCING_UNSUPPORTED_AVAILABILITY_ZONE")
+            }
             AttachmentErrorCode::SubnetDuplicatedInAvailabilityZone => write!(f, "SUBNET_DUPLICATED_IN_AVAILABILITY_ZONE"),
             AttachmentErrorCode::SubnetNotFound => write!(f, "SUBNET_NOT_FOUND"),
             AttachmentErrorCode::SubnetNoFreeAddresses => write!(f, "SUBNET_NO_FREE_ADDRESSES"),
             AttachmentErrorCode::SubnetNoIpv6Cidrs => write!(f, "SUBNET_NO_IPV6_CIDRS"),
             AttachmentErrorCode::SubnetUnsupportedAvailabilityZone => write!(f, "SUBNET_UNSUPPORTED_AVAILABILITY_ZONE"),
+            AttachmentErrorCode::UpdateFailed => write!(f, "UPDATE_FAILED"),
             AttachmentErrorCode::VpcNotFound => write!(f, "VPC_NOT_FOUND"),
             AttachmentErrorCode::VpcUnsupportedFeatures => write!(f, "VPC_UNSUPPORTED_FEATURES"),
             AttachmentErrorCode::VpnConnectionNotFound => write!(f, "VPN_CONNECTION_NOT_FOUND"),
             AttachmentErrorCode::VpnExistingAssociations => write!(f, "VPN_EXISTING_ASSOCIATIONS"),
+            AttachmentErrorCode::VpnStaticRoutesNatUnsupported => write!(f, "VPN_STATIC_ROUTES_NAT_UNSUPPORTED"),
             AttachmentErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -120,6 +120,395 @@ impl CreateEndpointConfigInput {
         self.metrics_config.as_ref()
     }
 }
+static CREATEENDPOINTCONFIGINPUT_MEMBER_ENDPOINT_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$EndpointConfigName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointConfigName",
+    0,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_PRODUCTION_VARIANTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantList$member",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_PRODUCTION_VARIANTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$ProductionVariants",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ProductionVariants",
+    1,
+)
+.with_list_member(&CREATEENDPOINTCONFIGINPUT_MEMBER_PRODUCTION_VARIANTS_MEMBER);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_DATA_CAPTURE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$DataCaptureConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataCaptureConfig",
+    2,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    3,
+)
+.with_list_member(&CREATEENDPOINTCONFIGINPUT_MEMBER_TAGS_MEMBER);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$KmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    4,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_ASYNC_INFERENCE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$AsyncInferenceConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AsyncInferenceConfig",
+    5,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_EXPLAINER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$ExplainerConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExplainerConfig",
+    6,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_SHADOW_PRODUCTION_VARIANTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantList$member",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEENDPOINTCONFIGINPUT_MEMBER_SHADOW_PRODUCTION_VARIANTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$ShadowProductionVariants",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ShadowProductionVariants",
+    7,
+)
+.with_list_member(&CREATEENDPOINTCONFIGINPUT_MEMBER_SHADOW_PRODUCTION_VARIANTS_MEMBER);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$ExecutionRoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRoleArn",
+    8,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$VpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    9,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_ENABLE_NETWORK_ISOLATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$EnableNetworkIsolation",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNetworkIsolation",
+    10,
+);
+static CREATEENDPOINTCONFIGINPUT_MEMBER_METRICS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput$MetricsConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MetricsConfig",
+    11,
+);
+static CREATEENDPOINTCONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateEndpointConfigInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateEndpointConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_ENDPOINT_CONFIG_NAME,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_PRODUCTION_VARIANTS,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_DATA_CAPTURE_CONFIG,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_TAGS,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_KMS_KEY_ID,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_ASYNC_INFERENCE_CONFIG,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_EXPLAINER_CONFIG,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_SHADOW_PRODUCTION_VARIANTS,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_EXECUTION_ROLE_ARN,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_VPC_CONFIG,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_ENABLE_NETWORK_ISOLATION,
+        &CREATEENDPOINTCONFIGINPUT_MEMBER_METRICS_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateEndpointConfigInput");
+impl CreateEndpointConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEENDPOINTCONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateEndpointConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_config_name {
+            ser.write_string(&CREATEENDPOINTCONFIGINPUT_MEMBER_ENDPOINT_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.production_variants {
+            ser.write_list(
+                &CREATEENDPOINTCONFIGINPUT_MEMBER_PRODUCTION_VARIANTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProductionVariant::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.data_capture_config {
+            ser.write_struct(&CREATEENDPOINTCONFIGINPUT_MEMBER_DATA_CAPTURE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEENDPOINTCONFIGINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&CREATEENDPOINTCONFIGINPUT_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.async_inference_config {
+            ser.write_struct(&CREATEENDPOINTCONFIGINPUT_MEMBER_ASYNC_INFERENCE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.explainer_config {
+            ser.write_struct(&CREATEENDPOINTCONFIGINPUT_MEMBER_EXPLAINER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.shadow_production_variants {
+            ser.write_list(
+                &CREATEENDPOINTCONFIGINPUT_MEMBER_SHADOW_PRODUCTION_VARIANTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProductionVariant::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&CREATEENDPOINTCONFIGINPUT_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATEENDPOINTCONFIGINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.enable_network_isolation {
+            ser.write_boolean(&CREATEENDPOINTCONFIGINPUT_MEMBER_ENABLE_NETWORK_ISOLATION, *val)?;
+        }
+        if let Some(ref val) = self.metrics_config {
+            ser.write_struct(&CREATEENDPOINTCONFIGINPUT_MEMBER_METRICS_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEENDPOINTCONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.production_variants = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProductionVariant::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_capture_config = Some(crate::types::DataCaptureConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.async_inference_config = Some(crate::types::AsyncInferenceConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.explainer_config = Some(crate::types::ExplainerConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shadow_production_variants = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProductionVariant::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_network_isolation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metrics_config = Some(crate::types::MetricsConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateEndpointConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_config_name = builder.endpoint_config_name.or(Some(String::new()));
+        builder.production_variants = builder.production_variants.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateEndpointConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointConfigInput`](crate::operation::create_endpoint_config::CreateEndpointConfigInput).
     pub fn builder() -> crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder {

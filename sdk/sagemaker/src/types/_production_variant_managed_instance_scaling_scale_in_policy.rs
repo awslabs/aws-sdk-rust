@@ -57,6 +57,132 @@ impl ProductionVariantManagedInstanceScalingScaleInPolicy {
         self.cooldown_in_minutes
     }
 }
+static PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_STRATEGY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantManagedInstanceScalingScaleInPolicy$Strategy",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantManagedInstanceScalingScaleInPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "Strategy",
+        0,
+    );
+static PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_MAXIMUM_STEP_SIZE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantManagedInstanceScalingScaleInPolicy$MaximumStepSize",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantManagedInstanceScalingScaleInPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MaximumStepSize",
+        1,
+    );
+static PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_COOLDOWN_IN_MINUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantManagedInstanceScalingScaleInPolicy$CooldownInMinutes",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantManagedInstanceScalingScaleInPolicy",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "CooldownInMinutes",
+        2,
+    );
+static PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantManagedInstanceScalingScaleInPolicy",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantManagedInstanceScalingScaleInPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_STRATEGY,
+        &PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_MAXIMUM_STEP_SIZE,
+        &PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_COOLDOWN_IN_MINUTES,
+    ],
+);
+impl ProductionVariantManagedInstanceScalingScaleInPolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProductionVariantManagedInstanceScalingScaleInPolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.strategy {
+            ser.write_string(&PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.maximum_step_size {
+            ser.write_integer(&PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_MAXIMUM_STEP_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.cooldown_in_minutes {
+            ser.write_integer(&PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_MEMBER_COOLDOWN_IN_MINUTES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProductionVariantManagedInstanceScalingScaleInPolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRODUCTIONVARIANTMANAGEDINSTANCESCALINGSCALEINPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.strategy = Some(crate::types::ManagedInstanceScalingScaleInStrategy::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_step_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cooldown_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProductionVariantManagedInstanceScalingScaleInPolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProductionVariantManagedInstanceScalingScaleInPolicy {
     /// Creates a new builder-style object to manufacture [`ProductionVariantManagedInstanceScalingScaleInPolicy`](crate::types::ProductionVariantManagedInstanceScalingScaleInPolicy).
     pub fn builder() -> crate::types::builders::ProductionVariantManagedInstanceScalingScaleInPolicyBuilder {

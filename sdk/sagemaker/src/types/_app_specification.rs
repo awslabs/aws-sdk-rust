@@ -29,6 +29,161 @@ impl AppSpecification {
         self.container_arguments.as_deref().unwrap_or_default()
     }
 }
+static APPSPECIFICATION_MEMBER_IMAGE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AppSpecification$ImageUri",
+        "com.amazonaws.sagemaker",
+        "AppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageUri",
+    0,
+);
+static APPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerEntrypoint$member",
+        "com.amazonaws.sagemaker",
+        "ContainerEntrypoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static APPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AppSpecification$ContainerEntrypoint",
+        "com.amazonaws.sagemaker",
+        "AppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerEntrypoint",
+    1,
+)
+.with_list_member(&APPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER);
+static APPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerArguments$member",
+        "com.amazonaws.sagemaker",
+        "ContainerArguments",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static APPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AppSpecification$ContainerArguments",
+        "com.amazonaws.sagemaker",
+        "AppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerArguments",
+    2,
+)
+.with_list_member(&APPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER);
+static APPSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppSpecification", "com.amazonaws.sagemaker", "AppSpecification"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &APPSPECIFICATION_MEMBER_IMAGE_URI,
+        &APPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+        &APPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+    ],
+);
+impl AppSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AppSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_uri {
+            ser.write_string(&APPSPECIFICATION_MEMBER_IMAGE_URI, val)?;
+        }
+        if let Some(ref val) = self.container_entrypoint {
+            ser.write_list(
+                &APPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.container_arguments {
+            ser.write_list(
+                &APPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AppSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_entrypoint = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_arguments = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AppSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AppSpecification {
     /// Creates a new builder-style object to manufacture [`AppSpecification`](crate::types::AppSpecification).
     pub fn builder() -> crate::types::builders::AppSpecificationBuilder {

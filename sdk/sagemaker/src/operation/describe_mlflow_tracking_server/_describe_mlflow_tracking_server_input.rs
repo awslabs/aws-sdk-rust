@@ -12,6 +12,86 @@ impl DescribeMlflowTrackingServerInput {
         self.tracking_server_name.as_deref()
     }
 }
+static DESCRIBEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeMlflowTrackingServerInput$TrackingServerName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrackingServerName",
+    0,
+);
+static DESCRIBEMLFLOWTRACKINGSERVERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeMlflowTrackingServerInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeMlflowTrackingServerRequest");
+impl DescribeMlflowTrackingServerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMLFLOWTRACKINGSERVERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeMlflowTrackingServerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tracking_server_name {
+            ser.write_string(&DESCRIBEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_mlflow_tracking_server::builders::DescribeMlflowTrackingServerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEMLFLOWTRACKINGSERVERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tracking_server_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeMlflowTrackingServerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tracking_server_name = builder.tracking_server_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeMlflowTrackingServerInput {
     /// Creates a new builder-style object to manufacture [`DescribeMlflowTrackingServerInput`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerInput).
     pub fn builder() -> crate::operation::describe_mlflow_tracking_server::builders::DescribeMlflowTrackingServerInputBuilder {

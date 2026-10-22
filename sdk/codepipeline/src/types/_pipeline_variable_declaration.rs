@@ -26,6 +26,125 @@ impl PipelineVariableDeclaration {
         self.description.as_deref()
     }
 }
+static PIPELINEVARIABLEDECLARATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineVariableDeclaration$name",
+        "com.amazonaws.codepipeline",
+        "PipelineVariableDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static PIPELINEVARIABLEDECLARATION_MEMBER_DEFAULT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineVariableDeclaration$defaultValue",
+        "com.amazonaws.codepipeline",
+        "PipelineVariableDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "defaultValue",
+    1,
+);
+static PIPELINEVARIABLEDECLARATION_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineVariableDeclaration$description",
+        "com.amazonaws.codepipeline",
+        "PipelineVariableDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    2,
+);
+static PIPELINEVARIABLEDECLARATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineVariableDeclaration",
+        "com.amazonaws.codepipeline",
+        "PipelineVariableDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINEVARIABLEDECLARATION_MEMBER_NAME,
+        &PIPELINEVARIABLEDECLARATION_MEMBER_DEFAULT_VALUE,
+        &PIPELINEVARIABLEDECLARATION_MEMBER_DESCRIPTION,
+    ],
+);
+impl PipelineVariableDeclaration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINEVARIABLEDECLARATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineVariableDeclaration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&PIPELINEVARIABLEDECLARATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.default_value {
+            ser.write_string(&PIPELINEVARIABLEDECLARATION_MEMBER_DEFAULT_VALUE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&PIPELINEVARIABLEDECLARATION_MEMBER_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineVariableDeclarationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINEVARIABLEDECLARATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineVariableDeclaration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PipelineVariableDeclaration {
     /// Creates a new builder-style object to manufacture [`PipelineVariableDeclaration`](crate::types::PipelineVariableDeclaration).
     pub fn builder() -> crate::types::builders::PipelineVariableDeclarationBuilder {

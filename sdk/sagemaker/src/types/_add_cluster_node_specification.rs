@@ -36,6 +36,191 @@ impl AddClusterNodeSpecification {
         self.instance_types.as_deref().unwrap_or_default()
     }
 }
+static ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AddClusterNodeSpecification$InstanceGroupName",
+        "com.amazonaws.sagemaker",
+        "AddClusterNodeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceGroupName",
+    0,
+);
+static ADDCLUSTERNODESPECIFICATION_MEMBER_INCREMENT_TARGET_COUNT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AddClusterNodeSpecification$IncrementTargetCountBy",
+        "com.amazonaws.sagemaker",
+        "AddClusterNodeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "IncrementTargetCountBy",
+    1,
+);
+static ADDCLUSTERNODESPECIFICATION_MEMBER_AVAILABILITY_ZONES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterAvailabilityZones$member",
+        "com.amazonaws.sagemaker",
+        "ClusterAvailabilityZones",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ADDCLUSTERNODESPECIFICATION_MEMBER_AVAILABILITY_ZONES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AddClusterNodeSpecification$AvailabilityZones",
+        "com.amazonaws.sagemaker",
+        "AddClusterNodeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AvailabilityZones",
+    2,
+)
+.with_list_member(&ADDCLUSTERNODESPECIFICATION_MEMBER_AVAILABILITY_ZONES_MEMBER);
+static ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceTypes$member",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AddClusterNodeSpecification$InstanceTypes",
+        "com.amazonaws.sagemaker",
+        "AddClusterNodeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceTypes",
+    3,
+)
+.with_list_member(&ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_TYPES_MEMBER);
+static ADDCLUSTERNODESPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AddClusterNodeSpecification",
+        "com.amazonaws.sagemaker",
+        "AddClusterNodeSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_GROUP_NAME,
+        &ADDCLUSTERNODESPECIFICATION_MEMBER_INCREMENT_TARGET_COUNT_BY,
+        &ADDCLUSTERNODESPECIFICATION_MEMBER_AVAILABILITY_ZONES,
+        &ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_TYPES,
+    ],
+);
+impl AddClusterNodeSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADDCLUSTERNODESPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AddClusterNodeSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.instance_group_name;
+            ser.write_string(&ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_GROUP_NAME, val)?;
+        }
+        {
+            let val = &self.increment_target_count_by;
+            ser.write_integer(&ADDCLUSTERNODESPECIFICATION_MEMBER_INCREMENT_TARGET_COUNT_BY, *val)?;
+        }
+        if let Some(ref val) = self.availability_zones {
+            ser.write_list(
+                &ADDCLUSTERNODESPECIFICATION_MEMBER_AVAILABILITY_ZONES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_types {
+            ser.write_list(
+                &ADDCLUSTERNODESPECIFICATION_MEMBER_INSTANCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AddClusterNodeSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADDCLUSTERNODESPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.instance_group_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.increment_target_count_by = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zones = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClusterInstanceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AddClusterNodeSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.instance_group_name = builder.instance_group_name.or(Some(String::new()));
+        builder.increment_target_count_by = builder.increment_target_count_by.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AddClusterNodeSpecification {
     /// Creates a new builder-style object to manufacture [`AddClusterNodeSpecification`](crate::types::AddClusterNodeSpecification).
     pub fn builder() -> crate::types::builders::AddClusterNodeSpecificationBuilder {

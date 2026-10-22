@@ -66,6 +66,277 @@ impl ListClusterEventsInput {
         self.next_token.as_deref()
     }
 }
+static LISTCLUSTEREVENTSINPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$ClusterName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    0,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_INSTANCE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$InstanceGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceGroupName",
+    1,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_NODE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$NodeId",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeId",
+    2,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_EVENT_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$EventTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EventTimeAfter",
+    3,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_EVENT_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$EventTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EventTimeBefore",
+    4,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    5,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    6,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$ResourceType",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    7,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    8,
+);
+static LISTCLUSTEREVENTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    9,
+);
+static LISTCLUSTEREVENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCLUSTEREVENTSINPUT_MEMBER_CLUSTER_NAME,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_INSTANCE_GROUP_NAME,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_NODE_ID,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_EVENT_TIME_AFTER,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_EVENT_TIME_BEFORE,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_SORT_BY,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_SORT_ORDER,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_RESOURCE_TYPE,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_MAX_RESULTS,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListClusterEventsRequest");
+impl ListClusterEventsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCLUSTEREVENTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListClusterEventsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_group_name {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_INSTANCE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.node_id {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_NODE_ID, val)?;
+        }
+        if let Some(ref val) = self.event_time_after {
+            ser.write_timestamp(&LISTCLUSTEREVENTSINPUT_MEMBER_EVENT_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.event_time_before {
+            ser.write_timestamp(&LISTCLUSTEREVENTSINPUT_MEMBER_EVENT_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTCLUSTEREVENTSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_cluster_events::builders::ListClusterEventsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCLUSTEREVENTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::EventSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ClusterEventResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListClusterEventsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_name = builder.cluster_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListClusterEventsInput {
     /// Creates a new builder-style object to manufacture [`ListClusterEventsInput`](crate::operation::list_cluster_events::ListClusterEventsInput).
     pub fn builder() -> crate::operation::list_cluster_events::builders::ListClusterEventsInputBuilder {

@@ -30,6 +30,151 @@ impl ListNotebookMetadataInput {
         self.work_group.as_deref()
     }
 }
+static LISTNOTEBOOKMETADATAINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListNotebookMetadataInput$Filters",
+        "com.amazonaws.athena.synthetic",
+        "ListNotebookMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Filters",
+    0,
+);
+static LISTNOTEBOOKMETADATAINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListNotebookMetadataInput$NextToken",
+        "com.amazonaws.athena.synthetic",
+        "ListNotebookMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTNOTEBOOKMETADATAINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListNotebookMetadataInput$MaxResults",
+        "com.amazonaws.athena.synthetic",
+        "ListNotebookMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTNOTEBOOKMETADATAINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListNotebookMetadataInput$WorkGroup",
+        "com.amazonaws.athena.synthetic",
+        "ListNotebookMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    3,
+);
+static LISTNOTEBOOKMETADATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListNotebookMetadataInput",
+        "com.amazonaws.athena.synthetic",
+        "ListNotebookMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTNOTEBOOKMETADATAINPUT_MEMBER_FILTERS,
+        &LISTNOTEBOOKMETADATAINPUT_MEMBER_NEXT_TOKEN,
+        &LISTNOTEBOOKMETADATAINPUT_MEMBER_MAX_RESULTS,
+        &LISTNOTEBOOKMETADATAINPUT_MEMBER_WORK_GROUP,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListNotebookMetadataInput");
+impl ListNotebookMetadataInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTNOTEBOOKMETADATAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListNotebookMetadataInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.filters {
+            ser.write_struct(&LISTNOTEBOOKMETADATAINPUT_MEMBER_FILTERS, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTNOTEBOOKMETADATAINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTNOTEBOOKMETADATAINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&LISTNOTEBOOKMETADATAINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_notebook_metadata::builders::ListNotebookMetadataInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTNOTEBOOKMETADATAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some(crate::types::FilterDefinition::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListNotebookMetadataInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.work_group = builder.work_group.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListNotebookMetadataInput {
     /// Creates a new builder-style object to manufacture [`ListNotebookMetadataInput`](crate::operation::list_notebook_metadata::ListNotebookMetadataInput).
     pub fn builder() -> crate::operation::list_notebook_metadata::builders::ListNotebookMetadataInputBuilder {

@@ -54,6 +54,218 @@ impl PutResourceConfigInput {
         self.tags.as_ref()
     }
 }
+static PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutResourceConfigInput$ResourceType",
+        "com.amazonaws.configservice.synthetic",
+        "PutResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    0,
+);
+static PUTRESOURCECONFIGINPUT_MEMBER_SCHEMA_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutResourceConfigInput$SchemaVersionId",
+        "com.amazonaws.configservice.synthetic",
+        "PutResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SchemaVersionId",
+    1,
+);
+static PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutResourceConfigInput$ResourceId",
+        "com.amazonaws.configservice.synthetic",
+        "PutResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    2,
+);
+static PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutResourceConfigInput$ResourceName",
+        "com.amazonaws.configservice.synthetic",
+        "PutResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceName",
+    3,
+);
+static PUTRESOURCECONFIGINPUT_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutResourceConfigInput$Configuration",
+        "com.amazonaws.configservice.synthetic",
+        "PutResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Configuration",
+    4,
+);
+static PUTRESOURCECONFIGINPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Tags$key", "com.amazonaws.configservice", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static PUTRESOURCECONFIGINPUT_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Tags$value", "com.amazonaws.configservice", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static PUTRESOURCECONFIGINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutResourceConfigInput$Tags",
+        "com.amazonaws.configservice.synthetic",
+        "PutResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Tags",
+    5,
+)
+.with_map_members(&PUTRESOURCECONFIGINPUT_MEMBER_TAGS_KEY, &PUTRESOURCECONFIGINPUT_MEMBER_TAGS_VALUE);
+static PUTRESOURCECONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutResourceConfigInput",
+        "com.amazonaws.configservice.synthetic",
+        "PutResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_TYPE,
+        &PUTRESOURCECONFIGINPUT_MEMBER_SCHEMA_VERSION_ID,
+        &PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_ID,
+        &PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_NAME,
+        &PUTRESOURCECONFIGINPUT_MEMBER_CONFIGURATION,
+        &PUTRESOURCECONFIGINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutResourceConfigRequest");
+impl PutResourceConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTRESOURCECONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutResourceConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.schema_version_id {
+            ser.write_string(&PUTRESOURCECONFIGINPUT_MEMBER_SCHEMA_VERSION_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&PUTRESOURCECONFIGINPUT_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.configuration {
+            ser.write_string(&PUTRESOURCECONFIGINPUT_MEMBER_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &PUTRESOURCECONFIGINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_resource_config::builders::PutResourceConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTRESOURCECONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schema_version_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutResourceConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_type = builder.resource_type.or(Some(String::new()));
+        builder.schema_version_id = builder.schema_version_id.or(Some(String::new()));
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.configuration = builder.configuration.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`PutResourceConfigInput`](crate::operation::put_resource_config::PutResourceConfigInput).
     pub fn builder() -> crate::operation::put_resource_config::builders::PutResourceConfigInputBuilder {

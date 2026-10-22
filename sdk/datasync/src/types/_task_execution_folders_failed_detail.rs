@@ -39,6 +39,154 @@ impl TaskExecutionFoldersFailedDetail {
         self.delete
     }
 }
+static TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersFailedDetail$List",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "List",
+    0,
+);
+static TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_PREPARE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersFailedDetail$Prepare",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Prepare",
+    1,
+);
+static TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_TRANSFER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersFailedDetail$Transfer",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Transfer",
+    2,
+);
+static TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_VERIFY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersFailedDetail$Verify",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Verify",
+    3,
+);
+static TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersFailedDetail$Delete",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Delete",
+    4,
+);
+static TASKEXECUTIONFOLDERSFAILEDDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersFailedDetail",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersFailedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_LIST,
+        &TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_PREPARE,
+        &TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_TRANSFER,
+        &TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_VERIFY,
+        &TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_DELETE,
+    ],
+);
+impl TaskExecutionFoldersFailedDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKEXECUTIONFOLDERSFAILEDDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskExecutionFoldersFailedDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.list;
+            ser.write_long(&TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_LIST, *val)?;
+        }
+        {
+            let val = &self.prepare;
+            ser.write_long(&TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_PREPARE, *val)?;
+        }
+        {
+            let val = &self.transfer;
+            ser.write_long(&TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_TRANSFER, *val)?;
+        }
+        {
+            let val = &self.verify;
+            ser.write_long(&TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_VERIFY, *val)?;
+        }
+        {
+            let val = &self.delete;
+            ser.write_long(&TASKEXECUTIONFOLDERSFAILEDDETAIL_MEMBER_DELETE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskExecutionFoldersFailedDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKEXECUTIONFOLDERSFAILEDDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.list = Some(deser.read_long(member)?);
+                }
+                Some(1) => {
+                    self.prepare = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.transfer = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    self.verify = Some(deser.read_long(member)?);
+                }
+                Some(4) => {
+                    self.delete = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskExecutionFoldersFailedDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TaskExecutionFoldersFailedDetail {
     /// Creates a new builder-style object to manufacture [`TaskExecutionFoldersFailedDetail`](crate::types::TaskExecutionFoldersFailedDetail).
     pub fn builder() -> crate::types::builders::TaskExecutionFoldersFailedDetailBuilder {

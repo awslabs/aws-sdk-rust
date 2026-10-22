@@ -31,6 +31,145 @@ impl TransitionState {
         self.disabled_reason.as_deref()
     }
 }
+static TRANSITIONSTATE_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#TransitionState$enabled",
+        "com.amazonaws.codepipeline",
+        "TransitionState",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enabled",
+    0,
+);
+static TRANSITIONSTATE_MEMBER_LAST_CHANGED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#TransitionState$lastChangedBy",
+        "com.amazonaws.codepipeline",
+        "TransitionState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastChangedBy",
+    1,
+);
+static TRANSITIONSTATE_MEMBER_LAST_CHANGED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#TransitionState$lastChangedAt",
+        "com.amazonaws.codepipeline",
+        "TransitionState",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastChangedAt",
+    2,
+);
+static TRANSITIONSTATE_MEMBER_DISABLED_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#TransitionState$disabledReason",
+        "com.amazonaws.codepipeline",
+        "TransitionState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "disabledReason",
+    3,
+);
+static TRANSITIONSTATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#TransitionState",
+        "com.amazonaws.codepipeline",
+        "TransitionState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSITIONSTATE_MEMBER_ENABLED,
+        &TRANSITIONSTATE_MEMBER_LAST_CHANGED_BY,
+        &TRANSITIONSTATE_MEMBER_LAST_CHANGED_AT,
+        &TRANSITIONSTATE_MEMBER_DISABLED_REASON,
+    ],
+);
+impl TransitionState {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSITIONSTATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TransitionState {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enabled;
+            ser.write_boolean(&TRANSITIONSTATE_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.last_changed_by {
+            ser.write_string(&TRANSITIONSTATE_MEMBER_LAST_CHANGED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_changed_at {
+            ser.write_timestamp(&TRANSITIONSTATE_MEMBER_LAST_CHANGED_AT, val)?;
+        }
+        if let Some(ref val) = self.disabled_reason {
+            ser.write_string(&TRANSITIONSTATE_MEMBER_DISABLED_REASON, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TransitionStateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSITIONSTATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_changed_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_changed_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disabled_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TransitionState {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TransitionState {
     /// Creates a new builder-style object to manufacture [`TransitionState`](crate::types::TransitionState).
     pub fn builder() -> crate::types::builders::TransitionStateBuilder {

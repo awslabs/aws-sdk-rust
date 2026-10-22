@@ -18,8 +18,14 @@ pub fn ser_update_collection_input_input(
     if let Some(var_5) = &input.deletion_protection {
         object.key("deletionProtection").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("clientToken").string(var_6.as_str());
+    if let Some(var_6) = &input.encryption_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("encryptionConfig").start_object();
+        crate::protocol_serde::shape_encryption_config::ser_encryption_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.client_token {
+        object.key("clientToken").string(var_8.as_str());
     }
     Ok(())
 }

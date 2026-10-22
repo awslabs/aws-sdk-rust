@@ -150,6 +150,328 @@ impl CreateFeatureGroupInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$FeatureGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupName",
+    0,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$RecordIdentifierFeatureName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RecordIdentifierFeatureName",
+    1,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_EVENT_TIME_FEATURE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$EventTimeFeatureName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventTimeFeatureName",
+    2,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureDefinitions$member",
+        "com.amazonaws.sagemaker",
+        "FeatureDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$FeatureDefinitions",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FeatureDefinitions",
+    3,
+)
+.with_list_member(&CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_DEFINITIONS_MEMBER);
+static CREATEFEATUREGROUPINPUT_MEMBER_ONLINE_STORE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$OnlineStoreConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OnlineStoreConfig",
+    4,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_OFFLINE_STORE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$OfflineStoreConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OfflineStoreConfig",
+    5,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_THROUGHPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$ThroughputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ThroughputConfig",
+    6,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    7,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    8,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEFEATUREGROUPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATEFEATUREGROUPINPUT_MEMBER_TAGS_MEMBER);
+static CREATEFEATUREGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFeatureGroupInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_GROUP_NAME,
+        &CREATEFEATUREGROUPINPUT_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME,
+        &CREATEFEATUREGROUPINPUT_MEMBER_EVENT_TIME_FEATURE_NAME,
+        &CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_DEFINITIONS,
+        &CREATEFEATUREGROUPINPUT_MEMBER_ONLINE_STORE_CONFIG,
+        &CREATEFEATUREGROUPINPUT_MEMBER_OFFLINE_STORE_CONFIG,
+        &CREATEFEATUREGROUPINPUT_MEMBER_THROUGHPUT_CONFIG,
+        &CREATEFEATUREGROUPINPUT_MEMBER_ROLE_ARN,
+        &CREATEFEATUREGROUPINPUT_MEMBER_DESCRIPTION,
+        &CREATEFEATUREGROUPINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateFeatureGroupRequest");
+impl CreateFeatureGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEFEATUREGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateFeatureGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.feature_group_name {
+            ser.write_string(&CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.record_identifier_feature_name {
+            ser.write_string(&CREATEFEATUREGROUPINPUT_MEMBER_RECORD_IDENTIFIER_FEATURE_NAME, val)?;
+        }
+        if let Some(ref val) = self.event_time_feature_name {
+            ser.write_string(&CREATEFEATUREGROUPINPUT_MEMBER_EVENT_TIME_FEATURE_NAME, val)?;
+        }
+        if let Some(ref val) = self.feature_definitions {
+            ser.write_list(
+                &CREATEFEATUREGROUPINPUT_MEMBER_FEATURE_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FeatureDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.online_store_config {
+            ser.write_struct(&CREATEFEATUREGROUPINPUT_MEMBER_ONLINE_STORE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.offline_store_config {
+            ser.write_struct(&CREATEFEATUREGROUPINPUT_MEMBER_OFFLINE_STORE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.throughput_config {
+            ser.write_struct(&CREATEFEATUREGROUPINPUT_MEMBER_THROUGHPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEFEATUREGROUPINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEFEATUREGROUPINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEFEATUREGROUPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_feature_group::builders::CreateFeatureGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEFEATUREGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_identifier_feature_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_time_feature_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FeatureDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.online_store_config = Some(crate::types::OnlineStoreConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.offline_store_config = Some(crate::types::OfflineStoreConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_config = Some(crate::types::ThroughputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateFeatureGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.feature_group_name = builder.feature_group_name.or(Some(String::new()));
+        builder.record_identifier_feature_name = builder.record_identifier_feature_name.or(Some(String::new()));
+        builder.event_time_feature_name = builder.event_time_feature_name.or(Some(String::new()));
+        builder.feature_definitions = builder.feature_definitions.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateFeatureGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateFeatureGroupInput`](crate::operation::create_feature_group::CreateFeatureGroupInput).
     pub fn builder() -> crate::operation::create_feature_group::builders::CreateFeatureGroupInputBuilder {

@@ -51,3 +51,86 @@ impl TrialComponentParameterValue {
         matches!(self, Self::Unknown)
     }
 }
+static TRIALCOMPONENTPARAMETERVALUE_MEMBER_STRINGVALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentParameterValue$StringValue",
+        "com.amazonaws.sagemaker",
+        "TrialComponentParameterValue",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StringValue",
+    0,
+);
+static TRIALCOMPONENTPARAMETERVALUE_MEMBER_NUMBERVALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentParameterValue$NumberValue",
+        "com.amazonaws.sagemaker",
+        "TrialComponentParameterValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "NumberValue",
+    1,
+);
+static TRIALCOMPONENTPARAMETERVALUE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentParameterValue",
+        "com.amazonaws.sagemaker",
+        "TrialComponentParameterValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &TRIALCOMPONENTPARAMETERVALUE_MEMBER_STRINGVALUE,
+        &TRIALCOMPONENTPARAMETERVALUE_MEMBER_NUMBERVALUE,
+    ],
+);
+impl TrialComponentParameterValue {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRIALCOMPONENTPARAMETERVALUE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrialComponentParameterValue {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::StringValue(val) => {
+                ser.write_string(&TRIALCOMPONENTPARAMETERVALUE_MEMBER_STRINGVALUE, val)?;
+            }
+            Self::NumberValue(val) => {
+                ser.write_double(&TRIALCOMPONENTPARAMETERVALUE_MEMBER_NUMBERVALUE, *val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl TrialComponentParameterValue {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&TRIALCOMPONENTPARAMETERVALUE_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::StringValue(deser.read_string(member)?),
+                Some(1) => Self::NumberValue(deser.read_double(member)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

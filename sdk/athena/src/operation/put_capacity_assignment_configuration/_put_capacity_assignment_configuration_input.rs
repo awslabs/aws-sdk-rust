@@ -20,6 +20,139 @@ impl PutCapacityAssignmentConfigurationInput {
         self.capacity_assignments.as_deref().unwrap_or_default()
     }
 }
+static PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_RESERVATION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena.synthetic#PutCapacityAssignmentConfigurationInput$CapacityReservationName",
+            "com.amazonaws.athena.synthetic",
+            "PutCapacityAssignmentConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CapacityReservationName",
+        0,
+    );
+static PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_ASSIGNMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#CapacityAssignmentsList$member",
+            "com.amazonaws.athena",
+            "CapacityAssignmentsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_ASSIGNMENTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena.synthetic#PutCapacityAssignmentConfigurationInput$CapacityAssignments",
+            "com.amazonaws.athena.synthetic",
+            "PutCapacityAssignmentConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CapacityAssignments",
+        1,
+    )
+    .with_list_member(&PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_ASSIGNMENTS_MEMBER);
+static PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#PutCapacityAssignmentConfigurationInput",
+        "com.amazonaws.athena.synthetic",
+        "PutCapacityAssignmentConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_RESERVATION_NAME,
+        &PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_ASSIGNMENTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutCapacityAssignmentConfigurationInput");
+impl PutCapacityAssignmentConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutCapacityAssignmentConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capacity_reservation_name {
+            ser.write_string(&PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_RESERVATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.capacity_assignments {
+            ser.write_list(
+                &PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_MEMBER_CAPACITY_ASSIGNMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityAssignment::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTCAPACITYASSIGNMENTCONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_assignments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityAssignment::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutCapacityAssignmentConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.capacity_reservation_name = builder.capacity_reservation_name.or(Some(String::new()));
+        builder.capacity_assignments = builder.capacity_assignments.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutCapacityAssignmentConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutCapacityAssignmentConfigurationInput`](crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationInput).
     pub fn builder() -> crate::operation::put_capacity_assignment_configuration::builders::PutCapacityAssignmentConfigurationInputBuilder {

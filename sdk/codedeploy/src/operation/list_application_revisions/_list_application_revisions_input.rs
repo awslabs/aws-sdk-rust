@@ -101,6 +101,214 @@ impl ListApplicationRevisionsInput {
         self.next_token.as_deref()
     }
 }
+static LISTAPPLICATIONREVISIONSINPUT_MEMBER_APPLICATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput$applicationName",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applicationName",
+    0,
+);
+static LISTAPPLICATIONREVISIONSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput$sortBy",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sortBy",
+    1,
+);
+static LISTAPPLICATIONREVISIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput$sortOrder",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sortOrder",
+    2,
+);
+static LISTAPPLICATIONREVISIONSINPUT_MEMBER_S3_BUCKET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput$s3Bucket",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3Bucket",
+    3,
+);
+static LISTAPPLICATIONREVISIONSINPUT_MEMBER_S3_KEY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput$s3KeyPrefix",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "s3KeyPrefix",
+    4,
+);
+static LISTAPPLICATIONREVISIONSINPUT_MEMBER_DEPLOYED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput$deployed",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deployed",
+    5,
+);
+static LISTAPPLICATIONREVISIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput$nextToken",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    6,
+);
+static LISTAPPLICATIONREVISIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationRevisionsInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationRevisionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTAPPLICATIONREVISIONSINPUT_MEMBER_APPLICATION_NAME,
+        &LISTAPPLICATIONREVISIONSINPUT_MEMBER_SORT_BY,
+        &LISTAPPLICATIONREVISIONSINPUT_MEMBER_SORT_ORDER,
+        &LISTAPPLICATIONREVISIONSINPUT_MEMBER_S3_BUCKET,
+        &LISTAPPLICATIONREVISIONSINPUT_MEMBER_S3_KEY_PREFIX,
+        &LISTAPPLICATIONREVISIONSINPUT_MEMBER_DEPLOYED,
+        &LISTAPPLICATIONREVISIONSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListApplicationRevisionsInput");
+impl ListApplicationRevisionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTAPPLICATIONREVISIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListApplicationRevisionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.application_name {
+            ser.write_string(&LISTAPPLICATIONREVISIONSINPUT_MEMBER_APPLICATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTAPPLICATIONREVISIONSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTAPPLICATIONREVISIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_bucket {
+            ser.write_string(&LISTAPPLICATIONREVISIONSINPUT_MEMBER_S3_BUCKET, val)?;
+        }
+        if let Some(ref val) = self.s3_key_prefix {
+            ser.write_string(&LISTAPPLICATIONREVISIONSINPUT_MEMBER_S3_KEY_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.deployed {
+            ser.write_string(&LISTAPPLICATIONREVISIONSINPUT_MEMBER_DEPLOYED, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTAPPLICATIONREVISIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTAPPLICATIONREVISIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ApplicationRevisionSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_key_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployed = Some(crate::types::ListStateFilterAction::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListApplicationRevisionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.application_name = builder.application_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListApplicationRevisionsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationRevisionsInput`](crate::operation::list_application_revisions::ListApplicationRevisionsInput).
     pub fn builder() -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder {

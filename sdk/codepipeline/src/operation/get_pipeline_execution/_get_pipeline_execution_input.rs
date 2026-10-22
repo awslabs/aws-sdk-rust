@@ -19,6 +19,110 @@ impl GetPipelineExecutionInput {
         self.pipeline_execution_id.as_deref()
     }
 }
+static GETPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineExecutionInput$pipelineName",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineName",
+    0,
+);
+static GETPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineExecutionInput$pipelineExecutionId",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineExecutionId",
+    1,
+);
+static GETPIPELINEEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineExecutionInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_NAME,
+        &GETPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetPipelineExecutionInput");
+impl GetPipelineExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETPIPELINEEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetPipelineExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&GETPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_id {
+            ser.write_string(&GETPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_pipeline_execution::builders::GetPipelineExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETPIPELINEEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetPipelineExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
+        builder.pipeline_execution_id = builder.pipeline_execution_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetPipelineExecutionInput`](crate::operation::get_pipeline_execution::GetPipelineExecutionInput).
     pub fn builder() -> crate::operation::get_pipeline_execution::builders::GetPipelineExecutionInputBuilder {

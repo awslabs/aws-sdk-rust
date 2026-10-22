@@ -95,6 +95,330 @@ impl TapeArchive {
         self.pool_entry_date.as_ref()
     }
 }
+static TAPEARCHIVE_MEMBER_TAPE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$TapeARN",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TapeARN",
+    0,
+);
+static TAPEARCHIVE_MEMBER_TAPE_BARCODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$TapeBarcode",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TapeBarcode",
+    1,
+);
+static TAPEARCHIVE_MEMBER_TAPE_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$TapeCreatedDate",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TapeCreatedDate",
+    2,
+);
+static TAPEARCHIVE_MEMBER_TAPE_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$TapeSizeInBytes",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TapeSizeInBytes",
+    3,
+);
+static TAPEARCHIVE_MEMBER_COMPLETION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$CompletionTime",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompletionTime",
+    4,
+);
+static TAPEARCHIVE_MEMBER_RETRIEVED_TO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$RetrievedTo",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RetrievedTo",
+    5,
+);
+static TAPEARCHIVE_MEMBER_TAPE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$TapeStatus",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TapeStatus",
+    6,
+);
+static TAPEARCHIVE_MEMBER_TAPE_USED_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$TapeUsedInBytes",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TapeUsedInBytes",
+    7,
+);
+static TAPEARCHIVE_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$KMSKey",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    8,
+);
+static TAPEARCHIVE_MEMBER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$PoolId",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolId",
+    9,
+);
+static TAPEARCHIVE_MEMBER_WORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$Worm",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Worm",
+    10,
+);
+static TAPEARCHIVE_MEMBER_RETENTION_START_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$RetentionStartDate",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RetentionStartDate",
+    11,
+);
+static TAPEARCHIVE_MEMBER_POOL_ENTRY_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#TapeArchive$PoolEntryDate",
+        "com.amazonaws.storagegateway",
+        "TapeArchive",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "PoolEntryDate",
+    12,
+);
+static TAPEARCHIVE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#TapeArchive", "com.amazonaws.storagegateway", "TapeArchive"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TAPEARCHIVE_MEMBER_TAPE_ARN,
+        &TAPEARCHIVE_MEMBER_TAPE_BARCODE,
+        &TAPEARCHIVE_MEMBER_TAPE_CREATED_DATE,
+        &TAPEARCHIVE_MEMBER_TAPE_SIZE_IN_BYTES,
+        &TAPEARCHIVE_MEMBER_COMPLETION_TIME,
+        &TAPEARCHIVE_MEMBER_RETRIEVED_TO,
+        &TAPEARCHIVE_MEMBER_TAPE_STATUS,
+        &TAPEARCHIVE_MEMBER_TAPE_USED_IN_BYTES,
+        &TAPEARCHIVE_MEMBER_KMS_KEY,
+        &TAPEARCHIVE_MEMBER_POOL_ID,
+        &TAPEARCHIVE_MEMBER_WORM,
+        &TAPEARCHIVE_MEMBER_RETENTION_START_DATE,
+        &TAPEARCHIVE_MEMBER_POOL_ENTRY_DATE,
+    ],
+);
+impl TapeArchive {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TAPEARCHIVE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TapeArchive {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tape_arn {
+            ser.write_string(&TAPEARCHIVE_MEMBER_TAPE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tape_barcode {
+            ser.write_string(&TAPEARCHIVE_MEMBER_TAPE_BARCODE, val)?;
+        }
+        if let Some(ref val) = self.tape_created_date {
+            ser.write_timestamp(&TAPEARCHIVE_MEMBER_TAPE_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.tape_size_in_bytes {
+            ser.write_long(&TAPEARCHIVE_MEMBER_TAPE_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.completion_time {
+            ser.write_timestamp(&TAPEARCHIVE_MEMBER_COMPLETION_TIME, val)?;
+        }
+        if let Some(ref val) = self.retrieved_to {
+            ser.write_string(&TAPEARCHIVE_MEMBER_RETRIEVED_TO, val)?;
+        }
+        if let Some(ref val) = self.tape_status {
+            ser.write_string(&TAPEARCHIVE_MEMBER_TAPE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.tape_used_in_bytes {
+            ser.write_long(&TAPEARCHIVE_MEMBER_TAPE_USED_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.kms_key {
+            ser.write_string(&TAPEARCHIVE_MEMBER_KMS_KEY, val)?;
+        }
+        if let Some(ref val) = self.pool_id {
+            ser.write_string(&TAPEARCHIVE_MEMBER_POOL_ID, val)?;
+        }
+        {
+            let val = &self.worm;
+            ser.write_boolean(&TAPEARCHIVE_MEMBER_WORM, *val)?;
+        }
+        if let Some(ref val) = self.retention_start_date {
+            ser.write_timestamp(&TAPEARCHIVE_MEMBER_RETENTION_START_DATE, val)?;
+        }
+        if let Some(ref val) = self.pool_entry_date {
+            ser.write_timestamp(&TAPEARCHIVE_MEMBER_POOL_ENTRY_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TapeArchiveBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TAPEARCHIVE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_barcode = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_size_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retrieved_to = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_used_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    self.worm = Some(deser.read_boolean(member)?);
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retention_start_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_entry_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TapeArchive {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TapeArchive {
     /// Creates a new builder-style object to manufacture [`TapeArchive`](crate::types::TapeArchive).
     pub fn builder() -> crate::types::builders::TapeArchiveBuilder {

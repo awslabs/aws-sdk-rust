@@ -24,7 +24,7 @@ pub struct Peering {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The timestamp when the attachment peer was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Describes the error associated with the Connect peer request.</p>
+    /// <p>Describes the error associated with the peering request.</p>
     pub last_modification_errors: ::std::option::Option<::std::vec::Vec<crate::types::PeeringError>>,
 }
 impl Peering {
@@ -70,7 +70,7 @@ impl Peering {
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Describes the error associated with the Connect peer request.</p>
+    /// <p>Describes the error associated with the peering request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_modification_errors.is_none()`.
     pub fn last_modification_errors(&self) -> &[crate::types::PeeringError] {
@@ -251,19 +251,19 @@ impl PeeringBuilder {
     ///
     /// To override the contents of this collection use [`set_last_modification_errors`](Self::set_last_modification_errors).
     ///
-    /// <p>Describes the error associated with the Connect peer request.</p>
+    /// <p>Describes the error associated with the peering request.</p>
     pub fn last_modification_errors(mut self, input: crate::types::PeeringError) -> Self {
         let mut v = self.last_modification_errors.unwrap_or_default();
         v.push(input);
         self.last_modification_errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Describes the error associated with the Connect peer request.</p>
+    /// <p>Describes the error associated with the peering request.</p>
     pub fn set_last_modification_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PeeringError>>) -> Self {
         self.last_modification_errors = input;
         self
     }
-    /// <p>Describes the error associated with the Connect peer request.</p>
+    /// <p>Describes the error associated with the peering request.</p>
     pub fn get_last_modification_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PeeringError>> {
         &self.last_modification_errors
     }

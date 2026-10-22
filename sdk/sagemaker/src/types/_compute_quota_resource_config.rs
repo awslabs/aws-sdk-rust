@@ -43,6 +43,190 @@ impl ComputeQuotaResourceConfig {
         self.accelerator_partition.as_ref()
     }
 }
+static COMPUTEQUOTARESOURCECONFIG_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ComputeQuotaResourceConfig$InstanceType",
+        "com.amazonaws.sagemaker",
+        "ComputeQuotaResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    0,
+);
+static COMPUTEQUOTARESOURCECONFIG_MEMBER_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ComputeQuotaResourceConfig$Count",
+        "com.amazonaws.sagemaker",
+        "ComputeQuotaResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Count",
+    1,
+);
+static COMPUTEQUOTARESOURCECONFIG_MEMBER_ACCELERATORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ComputeQuotaResourceConfig$Accelerators",
+        "com.amazonaws.sagemaker",
+        "ComputeQuotaResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Accelerators",
+    2,
+);
+static COMPUTEQUOTARESOURCECONFIG_MEMBER_V_CPU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ComputeQuotaResourceConfig$VCpu",
+        "com.amazonaws.sagemaker",
+        "ComputeQuotaResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "VCpu",
+    3,
+);
+static COMPUTEQUOTARESOURCECONFIG_MEMBER_MEMORY_IN_GIB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ComputeQuotaResourceConfig$MemoryInGiB",
+        "com.amazonaws.sagemaker",
+        "ComputeQuotaResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "MemoryInGiB",
+    4,
+);
+static COMPUTEQUOTARESOURCECONFIG_MEMBER_ACCELERATOR_PARTITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ComputeQuotaResourceConfig$AcceleratorPartition",
+        "com.amazonaws.sagemaker",
+        "ComputeQuotaResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AcceleratorPartition",
+    5,
+);
+static COMPUTEQUOTARESOURCECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ComputeQuotaResourceConfig",
+        "com.amazonaws.sagemaker",
+        "ComputeQuotaResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COMPUTEQUOTARESOURCECONFIG_MEMBER_INSTANCE_TYPE,
+        &COMPUTEQUOTARESOURCECONFIG_MEMBER_COUNT,
+        &COMPUTEQUOTARESOURCECONFIG_MEMBER_ACCELERATORS,
+        &COMPUTEQUOTARESOURCECONFIG_MEMBER_V_CPU,
+        &COMPUTEQUOTARESOURCECONFIG_MEMBER_MEMORY_IN_GIB,
+        &COMPUTEQUOTARESOURCECONFIG_MEMBER_ACCELERATOR_PARTITION,
+    ],
+);
+impl ComputeQuotaResourceConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMPUTEQUOTARESOURCECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ComputeQuotaResourceConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&COMPUTEQUOTARESOURCECONFIG_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.count {
+            ser.write_integer(&COMPUTEQUOTARESOURCECONFIG_MEMBER_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.accelerators {
+            ser.write_integer(&COMPUTEQUOTARESOURCECONFIG_MEMBER_ACCELERATORS, *val)?;
+        }
+        if let Some(ref val) = self.v_cpu {
+            ser.write_float(&COMPUTEQUOTARESOURCECONFIG_MEMBER_V_CPU, *val)?;
+        }
+        if let Some(ref val) = self.memory_in_gib {
+            ser.write_float(&COMPUTEQUOTARESOURCECONFIG_MEMBER_MEMORY_IN_GIB, *val)?;
+        }
+        if let Some(ref val) = self.accelerator_partition {
+            ser.write_struct(&COMPUTEQUOTARESOURCECONFIG_MEMBER_ACCELERATOR_PARTITION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ComputeQuotaResourceConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMPUTEQUOTARESOURCECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::ClusterInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerators = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.v_cpu = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.memory_in_gib = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_partition = Some(crate::types::AcceleratorPartitionConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ComputeQuotaResourceConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ComputeQuotaResourceConfig {
     /// Creates a new builder-style object to manufacture [`ComputeQuotaResourceConfig`](crate::types::ComputeQuotaResourceConfig).
     pub fn builder() -> crate::types::builders::ComputeQuotaResourceConfigBuilder {

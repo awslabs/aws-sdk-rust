@@ -20,6 +20,126 @@ impl AddTagsInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static ADDTAGSINPUT_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AddTagsInput$ResourceArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "AddTagsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceArn",
+    0,
+);
+static ADDTAGSINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ADDTAGSINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AddTagsInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "AddTagsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&ADDTAGSINPUT_MEMBER_TAGS_MEMBER);
+static ADDTAGSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AddTagsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "AddTagsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ADDTAGSINPUT_MEMBER_RESOURCE_ARN, &ADDTAGSINPUT_MEMBER_TAGS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AddTagsInput");
+impl AddTagsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ADDTAGSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AddTagsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&ADDTAGSINPUT_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&ADDTAGSINPUT_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::add_tags::builders::AddTagsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ADDTAGSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AddTagsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_arn = builder.resource_arn.or(Some(String::new()));
+        builder.tags = builder.tags.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AddTagsInput {
     /// Creates a new builder-style object to manufacture [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
     pub fn builder() -> crate::operation::add_tags::builders::AddTagsInputBuilder {

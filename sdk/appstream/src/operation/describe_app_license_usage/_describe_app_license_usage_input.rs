@@ -26,6 +26,130 @@ impl DescribeAppLicenseUsageInput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_BILLING_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeAppLicenseUsageInput$BillingPeriod",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeAppLicenseUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BillingPeriod",
+    0,
+);
+static DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeAppLicenseUsageInput$MaxResults",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeAppLicenseUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeAppLicenseUsageInput$NextToken",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeAppLicenseUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static DESCRIBEAPPLICENSEUSAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#DescribeAppLicenseUsageInput",
+        "com.amazonaws.appstream.synthetic",
+        "DescribeAppLicenseUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_BILLING_PERIOD,
+        &DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_MAX_RESULTS,
+        &DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeAppLicenseUsageRequest");
+impl DescribeAppLicenseUsageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAPPLICENSEUSAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAppLicenseUsageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.billing_period {
+            ser.write_string(&DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_BILLING_PERIOD, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEAPPLICENSEUSAGEINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_app_license_usage::builders::DescribeAppLicenseUsageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAPPLICENSEUSAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billing_period = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAppLicenseUsageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.billing_period = builder.billing_period.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeAppLicenseUsageInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppLicenseUsageInput`](crate::operation::describe_app_license_usage::DescribeAppLicenseUsageInput).
     pub fn builder() -> crate::operation::describe_app_license_usage::builders::DescribeAppLicenseUsageInputBuilder {

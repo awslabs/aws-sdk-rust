@@ -25,6 +25,123 @@ impl NetworkConfig {
         self.vpc_config.as_ref()
     }
 }
+static NETWORKCONFIG_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NetworkConfig$EnableInterContainerTrafficEncryption",
+        "com.amazonaws.sagemaker",
+        "NetworkConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableInterContainerTrafficEncryption",
+    0,
+);
+static NETWORKCONFIG_MEMBER_ENABLE_NETWORK_ISOLATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NetworkConfig$EnableNetworkIsolation",
+        "com.amazonaws.sagemaker",
+        "NetworkConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNetworkIsolation",
+    1,
+);
+static NETWORKCONFIG_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NetworkConfig$VpcConfig",
+        "com.amazonaws.sagemaker",
+        "NetworkConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    2,
+);
+static NETWORKCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#NetworkConfig", "com.amazonaws.sagemaker", "NetworkConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NETWORKCONFIG_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION,
+        &NETWORKCONFIG_MEMBER_ENABLE_NETWORK_ISOLATION,
+        &NETWORKCONFIG_MEMBER_VPC_CONFIG,
+    ],
+);
+impl NetworkConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NETWORKCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NetworkConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_inter_container_traffic_encryption {
+            ser.write_boolean(&NETWORKCONFIG_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION, *val)?;
+        }
+        if let Some(ref val) = self.enable_network_isolation {
+            ser.write_boolean(&NETWORKCONFIG_MEMBER_ENABLE_NETWORK_ISOLATION, *val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&NETWORKCONFIG_MEMBER_VPC_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NetworkConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NETWORKCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_inter_container_traffic_encryption = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_network_isolation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NetworkConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NetworkConfig {
     /// Creates a new builder-style object to manufacture [`NetworkConfig`](crate::types::NetworkConfig).
     pub fn builder() -> crate::types::builders::NetworkConfigBuilder {

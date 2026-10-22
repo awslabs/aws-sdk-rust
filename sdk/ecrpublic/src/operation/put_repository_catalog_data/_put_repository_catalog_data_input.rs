@@ -24,6 +24,130 @@ impl PutRepositoryCatalogDataInput {
         self.catalog_data.as_ref()
     }
 }
+static PUTREPOSITORYCATALOGDATAINPUT_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutRepositoryCatalogDataInput$registryId",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutRepositoryCatalogDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static PUTREPOSITORYCATALOGDATAINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutRepositoryCatalogDataInput$repositoryName",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutRepositoryCatalogDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static PUTREPOSITORYCATALOGDATAINPUT_MEMBER_CATALOG_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutRepositoryCatalogDataInput$catalogData",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutRepositoryCatalogDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "catalogData",
+    2,
+);
+static PUTREPOSITORYCATALOGDATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutRepositoryCatalogDataInput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutRepositoryCatalogDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTREPOSITORYCATALOGDATAINPUT_MEMBER_REGISTRY_ID,
+        &PUTREPOSITORYCATALOGDATAINPUT_MEMBER_REPOSITORY_NAME,
+        &PUTREPOSITORYCATALOGDATAINPUT_MEMBER_CATALOG_DATA,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutRepositoryCatalogDataRequest");
+impl PutRepositoryCatalogDataInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTREPOSITORYCATALOGDATAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRepositoryCatalogDataInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&PUTREPOSITORYCATALOGDATAINPUT_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&PUTREPOSITORYCATALOGDATAINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.catalog_data {
+            ser.write_struct(&PUTREPOSITORYCATALOGDATAINPUT_MEMBER_CATALOG_DATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTREPOSITORYCATALOGDATAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.catalog_data = Some(crate::types::RepositoryCatalogDataInput::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRepositoryCatalogDataInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutRepositoryCatalogDataInput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryCatalogDataInput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataInput).
     pub fn builder() -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder {

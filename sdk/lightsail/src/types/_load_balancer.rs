@@ -135,6 +135,560 @@ impl LoadBalancer {
         self.tls_policy_name.as_deref()
     }
 }
+static LOADBALANCER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer$name", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static LOADBALANCER_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer$arn", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static LOADBALANCER_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$supportCode",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    2,
+);
+static LOADBALANCER_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$createdAt",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static LOADBALANCER_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer$location", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    4,
+);
+static LOADBALANCER_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$resourceType",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static LOADBALANCER_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LOADBALANCER_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer$tags", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    6,
+)
+.with_list_member(&LOADBALANCER_MEMBER_TAGS_MEMBER);
+static LOADBALANCER_MEMBER_DNS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer$dnsName", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "dnsName",
+    7,
+);
+static LOADBALANCER_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer$state", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "state",
+    8,
+);
+static LOADBALANCER_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer$protocol", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::String,
+    "protocol",
+    9,
+);
+static LOADBALANCER_MEMBER_PUBLIC_PORTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#PortList$member", "com.amazonaws.lightsail", "PortList"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "member",
+    0,
+);
+static LOADBALANCER_MEMBER_PUBLIC_PORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$publicPorts",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "publicPorts",
+    10,
+)
+.with_list_member(&LOADBALANCER_MEMBER_PUBLIC_PORTS_MEMBER);
+static LOADBALANCER_MEMBER_HEALTH_CHECK_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$healthCheckPath",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "healthCheckPath",
+    11,
+);
+static LOADBALANCER_MEMBER_INSTANCE_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$instancePort",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "instancePort",
+    12,
+);
+static LOADBALANCER_MEMBER_INSTANCE_HEALTH_SUMMARY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceHealthSummaryList$member",
+        "com.amazonaws.lightsail",
+        "InstanceHealthSummaryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LOADBALANCER_MEMBER_INSTANCE_HEALTH_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$instanceHealthSummary",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "instanceHealthSummary",
+    13,
+)
+.with_list_member(&LOADBALANCER_MEMBER_INSTANCE_HEALTH_SUMMARY_MEMBER);
+static LOADBALANCER_MEMBER_TLS_CERTIFICATE_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificateSummaryList$member",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificateSummaryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LOADBALANCER_MEMBER_TLS_CERTIFICATE_SUMMARIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$tlsCertificateSummaries",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tlsCertificateSummaries",
+    14,
+)
+.with_list_member(&LOADBALANCER_MEMBER_TLS_CERTIFICATE_SUMMARIES_MEMBER);
+static LOADBALANCER_MEMBER_CONFIGURATION_OPTIONS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerConfigurationOptions$key",
+        "com.amazonaws.lightsail",
+        "LoadBalancerConfigurationOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static LOADBALANCER_MEMBER_CONFIGURATION_OPTIONS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerConfigurationOptions$value",
+        "com.amazonaws.lightsail",
+        "LoadBalancerConfigurationOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static LOADBALANCER_MEMBER_CONFIGURATION_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$configurationOptions",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "configurationOptions",
+    15,
+)
+.with_map_members(
+    &LOADBALANCER_MEMBER_CONFIGURATION_OPTIONS_KEY,
+    &LOADBALANCER_MEMBER_CONFIGURATION_OPTIONS_VALUE,
+);
+static LOADBALANCER_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$ipAddressType",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddressType",
+    16,
+);
+static LOADBALANCER_MEMBER_HTTPS_REDIRECTION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$httpsRedirectionEnabled",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "httpsRedirectionEnabled",
+    17,
+);
+static LOADBALANCER_MEMBER_TLS_POLICY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancer$tlsPolicyName",
+        "com.amazonaws.lightsail",
+        "LoadBalancer",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tlsPolicyName",
+    18,
+);
+static LOADBALANCER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#LoadBalancer", "com.amazonaws.lightsail", "LoadBalancer"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOADBALANCER_MEMBER_NAME,
+        &LOADBALANCER_MEMBER_ARN,
+        &LOADBALANCER_MEMBER_SUPPORT_CODE,
+        &LOADBALANCER_MEMBER_CREATED_AT,
+        &LOADBALANCER_MEMBER_LOCATION,
+        &LOADBALANCER_MEMBER_RESOURCE_TYPE,
+        &LOADBALANCER_MEMBER_TAGS,
+        &LOADBALANCER_MEMBER_DNS_NAME,
+        &LOADBALANCER_MEMBER_STATE,
+        &LOADBALANCER_MEMBER_PROTOCOL,
+        &LOADBALANCER_MEMBER_PUBLIC_PORTS,
+        &LOADBALANCER_MEMBER_HEALTH_CHECK_PATH,
+        &LOADBALANCER_MEMBER_INSTANCE_PORT,
+        &LOADBALANCER_MEMBER_INSTANCE_HEALTH_SUMMARY,
+        &LOADBALANCER_MEMBER_TLS_CERTIFICATE_SUMMARIES,
+        &LOADBALANCER_MEMBER_CONFIGURATION_OPTIONS,
+        &LOADBALANCER_MEMBER_IP_ADDRESS_TYPE,
+        &LOADBALANCER_MEMBER_HTTPS_REDIRECTION_ENABLED,
+        &LOADBALANCER_MEMBER_TLS_POLICY_NAME,
+    ],
+);
+impl LoadBalancer {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOADBALANCER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LoadBalancer {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&LOADBALANCER_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&LOADBALANCER_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&LOADBALANCER_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&LOADBALANCER_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&LOADBALANCER_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&LOADBALANCER_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&LOADBALANCER_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.dns_name {
+            ser.write_string(&LOADBALANCER_MEMBER_DNS_NAME, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&LOADBALANCER_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&LOADBALANCER_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.public_ports {
+            ser.write_list(
+                &LOADBALANCER_MEMBER_PUBLIC_PORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_integer(&aws_smithy_schema::prelude::INTEGER, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.health_check_path {
+            ser.write_string(&LOADBALANCER_MEMBER_HEALTH_CHECK_PATH, val)?;
+        }
+        if let Some(ref val) = self.instance_port {
+            ser.write_integer(&LOADBALANCER_MEMBER_INSTANCE_PORT, *val)?;
+        }
+        if let Some(ref val) = self.instance_health_summary {
+            ser.write_list(
+                &LOADBALANCER_MEMBER_INSTANCE_HEALTH_SUMMARY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InstanceHealthSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tls_certificate_summaries {
+            ser.write_list(
+                &LOADBALANCER_MEMBER_TLS_CERTIFICATE_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LoadBalancerTlsCertificateSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.configuration_options {
+            ser.write_map(
+                &LOADBALANCER_MEMBER_CONFIGURATION_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key.as_str())?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&LOADBALANCER_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.https_redirection_enabled {
+            ser.write_boolean(&LOADBALANCER_MEMBER_HTTPS_REDIRECTION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.tls_policy_name {
+            ser.write_string(&LOADBALANCER_MEMBER_TLS_POLICY_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LoadBalancerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOADBALANCER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::LoadBalancerState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::LoadBalancerProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_ports = Some(deser.read_integer_list(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_health_summary = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstanceHealthSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tls_certificate_summaries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LoadBalancerTlsCertificateSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_options = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(
+                                    crate::types::LoadBalancerAttributeName::from(key.as_str()),
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?,
+                                );
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.https_redirection_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tls_policy_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LoadBalancer {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LoadBalancer {
     /// Creates a new builder-style object to manufacture [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn builder() -> crate::types::builders::LoadBalancerBuilder {

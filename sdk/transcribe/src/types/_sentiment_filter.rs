@@ -50,6 +50,192 @@ impl SentimentFilter {
         self.negate
     }
 }
+static SENTIMENTFILTER_MEMBER_SENTIMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#SentimentValueList$member",
+        "com.amazonaws.transcribe",
+        "SentimentValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SENTIMENTFILTER_MEMBER_SENTIMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#SentimentFilter$Sentiments",
+        "com.amazonaws.transcribe",
+        "SentimentFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Sentiments",
+    0,
+)
+.with_list_member(&SENTIMENTFILTER_MEMBER_SENTIMENTS_MEMBER);
+static SENTIMENTFILTER_MEMBER_ABSOLUTE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#SentimentFilter$AbsoluteTimeRange",
+        "com.amazonaws.transcribe",
+        "SentimentFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AbsoluteTimeRange",
+    1,
+);
+static SENTIMENTFILTER_MEMBER_RELATIVE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#SentimentFilter$RelativeTimeRange",
+        "com.amazonaws.transcribe",
+        "SentimentFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RelativeTimeRange",
+    2,
+);
+static SENTIMENTFILTER_MEMBER_PARTICIPANT_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#SentimentFilter$ParticipantRole",
+        "com.amazonaws.transcribe",
+        "SentimentFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParticipantRole",
+    3,
+);
+static SENTIMENTFILTER_MEMBER_NEGATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#SentimentFilter$Negate",
+        "com.amazonaws.transcribe",
+        "SentimentFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Negate",
+    4,
+);
+static SENTIMENTFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#SentimentFilter", "com.amazonaws.transcribe", "SentimentFilter"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SENTIMENTFILTER_MEMBER_SENTIMENTS,
+        &SENTIMENTFILTER_MEMBER_ABSOLUTE_TIME_RANGE,
+        &SENTIMENTFILTER_MEMBER_RELATIVE_TIME_RANGE,
+        &SENTIMENTFILTER_MEMBER_PARTICIPANT_ROLE,
+        &SENTIMENTFILTER_MEMBER_NEGATE,
+    ],
+);
+impl SentimentFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SENTIMENTFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SentimentFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.sentiments;
+
+            ser.write_list(
+                &SENTIMENTFILTER_MEMBER_SENTIMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.absolute_time_range {
+            ser.write_struct(&SENTIMENTFILTER_MEMBER_ABSOLUTE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.relative_time_range {
+            ser.write_struct(&SENTIMENTFILTER_MEMBER_RELATIVE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.participant_role {
+            ser.write_string(&SENTIMENTFILTER_MEMBER_PARTICIPANT_ROLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.negate {
+            ser.write_boolean(&SENTIMENTFILTER_MEMBER_NEGATE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SentimentFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SENTIMENTFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.sentiments = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::SentimentValue::from(
+                                deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                            ));
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_time_range = Some(crate::types::AbsoluteTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relative_time_range = Some(crate::types::RelativeTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.participant_role = Some(crate::types::ParticipantRole::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.negate = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SentimentFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.sentiments = builder.sentiments.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SentimentFilter {
     /// Creates a new builder-style object to manufacture [`SentimentFilter`](crate::types::SentimentFilter).
     pub fn builder() -> crate::types::builders::SentimentFilterBuilder {

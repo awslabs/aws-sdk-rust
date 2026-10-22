@@ -69,6 +69,301 @@ impl DescribeModelOutput {
         self.deployment_recommendation.as_ref()
     }
 }
+static DESCRIBEMODELOUTPUT_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$ModelName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    0,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_PRIMARY_CONTAINER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$PrimaryContainer",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PrimaryContainer",
+    1,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_CONTAINERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerDefinitionList$member",
+        "com.amazonaws.sagemaker",
+        "ContainerDefinitionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_CONTAINERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$Containers",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Containers",
+    2,
+)
+.with_list_member(&DESCRIBEMODELOUTPUT_MEMBER_CONTAINERS_MEMBER);
+static DESCRIBEMODELOUTPUT_MEMBER_INFERENCE_EXECUTION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$InferenceExecutionConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InferenceExecutionConfig",
+    3,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$ExecutionRoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRoleArn",
+    4,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$VpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    5,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$ModelArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelArn",
+    7,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_ENABLE_NETWORK_ISOLATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$EnableNetworkIsolation",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNetworkIsolation",
+    8,
+);
+static DESCRIBEMODELOUTPUT_MEMBER_DEPLOYMENT_RECOMMENDATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput$DeploymentRecommendation",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentRecommendation",
+    9,
+);
+static DESCRIBEMODELOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEMODELOUTPUT_MEMBER_MODEL_NAME,
+        &DESCRIBEMODELOUTPUT_MEMBER_PRIMARY_CONTAINER,
+        &DESCRIBEMODELOUTPUT_MEMBER_CONTAINERS,
+        &DESCRIBEMODELOUTPUT_MEMBER_INFERENCE_EXECUTION_CONFIG,
+        &DESCRIBEMODELOUTPUT_MEMBER_EXECUTION_ROLE_ARN,
+        &DESCRIBEMODELOUTPUT_MEMBER_VPC_CONFIG,
+        &DESCRIBEMODELOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEMODELOUTPUT_MEMBER_MODEL_ARN,
+        &DESCRIBEMODELOUTPUT_MEMBER_ENABLE_NETWORK_ISOLATION,
+        &DESCRIBEMODELOUTPUT_MEMBER_DEPLOYMENT_RECOMMENDATION,
+    ],
+)
+.with_original_name("DescribeModelOutput");
+impl DescribeModelOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMODELOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeModelOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&DESCRIBEMODELOUTPUT_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.primary_container {
+            ser.write_struct(&DESCRIBEMODELOUTPUT_MEMBER_PRIMARY_CONTAINER, val)?;
+        }
+        if let Some(ref val) = self.containers {
+            ser.write_list(
+                &DESCRIBEMODELOUTPUT_MEMBER_CONTAINERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.inference_execution_config {
+            ser.write_struct(&DESCRIBEMODELOUTPUT_MEMBER_INFERENCE_EXECUTION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&DESCRIBEMODELOUTPUT_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&DESCRIBEMODELOUTPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEMODELOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.model_arn {
+            ser.write_string(&DESCRIBEMODELOUTPUT_MEMBER_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.enable_network_isolation {
+            ser.write_boolean(&DESCRIBEMODELOUTPUT_MEMBER_ENABLE_NETWORK_ISOLATION, *val)?;
+        }
+        if let Some(ref val) = self.deployment_recommendation {
+            ser.write_struct(&DESCRIBEMODELOUTPUT_MEMBER_DEPLOYMENT_RECOMMENDATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_model::builders::DescribeModelOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEMODELOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.primary_container = Some(crate::types::ContainerDefinition::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.containers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_execution_config = Some(crate::types::InferenceExecutionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_network_isolation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_recommendation = Some(crate::types::DeploymentRecommendation::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeModelOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

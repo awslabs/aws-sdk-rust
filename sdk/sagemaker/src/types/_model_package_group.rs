@@ -79,6 +79,233 @@ impl ModelPackageGroup {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup$ModelPackageGroupName",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupName",
+    0,
+);
+static MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup$ModelPackageGroupArn",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupArn",
+    1,
+);
+static MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup$ModelPackageGroupDescription",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupDescription",
+    2,
+);
+static MODELPACKAGEGROUP_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup$CreationTime",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static MODELPACKAGEGROUP_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup$CreatedBy",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    4,
+);
+static MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup$ModelPackageGroupStatus",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupStatus",
+    5,
+);
+static MODELPACKAGEGROUP_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MODELPACKAGEGROUP_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup$Tags",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&MODELPACKAGEGROUP_MEMBER_TAGS_MEMBER);
+static MODELPACKAGEGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroup",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_NAME,
+        &MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_ARN,
+        &MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_DESCRIPTION,
+        &MODELPACKAGEGROUP_MEMBER_CREATION_TIME,
+        &MODELPACKAGEGROUP_MEMBER_CREATED_BY,
+        &MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_STATUS,
+        &MODELPACKAGEGROUP_MEMBER_TAGS,
+    ],
+);
+impl ModelPackageGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELPACKAGEGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelPackageGroup {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_package_group_name {
+            ser.write_string(&MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_arn {
+            ser.write_string(&MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_description {
+            ser.write_string(&MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MODELPACKAGEGROUP_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&MODELPACKAGEGROUP_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_status {
+            ser.write_string(&MODELPACKAGEGROUP_MEMBER_MODEL_PACKAGE_GROUP_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &MODELPACKAGEGROUP_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelPackageGroupBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELPACKAGEGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_status = Some(crate::types::ModelPackageGroupStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelPackageGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelPackageGroup {
     /// Creates a new builder-style object to manufacture [`ModelPackageGroup`](crate::types::ModelPackageGroup).
     pub fn builder() -> crate::types::builders::ModelPackageGroupBuilder {

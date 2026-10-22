@@ -31,6 +31,129 @@ impl ListVolumesInput {
         self.limit
     }
 }
+static LISTVOLUMESINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListVolumesInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListVolumesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static LISTVOLUMESINPUT_MEMBER_MARKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListVolumesInput$Marker",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListVolumesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Marker",
+    1,
+);
+static LISTVOLUMESINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListVolumesInput$Limit",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListVolumesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    2,
+);
+static LISTVOLUMESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListVolumesInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListVolumesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTVOLUMESINPUT_MEMBER_GATEWAY_ARN,
+        &LISTVOLUMESINPUT_MEMBER_MARKER,
+        &LISTVOLUMESINPUT_MEMBER_LIMIT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListVolumesInput");
+impl ListVolumesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTVOLUMESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListVolumesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&LISTVOLUMESINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.marker {
+            ser.write_string(&LISTVOLUMESINPUT_MEMBER_MARKER, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&LISTVOLUMESINPUT_MEMBER_LIMIT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_volumes::builders::ListVolumesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTVOLUMESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marker = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListVolumesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListVolumesInput {
     /// Creates a new builder-style object to manufacture [`ListVolumesInput`](crate::operation::list_volumes::ListVolumesInput).
     pub fn builder() -> crate::operation::list_volumes::builders::ListVolumesInputBuilder {

@@ -130,6 +130,357 @@ impl UpdateImageVersionInput {
         self.release_notes.as_deref()
     }
 }
+static UPDATEIMAGEVERSIONINPUT_MEMBER_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$ImageName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageName",
+    0,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_ALIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$Alias",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Alias",
+    1,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$Version",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Version",
+    2,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_ADD_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SageMakerImageVersionAliases$member",
+        "com.amazonaws.sagemaker",
+        "SageMakerImageVersionAliases",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_ADD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$AliasesToAdd",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AliasesToAdd",
+    3,
+)
+.with_list_member(&UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_ADD_MEMBER);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_DELETE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SageMakerImageVersionAliases$member",
+        "com.amazonaws.sagemaker",
+        "SageMakerImageVersionAliases",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$AliasesToDelete",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AliasesToDelete",
+    4,
+)
+.with_list_member(&UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_DELETE_MEMBER);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_VENDOR_GUIDANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$VendorGuidance",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VendorGuidance",
+    5,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_JOB_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$JobType",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobType",
+    6,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_ML_FRAMEWORK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$MLFramework",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MLFramework",
+    7,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_PROGRAMMING_LANG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$ProgrammingLang",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProgrammingLang",
+    8,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_PROCESSOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$Processor",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Processor",
+    9,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_HOROVOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$Horovod",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Horovod",
+    10,
+);
+static UPDATEIMAGEVERSIONINPUT_MEMBER_RELEASE_NOTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput$ReleaseNotes",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReleaseNotes",
+    11,
+);
+static UPDATEIMAGEVERSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageVersionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageVersionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_IMAGE_NAME,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_ALIAS,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_VERSION,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_ADD,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_DELETE,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_VENDOR_GUIDANCE,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_JOB_TYPE,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_ML_FRAMEWORK,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_PROGRAMMING_LANG,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_PROCESSOR,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_HOROVOD,
+        &UPDATEIMAGEVERSIONINPUT_MEMBER_RELEASE_NOTES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateImageVersionRequest");
+impl UpdateImageVersionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEIMAGEVERSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateImageVersionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_name {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.alias {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_ALIAS, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_integer(&UPDATEIMAGEVERSIONINPUT_MEMBER_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.aliases_to_add {
+            ser.write_list(
+                &UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_ADD,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.aliases_to_delete {
+            ser.write_list(
+                &UPDATEIMAGEVERSIONINPUT_MEMBER_ALIASES_TO_DELETE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vendor_guidance {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_VENDOR_GUIDANCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_type {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_JOB_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ml_framework {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_ML_FRAMEWORK, val)?;
+        }
+        if let Some(ref val) = self.programming_lang {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_PROGRAMMING_LANG, val)?;
+        }
+        if let Some(ref val) = self.processor {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_PROCESSOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.horovod {
+            ser.write_boolean(&UPDATEIMAGEVERSIONINPUT_MEMBER_HOROVOD, *val)?;
+        }
+        if let Some(ref val) = self.release_notes {
+            ser.write_string(&UPDATEIMAGEVERSIONINPUT_MEMBER_RELEASE_NOTES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEIMAGEVERSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alias = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aliases_to_add = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aliases_to_delete = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vendor_guidance = Some(crate::types::VendorGuidance::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_type = Some(crate::types::JobType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ml_framework = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.programming_lang = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processor = Some(crate::types::Processor::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.horovod = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.release_notes = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateImageVersionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_name = builder.image_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateImageVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
     pub fn builder() -> crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder {

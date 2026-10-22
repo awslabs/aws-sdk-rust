@@ -143,6 +143,417 @@ impl Bucket {
         self.cors.as_ref()
     }
 }
+static BUCKET_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$resourceType", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    0,
+);
+static BUCKET_MEMBER_ACCESS_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$accessRules", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "accessRules",
+    1,
+);
+static BUCKET_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$arn", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    2,
+);
+static BUCKET_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$bundleId", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::String,
+    "bundleId",
+    3,
+);
+static BUCKET_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$createdAt", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    4,
+);
+static BUCKET_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$url", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::String,
+    "url",
+    5,
+);
+static BUCKET_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$location", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    6,
+);
+static BUCKET_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$name", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    7,
+);
+static BUCKET_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$supportCode", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    8,
+);
+static BUCKET_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUCKET_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$tags", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    9,
+)
+.with_list_member(&BUCKET_MEMBER_TAGS_MEMBER);
+static BUCKET_MEMBER_OBJECT_VERSIONING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$objectVersioning", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::String,
+    "objectVersioning",
+    10,
+);
+static BUCKET_MEMBER_ABLE_TO_UPDATE_BUNDLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$ableToUpdateBundle", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ableToUpdateBundle",
+    11,
+);
+static BUCKET_MEMBER_READONLY_ACCESS_ACCOUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#PartnerIdList$member", "com.amazonaws.lightsail", "PartnerIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BUCKET_MEMBER_READONLY_ACCESS_ACCOUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#Bucket$readonlyAccessAccounts",
+        "com.amazonaws.lightsail",
+        "Bucket",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "readonlyAccessAccounts",
+    12,
+)
+.with_list_member(&BUCKET_MEMBER_READONLY_ACCESS_ACCOUNTS_MEMBER);
+static BUCKET_MEMBER_RESOURCES_RECEIVING_ACCESS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AccessReceiverList$member",
+        "com.amazonaws.lightsail",
+        "AccessReceiverList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BUCKET_MEMBER_RESOURCES_RECEIVING_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#Bucket$resourcesReceivingAccess",
+        "com.amazonaws.lightsail",
+        "Bucket",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourcesReceivingAccess",
+    13,
+)
+.with_list_member(&BUCKET_MEMBER_RESOURCES_RECEIVING_ACCESS_MEMBER);
+static BUCKET_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$state", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "state",
+    14,
+);
+static BUCKET_MEMBER_ACCESS_LOG_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$accessLogConfig", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "accessLogConfig",
+    15,
+);
+static BUCKET_MEMBER_CORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket$cors", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cors",
+    16,
+);
+static BUCKET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Bucket", "com.amazonaws.lightsail", "Bucket"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BUCKET_MEMBER_RESOURCE_TYPE,
+        &BUCKET_MEMBER_ACCESS_RULES,
+        &BUCKET_MEMBER_ARN,
+        &BUCKET_MEMBER_BUNDLE_ID,
+        &BUCKET_MEMBER_CREATED_AT,
+        &BUCKET_MEMBER_URL,
+        &BUCKET_MEMBER_LOCATION,
+        &BUCKET_MEMBER_NAME,
+        &BUCKET_MEMBER_SUPPORT_CODE,
+        &BUCKET_MEMBER_TAGS,
+        &BUCKET_MEMBER_OBJECT_VERSIONING,
+        &BUCKET_MEMBER_ABLE_TO_UPDATE_BUNDLE,
+        &BUCKET_MEMBER_READONLY_ACCESS_ACCOUNTS,
+        &BUCKET_MEMBER_RESOURCES_RECEIVING_ACCESS,
+        &BUCKET_MEMBER_STATE,
+        &BUCKET_MEMBER_ACCESS_LOG_CONFIG,
+        &BUCKET_MEMBER_CORS,
+    ],
+);
+impl Bucket {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BUCKET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Bucket {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&BUCKET_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.access_rules {
+            ser.write_struct(&BUCKET_MEMBER_ACCESS_RULES, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&BUCKET_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&BUCKET_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&BUCKET_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.url {
+            ser.write_string(&BUCKET_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&BUCKET_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&BUCKET_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&BUCKET_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&BUCKET_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.object_versioning {
+            ser.write_string(&BUCKET_MEMBER_OBJECT_VERSIONING, val)?;
+        }
+        if let Some(ref val) = self.able_to_update_bundle {
+            ser.write_boolean(&BUCKET_MEMBER_ABLE_TO_UPDATE_BUNDLE, *val)?;
+        }
+        if let Some(ref val) = self.readonly_access_accounts {
+            ser.write_list(
+                &BUCKET_MEMBER_READONLY_ACCESS_ACCOUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resources_receiving_access {
+            ser.write_list(
+                &BUCKET_MEMBER_RESOURCES_RECEIVING_ACCESS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceReceivingAccess::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_struct(&BUCKET_MEMBER_STATE, val)?;
+        }
+        if let Some(ref val) = self.access_log_config {
+            ser.write_struct(&BUCKET_MEMBER_ACCESS_LOG_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cors {
+            ser.write_struct(&BUCKET_MEMBER_CORS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BucketBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BUCKET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_rules = Some(crate::types::AccessRules::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.object_versioning = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.able_to_update_bundle = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.readonly_access_accounts = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resources_receiving_access = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceReceivingAccess::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::BucketState::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_log_config = Some(crate::types::BucketAccessLogConfig::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cors = Some(crate::types::BucketCorsConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Bucket {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Bucket {
     /// Creates a new builder-style object to manufacture [`Bucket`](crate::types::Bucket).
     pub fn builder() -> crate::types::builders::BucketBuilder {

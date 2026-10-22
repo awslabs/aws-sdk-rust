@@ -32,6 +32,127 @@ impl ClarifyShapBaselineConfig {
         self.shap_baseline_uri.as_deref()
     }
 }
+static CLARIFYSHAPBASELINECONFIG_MEMBER_MIME_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapBaselineConfig$MimeType",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapBaselineConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MimeType",
+    0,
+);
+static CLARIFYSHAPBASELINECONFIG_MEMBER_SHAP_BASELINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapBaselineConfig$ShapBaseline",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapBaselineConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShapBaseline",
+    1,
+);
+static CLARIFYSHAPBASELINECONFIG_MEMBER_SHAP_BASELINE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapBaselineConfig$ShapBaselineUri",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapBaselineConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShapBaselineUri",
+    2,
+);
+static CLARIFYSHAPBASELINECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyShapBaselineConfig",
+        "com.amazonaws.sagemaker",
+        "ClarifyShapBaselineConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLARIFYSHAPBASELINECONFIG_MEMBER_MIME_TYPE,
+        &CLARIFYSHAPBASELINECONFIG_MEMBER_SHAP_BASELINE,
+        &CLARIFYSHAPBASELINECONFIG_MEMBER_SHAP_BASELINE_URI,
+    ],
+);
+impl ClarifyShapBaselineConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLARIFYSHAPBASELINECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClarifyShapBaselineConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.mime_type {
+            ser.write_string(&CLARIFYSHAPBASELINECONFIG_MEMBER_MIME_TYPE, val)?;
+        }
+        if let Some(ref val) = self.shap_baseline {
+            ser.write_string(&CLARIFYSHAPBASELINECONFIG_MEMBER_SHAP_BASELINE, val)?;
+        }
+        if let Some(ref val) = self.shap_baseline_uri {
+            ser.write_string(&CLARIFYSHAPBASELINECONFIG_MEMBER_SHAP_BASELINE_URI, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClarifyShapBaselineConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLARIFYSHAPBASELINECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mime_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shap_baseline = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shap_baseline_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClarifyShapBaselineConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClarifyShapBaselineConfig {
     /// Creates a new builder-style object to manufacture [`ClarifyShapBaselineConfig`](crate::types::ClarifyShapBaselineConfig).
     pub fn builder() -> crate::types::builders::ClarifyShapBaselineConfigBuilder {

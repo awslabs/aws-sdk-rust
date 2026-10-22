@@ -15,7 +15,10 @@
 ///     ConnectorState::Creating => { /* ... */ },
 ///     ConnectorState::Deleting => { /* ... */ },
 ///     ConnectorState::Failed => { /* ... */ },
+///     ConnectorState::Paused => { /* ... */ },
+///     ConnectorState::Pausing => { /* ... */ },
 ///     ConnectorState::Restarting => { /* ... */ },
+///     ConnectorState::Resuming => { /* ... */ },
 ///     ConnectorState::Running => { /* ... */ },
 ///     ConnectorState::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -53,7 +56,13 @@ pub enum ConnectorState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Paused,
+    #[allow(missing_docs)] // documentation missing in model
+    Pausing,
+    #[allow(missing_docs)] // documentation missing in model
     Restarting,
+    #[allow(missing_docs)] // documentation missing in model
+    Resuming,
     #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
@@ -68,7 +77,10 @@ impl ::std::convert::From<&str> for ConnectorState {
             "CREATING" => ConnectorState::Creating,
             "DELETING" => ConnectorState::Deleting,
             "FAILED" => ConnectorState::Failed,
+            "PAUSED" => ConnectorState::Paused,
+            "PAUSING" => ConnectorState::Pausing,
             "RESTARTING" => ConnectorState::Restarting,
+            "RESUMING" => ConnectorState::Resuming,
             "RUNNING" => ConnectorState::Running,
             "UPDATING" => ConnectorState::Updating,
             other => ConnectorState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -89,7 +101,10 @@ impl ConnectorState {
             ConnectorState::Creating => "CREATING",
             ConnectorState::Deleting => "DELETING",
             ConnectorState::Failed => "FAILED",
+            ConnectorState::Paused => "PAUSED",
+            ConnectorState::Pausing => "PAUSING",
             ConnectorState::Restarting => "RESTARTING",
+            ConnectorState::Resuming => "RESUMING",
             ConnectorState::Running => "RUNNING",
             ConnectorState::Updating => "UPDATING",
             ConnectorState::Unknown(value) => value.as_str(),
@@ -97,7 +112,17 @@ impl ConnectorState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATING", "DELETING", "FAILED", "RESTARTING", "RUNNING", "UPDATING"]
+        &[
+            "CREATING",
+            "DELETING",
+            "FAILED",
+            "PAUSED",
+            "PAUSING",
+            "RESTARTING",
+            "RESUMING",
+            "RUNNING",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectorState {
@@ -123,7 +148,10 @@ impl ::std::fmt::Display for ConnectorState {
             ConnectorState::Creating => write!(f, "CREATING"),
             ConnectorState::Deleting => write!(f, "DELETING"),
             ConnectorState::Failed => write!(f, "FAILED"),
+            ConnectorState::Paused => write!(f, "PAUSED"),
+            ConnectorState::Pausing => write!(f, "PAUSING"),
             ConnectorState::Restarting => write!(f, "RESTARTING"),
+            ConnectorState::Resuming => write!(f, "RESUMING"),
             ConnectorState::Running => write!(f, "RUNNING"),
             ConnectorState::Updating => write!(f, "UPDATING"),
             ConnectorState::Unknown(value) => write!(f, "{value}"),

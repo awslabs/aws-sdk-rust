@@ -13,6 +13,86 @@ impl DeleteDeploymentConfigInput {
         self.deployment_config_name.as_deref()
     }
 }
+static DELETEDEPLOYMENTCONFIGINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#DeleteDeploymentConfigInput$deploymentConfigName",
+        "com.amazonaws.codedeploy.synthetic",
+        "DeleteDeploymentConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentConfigName",
+    0,
+);
+static DELETEDEPLOYMENTCONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#DeleteDeploymentConfigInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "DeleteDeploymentConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEDEPLOYMENTCONFIGINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteDeploymentConfigInput");
+impl DeleteDeploymentConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEDEPLOYMENTCONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteDeploymentConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_config_name {
+            ser.write_string(&DELETEDEPLOYMENTCONFIGINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEDEPLOYMENTCONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteDeploymentConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.deployment_config_name = builder.deployment_config_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteDeploymentConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentConfigInput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigInput).
     pub fn builder() -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigInputBuilder {

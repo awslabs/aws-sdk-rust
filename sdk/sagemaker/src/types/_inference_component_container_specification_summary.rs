@@ -33,6 +33,183 @@ impl InferenceComponentContainerSpecificationSummary {
         self.container_metrics_config.as_ref()
     }
 }
+static INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_DEPLOYED_IMAGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentContainerSpecificationSummary$DeployedImage",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentContainerSpecificationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DeployedImage",
+        0,
+    );
+static INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ARTIFACT_URL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentContainerSpecificationSummary$ArtifactUrl",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentContainerSpecificationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ArtifactUrl",
+        1,
+    );
+static INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EnvironmentMap$key", "com.amazonaws.sagemaker", "EnvironmentMap"),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#EnvironmentMap$value",
+            "com.amazonaws.sagemaker",
+            "EnvironmentMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentContainerSpecificationSummary$Environment",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentContainerSpecificationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Map,
+        "Environment",
+        2,
+    )
+    .with_map_members(
+        &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ENVIRONMENT_KEY,
+        &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ENVIRONMENT_VALUE,
+    );
+static INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_CONTAINER_METRICS_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentContainerSpecificationSummary$ContainerMetricsConfig",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentContainerSpecificationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ContainerMetricsConfig",
+        3,
+    );
+static INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentContainerSpecificationSummary",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentContainerSpecificationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_DEPLOYED_IMAGE,
+        &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ARTIFACT_URL,
+        &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ENVIRONMENT,
+        &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_CONTAINER_METRICS_CONFIG,
+    ],
+);
+impl InferenceComponentContainerSpecificationSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InferenceComponentContainerSpecificationSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployed_image {
+            ser.write_struct(&INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_DEPLOYED_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.artifact_url {
+            ser.write_string(&INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ARTIFACT_URL, val)?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.container_metrics_config {
+            ser.write_struct(&INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_MEMBER_CONTAINER_METRICS_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InferenceComponentContainerSpecificationSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INFERENCECOMPONENTCONTAINERSPECIFICATIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployed_image = Some(crate::types::DeployedImage::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_metrics_config = Some(crate::types::ContainerMetricsConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InferenceComponentContainerSpecificationSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InferenceComponentContainerSpecificationSummary {
     /// Creates a new builder-style object to manufacture [`InferenceComponentContainerSpecificationSummary`](crate::types::InferenceComponentContainerSpecificationSummary).
     pub fn builder() -> crate::types::builders::InferenceComponentContainerSpecificationSummaryBuilder {

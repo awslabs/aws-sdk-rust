@@ -44,6 +44,219 @@ impl UpdateInferenceExperimentInput {
         self.shadow_mode_config.as_ref()
     }
 }
+static UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceExperimentInput$Name",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceExperimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_SCHEDULE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceExperimentInput$Schedule",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceExperimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Schedule",
+    1,
+);
+static UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceExperimentInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceExperimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_MODEL_VARIANTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelVariantConfigList$member",
+        "com.amazonaws.sagemaker",
+        "ModelVariantConfigList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_MODEL_VARIANTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceExperimentInput$ModelVariants",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceExperimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ModelVariants",
+    3,
+)
+.with_list_member(&UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_MODEL_VARIANTS_MEMBER);
+static UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_DATA_STORAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceExperimentInput$DataStorageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceExperimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataStorageConfig",
+    4,
+);
+static UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_SHADOW_MODE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceExperimentInput$ShadowModeConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceExperimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ShadowModeConfig",
+    5,
+);
+static UPDATEINFERENCEEXPERIMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateInferenceExperimentInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateInferenceExperimentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_NAME,
+        &UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_SCHEDULE,
+        &UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_DESCRIPTION,
+        &UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_MODEL_VARIANTS,
+        &UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_DATA_STORAGE_CONFIG,
+        &UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_SHADOW_MODE_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateInferenceExperimentRequest");
+impl UpdateInferenceExperimentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEINFERENCEEXPERIMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateInferenceExperimentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.schedule {
+            ser.write_struct(&UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_SCHEDULE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.model_variants {
+            ser.write_list(
+                &UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_MODEL_VARIANTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ModelVariantConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.data_storage_config {
+            ser.write_struct(&UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_DATA_STORAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.shadow_mode_config {
+            ser.write_struct(&UPDATEINFERENCEEXPERIMENTINPUT_MEMBER_SHADOW_MODE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEINFERENCEEXPERIMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule = Some(crate::types::InferenceExperimentSchedule::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_variants = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ModelVariantConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_storage_config = Some(crate::types::InferenceExperimentDataStorageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shadow_mode_config = Some(crate::types::ShadowModeConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateInferenceExperimentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateInferenceExperimentInput {
     /// Creates a new builder-style object to manufacture [`UpdateInferenceExperimentInput`](crate::operation::update_inference_experiment::UpdateInferenceExperimentInput).
     pub fn builder() -> crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder {

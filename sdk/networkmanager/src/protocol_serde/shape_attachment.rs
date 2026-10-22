@@ -103,6 +103,17 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NatGatewaySupport" => {
+                            builder = builder.set_nat_gateway_support(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NatGatewaySupportState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "NatSystemRouteSupport" => {
+                            builder =
+                                builder.set_nat_system_route_support(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }

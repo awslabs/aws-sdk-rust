@@ -71,6 +71,279 @@ impl CustomRoutingAccelerator {
         self.last_modified_time.as_ref()
     }
 }
+static CUSTOMROUTINGACCELERATOR_MEMBER_ACCELERATOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$AcceleratorArn",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcceleratorArn",
+    0,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$Name",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$IpAddressType",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    2,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$Enabled",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    3,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_IP_SETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpSets$member",
+        "com.amazonaws.globalaccelerator",
+        "IpSets",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_IP_SETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$IpSets",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpSets",
+    4,
+)
+.with_list_member(&CUSTOMROUTINGACCELERATOR_MEMBER_IP_SETS_MEMBER);
+static CUSTOMROUTINGACCELERATOR_MEMBER_DNS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$DnsName",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DnsName",
+    5,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$Status",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$CreatedTime",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    7,
+);
+static CUSTOMROUTINGACCELERATOR_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator$LastModifiedTime",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static CUSTOMROUTINGACCELERATOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingAccelerator",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingAccelerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CUSTOMROUTINGACCELERATOR_MEMBER_ACCELERATOR_ARN,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_NAME,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_IP_ADDRESS_TYPE,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_ENABLED,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_IP_SETS,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_DNS_NAME,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_STATUS,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_CREATED_TIME,
+        &CUSTOMROUTINGACCELERATOR_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl CustomRoutingAccelerator {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMROUTINGACCELERATOR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomRoutingAccelerator {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.accelerator_arn {
+            ser.write_string(&CUSTOMROUTINGACCELERATOR_MEMBER_ACCELERATOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CUSTOMROUTINGACCELERATOR_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&CUSTOMROUTINGACCELERATOR_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.enabled {
+            ser.write_boolean(&CUSTOMROUTINGACCELERATOR_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.ip_sets {
+            ser.write_list(
+                &CUSTOMROUTINGACCELERATOR_MEMBER_IP_SETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::IpSet::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.dns_name {
+            ser.write_string(&CUSTOMROUTINGACCELERATOR_MEMBER_DNS_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&CUSTOMROUTINGACCELERATOR_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&CUSTOMROUTINGACCELERATOR_MEMBER_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&CUSTOMROUTINGACCELERATOR_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CustomRoutingAcceleratorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CUSTOMROUTINGACCELERATOR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_sets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::IpSet::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CustomRoutingAcceleratorStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CustomRoutingAccelerator {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CustomRoutingAccelerator {
     /// Creates a new builder-style object to manufacture [`CustomRoutingAccelerator`](crate::types::CustomRoutingAccelerator).
     pub fn builder() -> crate::types::builders::CustomRoutingAcceleratorBuilder {

@@ -70,6 +70,230 @@ impl UsageRecord {
         self.license_arn.as_deref()
     }
 }
+static USAGERECORD_MEMBER_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$Timestamp",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Timestamp",
+    0,
+);
+static USAGERECORD_MEMBER_CUSTOMER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$CustomerIdentifier",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerIdentifier",
+    1,
+);
+static USAGERECORD_MEMBER_DIMENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$Dimension",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Dimension",
+    2,
+);
+static USAGERECORD_MEMBER_QUANTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$Quantity",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Quantity",
+    3,
+);
+static USAGERECORD_MEMBER_USAGE_ALLOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageAllocations$member",
+        "com.amazonaws.marketplacemetering",
+        "UsageAllocations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static USAGERECORD_MEMBER_USAGE_ALLOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$UsageAllocations",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UsageAllocations",
+    4,
+)
+.with_list_member(&USAGERECORD_MEMBER_USAGE_ALLOCATIONS_MEMBER);
+static USAGERECORD_MEMBER_CUSTOMER_AWS_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$CustomerAWSAccountId",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerAWSAccountId",
+    5,
+);
+static USAGERECORD_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$LicenseArn",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    6,
+);
+static USAGERECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &USAGERECORD_MEMBER_TIMESTAMP,
+        &USAGERECORD_MEMBER_CUSTOMER_IDENTIFIER,
+        &USAGERECORD_MEMBER_DIMENSION,
+        &USAGERECORD_MEMBER_QUANTITY,
+        &USAGERECORD_MEMBER_USAGE_ALLOCATIONS,
+        &USAGERECORD_MEMBER_CUSTOMER_AWS_ACCOUNT_ID,
+        &USAGERECORD_MEMBER_LICENSE_ARN,
+    ],
+);
+impl UsageRecord {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USAGERECORD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UsageRecord {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.timestamp;
+            ser.write_timestamp(&USAGERECORD_MEMBER_TIMESTAMP, val)?;
+        }
+        {
+            let val = &self.customer_identifier;
+            ser.write_string(&USAGERECORD_MEMBER_CUSTOMER_IDENTIFIER, val)?;
+        }
+        {
+            let val = &self.dimension;
+            ser.write_string(&USAGERECORD_MEMBER_DIMENSION, val)?;
+        }
+        if let Some(ref val) = self.quantity {
+            ser.write_integer(&USAGERECORD_MEMBER_QUANTITY, *val)?;
+        }
+        if let Some(ref val) = self.usage_allocations {
+            ser.write_list(
+                &USAGERECORD_MEMBER_USAGE_ALLOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UsageAllocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.customer_aws_account_id {
+            ser.write_string(&USAGERECORD_MEMBER_CUSTOMER_AWS_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&USAGERECORD_MEMBER_LICENSE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UsageRecordBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USAGERECORD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.timestamp = Some(deser.read_timestamp(member)?);
+                }
+                Some(1) => {
+                    self.customer_identifier = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.dimension = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.quantity = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_allocations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UsageAllocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_aws_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UsageRecord {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.timestamp = builder.timestamp.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.dimension = builder.dimension.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UsageRecord {
     /// Creates a new builder-style object to manufacture [`UsageRecord`](crate::types::UsageRecord).
     pub fn builder() -> crate::types::builders::UsageRecordBuilder {

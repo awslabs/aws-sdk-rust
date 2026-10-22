@@ -635,6 +635,10 @@ pub use crate::types::_target_capacity_unit_type::TargetCapacityUnitType;
 
 pub use crate::types::_instance_requirements_with_metadata_request::InstanceRequirementsWithMetadataRequest;
 
+pub use crate::types::_transit_gateway_attachment_nat_gateway_support_state::TransitGatewayAttachmentNatGatewaySupportState;
+
+pub use crate::types::_transit_gateway_attachment_nat_system_route_support_value::TransitGatewayAttachmentNatSystemRouteSupportValue;
+
 pub use crate::types::_maintenance_details::MaintenanceDetails;
 
 pub use crate::types::_client_data::ClientData;
@@ -736,6 +740,8 @@ pub use crate::types::_target_storage_tier::TargetStorageTier;
 pub use crate::types::_excess_capacity_termination_policy::ExcessCapacityTerminationPolicy;
 
 pub use crate::types::_modify_transit_gateway_options::ModifyTransitGatewayOptions;
+
+pub use crate::types::_transit_gateway_attachment_nat_gateway_support_value::TransitGatewayAttachmentNatGatewaySupportValue;
 
 pub use crate::types::_modify_transit_gateway_vpc_attachment_request_options::ModifyTransitGatewayVpcAttachmentRequestOptions;
 
@@ -1705,6 +1711,8 @@ pub use crate::types::_security_group_for_vpc::SecurityGroupForVpc;
 
 pub use crate::types::_spot_placement_score::SpotPlacementScore;
 
+pub use crate::types::_transit_gateway_nat_rule::TransitGatewayNatRule;
+
 pub use crate::types::_transit_gateway_attachment_propagation::TransitGatewayAttachmentPropagation;
 
 pub use crate::types::_transit_gateway_multicast_domain_association::TransitGatewayMulticastDomainAssociation;
@@ -1794,6 +1802,8 @@ pub use crate::types::_traffic_mirror_filter_rule_field::TrafficMirrorFilterRule
 pub use crate::types::_traffic_mirror_session_field::TrafficMirrorSessionField;
 
 pub use crate::types::_encryption_support_option_value::EncryptionSupportOptionValue;
+
+pub use crate::types::_transit_gateway_nat_rule_request::TransitGatewayNatRuleRequest;
 
 pub use crate::types::_verified_access_log_s3_destination_options::VerifiedAccessLogS3DestinationOptions;
 
@@ -2348,6 +2358,8 @@ pub use crate::types::_launch_template_instance_secondary_interface_specificatio
 pub use crate::types::_target_configuration::TargetConfiguration;
 
 pub use crate::types::_route_server_route_status::RouteServerRouteStatus;
+
+pub use crate::types::_transit_gateway_nat_rule_state::TransitGatewayNatRuleState;
 
 pub use crate::types::_disk_image_description::DiskImageDescription;
 
@@ -5449,6 +5461,12 @@ mod _transit_gateway_attachment_association;
 
 mod _transit_gateway_attachment_bgp_configuration;
 
+mod _transit_gateway_attachment_nat_gateway_support_state;
+
+mod _transit_gateway_attachment_nat_gateway_support_value;
+
+mod _transit_gateway_attachment_nat_system_route_support_value;
+
 mod _transit_gateway_attachment_propagation;
 
 mod _transit_gateway_attachment_resource_type;
@@ -5508,6 +5526,12 @@ mod _transit_gateway_multicast_group;
 mod _transit_gateway_multicast_registered_group_members;
 
 mod _transit_gateway_multicast_registered_group_sources;
+
+mod _transit_gateway_nat_rule;
+
+mod _transit_gateway_nat_rule_request;
+
+mod _transit_gateway_nat_rule_state;
 
 mod _transit_gateway_options;
 

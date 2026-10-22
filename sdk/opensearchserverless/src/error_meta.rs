@@ -212,6 +212,33 @@ impl From<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ingestion_job::CancelIngestionJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_ingestion_job::CancelIngestionJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_ingestion_job::CancelIngestionJobError> for Error {
+    fn from(err: crate::operation::cancel_ingestion_job::CancelIngestionJobError) -> Self {
+        match err {
+            crate::operation::cancel_ingestion_job::CancelIngestionJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_ingestion_job::CancelIngestionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::cancel_ingestion_job::CancelIngestionJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_ingestion_job::CancelIngestionJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_ingestion_job::CancelIngestionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_access_policy::CreateAccessPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -320,6 +347,70 @@ impl From<crate::operation::create_index::CreateIndexError> for Error {
             crate::operation::create_index::CreateIndexError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_index::CreateIndexError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_index::CreateIndexError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ingestion_job::CreateIngestionJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ingestion_job::CreateIngestionJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ingestion_job::CreateIngestionJobError> for Error {
+    fn from(err: crate::operation::create_ingestion_job::CreateIngestionJobError) -> Self {
+        match err {
+            crate::operation::create_ingestion_job::CreateIngestionJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ingestion_job::CreateIngestionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_ingestion_job::CreateIngestionJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ingestion_job::CreateIngestionJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ingestion_job::CreateIngestionJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ingestion_job::CreateIngestionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ingestion_stream::CreateIngestionStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ingestion_stream::CreateIngestionStreamError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ingestion_stream::CreateIngestionStreamError> for Error {
+    fn from(err: crate::operation::create_ingestion_stream::CreateIngestionStreamError) -> Self {
+        match err {
+            crate::operation::create_ingestion_stream::CreateIngestionStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_ingestion_stream::CreateIngestionStreamError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_ingestion_stream::CreateIngestionStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_ingestion_stream::CreateIngestionStreamError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_ingestion_stream::CreateIngestionStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_ingestion_stream::CreateIngestionStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -546,6 +637,37 @@ impl From<crate::operation::delete_index::DeleteIndexError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ingestion_stream::DeleteIngestionStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ingestion_stream::DeleteIngestionStreamError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ingestion_stream::DeleteIngestionStreamError> for Error {
+    fn from(err: crate::operation::delete_ingestion_stream::DeleteIngestionStreamError) -> Self {
+        match err {
+            crate::operation::delete_ingestion_stream::DeleteIngestionStreamError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_ingestion_stream::DeleteIngestionStreamError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_ingestion_stream::DeleteIngestionStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_ingestion_stream::DeleteIngestionStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_ingestion_stream::DeleteIngestionStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -733,6 +855,56 @@ impl From<crate::operation::get_index::GetIndexError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingestion_job::GetIngestionJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingestion_job::GetIngestionJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ingestion_job::GetIngestionJobError> for Error {
+    fn from(err: crate::operation::get_ingestion_job::GetIngestionJobError) -> Self {
+        match err {
+            crate::operation::get_ingestion_job::GetIngestionJobError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ingestion_job::GetIngestionJobError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_ingestion_job::GetIngestionJobError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ingestion_job::GetIngestionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingestion_stream::GetIngestionStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingestion_stream::GetIngestionStreamError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ingestion_stream::GetIngestionStreamError> for Error {
+    fn from(err: crate::operation::get_ingestion_stream::GetIngestionStreamError) -> Self {
+        match err {
+            crate::operation::get_ingestion_stream::GetIngestionStreamError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_ingestion_stream::GetIngestionStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_ingestion_stream::GetIngestionStreamError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ingestion_stream::GetIngestionStreamError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_policies_stats::GetPoliciesStatsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -875,6 +1047,60 @@ impl From<crate::operation::list_collections::ListCollectionsError> for Error {
             crate::operation::list_collections::ListCollectionsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_collections::ListCollectionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_collections::ListCollectionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ingestion_jobs::ListIngestionJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ingestion_jobs::ListIngestionJobsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ingestion_jobs::ListIngestionJobsError> for Error {
+    fn from(err: crate::operation::list_ingestion_jobs::ListIngestionJobsError) -> Self {
+        match err {
+            crate::operation::list_ingestion_jobs::ListIngestionJobsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_ingestion_jobs::ListIngestionJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_ingestion_jobs::ListIngestionJobsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ingestion_jobs::ListIngestionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ingestion_streams::ListIngestionStreamsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ingestion_streams::ListIngestionStreamsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ingestion_streams::ListIngestionStreamsError> for Error {
+    fn from(err: crate::operation::list_ingestion_streams::ListIngestionStreamsError) -> Self {
+        match err {
+            crate::operation::list_ingestion_streams::ListIngestionStreamsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_ingestion_streams::ListIngestionStreamsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_ingestion_streams::ListIngestionStreamsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_ingestion_streams::ListIngestionStreamsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

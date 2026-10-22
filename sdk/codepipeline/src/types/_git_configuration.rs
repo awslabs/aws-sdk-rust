@@ -36,6 +36,177 @@ impl GitConfiguration {
         self.pull_request.as_deref().unwrap_or_default()
     }
 }
+static GITCONFIGURATION_MEMBER_SOURCE_ACTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitConfiguration$sourceActionName",
+        "com.amazonaws.codepipeline",
+        "GitConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceActionName",
+    0,
+);
+static GITCONFIGURATION_MEMBER_PUSH_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitPushFilterList$member",
+        "com.amazonaws.codepipeline",
+        "GitPushFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GITCONFIGURATION_MEMBER_PUSH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitConfiguration$push",
+        "com.amazonaws.codepipeline",
+        "GitConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "push",
+    1,
+)
+.with_list_member(&GITCONFIGURATION_MEMBER_PUSH_MEMBER);
+static GITCONFIGURATION_MEMBER_PULL_REQUEST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitPullRequestFilterList$member",
+        "com.amazonaws.codepipeline",
+        "GitPullRequestFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GITCONFIGURATION_MEMBER_PULL_REQUEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitConfiguration$pullRequest",
+        "com.amazonaws.codepipeline",
+        "GitConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "pullRequest",
+    2,
+)
+.with_list_member(&GITCONFIGURATION_MEMBER_PULL_REQUEST_MEMBER);
+static GITCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitConfiguration",
+        "com.amazonaws.codepipeline",
+        "GitConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GITCONFIGURATION_MEMBER_SOURCE_ACTION_NAME,
+        &GITCONFIGURATION_MEMBER_PUSH,
+        &GITCONFIGURATION_MEMBER_PULL_REQUEST,
+    ],
+);
+impl GitConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GITCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GitConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.source_action_name;
+            ser.write_string(&GITCONFIGURATION_MEMBER_SOURCE_ACTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.push {
+            ser.write_list(
+                &GITCONFIGURATION_MEMBER_PUSH,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GitPushFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.pull_request {
+            ser.write_list(
+                &GITCONFIGURATION_MEMBER_PULL_REQUEST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::GitPullRequestFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GitConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GITCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.source_action_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.push = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GitPushFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GitPullRequestFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GitConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.source_action_name = builder.source_action_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GitConfiguration {
     /// Creates a new builder-style object to manufacture [`GitConfiguration`](crate::types::GitConfiguration).
     pub fn builder() -> crate::types::builders::GitConfigurationBuilder {

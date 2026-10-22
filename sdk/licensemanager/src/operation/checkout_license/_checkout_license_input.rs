@@ -50,6 +50,243 @@ impl CheckoutLicenseInput {
         self.node_id.as_deref()
     }
 }
+static CHECKOUTLICENSEINPUT_MEMBER_PRODUCT_SKU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput$ProductSKU",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductSKU",
+    0,
+);
+static CHECKOUTLICENSEINPUT_MEMBER_CHECKOUT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput$CheckoutType",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CheckoutType",
+    1,
+);
+static CHECKOUTLICENSEINPUT_MEMBER_KEY_FINGERPRINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput$KeyFingerprint",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyFingerprint",
+    2,
+);
+static CHECKOUTLICENSEINPUT_MEMBER_ENTITLEMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementDataList$member",
+        "com.amazonaws.licensemanager",
+        "EntitlementDataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CHECKOUTLICENSEINPUT_MEMBER_ENTITLEMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput$Entitlements",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Entitlements",
+    3,
+)
+.with_list_member(&CHECKOUTLICENSEINPUT_MEMBER_ENTITLEMENTS_MEMBER);
+static CHECKOUTLICENSEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput$ClientToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    4,
+);
+static CHECKOUTLICENSEINPUT_MEMBER_BENEFICIARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput$Beneficiary",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Beneficiary",
+    5,
+);
+static CHECKOUTLICENSEINPUT_MEMBER_NODE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput$NodeId",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeId",
+    6,
+);
+static CHECKOUTLICENSEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckoutLicenseInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckoutLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHECKOUTLICENSEINPUT_MEMBER_PRODUCT_SKU,
+        &CHECKOUTLICENSEINPUT_MEMBER_CHECKOUT_TYPE,
+        &CHECKOUTLICENSEINPUT_MEMBER_KEY_FINGERPRINT,
+        &CHECKOUTLICENSEINPUT_MEMBER_ENTITLEMENTS,
+        &CHECKOUTLICENSEINPUT_MEMBER_CLIENT_TOKEN,
+        &CHECKOUTLICENSEINPUT_MEMBER_BENEFICIARY,
+        &CHECKOUTLICENSEINPUT_MEMBER_NODE_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CheckoutLicenseRequest");
+impl CheckoutLicenseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHECKOUTLICENSEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CheckoutLicenseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.product_sku {
+            ser.write_string(&CHECKOUTLICENSEINPUT_MEMBER_PRODUCT_SKU, val)?;
+        }
+        if let Some(ref val) = self.checkout_type {
+            ser.write_string(&CHECKOUTLICENSEINPUT_MEMBER_CHECKOUT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.key_fingerprint {
+            ser.write_string(&CHECKOUTLICENSEINPUT_MEMBER_KEY_FINGERPRINT, val)?;
+        }
+        if let Some(ref val) = self.entitlements {
+            ser.write_list(
+                &CHECKOUTLICENSEINPUT_MEMBER_ENTITLEMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EntitlementData::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CHECKOUTLICENSEINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.beneficiary {
+            ser.write_string(&CHECKOUTLICENSEINPUT_MEMBER_BENEFICIARY, val)?;
+        }
+        if let Some(ref val) = self.node_id {
+            ser.write_string(&CHECKOUTLICENSEINPUT_MEMBER_NODE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::checkout_license::builders::CheckoutLicenseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHECKOUTLICENSEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_sku = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checkout_type = Some(crate::types::CheckoutType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_fingerprint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entitlements = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EntitlementData::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.beneficiary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CheckoutLicenseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.product_sku = builder.product_sku.or(Some(String::new()));
+        builder.key_fingerprint = builder.key_fingerprint.or(Some(String::new()));
+        builder.entitlements = builder.entitlements.or(Some(Vec::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CheckoutLicenseInput {
     /// Creates a new builder-style object to manufacture [`CheckoutLicenseInput`](crate::operation::checkout_license::CheckoutLicenseInput).
     pub fn builder() -> crate::operation::checkout_license::builders::CheckoutLicenseInputBuilder {

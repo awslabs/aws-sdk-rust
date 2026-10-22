@@ -39,6 +39,148 @@ impl NonTalkTimeFilter {
         self.negate
     }
 }
+static NONTALKTIMEFILTER_MEMBER_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#NonTalkTimeFilter$Threshold",
+        "com.amazonaws.transcribe",
+        "NonTalkTimeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Threshold",
+    0,
+);
+static NONTALKTIMEFILTER_MEMBER_ABSOLUTE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#NonTalkTimeFilter$AbsoluteTimeRange",
+        "com.amazonaws.transcribe",
+        "NonTalkTimeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AbsoluteTimeRange",
+    1,
+);
+static NONTALKTIMEFILTER_MEMBER_RELATIVE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#NonTalkTimeFilter$RelativeTimeRange",
+        "com.amazonaws.transcribe",
+        "NonTalkTimeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RelativeTimeRange",
+    2,
+);
+static NONTALKTIMEFILTER_MEMBER_NEGATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#NonTalkTimeFilter$Negate",
+        "com.amazonaws.transcribe",
+        "NonTalkTimeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Negate",
+    3,
+);
+static NONTALKTIMEFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#NonTalkTimeFilter",
+        "com.amazonaws.transcribe",
+        "NonTalkTimeFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NONTALKTIMEFILTER_MEMBER_THRESHOLD,
+        &NONTALKTIMEFILTER_MEMBER_ABSOLUTE_TIME_RANGE,
+        &NONTALKTIMEFILTER_MEMBER_RELATIVE_TIME_RANGE,
+        &NONTALKTIMEFILTER_MEMBER_NEGATE,
+    ],
+);
+impl NonTalkTimeFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NONTALKTIMEFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NonTalkTimeFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.threshold {
+            ser.write_long(&NONTALKTIMEFILTER_MEMBER_THRESHOLD, *val)?;
+        }
+        if let Some(ref val) = self.absolute_time_range {
+            ser.write_struct(&NONTALKTIMEFILTER_MEMBER_ABSOLUTE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.relative_time_range {
+            ser.write_struct(&NONTALKTIMEFILTER_MEMBER_RELATIVE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.negate {
+            ser.write_boolean(&NONTALKTIMEFILTER_MEMBER_NEGATE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NonTalkTimeFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NONTALKTIMEFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.threshold = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_time_range = Some(crate::types::AbsoluteTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relative_time_range = Some(crate::types::RelativeTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.negate = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NonTalkTimeFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NonTalkTimeFilter {
     /// Creates a new builder-style object to manufacture [`NonTalkTimeFilter`](crate::types::NonTalkTimeFilter).
     pub fn builder() -> crate::types::builders::NonTalkTimeFilterBuilder {

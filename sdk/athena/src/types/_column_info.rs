@@ -69,6 +69,217 @@ impl ColumnInfo {
         self.case_sensitive
     }
 }
+static COLUMNINFO_MEMBER_CATALOG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$CatalogName", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "CatalogName",
+    0,
+);
+static COLUMNINFO_MEMBER_SCHEMA_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$SchemaName", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SchemaName",
+    1,
+);
+static COLUMNINFO_MEMBER_TABLE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$TableName", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TableName",
+    2,
+);
+static COLUMNINFO_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$Name", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static COLUMNINFO_MEMBER_LABEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$Label", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Label",
+    4,
+);
+static COLUMNINFO_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$Type", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    5,
+);
+static COLUMNINFO_MEMBER_PRECISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$Precision", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Precision",
+    6,
+);
+static COLUMNINFO_MEMBER_SCALE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$Scale", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Scale",
+    7,
+);
+static COLUMNINFO_MEMBER_NULLABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$Nullable", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Nullable",
+    8,
+);
+static COLUMNINFO_MEMBER_CASE_SENSITIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo$CaseSensitive", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CaseSensitive",
+    9,
+);
+static COLUMNINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ColumnInfo", "com.amazonaws.athena", "ColumnInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COLUMNINFO_MEMBER_CATALOG_NAME,
+        &COLUMNINFO_MEMBER_SCHEMA_NAME,
+        &COLUMNINFO_MEMBER_TABLE_NAME,
+        &COLUMNINFO_MEMBER_NAME,
+        &COLUMNINFO_MEMBER_LABEL,
+        &COLUMNINFO_MEMBER_TYPE,
+        &COLUMNINFO_MEMBER_PRECISION,
+        &COLUMNINFO_MEMBER_SCALE,
+        &COLUMNINFO_MEMBER_NULLABLE,
+        &COLUMNINFO_MEMBER_CASE_SENSITIVE,
+    ],
+);
+impl ColumnInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COLUMNINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ColumnInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.catalog_name {
+            ser.write_string(&COLUMNINFO_MEMBER_CATALOG_NAME, val)?;
+        }
+        if let Some(ref val) = self.schema_name {
+            ser.write_string(&COLUMNINFO_MEMBER_SCHEMA_NAME, val)?;
+        }
+        if let Some(ref val) = self.table_name {
+            ser.write_string(&COLUMNINFO_MEMBER_TABLE_NAME, val)?;
+        }
+        {
+            let val = &self.name;
+            ser.write_string(&COLUMNINFO_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.label {
+            ser.write_string(&COLUMNINFO_MEMBER_LABEL, val)?;
+        }
+        {
+            let val = &self.r#type;
+            ser.write_string(&COLUMNINFO_MEMBER_TYPE, val)?;
+        }
+        {
+            let val = &self.precision;
+            ser.write_integer(&COLUMNINFO_MEMBER_PRECISION, *val)?;
+        }
+        {
+            let val = &self.scale;
+            ser.write_integer(&COLUMNINFO_MEMBER_SCALE, *val)?;
+        }
+        if let Some(ref val) = self.nullable {
+            ser.write_string(&COLUMNINFO_MEMBER_NULLABLE, val.as_str())?;
+        }
+        {
+            let val = &self.case_sensitive;
+            ser.write_boolean(&COLUMNINFO_MEMBER_CASE_SENSITIVE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ColumnInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COLUMNINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.catalog_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schema_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.table_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.r#type = Some(deser.read_string(member)?);
+                }
+                Some(6) => {
+                    self.precision = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    self.scale = Some(deser.read_integer(member)?);
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nullable = Some(crate::types::ColumnNullable::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    self.case_sensitive = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ColumnInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.r#type = builder.r#type.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ColumnInfo {
     /// Creates a new builder-style object to manufacture [`ColumnInfo`](crate::types::ColumnInfo).
     pub fn builder() -> crate::types::builders::ColumnInfoBuilder {

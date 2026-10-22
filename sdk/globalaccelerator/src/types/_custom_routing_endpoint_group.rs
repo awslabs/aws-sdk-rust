@@ -35,6 +35,201 @@ impl CustomRoutingEndpointGroup {
         self.endpoint_descriptions.as_deref().unwrap_or_default()
     }
 }
+static CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingEndpointGroup$EndpointGroupArn",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingEndpointGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupArn",
+    0,
+);
+static CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_GROUP_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingEndpointGroup$EndpointGroupRegion",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingEndpointGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupRegion",
+    1,
+);
+static CUSTOMROUTINGENDPOINTGROUP_MEMBER_DESTINATION_DESCRIPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.globalaccelerator#CustomRoutingDestinationDescriptions$member",
+            "com.amazonaws.globalaccelerator",
+            "CustomRoutingDestinationDescriptions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CUSTOMROUTINGENDPOINTGROUP_MEMBER_DESTINATION_DESCRIPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingEndpointGroup$DestinationDescriptions",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingEndpointGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DestinationDescriptions",
+    2,
+)
+.with_list_member(&CUSTOMROUTINGENDPOINTGROUP_MEMBER_DESTINATION_DESCRIPTIONS_MEMBER);
+static CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_DESCRIPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingEndpointDescriptions$member",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingEndpointDescriptions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_DESCRIPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingEndpointGroup$EndpointDescriptions",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingEndpointGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EndpointDescriptions",
+    3,
+)
+.with_list_member(&CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_DESCRIPTIONS_MEMBER);
+static CUSTOMROUTINGENDPOINTGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingEndpointGroup",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingEndpointGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_GROUP_ARN,
+        &CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_GROUP_REGION,
+        &CUSTOMROUTINGENDPOINTGROUP_MEMBER_DESTINATION_DESCRIPTIONS,
+        &CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_DESCRIPTIONS,
+    ],
+);
+impl CustomRoutingEndpointGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMROUTINGENDPOINTGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomRoutingEndpointGroup {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_group_arn {
+            ser.write_string(&CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_group_region {
+            ser.write_string(&CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_GROUP_REGION, val)?;
+        }
+        if let Some(ref val) = self.destination_descriptions {
+            ser.write_list(
+                &CUSTOMROUTINGENDPOINTGROUP_MEMBER_DESTINATION_DESCRIPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomRoutingDestinationDescription::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.endpoint_descriptions {
+            ser.write_list(
+                &CUSTOMROUTINGENDPOINTGROUP_MEMBER_ENDPOINT_DESCRIPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomRoutingEndpointDescription::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CustomRoutingEndpointGroupBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CUSTOMROUTINGENDPOINTGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_descriptions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomRoutingDestinationDescription::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_descriptions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomRoutingEndpointDescription::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CustomRoutingEndpointGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CustomRoutingEndpointGroup {
     /// Creates a new builder-style object to manufacture [`CustomRoutingEndpointGroup`](crate::types::CustomRoutingEndpointGroup).
     pub fn builder() -> crate::types::builders::CustomRoutingEndpointGroupBuilder {

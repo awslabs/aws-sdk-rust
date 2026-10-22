@@ -56,6 +56,153 @@ impl GetDomainSuggestionsInput {
         self.only_standard_prices
     }
 }
+static GETDOMAINSUGGESTIONSINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainSuggestionsInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static GETDOMAINSUGGESTIONSINPUT_MEMBER_SUGGESTION_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainSuggestionsInput$SuggestionCount",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SuggestionCount",
+    1,
+);
+static GETDOMAINSUGGESTIONSINPUT_MEMBER_ONLY_AVAILABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainSuggestionsInput$OnlyAvailable",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "OnlyAvailable",
+    2,
+);
+static GETDOMAINSUGGESTIONSINPUT_MEMBER_ONLY_STANDARD_PRICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainSuggestionsInput$OnlyStandardPrices",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "OnlyStandardPrices",
+    3,
+);
+static GETDOMAINSUGGESTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainSuggestionsInput",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETDOMAINSUGGESTIONSINPUT_MEMBER_DOMAIN_NAME,
+        &GETDOMAINSUGGESTIONSINPUT_MEMBER_SUGGESTION_COUNT,
+        &GETDOMAINSUGGESTIONSINPUT_MEMBER_ONLY_AVAILABLE,
+        &GETDOMAINSUGGESTIONSINPUT_MEMBER_ONLY_STANDARD_PRICES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetDomainSuggestionsRequest");
+impl GetDomainSuggestionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDOMAINSUGGESTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDomainSuggestionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&GETDOMAINSUGGESTIONSINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.suggestion_count {
+            ser.write_integer(&GETDOMAINSUGGESTIONSINPUT_MEMBER_SUGGESTION_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.only_available {
+            ser.write_boolean(&GETDOMAINSUGGESTIONSINPUT_MEMBER_ONLY_AVAILABLE, *val)?;
+        }
+        if let Some(ref val) = self.only_standard_prices {
+            ser.write_boolean(&GETDOMAINSUGGESTIONSINPUT_MEMBER_ONLY_STANDARD_PRICES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDOMAINSUGGESTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.suggestion_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.only_available = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.only_standard_prices = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDomainSuggestionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.suggestion_count = builder.suggestion_count.or(Some(0i32));
+        builder.only_available = builder.only_available.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetDomainSuggestionsInput {
     /// Creates a new builder-style object to manufacture [`GetDomainSuggestionsInput`](crate::operation::get_domain_suggestions::GetDomainSuggestionsInput).
     pub fn builder() -> crate::operation::get_domain_suggestions::builders::GetDomainSuggestionsInputBuilder {

@@ -23,6 +23,156 @@ impl BatchGetCommitsOutput {
         self.errors.as_deref().unwrap_or_default()
     }
 }
+static BATCHGETCOMMITSOUTPUT_MEMBER_COMMITS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CommitObjectsList$member",
+        "com.amazonaws.codecommit",
+        "CommitObjectsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHGETCOMMITSOUTPUT_MEMBER_COMMITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchGetCommitsOutput$commits",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchGetCommitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "commits",
+    0,
+)
+.with_list_member(&BATCHGETCOMMITSOUTPUT_MEMBER_COMMITS_MEMBER);
+static BATCHGETCOMMITSOUTPUT_MEMBER_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#BatchGetCommitsErrorsList$member",
+        "com.amazonaws.codecommit",
+        "BatchGetCommitsErrorsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHGETCOMMITSOUTPUT_MEMBER_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchGetCommitsOutput$errors",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchGetCommitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "errors",
+    1,
+)
+.with_list_member(&BATCHGETCOMMITSOUTPUT_MEMBER_ERRORS_MEMBER);
+static BATCHGETCOMMITSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchGetCommitsOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchGetCommitsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BATCHGETCOMMITSOUTPUT_MEMBER_COMMITS, &BATCHGETCOMMITSOUTPUT_MEMBER_ERRORS],
+)
+.with_original_name("BatchGetCommitsOutput");
+impl BatchGetCommitsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETCOMMITSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetCommitsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.commits {
+            ser.write_list(
+                &BATCHGETCOMMITSOUTPUT_MEMBER_COMMITS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Commit::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.errors {
+            ser.write_list(
+                &BATCHGETCOMMITSOUTPUT_MEMBER_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BatchGetCommitsError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_commits::builders::BatchGetCommitsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETCOMMITSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commits = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Commit::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BatchGetCommitsError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetCommitsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchGetCommitsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

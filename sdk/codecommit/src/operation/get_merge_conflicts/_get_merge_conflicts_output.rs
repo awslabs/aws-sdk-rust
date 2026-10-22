@@ -46,6 +46,210 @@ impl GetMergeConflictsOutput {
         self.next_token.as_deref()
     }
 }
+static GETMERGECONFLICTSOUTPUT_MEMBER_MERGEABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetMergeConflictsOutput$mergeable",
+        "com.amazonaws.codecommit.synthetic",
+        "GetMergeConflictsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "mergeable",
+    0,
+);
+static GETMERGECONFLICTSOUTPUT_MEMBER_DESTINATION_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetMergeConflictsOutput$destinationCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetMergeConflictsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "destinationCommitId",
+    1,
+);
+static GETMERGECONFLICTSOUTPUT_MEMBER_SOURCE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetMergeConflictsOutput$sourceCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetMergeConflictsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceCommitId",
+    2,
+);
+static GETMERGECONFLICTSOUTPUT_MEMBER_BASE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetMergeConflictsOutput$baseCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetMergeConflictsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "baseCommitId",
+    3,
+);
+static GETMERGECONFLICTSOUTPUT_MEMBER_CONFLICT_METADATA_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadataList$member",
+        "com.amazonaws.codecommit",
+        "ConflictMetadataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETMERGECONFLICTSOUTPUT_MEMBER_CONFLICT_METADATA_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetMergeConflictsOutput$conflictMetadataList",
+        "com.amazonaws.codecommit.synthetic",
+        "GetMergeConflictsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "conflictMetadataList",
+    4,
+)
+.with_list_member(&GETMERGECONFLICTSOUTPUT_MEMBER_CONFLICT_METADATA_LIST_MEMBER);
+static GETMERGECONFLICTSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetMergeConflictsOutput$nextToken",
+        "com.amazonaws.codecommit.synthetic",
+        "GetMergeConflictsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    5,
+);
+static GETMERGECONFLICTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetMergeConflictsOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetMergeConflictsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETMERGECONFLICTSOUTPUT_MEMBER_MERGEABLE,
+        &GETMERGECONFLICTSOUTPUT_MEMBER_DESTINATION_COMMIT_ID,
+        &GETMERGECONFLICTSOUTPUT_MEMBER_SOURCE_COMMIT_ID,
+        &GETMERGECONFLICTSOUTPUT_MEMBER_BASE_COMMIT_ID,
+        &GETMERGECONFLICTSOUTPUT_MEMBER_CONFLICT_METADATA_LIST,
+        &GETMERGECONFLICTSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("GetMergeConflictsOutput");
+impl GetMergeConflictsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETMERGECONFLICTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetMergeConflictsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.mergeable;
+            ser.write_boolean(&GETMERGECONFLICTSOUTPUT_MEMBER_MERGEABLE, *val)?;
+        }
+        {
+            let val = &self.destination_commit_id;
+            ser.write_string(&GETMERGECONFLICTSOUTPUT_MEMBER_DESTINATION_COMMIT_ID, val)?;
+        }
+        {
+            let val = &self.source_commit_id;
+            ser.write_string(&GETMERGECONFLICTSOUTPUT_MEMBER_SOURCE_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.base_commit_id {
+            ser.write_string(&GETMERGECONFLICTSOUTPUT_MEMBER_BASE_COMMIT_ID, val)?;
+        }
+        {
+            let val = &self.conflict_metadata_list;
+
+            ser.write_list(
+                &GETMERGECONFLICTSOUTPUT_MEMBER_CONFLICT_METADATA_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ConflictMetadata::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETMERGECONFLICTSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_merge_conflicts::builders::GetMergeConflictsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETMERGECONFLICTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.mergeable = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    self.destination_commit_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.source_commit_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.conflict_metadata_list = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::ConflictMetadata::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetMergeConflictsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.mergeable = builder.mergeable.or(Some(false));
+        builder.destination_commit_id = builder.destination_commit_id.or(Some(String::new()));
+        builder.source_commit_id = builder.source_commit_id.or(Some(String::new()));
+        builder.conflict_metadata_list = builder.conflict_metadata_list.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for GetMergeConflictsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

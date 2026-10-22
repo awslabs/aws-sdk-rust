@@ -51,6 +51,18 @@ pub use crate::types::_create_collection_group_detail::CreateCollectionGroupDeta
 
 pub use crate::types::_update_collection_group_detail::UpdateCollectionGroupDetail;
 
+pub use crate::types::_ingestion_job_source::IngestionJobSource;
+
+pub use crate::types::_ingestion_job_detail::IngestionJobDetail;
+
+pub use crate::types::_ingestion_job_status::IngestionJobStatus;
+
+pub use crate::types::_ingestion_stream_source::IngestionStreamSource;
+
+pub use crate::types::_ingestion_stream_detail::IngestionStreamDetail;
+
+pub use crate::types::_ingestion_stream_status::IngestionStreamStatus;
+
 pub use crate::types::_security_config_type::SecurityConfigType;
 
 pub use crate::types::_saml_config_options::SamlConfigOptions;
@@ -105,6 +117,18 @@ pub use crate::types::_serverless_vector_acceleration_status::ServerlessVectorAc
 
 pub use crate::types::_collection_group_summary::CollectionGroupSummary;
 
+pub use crate::types::_ingestion_job_summary::IngestionJobSummary;
+
+pub use crate::types::_ingestion_job_s3_source::IngestionJobS3Source;
+
+pub use crate::types::_ingestion_state::IngestionState;
+
+pub use crate::types::_ingestion_statistics::IngestionStatistics;
+
+pub use crate::types::_ingestion_stream_summary::IngestionStreamSummary;
+
+pub use crate::types::_ingestion_stream_s3_source::IngestionStreamS3Source;
+
 pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummary;
 
 pub use crate::types::_security_config_summary::SecurityConfigSummary;
@@ -125,9 +149,23 @@ pub use crate::types::_current_capacity::CurrentCapacity;
 
 pub use crate::types::_resource_type::ResourceType;
 
+pub use crate::types::_s3_statistics::S3Statistics;
+
+pub use crate::types::_ingestion_failure_reason::IngestionFailureReason;
+
+pub use crate::types::_ingestion_alert::IngestionAlert;
+
 pub use crate::types::_capacity_details::CapacityDetails;
 
+pub use crate::types::_ingestion_failure_code::IngestionFailureCode;
+
+pub use crate::types::_ingestion_alert_code::IngestionAlertCode;
+
+pub use crate::types::_stream_bucket_config::StreamBucketConfig;
+
 pub use crate::types::_autoscaling_status::AutoscalingStatus;
+
+pub use crate::types::_initial_scan::InitialScan;
 
 mod _access_policy_detail;
 
@@ -197,6 +235,40 @@ mod _iam_identity_center_group_attribute;
 
 mod _iam_identity_center_user_attribute;
 
+mod _ingestion_alert;
+
+mod _ingestion_alert_code;
+
+mod _ingestion_failure_code;
+
+mod _ingestion_failure_reason;
+
+mod _ingestion_job_detail;
+
+mod _ingestion_job_s3_source;
+
+mod _ingestion_job_source;
+
+mod _ingestion_job_status;
+
+mod _ingestion_job_summary;
+
+mod _ingestion_state;
+
+mod _ingestion_statistics;
+
+mod _ingestion_stream_detail;
+
+mod _ingestion_stream_s3_source;
+
+mod _ingestion_stream_source;
+
+mod _ingestion_stream_status;
+
+mod _ingestion_stream_summary;
+
+mod _initial_scan;
+
 mod _lifecycle_policy_detail;
 
 mod _lifecycle_policy_error_detail;
@@ -212,6 +284,8 @@ mod _lifecycle_policy_summary;
 mod _lifecycle_policy_type;
 
 mod _resource_type;
+
+mod _s3_statistics;
 
 mod _saml_config_options;
 
@@ -236,6 +310,8 @@ mod _serverless_generation;
 mod _serverless_vector_acceleration_status;
 
 mod _standby_replicas;
+
+mod _stream_bucket_config;
 
 mod _tag;
 

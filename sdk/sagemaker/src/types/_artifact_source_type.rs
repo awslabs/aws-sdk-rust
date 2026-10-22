@@ -19,6 +19,103 @@ impl ArtifactSourceType {
         self.value.as_deref()
     }
 }
+static ARTIFACTSOURCETYPE_MEMBER_SOURCE_ID_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ArtifactSourceType$SourceIdType",
+        "com.amazonaws.sagemaker",
+        "ArtifactSourceType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceIdType",
+    0,
+);
+static ARTIFACTSOURCETYPE_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ArtifactSourceType$Value",
+        "com.amazonaws.sagemaker",
+        "ArtifactSourceType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    1,
+);
+static ARTIFACTSOURCETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ArtifactSourceType",
+        "com.amazonaws.sagemaker",
+        "ArtifactSourceType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ARTIFACTSOURCETYPE_MEMBER_SOURCE_ID_TYPE, &ARTIFACTSOURCETYPE_MEMBER_VALUE],
+);
+impl ArtifactSourceType {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ARTIFACTSOURCETYPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ArtifactSourceType {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_id_type {
+            ser.write_string(&ARTIFACTSOURCETYPE_MEMBER_SOURCE_ID_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_string(&ARTIFACTSOURCETYPE_MEMBER_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ArtifactSourceTypeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ARTIFACTSOURCETYPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_id_type = Some(crate::types::ArtifactSourceIdType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ArtifactSourceType {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ArtifactSourceType {
     /// Creates a new builder-style object to manufacture [`ArtifactSourceType`](crate::types::ArtifactSourceType).
     pub fn builder() -> crate::types::builders::ArtifactSourceTypeBuilder {

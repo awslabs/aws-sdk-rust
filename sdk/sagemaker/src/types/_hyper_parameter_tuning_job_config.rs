@@ -83,6 +83,238 @@ impl HyperParameterTuningJobConfig {
         self.random_seed
     }
 }
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$Strategy",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Strategy",
+    0,
+);
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_STRATEGY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$StrategyConfig",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StrategyConfig",
+    1,
+);
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_HYPER_PARAMETER_TUNING_JOB_OBJECTIVE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$HyperParameterTuningJobObjective",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "HyperParameterTuningJobObjective",
+        2,
+    );
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_RESOURCE_LIMITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$ResourceLimits",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceLimits",
+    3,
+);
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_PARAMETER_RANGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$ParameterRanges",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParameterRanges",
+    4,
+);
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_TRAINING_JOB_EARLY_STOPPING_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$TrainingJobEarlyStoppingType",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "TrainingJobEarlyStoppingType",
+        5,
+    );
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_TUNING_JOB_COMPLETION_CRITERIA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$TuningJobCompletionCriteria",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "TuningJobCompletionCriteria",
+        6,
+    );
+static HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_RANDOM_SEED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobConfig$RandomSeed",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RandomSeed",
+    7,
+);
+static HYPERPARAMETERTUNINGJOBCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterTuningJobConfig",
+        "com.amazonaws.sagemaker",
+        "HyperParameterTuningJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_STRATEGY,
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_STRATEGY_CONFIG,
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_HYPER_PARAMETER_TUNING_JOB_OBJECTIVE,
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_RESOURCE_LIMITS,
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_PARAMETER_RANGES,
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_TRAINING_JOB_EARLY_STOPPING_TYPE,
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_TUNING_JOB_COMPLETION_CRITERIA,
+        &HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_RANDOM_SEED,
+    ],
+);
+impl HyperParameterTuningJobConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HYPERPARAMETERTUNINGJOBCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HyperParameterTuningJobConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.strategy {
+            ser.write_string(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.strategy_config {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_STRATEGY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameter_tuning_job_objective {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_HYPER_PARAMETER_TUNING_JOB_OBJECTIVE, val)?;
+        }
+        if let Some(ref val) = self.resource_limits {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_RESOURCE_LIMITS, val)?;
+        }
+        if let Some(ref val) = self.parameter_ranges {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_PARAMETER_RANGES, val)?;
+        }
+        if let Some(ref val) = self.training_job_early_stopping_type {
+            ser.write_string(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_TRAINING_JOB_EARLY_STOPPING_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tuning_job_completion_criteria {
+            ser.write_struct(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_TUNING_JOB_COMPLETION_CRITERIA, val)?;
+        }
+        if let Some(ref val) = self.random_seed {
+            ser.write_integer(&HYPERPARAMETERTUNINGJOBCONFIG_MEMBER_RANDOM_SEED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HyperParameterTuningJobConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HYPERPARAMETERTUNINGJOBCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.strategy = Some(crate::types::HyperParameterTuningJobStrategyType::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.strategy_config = Some(crate::types::HyperParameterTuningJobStrategyConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job_objective = Some(crate::types::HyperParameterTuningJobObjective::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_limits = Some(crate::types::ResourceLimits::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameter_ranges = Some(crate::types::ParameterRanges::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_early_stopping_type =
+                            Some(crate::types::TrainingJobEarlyStoppingType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tuning_job_completion_criteria = Some(crate::types::TuningJobCompletionCriteria::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.random_seed = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HyperParameterTuningJobConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HyperParameterTuningJobConfig {
     /// Creates a new builder-style object to manufacture [`HyperParameterTuningJobConfig`](crate::types::HyperParameterTuningJobConfig).
     pub fn builder() -> crate::types::builders::HyperParameterTuningJobConfigBuilder {

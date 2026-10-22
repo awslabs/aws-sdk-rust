@@ -11,6 +11,8 @@ pub use crate::types::_link_association::LinkAssociation;
 
 pub use crate::types::_transit_gateway_connect_peer_association::TransitGatewayConnectPeerAssociation;
 
+pub use crate::types::_nat_gateway_support_value::NatGatewaySupportValue;
+
 pub use crate::types::_connect_attachment_options::ConnectAttachmentOptions;
 
 pub use crate::types::_connect_attachment::ConnectAttachment;
@@ -61,6 +63,8 @@ pub use crate::types::_route_table_identifier::RouteTableIdentifier;
 
 pub use crate::types::_core_network_segment_edge_identifier::CoreNetworkSegmentEdgeIdentifier;
 
+pub use crate::types::_core_network_network_function_group_identifier::CoreNetworkNetworkFunctionGroupIdentifier;
+
 pub use crate::types::_route_table_type::RouteTableType;
 
 pub use crate::types::_route_analysis::RouteAnalysis;
@@ -77,6 +81,8 @@ pub use crate::types::_peering_state::PeeringState;
 
 pub use crate::types::_route_analysis_endpoint_options_specification::RouteAnalysisEndpointOptionsSpecification;
 
+pub use crate::types::_nat_gateway_support_state::NatGatewaySupportState;
+
 pub use crate::types::_proposed_segment_change::ProposedSegmentChange;
 
 pub use crate::types::_proposed_network_function_group_change::ProposedNetworkFunctionGroupChange;
@@ -90,6 +96,8 @@ pub use crate::types::_customer_gateway_association_state::CustomerGatewayAssoci
 pub use crate::types::_link_association_state::LinkAssociationState;
 
 pub use crate::types::_transit_gateway_connect_peer_association_state::TransitGatewayConnectPeerAssociationState;
+
+pub use crate::types::_nat_rule_request::NatRuleRequest;
 
 pub use crate::types::_tunnel_protocol::TunnelProtocol;
 
@@ -127,8 +135,6 @@ pub use crate::types::_relationship::Relationship;
 
 pub use crate::types::_network_resource::NetworkResource;
 
-pub use crate::types::_core_network_network_function_group_identifier::CoreNetworkNetworkFunctionGroupIdentifier;
-
 pub use crate::types::_route_state::RouteState;
 
 pub use crate::types::_route_type::RouteType;
@@ -143,6 +149,8 @@ pub use crate::types::_route_analysis_endpoint_options::RouteAnalysisEndpointOpt
 
 pub use crate::types::_route_analysis_path::RouteAnalysisPath;
 
+pub use crate::types::_attachment_nat_configuration::AttachmentNatConfiguration;
+
 pub use crate::types::_attachment_routing_policy_association_summary::AttachmentRoutingPolicyAssociationSummary;
 
 pub use crate::types::_connect_peer_summary::ConnectPeerSummary;
@@ -154,6 +162,8 @@ pub use crate::types::_prefix_list_association::PrefixListAssociation;
 pub use crate::types::_core_network_routing_information::CoreNetworkRoutingInformation;
 
 pub use crate::types::_core_network_summary::CoreNetworkSummary;
+
+pub use crate::types::_nat_rule::NatRule;
 
 pub use crate::types::_attachment_error::AttachmentError;
 
@@ -186,6 +196,8 @@ pub use crate::types::_route_analysis_completion::RouteAnalysisCompletion;
 pub use crate::types::_routing_information_next_hop::RoutingInformationNextHop;
 
 pub use crate::types::_account_status::AccountStatus;
+
+pub use crate::types::_nat_rule_state::NatRuleState;
 
 pub use crate::types::_attachment_error_code::AttachmentErrorCode;
 
@@ -238,6 +250,8 @@ mod _attachment;
 mod _attachment_error;
 
 mod _attachment_error_code;
+
+mod _attachment_nat_configuration;
 
 mod _attachment_routing_policy_association_summary;
 
@@ -350,6 +364,16 @@ mod _link_association_state;
 mod _link_state;
 
 mod _location;
+
+mod _nat_gateway_support_state;
+
+mod _nat_gateway_support_value;
+
+mod _nat_rule;
+
+mod _nat_rule_request;
+
+mod _nat_rule_state;
 
 mod _network_function_group;
 

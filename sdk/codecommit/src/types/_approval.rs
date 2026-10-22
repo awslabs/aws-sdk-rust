@@ -19,6 +19,91 @@ impl Approval {
         self.approval_state.as_ref()
     }
 }
+static APPROVAL_MEMBER_USER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Approval$userArn", "com.amazonaws.codecommit", "Approval"),
+    ::aws_smithy_schema::ShapeType::String,
+    "userArn",
+    0,
+);
+static APPROVAL_MEMBER_APPROVAL_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Approval$approvalState", "com.amazonaws.codecommit", "Approval"),
+    ::aws_smithy_schema::ShapeType::String,
+    "approvalState",
+    1,
+);
+static APPROVAL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Approval", "com.amazonaws.codecommit", "Approval"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&APPROVAL_MEMBER_USER_ARN, &APPROVAL_MEMBER_APPROVAL_STATE],
+);
+impl Approval {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPROVAL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Approval {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_arn {
+            ser.write_string(&APPROVAL_MEMBER_USER_ARN, val)?;
+        }
+        if let Some(ref val) = self.approval_state {
+            ser.write_string(&APPROVAL_MEMBER_APPROVAL_STATE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ApprovalBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPROVAL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_state = Some(crate::types::ApprovalState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Approval {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Approval {
     /// Creates a new builder-style object to manufacture [`Approval`](crate::types::Approval).
     pub fn builder() -> crate::types::builders::ApprovalBuilder {

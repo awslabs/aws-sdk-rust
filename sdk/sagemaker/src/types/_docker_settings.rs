@@ -27,6 +27,142 @@ impl DockerSettings {
         self.rootless_docker.as_ref()
     }
 }
+static DOCKERSETTINGS_MEMBER_ENABLE_DOCKER_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DockerSettings$EnableDockerAccess",
+        "com.amazonaws.sagemaker",
+        "DockerSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EnableDockerAccess",
+    0,
+);
+static DOCKERSETTINGS_MEMBER_VPC_ONLY_TRUSTED_ACCOUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#VpcOnlyTrustedAccounts$member",
+        "com.amazonaws.sagemaker",
+        "VpcOnlyTrustedAccounts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOCKERSETTINGS_MEMBER_VPC_ONLY_TRUSTED_ACCOUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DockerSettings$VpcOnlyTrustedAccounts",
+        "com.amazonaws.sagemaker",
+        "DockerSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "VpcOnlyTrustedAccounts",
+    1,
+)
+.with_list_member(&DOCKERSETTINGS_MEMBER_VPC_ONLY_TRUSTED_ACCOUNTS_MEMBER);
+static DOCKERSETTINGS_MEMBER_ROOTLESS_DOCKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DockerSettings$RootlessDocker",
+        "com.amazonaws.sagemaker",
+        "DockerSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootlessDocker",
+    2,
+);
+static DOCKERSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DockerSettings", "com.amazonaws.sagemaker", "DockerSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCKERSETTINGS_MEMBER_ENABLE_DOCKER_ACCESS,
+        &DOCKERSETTINGS_MEMBER_VPC_ONLY_TRUSTED_ACCOUNTS,
+        &DOCKERSETTINGS_MEMBER_ROOTLESS_DOCKER,
+    ],
+);
+impl DockerSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCKERSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DockerSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_docker_access {
+            ser.write_string(&DOCKERSETTINGS_MEMBER_ENABLE_DOCKER_ACCESS, val.as_str())?;
+        }
+        if let Some(ref val) = self.vpc_only_trusted_accounts {
+            ser.write_list(
+                &DOCKERSETTINGS_MEMBER_VPC_ONLY_TRUSTED_ACCOUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.rootless_docker {
+            ser.write_string(&DOCKERSETTINGS_MEMBER_ROOTLESS_DOCKER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DockerSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCKERSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_docker_access = Some(crate::types::FeatureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_only_trusted_accounts = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rootless_docker = Some(crate::types::FeatureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DockerSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DockerSettings {
     /// Creates a new builder-style object to manufacture [`DockerSettings`](crate::types::DockerSettings).
     pub fn builder() -> crate::types::builders::DockerSettingsBuilder {

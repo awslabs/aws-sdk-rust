@@ -37,6 +37,157 @@ impl Repository {
         self.created_at.as_ref()
     }
 }
+static REPOSITORY_MEMBER_REPOSITORY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#Repository$repositoryArn",
+        "com.amazonaws.ecrpublic",
+        "Repository",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryArn",
+    0,
+);
+static REPOSITORY_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Repository$registryId", "com.amazonaws.ecrpublic", "Repository"),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    1,
+);
+static REPOSITORY_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#Repository$repositoryName",
+        "com.amazonaws.ecrpublic",
+        "Repository",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    2,
+);
+static REPOSITORY_MEMBER_REPOSITORY_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#Repository$repositoryUri",
+        "com.amazonaws.ecrpublic",
+        "Repository",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryUri",
+    3,
+);
+static REPOSITORY_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Repository$createdAt", "com.amazonaws.ecrpublic", "Repository"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    4,
+);
+static REPOSITORY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Repository", "com.amazonaws.ecrpublic", "Repository"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPOSITORY_MEMBER_REPOSITORY_ARN,
+        &REPOSITORY_MEMBER_REGISTRY_ID,
+        &REPOSITORY_MEMBER_REPOSITORY_NAME,
+        &REPOSITORY_MEMBER_REPOSITORY_URI,
+        &REPOSITORY_MEMBER_CREATED_AT,
+    ],
+);
+impl Repository {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPOSITORY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Repository {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_arn {
+            ser.write_string(&REPOSITORY_MEMBER_REPOSITORY_ARN, val)?;
+        }
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&REPOSITORY_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&REPOSITORY_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.repository_uri {
+            ser.write_string(&REPOSITORY_MEMBER_REPOSITORY_URI, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&REPOSITORY_MEMBER_CREATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RepositoryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPOSITORY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Repository {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Repository {
     /// Creates a new builder-style object to manufacture [`Repository`](crate::types::Repository).
     pub fn builder() -> crate::types::builders::RepositoryBuilder {

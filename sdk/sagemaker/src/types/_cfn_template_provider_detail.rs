@@ -39,6 +39,195 @@ impl CfnTemplateProviderDetail {
         self.stack_detail.as_ref()
     }
 }
+static CFNTEMPLATEPROVIDERDETAIL_MEMBER_TEMPLATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnTemplateProviderDetail$TemplateName",
+        "com.amazonaws.sagemaker",
+        "CfnTemplateProviderDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemplateName",
+    0,
+);
+static CFNTEMPLATEPROVIDERDETAIL_MEMBER_TEMPLATE_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnTemplateProviderDetail$TemplateURL",
+        "com.amazonaws.sagemaker",
+        "CfnTemplateProviderDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemplateURL",
+    1,
+);
+static CFNTEMPLATEPROVIDERDETAIL_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnTemplateProviderDetail$RoleARN",
+        "com.amazonaws.sagemaker",
+        "CfnTemplateProviderDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleARN",
+    2,
+);
+static CFNTEMPLATEPROVIDERDETAIL_MEMBER_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnStackParameters$member",
+        "com.amazonaws.sagemaker",
+        "CfnStackParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CFNTEMPLATEPROVIDERDETAIL_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnTemplateProviderDetail$Parameters",
+        "com.amazonaws.sagemaker",
+        "CfnTemplateProviderDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Parameters",
+    3,
+)
+.with_list_member(&CFNTEMPLATEPROVIDERDETAIL_MEMBER_PARAMETERS_MEMBER);
+static CFNTEMPLATEPROVIDERDETAIL_MEMBER_STACK_DETAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnTemplateProviderDetail$StackDetail",
+        "com.amazonaws.sagemaker",
+        "CfnTemplateProviderDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StackDetail",
+    4,
+);
+static CFNTEMPLATEPROVIDERDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnTemplateProviderDetail",
+        "com.amazonaws.sagemaker",
+        "CfnTemplateProviderDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CFNTEMPLATEPROVIDERDETAIL_MEMBER_TEMPLATE_NAME,
+        &CFNTEMPLATEPROVIDERDETAIL_MEMBER_TEMPLATE_URL,
+        &CFNTEMPLATEPROVIDERDETAIL_MEMBER_ROLE_ARN,
+        &CFNTEMPLATEPROVIDERDETAIL_MEMBER_PARAMETERS,
+        &CFNTEMPLATEPROVIDERDETAIL_MEMBER_STACK_DETAIL,
+    ],
+);
+impl CfnTemplateProviderDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CFNTEMPLATEPROVIDERDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CfnTemplateProviderDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.template_name {
+            ser.write_string(&CFNTEMPLATEPROVIDERDETAIL_MEMBER_TEMPLATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.template_url {
+            ser.write_string(&CFNTEMPLATEPROVIDERDETAIL_MEMBER_TEMPLATE_URL, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CFNTEMPLATEPROVIDERDETAIL_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_list(
+                &CFNTEMPLATEPROVIDERDETAIL_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CfnStackParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.stack_detail {
+            ser.write_struct(&CFNTEMPLATEPROVIDERDETAIL_MEMBER_STACK_DETAIL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CfnTemplateProviderDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CFNTEMPLATEPROVIDERDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CfnStackParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_detail = Some(crate::types::CfnStackDetail::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CfnTemplateProviderDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CfnTemplateProviderDetail {
     /// Creates a new builder-style object to manufacture [`CfnTemplateProviderDetail`](crate::types::CfnTemplateProviderDetail).
     pub fn builder() -> crate::types::builders::CfnTemplateProviderDetailBuilder {

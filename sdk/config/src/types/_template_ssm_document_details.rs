@@ -25,6 +25,104 @@ impl TemplateSsmDocumentDetails {
         self.document_version.as_deref()
     }
 }
+static TEMPLATESSMDOCUMENTDETAILS_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#TemplateSSMDocumentDetails$DocumentName",
+        "com.amazonaws.configservice",
+        "TemplateSSMDocumentDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    0,
+);
+static TEMPLATESSMDOCUMENTDETAILS_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#TemplateSSMDocumentDetails$DocumentVersion",
+        "com.amazonaws.configservice",
+        "TemplateSSMDocumentDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    1,
+);
+static TEMPLATESSMDOCUMENTDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#TemplateSSMDocumentDetails",
+        "com.amazonaws.configservice",
+        "TemplateSSMDocumentDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TEMPLATESSMDOCUMENTDETAILS_MEMBER_DOCUMENT_NAME,
+        &TEMPLATESSMDOCUMENTDETAILS_MEMBER_DOCUMENT_VERSION,
+    ],
+);
+impl TemplateSsmDocumentDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TEMPLATESSMDOCUMENTDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TemplateSsmDocumentDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.document_name;
+            ser.write_string(&TEMPLATESSMDOCUMENTDETAILS_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&TEMPLATESSMDOCUMENTDETAILS_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TemplateSsmDocumentDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TEMPLATESSMDOCUMENTDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.document_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TemplateSsmDocumentDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.document_name = builder.document_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TemplateSsmDocumentDetails {
     /// Creates a new builder-style object to manufacture [`TemplateSsmDocumentDetails`](crate::types::TemplateSsmDocumentDetails).
     pub fn builder() -> crate::types::builders::TemplateSsmDocumentDetailsBuilder {

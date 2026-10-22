@@ -14,6 +14,81 @@ impl ManagedQueryResultsEncryptionConfiguration {
         self.kms_key.deref()
     }
 }
+static MANAGEDQUERYRESULTSENCRYPTIONCONFIGURATION_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ManagedQueryResultsEncryptionConfiguration$KmsKey",
+        "com.amazonaws.athena",
+        "ManagedQueryResultsEncryptionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKey",
+    0,
+);
+static MANAGEDQUERYRESULTSENCRYPTIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ManagedQueryResultsEncryptionConfiguration",
+        "com.amazonaws.athena",
+        "ManagedQueryResultsEncryptionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&MANAGEDQUERYRESULTSENCRYPTIONCONFIGURATION_MEMBER_KMS_KEY],
+);
+impl ManagedQueryResultsEncryptionConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANAGEDQUERYRESULTSENCRYPTIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManagedQueryResultsEncryptionConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.kms_key;
+            ser.write_string(&MANAGEDQUERYRESULTSENCRYPTIONCONFIGURATION_MEMBER_KMS_KEY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManagedQueryResultsEncryptionConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANAGEDQUERYRESULTSENCRYPTIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.kms_key = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManagedQueryResultsEncryptionConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.kms_key = builder.kms_key.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ManagedQueryResultsEncryptionConfiguration {
     /// Creates a new builder-style object to manufacture [`ManagedQueryResultsEncryptionConfiguration`](crate::types::ManagedQueryResultsEncryptionConfiguration).
     pub fn builder() -> crate::types::builders::ManagedQueryResultsEncryptionConfigurationBuilder {

@@ -81,6 +81,265 @@ impl Grant {
         self.options.as_ref()
     }
 }
+static GRANT_MEMBER_GRANT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$GrantArn", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantArn",
+    0,
+);
+static GRANT_MEMBER_GRANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$GrantName", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantName",
+    1,
+);
+static GRANT_MEMBER_PARENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$ParentArn", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParentArn",
+    2,
+);
+static GRANT_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$LicenseArn", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    3,
+);
+static GRANT_MEMBER_GRANTEE_PRINCIPAL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Grant$GranteePrincipalArn",
+        "com.amazonaws.licensemanager",
+        "Grant",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GranteePrincipalArn",
+    4,
+);
+static GRANT_MEMBER_HOME_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$HomeRegion", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeRegion",
+    5,
+);
+static GRANT_MEMBER_GRANT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$GrantStatus", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantStatus",
+    6,
+);
+static GRANT_MEMBER_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$StatusReason", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusReason",
+    7,
+);
+static GRANT_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$Version", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Version",
+    8,
+);
+static GRANT_MEMBER_GRANTED_OPERATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#AllowedOperationList$member",
+        "com.amazonaws.licensemanager",
+        "AllowedOperationList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GRANT_MEMBER_GRANTED_OPERATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Grant$GrantedOperations",
+        "com.amazonaws.licensemanager",
+        "Grant",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "GrantedOperations",
+    9,
+)
+.with_list_member(&GRANT_MEMBER_GRANTED_OPERATIONS_MEMBER);
+static GRANT_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant$Options", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Options",
+    10,
+);
+static GRANT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Grant", "com.amazonaws.licensemanager", "Grant"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GRANT_MEMBER_GRANT_ARN,
+        &GRANT_MEMBER_GRANT_NAME,
+        &GRANT_MEMBER_PARENT_ARN,
+        &GRANT_MEMBER_LICENSE_ARN,
+        &GRANT_MEMBER_GRANTEE_PRINCIPAL_ARN,
+        &GRANT_MEMBER_HOME_REGION,
+        &GRANT_MEMBER_GRANT_STATUS,
+        &GRANT_MEMBER_STATUS_REASON,
+        &GRANT_MEMBER_VERSION,
+        &GRANT_MEMBER_GRANTED_OPERATIONS,
+        &GRANT_MEMBER_OPTIONS,
+    ],
+);
+impl Grant {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GRANT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Grant {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.grant_arn;
+            ser.write_string(&GRANT_MEMBER_GRANT_ARN, val)?;
+        }
+        {
+            let val = &self.grant_name;
+            ser.write_string(&GRANT_MEMBER_GRANT_NAME, val)?;
+        }
+        {
+            let val = &self.parent_arn;
+            ser.write_string(&GRANT_MEMBER_PARENT_ARN, val)?;
+        }
+        {
+            let val = &self.license_arn;
+            ser.write_string(&GRANT_MEMBER_LICENSE_ARN, val)?;
+        }
+        {
+            let val = &self.grantee_principal_arn;
+            ser.write_string(&GRANT_MEMBER_GRANTEE_PRINCIPAL_ARN, val)?;
+        }
+        {
+            let val = &self.home_region;
+            ser.write_string(&GRANT_MEMBER_HOME_REGION, val)?;
+        }
+        {
+            let val = &self.grant_status;
+            ser.write_string(&GRANT_MEMBER_GRANT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_reason {
+            ser.write_string(&GRANT_MEMBER_STATUS_REASON, val)?;
+        }
+        {
+            let val = &self.version;
+            ser.write_string(&GRANT_MEMBER_VERSION, val)?;
+        }
+        {
+            let val = &self.granted_operations;
+
+            ser.write_list(
+                &GRANT_MEMBER_GRANTED_OPERATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_struct(&GRANT_MEMBER_OPTIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GrantBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GRANT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.grant_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.grant_name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.parent_arn = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.license_arn = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.grantee_principal_arn = Some(deser.read_string(member)?);
+                }
+                Some(5) => {
+                    self.home_region = Some(deser.read_string(member)?);
+                }
+                Some(6) => {
+                    self.grant_status = Some(crate::types::GrantStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    self.version = Some(deser.read_string(member)?);
+                }
+                Some(9) => {
+                    self.granted_operations = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::AllowedOperation::from(
+                                deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                            ));
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some(crate::types::Options::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Grant {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.grant_arn = builder.grant_arn.or(Some(String::new()));
+        builder.grant_name = builder.grant_name.or(Some(String::new()));
+        builder.parent_arn = builder.parent_arn.or(Some(String::new()));
+        builder.license_arn = builder.license_arn.or(Some(String::new()));
+        builder.grantee_principal_arn = builder.grantee_principal_arn.or(Some(String::new()));
+        builder.home_region = builder.home_region.or(Some(String::new()));
+        builder.version = builder.version.or(Some(String::new()));
+        builder.granted_operations = builder.granted_operations.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Grant {
     /// Creates a new builder-style object to manufacture [`Grant`](crate::types::Grant).
     pub fn builder() -> crate::types::builders::GrantBuilder {

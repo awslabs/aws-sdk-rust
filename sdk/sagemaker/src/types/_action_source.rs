@@ -25,6 +25,119 @@ impl ActionSource {
         self.source_id.as_deref()
     }
 }
+static ACTIONSOURCE_MEMBER_SOURCE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ActionSource$SourceUri",
+        "com.amazonaws.sagemaker",
+        "ActionSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceUri",
+    0,
+);
+static ACTIONSOURCE_MEMBER_SOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ActionSource$SourceType",
+        "com.amazonaws.sagemaker",
+        "ActionSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceType",
+    1,
+);
+static ACTIONSOURCE_MEMBER_SOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ActionSource$SourceId", "com.amazonaws.sagemaker", "ActionSource"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceId",
+    2,
+);
+static ACTIONSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ActionSource", "com.amazonaws.sagemaker", "ActionSource"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONSOURCE_MEMBER_SOURCE_URI,
+        &ACTIONSOURCE_MEMBER_SOURCE_TYPE,
+        &ACTIONSOURCE_MEMBER_SOURCE_ID,
+    ],
+);
+impl ActionSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONSOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_uri {
+            ser.write_string(&ACTIONSOURCE_MEMBER_SOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.source_type {
+            ser.write_string(&ACTIONSOURCE_MEMBER_SOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.source_id {
+            ser.write_string(&ACTIONSOURCE_MEMBER_SOURCE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONSOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActionSource {
     /// Creates a new builder-style object to manufacture [`ActionSource`](crate::types::ActionSource).
     pub fn builder() -> crate::types::builders::ActionSourceBuilder {

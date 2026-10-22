@@ -21,6 +21,133 @@ impl ListVocabularyFiltersOutput {
         self.vocabulary_filters.as_deref().unwrap_or_default()
     }
 }
+static LISTVOCABULARYFILTERSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListVocabularyFiltersOutput$NextToken",
+        "com.amazonaws.transcribe.synthetic",
+        "ListVocabularyFiltersOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTVOCABULARYFILTERSOUTPUT_MEMBER_VOCABULARY_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#VocabularyFilters$member",
+        "com.amazonaws.transcribe",
+        "VocabularyFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTVOCABULARYFILTERSOUTPUT_MEMBER_VOCABULARY_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListVocabularyFiltersOutput$VocabularyFilters",
+        "com.amazonaws.transcribe.synthetic",
+        "ListVocabularyFiltersOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "VocabularyFilters",
+    1,
+)
+.with_list_member(&LISTVOCABULARYFILTERSOUTPUT_MEMBER_VOCABULARY_FILTERS_MEMBER);
+static LISTVOCABULARYFILTERSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListVocabularyFiltersOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "ListVocabularyFiltersOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTVOCABULARYFILTERSOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTVOCABULARYFILTERSOUTPUT_MEMBER_VOCABULARY_FILTERS,
+    ],
+)
+.with_original_name("ListVocabularyFiltersResponse");
+impl ListVocabularyFiltersOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTVOCABULARYFILTERSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListVocabularyFiltersOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTVOCABULARYFILTERSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.vocabulary_filters {
+            ser.write_list(
+                &LISTVOCABULARYFILTERSOUTPUT_MEMBER_VOCABULARY_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::VocabularyFilterInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_vocabulary_filters::builders::ListVocabularyFiltersOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTVOCABULARYFILTERSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::VocabularyFilterInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListVocabularyFiltersOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListVocabularyFiltersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

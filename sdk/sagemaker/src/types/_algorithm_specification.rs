@@ -128,6 +128,297 @@ impl AlgorithmSpecification {
         self.training_image_config.as_ref()
     }
 }
+static ALGORITHMSPECIFICATION_MEMBER_TRAINING_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification$TrainingImage",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingImage",
+    0,
+);
+static ALGORITHMSPECIFICATION_MEMBER_ALGORITHM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification$AlgorithmName",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AlgorithmName",
+    1,
+);
+static ALGORITHMSPECIFICATION_MEMBER_TRAINING_INPUT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification$TrainingInputMode",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingInputMode",
+    2,
+);
+static ALGORITHMSPECIFICATION_MEMBER_METRIC_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricDefinitionList$member",
+        "com.amazonaws.sagemaker",
+        "MetricDefinitionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ALGORITHMSPECIFICATION_MEMBER_METRIC_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification$MetricDefinitions",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MetricDefinitions",
+    3,
+)
+.with_list_member(&ALGORITHMSPECIFICATION_MEMBER_METRIC_DEFINITIONS_MEMBER);
+static ALGORITHMSPECIFICATION_MEMBER_ENABLE_SAGE_MAKER_METRICS_TIME_SERIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AlgorithmSpecification$EnableSageMakerMetricsTimeSeries",
+            "com.amazonaws.sagemaker",
+            "AlgorithmSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableSageMakerMetricsTimeSeries",
+        4,
+    );
+static ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingContainerEntrypoint$member",
+        "com.amazonaws.sagemaker",
+        "TrainingContainerEntrypoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification$ContainerEntrypoint",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerEntrypoint",
+    5,
+)
+.with_list_member(&ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER);
+static ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingContainerArguments$member",
+        "com.amazonaws.sagemaker",
+        "TrainingContainerArguments",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification$ContainerArguments",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerArguments",
+    6,
+)
+.with_list_member(&ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER);
+static ALGORITHMSPECIFICATION_MEMBER_TRAINING_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification$TrainingImageConfig",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrainingImageConfig",
+    7,
+);
+static ALGORITHMSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AlgorithmSpecification",
+        "com.amazonaws.sagemaker",
+        "AlgorithmSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ALGORITHMSPECIFICATION_MEMBER_TRAINING_IMAGE,
+        &ALGORITHMSPECIFICATION_MEMBER_ALGORITHM_NAME,
+        &ALGORITHMSPECIFICATION_MEMBER_TRAINING_INPUT_MODE,
+        &ALGORITHMSPECIFICATION_MEMBER_METRIC_DEFINITIONS,
+        &ALGORITHMSPECIFICATION_MEMBER_ENABLE_SAGE_MAKER_METRICS_TIME_SERIES,
+        &ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+        &ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+        &ALGORITHMSPECIFICATION_MEMBER_TRAINING_IMAGE_CONFIG,
+    ],
+);
+impl AlgorithmSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ALGORITHMSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AlgorithmSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_image {
+            ser.write_string(&ALGORITHMSPECIFICATION_MEMBER_TRAINING_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.algorithm_name {
+            ser.write_string(&ALGORITHMSPECIFICATION_MEMBER_ALGORITHM_NAME, val)?;
+        }
+        if let Some(ref val) = self.training_input_mode {
+            ser.write_string(&ALGORITHMSPECIFICATION_MEMBER_TRAINING_INPUT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.metric_definitions {
+            ser.write_list(
+                &ALGORITHMSPECIFICATION_MEMBER_METRIC_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MetricDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.enable_sage_maker_metrics_time_series {
+            ser.write_boolean(&ALGORITHMSPECIFICATION_MEMBER_ENABLE_SAGE_MAKER_METRICS_TIME_SERIES, *val)?;
+        }
+        if let Some(ref val) = self.container_entrypoint {
+            ser.write_list(
+                &ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.container_arguments {
+            ser.write_list(
+                &ALGORITHMSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.training_image_config {
+            ser.write_struct(&ALGORITHMSPECIFICATION_MEMBER_TRAINING_IMAGE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AlgorithmSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ALGORITHMSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_input_mode = Some(crate::types::TrainingInputMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_sage_maker_metrics_time_series = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_entrypoint = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_arguments = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_image_config = Some(crate::types::TrainingImageConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AlgorithmSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AlgorithmSpecification {
     /// Creates a new builder-style object to manufacture [`AlgorithmSpecification`](crate::types::AlgorithmSpecification).
     pub fn builder() -> crate::types::builders::AlgorithmSpecificationBuilder {

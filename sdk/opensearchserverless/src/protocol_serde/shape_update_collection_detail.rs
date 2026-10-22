@@ -63,6 +63,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "kmsKeyArn" => {
+                            builder = builder.set_kms_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "arn" => {
                             builder = builder.set_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

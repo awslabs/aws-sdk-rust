@@ -19,6 +19,106 @@ impl FSxLustreFileSystemConfig {
         self.file_system_path.as_deref()
     }
 }
+static FSXLUSTREFILESYSTEMCONFIG_MEMBER_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FSxLustreFileSystemConfig$FileSystemId",
+        "com.amazonaws.sagemaker",
+        "FSxLustreFileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemId",
+    0,
+);
+static FSXLUSTREFILESYSTEMCONFIG_MEMBER_FILE_SYSTEM_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FSxLustreFileSystemConfig$FileSystemPath",
+        "com.amazonaws.sagemaker",
+        "FSxLustreFileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemPath",
+    1,
+);
+static FSXLUSTREFILESYSTEMCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FSxLustreFileSystemConfig",
+        "com.amazonaws.sagemaker",
+        "FSxLustreFileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FSXLUSTREFILESYSTEMCONFIG_MEMBER_FILE_SYSTEM_ID,
+        &FSXLUSTREFILESYSTEMCONFIG_MEMBER_FILE_SYSTEM_PATH,
+    ],
+);
+impl FSxLustreFileSystemConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FSXLUSTREFILESYSTEMCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FSxLustreFileSystemConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_system_id {
+            ser.write_string(&FSXLUSTREFILESYSTEMCONFIG_MEMBER_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.file_system_path {
+            ser.write_string(&FSXLUSTREFILESYSTEMCONFIG_MEMBER_FILE_SYSTEM_PATH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FSxLustreFileSystemConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FSXLUSTREFILESYSTEMCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_path = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FSxLustreFileSystemConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FSxLustreFileSystemConfig {
     /// Creates a new builder-style object to manufacture [`FSxLustreFileSystemConfig`](crate::types::FSxLustreFileSystemConfig).
     pub fn builder() -> crate::types::builders::FSxLustreFileSystemConfigBuilder {

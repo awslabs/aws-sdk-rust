@@ -61,6 +61,253 @@ impl RelationalDatabaseBundle {
         self.is_active
     }
 }
+static RELATIONALDATABASEBUNDLE_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$bundleId",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bundleId",
+    0,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$name",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$price",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "price",
+    2,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_RAM_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$ramSizeInGb",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "ramSizeInGb",
+    3,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_DISK_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$diskSizeInGb",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "diskSizeInGb",
+    4,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_TRANSFER_PER_MONTH_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$transferPerMonthInGb",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "transferPerMonthInGb",
+    5,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_CPU_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$cpuCount",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "cpuCount",
+    6,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_IS_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$isEncrypted",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isEncrypted",
+    7,
+);
+static RELATIONALDATABASEBUNDLE_MEMBER_IS_ACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle$isActive",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isActive",
+    8,
+);
+static RELATIONALDATABASEBUNDLE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBundle",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBundle",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RELATIONALDATABASEBUNDLE_MEMBER_BUNDLE_ID,
+        &RELATIONALDATABASEBUNDLE_MEMBER_NAME,
+        &RELATIONALDATABASEBUNDLE_MEMBER_PRICE,
+        &RELATIONALDATABASEBUNDLE_MEMBER_RAM_SIZE_IN_GB,
+        &RELATIONALDATABASEBUNDLE_MEMBER_DISK_SIZE_IN_GB,
+        &RELATIONALDATABASEBUNDLE_MEMBER_TRANSFER_PER_MONTH_IN_GB,
+        &RELATIONALDATABASEBUNDLE_MEMBER_CPU_COUNT,
+        &RELATIONALDATABASEBUNDLE_MEMBER_IS_ENCRYPTED,
+        &RELATIONALDATABASEBUNDLE_MEMBER_IS_ACTIVE,
+    ],
+);
+impl RelationalDatabaseBundle {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RELATIONALDATABASEBUNDLE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RelationalDatabaseBundle {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&RELATIONALDATABASEBUNDLE_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&RELATIONALDATABASEBUNDLE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.price {
+            ser.write_float(&RELATIONALDATABASEBUNDLE_MEMBER_PRICE, *val)?;
+        }
+        if let Some(ref val) = self.ram_size_in_gb {
+            ser.write_float(&RELATIONALDATABASEBUNDLE_MEMBER_RAM_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.disk_size_in_gb {
+            ser.write_integer(&RELATIONALDATABASEBUNDLE_MEMBER_DISK_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.transfer_per_month_in_gb {
+            ser.write_integer(&RELATIONALDATABASEBUNDLE_MEMBER_TRANSFER_PER_MONTH_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.cpu_count {
+            ser.write_integer(&RELATIONALDATABASEBUNDLE_MEMBER_CPU_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.is_encrypted {
+            ser.write_boolean(&RELATIONALDATABASEBUNDLE_MEMBER_IS_ENCRYPTED, *val)?;
+        }
+        if let Some(ref val) = self.is_active {
+            ser.write_boolean(&RELATIONALDATABASEBUNDLE_MEMBER_IS_ACTIVE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RelationalDatabaseBundleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RELATIONALDATABASEBUNDLE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.price = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ram_size_in_gb = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transfer_per_month_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_encrypted = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_active = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RelationalDatabaseBundle {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RelationalDatabaseBundle {
     /// Creates a new builder-style object to manufacture [`RelationalDatabaseBundle`](crate::types::RelationalDatabaseBundle).
     pub fn builder() -> crate::types::builders::RelationalDatabaseBundleBuilder {

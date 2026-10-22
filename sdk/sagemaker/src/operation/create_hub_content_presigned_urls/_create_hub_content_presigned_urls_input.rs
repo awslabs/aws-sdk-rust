@@ -48,6 +48,215 @@ impl CreateHubContentPresignedUrlsInput {
         self.next_token.as_deref()
     }
 }
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    0,
+);
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput$HubContentType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentType",
+    1,
+);
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput$HubContentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentName",
+    2,
+);
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput$HubContentVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentVersion",
+    3,
+);
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput$AccessConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AccessConfig",
+    4,
+);
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    5,
+);
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    6,
+);
+static CREATEHUBCONTENTPRESIGNEDURLSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateHubContentPresignedUrlsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateHubContentPresignedUrlsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_NAME,
+        &CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_TYPE,
+        &CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_NAME,
+        &CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_VERSION,
+        &CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_ACCESS_CONFIG,
+        &CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_MAX_RESULTS,
+        &CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateHubContentPresignedUrlsRequest");
+impl CreateHubContentPresignedUrlsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEHUBCONTENTPRESIGNEDURLSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateHubContentPresignedUrlsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_type {
+            ser.write_string(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.hub_content_name {
+            ser.write_string(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_version {
+            ser.write_string(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_HUB_CONTENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.access_config {
+            ser.write_struct(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_ACCESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_hub_content_presigned_urls::builders::CreateHubContentPresignedUrlsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEHUBCONTENTPRESIGNEDURLSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_type = Some(crate::types::HubContentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_config = Some(crate::types::PresignedUrlAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateHubContentPresignedUrlsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hub_name = builder.hub_name.or(Some(String::new()));
+        builder.hub_content_name = builder.hub_content_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateHubContentPresignedUrlsInput {
     /// Creates a new builder-style object to manufacture [`CreateHubContentPresignedUrlsInput`](crate::operation::create_hub_content_presigned_urls::CreateHubContentPresignedUrlsInput).
     pub fn builder() -> crate::operation::create_hub_content_presigned_urls::builders::CreateHubContentPresignedUrlsInputBuilder {

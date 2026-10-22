@@ -25,6 +25,123 @@ impl ModelLifeCycle {
         self.stage_description.as_deref()
     }
 }
+static MODELLIFECYCLE_MEMBER_STAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelLifeCycle$Stage",
+        "com.amazonaws.sagemaker",
+        "ModelLifeCycle",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Stage",
+    0,
+);
+static MODELLIFECYCLE_MEMBER_STAGE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelLifeCycle$StageStatus",
+        "com.amazonaws.sagemaker",
+        "ModelLifeCycle",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StageStatus",
+    1,
+);
+static MODELLIFECYCLE_MEMBER_STAGE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelLifeCycle$StageDescription",
+        "com.amazonaws.sagemaker",
+        "ModelLifeCycle",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StageDescription",
+    2,
+);
+static MODELLIFECYCLE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelLifeCycle", "com.amazonaws.sagemaker", "ModelLifeCycle"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELLIFECYCLE_MEMBER_STAGE,
+        &MODELLIFECYCLE_MEMBER_STAGE_STATUS,
+        &MODELLIFECYCLE_MEMBER_STAGE_DESCRIPTION,
+    ],
+);
+impl ModelLifeCycle {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELLIFECYCLE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelLifeCycle {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stage {
+            ser.write_string(&MODELLIFECYCLE_MEMBER_STAGE, val)?;
+        }
+        if let Some(ref val) = self.stage_status {
+            ser.write_string(&MODELLIFECYCLE_MEMBER_STAGE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.stage_description {
+            ser.write_string(&MODELLIFECYCLE_MEMBER_STAGE_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelLifeCycleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELLIFECYCLE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelLifeCycle {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelLifeCycle {
     /// Creates a new builder-style object to manufacture [`ModelLifeCycle`](crate::types::ModelLifeCycle).
     pub fn builder() -> crate::types::builders::ModelLifeCycleBuilder {

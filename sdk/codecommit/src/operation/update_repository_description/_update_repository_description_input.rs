@@ -19,6 +19,109 @@ impl UpdateRepositoryDescriptionInput {
         self.repository_description.as_deref()
     }
 }
+static UPDATEREPOSITORYDESCRIPTIONINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryDescriptionInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryDescriptionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static UPDATEREPOSITORYDESCRIPTIONINPUT_MEMBER_REPOSITORY_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryDescriptionInput$repositoryDescription",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryDescriptionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryDescription",
+    1,
+);
+static UPDATEREPOSITORYDESCRIPTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryDescriptionInput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryDescriptionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEREPOSITORYDESCRIPTIONINPUT_MEMBER_REPOSITORY_NAME,
+        &UPDATEREPOSITORYDESCRIPTIONINPUT_MEMBER_REPOSITORY_DESCRIPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateRepositoryDescriptionInput");
+impl UpdateRepositoryDescriptionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEREPOSITORYDESCRIPTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateRepositoryDescriptionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&UPDATEREPOSITORYDESCRIPTIONINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.repository_description {
+            ser.write_string(&UPDATEREPOSITORYDESCRIPTIONINPUT_MEMBER_REPOSITORY_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEREPOSITORYDESCRIPTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateRepositoryDescriptionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateRepositoryDescriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryDescriptionInput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionInput).
     pub fn builder() -> crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder {

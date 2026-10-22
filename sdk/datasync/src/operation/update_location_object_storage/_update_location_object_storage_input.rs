@@ -125,6 +125,313 @@ impl ::std::fmt::Debug for UpdateLocationObjectStorageInput {
         formatter.finish()
     }
 }
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$ServerPort",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ServerPort",
+    1,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$ServerProtocol",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerProtocol",
+    2,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    3,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_HOSTNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$ServerHostname",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServerHostname",
+    4,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_ACCESS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$AccessKey",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessKey",
+    5,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SECRET_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$SecretKey",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretKey",
+    6,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$AgentArns",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AgentArns",
+    7,
+)
+.with_list_member(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS_MEMBER);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_CERTIFICATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$ServerCertificate",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "ServerCertificate",
+    8,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$CmkSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    9,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput$CustomSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    10,
+);
+static UPDATELOCATIONOBJECTSTORAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationObjectStorageInput",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationObjectStorageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_LOCATION_ARN,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_PORT,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_PROTOCOL,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SUBDIRECTORY,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_HOSTNAME,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_ACCESS_KEY,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SECRET_KEY,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_CERTIFICATE,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CMK_SECRET_CONFIG,
+        &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CUSTOM_SECRET_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateLocationObjectStorageRequest");
+impl UpdateLocationObjectStorageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATELOCATIONOBJECTSTORAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLocationObjectStorageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.server_port {
+            ser.write_integer(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_PORT, *val)?;
+        }
+        if let Some(ref val) = self.server_protocol {
+            ser.write_string(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.server_hostname {
+            ser.write_string(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_HOSTNAME, val)?;
+        }
+        if let Some(ref val) = self.access_key {
+            ser.write_string(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_ACCESS_KEY, val)?;
+        }
+        if let Some(ref val) = self.secret_key {
+            ser.write_string(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SECRET_KEY, val)?;
+        }
+        if let Some(ref val) = self.agent_arns {
+            ser.write_list(
+                &UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_AGENT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.server_certificate {
+            ser.write_blob(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_SERVER_CERTIFICATE, val.clone())?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&UPDATELOCATIONOBJECTSTORAGEINPUT_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATELOCATIONOBJECTSTORAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_protocol = Some(crate::types::ObjectStorageServerProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_hostname = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.server_certificate = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateLocationObjectStorageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.location_arn = builder.location_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateLocationObjectStorageInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationObjectStorageInput`](crate::operation::update_location_object_storage::UpdateLocationObjectStorageInput).
     pub fn builder() -> crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder {

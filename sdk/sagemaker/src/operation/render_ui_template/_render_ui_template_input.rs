@@ -32,6 +32,151 @@ impl RenderUiTemplateInput {
         self.human_task_ui_arn.as_deref()
     }
 }
+static RENDERUITEMPLATEINPUT_MEMBER_UI_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#RenderUiTemplateInput$UiTemplate",
+        "com.amazonaws.sagemaker.synthetic",
+        "RenderUiTemplateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UiTemplate",
+    0,
+);
+static RENDERUITEMPLATEINPUT_MEMBER_TASK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#RenderUiTemplateInput$Task",
+        "com.amazonaws.sagemaker.synthetic",
+        "RenderUiTemplateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Task",
+    1,
+);
+static RENDERUITEMPLATEINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#RenderUiTemplateInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "RenderUiTemplateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    2,
+);
+static RENDERUITEMPLATEINPUT_MEMBER_HUMAN_TASK_UI_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#RenderUiTemplateInput$HumanTaskUiArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "RenderUiTemplateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HumanTaskUiArn",
+    3,
+);
+static RENDERUITEMPLATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#RenderUiTemplateInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "RenderUiTemplateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RENDERUITEMPLATEINPUT_MEMBER_UI_TEMPLATE,
+        &RENDERUITEMPLATEINPUT_MEMBER_TASK,
+        &RENDERUITEMPLATEINPUT_MEMBER_ROLE_ARN,
+        &RENDERUITEMPLATEINPUT_MEMBER_HUMAN_TASK_UI_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RenderUiTemplateRequest");
+impl RenderUiTemplateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RENDERUITEMPLATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RenderUiTemplateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ui_template {
+            ser.write_struct(&RENDERUITEMPLATEINPUT_MEMBER_UI_TEMPLATE, val)?;
+        }
+        if let Some(ref val) = self.task {
+            ser.write_struct(&RENDERUITEMPLATEINPUT_MEMBER_TASK, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&RENDERUITEMPLATEINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.human_task_ui_arn {
+            ser.write_string(&RENDERUITEMPLATEINPUT_MEMBER_HUMAN_TASK_UI_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::render_ui_template::builders::RenderUiTemplateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RENDERUITEMPLATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ui_template = Some(crate::types::UiTemplate::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task = Some(crate::types::RenderableTask::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_task_ui_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RenderUiTemplateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RenderUiTemplateInput {
     /// Creates a new builder-style object to manufacture [`RenderUiTemplateInput`](crate::operation::render_ui_template::RenderUiTemplateInput).
     pub fn builder() -> crate::operation::render_ui_template::builders::RenderUiTemplateInputBuilder {

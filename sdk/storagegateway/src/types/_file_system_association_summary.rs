@@ -31,6 +31,150 @@ impl FileSystemAssociationSummary {
         self.gateway_arn.as_deref()
     }
 }
+static FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationSummary$FileSystemAssociationId",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemAssociationId",
+    0,
+);
+static FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#FileSystemAssociationSummary$FileSystemAssociationARN",
+            "com.amazonaws.storagegateway",
+            "FileSystemAssociationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FileSystemAssociationARN",
+        1,
+    );
+static FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#FileSystemAssociationSummary$FileSystemAssociationStatus",
+            "com.amazonaws.storagegateway",
+            "FileSystemAssociationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FileSystemAssociationStatus",
+        2,
+    );
+static FILESYSTEMASSOCIATIONSUMMARY_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationSummary$GatewayARN",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    3,
+);
+static FILESYSTEMASSOCIATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationSummary",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_ID,
+        &FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_ARN,
+        &FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS,
+        &FILESYSTEMASSOCIATIONSUMMARY_MEMBER_GATEWAY_ARN,
+    ],
+);
+impl FileSystemAssociationSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILESYSTEMASSOCIATIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileSystemAssociationSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_system_association_id {
+            ser.write_string(&FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.file_system_association_arn {
+            ser.write_string(&FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.file_system_association_status {
+            ser.write_string(&FILESYSTEMASSOCIATIONSUMMARY_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS, val)?;
+        }
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&FILESYSTEMASSOCIATIONSUMMARY_MEMBER_GATEWAY_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileSystemAssociationSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILESYSTEMASSOCIATIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_association_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_association_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileSystemAssociationSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileSystemAssociationSummary {
     /// Creates a new builder-style object to manufacture [`FileSystemAssociationSummary`](crate::types::FileSystemAssociationSummary).
     pub fn builder() -> crate::types::builders::FileSystemAssociationSummaryBuilder {

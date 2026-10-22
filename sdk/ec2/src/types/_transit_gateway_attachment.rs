@@ -24,6 +24,8 @@ pub struct TransitGatewayAttachment {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags for the attachment.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The state of NAT gateway support for the attachment. Only the owner of the transit gateway receives this parameter.</p>
+    pub nat_gateway_support: ::std::option::Option<crate::types::TransitGatewayAttachmentNatGatewaySupportState>,
 }
 impl TransitGatewayAttachment {
     /// <p>The ID of the attachment.</p>
@@ -68,6 +70,10 @@ impl TransitGatewayAttachment {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The state of NAT gateway support for the attachment. Only the owner of the transit gateway receives this parameter.</p>
+    pub fn nat_gateway_support(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentNatGatewaySupportState> {
+        self.nat_gateway_support.as_ref()
+    }
 }
 impl TransitGatewayAttachment {
     /// Creates a new builder-style object to manufacture [`TransitGatewayAttachment`](crate::types::TransitGatewayAttachment).
@@ -90,6 +96,7 @@ pub struct TransitGatewayAttachmentBuilder {
     pub(crate) association: ::std::option::Option<crate::types::TransitGatewayAttachmentAssociation>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) nat_gateway_support: ::std::option::Option<crate::types::TransitGatewayAttachmentNatGatewaySupportState>,
 }
 impl TransitGatewayAttachmentBuilder {
     /// <p>The ID of the attachment.</p>
@@ -238,6 +245,20 @@ impl TransitGatewayAttachmentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The state of NAT gateway support for the attachment. Only the owner of the transit gateway receives this parameter.</p>
+    pub fn nat_gateway_support(mut self, input: crate::types::TransitGatewayAttachmentNatGatewaySupportState) -> Self {
+        self.nat_gateway_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of NAT gateway support for the attachment. Only the owner of the transit gateway receives this parameter.</p>
+    pub fn set_nat_gateway_support(mut self, input: ::std::option::Option<crate::types::TransitGatewayAttachmentNatGatewaySupportState>) -> Self {
+        self.nat_gateway_support = input;
+        self
+    }
+    /// <p>The state of NAT gateway support for the attachment. Only the owner of the transit gateway receives this parameter.</p>
+    pub fn get_nat_gateway_support(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentNatGatewaySupportState> {
+        &self.nat_gateway_support
+    }
     /// Consumes the builder and constructs a [`TransitGatewayAttachment`](crate::types::TransitGatewayAttachment).
     pub fn build(self) -> crate::types::TransitGatewayAttachment {
         crate::types::TransitGatewayAttachment {
@@ -251,6 +272,7 @@ impl TransitGatewayAttachmentBuilder {
             association: self.association,
             creation_time: self.creation_time,
             tags: self.tags,
+            nat_gateway_support: self.nat_gateway_support,
         }
     }
 }

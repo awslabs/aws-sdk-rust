@@ -102,6 +102,262 @@ impl DocumentClassifierInputDataConfig {
         self.document_reader_config.as_ref()
     }
 }
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DATA_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$DataFormat",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataFormat",
+    0,
+);
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$S3Uri",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    1,
+);
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_TEST_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$TestS3Uri",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TestS3Uri",
+    2,
+);
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_LABEL_DELIMITER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$LabelDelimiter",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelDelimiter",
+    3,
+);
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#DocumentClassifierAugmentedManifestsList$member",
+            "com.amazonaws.comprehend",
+            "DocumentClassifierAugmentedManifestsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$AugmentedManifests",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AugmentedManifests",
+    4,
+)
+.with_list_member(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS_MEMBER);
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$DocumentType",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentType",
+    5,
+);
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$Documents",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Documents",
+    6,
+);
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENT_READER_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#DocumentClassifierInputDataConfig$DocumentReaderConfig",
+            "com.amazonaws.comprehend",
+            "DocumentClassifierInputDataConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DocumentReaderConfig",
+        7,
+    );
+static DOCUMENTCLASSIFIERINPUTDATACONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassifierInputDataConfig",
+        "com.amazonaws.comprehend",
+        "DocumentClassifierInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DATA_FORMAT,
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_S3_URI,
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_TEST_S3_URI,
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_LABEL_DELIMITER,
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS,
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENT_TYPE,
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENTS,
+        &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENT_READER_CONFIG,
+    ],
+);
+impl DocumentClassifierInputDataConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTCLASSIFIERINPUTDATACONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentClassifierInputDataConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.data_format {
+            ser.write_string(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DATA_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_uri {
+            ser.write_string(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.test_s3_uri {
+            ser.write_string(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_TEST_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.label_delimiter {
+            ser.write_string(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_LABEL_DELIMITER, val)?;
+        }
+        if let Some(ref val) = self.augmented_manifests {
+            ser.write_list(
+                &DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AugmentedManifestsListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.document_type {
+            ser.write_string(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.documents {
+            ser.write_struct(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENTS, val)?;
+        }
+        if let Some(ref val) = self.document_reader_config {
+            ser.write_struct(&DOCUMENTCLASSIFIERINPUTDATACONFIG_MEMBER_DOCUMENT_READER_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentClassifierInputDataConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENTCLASSIFIERINPUTDATACONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_format = Some(crate::types::DocumentClassifierDataFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.test_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_delimiter = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.augmented_manifests = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AugmentedManifestsListItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_type = Some(crate::types::DocumentClassifierDocumentTypeFormat::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.documents = Some(crate::types::DocumentClassifierDocuments::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_reader_config = Some(crate::types::DocumentReaderConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DocumentClassifierInputDataConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DocumentClassifierInputDataConfig {
     /// Creates a new builder-style object to manufacture [`DocumentClassifierInputDataConfig`](crate::types::DocumentClassifierInputDataConfig).
     pub fn builder() -> crate::types::builders::DocumentClassifierInputDataConfigBuilder {

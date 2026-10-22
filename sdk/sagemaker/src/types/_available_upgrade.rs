@@ -21,6 +21,118 @@ impl AvailableUpgrade {
         self.release_notes.as_deref().unwrap_or_default()
     }
 }
+static AVAILABLEUPGRADE_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AvailableUpgrade$Version",
+        "com.amazonaws.sagemaker",
+        "AvailableUpgrade",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Version",
+    0,
+);
+static AVAILABLEUPGRADE_MEMBER_RELEASE_NOTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReleaseNotesList$member",
+        "com.amazonaws.sagemaker",
+        "ReleaseNotesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static AVAILABLEUPGRADE_MEMBER_RELEASE_NOTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AvailableUpgrade$ReleaseNotes",
+        "com.amazonaws.sagemaker",
+        "AvailableUpgrade",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ReleaseNotes",
+    1,
+)
+.with_list_member(&AVAILABLEUPGRADE_MEMBER_RELEASE_NOTES_MEMBER);
+static AVAILABLEUPGRADE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AvailableUpgrade", "com.amazonaws.sagemaker", "AvailableUpgrade"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AVAILABLEUPGRADE_MEMBER_VERSION, &AVAILABLEUPGRADE_MEMBER_RELEASE_NOTES],
+);
+impl AvailableUpgrade {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AVAILABLEUPGRADE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AvailableUpgrade {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.version {
+            ser.write_string(&AVAILABLEUPGRADE_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.release_notes {
+            ser.write_list(
+                &AVAILABLEUPGRADE_MEMBER_RELEASE_NOTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AvailableUpgradeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AVAILABLEUPGRADE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.release_notes = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AvailableUpgrade {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AvailableUpgrade {
     /// Creates a new builder-style object to manufacture [`AvailableUpgrade`](crate::types::AvailableUpgrade).
     pub fn builder() -> crate::types::builders::AvailableUpgradeBuilder {

@@ -24,6 +24,133 @@ impl AttachClusterNodeNetworkInterfaceInput {
         self.network_interface_id.as_deref()
     }
 }
+static ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AttachClusterNodeNetworkInterfaceInput$ClusterName",
+        "com.amazonaws.sagemaker.synthetic",
+        "AttachClusterNodeNetworkInterfaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    0,
+);
+static ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_NODE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AttachClusterNodeNetworkInterfaceInput$NodeId",
+        "com.amazonaws.sagemaker.synthetic",
+        "AttachClusterNodeNetworkInterfaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeId",
+    1,
+);
+static ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_NETWORK_INTERFACE_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#AttachClusterNodeNetworkInterfaceInput$NetworkInterfaceId",
+            "com.amazonaws.sagemaker.synthetic",
+            "AttachClusterNodeNetworkInterfaceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NetworkInterfaceId",
+        2,
+    );
+static ATTACHCLUSTERNODENETWORKINTERFACEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#AttachClusterNodeNetworkInterfaceInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "AttachClusterNodeNetworkInterfaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_CLUSTER_NAME,
+        &ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_NODE_ID,
+        &ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_NETWORK_INTERFACE_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AttachClusterNodeNetworkInterfaceRequest");
+impl AttachClusterNodeNetworkInterfaceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ATTACHCLUSTERNODENETWORKINTERFACEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AttachClusterNodeNetworkInterfaceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.node_id {
+            ser.write_string(&ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_NODE_ID, val)?;
+        }
+        if let Some(ref val) = self.network_interface_id {
+            ser.write_string(&ATTACHCLUSTERNODENETWORKINTERFACEINPUT_MEMBER_NETWORK_INTERFACE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::attach_cluster_node_network_interface::builders::AttachClusterNodeNetworkInterfaceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ATTACHCLUSTERNODENETWORKINTERFACEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AttachClusterNodeNetworkInterfaceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_name = builder.cluster_name.or(Some(String::new()));
+        builder.node_id = builder.node_id.or(Some(String::new()));
+        builder.network_interface_id = builder.network_interface_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AttachClusterNodeNetworkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`AttachClusterNodeNetworkInterfaceInput`](crate::operation::attach_cluster_node_network_interface::AttachClusterNodeNetworkInterfaceInput).
     pub fn builder() -> crate::operation::attach_cluster_node_network_interface::builders::AttachClusterNodeNetworkInterfaceInputBuilder {

@@ -26,6 +26,121 @@ impl MlflowConfig {
         self.mlflow_run_name.as_deref()
     }
 }
+static MLFLOWCONFIG_MEMBER_MLFLOW_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MlflowConfig$MlflowResourceArn",
+        "com.amazonaws.sagemaker",
+        "MlflowConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MlflowResourceArn",
+    0,
+);
+static MLFLOWCONFIG_MEMBER_MLFLOW_EXPERIMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MlflowConfig$MlflowExperimentName",
+        "com.amazonaws.sagemaker",
+        "MlflowConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MlflowExperimentName",
+    1,
+);
+static MLFLOWCONFIG_MEMBER_MLFLOW_RUN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MlflowConfig$MlflowRunName",
+        "com.amazonaws.sagemaker",
+        "MlflowConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MlflowRunName",
+    2,
+);
+static MLFLOWCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MlflowConfig", "com.amazonaws.sagemaker", "MlflowConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MLFLOWCONFIG_MEMBER_MLFLOW_RESOURCE_ARN,
+        &MLFLOWCONFIG_MEMBER_MLFLOW_EXPERIMENT_NAME,
+        &MLFLOWCONFIG_MEMBER_MLFLOW_RUN_NAME,
+    ],
+);
+impl MlflowConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MLFLOWCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MlflowConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.mlflow_resource_arn;
+            ser.write_string(&MLFLOWCONFIG_MEMBER_MLFLOW_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.mlflow_experiment_name {
+            ser.write_string(&MLFLOWCONFIG_MEMBER_MLFLOW_EXPERIMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.mlflow_run_name {
+            ser.write_string(&MLFLOWCONFIG_MEMBER_MLFLOW_RUN_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MlflowConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MLFLOWCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.mlflow_resource_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mlflow_experiment_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mlflow_run_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MlflowConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.mlflow_resource_arn = builder.mlflow_resource_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MlflowConfig {
     /// Creates a new builder-style object to manufacture [`MlflowConfig`](crate::types::MlflowConfig).
     pub fn builder() -> crate::types::builders::MlflowConfigBuilder {

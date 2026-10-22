@@ -16775,6 +16775,40 @@ impl From<crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservati
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_transit_gateway_attachment_nat_configuration::GetTransitGatewayAttachmentNatConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_transit_gateway_attachment_nat_configuration::GetTransitGatewayAttachmentNatConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_transit_gateway_attachment_nat_configuration::GetTransitGatewayAttachmentNatConfigurationError> for Error {
+    fn from(err: crate::operation::get_transit_gateway_attachment_nat_configuration::GetTransitGatewayAttachmentNatConfigurationError) -> Self {
+        match err {
+            crate::operation::get_transit_gateway_attachment_nat_configuration::GetTransitGatewayAttachmentNatConfigurationError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsError,
             R,
         >,
@@ -18987,6 +19021,40 @@ impl From<crate::operation::modify_transit_gateway::ModifyTransitGatewayError> f
     fn from(err: crate::operation::modify_transit_gateway::ModifyTransitGatewayError) -> Self {
         match err {
             crate::operation::modify_transit_gateway::ModifyTransitGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_transit_gateway_attachment_nat_configuration::ModifyTransitGatewayAttachmentNatConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_transit_gateway_attachment_nat_configuration::ModifyTransitGatewayAttachmentNatConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_transit_gateway_attachment_nat_configuration::ModifyTransitGatewayAttachmentNatConfigurationError> for Error {
+    fn from(err: crate::operation::modify_transit_gateway_attachment_nat_configuration::ModifyTransitGatewayAttachmentNatConfigurationError) -> Self {
+        match err {
+            crate::operation::modify_transit_gateway_attachment_nat_configuration::ModifyTransitGatewayAttachmentNatConfigurationError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }

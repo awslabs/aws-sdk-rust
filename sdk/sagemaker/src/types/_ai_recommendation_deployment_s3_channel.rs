@@ -19,6 +19,106 @@ impl AiRecommendationDeploymentS3Channel {
         self.uri.as_deref()
     }
 }
+static AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_MEMBER_CHANNEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentS3Channel$ChannelName",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentS3Channel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelName",
+    0,
+);
+static AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_MEMBER_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentS3Channel$Uri",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentS3Channel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Uri",
+    1,
+);
+static AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentS3Channel",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentS3Channel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_MEMBER_CHANNEL_NAME,
+        &AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_MEMBER_URI,
+    ],
+);
+impl AiRecommendationDeploymentS3Channel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiRecommendationDeploymentS3Channel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.channel_name {
+            ser.write_string(&AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_MEMBER_CHANNEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.uri {
+            ser.write_string(&AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_MEMBER_URI, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiRecommendationDeploymentS3ChannelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIRECOMMENDATIONDEPLOYMENTS3CHANNEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.uri = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiRecommendationDeploymentS3Channel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiRecommendationDeploymentS3Channel {
     /// Creates a new builder-style object to manufacture [`AiRecommendationDeploymentS3Channel`](crate::types::AiRecommendationDeploymentS3Channel).
     pub fn builder() -> crate::types::builders::AiRecommendationDeploymentS3ChannelBuilder {

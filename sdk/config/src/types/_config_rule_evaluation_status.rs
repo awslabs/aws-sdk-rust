@@ -110,6 +110,380 @@ impl ConfigRuleEvaluationStatus {
         self.last_debug_log_delivery_time.as_ref()
     }
 }
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$ConfigRuleName",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleName",
+    0,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$ConfigRuleArn",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleArn",
+    1,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$ConfigRuleId",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleId",
+    2,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_SUCCESSFUL_INVOCATION_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastSuccessfulInvocationTime",
+            "com.amazonaws.configservice",
+            "ConfigRuleEvaluationStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastSuccessfulInvocationTime",
+        3,
+    );
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_FAILED_INVOCATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastFailedInvocationTime",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastFailedInvocationTime",
+    4,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_SUCCESSFUL_EVALUATION_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastSuccessfulEvaluationTime",
+            "com.amazonaws.configservice",
+            "ConfigRuleEvaluationStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastSuccessfulEvaluationTime",
+        5,
+    );
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_FAILED_EVALUATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastFailedEvaluationTime",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastFailedEvaluationTime",
+    6,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_FIRST_ACTIVATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$FirstActivatedTime",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "FirstActivatedTime",
+    7,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEACTIVATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastDeactivatedTime",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastDeactivatedTime",
+    8,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastErrorCode",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastErrorCode",
+    9,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastErrorMessage",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastErrorMessage",
+    10,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_FIRST_EVALUATION_STARTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$FirstEvaluationStarted",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "FirstEvaluationStarted",
+    11,
+);
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastDebugLogDeliveryStatus",
+            "com.amazonaws.configservice",
+            "ConfigRuleEvaluationStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "LastDebugLogDeliveryStatus",
+        12,
+    );
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_STATUS_REASON: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastDebugLogDeliveryStatusReason",
+            "com.amazonaws.configservice",
+            "ConfigRuleEvaluationStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "LastDebugLogDeliveryStatusReason",
+        13,
+    );
+static CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus$LastDebugLogDeliveryTime",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastDebugLogDeliveryTime",
+    14,
+);
+static CONFIGRULEEVALUATIONSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigRuleEvaluationStatus",
+        "com.amazonaws.configservice",
+        "ConfigRuleEvaluationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_NAME,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_ARN,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_ID,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_SUCCESSFUL_INVOCATION_TIME,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_FAILED_INVOCATION_TIME,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_SUCCESSFUL_EVALUATION_TIME,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_FAILED_EVALUATION_TIME,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_FIRST_ACTIVATED_TIME,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEACTIVATED_TIME,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_ERROR_CODE,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_ERROR_MESSAGE,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_FIRST_EVALUATION_STARTED,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_STATUS,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_STATUS_REASON,
+        &CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_TIME,
+    ],
+);
+impl ConfigRuleEvaluationStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFIGRULEEVALUATIONSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConfigRuleEvaluationStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.config_rule_name {
+            ser.write_string(&CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.config_rule_arn {
+            ser.write_string(&CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_ARN, val)?;
+        }
+        if let Some(ref val) = self.config_rule_id {
+            ser.write_string(&CONFIGRULEEVALUATIONSTATUS_MEMBER_CONFIG_RULE_ID, val)?;
+        }
+        if let Some(ref val) = self.last_successful_invocation_time {
+            ser.write_timestamp(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_SUCCESSFUL_INVOCATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_failed_invocation_time {
+            ser.write_timestamp(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_FAILED_INVOCATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_successful_evaluation_time {
+            ser.write_timestamp(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_SUCCESSFUL_EVALUATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_failed_evaluation_time {
+            ser.write_timestamp(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_FAILED_EVALUATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.first_activated_time {
+            ser.write_timestamp(&CONFIGRULEEVALUATIONSTATUS_MEMBER_FIRST_ACTIVATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_deactivated_time {
+            ser.write_timestamp(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEACTIVATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_error_code {
+            ser.write_string(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.last_error_message {
+            ser.write_string(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_ERROR_MESSAGE, val)?;
+        }
+        {
+            let val = &self.first_evaluation_started;
+            ser.write_boolean(&CONFIGRULEEVALUATIONSTATUS_MEMBER_FIRST_EVALUATION_STARTED, *val)?;
+        }
+        if let Some(ref val) = self.last_debug_log_delivery_status {
+            ser.write_string(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_STATUS, val)?;
+        }
+        if let Some(ref val) = self.last_debug_log_delivery_status_reason {
+            ser.write_string(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_STATUS_REASON, val)?;
+        }
+        if let Some(ref val) = self.last_debug_log_delivery_time {
+            ser.write_timestamp(&CONFIGRULEEVALUATIONSTATUS_MEMBER_LAST_DEBUG_LOG_DELIVERY_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConfigRuleEvaluationStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFIGRULEEVALUATIONSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_successful_invocation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_failed_invocation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_successful_evaluation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_failed_evaluation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.first_activated_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_deactivated_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    self.first_evaluation_started = Some(deser.read_boolean(member)?);
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_debug_log_delivery_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_debug_log_delivery_status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_debug_log_delivery_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConfigRuleEvaluationStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConfigRuleEvaluationStatus {
     /// Creates a new builder-style object to manufacture [`ConfigRuleEvaluationStatus`](crate::types::ConfigRuleEvaluationStatus).
     pub fn builder() -> crate::types::builders::ConfigRuleEvaluationStatusBuilder {

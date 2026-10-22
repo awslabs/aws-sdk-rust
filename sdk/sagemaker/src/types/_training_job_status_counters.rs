@@ -37,6 +37,169 @@ impl TrainingJobStatusCounters {
         self.stopped
     }
 }
+static TRAININGJOBSTATUSCOUNTERS_MEMBER_COMPLETED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobStatusCounters$Completed",
+        "com.amazonaws.sagemaker",
+        "TrainingJobStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Completed",
+    0,
+);
+static TRAININGJOBSTATUSCOUNTERS_MEMBER_IN_PROGRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobStatusCounters$InProgress",
+        "com.amazonaws.sagemaker",
+        "TrainingJobStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InProgress",
+    1,
+);
+static TRAININGJOBSTATUSCOUNTERS_MEMBER_RETRYABLE_ERROR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobStatusCounters$RetryableError",
+        "com.amazonaws.sagemaker",
+        "TrainingJobStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RetryableError",
+    2,
+);
+static TRAININGJOBSTATUSCOUNTERS_MEMBER_NON_RETRYABLE_ERROR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobStatusCounters$NonRetryableError",
+        "com.amazonaws.sagemaker",
+        "TrainingJobStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "NonRetryableError",
+    3,
+);
+static TRAININGJOBSTATUSCOUNTERS_MEMBER_STOPPED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobStatusCounters$Stopped",
+        "com.amazonaws.sagemaker",
+        "TrainingJobStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Stopped",
+    4,
+);
+static TRAININGJOBSTATUSCOUNTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobStatusCounters",
+        "com.amazonaws.sagemaker",
+        "TrainingJobStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGJOBSTATUSCOUNTERS_MEMBER_COMPLETED,
+        &TRAININGJOBSTATUSCOUNTERS_MEMBER_IN_PROGRESS,
+        &TRAININGJOBSTATUSCOUNTERS_MEMBER_RETRYABLE_ERROR,
+        &TRAININGJOBSTATUSCOUNTERS_MEMBER_NON_RETRYABLE_ERROR,
+        &TRAININGJOBSTATUSCOUNTERS_MEMBER_STOPPED,
+    ],
+);
+impl TrainingJobStatusCounters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGJOBSTATUSCOUNTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingJobStatusCounters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.completed {
+            ser.write_integer(&TRAININGJOBSTATUSCOUNTERS_MEMBER_COMPLETED, *val)?;
+        }
+        if let Some(ref val) = self.in_progress {
+            ser.write_integer(&TRAININGJOBSTATUSCOUNTERS_MEMBER_IN_PROGRESS, *val)?;
+        }
+        if let Some(ref val) = self.retryable_error {
+            ser.write_integer(&TRAININGJOBSTATUSCOUNTERS_MEMBER_RETRYABLE_ERROR, *val)?;
+        }
+        if let Some(ref val) = self.non_retryable_error {
+            ser.write_integer(&TRAININGJOBSTATUSCOUNTERS_MEMBER_NON_RETRYABLE_ERROR, *val)?;
+        }
+        if let Some(ref val) = self.stopped {
+            ser.write_integer(&TRAININGJOBSTATUSCOUNTERS_MEMBER_STOPPED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingJobStatusCountersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGJOBSTATUSCOUNTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completed = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.in_progress = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retryable_error = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.non_retryable_error = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopped = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingJobStatusCounters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingJobStatusCounters {
     /// Creates a new builder-style object to manufacture [`TrainingJobStatusCounters`](crate::types::TrainingJobStatusCounters).
     pub fn builder() -> crate::types::builders::TrainingJobStatusCountersBuilder {

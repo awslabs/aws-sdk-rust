@@ -63,6 +63,209 @@ impl ListDeploymentInstancesInput {
         self.instance_type_filter.as_deref().unwrap_or_default()
     }
 }
+static LISTDEPLOYMENTINSTANCESINPUT_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentInstancesInput$deploymentId",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static LISTDEPLOYMENTINSTANCESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentInstancesInput$nextToken",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    1,
+);
+static LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_STATUS_FILTER_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#InstanceStatusList$member",
+            "com.amazonaws.codedeploy",
+            "InstanceStatusList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_STATUS_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentInstancesInput$instanceStatusFilter",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "instanceStatusFilter",
+    2,
+)
+.with_list_member(&LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_STATUS_FILTER_MEMBER);
+static LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_TYPE_FILTER_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#InstanceTypeList$member",
+            "com.amazonaws.codedeploy",
+            "InstanceTypeList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_TYPE_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentInstancesInput$instanceTypeFilter",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "instanceTypeFilter",
+    3,
+)
+.with_list_member(&LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_TYPE_FILTER_MEMBER);
+static LISTDEPLOYMENTINSTANCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListDeploymentInstancesInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListDeploymentInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTDEPLOYMENTINSTANCESINPUT_MEMBER_DEPLOYMENT_ID,
+        &LISTDEPLOYMENTINSTANCESINPUT_MEMBER_NEXT_TOKEN,
+        &LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_STATUS_FILTER,
+        &LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_TYPE_FILTER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListDeploymentInstancesInput");
+impl ListDeploymentInstancesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTDEPLOYMENTINSTANCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListDeploymentInstancesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&LISTDEPLOYMENTINSTANCESINPUT_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTDEPLOYMENTINSTANCESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.instance_status_filter {
+            ser.write_list(
+                &LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_STATUS_FILTER,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_type_filter {
+            ser.write_list(
+                &LISTDEPLOYMENTINSTANCESINPUT_MEMBER_INSTANCE_TYPE_FILTER,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTDEPLOYMENTINSTANCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_status_filter = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstanceStatus::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type_filter = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstanceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListDeploymentInstancesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.deployment_id = builder.deployment_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListDeploymentInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentInstancesInput`](crate::operation::list_deployment_instances::ListDeploymentInstancesInput).
     pub fn builder() -> crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder {

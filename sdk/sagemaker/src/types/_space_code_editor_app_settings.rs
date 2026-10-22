@@ -23,6 +23,106 @@ impl SpaceCodeEditorAppSettings {
         self.app_lifecycle_management.as_ref()
     }
 }
+static SPACECODEEDITORAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceCodeEditorAppSettings$DefaultResourceSpec",
+        "com.amazonaws.sagemaker",
+        "SpaceCodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultResourceSpec",
+    0,
+);
+static SPACECODEEDITORAPPSETTINGS_MEMBER_APP_LIFECYCLE_MANAGEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceCodeEditorAppSettings$AppLifecycleManagement",
+        "com.amazonaws.sagemaker",
+        "SpaceCodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AppLifecycleManagement",
+    1,
+);
+static SPACECODEEDITORAPPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SpaceCodeEditorAppSettings",
+        "com.amazonaws.sagemaker",
+        "SpaceCodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SPACECODEEDITORAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC,
+        &SPACECODEEDITORAPPSETTINGS_MEMBER_APP_LIFECYCLE_MANAGEMENT,
+    ],
+);
+impl SpaceCodeEditorAppSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SPACECODEEDITORAPPSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SpaceCodeEditorAppSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_resource_spec {
+            ser.write_struct(&SPACECODEEDITORAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.app_lifecycle_management {
+            ser.write_struct(&SPACECODEEDITORAPPSETTINGS_MEMBER_APP_LIFECYCLE_MANAGEMENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SpaceCodeEditorAppSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SPACECODEEDITORAPPSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_lifecycle_management = Some(crate::types::SpaceAppLifecycleManagement::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SpaceCodeEditorAppSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SpaceCodeEditorAppSettings {
     /// Creates a new builder-style object to manufacture [`SpaceCodeEditorAppSettings`](crate::types::SpaceCodeEditorAppSettings).
     pub fn builder() -> crate::types::builders::SpaceCodeEditorAppSettingsBuilder {

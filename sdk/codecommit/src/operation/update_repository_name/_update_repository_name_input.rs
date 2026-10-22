@@ -19,6 +19,107 @@ impl UpdateRepositoryNameInput {
         self.new_name.as_deref()
     }
 }
+static UPDATEREPOSITORYNAMEINPUT_MEMBER_OLD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryNameInput$oldName",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryNameInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "oldName",
+    0,
+);
+static UPDATEREPOSITORYNAMEINPUT_MEMBER_NEW_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryNameInput$newName",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryNameInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "newName",
+    1,
+);
+static UPDATEREPOSITORYNAMEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateRepositoryNameInput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateRepositoryNameInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEREPOSITORYNAMEINPUT_MEMBER_OLD_NAME, &UPDATEREPOSITORYNAMEINPUT_MEMBER_NEW_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateRepositoryNameInput");
+impl UpdateRepositoryNameInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEREPOSITORYNAMEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateRepositoryNameInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.old_name {
+            ser.write_string(&UPDATEREPOSITORYNAMEINPUT_MEMBER_OLD_NAME, val)?;
+        }
+        if let Some(ref val) = self.new_name {
+            ser.write_string(&UPDATEREPOSITORYNAMEINPUT_MEMBER_NEW_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEREPOSITORYNAMEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.old_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.new_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateRepositoryNameInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.old_name = builder.old_name.or(Some(String::new()));
+        builder.new_name = builder.new_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateRepositoryNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
     pub fn builder() -> crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {

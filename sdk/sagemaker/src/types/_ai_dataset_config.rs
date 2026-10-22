@@ -36,3 +36,91 @@ impl AiDatasetConfig {
         matches!(self, Self::Unknown)
     }
 }
+static AIDATASETCONFIG_MEMBER_INPUTDATACONFIG_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIWorkloadInputDataConfigList$member",
+        "com.amazonaws.sagemaker",
+        "AIWorkloadInputDataConfigList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIDATASETCONFIG_MEMBER_INPUTDATACONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIDatasetConfig$InputDataConfig",
+        "com.amazonaws.sagemaker",
+        "AIDatasetConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InputDataConfig",
+    0,
+)
+.with_list_member(&AIDATASETCONFIG_MEMBER_INPUTDATACONFIG_MEMBER);
+static AIDATASETCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AIDatasetConfig", "com.amazonaws.sagemaker", "AIDatasetConfig"),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[&AIDATASETCONFIG_MEMBER_INPUTDATACONFIG],
+);
+impl AiDatasetConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIDATASETCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiDatasetConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::InputDataConfig(val) => {
+                ser.write_list(
+                    &AIDATASETCONFIG_MEMBER_INPUTDATACONFIG,
+                    &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                        for item in val {
+                            ser.write_struct(crate::types::AiWorkloadInputDataConfig::SCHEMA, item)?;
+                        }
+                        Ok(())
+                    },
+                )?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl AiDatasetConfig {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&AIDATASETCONFIG_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::InputDataConfig({
+                    let mut container = Vec::new();
+                    deser.read_list(member, &mut |deser| {
+                        container.push(crate::types::AiWorkloadInputDataConfig::deserialize(deser)?);
+                        Ok(())
+                    })?;
+                    container
+                }),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

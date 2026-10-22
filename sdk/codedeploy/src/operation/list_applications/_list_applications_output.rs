@@ -22,6 +22,123 @@ impl ListApplicationsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTAPPLICATIONSOUTPUT_MEMBER_APPLICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ApplicationsList$member",
+        "com.amazonaws.codedeploy",
+        "ApplicationsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTAPPLICATIONSOUTPUT_MEMBER_APPLICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationsOutput$applications",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "applications",
+    0,
+)
+.with_list_member(&LISTAPPLICATIONSOUTPUT_MEMBER_APPLICATIONS_MEMBER);
+static LISTAPPLICATIONSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationsOutput$nextToken",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    1,
+);
+static LISTAPPLICATIONSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#ListApplicationsOutput",
+        "com.amazonaws.codedeploy.synthetic",
+        "ListApplicationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&LISTAPPLICATIONSOUTPUT_MEMBER_APPLICATIONS, &LISTAPPLICATIONSOUTPUT_MEMBER_NEXT_TOKEN],
+)
+.with_original_name("ListApplicationsOutput");
+impl ListApplicationsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTAPPLICATIONSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListApplicationsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.applications {
+            ser.write_list(
+                &LISTAPPLICATIONSOUTPUT_MEMBER_APPLICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTAPPLICATIONSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTAPPLICATIONSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.applications = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListApplicationsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListApplicationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

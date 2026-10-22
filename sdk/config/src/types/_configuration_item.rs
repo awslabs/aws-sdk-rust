@@ -173,6 +173,584 @@ impl ConfigurationItem {
         self.configuration_item_delivery_time.as_ref()
     }
 }
+static CONFIGURATIONITEM_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$version",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "version",
+    0,
+);
+static CONFIGURATIONITEM_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$accountId",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "accountId",
+    1,
+);
+static CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_CAPTURE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$configurationItemCaptureTime",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "configurationItemCaptureTime",
+    2,
+);
+static CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$configurationItemStatus",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "configurationItemStatus",
+    3,
+);
+static CONFIGURATIONITEM_MEMBER_CONFIGURATION_STATE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$configurationStateId",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "configurationStateId",
+    4,
+);
+static CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_MD5_HASH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$configurationItemMD5Hash",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "configurationItemMD5Hash",
+    5,
+);
+static CONFIGURATIONITEM_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$arn",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    6,
+);
+static CONFIGURATIONITEM_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$resourceType",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    7,
+);
+static CONFIGURATIONITEM_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$resourceId",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceId",
+    8,
+);
+static CONFIGURATIONITEM_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$resourceName",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceName",
+    9,
+);
+static CONFIGURATIONITEM_MEMBER_AWS_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$awsRegion",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "awsRegion",
+    10,
+);
+static CONFIGURATIONITEM_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$availabilityZone",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "availabilityZone",
+    11,
+);
+static CONFIGURATIONITEM_MEMBER_RESOURCE_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$resourceCreationTime",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "resourceCreationTime",
+    12,
+);
+static CONFIGURATIONITEM_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Tags$key", "com.amazonaws.configservice", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONFIGURATIONITEM_MEMBER_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Tags$value", "com.amazonaws.configservice", "Tags"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONFIGURATIONITEM_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$tags",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "tags",
+    13,
+)
+.with_map_members(&CONFIGURATIONITEM_MEMBER_TAGS_KEY, &CONFIGURATIONITEM_MEMBER_TAGS_VALUE);
+static CONFIGURATIONITEM_MEMBER_RELATED_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RelatedEventList$member",
+        "com.amazonaws.configservice",
+        "RelatedEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONFIGURATIONITEM_MEMBER_RELATED_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$relatedEvents",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "relatedEvents",
+    14,
+)
+.with_list_member(&CONFIGURATIONITEM_MEMBER_RELATED_EVENTS_MEMBER);
+static CONFIGURATIONITEM_MEMBER_RELATIONSHIPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RelationshipList$member",
+        "com.amazonaws.configservice",
+        "RelationshipList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONFIGURATIONITEM_MEMBER_RELATIONSHIPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$relationships",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "relationships",
+    15,
+)
+.with_list_member(&CONFIGURATIONITEM_MEMBER_RELATIONSHIPS_MEMBER);
+static CONFIGURATIONITEM_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$configuration",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "configuration",
+    16,
+);
+static CONFIGURATIONITEM_MEMBER_SUPPLEMENTARY_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#SupplementaryConfiguration$key",
+        "com.amazonaws.configservice",
+        "SupplementaryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONFIGURATIONITEM_MEMBER_SUPPLEMENTARY_CONFIGURATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#SupplementaryConfiguration$value",
+        "com.amazonaws.configservice",
+        "SupplementaryConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONFIGURATIONITEM_MEMBER_SUPPLEMENTARY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$supplementaryConfiguration",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "supplementaryConfiguration",
+    17,
+)
+.with_map_members(
+    &CONFIGURATIONITEM_MEMBER_SUPPLEMENTARY_CONFIGURATION_KEY,
+    &CONFIGURATIONITEM_MEMBER_SUPPLEMENTARY_CONFIGURATION_VALUE,
+);
+static CONFIGURATIONITEM_MEMBER_RECORDING_FREQUENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$recordingFrequency",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "recordingFrequency",
+    18,
+);
+static CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_DELIVERY_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem$configurationItemDeliveryTime",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "configurationItemDeliveryTime",
+    19,
+);
+static CONFIGURATIONITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationItem",
+        "com.amazonaws.configservice",
+        "ConfigurationItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFIGURATIONITEM_MEMBER_VERSION,
+        &CONFIGURATIONITEM_MEMBER_ACCOUNT_ID,
+        &CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_CAPTURE_TIME,
+        &CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_STATUS,
+        &CONFIGURATIONITEM_MEMBER_CONFIGURATION_STATE_ID,
+        &CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_MD5_HASH,
+        &CONFIGURATIONITEM_MEMBER_ARN,
+        &CONFIGURATIONITEM_MEMBER_RESOURCE_TYPE,
+        &CONFIGURATIONITEM_MEMBER_RESOURCE_ID,
+        &CONFIGURATIONITEM_MEMBER_RESOURCE_NAME,
+        &CONFIGURATIONITEM_MEMBER_AWS_REGION,
+        &CONFIGURATIONITEM_MEMBER_AVAILABILITY_ZONE,
+        &CONFIGURATIONITEM_MEMBER_RESOURCE_CREATION_TIME,
+        &CONFIGURATIONITEM_MEMBER_TAGS,
+        &CONFIGURATIONITEM_MEMBER_RELATED_EVENTS,
+        &CONFIGURATIONITEM_MEMBER_RELATIONSHIPS,
+        &CONFIGURATIONITEM_MEMBER_CONFIGURATION,
+        &CONFIGURATIONITEM_MEMBER_SUPPLEMENTARY_CONFIGURATION,
+        &CONFIGURATIONITEM_MEMBER_RECORDING_FREQUENCY,
+        &CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_DELIVERY_TIME,
+    ],
+);
+impl ConfigurationItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFIGURATIONITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConfigurationItem {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.version {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.configuration_item_capture_time {
+            ser.write_timestamp(&CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_CAPTURE_TIME, val)?;
+        }
+        if let Some(ref val) = self.configuration_item_status {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.configuration_state_id {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_CONFIGURATION_STATE_ID, val)?;
+        }
+        if let Some(ref val) = self.configuration_item_md5_hash {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_MD5_HASH, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.aws_region {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_AWS_REGION, val)?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.resource_creation_time {
+            ser.write_timestamp(&CONFIGURATIONITEM_MEMBER_RESOURCE_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_map(
+                &CONFIGURATIONITEM_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.related_events {
+            ser.write_list(
+                &CONFIGURATIONITEM_MEMBER_RELATED_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.relationships {
+            ser.write_list(
+                &CONFIGURATIONITEM_MEMBER_RELATIONSHIPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Relationship::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.configuration {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.supplementary_configuration {
+            ser.write_map(
+                &CONFIGURATIONITEM_MEMBER_SUPPLEMENTARY_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.recording_frequency {
+            ser.write_string(&CONFIGURATIONITEM_MEMBER_RECORDING_FREQUENCY, val.as_str())?;
+        }
+        if let Some(ref val) = self.configuration_item_delivery_time {
+            ser.write_timestamp(&CONFIGURATIONITEM_MEMBER_CONFIGURATION_ITEM_DELIVERY_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConfigurationItemBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFIGURATIONITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_item_capture_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_item_status = Some(crate::types::ConfigurationItemStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_state_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_item_md5_hash = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aws_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.related_events = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relationships = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Relationship::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supplementary_configuration = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recording_frequency = Some(crate::types::RecordingFrequency::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_item_delivery_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConfigurationItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConfigurationItem {
     /// Creates a new builder-style object to manufacture [`ConfigurationItem`](crate::types::ConfigurationItem).
     pub fn builder() -> crate::types::builders::ConfigurationItemBuilder {

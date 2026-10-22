@@ -54,6 +54,235 @@ impl ListModelCardVersionsInput {
         self.sort_order.as_ref()
     }
 }
+static LISTMODELCARDVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    0,
+);
+static LISTMODELCARDVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    1,
+);
+static LISTMODELCARDVERSIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTMODELCARDVERSIONSINPUT_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$ModelCardName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    3,
+);
+static LISTMODELCARDVERSIONSINPUT_MEMBER_MODEL_CARD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$ModelCardStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardStatus",
+    4,
+);
+static LISTMODELCARDVERSIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    5,
+);
+static LISTMODELCARDVERSIONSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    6,
+);
+static LISTMODELCARDVERSIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    7,
+);
+static LISTMODELCARDVERSIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelCardVersionsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelCardVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_MODEL_CARD_NAME,
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_MODEL_CARD_STATUS,
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_SORT_BY,
+        &LISTMODELCARDVERSIONSINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListModelCardVersionsRequest");
+impl ListModelCardVersionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTMODELCARDVERSIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListModelCardVersionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTMODELCARDVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTMODELCARDVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTMODELCARDVERSIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&LISTMODELCARDVERSIONSINPUT_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_card_status {
+            ser.write_string(&LISTMODELCARDVERSIONSINPUT_MEMBER_MODEL_CARD_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTMODELCARDVERSIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTMODELCARDVERSIONSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTMODELCARDVERSIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTMODELCARDVERSIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_status = Some(crate::types::ModelCardStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ModelCardVersionSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::ModelCardSortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListModelCardVersionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.model_card_name = builder.model_card_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListModelCardVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListModelCardVersionsInput`](crate::operation::list_model_card_versions::ListModelCardVersionsInput).
     pub fn builder() -> crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder {

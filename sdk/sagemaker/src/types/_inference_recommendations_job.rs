@@ -85,6 +85,337 @@ impl InferenceRecommendationsJob {
         self.model_package_version_arn.as_deref()
     }
 }
+static INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$JobName",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    0,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$JobDescription",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobDescription",
+    1,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$JobType",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobType",
+    2,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$JobArn",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobArn",
+    3,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$Status",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$CreationTime",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_COMPLETION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$CompletionTime",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompletionTime",
+    6,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$RoleArn",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    7,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$FailureReason",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    9,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$ModelName",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    10,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_SAMPLE_PAYLOAD_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$SamplePayloadUrl",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SamplePayloadUrl",
+    11,
+);
+static INFERENCERECOMMENDATIONSJOB_MEMBER_MODEL_PACKAGE_VERSION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob$ModelPackageVersionArn",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageVersionArn",
+    12,
+);
+static INFERENCERECOMMENDATIONSJOB_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendationsJob",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendationsJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_NAME,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_DESCRIPTION,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_TYPE,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_ARN,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_STATUS,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_CREATION_TIME,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_COMPLETION_TIME,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_ROLE_ARN,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_LAST_MODIFIED_TIME,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_FAILURE_REASON,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_MODEL_NAME,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_SAMPLE_PAYLOAD_URL,
+        &INFERENCERECOMMENDATIONSJOB_MEMBER_MODEL_PACKAGE_VERSION_ARN,
+    ],
+);
+impl InferenceRecommendationsJob {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INFERENCERECOMMENDATIONSJOB_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InferenceRecommendationsJob {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_description {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.job_type {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_arn {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&INFERENCERECOMMENDATIONSJOB_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.completion_time {
+            ser.write_timestamp(&INFERENCERECOMMENDATIONSJOB_MEMBER_COMPLETION_TIME, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&INFERENCERECOMMENDATIONSJOB_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.sample_payload_url {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_SAMPLE_PAYLOAD_URL, val)?;
+        }
+        if let Some(ref val) = self.model_package_version_arn {
+            ser.write_string(&INFERENCERECOMMENDATIONSJOB_MEMBER_MODEL_PACKAGE_VERSION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InferenceRecommendationsJobBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INFERENCERECOMMENDATIONSJOB_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_type = Some(crate::types::RecommendationJobType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::RecommendationJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sample_payload_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_version_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InferenceRecommendationsJob {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InferenceRecommendationsJob {
     /// Creates a new builder-style object to manufacture [`InferenceRecommendationsJob`](crate::types::InferenceRecommendationsJob).
     pub fn builder() -> crate::types::builders::InferenceRecommendationsJobBuilder {

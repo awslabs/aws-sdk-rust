@@ -242,6 +242,148 @@ impl SecondaryStatusTransition {
         self.status_message.as_deref()
     }
 }
+static SECONDARYSTATUSTRANSITION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecondaryStatusTransition$Status",
+        "com.amazonaws.sagemaker",
+        "SecondaryStatusTransition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static SECONDARYSTATUSTRANSITION_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecondaryStatusTransition$StartTime",
+        "com.amazonaws.sagemaker",
+        "SecondaryStatusTransition",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    1,
+);
+static SECONDARYSTATUSTRANSITION_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecondaryStatusTransition$EndTime",
+        "com.amazonaws.sagemaker",
+        "SecondaryStatusTransition",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    2,
+);
+static SECONDARYSTATUSTRANSITION_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecondaryStatusTransition$StatusMessage",
+        "com.amazonaws.sagemaker",
+        "SecondaryStatusTransition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    3,
+);
+static SECONDARYSTATUSTRANSITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecondaryStatusTransition",
+        "com.amazonaws.sagemaker",
+        "SecondaryStatusTransition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SECONDARYSTATUSTRANSITION_MEMBER_STATUS,
+        &SECONDARYSTATUSTRANSITION_MEMBER_START_TIME,
+        &SECONDARYSTATUSTRANSITION_MEMBER_END_TIME,
+        &SECONDARYSTATUSTRANSITION_MEMBER_STATUS_MESSAGE,
+    ],
+);
+impl SecondaryStatusTransition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SECONDARYSTATUSTRANSITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SecondaryStatusTransition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&SECONDARYSTATUSTRANSITION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&SECONDARYSTATUSTRANSITION_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&SECONDARYSTATUSTRANSITION_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&SECONDARYSTATUSTRANSITION_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SecondaryStatusTransitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SECONDARYSTATUSTRANSITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::SecondaryStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SecondaryStatusTransition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SecondaryStatusTransition {
     /// Creates a new builder-style object to manufacture [`SecondaryStatusTransition`](crate::types::SecondaryStatusTransition).
     pub fn builder() -> crate::types::builders::SecondaryStatusTransitionBuilder {

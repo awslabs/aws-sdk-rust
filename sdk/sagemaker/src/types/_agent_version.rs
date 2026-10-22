@@ -19,6 +19,95 @@ impl AgentVersion {
         self.agent_count
     }
 }
+static AGENTVERSION_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AgentVersion$Version", "com.amazonaws.sagemaker", "AgentVersion"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Version",
+    0,
+);
+static AGENTVERSION_MEMBER_AGENT_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AgentVersion$AgentCount",
+        "com.amazonaws.sagemaker",
+        "AgentVersion",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "AgentCount",
+    1,
+);
+static AGENTVERSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AgentVersion", "com.amazonaws.sagemaker", "AgentVersion"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AGENTVERSION_MEMBER_VERSION, &AGENTVERSION_MEMBER_AGENT_COUNT],
+);
+impl AgentVersion {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AGENTVERSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AgentVersion {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.version {
+            ser.write_string(&AGENTVERSION_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.agent_count {
+            ser.write_long(&AGENTVERSION_MEMBER_AGENT_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AgentVersionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AGENTVERSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_count = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AgentVersion {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AgentVersion {
     /// Creates a new builder-style object to manufacture [`AgentVersion`](crate::types::AgentVersion).
     pub fn builder() -> crate::types::builders::AgentVersionBuilder {

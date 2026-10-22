@@ -138,6 +138,20 @@ pub fn de_transit_gateway_attachment(
                 builder = builder.set_tags(var_10);
             }
             ,
+            s if s.matches("natGatewaySupport") /* NatGatewaySupport com.amazonaws.ec2#TransitGatewayAttachment$NatGatewaySupport */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<crate::types::TransitGatewayAttachmentNatGatewaySupportState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayAttachmentNatGatewaySupportState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_nat_gateway_support(var_11);
+            }
+            ,
             _ => {}
         }
     }

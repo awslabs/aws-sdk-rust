@@ -35,6 +35,129 @@ impl ::std::fmt::Debug for ResendContactReachabilityEmailOutput {
         formatter.finish()
     }
 }
+static RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ResendContactReachabilityEmailOutput$domainName",
+        "com.amazonaws.route53domains.synthetic",
+        "ResendContactReachabilityEmailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domainName",
+    0,
+);
+static RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_EMAIL_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ResendContactReachabilityEmailOutput$emailAddress",
+        "com.amazonaws.route53domains.synthetic",
+        "ResendContactReachabilityEmailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "emailAddress",
+    1,
+);
+static RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_IS_ALREADY_VERIFIED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53domains.synthetic#ResendContactReachabilityEmailOutput$isAlreadyVerified",
+            "com.amazonaws.route53domains.synthetic",
+            "ResendContactReachabilityEmailOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "isAlreadyVerified",
+        2,
+    );
+static RESENDCONTACTREACHABILITYEMAILOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ResendContactReachabilityEmailOutput",
+        "com.amazonaws.route53domains.synthetic",
+        "ResendContactReachabilityEmailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_DOMAIN_NAME,
+        &RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_EMAIL_ADDRESS,
+        &RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_IS_ALREADY_VERIFIED,
+    ],
+)
+.with_original_name("ResendContactReachabilityEmailResponse");
+impl ResendContactReachabilityEmailOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESENDCONTACTREACHABILITYEMAILOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResendContactReachabilityEmailOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.email_address {
+            ser.write_string(&RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_EMAIL_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.is_already_verified {
+            ser.write_boolean(&RESENDCONTACTREACHABILITYEMAILOUTPUT_MEMBER_IS_ALREADY_VERIFIED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESENDCONTACTREACHABILITYEMAILOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_already_verified = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResendContactReachabilityEmailOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ResendContactReachabilityEmailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

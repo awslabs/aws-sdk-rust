@@ -25,6 +25,115 @@ impl Location {
         self.relative_file_version.as_ref()
     }
 }
+static LOCATION_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Location$filePath", "com.amazonaws.codecommit", "Location"),
+    ::aws_smithy_schema::ShapeType::String,
+    "filePath",
+    0,
+);
+static LOCATION_MEMBER_FILE_POSITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Location$filePosition", "com.amazonaws.codecommit", "Location"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "filePosition",
+    1,
+);
+static LOCATION_MEMBER_RELATIVE_FILE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#Location$relativeFileVersion",
+        "com.amazonaws.codecommit",
+        "Location",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "relativeFileVersion",
+    2,
+);
+static LOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Location", "com.amazonaws.codecommit", "Location"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOCATION_MEMBER_FILE_PATH,
+        &LOCATION_MEMBER_FILE_POSITION,
+        &LOCATION_MEMBER_RELATIVE_FILE_VERSION,
+    ],
+);
+impl Location {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Location {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_path {
+            ser.write_string(&LOCATION_MEMBER_FILE_PATH, val)?;
+        }
+        if let Some(ref val) = self.file_position {
+            ser.write_long(&LOCATION_MEMBER_FILE_POSITION, *val)?;
+        }
+        if let Some(ref val) = self.relative_file_version {
+            ser.write_string(&LOCATION_MEMBER_RELATIVE_FILE_VERSION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_position = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relative_file_version = Some(crate::types::RelativeFileVersionEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Location {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Location {
     /// Creates a new builder-style object to manufacture [`Location`](crate::types::Location).
     pub fn builder() -> crate::types::builders::LocationBuilder {

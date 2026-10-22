@@ -77,6 +77,302 @@ impl PullRequestEvent {
         self.approval_rule_overridden_event_metadata.as_ref()
     }
 }
+static PULLREQUESTEVENT_MEMBER_PULL_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent$pullRequestId",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pullRequestId",
+    0,
+);
+static PULLREQUESTEVENT_MEMBER_EVENT_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent$eventDate",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "eventDate",
+    1,
+);
+static PULLREQUESTEVENT_MEMBER_PULL_REQUEST_EVENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent$pullRequestEventType",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pullRequestEventType",
+    2,
+);
+static PULLREQUESTEVENT_MEMBER_ACTOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent$actorArn",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "actorArn",
+    3,
+);
+static PULLREQUESTEVENT_MEMBER_PULL_REQUEST_CREATED_EVENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent$pullRequestCreatedEventMetadata",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "pullRequestCreatedEventMetadata",
+    4,
+);
+static PULLREQUESTEVENT_MEMBER_PULL_REQUEST_STATUS_CHANGED_EVENT_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#PullRequestEvent$pullRequestStatusChangedEventMetadata",
+            "com.amazonaws.codecommit",
+            "PullRequestEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "pullRequestStatusChangedEventMetadata",
+        5,
+    );
+static PULLREQUESTEVENT_MEMBER_PULL_REQUEST_SOURCE_REFERENCE_UPDATED_EVENT_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#PullRequestEvent$pullRequestSourceReferenceUpdatedEventMetadata",
+            "com.amazonaws.codecommit",
+            "PullRequestEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "pullRequestSourceReferenceUpdatedEventMetadata",
+        6,
+    );
+static PULLREQUESTEVENT_MEMBER_PULL_REQUEST_MERGED_STATE_CHANGED_EVENT_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#PullRequestEvent$pullRequestMergedStateChangedEventMetadata",
+            "com.amazonaws.codecommit",
+            "PullRequestEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "pullRequestMergedStateChangedEventMetadata",
+        7,
+    );
+static PULLREQUESTEVENT_MEMBER_APPROVAL_RULE_EVENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent$approvalRuleEventMetadata",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "approvalRuleEventMetadata",
+    8,
+);
+static PULLREQUESTEVENT_MEMBER_APPROVAL_STATE_CHANGED_EVENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent$approvalStateChangedEventMetadata",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "approvalStateChangedEventMetadata",
+    9,
+);
+static PULLREQUESTEVENT_MEMBER_APPROVAL_RULE_OVERRIDDEN_EVENT_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#PullRequestEvent$approvalRuleOverriddenEventMetadata",
+            "com.amazonaws.codecommit",
+            "PullRequestEvent",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "approvalRuleOverriddenEventMetadata",
+        10,
+    );
+static PULLREQUESTEVENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestEvent",
+        "com.amazonaws.codecommit",
+        "PullRequestEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PULLREQUESTEVENT_MEMBER_PULL_REQUEST_ID,
+        &PULLREQUESTEVENT_MEMBER_EVENT_DATE,
+        &PULLREQUESTEVENT_MEMBER_PULL_REQUEST_EVENT_TYPE,
+        &PULLREQUESTEVENT_MEMBER_ACTOR_ARN,
+        &PULLREQUESTEVENT_MEMBER_PULL_REQUEST_CREATED_EVENT_METADATA,
+        &PULLREQUESTEVENT_MEMBER_PULL_REQUEST_STATUS_CHANGED_EVENT_METADATA,
+        &PULLREQUESTEVENT_MEMBER_PULL_REQUEST_SOURCE_REFERENCE_UPDATED_EVENT_METADATA,
+        &PULLREQUESTEVENT_MEMBER_PULL_REQUEST_MERGED_STATE_CHANGED_EVENT_METADATA,
+        &PULLREQUESTEVENT_MEMBER_APPROVAL_RULE_EVENT_METADATA,
+        &PULLREQUESTEVENT_MEMBER_APPROVAL_STATE_CHANGED_EVENT_METADATA,
+        &PULLREQUESTEVENT_MEMBER_APPROVAL_RULE_OVERRIDDEN_EVENT_METADATA,
+    ],
+);
+impl PullRequestEvent {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PULLREQUESTEVENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PullRequestEvent {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pull_request_id {
+            ser.write_string(&PULLREQUESTEVENT_MEMBER_PULL_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.event_date {
+            ser.write_timestamp(&PULLREQUESTEVENT_MEMBER_EVENT_DATE, val)?;
+        }
+        if let Some(ref val) = self.pull_request_event_type {
+            ser.write_string(&PULLREQUESTEVENT_MEMBER_PULL_REQUEST_EVENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.actor_arn {
+            ser.write_string(&PULLREQUESTEVENT_MEMBER_ACTOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.pull_request_created_event_metadata {
+            ser.write_struct(&PULLREQUESTEVENT_MEMBER_PULL_REQUEST_CREATED_EVENT_METADATA, val)?;
+        }
+        if let Some(ref val) = self.pull_request_status_changed_event_metadata {
+            ser.write_struct(&PULLREQUESTEVENT_MEMBER_PULL_REQUEST_STATUS_CHANGED_EVENT_METADATA, val)?;
+        }
+        if let Some(ref val) = self.pull_request_source_reference_updated_event_metadata {
+            ser.write_struct(&PULLREQUESTEVENT_MEMBER_PULL_REQUEST_SOURCE_REFERENCE_UPDATED_EVENT_METADATA, val)?;
+        }
+        if let Some(ref val) = self.pull_request_merged_state_changed_event_metadata {
+            ser.write_struct(&PULLREQUESTEVENT_MEMBER_PULL_REQUEST_MERGED_STATE_CHANGED_EVENT_METADATA, val)?;
+        }
+        if let Some(ref val) = self.approval_rule_event_metadata {
+            ser.write_struct(&PULLREQUESTEVENT_MEMBER_APPROVAL_RULE_EVENT_METADATA, val)?;
+        }
+        if let Some(ref val) = self.approval_state_changed_event_metadata {
+            ser.write_struct(&PULLREQUESTEVENT_MEMBER_APPROVAL_STATE_CHANGED_EVENT_METADATA, val)?;
+        }
+        if let Some(ref val) = self.approval_rule_overridden_event_metadata {
+            ser.write_struct(&PULLREQUESTEVENT_MEMBER_APPROVAL_RULE_OVERRIDDEN_EVENT_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PullRequestEventBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PULLREQUESTEVENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_event_type = Some(crate::types::PullRequestEventType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.actor_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_created_event_metadata = Some(crate::types::PullRequestCreatedEventMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_status_changed_event_metadata =
+                            Some(crate::types::PullRequestStatusChangedEventMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_source_reference_updated_event_metadata =
+                            Some(crate::types::PullRequestSourceReferenceUpdatedEventMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_merged_state_changed_event_metadata =
+                            Some(crate::types::PullRequestMergedStateChangedEventMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_event_metadata = Some(crate::types::ApprovalRuleEventMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_state_changed_event_metadata = Some(crate::types::ApprovalStateChangedEventMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_overridden_event_metadata = Some(crate::types::ApprovalRuleOverriddenEventMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PullRequestEvent {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PullRequestEvent {
     /// Creates a new builder-style object to manufacture [`PullRequestEvent`](crate::types::PullRequestEvent).
     pub fn builder() -> crate::types::builders::PullRequestEventBuilder {

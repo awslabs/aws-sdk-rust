@@ -109,6 +109,347 @@ impl PipelineExecution {
         self.rollback_metadata.as_ref()
     }
 }
+static PIPELINEEXECUTION_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$pipelineName",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineName",
+    0,
+);
+static PIPELINEEXECUTION_MEMBER_PIPELINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$pipelineVersion",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "pipelineVersion",
+    1,
+);
+static PIPELINEEXECUTION_MEMBER_PIPELINE_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$pipelineExecutionId",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineExecutionId",
+    2,
+);
+static PIPELINEEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$status",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    3,
+);
+static PIPELINEEXECUTION_MEMBER_STATUS_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$statusSummary",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "statusSummary",
+    4,
+);
+static PIPELINEEXECUTION_MEMBER_ARTIFACT_REVISIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevisionList$member",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevisionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PIPELINEEXECUTION_MEMBER_ARTIFACT_REVISIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$artifactRevisions",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "artifactRevisions",
+    5,
+)
+.with_list_member(&PIPELINEEXECUTION_MEMBER_ARTIFACT_REVISIONS_MEMBER);
+static PIPELINEEXECUTION_MEMBER_VARIABLES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedPipelineVariableList$member",
+        "com.amazonaws.codepipeline",
+        "ResolvedPipelineVariableList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PIPELINEEXECUTION_MEMBER_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$variables",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "variables",
+    6,
+)
+.with_list_member(&PIPELINEEXECUTION_MEMBER_VARIABLES_MEMBER);
+static PIPELINEEXECUTION_MEMBER_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$trigger",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "trigger",
+    7,
+);
+static PIPELINEEXECUTION_MEMBER_EXECUTION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$executionMode",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionMode",
+    8,
+);
+static PIPELINEEXECUTION_MEMBER_EXECUTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$executionType",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionType",
+    9,
+);
+static PIPELINEEXECUTION_MEMBER_ROLLBACK_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution$rollbackMetadata",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "rollbackMetadata",
+    10,
+);
+static PIPELINEEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineExecution",
+        "com.amazonaws.codepipeline",
+        "PipelineExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINEEXECUTION_MEMBER_PIPELINE_NAME,
+        &PIPELINEEXECUTION_MEMBER_PIPELINE_VERSION,
+        &PIPELINEEXECUTION_MEMBER_PIPELINE_EXECUTION_ID,
+        &PIPELINEEXECUTION_MEMBER_STATUS,
+        &PIPELINEEXECUTION_MEMBER_STATUS_SUMMARY,
+        &PIPELINEEXECUTION_MEMBER_ARTIFACT_REVISIONS,
+        &PIPELINEEXECUTION_MEMBER_VARIABLES,
+        &PIPELINEEXECUTION_MEMBER_TRIGGER,
+        &PIPELINEEXECUTION_MEMBER_EXECUTION_MODE,
+        &PIPELINEEXECUTION_MEMBER_EXECUTION_TYPE,
+        &PIPELINEEXECUTION_MEMBER_ROLLBACK_METADATA,
+    ],
+);
+impl PipelineExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINEEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineExecution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&PIPELINEEXECUTION_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_version {
+            ser.write_integer(&PIPELINEEXECUTION_MEMBER_PIPELINE_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_id {
+            ser.write_string(&PIPELINEEXECUTION_MEMBER_PIPELINE_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&PIPELINEEXECUTION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_summary {
+            ser.write_string(&PIPELINEEXECUTION_MEMBER_STATUS_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.artifact_revisions {
+            ser.write_list(
+                &PIPELINEEXECUTION_MEMBER_ARTIFACT_REVISIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ArtifactRevision::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.variables {
+            ser.write_list(
+                &PIPELINEEXECUTION_MEMBER_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResolvedPipelineVariable::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.trigger {
+            ser.write_struct(&PIPELINEEXECUTION_MEMBER_TRIGGER, val)?;
+        }
+        if let Some(ref val) = self.execution_mode {
+            ser.write_string(&PIPELINEEXECUTION_MEMBER_EXECUTION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.execution_type {
+            ser.write_string(&PIPELINEEXECUTION_MEMBER_EXECUTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.rollback_metadata {
+            ser.write_struct(&PIPELINEEXECUTION_MEMBER_ROLLBACK_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineExecutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINEEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::PipelineExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_revisions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ArtifactRevision::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.variables = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResolvedPipelineVariable::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trigger = Some(crate::types::ExecutionTrigger::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_mode = Some(crate::types::ExecutionMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_type = Some(crate::types::ExecutionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rollback_metadata = Some(crate::types::PipelineRollbackMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PipelineExecution {
     /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::types::PipelineExecution).
     pub fn builder() -> crate::types::builders::PipelineExecutionBuilder {

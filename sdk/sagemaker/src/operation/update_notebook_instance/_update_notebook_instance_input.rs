@@ -118,6 +118,457 @@ impl UpdateNotebookInstanceInput {
         self.instance_metadata_service_configuration.as_ref()
     }
 }
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$NotebookInstanceName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotebookInstanceName",
+    0,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$InstanceType",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    1,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$IpAddressType",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    2,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_PLATFORM_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$PlatformIdentifier",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PlatformIdentifier",
+    3,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    4,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_LIFECYCLE_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$LifecycleConfigName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LifecycleConfigName",
+    5,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_LIFECYCLE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$DisassociateLifecycleConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "DisassociateLifecycleConfig",
+        6,
+    );
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_VOLUME_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$VolumeSizeInGB",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "VolumeSizeInGB",
+    7,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DEFAULT_CODE_REPOSITORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$DefaultCodeRepository",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultCodeRepository",
+    8,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AdditionalCodeRepositoryNamesOrUrls$member",
+            "com.amazonaws.sagemaker",
+            "AdditionalCodeRepositoryNamesOrUrls",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$AdditionalCodeRepositories",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AdditionalCodeRepositories",
+        9,
+    )
+    .with_list_member(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES_MEMBER);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceAcceleratorTypes$member",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceAcceleratorTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$AcceleratorTypes",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AcceleratorTypes",
+    10,
+)
+.with_list_member(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES_MEMBER);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_ACCELERATOR_TYPES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$DisassociateAcceleratorTypes",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "DisassociateAcceleratorTypes",
+        11,
+    );
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_DEFAULT_CODE_REPOSITORY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$DisassociateDefaultCodeRepository",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "DisassociateDefaultCodeRepository",
+        12,
+    );
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_ADDITIONAL_CODE_REPOSITORIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$DisassociateAdditionalCodeRepositories",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "DisassociateAdditionalCodeRepositories",
+        13,
+    );
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ROOT_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$RootAccess",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootAccess",
+    14,
+);
+static UPDATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_METADATA_SERVICE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput$InstanceMetadataServiceConfiguration",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateNotebookInstanceInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "InstanceMetadataServiceConfiguration",
+        15,
+    );
+static UPDATENOTEBOOKINSTANCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateNotebookInstanceInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateNotebookInstanceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_TYPE,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_IP_ADDRESS_TYPE,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_PLATFORM_IDENTIFIER,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ROLE_ARN,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_LIFECYCLE_CONFIG_NAME,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_LIFECYCLE_CONFIG,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_VOLUME_SIZE_IN_GB,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DEFAULT_CODE_REPOSITORY,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_ACCELERATOR_TYPES,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_DEFAULT_CODE_REPOSITORY,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_ADDITIONAL_CODE_REPOSITORIES,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ROOT_ACCESS,
+        &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_METADATA_SERVICE_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateNotebookInstanceInput");
+impl UpdateNotebookInstanceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATENOTEBOOKINSTANCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateNotebookInstanceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.notebook_instance_name {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_NOTEBOOK_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.platform_identifier {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_PLATFORM_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_config_name {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_LIFECYCLE_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.disassociate_lifecycle_config {
+            ser.write_boolean(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_LIFECYCLE_CONFIG, *val)?;
+        }
+        if let Some(ref val) = self.volume_size_in_gb {
+            ser.write_integer(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_VOLUME_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.default_code_repository {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DEFAULT_CODE_REPOSITORY, val)?;
+        }
+        if let Some(ref val) = self.additional_code_repositories {
+            ser.write_list(
+                &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ADDITIONAL_CODE_REPOSITORIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.accelerator_types {
+            ser.write_list(
+                &UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ACCELERATOR_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.disassociate_accelerator_types {
+            ser.write_boolean(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_ACCELERATOR_TYPES, *val)?;
+        }
+        if let Some(ref val) = self.disassociate_default_code_repository {
+            ser.write_boolean(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_DEFAULT_CODE_REPOSITORY, *val)?;
+        }
+        if let Some(ref val) = self.disassociate_additional_code_repositories {
+            ser.write_boolean(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_DISASSOCIATE_ADDITIONAL_CODE_REPOSITORIES, *val)?;
+        }
+        if let Some(ref val) = self.root_access {
+            ser.write_string(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_ROOT_ACCESS, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_metadata_service_configuration {
+            ser.write_struct(&UPDATENOTEBOOKINSTANCEINPUT_MEMBER_INSTANCE_METADATA_SERVICE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATENOTEBOOKINSTANCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::InstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disassociate_lifecycle_config = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_code_repository = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_code_repositories = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NotebookInstanceAcceleratorType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disassociate_accelerator_types = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disassociate_default_code_repository = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disassociate_additional_code_repositories = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_access = Some(crate::types::RootAccess::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_metadata_service_configuration = Some(crate::types::InstanceMetadataServiceConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateNotebookInstanceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.notebook_instance_name = builder.notebook_instance_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateNotebookInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotebookInstanceInput`](crate::operation::update_notebook_instance::UpdateNotebookInstanceInput).
     pub fn builder() -> crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceInputBuilder {

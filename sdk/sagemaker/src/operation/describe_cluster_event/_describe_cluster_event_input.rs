@@ -18,6 +18,107 @@ impl DescribeClusterEventInput {
         self.cluster_name.as_deref()
     }
 }
+static DESCRIBECLUSTEREVENTINPUT_MEMBER_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterEventInput$EventId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterEventInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventId",
+    0,
+);
+static DESCRIBECLUSTEREVENTINPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterEventInput$ClusterName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterEventInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    1,
+);
+static DESCRIBECLUSTEREVENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterEventInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterEventInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBECLUSTEREVENTINPUT_MEMBER_EVENT_ID, &DESCRIBECLUSTEREVENTINPUT_MEMBER_CLUSTER_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeClusterEventRequest");
+impl DescribeClusterEventInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECLUSTEREVENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeClusterEventInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.event_id {
+            ser.write_string(&DESCRIBECLUSTEREVENTINPUT_MEMBER_EVENT_ID, val)?;
+        }
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&DESCRIBECLUSTEREVENTINPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_cluster_event::builders::DescribeClusterEventInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECLUSTEREVENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeClusterEventInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.event_id = builder.event_id.or(Some(String::new()));
+        builder.cluster_name = builder.cluster_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeClusterEventInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterEventInput`](crate::operation::describe_cluster_event::DescribeClusterEventInput).
     pub fn builder() -> crate::operation::describe_cluster_event::builders::DescribeClusterEventInputBuilder {

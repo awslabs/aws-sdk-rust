@@ -8,6 +8,83 @@ pub struct RoleRequiredException {
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
+static ROLEREQUIREDEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RoleRequiredException$message",
+        "com.amazonaws.codedeploy",
+        "RoleRequiredException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    0,
+);
+static ROLEREQUIREDEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#RoleRequiredException",
+        "com.amazonaws.codedeploy",
+        "RoleRequiredException",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ROLEREQUIREDEXCEPTION_MEMBER_MESSAGE],
+);
+impl RoleRequiredException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ROLEREQUIREDEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RoleRequiredException {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.message {
+            ser.write_string(&ROLEREQUIREDEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::RoleRequiredExceptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ROLEREQUIREDEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RoleRequiredException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RoleRequiredException {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

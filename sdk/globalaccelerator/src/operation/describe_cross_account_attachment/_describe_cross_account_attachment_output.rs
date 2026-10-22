@@ -13,6 +13,85 @@ impl DescribeCrossAccountAttachmentOutput {
         self.cross_account_attachment.as_ref()
     }
 }
+static DESCRIBECROSSACCOUNTATTACHMENTOUTPUT_MEMBER_CROSS_ACCOUNT_ATTACHMENT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.globalaccelerator.synthetic#DescribeCrossAccountAttachmentOutput$CrossAccountAttachment",
+            "com.amazonaws.globalaccelerator.synthetic",
+            "DescribeCrossAccountAttachmentOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CrossAccountAttachment",
+        0,
+    );
+static DESCRIBECROSSACCOUNTATTACHMENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#DescribeCrossAccountAttachmentOutput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "DescribeCrossAccountAttachmentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBECROSSACCOUNTATTACHMENTOUTPUT_MEMBER_CROSS_ACCOUNT_ATTACHMENT],
+)
+.with_original_name("DescribeCrossAccountAttachmentResponse");
+impl DescribeCrossAccountAttachmentOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECROSSACCOUNTATTACHMENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCrossAccountAttachmentOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cross_account_attachment {
+            ser.write_struct(&DESCRIBECROSSACCOUNTATTACHMENTOUTPUT_MEMBER_CROSS_ACCOUNT_ATTACHMENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_cross_account_attachment::builders::DescribeCrossAccountAttachmentOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECROSSACCOUNTATTACHMENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_account_attachment = Some(crate::types::Attachment::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCrossAccountAttachmentOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeCrossAccountAttachmentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

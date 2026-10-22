@@ -37,6 +37,164 @@ impl ConformancePackEvaluationResult {
         self.annotation.as_deref()
     }
 }
+static CONFORMANCEPACKEVALUATIONRESULT_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackEvaluationResult$ComplianceType",
+        "com.amazonaws.configservice",
+        "ConformancePackEvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    0,
+);
+static CONFORMANCEPACKEVALUATIONRESULT_MEMBER_EVALUATION_RESULT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConformancePackEvaluationResult$EvaluationResultIdentifier",
+            "com.amazonaws.configservice",
+            "ConformancePackEvaluationResult",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "EvaluationResultIdentifier",
+        1,
+    );
+static CONFORMANCEPACKEVALUATIONRESULT_MEMBER_CONFIG_RULE_INVOKED_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConformancePackEvaluationResult$ConfigRuleInvokedTime",
+            "com.amazonaws.configservice",
+            "ConformancePackEvaluationResult",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "ConfigRuleInvokedTime",
+        2,
+    );
+static CONFORMANCEPACKEVALUATIONRESULT_MEMBER_RESULT_RECORDED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackEvaluationResult$ResultRecordedTime",
+        "com.amazonaws.configservice",
+        "ConformancePackEvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ResultRecordedTime",
+    3,
+);
+static CONFORMANCEPACKEVALUATIONRESULT_MEMBER_ANNOTATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackEvaluationResult$Annotation",
+        "com.amazonaws.configservice",
+        "ConformancePackEvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Annotation",
+    4,
+);
+static CONFORMANCEPACKEVALUATIONRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackEvaluationResult",
+        "com.amazonaws.configservice",
+        "ConformancePackEvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFORMANCEPACKEVALUATIONRESULT_MEMBER_COMPLIANCE_TYPE,
+        &CONFORMANCEPACKEVALUATIONRESULT_MEMBER_EVALUATION_RESULT_IDENTIFIER,
+        &CONFORMANCEPACKEVALUATIONRESULT_MEMBER_CONFIG_RULE_INVOKED_TIME,
+        &CONFORMANCEPACKEVALUATIONRESULT_MEMBER_RESULT_RECORDED_TIME,
+        &CONFORMANCEPACKEVALUATIONRESULT_MEMBER_ANNOTATION,
+    ],
+);
+impl ConformancePackEvaluationResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFORMANCEPACKEVALUATIONRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConformancePackEvaluationResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.compliance_type;
+            ser.write_string(&CONFORMANCEPACKEVALUATIONRESULT_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.evaluation_result_identifier {
+            ser.write_struct(&CONFORMANCEPACKEVALUATIONRESULT_MEMBER_EVALUATION_RESULT_IDENTIFIER, val)?;
+        }
+        {
+            let val = &self.config_rule_invoked_time;
+            ser.write_timestamp(&CONFORMANCEPACKEVALUATIONRESULT_MEMBER_CONFIG_RULE_INVOKED_TIME, val)?;
+        }
+        {
+            let val = &self.result_recorded_time;
+            ser.write_timestamp(&CONFORMANCEPACKEVALUATIONRESULT_MEMBER_RESULT_RECORDED_TIME, val)?;
+        }
+        if let Some(ref val) = self.annotation {
+            ser.write_string(&CONFORMANCEPACKEVALUATIONRESULT_MEMBER_ANNOTATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConformancePackEvaluationResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFORMANCEPACKEVALUATIONRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.compliance_type = Some(crate::types::ConformancePackComplianceType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_result_identifier = Some(crate::types::EvaluationResultIdentifier::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.config_rule_invoked_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(3) => {
+                    self.result_recorded_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.annotation = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConformancePackEvaluationResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.config_rule_invoked_time = builder.config_rule_invoked_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.result_recorded_time = builder.result_recorded_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ConformancePackEvaluationResult {
     /// Creates a new builder-style object to manufacture [`ConformancePackEvaluationResult`](crate::types::ConformancePackEvaluationResult).
     pub fn builder() -> crate::types::builders::ConformancePackEvaluationResultBuilder {

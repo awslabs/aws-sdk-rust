@@ -13,6 +13,84 @@ impl CreateModelPackageGroupOutput {
         self.model_package_group_arn.as_deref()
     }
 }
+static CREATEMODELPACKAGEGROUPOUTPUT_MEMBER_MODEL_PACKAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelPackageGroupOutput$ModelPackageGroupArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelPackageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupArn",
+    0,
+);
+static CREATEMODELPACKAGEGROUPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelPackageGroupOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelPackageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEMODELPACKAGEGROUPOUTPUT_MEMBER_MODEL_PACKAGE_GROUP_ARN],
+)
+.with_original_name("CreateModelPackageGroupOutput");
+impl CreateModelPackageGroupOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMODELPACKAGEGROUPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateModelPackageGroupOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_package_group_arn {
+            ser.write_string(&CREATEMODELPACKAGEGROUPOUTPUT_MEMBER_MODEL_PACKAGE_GROUP_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_model_package_group::builders::CreateModelPackageGroupOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMODELPACKAGEGROUPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateModelPackageGroupOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateModelPackageGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

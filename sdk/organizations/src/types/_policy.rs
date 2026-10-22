@@ -19,6 +19,95 @@ impl Policy {
         self.content.as_deref()
     }
 }
+static POLICY_MEMBER_POLICY_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Policy$PolicySummary",
+        "com.amazonaws.organizations",
+        "Policy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PolicySummary",
+    0,
+);
+static POLICY_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Policy$Content", "com.amazonaws.organizations", "Policy"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    1,
+);
+static POLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Policy", "com.amazonaws.organizations", "Policy"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&POLICY_MEMBER_POLICY_SUMMARY, &POLICY_MEMBER_CONTENT],
+);
+impl Policy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Policy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.policy_summary {
+            ser.write_struct(&POLICY_MEMBER_POLICY_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&POLICY_MEMBER_CONTENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_summary = Some(crate::types::PolicySummary::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Policy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Policy {
     /// Creates a new builder-style object to manufacture [`Policy`](crate::types::Policy).
     pub fn builder() -> crate::types::builders::PolicyBuilder {

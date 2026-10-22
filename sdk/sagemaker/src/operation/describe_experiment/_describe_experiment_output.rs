@@ -61,6 +61,254 @@ impl DescribeExperimentOutput {
         self.last_modified_by.as_ref()
     }
 }
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_EXPERIMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$ExperimentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExperimentName",
+    0,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_EXPERIMENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$ExperimentArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExperimentArn",
+    1,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$DisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$Source",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    3,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    4,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    6,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static DESCRIBEEXPERIMENTOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    8,
+);
+static DESCRIBEEXPERIMENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeExperimentOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeExperimentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_EXPERIMENT_NAME,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_EXPERIMENT_ARN,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_DISPLAY_NAME,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_SOURCE,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEEXPERIMENTOUTPUT_MEMBER_LAST_MODIFIED_BY,
+    ],
+)
+.with_original_name("DescribeExperimentResponse");
+impl DescribeExperimentOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEEXPERIMENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeExperimentOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.experiment_name {
+            ser.write_string(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_EXPERIMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.experiment_arn {
+            ser.write_string(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_EXPERIMENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBEEXPERIMENTOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_experiment::builders::DescribeExperimentOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEEXPERIMENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ExperimentSource::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeExperimentOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeExperimentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

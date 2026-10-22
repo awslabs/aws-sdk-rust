@@ -94,6 +94,348 @@ impl CreateLicenseConfigurationInput {
         self.license_expiry
     }
 }
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$Name",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$Description",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNTING_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$LicenseCountingType",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseCountingType",
+    2,
+);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$LicenseCount",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "LicenseCount",
+    3,
+);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNT_HARD_LIMIT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$LicenseCountHardLimit",
+            "com.amazonaws.licensemanager.synthetic",
+            "CreateLicenseConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "LicenseCountHardLimit",
+        4,
+    );
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_RULES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#StringList$member",
+        "com.amazonaws.licensemanager",
+        "StringList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$LicenseRules",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LicenseRules",
+    5,
+)
+.with_list_member(&CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_RULES_MEMBER);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#TagList$member", "com.amazonaws.licensemanager", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$Tags",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATELICENSECONFIGURATIONINPUT_MEMBER_TAGS_MEMBER);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_DISASSOCIATE_WHEN_NOT_FOUND: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$DisassociateWhenNotFound",
+            "com.amazonaws.licensemanager.synthetic",
+            "CreateLicenseConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "DisassociateWhenNotFound",
+        7,
+    );
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_PRODUCT_INFORMATION_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#ProductInformationList$member",
+            "com.amazonaws.licensemanager",
+            "ProductInformationList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_PRODUCT_INFORMATION_LIST: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$ProductInformationList",
+            "com.amazonaws.licensemanager.synthetic",
+            "CreateLicenseConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ProductInformationList",
+        8,
+    )
+    .with_list_member(&CREATELICENSECONFIGURATIONINPUT_MEMBER_PRODUCT_INFORMATION_LIST_MEMBER);
+static CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_EXPIRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput$LicenseExpiry",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "LicenseExpiry",
+    9,
+);
+static CREATELICENSECONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseConfigurationInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_NAME,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_DESCRIPTION,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNTING_TYPE,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNT,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNT_HARD_LIMIT,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_RULES,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_TAGS,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_DISASSOCIATE_WHEN_NOT_FOUND,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_PRODUCT_INFORMATION_LIST,
+        &CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_EXPIRY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLicenseConfigurationRequest");
+impl CreateLicenseConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELICENSECONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLicenseConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATELICENSECONFIGURATIONINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATELICENSECONFIGURATIONINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.license_counting_type {
+            ser.write_string(&CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNTING_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.license_count {
+            ser.write_long(&CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.license_count_hard_limit {
+            ser.write_boolean(&CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_COUNT_HARD_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.license_rules {
+            ser.write_list(
+                &CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_RULES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELICENSECONFIGURATIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.disassociate_when_not_found {
+            ser.write_boolean(&CREATELICENSECONFIGURATIONINPUT_MEMBER_DISASSOCIATE_WHEN_NOT_FOUND, *val)?;
+        }
+        if let Some(ref val) = self.product_information_list {
+            ser.write_list(
+                &CREATELICENSECONFIGURATIONINPUT_MEMBER_PRODUCT_INFORMATION_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProductInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.license_expiry {
+            ser.write_long(&CREATELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_EXPIRY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELICENSECONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_counting_type = Some(crate::types::LicenseCountingType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_count_hard_limit = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_rules = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disassociate_when_not_found = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_information_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProductInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_expiry = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLicenseConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseConfigurationInput`](crate::operation::create_license_configuration::CreateLicenseConfigurationInput).
     pub fn builder() -> crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder {

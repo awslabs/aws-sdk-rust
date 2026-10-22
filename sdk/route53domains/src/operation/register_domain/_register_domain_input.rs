@@ -154,6 +154,341 @@ impl ::std::fmt::Debug for RegisterDomainInput {
         formatter.finish()
     }
 }
+static REGISTERDOMAININPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static REGISTERDOMAININPUT_MEMBER_IDN_LANG_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$IdnLangCode",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdnLangCode",
+    1,
+);
+static REGISTERDOMAININPUT_MEMBER_DURATION_IN_YEARS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$DurationInYears",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DurationInYears",
+    2,
+);
+static REGISTERDOMAININPUT_MEMBER_AUTO_RENEW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$AutoRenew",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AutoRenew",
+    3,
+);
+static REGISTERDOMAININPUT_MEMBER_ADMIN_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$AdminContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdminContact",
+    4,
+);
+static REGISTERDOMAININPUT_MEMBER_REGISTRANT_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$RegistrantContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RegistrantContact",
+    5,
+);
+static REGISTERDOMAININPUT_MEMBER_TECH_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$TechContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TechContact",
+    6,
+);
+static REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_ADMIN_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$PrivacyProtectAdminContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectAdminContact",
+    7,
+);
+static REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_REGISTRANT_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$PrivacyProtectRegistrantContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectRegistrantContact",
+    8,
+);
+static REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_TECH_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$PrivacyProtectTechContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectTechContact",
+    9,
+);
+static REGISTERDOMAININPUT_MEMBER_BILLING_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$BillingContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BillingContact",
+    10,
+);
+static REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_BILLING_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$PrivacyProtectBillingContact",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectBillingContact",
+    11,
+);
+static REGISTERDOMAININPUT_MEMBER_CONSENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput$Consent",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Consent",
+    12,
+);
+static REGISTERDOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RegisterDomainInput",
+        "com.amazonaws.route53domains.synthetic",
+        "RegisterDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERDOMAININPUT_MEMBER_DOMAIN_NAME,
+        &REGISTERDOMAININPUT_MEMBER_IDN_LANG_CODE,
+        &REGISTERDOMAININPUT_MEMBER_DURATION_IN_YEARS,
+        &REGISTERDOMAININPUT_MEMBER_AUTO_RENEW,
+        &REGISTERDOMAININPUT_MEMBER_ADMIN_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_REGISTRANT_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_TECH_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_ADMIN_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_REGISTRANT_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_TECH_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_BILLING_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_BILLING_CONTACT,
+        &REGISTERDOMAININPUT_MEMBER_CONSENT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterDomainRequest");
+impl RegisterDomainInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERDOMAININPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterDomainInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&REGISTERDOMAININPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.idn_lang_code {
+            ser.write_string(&REGISTERDOMAININPUT_MEMBER_IDN_LANG_CODE, val)?;
+        }
+        if let Some(ref val) = self.duration_in_years {
+            ser.write_integer(&REGISTERDOMAININPUT_MEMBER_DURATION_IN_YEARS, *val)?;
+        }
+        if let Some(ref val) = self.auto_renew {
+            ser.write_boolean(&REGISTERDOMAININPUT_MEMBER_AUTO_RENEW, *val)?;
+        }
+        if let Some(ref val) = self.admin_contact {
+            ser.write_struct(&REGISTERDOMAININPUT_MEMBER_ADMIN_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.registrant_contact {
+            ser.write_struct(&REGISTERDOMAININPUT_MEMBER_REGISTRANT_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.tech_contact {
+            ser.write_struct(&REGISTERDOMAININPUT_MEMBER_TECH_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_admin_contact {
+            ser.write_boolean(&REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_ADMIN_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_registrant_contact {
+            ser.write_boolean(&REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_REGISTRANT_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_tech_contact {
+            ser.write_boolean(&REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_TECH_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.billing_contact {
+            ser.write_struct(&REGISTERDOMAININPUT_MEMBER_BILLING_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_billing_contact {
+            ser.write_boolean(&REGISTERDOMAININPUT_MEMBER_PRIVACY_PROTECT_BILLING_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.consent {
+            ser.write_struct(&REGISTERDOMAININPUT_MEMBER_CONSENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_domain::builders::RegisterDomainInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERDOMAININPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idn_lang_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_in_years = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_renew = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrant_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tech_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_admin_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_registrant_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_tech_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billing_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_billing_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.consent = Some(crate::types::Consent::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterDomainInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.duration_in_years = builder.duration_in_years.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterDomainInput {
     /// Creates a new builder-style object to manufacture [`RegisterDomainInput`](crate::operation::register_domain::RegisterDomainInput).
     pub fn builder() -> crate::operation::register_domain::builders::RegisterDomainInputBuilder {

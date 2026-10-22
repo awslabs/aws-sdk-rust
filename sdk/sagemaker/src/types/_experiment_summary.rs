@@ -43,6 +43,190 @@ impl ExperimentSummary {
         self.last_modified_time.as_ref()
     }
 }
+static EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExperimentSummary$ExperimentArn",
+        "com.amazonaws.sagemaker",
+        "ExperimentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExperimentArn",
+    0,
+);
+static EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExperimentSummary$ExperimentName",
+        "com.amazonaws.sagemaker",
+        "ExperimentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExperimentName",
+    1,
+);
+static EXPERIMENTSUMMARY_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExperimentSummary$DisplayName",
+        "com.amazonaws.sagemaker",
+        "ExperimentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExperimentSummary$ExperimentSource",
+        "com.amazonaws.sagemaker",
+        "ExperimentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExperimentSource",
+    3,
+);
+static EXPERIMENTSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExperimentSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "ExperimentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static EXPERIMENTSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExperimentSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "ExperimentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    5,
+);
+static EXPERIMENTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ExperimentSummary",
+        "com.amazonaws.sagemaker",
+        "ExperimentSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_ARN,
+        &EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_NAME,
+        &EXPERIMENTSUMMARY_MEMBER_DISPLAY_NAME,
+        &EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_SOURCE,
+        &EXPERIMENTSUMMARY_MEMBER_CREATION_TIME,
+        &EXPERIMENTSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl ExperimentSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXPERIMENTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExperimentSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.experiment_arn {
+            ser.write_string(&EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.experiment_name {
+            ser.write_string(&EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&EXPERIMENTSUMMARY_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.experiment_source {
+            ser.write_struct(&EXPERIMENTSUMMARY_MEMBER_EXPERIMENT_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&EXPERIMENTSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&EXPERIMENTSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExperimentSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXPERIMENTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_source = Some(crate::types::ExperimentSource::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExperimentSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExperimentSummary {
     /// Creates a new builder-style object to manufacture [`ExperimentSummary`](crate::types::ExperimentSummary).
     pub fn builder() -> crate::types::builders::ExperimentSummaryBuilder {

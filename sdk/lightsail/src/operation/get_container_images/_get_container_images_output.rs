@@ -15,6 +15,110 @@ impl GetContainerImagesOutput {
         self.container_images.as_deref().unwrap_or_default()
     }
 }
+static GETCONTAINERIMAGESOUTPUT_MEMBER_CONTAINER_IMAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerImageList$member",
+        "com.amazonaws.lightsail",
+        "ContainerImageList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETCONTAINERIMAGESOUTPUT_MEMBER_CONTAINER_IMAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerImagesOutput$containerImages",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerImagesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "containerImages",
+    0,
+)
+.with_list_member(&GETCONTAINERIMAGESOUTPUT_MEMBER_CONTAINER_IMAGES_MEMBER);
+static GETCONTAINERIMAGESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerImagesOutput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerImagesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETCONTAINERIMAGESOUTPUT_MEMBER_CONTAINER_IMAGES],
+)
+.with_original_name("GetContainerImagesResult");
+impl GetContainerImagesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCONTAINERIMAGESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetContainerImagesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_images {
+            ser.write_list(
+                &GETCONTAINERIMAGESOUTPUT_MEMBER_CONTAINER_IMAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ContainerImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_container_images::builders::GetContainerImagesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCONTAINERIMAGESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_images = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContainerImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetContainerImagesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetContainerImagesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

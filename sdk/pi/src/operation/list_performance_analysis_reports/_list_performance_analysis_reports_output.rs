@@ -21,6 +21,134 @@ impl ListPerformanceAnalysisReportsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_ANALYSIS_REPORTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.pi#AnalysisReportSummaryList$member",
+            "com.amazonaws.pi",
+            "AnalysisReportSummaryList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_ANALYSIS_REPORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#ListPerformanceAnalysisReportsOutput$AnalysisReports",
+        "com.amazonaws.pi.synthetic",
+        "ListPerformanceAnalysisReportsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AnalysisReports",
+    0,
+)
+.with_list_member(&LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_ANALYSIS_REPORTS_MEMBER);
+static LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#ListPerformanceAnalysisReportsOutput$NextToken",
+        "com.amazonaws.pi.synthetic",
+        "ListPerformanceAnalysisReportsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTPERFORMANCEANALYSISREPORTSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#ListPerformanceAnalysisReportsOutput",
+        "com.amazonaws.pi.synthetic",
+        "ListPerformanceAnalysisReportsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_ANALYSIS_REPORTS,
+        &LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListPerformanceAnalysisReportsResponse");
+impl ListPerformanceAnalysisReportsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTPERFORMANCEANALYSISREPORTSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListPerformanceAnalysisReportsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.analysis_reports {
+            ser.write_list(
+                &LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_ANALYSIS_REPORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AnalysisReportSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTPERFORMANCEANALYSISREPORTSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_performance_analysis_reports::builders::ListPerformanceAnalysisReportsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTPERFORMANCEANALYSISREPORTSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.analysis_reports = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AnalysisReportSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListPerformanceAnalysisReportsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListPerformanceAnalysisReportsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

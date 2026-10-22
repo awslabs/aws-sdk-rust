@@ -65,3 +65,101 @@ impl CustomFileSystemConfig {
         matches!(self, Self::Unknown)
     }
 }
+static CUSTOMFILESYSTEMCONFIG_MEMBER_EFSFILESYSTEMCONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomFileSystemConfig$EFSFileSystemConfig",
+        "com.amazonaws.sagemaker",
+        "CustomFileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EFSFileSystemConfig",
+    0,
+);
+static CUSTOMFILESYSTEMCONFIG_MEMBER_FSXLUSTREFILESYSTEMCONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomFileSystemConfig$FSxLustreFileSystemConfig",
+        "com.amazonaws.sagemaker",
+        "CustomFileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FSxLustreFileSystemConfig",
+    1,
+);
+static CUSTOMFILESYSTEMCONFIG_MEMBER_S3FILESYSTEMCONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomFileSystemConfig$S3FileSystemConfig",
+        "com.amazonaws.sagemaker",
+        "CustomFileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3FileSystemConfig",
+    2,
+);
+static CUSTOMFILESYSTEMCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomFileSystemConfig",
+        "com.amazonaws.sagemaker",
+        "CustomFileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &CUSTOMFILESYSTEMCONFIG_MEMBER_EFSFILESYSTEMCONFIG,
+        &CUSTOMFILESYSTEMCONFIG_MEMBER_FSXLUSTREFILESYSTEMCONFIG,
+        &CUSTOMFILESYSTEMCONFIG_MEMBER_S3FILESYSTEMCONFIG,
+    ],
+);
+impl CustomFileSystemConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMFILESYSTEMCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomFileSystemConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::EfsFileSystemConfig(val) => {
+                ser.write_struct(&CUSTOMFILESYSTEMCONFIG_MEMBER_EFSFILESYSTEMCONFIG, val)?;
+            }
+            Self::FSxLustreFileSystemConfig(val) => {
+                ser.write_struct(&CUSTOMFILESYSTEMCONFIG_MEMBER_FSXLUSTREFILESYSTEMCONFIG, val)?;
+            }
+            Self::S3FileSystemConfig(val) => {
+                ser.write_struct(&CUSTOMFILESYSTEMCONFIG_MEMBER_S3FILESYSTEMCONFIG, val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl CustomFileSystemConfig {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&CUSTOMFILESYSTEMCONFIG_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::EfsFileSystemConfig(crate::types::EfsFileSystemConfig::deserialize(deser)?),
+                Some(1) => Self::FSxLustreFileSystemConfig(crate::types::FSxLustreFileSystemConfig::deserialize(deser)?),
+                Some(2) => Self::S3FileSystemConfig(crate::types::S3FileSystemConfig::deserialize(deser)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

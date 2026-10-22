@@ -79,6 +79,308 @@ impl Workteam {
         self.worker_access_configuration.as_ref()
     }
 }
+static WORKTEAM_MEMBER_WORKTEAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam$WorkteamName", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkteamName",
+    0,
+);
+static WORKTEAM_MEMBER_MEMBER_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MemberDefinitions$member",
+        "com.amazonaws.sagemaker",
+        "MemberDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WORKTEAM_MEMBER_MEMBER_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Workteam$MemberDefinitions",
+        "com.amazonaws.sagemaker",
+        "Workteam",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MemberDefinitions",
+    1,
+)
+.with_list_member(&WORKTEAM_MEMBER_MEMBER_DEFINITIONS_MEMBER);
+static WORKTEAM_MEMBER_WORKTEAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam$WorkteamArn", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkteamArn",
+    2,
+);
+static WORKTEAM_MEMBER_WORKFORCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam$WorkforceArn", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkforceArn",
+    3,
+);
+static WORKTEAM_MEMBER_PRODUCT_LISTING_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductListings$member",
+        "com.amazonaws.sagemaker",
+        "ProductListings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static WORKTEAM_MEMBER_PRODUCT_LISTING_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Workteam$ProductListingIds",
+        "com.amazonaws.sagemaker",
+        "Workteam",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ProductListingIds",
+    4,
+)
+.with_list_member(&WORKTEAM_MEMBER_PRODUCT_LISTING_IDS_MEMBER);
+static WORKTEAM_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam$Description", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    5,
+);
+static WORKTEAM_MEMBER_SUB_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam$SubDomain", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubDomain",
+    6,
+);
+static WORKTEAM_MEMBER_CREATE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam$CreateDate", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateDate",
+    7,
+);
+static WORKTEAM_MEMBER_LAST_UPDATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam$LastUpdatedDate", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedDate",
+    8,
+);
+static WORKTEAM_MEMBER_NOTIFICATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Workteam$NotificationConfiguration",
+        "com.amazonaws.sagemaker",
+        "Workteam",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NotificationConfiguration",
+    9,
+);
+static WORKTEAM_MEMBER_WORKER_ACCESS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Workteam$WorkerAccessConfiguration",
+        "com.amazonaws.sagemaker",
+        "Workteam",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkerAccessConfiguration",
+    10,
+);
+static WORKTEAM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Workteam", "com.amazonaws.sagemaker", "Workteam"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKTEAM_MEMBER_WORKTEAM_NAME,
+        &WORKTEAM_MEMBER_MEMBER_DEFINITIONS,
+        &WORKTEAM_MEMBER_WORKTEAM_ARN,
+        &WORKTEAM_MEMBER_WORKFORCE_ARN,
+        &WORKTEAM_MEMBER_PRODUCT_LISTING_IDS,
+        &WORKTEAM_MEMBER_DESCRIPTION,
+        &WORKTEAM_MEMBER_SUB_DOMAIN,
+        &WORKTEAM_MEMBER_CREATE_DATE,
+        &WORKTEAM_MEMBER_LAST_UPDATED_DATE,
+        &WORKTEAM_MEMBER_NOTIFICATION_CONFIGURATION,
+        &WORKTEAM_MEMBER_WORKER_ACCESS_CONFIGURATION,
+    ],
+);
+impl Workteam {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKTEAM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Workteam {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workteam_name {
+            ser.write_string(&WORKTEAM_MEMBER_WORKTEAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.member_definitions {
+            ser.write_list(
+                &WORKTEAM_MEMBER_MEMBER_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MemberDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.workteam_arn {
+            ser.write_string(&WORKTEAM_MEMBER_WORKTEAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.workforce_arn {
+            ser.write_string(&WORKTEAM_MEMBER_WORKFORCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.product_listing_ids {
+            ser.write_list(
+                &WORKTEAM_MEMBER_PRODUCT_LISTING_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&WORKTEAM_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.sub_domain {
+            ser.write_string(&WORKTEAM_MEMBER_SUB_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.create_date {
+            ser.write_timestamp(&WORKTEAM_MEMBER_CREATE_DATE, val)?;
+        }
+        if let Some(ref val) = self.last_updated_date {
+            ser.write_timestamp(&WORKTEAM_MEMBER_LAST_UPDATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.notification_configuration {
+            ser.write_struct(&WORKTEAM_MEMBER_NOTIFICATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.worker_access_configuration {
+            ser.write_struct(&WORKTEAM_MEMBER_WORKER_ACCESS_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkteamBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKTEAM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workteam_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.member_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MemberDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workteam_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workforce_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_listing_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sub_domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_configuration = Some(crate::types::NotificationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.worker_access_configuration = Some(crate::types::WorkerAccessConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Workteam {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Workteam {
     /// Creates a new builder-style object to manufacture [`Workteam`](crate::types::Workteam).
     pub fn builder() -> crate::types::builders::WorkteamBuilder {

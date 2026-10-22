@@ -163,6 +163,637 @@ impl LightsailDistribution {
         self.custom_error_responses.as_deref().unwrap_or_default()
     }
 }
+static LIGHTSAILDISTRIBUTION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$name",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$arn",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$supportCode",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    2,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$createdAt",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$location",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    4,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$resourceType",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_ALTERNATIVE_DOMAIN_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_ALTERNATIVE_DOMAIN_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$alternativeDomainNames",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "alternativeDomainNames",
+    6,
+)
+.with_list_member(&LIGHTSAILDISTRIBUTION_MEMBER_ALTERNATIVE_DOMAIN_NAMES_MEMBER);
+static LIGHTSAILDISTRIBUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$status",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    7,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_IS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$isEnabled",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isEnabled",
+    8,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$domainName",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domainName",
+    9,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$bundleId",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bundleId",
+    10,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_CERTIFICATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$certificateName",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateName",
+    11,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_ORIGIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$origin",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "origin",
+    12,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_ORIGIN_PUBLIC_DNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$originPublicDNS",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "originPublicDNS",
+    13,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_CACHE_BEHAVIOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$defaultCacheBehavior",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "defaultCacheBehavior",
+    14,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIOR_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$cacheBehaviorSettings",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "cacheBehaviorSettings",
+    15,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheBehaviorList$member",
+        "com.amazonaws.lightsail",
+        "CacheBehaviorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$cacheBehaviors",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "cacheBehaviors",
+    16,
+)
+.with_list_member(&LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIORS_MEMBER);
+static LIGHTSAILDISTRIBUTION_MEMBER_ABLE_TO_UPDATE_BUNDLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$ableToUpdateBundle",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ableToUpdateBundle",
+    17,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$ipAddressType",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddressType",
+    18,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$tags",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    19,
+)
+.with_list_member(&LIGHTSAILDISTRIBUTION_MEMBER_TAGS_MEMBER);
+static LIGHTSAILDISTRIBUTION_MEMBER_VIEWER_MINIMUM_TLS_PROTOCOL_VERSION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#LightsailDistribution$viewerMinimumTlsProtocolVersion",
+            "com.amazonaws.lightsail",
+            "LightsailDistribution",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "viewerMinimumTlsProtocolVersion",
+        20,
+    );
+static LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_ROOT_OBJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$defaultRootObject",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "defaultRootObject",
+    21,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#DistributionCustomErrorResponseList$member",
+        "com.amazonaws.lightsail",
+        "DistributionCustomErrorResponseList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$customErrorResponses",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "customErrorResponses",
+    22,
+)
+.with_list_member(&LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES_MEMBER);
+static LIGHTSAILDISTRIBUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LIGHTSAILDISTRIBUTION_MEMBER_NAME,
+        &LIGHTSAILDISTRIBUTION_MEMBER_ARN,
+        &LIGHTSAILDISTRIBUTION_MEMBER_SUPPORT_CODE,
+        &LIGHTSAILDISTRIBUTION_MEMBER_CREATED_AT,
+        &LIGHTSAILDISTRIBUTION_MEMBER_LOCATION,
+        &LIGHTSAILDISTRIBUTION_MEMBER_RESOURCE_TYPE,
+        &LIGHTSAILDISTRIBUTION_MEMBER_ALTERNATIVE_DOMAIN_NAMES,
+        &LIGHTSAILDISTRIBUTION_MEMBER_STATUS,
+        &LIGHTSAILDISTRIBUTION_MEMBER_IS_ENABLED,
+        &LIGHTSAILDISTRIBUTION_MEMBER_DOMAIN_NAME,
+        &LIGHTSAILDISTRIBUTION_MEMBER_BUNDLE_ID,
+        &LIGHTSAILDISTRIBUTION_MEMBER_CERTIFICATE_NAME,
+        &LIGHTSAILDISTRIBUTION_MEMBER_ORIGIN,
+        &LIGHTSAILDISTRIBUTION_MEMBER_ORIGIN_PUBLIC_DNS,
+        &LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_CACHE_BEHAVIOR,
+        &LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIOR_SETTINGS,
+        &LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIORS,
+        &LIGHTSAILDISTRIBUTION_MEMBER_ABLE_TO_UPDATE_BUNDLE,
+        &LIGHTSAILDISTRIBUTION_MEMBER_IP_ADDRESS_TYPE,
+        &LIGHTSAILDISTRIBUTION_MEMBER_TAGS,
+        &LIGHTSAILDISTRIBUTION_MEMBER_VIEWER_MINIMUM_TLS_PROTOCOL_VERSION,
+        &LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_ROOT_OBJECT,
+        &LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES,
+    ],
+);
+impl LightsailDistribution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LIGHTSAILDISTRIBUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LightsailDistribution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&LIGHTSAILDISTRIBUTION_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&LIGHTSAILDISTRIBUTION_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.alternative_domain_names {
+            ser.write_list(
+                &LIGHTSAILDISTRIBUTION_MEMBER_ALTERNATIVE_DOMAIN_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.is_enabled {
+            ser.write_boolean(&LIGHTSAILDISTRIBUTION_MEMBER_IS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.certificate_name {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_CERTIFICATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.origin {
+            ser.write_struct(&LIGHTSAILDISTRIBUTION_MEMBER_ORIGIN, val)?;
+        }
+        if let Some(ref val) = self.origin_public_dns {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_ORIGIN_PUBLIC_DNS, val)?;
+        }
+        if let Some(ref val) = self.default_cache_behavior {
+            ser.write_struct(&LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_CACHE_BEHAVIOR, val)?;
+        }
+        if let Some(ref val) = self.cache_behavior_settings {
+            ser.write_struct(&LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIOR_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.cache_behaviors {
+            ser.write_list(
+                &LIGHTSAILDISTRIBUTION_MEMBER_CACHE_BEHAVIORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CacheBehaviorPerPath::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.able_to_update_bundle {
+            ser.write_boolean(&LIGHTSAILDISTRIBUTION_MEMBER_ABLE_TO_UPDATE_BUNDLE, *val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &LIGHTSAILDISTRIBUTION_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.viewer_minimum_tls_protocol_version {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_VIEWER_MINIMUM_TLS_PROTOCOL_VERSION, val)?;
+        }
+        if let Some(ref val) = self.default_root_object {
+            ser.write_string(&LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_ROOT_OBJECT, val)?;
+        }
+        if let Some(ref val) = self.custom_error_responses {
+            ser.write_list(
+                &LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DistributionCustomErrorResponse::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LightsailDistributionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LIGHTSAILDISTRIBUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alternative_domain_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.origin = Some(crate::types::Origin::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.origin_public_dns = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_cache_behavior = Some(crate::types::CacheBehavior::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_behavior_settings = Some(crate::types::CacheSettings::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_behaviors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CacheBehaviorPerPath::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.able_to_update_bundle = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.viewer_minimum_tls_protocol_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_root_object = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_error_responses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DistributionCustomErrorResponse::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LightsailDistribution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LightsailDistribution {
     /// Creates a new builder-style object to manufacture [`LightsailDistribution`](crate::types::LightsailDistribution).
     pub fn builder() -> crate::types::builders::LightsailDistributionBuilder {

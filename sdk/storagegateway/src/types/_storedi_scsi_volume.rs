@@ -105,6 +105,373 @@ impl StorediScsiVolume {
         self.target_name.as_deref()
     }
 }
+static STOREDISCSIVOLUME_MEMBER_VOLUME_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeARN",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeARN",
+    0,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeId",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeId",
+    1,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeType",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeType",
+    2,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeStatus",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeStatus",
+    3,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_ATTACHMENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeAttachmentStatus",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeAttachmentStatus",
+    4,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeSizeInBytes",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSizeInBytes",
+    5,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_PROGRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeProgress",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "VolumeProgress",
+    6,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_DISK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeDiskId",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeDiskId",
+    7,
+);
+static STOREDISCSIVOLUME_MEMBER_SOURCE_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$SourceSnapshotId",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceSnapshotId",
+    8,
+);
+static STOREDISCSIVOLUME_MEMBER_PRESERVED_EXISTING_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$PreservedExistingData",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PreservedExistingData",
+    9,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUMEI_SCSI_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeiSCSIAttributes",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VolumeiSCSIAttributes",
+    10,
+);
+static STOREDISCSIVOLUME_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$CreatedDate",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    11,
+);
+static STOREDISCSIVOLUME_MEMBER_VOLUME_USED_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$VolumeUsedInBytes",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeUsedInBytes",
+    12,
+);
+static STOREDISCSIVOLUME_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$KMSKey",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    13,
+);
+static STOREDISCSIVOLUME_MEMBER_TARGET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume$TargetName",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetName",
+    14,
+);
+static STOREDISCSIVOLUME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#StorediSCSIVolume",
+        "com.amazonaws.storagegateway",
+        "StorediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_ARN,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_ID,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_TYPE,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_STATUS,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_ATTACHMENT_STATUS,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_SIZE_IN_BYTES,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_PROGRESS,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_DISK_ID,
+        &STOREDISCSIVOLUME_MEMBER_SOURCE_SNAPSHOT_ID,
+        &STOREDISCSIVOLUME_MEMBER_PRESERVED_EXISTING_DATA,
+        &STOREDISCSIVOLUME_MEMBER_VOLUMEI_SCSI_ATTRIBUTES,
+        &STOREDISCSIVOLUME_MEMBER_CREATED_DATE,
+        &STOREDISCSIVOLUME_MEMBER_VOLUME_USED_IN_BYTES,
+        &STOREDISCSIVOLUME_MEMBER_KMS_KEY,
+        &STOREDISCSIVOLUME_MEMBER_TARGET_NAME,
+    ],
+);
+impl StorediScsiVolume {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOREDISCSIVOLUME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StorediScsiVolume {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_arn {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_VOLUME_ARN, val)?;
+        }
+        if let Some(ref val) = self.volume_id {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_VOLUME_ID, val)?;
+        }
+        if let Some(ref val) = self.volume_type {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_VOLUME_TYPE, val)?;
+        }
+        if let Some(ref val) = self.volume_status {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_VOLUME_STATUS, val)?;
+        }
+        if let Some(ref val) = self.volume_attachment_status {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_VOLUME_ATTACHMENT_STATUS, val)?;
+        }
+        {
+            let val = &self.volume_size_in_bytes;
+            ser.write_long(&STOREDISCSIVOLUME_MEMBER_VOLUME_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.volume_progress {
+            ser.write_double(&STOREDISCSIVOLUME_MEMBER_VOLUME_PROGRESS, *val)?;
+        }
+        if let Some(ref val) = self.volume_disk_id {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_VOLUME_DISK_ID, val)?;
+        }
+        if let Some(ref val) = self.source_snapshot_id {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_SOURCE_SNAPSHOT_ID, val)?;
+        }
+        {
+            let val = &self.preserved_existing_data;
+            ser.write_boolean(&STOREDISCSIVOLUME_MEMBER_PRESERVED_EXISTING_DATA, *val)?;
+        }
+        if let Some(ref val) = self.volumei_scsi_attributes {
+            ser.write_struct(&STOREDISCSIVOLUME_MEMBER_VOLUMEI_SCSI_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&STOREDISCSIVOLUME_MEMBER_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.volume_used_in_bytes {
+            ser.write_long(&STOREDISCSIVOLUME_MEMBER_VOLUME_USED_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.kms_key {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_KMS_KEY, val)?;
+        }
+        if let Some(ref val) = self.target_name {
+            ser.write_string(&STOREDISCSIVOLUME_MEMBER_TARGET_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StorediScsiVolumeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STOREDISCSIVOLUME_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_attachment_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.volume_size_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_progress = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_disk_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    self.preserved_existing_data = Some(deser.read_boolean(member)?);
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volumei_scsi_attributes = Some(crate::types::VolumeiScsiAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_used_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StorediScsiVolume {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl StorediScsiVolume {
     /// Creates a new builder-style object to manufacture [`StorediScsiVolume`](crate::types::StorediScsiVolume).
     pub fn builder() -> crate::types::builders::StorediScsiVolumeBuilder {

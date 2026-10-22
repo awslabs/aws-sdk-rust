@@ -19,6 +19,108 @@ impl ClusterSharedEnvironmentConfig {
         self.f_sx_lustre_config.as_ref()
     }
 }
+static CLUSTERSHAREDENVIRONMENTCONFIG_MEMBER_F_SX_LUSTRE_DELETION_POLICY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterSharedEnvironmentConfig$FSxLustreDeletionPolicy",
+            "com.amazonaws.sagemaker",
+            "ClusterSharedEnvironmentConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FSxLustreDeletionPolicy",
+        0,
+    );
+static CLUSTERSHAREDENVIRONMENTCONFIG_MEMBER_F_SX_LUSTRE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterSharedEnvironmentConfig$FSxLustreConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterSharedEnvironmentConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FSxLustreConfig",
+    1,
+);
+static CLUSTERSHAREDENVIRONMENTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterSharedEnvironmentConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterSharedEnvironmentConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTERSHAREDENVIRONMENTCONFIG_MEMBER_F_SX_LUSTRE_DELETION_POLICY,
+        &CLUSTERSHAREDENVIRONMENTCONFIG_MEMBER_F_SX_LUSTRE_CONFIG,
+    ],
+);
+impl ClusterSharedEnvironmentConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERSHAREDENVIRONMENTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterSharedEnvironmentConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.f_sx_lustre_deletion_policy {
+            ser.write_string(&CLUSTERSHAREDENVIRONMENTCONFIG_MEMBER_F_SX_LUSTRE_DELETION_POLICY, val.as_str())?;
+        }
+        if let Some(ref val) = self.f_sx_lustre_config {
+            ser.write_struct(&CLUSTERSHAREDENVIRONMENTCONFIG_MEMBER_F_SX_LUSTRE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterSharedEnvironmentConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERSHAREDENVIRONMENTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.f_sx_lustre_deletion_policy =
+                            Some(crate::types::ClusterFSxLustreDeletionPolicy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.f_sx_lustre_config = Some(crate::types::FSxLustreConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterSharedEnvironmentConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterSharedEnvironmentConfig {
     /// Creates a new builder-style object to manufacture [`ClusterSharedEnvironmentConfig`](crate::types::ClusterSharedEnvironmentConfig).
     pub fn builder() -> crate::types::builders::ClusterSharedEnvironmentConfigBuilder {

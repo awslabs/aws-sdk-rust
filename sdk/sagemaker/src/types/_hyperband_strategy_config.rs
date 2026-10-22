@@ -45,6 +45,103 @@ impl HyperbandStrategyConfig {
         self.max_resource
     }
 }
+static HYPERBANDSTRATEGYCONFIG_MEMBER_MIN_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperbandStrategyConfig$MinResource",
+        "com.amazonaws.sagemaker",
+        "HyperbandStrategyConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MinResource",
+    0,
+);
+static HYPERBANDSTRATEGYCONFIG_MEMBER_MAX_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperbandStrategyConfig$MaxResource",
+        "com.amazonaws.sagemaker",
+        "HyperbandStrategyConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResource",
+    1,
+);
+static HYPERBANDSTRATEGYCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperbandStrategyConfig",
+        "com.amazonaws.sagemaker",
+        "HyperbandStrategyConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&HYPERBANDSTRATEGYCONFIG_MEMBER_MIN_RESOURCE, &HYPERBANDSTRATEGYCONFIG_MEMBER_MAX_RESOURCE],
+);
+impl HyperbandStrategyConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HYPERBANDSTRATEGYCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HyperbandStrategyConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.min_resource {
+            ser.write_integer(&HYPERBANDSTRATEGYCONFIG_MEMBER_MIN_RESOURCE, *val)?;
+        }
+        if let Some(ref val) = self.max_resource {
+            ser.write_integer(&HYPERBANDSTRATEGYCONFIG_MEMBER_MAX_RESOURCE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HyperbandStrategyConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HYPERBANDSTRATEGYCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_resource = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_resource = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HyperbandStrategyConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HyperbandStrategyConfig {
     /// Creates a new builder-style object to manufacture [`HyperbandStrategyConfig`](crate::types::HyperbandStrategyConfig).
     pub fn builder() -> crate::types::builders::HyperbandStrategyConfigBuilder {

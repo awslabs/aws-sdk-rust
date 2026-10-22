@@ -25,6 +25,127 @@ impl IssuerDetails {
         self.key_fingerprint.as_deref()
     }
 }
+static ISSUERDETAILS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#IssuerDetails$Name",
+        "com.amazonaws.licensemanager",
+        "IssuerDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static ISSUERDETAILS_MEMBER_SIGN_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#IssuerDetails$SignKey",
+        "com.amazonaws.licensemanager",
+        "IssuerDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SignKey",
+    1,
+);
+static ISSUERDETAILS_MEMBER_KEY_FINGERPRINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#IssuerDetails$KeyFingerprint",
+        "com.amazonaws.licensemanager",
+        "IssuerDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KeyFingerprint",
+    2,
+);
+static ISSUERDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#IssuerDetails",
+        "com.amazonaws.licensemanager",
+        "IssuerDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ISSUERDETAILS_MEMBER_NAME,
+        &ISSUERDETAILS_MEMBER_SIGN_KEY,
+        &ISSUERDETAILS_MEMBER_KEY_FINGERPRINT,
+    ],
+);
+impl IssuerDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ISSUERDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for IssuerDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&ISSUERDETAILS_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.sign_key {
+            ser.write_string(&ISSUERDETAILS_MEMBER_SIGN_KEY, val)?;
+        }
+        if let Some(ref val) = self.key_fingerprint {
+            ser.write_string(&ISSUERDETAILS_MEMBER_KEY_FINGERPRINT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::IssuerDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ISSUERDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sign_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_fingerprint = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl IssuerDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl IssuerDetails {
     /// Creates a new builder-style object to manufacture [`IssuerDetails`](crate::types::IssuerDetails).
     pub fn builder() -> crate::types::builders::IssuerDetailsBuilder {

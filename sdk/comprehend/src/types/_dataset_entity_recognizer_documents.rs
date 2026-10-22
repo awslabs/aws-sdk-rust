@@ -20,6 +20,104 @@ impl DatasetEntityRecognizerDocuments {
         self.input_format.as_ref()
     }
 }
+static DATASETENTITYRECOGNIZERDOCUMENTS_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DatasetEntityRecognizerDocuments$S3Uri",
+        "com.amazonaws.comprehend",
+        "DatasetEntityRecognizerDocuments",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    0,
+);
+static DATASETENTITYRECOGNIZERDOCUMENTS_MEMBER_INPUT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DatasetEntityRecognizerDocuments$InputFormat",
+        "com.amazonaws.comprehend",
+        "DatasetEntityRecognizerDocuments",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InputFormat",
+    1,
+);
+static DATASETENTITYRECOGNIZERDOCUMENTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DatasetEntityRecognizerDocuments",
+        "com.amazonaws.comprehend",
+        "DatasetEntityRecognizerDocuments",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATASETENTITYRECOGNIZERDOCUMENTS_MEMBER_S3_URI,
+        &DATASETENTITYRECOGNIZERDOCUMENTS_MEMBER_INPUT_FORMAT,
+    ],
+);
+impl DatasetEntityRecognizerDocuments {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATASETENTITYRECOGNIZERDOCUMENTS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DatasetEntityRecognizerDocuments {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.s3_uri;
+            ser.write_string(&DATASETENTITYRECOGNIZERDOCUMENTS_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.input_format {
+            ser.write_string(&DATASETENTITYRECOGNIZERDOCUMENTS_MEMBER_INPUT_FORMAT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DatasetEntityRecognizerDocumentsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATASETENTITYRECOGNIZERDOCUMENTS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.s3_uri = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_format = Some(crate::types::InputFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DatasetEntityRecognizerDocuments {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.s3_uri = builder.s3_uri.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DatasetEntityRecognizerDocuments {
     /// Creates a new builder-style object to manufacture [`DatasetEntityRecognizerDocuments`](crate::types::DatasetEntityRecognizerDocuments).
     pub fn builder() -> crate::types::builders::DatasetEntityRecognizerDocumentsBuilder {

@@ -21,20 +21,38 @@ pub fn ser_create_direct_connect_gateway_attachment_input_input(
         }
         array_5.finish();
     }
-    if let Some(var_7) = &input.routing_policy_label {
-        object.key("RoutingPolicyLabel").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.tags {
-        let mut array_9 = object.key("Tags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.nat_gateway_rules {
+        let mut array_8 = object.key("NatGatewayRules").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_nat_rule_request::ser_nat_rule_request(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_9.finish();
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.nat_gateway_support {
+        object.key("NatGatewaySupport").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.nat_system_route_support {
+        object.key("NatSystemRouteSupport").boolean(*var_12);
+    }
+    if let Some(var_13) = &input.routing_policy_label {
+        object.key("RoutingPolicyLabel").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
     }
     Ok(())
 }

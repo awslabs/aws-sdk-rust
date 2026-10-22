@@ -25,6 +25,129 @@ impl EntityRecognizerMetadataEntityTypesListItem {
         self.number_of_train_mentions
     }
 }
+static ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerMetadataEntityTypesListItem$Type",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerMetadataEntityTypesListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_EVALUATION_METRICS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#EntityRecognizerMetadataEntityTypesListItem$EvaluationMetrics",
+            "com.amazonaws.comprehend",
+            "EntityRecognizerMetadataEntityTypesListItem",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "EvaluationMetrics",
+        1,
+    );
+static ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_NUMBER_OF_TRAIN_MENTIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#EntityRecognizerMetadataEntityTypesListItem$NumberOfTrainMentions",
+            "com.amazonaws.comprehend",
+            "EntityRecognizerMetadataEntityTypesListItem",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "NumberOfTrainMentions",
+        2,
+    );
+static ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerMetadataEntityTypesListItem",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerMetadataEntityTypesListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_TYPE,
+        &ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_EVALUATION_METRICS,
+        &ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_NUMBER_OF_TRAIN_MENTIONS,
+    ],
+);
+impl EntityRecognizerMetadataEntityTypesListItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntityRecognizerMetadataEntityTypesListItem {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_TYPE, val)?;
+        }
+        if let Some(ref val) = self.evaluation_metrics {
+            ser.write_struct(&ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_EVALUATION_METRICS, val)?;
+        }
+        if let Some(ref val) = self.number_of_train_mentions {
+            ser.write_integer(&ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_MEMBER_NUMBER_OF_TRAIN_MENTIONS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntityRecognizerMetadataEntityTypesListItemBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITYRECOGNIZERMETADATAENTITYTYPESLISTITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_metrics = Some(crate::types::EntityTypesEvaluationMetrics::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.number_of_train_mentions = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntityRecognizerMetadataEntityTypesListItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EntityRecognizerMetadataEntityTypesListItem {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerMetadataEntityTypesListItem`](crate::types::EntityRecognizerMetadataEntityTypesListItem).
     pub fn builder() -> crate::types::builders::EntityRecognizerMetadataEntityTypesListItemBuilder {

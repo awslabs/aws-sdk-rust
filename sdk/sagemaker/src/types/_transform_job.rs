@@ -183,6 +183,567 @@ impl TransformJob {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static TRANSFORMJOB_MEMBER_TRANSFORM_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformJobName",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TransformJobName",
+    0,
+);
+static TRANSFORMJOB_MEMBER_TRANSFORM_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformJobArn",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TransformJobArn",
+    1,
+);
+static TRANSFORMJOB_MEMBER_TRANSFORM_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformJobStatus",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TransformJobStatus",
+    2,
+);
+static TRANSFORMJOB_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$FailureReason",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    3,
+);
+static TRANSFORMJOB_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$ModelName",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    4,
+);
+static TRANSFORMJOB_MEMBER_MAX_CONCURRENT_TRANSFORMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$MaxConcurrentTransforms",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxConcurrentTransforms",
+    5,
+);
+static TRANSFORMJOB_MEMBER_MODEL_CLIENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$ModelClientConfig",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelClientConfig",
+    6,
+);
+static TRANSFORMJOB_MEMBER_MAX_PAYLOAD_IN_MB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$MaxPayloadInMB",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxPayloadInMB",
+    7,
+);
+static TRANSFORMJOB_MEMBER_BATCH_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$BatchStrategy",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BatchStrategy",
+    8,
+);
+static TRANSFORMJOB_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformEnvironmentMap$key",
+        "com.amazonaws.sagemaker",
+        "TransformEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TRANSFORMJOB_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformEnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "TransformEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TRANSFORMJOB_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$Environment",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    9,
+)
+.with_map_members(&TRANSFORMJOB_MEMBER_ENVIRONMENT_KEY, &TRANSFORMJOB_MEMBER_ENVIRONMENT_VALUE);
+static TRANSFORMJOB_MEMBER_TRANSFORM_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformInput",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransformInput",
+    10,
+);
+static TRANSFORMJOB_MEMBER_TRANSFORM_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformOutput",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransformOutput",
+    11,
+);
+static TRANSFORMJOB_MEMBER_DATA_CAPTURE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$DataCaptureConfig",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataCaptureConfig",
+    12,
+);
+static TRANSFORMJOB_MEMBER_TRANSFORM_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformResources",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransformResources",
+    13,
+);
+static TRANSFORMJOB_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$CreationTime",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    14,
+);
+static TRANSFORMJOB_MEMBER_TRANSFORM_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformStartTime",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TransformStartTime",
+    15,
+);
+static TRANSFORMJOB_MEMBER_TRANSFORM_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$TransformEndTime",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TransformEndTime",
+    16,
+);
+static TRANSFORMJOB_MEMBER_LABELING_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$LabelingJobArn",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelingJobArn",
+    17,
+);
+static TRANSFORMJOB_MEMBER_AUTO_ML_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$AutoMLJobArn",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobArn",
+    18,
+);
+static TRANSFORMJOB_MEMBER_DATA_PROCESSING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$DataProcessing",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataProcessing",
+    19,
+);
+static TRANSFORMJOB_MEMBER_EXPERIMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJob$ExperimentConfig",
+        "com.amazonaws.sagemaker",
+        "TransformJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExperimentConfig",
+    20,
+);
+static TRANSFORMJOB_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRANSFORMJOB_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TransformJob$Tags", "com.amazonaws.sagemaker", "TransformJob"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    21,
+)
+.with_list_member(&TRANSFORMJOB_MEMBER_TAGS_MEMBER);
+static TRANSFORMJOB_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TransformJob", "com.amazonaws.sagemaker", "TransformJob"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSFORMJOB_MEMBER_TRANSFORM_JOB_NAME,
+        &TRANSFORMJOB_MEMBER_TRANSFORM_JOB_ARN,
+        &TRANSFORMJOB_MEMBER_TRANSFORM_JOB_STATUS,
+        &TRANSFORMJOB_MEMBER_FAILURE_REASON,
+        &TRANSFORMJOB_MEMBER_MODEL_NAME,
+        &TRANSFORMJOB_MEMBER_MAX_CONCURRENT_TRANSFORMS,
+        &TRANSFORMJOB_MEMBER_MODEL_CLIENT_CONFIG,
+        &TRANSFORMJOB_MEMBER_MAX_PAYLOAD_IN_MB,
+        &TRANSFORMJOB_MEMBER_BATCH_STRATEGY,
+        &TRANSFORMJOB_MEMBER_ENVIRONMENT,
+        &TRANSFORMJOB_MEMBER_TRANSFORM_INPUT,
+        &TRANSFORMJOB_MEMBER_TRANSFORM_OUTPUT,
+        &TRANSFORMJOB_MEMBER_DATA_CAPTURE_CONFIG,
+        &TRANSFORMJOB_MEMBER_TRANSFORM_RESOURCES,
+        &TRANSFORMJOB_MEMBER_CREATION_TIME,
+        &TRANSFORMJOB_MEMBER_TRANSFORM_START_TIME,
+        &TRANSFORMJOB_MEMBER_TRANSFORM_END_TIME,
+        &TRANSFORMJOB_MEMBER_LABELING_JOB_ARN,
+        &TRANSFORMJOB_MEMBER_AUTO_ML_JOB_ARN,
+        &TRANSFORMJOB_MEMBER_DATA_PROCESSING,
+        &TRANSFORMJOB_MEMBER_EXPERIMENT_CONFIG,
+        &TRANSFORMJOB_MEMBER_TAGS,
+    ],
+);
+impl TransformJob {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSFORMJOB_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TransformJob {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.transform_job_name {
+            ser.write_string(&TRANSFORMJOB_MEMBER_TRANSFORM_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.transform_job_arn {
+            ser.write_string(&TRANSFORMJOB_MEMBER_TRANSFORM_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.transform_job_status {
+            ser.write_string(&TRANSFORMJOB_MEMBER_TRANSFORM_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&TRANSFORMJOB_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&TRANSFORMJOB_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.max_concurrent_transforms {
+            ser.write_integer(&TRANSFORMJOB_MEMBER_MAX_CONCURRENT_TRANSFORMS, *val)?;
+        }
+        if let Some(ref val) = self.model_client_config {
+            ser.write_struct(&TRANSFORMJOB_MEMBER_MODEL_CLIENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.max_payload_in_mb {
+            ser.write_integer(&TRANSFORMJOB_MEMBER_MAX_PAYLOAD_IN_MB, *val)?;
+        }
+        if let Some(ref val) = self.batch_strategy {
+            ser.write_string(&TRANSFORMJOB_MEMBER_BATCH_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &TRANSFORMJOB_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.transform_input {
+            ser.write_struct(&TRANSFORMJOB_MEMBER_TRANSFORM_INPUT, val)?;
+        }
+        if let Some(ref val) = self.transform_output {
+            ser.write_struct(&TRANSFORMJOB_MEMBER_TRANSFORM_OUTPUT, val)?;
+        }
+        if let Some(ref val) = self.data_capture_config {
+            ser.write_struct(&TRANSFORMJOB_MEMBER_DATA_CAPTURE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.transform_resources {
+            ser.write_struct(&TRANSFORMJOB_MEMBER_TRANSFORM_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&TRANSFORMJOB_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.transform_start_time {
+            ser.write_timestamp(&TRANSFORMJOB_MEMBER_TRANSFORM_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.transform_end_time {
+            ser.write_timestamp(&TRANSFORMJOB_MEMBER_TRANSFORM_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.labeling_job_arn {
+            ser.write_string(&TRANSFORMJOB_MEMBER_LABELING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job_arn {
+            ser.write_string(&TRANSFORMJOB_MEMBER_AUTO_ML_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.data_processing {
+            ser.write_struct(&TRANSFORMJOB_MEMBER_DATA_PROCESSING, val)?;
+        }
+        if let Some(ref val) = self.experiment_config {
+            ser.write_struct(&TRANSFORMJOB_MEMBER_EXPERIMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&TRANSFORMJOB_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TransformJobBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSFORMJOB_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_job_status = Some(crate::types::TransformJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_concurrent_transforms = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_client_config = Some(crate::types::ModelClientConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_payload_in_mb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.batch_strategy = Some(crate::types::BatchStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_input = Some(crate::types::TransformInput::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_output = Some(crate::types::TransformOutput::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_capture_config = Some(crate::types::BatchDataCaptureConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_resources = Some(crate::types::TransformResources::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_processing = Some(crate::types::DataProcessing::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_config = Some(crate::types::ExperimentConfig::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TransformJob {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TransformJob {
     /// Creates a new builder-style object to manufacture [`TransformJob`](crate::types::TransformJob).
     pub fn builder() -> crate::types::builders::TransformJobBuilder {

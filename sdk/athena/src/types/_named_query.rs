@@ -46,6 +46,156 @@ impl NamedQuery {
         self.work_group.as_deref()
     }
 }
+static NAMEDQUERY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#NamedQuery$Name", "com.amazonaws.athena", "NamedQuery"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static NAMEDQUERY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#NamedQuery$Description", "com.amazonaws.athena", "NamedQuery"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static NAMEDQUERY_MEMBER_DATABASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#NamedQuery$Database", "com.amazonaws.athena", "NamedQuery"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Database",
+    2,
+);
+static NAMEDQUERY_MEMBER_QUERY_STRING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#NamedQuery$QueryString", "com.amazonaws.athena", "NamedQuery"),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryString",
+    3,
+);
+static NAMEDQUERY_MEMBER_NAMED_QUERY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#NamedQuery$NamedQueryId", "com.amazonaws.athena", "NamedQuery"),
+    ::aws_smithy_schema::ShapeType::String,
+    "NamedQueryId",
+    4,
+);
+static NAMEDQUERY_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#NamedQuery$WorkGroup", "com.amazonaws.athena", "NamedQuery"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    5,
+);
+static NAMEDQUERY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#NamedQuery", "com.amazonaws.athena", "NamedQuery"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NAMEDQUERY_MEMBER_NAME,
+        &NAMEDQUERY_MEMBER_DESCRIPTION,
+        &NAMEDQUERY_MEMBER_DATABASE,
+        &NAMEDQUERY_MEMBER_QUERY_STRING,
+        &NAMEDQUERY_MEMBER_NAMED_QUERY_ID,
+        &NAMEDQUERY_MEMBER_WORK_GROUP,
+    ],
+);
+impl NamedQuery {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NAMEDQUERY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NamedQuery {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&NAMEDQUERY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&NAMEDQUERY_MEMBER_DESCRIPTION, val)?;
+        }
+        {
+            let val = &self.database;
+            ser.write_string(&NAMEDQUERY_MEMBER_DATABASE, val)?;
+        }
+        {
+            let val = &self.query_string;
+            ser.write_string(&NAMEDQUERY_MEMBER_QUERY_STRING, val)?;
+        }
+        if let Some(ref val) = self.named_query_id {
+            ser.write_string(&NAMEDQUERY_MEMBER_NAMED_QUERY_ID, val)?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&NAMEDQUERY_MEMBER_WORK_GROUP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NamedQueryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NAMEDQUERY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.database = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.query_string = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.named_query_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NamedQuery {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.database = builder.database.or(Some(String::new()));
+        builder.query_string = builder.query_string.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl NamedQuery {
     /// Creates a new builder-style object to manufacture [`NamedQuery`](crate::types::NamedQuery).
     pub fn builder() -> crate::types::builders::NamedQueryBuilder {

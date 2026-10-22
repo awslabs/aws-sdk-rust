@@ -10,6 +10,9 @@ pub mod create_dictionary;
 /// Types for the `CreateFeed` operation.
 pub mod create_feed;
 
+/// Types for the `CreateScheduleAction` operation.
+pub mod create_schedule_action;
+
 /// Types for the `DeleteDictionary` operation.
 pub mod delete_dictionary;
 
@@ -18,6 +21,9 @@ pub mod delete_feed;
 
 /// Types for the `DeleteFeedPolicy` operation.
 pub mod delete_feed_policy;
+
+/// Types for the `DeleteScheduleAction` operation.
+pub mod delete_schedule_action;
 
 /// Types for the `DisassociateFeed` operation.
 pub mod disassociate_feed;
@@ -42,6 +48,9 @@ pub mod list_dictionaries;
 
 /// Types for the `ListFeeds` operation.
 pub mod list_feeds;
+
+/// Types for the `ListScheduleActions` operation.
+pub mod list_schedule_actions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

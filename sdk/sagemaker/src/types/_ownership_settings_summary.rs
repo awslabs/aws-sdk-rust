@@ -13,6 +13,83 @@ impl OwnershipSettingsSummary {
         self.owner_user_profile_name.as_deref()
     }
 }
+static OWNERSHIPSETTINGSSUMMARY_MEMBER_OWNER_USER_PROFILE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OwnershipSettingsSummary$OwnerUserProfileName",
+        "com.amazonaws.sagemaker",
+        "OwnershipSettingsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerUserProfileName",
+    0,
+);
+static OWNERSHIPSETTINGSSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OwnershipSettingsSummary",
+        "com.amazonaws.sagemaker",
+        "OwnershipSettingsSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&OWNERSHIPSETTINGSSUMMARY_MEMBER_OWNER_USER_PROFILE_NAME],
+);
+impl OwnershipSettingsSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OWNERSHIPSETTINGSSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OwnershipSettingsSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.owner_user_profile_name {
+            ser.write_string(&OWNERSHIPSETTINGSSUMMARY_MEMBER_OWNER_USER_PROFILE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OwnershipSettingsSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OWNERSHIPSETTINGSSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.owner_user_profile_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OwnershipSettingsSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OwnershipSettingsSummary {
     /// Creates a new builder-style object to manufacture [`OwnershipSettingsSummary`](crate::types::OwnershipSettingsSummary).
     pub fn builder() -> crate::types::builders::OwnershipSettingsSummaryBuilder {

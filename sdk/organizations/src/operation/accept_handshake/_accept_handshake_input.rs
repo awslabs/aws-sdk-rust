@@ -14,6 +14,86 @@ impl AcceptHandshakeInput {
         self.handshake_id.as_deref()
     }
 }
+static ACCEPTHANDSHAKEINPUT_MEMBER_HANDSHAKE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#AcceptHandshakeInput$HandshakeId",
+        "com.amazonaws.organizations.synthetic",
+        "AcceptHandshakeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HandshakeId",
+    0,
+);
+static ACCEPTHANDSHAKEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#AcceptHandshakeInput",
+        "com.amazonaws.organizations.synthetic",
+        "AcceptHandshakeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ACCEPTHANDSHAKEINPUT_MEMBER_HANDSHAKE_ID],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AcceptHandshakeRequest");
+impl AcceptHandshakeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCEPTHANDSHAKEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AcceptHandshakeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.handshake_id {
+            ser.write_string(&ACCEPTHANDSHAKEINPUT_MEMBER_HANDSHAKE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::accept_handshake::builders::AcceptHandshakeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCEPTHANDSHAKEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.handshake_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AcceptHandshakeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.handshake_id = builder.handshake_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AcceptHandshakeInput {
     /// Creates a new builder-style object to manufacture [`AcceptHandshakeInput`](crate::operation::accept_handshake::AcceptHandshakeInput).
     pub fn builder() -> crate::operation::accept_handshake::builders::AcceptHandshakeInputBuilder {

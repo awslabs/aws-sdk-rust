@@ -6,6 +6,8 @@
 pub enum RatingScale {
     /// <p>The categorical rating scale with named categories and definitions for qualitative evaluation.</p>
     Categorical(::std::vec::Vec<crate::types::CategoricalScaleDefinition>),
+    /// <p>A list of dimensions that lets an LLM-as-a-judge evaluator score several dimensions of the same target in a single evaluation. Each dimension has its own instruction and rating scale, and produces its own result.</p>
+    MultiDimensional(::std::vec::Vec<crate::types::EvaluationDimension>),
     /// <p>The numerical rating scale with defined score values and descriptions for quantitative evaluation.</p>
     Numerical(::std::vec::Vec<crate::types::NumericalScaleDefinition>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl RatingScale {
     /// Returns true if this is a [`Categorical`](crate::types::RatingScale::Categorical).
     pub fn is_categorical(&self) -> bool {
         self.as_categorical().is_ok()
+    }
+    /// Tries to convert the enum instance into [`MultiDimensional`](crate::types::RatingScale::MultiDimensional), extracting the inner [`Vec`](::std::vec::Vec).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_multi_dimensional(&self) -> ::std::result::Result<&::std::vec::Vec<crate::types::EvaluationDimension>, &Self> {
+        if let RatingScale::MultiDimensional(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`MultiDimensional`](crate::types::RatingScale::MultiDimensional).
+    pub fn is_multi_dimensional(&self) -> bool {
+        self.as_multi_dimensional().is_ok()
     }
     /// Tries to convert the enum instance into [`Numerical`](crate::types::RatingScale::Numerical), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.

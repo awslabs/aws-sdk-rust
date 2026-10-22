@@ -70,6 +70,314 @@ impl ::std::fmt::Debug for ClassifyDocumentOutput {
         formatter.finish()
     }
 }
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_CLASSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfClasses$member",
+        "com.amazonaws.comprehend",
+        "ListOfClasses",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_CLASSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentOutput$Classes",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Classes",
+    0,
+)
+.with_list_member(&CLASSIFYDOCUMENTOUTPUT_MEMBER_CLASSES_MEMBER);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_LABELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#ListOfLabels$member", "com.amazonaws.comprehend", "ListOfLabels"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentOutput$Labels",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Labels",
+    1,
+)
+.with_list_member(&CLASSIFYDOCUMENTOUTPUT_MEMBER_LABELS_MEMBER);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentOutput$DocumentMetadata",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DocumentMetadata",
+    2,
+);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_TYPE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfDocumentType$member",
+        "com.amazonaws.comprehend",
+        "ListOfDocumentType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentOutput$DocumentType",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DocumentType",
+    3,
+)
+.with_list_member(&CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_TYPE_MEMBER);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#ListOfErrors$member", "com.amazonaws.comprehend", "ListOfErrors"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentOutput$Errors",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Errors",
+    4,
+)
+.with_list_member(&CLASSIFYDOCUMENTOUTPUT_MEMBER_ERRORS_MEMBER);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_WARNINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfWarnings$member",
+        "com.amazonaws.comprehend",
+        "ListOfWarnings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CLASSIFYDOCUMENTOUTPUT_MEMBER_WARNINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentOutput$Warnings",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Warnings",
+    5,
+)
+.with_list_member(&CLASSIFYDOCUMENTOUTPUT_MEMBER_WARNINGS_MEMBER);
+static CLASSIFYDOCUMENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ClassifyDocumentOutput",
+        "com.amazonaws.comprehend.synthetic",
+        "ClassifyDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLASSIFYDOCUMENTOUTPUT_MEMBER_CLASSES,
+        &CLASSIFYDOCUMENTOUTPUT_MEMBER_LABELS,
+        &CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_METADATA,
+        &CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_TYPE,
+        &CLASSIFYDOCUMENTOUTPUT_MEMBER_ERRORS,
+        &CLASSIFYDOCUMENTOUTPUT_MEMBER_WARNINGS,
+    ],
+)
+.with_sensitive()
+.with_original_name("ClassifyDocumentResponse");
+impl ClassifyDocumentOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLASSIFYDOCUMENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClassifyDocumentOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.classes {
+            ser.write_list(
+                &CLASSIFYDOCUMENTOUTPUT_MEMBER_CLASSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentClass::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.labels {
+            ser.write_list(
+                &CLASSIFYDOCUMENTOUTPUT_MEMBER_LABELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentLabel::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.document_metadata {
+            ser.write_struct(&CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_METADATA, val)?;
+        }
+        if let Some(ref val) = self.document_type {
+            ser.write_list(
+                &CLASSIFYDOCUMENTOUTPUT_MEMBER_DOCUMENT_TYPE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentTypeListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.errors {
+            ser.write_list(
+                &CLASSIFYDOCUMENTOUTPUT_MEMBER_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ErrorsListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.warnings {
+            ser.write_list(
+                &CLASSIFYDOCUMENTOUTPUT_MEMBER_WARNINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::WarningsListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::classify_document::builders::ClassifyDocumentOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLASSIFYDOCUMENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.classes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentClass::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labels = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentLabel::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_metadata = Some(crate::types::DocumentMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_type = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentTypeListItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ErrorsListItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.warnings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::WarningsListItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClassifyDocumentOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ClassifyDocumentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

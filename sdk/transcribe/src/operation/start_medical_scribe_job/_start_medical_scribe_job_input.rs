@@ -88,6 +88,366 @@ impl StartMedicalScribeJobInput {
         self.medical_scribe_context.as_ref()
     }
 }
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDICAL_SCRIBE_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$MedicalScribeJobName",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MedicalScribeJobName",
+    0,
+)
+.with_http_label();
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$Media",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Media",
+    1,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$OutputBucketName",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputBucketName",
+    2,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$OutputEncryptionKMSKeyId",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputEncryptionKMSKeyId",
+    3,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#KMSEncryptionContextMap$key",
+        "com.amazonaws.transcribe",
+        "KMSEncryptionContextMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#KMSEncryptionContextMap$value",
+        "com.amazonaws.transcribe",
+        "KMSEncryptionContextMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$KMSEncryptionContext",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "KMSEncryptionContext",
+    4,
+)
+.with_map_members(
+    &STARTMEDICALSCRIBEJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY,
+    &STARTMEDICALSCRIBEJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$DataAccessRoleArn",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    5,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$Settings",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Settings",
+    6,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_CHANNEL_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeChannelDefinitions$member",
+        "com.amazonaws.transcribe",
+        "MedicalScribeChannelDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_CHANNEL_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$ChannelDefinitions",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ChannelDefinitions",
+    7,
+)
+.with_list_member(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_CHANNEL_DEFINITIONS_MEMBER);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#TagList$member", "com.amazonaws.transcribe", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$Tags",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_TAGS_MEMBER);
+static STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDICAL_SCRIBE_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput$MedicalScribeContext",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MedicalScribeContext",
+    9,
+);
+static STARTMEDICALSCRIBEJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalScribeJobInput",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalScribeJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDICAL_SCRIBE_JOB_NAME,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDIA,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_SETTINGS,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_CHANNEL_DEFINITIONS,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_TAGS,
+        &STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDICAL_SCRIBE_CONTEXT,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PUT",
+    "/medicalscribejobs/{MedicalScribeJobName}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartMedicalScribeJobRequest");
+impl StartMedicalScribeJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTMEDICALSCRIBEJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartMedicalScribeJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.medical_scribe_job_name {
+            ser.write_string(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDICAL_SCRIBE_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.media {
+            ser.write_struct(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDIA, val)?;
+        }
+        if let Some(ref val) = self.output_bucket_name {
+            ser.write_string(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.output_encryption_kms_key_id {
+            ser.write_string(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_encryption_context {
+            ser.write_map(
+                &STARTMEDICALSCRIBEJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.channel_definitions {
+            ser.write_list(
+                &STARTMEDICALSCRIBEJOBINPUT_MEMBER_CHANNEL_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MedicalScribeChannelDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTMEDICALSCRIBEJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.medical_scribe_context {
+            ser.write_struct(&STARTMEDICALSCRIBEJOBINPUT_MEMBER_MEDICAL_SCRIBE_CONTEXT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_medical_scribe_job::builders::StartMedicalScribeJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTMEDICALSCRIBEJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media = Some(crate::types::Media::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_encryption_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_encryption_context = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::MedicalScribeSettings::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MedicalScribeChannelDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_context = Some(crate::types::MedicalScribeContext::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartMedicalScribeJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.medical_scribe_job_name = builder.medical_scribe_job_name.or(Some(String::new()));
+        builder.output_bucket_name = builder.output_bucket_name.or(Some(String::new()));
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartMedicalScribeJobInput {
     /// Creates a new builder-style object to manufacture [`StartMedicalScribeJobInput`](crate::operation::start_medical_scribe_job::StartMedicalScribeJobInput).
     pub fn builder() -> crate::operation::start_medical_scribe_job::builders::StartMedicalScribeJobInputBuilder {

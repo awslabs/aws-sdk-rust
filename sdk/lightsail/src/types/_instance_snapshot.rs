@@ -111,6 +111,440 @@ impl InstanceSnapshot {
         self.size_in_gb
     }
 }
+static INSTANCESNAPSHOT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$name",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static INSTANCESNAPSHOT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$arn",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static INSTANCESNAPSHOT_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$supportCode",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    2,
+);
+static INSTANCESNAPSHOT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$createdAt",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static INSTANCESNAPSHOT_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$location",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    4,
+);
+static INSTANCESNAPSHOT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$resourceType",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static INSTANCESNAPSHOT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCESNAPSHOT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$tags",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    6,
+)
+.with_list_member(&INSTANCESNAPSHOT_MEMBER_TAGS_MEMBER);
+static INSTANCESNAPSHOT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$state",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "state",
+    7,
+);
+static INSTANCESNAPSHOT_MEMBER_PROGRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$progress",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "progress",
+    8,
+);
+static INSTANCESNAPSHOT_MEMBER_FROM_ATTACHED_DISKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DiskList$member", "com.amazonaws.lightsail", "DiskList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCESNAPSHOT_MEMBER_FROM_ATTACHED_DISKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$fromAttachedDisks",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "fromAttachedDisks",
+    9,
+)
+.with_list_member(&INSTANCESNAPSHOT_MEMBER_FROM_ATTACHED_DISKS_MEMBER);
+static INSTANCESNAPSHOT_MEMBER_FROM_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$fromInstanceName",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromInstanceName",
+    10,
+);
+static INSTANCESNAPSHOT_MEMBER_FROM_INSTANCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$fromInstanceArn",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromInstanceArn",
+    11,
+);
+static INSTANCESNAPSHOT_MEMBER_FROM_BLUEPRINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$fromBlueprintId",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromBlueprintId",
+    12,
+);
+static INSTANCESNAPSHOT_MEMBER_FROM_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$fromBundleId",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromBundleId",
+    13,
+);
+static INSTANCESNAPSHOT_MEMBER_IS_FROM_AUTO_SNAPSHOT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$isFromAutoSnapshot",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isFromAutoSnapshot",
+    14,
+);
+static INSTANCESNAPSHOT_MEMBER_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshot$sizeInGb",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshot",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "sizeInGb",
+    15,
+);
+static INSTANCESNAPSHOT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#InstanceSnapshot", "com.amazonaws.lightsail", "InstanceSnapshot"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCESNAPSHOT_MEMBER_NAME,
+        &INSTANCESNAPSHOT_MEMBER_ARN,
+        &INSTANCESNAPSHOT_MEMBER_SUPPORT_CODE,
+        &INSTANCESNAPSHOT_MEMBER_CREATED_AT,
+        &INSTANCESNAPSHOT_MEMBER_LOCATION,
+        &INSTANCESNAPSHOT_MEMBER_RESOURCE_TYPE,
+        &INSTANCESNAPSHOT_MEMBER_TAGS,
+        &INSTANCESNAPSHOT_MEMBER_STATE,
+        &INSTANCESNAPSHOT_MEMBER_PROGRESS,
+        &INSTANCESNAPSHOT_MEMBER_FROM_ATTACHED_DISKS,
+        &INSTANCESNAPSHOT_MEMBER_FROM_INSTANCE_NAME,
+        &INSTANCESNAPSHOT_MEMBER_FROM_INSTANCE_ARN,
+        &INSTANCESNAPSHOT_MEMBER_FROM_BLUEPRINT_ID,
+        &INSTANCESNAPSHOT_MEMBER_FROM_BUNDLE_ID,
+        &INSTANCESNAPSHOT_MEMBER_IS_FROM_AUTO_SNAPSHOT,
+        &INSTANCESNAPSHOT_MEMBER_SIZE_IN_GB,
+    ],
+);
+impl InstanceSnapshot {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCESNAPSHOT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceSnapshot {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&INSTANCESNAPSHOT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&INSTANCESNAPSHOT_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &INSTANCESNAPSHOT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.progress {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_PROGRESS, val)?;
+        }
+        if let Some(ref val) = self.from_attached_disks {
+            ser.write_list(
+                &INSTANCESNAPSHOT_MEMBER_FROM_ATTACHED_DISKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Disk::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.from_instance_name {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_FROM_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.from_instance_arn {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_FROM_INSTANCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.from_blueprint_id {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_FROM_BLUEPRINT_ID, val)?;
+        }
+        if let Some(ref val) = self.from_bundle_id {
+            ser.write_string(&INSTANCESNAPSHOT_MEMBER_FROM_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.is_from_auto_snapshot {
+            ser.write_boolean(&INSTANCESNAPSHOT_MEMBER_IS_FROM_AUTO_SNAPSHOT, *val)?;
+        }
+        if let Some(ref val) = self.size_in_gb {
+            ser.write_integer(&INSTANCESNAPSHOT_MEMBER_SIZE_IN_GB, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceSnapshotBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCESNAPSHOT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::InstanceSnapshotState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.progress = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_attached_disks = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Disk::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_instance_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_blueprint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_from_auto_snapshot = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceSnapshot {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceSnapshot {
     /// Creates a new builder-style object to manufacture [`InstanceSnapshot`](crate::types::InstanceSnapshot).
     pub fn builder() -> crate::types::builders::InstanceSnapshotBuilder {

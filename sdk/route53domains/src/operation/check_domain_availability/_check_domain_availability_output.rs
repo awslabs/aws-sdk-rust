@@ -152,6 +152,107 @@ impl CheckDomainAvailabilityOutput {
         self.price.as_ref()
     }
 }
+static CHECKDOMAINAVAILABILITYOUTPUT_MEMBER_AVAILABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainAvailabilityOutput$Availability",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainAvailabilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Availability",
+    0,
+);
+static CHECKDOMAINAVAILABILITYOUTPUT_MEMBER_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainAvailabilityOutput$Price",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainAvailabilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Price",
+    1,
+);
+static CHECKDOMAINAVAILABILITYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainAvailabilityOutput",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainAvailabilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHECKDOMAINAVAILABILITYOUTPUT_MEMBER_AVAILABILITY,
+        &CHECKDOMAINAVAILABILITYOUTPUT_MEMBER_PRICE,
+    ],
+)
+.with_original_name("CheckDomainAvailabilityResponse");
+impl CheckDomainAvailabilityOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHECKDOMAINAVAILABILITYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CheckDomainAvailabilityOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.availability {
+            ser.write_string(&CHECKDOMAINAVAILABILITYOUTPUT_MEMBER_AVAILABILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.price {
+            ser.write_struct(&CHECKDOMAINAVAILABILITYOUTPUT_MEMBER_PRICE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::check_domain_availability::builders::CheckDomainAvailabilityOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHECKDOMAINAVAILABILITYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability = Some(crate::types::DomainAvailability::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.price = Some(crate::types::PriceWithCurrency::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CheckDomainAvailabilityOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CheckDomainAvailabilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

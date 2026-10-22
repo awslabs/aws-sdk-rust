@@ -80,6 +80,148 @@ impl DnsConfig {
         self.dns_records.deref()
     }
 }
+static DNSCONFIG_MEMBER_NAMESPACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#DnsConfig$NamespaceId",
+        "com.amazonaws.servicediscovery",
+        "DnsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NamespaceId",
+    0,
+);
+static DNSCONFIG_MEMBER_ROUTING_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#DnsConfig$RoutingPolicy",
+        "com.amazonaws.servicediscovery",
+        "DnsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoutingPolicy",
+    1,
+);
+static DNSCONFIG_MEMBER_DNS_RECORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#DnsRecordList$member",
+        "com.amazonaws.servicediscovery",
+        "DnsRecordList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DNSCONFIG_MEMBER_DNS_RECORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#DnsConfig$DnsRecords",
+        "com.amazonaws.servicediscovery",
+        "DnsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DnsRecords",
+    2,
+)
+.with_list_member(&DNSCONFIG_MEMBER_DNS_RECORDS_MEMBER);
+static DNSCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.servicediscovery#DnsConfig", "com.amazonaws.servicediscovery", "DnsConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DNSCONFIG_MEMBER_NAMESPACE_ID,
+        &DNSCONFIG_MEMBER_ROUTING_POLICY,
+        &DNSCONFIG_MEMBER_DNS_RECORDS,
+    ],
+);
+impl DnsConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DNSCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DnsConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.namespace_id {
+            ser.write_string(&DNSCONFIG_MEMBER_NAMESPACE_ID, val)?;
+        }
+        if let Some(ref val) = self.routing_policy {
+            ser.write_string(&DNSCONFIG_MEMBER_ROUTING_POLICY, val.as_str())?;
+        }
+        {
+            let val = &self.dns_records;
+
+            ser.write_list(
+                &DNSCONFIG_MEMBER_DNS_RECORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DnsRecord::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DnsConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DNSCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.routing_policy = Some(crate::types::RoutingPolicy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    self.dns_records = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::DnsRecord::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DnsConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.dns_records = builder.dns_records.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DnsConfig {
     /// Creates a new builder-style object to manufacture [`DnsConfig`](crate::types::DnsConfig).
     pub fn builder() -> crate::types::builders::DnsConfigBuilder {

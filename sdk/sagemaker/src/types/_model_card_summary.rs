@@ -57,6 +57,165 @@ impl ModelCardSummary {
         self.last_modified_time.as_ref()
     }
 }
+static MODELCARDSUMMARY_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardSummary$ModelCardName",
+        "com.amazonaws.sagemaker",
+        "ModelCardSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    0,
+);
+static MODELCARDSUMMARY_MEMBER_MODEL_CARD_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardSummary$ModelCardArn",
+        "com.amazonaws.sagemaker",
+        "ModelCardSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardArn",
+    1,
+);
+static MODELCARDSUMMARY_MEMBER_MODEL_CARD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardSummary$ModelCardStatus",
+        "com.amazonaws.sagemaker",
+        "ModelCardSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardStatus",
+    2,
+);
+static MODELCARDSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "ModelCardSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static MODELCARDSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelCardSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "ModelCardSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    4,
+);
+static MODELCARDSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ModelCardSummary", "com.amazonaws.sagemaker", "ModelCardSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELCARDSUMMARY_MEMBER_MODEL_CARD_NAME,
+        &MODELCARDSUMMARY_MEMBER_MODEL_CARD_ARN,
+        &MODELCARDSUMMARY_MEMBER_MODEL_CARD_STATUS,
+        &MODELCARDSUMMARY_MEMBER_CREATION_TIME,
+        &MODELCARDSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl ModelCardSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELCARDSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelCardSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&MODELCARDSUMMARY_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_card_arn {
+            ser.write_string(&MODELCARDSUMMARY_MEMBER_MODEL_CARD_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_card_status {
+            ser.write_string(&MODELCARDSUMMARY_MEMBER_MODEL_CARD_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MODELCARDSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&MODELCARDSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelCardSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELCARDSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_status = Some(crate::types::ModelCardStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelCardSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelCardSummary {
     /// Creates a new builder-style object to manufacture [`ModelCardSummary`](crate::types::ModelCardSummary).
     pub fn builder() -> crate::types::builders::ModelCardSummaryBuilder {

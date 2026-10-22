@@ -13,6 +13,84 @@ impl MergePullRequestByFastForwardOutput {
         self.pull_request.as_ref()
     }
 }
+static MERGEPULLREQUESTBYFASTFORWARDOUTPUT_MEMBER_PULL_REQUEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestByFastForwardOutput$pullRequest",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestByFastForwardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "pullRequest",
+    0,
+);
+static MERGEPULLREQUESTBYFASTFORWARDOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestByFastForwardOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestByFastForwardOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&MERGEPULLREQUESTBYFASTFORWARDOUTPUT_MEMBER_PULL_REQUEST],
+)
+.with_original_name("MergePullRequestByFastForwardOutput");
+impl MergePullRequestByFastForwardOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MERGEPULLREQUESTBYFASTFORWARDOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MergePullRequestByFastForwardOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pull_request {
+            ser.write_struct(&MERGEPULLREQUESTBYFASTFORWARDOUTPUT_MEMBER_PULL_REQUEST, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MERGEPULLREQUESTBYFASTFORWARDOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request = Some(crate::types::PullRequest::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MergePullRequestByFastForwardOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for MergePullRequestByFastForwardOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

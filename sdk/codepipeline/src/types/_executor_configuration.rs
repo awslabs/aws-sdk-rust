@@ -19,6 +19,106 @@ impl ExecutorConfiguration {
         self.job_worker_executor_configuration.as_ref()
     }
 }
+static EXECUTORCONFIGURATION_MEMBER_LAMBDA_EXECUTOR_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ExecutorConfiguration$lambdaExecutorConfiguration",
+        "com.amazonaws.codepipeline",
+        "ExecutorConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaExecutorConfiguration",
+    0,
+);
+static EXECUTORCONFIGURATION_MEMBER_JOB_WORKER_EXECUTOR_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ExecutorConfiguration$jobWorkerExecutorConfiguration",
+        "com.amazonaws.codepipeline",
+        "ExecutorConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "jobWorkerExecutorConfiguration",
+    1,
+);
+static EXECUTORCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ExecutorConfiguration",
+        "com.amazonaws.codepipeline",
+        "ExecutorConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXECUTORCONFIGURATION_MEMBER_LAMBDA_EXECUTOR_CONFIGURATION,
+        &EXECUTORCONFIGURATION_MEMBER_JOB_WORKER_EXECUTOR_CONFIGURATION,
+    ],
+);
+impl ExecutorConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXECUTORCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExecutorConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.lambda_executor_configuration {
+            ser.write_struct(&EXECUTORCONFIGURATION_MEMBER_LAMBDA_EXECUTOR_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.job_worker_executor_configuration {
+            ser.write_struct(&EXECUTORCONFIGURATION_MEMBER_JOB_WORKER_EXECUTOR_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExecutorConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXECUTORCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_executor_configuration = Some(crate::types::LambdaExecutorConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_worker_executor_configuration = Some(crate::types::JobWorkerExecutorConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExecutorConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExecutorConfiguration {
     /// Creates a new builder-style object to manufacture [`ExecutorConfiguration`](crate::types::ExecutorConfiguration).
     pub fn builder() -> crate::types::builders::ExecutorConfigurationBuilder {

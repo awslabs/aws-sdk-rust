@@ -69,6 +69,305 @@ impl FileSystemAssociationInfo {
         self.file_system_association_status_details.as_deref().unwrap_or_default()
     }
 }
+static FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationInfo$FileSystemAssociationARN",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemAssociationARN",
+    0,
+);
+static FILESYSTEMASSOCIATIONINFO_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationInfo$LocationARN",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationARN",
+    1,
+);
+static FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#FileSystemAssociationInfo$FileSystemAssociationStatus",
+            "com.amazonaws.storagegateway",
+            "FileSystemAssociationInfo",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FileSystemAssociationStatus",
+        2,
+    );
+static FILESYSTEMASSOCIATIONINFO_MEMBER_AUDIT_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationInfo$AuditDestinationARN",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuditDestinationARN",
+    3,
+);
+static FILESYSTEMASSOCIATIONINFO_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationInfo$GatewayARN",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    4,
+);
+static FILESYSTEMASSOCIATIONINFO_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static FILESYSTEMASSOCIATIONINFO_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationInfo$Tags",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&FILESYSTEMASSOCIATIONINFO_MEMBER_TAGS_MEMBER);
+static FILESYSTEMASSOCIATIONINFO_MEMBER_CACHE_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationInfo$CacheAttributes",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CacheAttributes",
+    6,
+);
+static FILESYSTEMASSOCIATIONINFO_MEMBER_ENDPOINT_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#FileSystemAssociationInfo$EndpointNetworkConfiguration",
+            "com.amazonaws.storagegateway",
+            "FileSystemAssociationInfo",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "EndpointNetworkConfiguration",
+        7,
+    );
+static FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#FileSystemAssociationStatusDetails$member",
+            "com.amazonaws.storagegateway",
+            "FileSystemAssociationStatusDetails",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS_DETAILS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#FileSystemAssociationInfo$FileSystemAssociationStatusDetails",
+            "com.amazonaws.storagegateway",
+            "FileSystemAssociationInfo",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "FileSystemAssociationStatusDetails",
+        8,
+    )
+    .with_list_member(&FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS_DETAILS_MEMBER);
+static FILESYSTEMASSOCIATIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileSystemAssociationInfo",
+        "com.amazonaws.storagegateway",
+        "FileSystemAssociationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_ARN,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_LOCATION_ARN,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_AUDIT_DESTINATION_ARN,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_GATEWAY_ARN,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_TAGS,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_CACHE_ATTRIBUTES,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_ENDPOINT_NETWORK_CONFIGURATION,
+        &FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS_DETAILS,
+    ],
+);
+impl FileSystemAssociationInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILESYSTEMASSOCIATIONINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileSystemAssociationInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_system_association_arn {
+            ser.write_string(&FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&FILESYSTEMASSOCIATIONINFO_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.file_system_association_status {
+            ser.write_string(&FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS, val)?;
+        }
+        if let Some(ref val) = self.audit_destination_arn {
+            ser.write_string(&FILESYSTEMASSOCIATIONINFO_MEMBER_AUDIT_DESTINATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&FILESYSTEMASSOCIATIONINFO_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &FILESYSTEMASSOCIATIONINFO_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cache_attributes {
+            ser.write_struct(&FILESYSTEMASSOCIATIONINFO_MEMBER_CACHE_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.endpoint_network_configuration {
+            ser.write_struct(&FILESYSTEMASSOCIATIONINFO_MEMBER_ENDPOINT_NETWORK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.file_system_association_status_details {
+            ser.write_list(
+                &FILESYSTEMASSOCIATIONINFO_MEMBER_FILE_SYSTEM_ASSOCIATION_STATUS_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FileSystemAssociationStatusDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileSystemAssociationInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILESYSTEMASSOCIATIONINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_association_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_association_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.audit_destination_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_attributes = Some(crate::types::CacheAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_network_configuration = Some(crate::types::EndpointNetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_association_status_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FileSystemAssociationStatusDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileSystemAssociationInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileSystemAssociationInfo {
     /// Creates a new builder-style object to manufacture [`FileSystemAssociationInfo`](crate::types::FileSystemAssociationInfo).
     pub fn builder() -> crate::types::builders::FileSystemAssociationInfoBuilder {

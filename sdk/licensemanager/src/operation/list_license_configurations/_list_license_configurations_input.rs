@@ -50,6 +50,194 @@ impl ListLicenseConfigurationsInput {
         self.filters.as_deref().unwrap_or_default()
     }
 }
+static LISTLICENSECONFIGURATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#StringList$member",
+            "com.amazonaws.licensemanager",
+            "StringList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static LISTLICENSECONFIGURATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARNS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#ListLicenseConfigurationsInput$LicenseConfigurationArns",
+            "com.amazonaws.licensemanager.synthetic",
+            "ListLicenseConfigurationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "LicenseConfigurationArns",
+        0,
+    )
+    .with_list_member(&LISTLICENSECONFIGURATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARNS_MEMBER);
+static LISTLICENSECONFIGURATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#ListLicenseConfigurationsInput$MaxResults",
+        "com.amazonaws.licensemanager.synthetic",
+        "ListLicenseConfigurationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static LISTLICENSECONFIGURATIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#ListLicenseConfigurationsInput$NextToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "ListLicenseConfigurationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static LISTLICENSECONFIGURATIONSINPUT_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Filters$member", "com.amazonaws.licensemanager", "Filters"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("item");
+static LISTLICENSECONFIGURATIONSINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#ListLicenseConfigurationsInput$Filters",
+        "com.amazonaws.licensemanager.synthetic",
+        "ListLicenseConfigurationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Filters",
+    3,
+)
+.with_list_member(&LISTLICENSECONFIGURATIONSINPUT_MEMBER_FILTERS_MEMBER);
+static LISTLICENSECONFIGURATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#ListLicenseConfigurationsInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "ListLicenseConfigurationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTLICENSECONFIGURATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARNS,
+        &LISTLICENSECONFIGURATIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTLICENSECONFIGURATIONSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTLICENSECONFIGURATIONSINPUT_MEMBER_FILTERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListLicenseConfigurationsRequest");
+impl ListLicenseConfigurationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTLICENSECONFIGURATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListLicenseConfigurationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_configuration_arns {
+            ser.write_list(
+                &LISTLICENSECONFIGURATIONSINPUT_MEMBER_LICENSE_CONFIGURATION_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTLICENSECONFIGURATIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTLICENSECONFIGURATIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &LISTLICENSECONFIGURATIONSINPUT_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Filter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTLICENSECONFIGURATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_configuration_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Filter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListLicenseConfigurationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListLicenseConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConfigurationsInput`](crate::operation::list_license_configurations::ListLicenseConfigurationsInput).
     pub fn builder() -> crate::operation::list_license_configurations::builders::ListLicenseConfigurationsInputBuilder {

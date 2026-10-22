@@ -68,6 +68,177 @@ impl UpdateClusterSoftwareInput {
         self.image_id.as_deref()
     }
 }
+static UPDATECLUSTERSOFTWAREINPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSoftwareInput$ClusterName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSoftwareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    0,
+);
+static UPDATECLUSTERSOFTWAREINPUT_MEMBER_INSTANCE_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UpdateClusterSoftwareInstanceGroups$member",
+        "com.amazonaws.sagemaker",
+        "UpdateClusterSoftwareInstanceGroups",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATECLUSTERSOFTWAREINPUT_MEMBER_INSTANCE_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSoftwareInput$InstanceGroups",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSoftwareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceGroups",
+    1,
+)
+.with_list_member(&UPDATECLUSTERSOFTWAREINPUT_MEMBER_INSTANCE_GROUPS_MEMBER);
+static UPDATECLUSTERSOFTWAREINPUT_MEMBER_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSoftwareInput$DeploymentConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSoftwareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentConfig",
+    2,
+);
+static UPDATECLUSTERSOFTWAREINPUT_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSoftwareInput$ImageId",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSoftwareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageId",
+    3,
+);
+static UPDATECLUSTERSOFTWAREINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSoftwareInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSoftwareInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECLUSTERSOFTWAREINPUT_MEMBER_CLUSTER_NAME,
+        &UPDATECLUSTERSOFTWAREINPUT_MEMBER_INSTANCE_GROUPS,
+        &UPDATECLUSTERSOFTWAREINPUT_MEMBER_DEPLOYMENT_CONFIG,
+        &UPDATECLUSTERSOFTWAREINPUT_MEMBER_IMAGE_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateClusterSoftwareRequest");
+impl UpdateClusterSoftwareInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECLUSTERSOFTWAREINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateClusterSoftwareInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&UPDATECLUSTERSOFTWAREINPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_groups {
+            ser.write_list(
+                &UPDATECLUSTERSOFTWAREINPUT_MEMBER_INSTANCE_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UpdateClusterSoftwareInstanceGroupSpecification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.deployment_config {
+            ser.write_struct(&UPDATECLUSTERSOFTWAREINPUT_MEMBER_DEPLOYMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.image_id {
+            ser.write_string(&UPDATECLUSTERSOFTWAREINPUT_MEMBER_IMAGE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_cluster_software::builders::UpdateClusterSoftwareInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECLUSTERSOFTWAREINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UpdateClusterSoftwareInstanceGroupSpecification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config = Some(crate::types::DeploymentConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateClusterSoftwareInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_name = builder.cluster_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateClusterSoftwareInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterSoftwareInput`](crate::operation::update_cluster_software::UpdateClusterSoftwareInput).
     pub fn builder() -> crate::operation::update_cluster_software::builders::UpdateClusterSoftwareInputBuilder {

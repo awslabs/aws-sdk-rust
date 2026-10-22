@@ -20,6 +20,133 @@ impl ListCapacityReservationsOutput {
         self.capacity_reservations.deref()
     }
 }
+static LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCapacityReservationsOutput$NextToken",
+        "com.amazonaws.athena.synthetic",
+        "ListCapacityReservationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_CAPACITY_RESERVATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#CapacityReservationsList$member",
+            "com.amazonaws.athena",
+            "CapacityReservationsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_CAPACITY_RESERVATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCapacityReservationsOutput$CapacityReservations",
+        "com.amazonaws.athena.synthetic",
+        "ListCapacityReservationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CapacityReservations",
+    1,
+)
+.with_list_member(&LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_CAPACITY_RESERVATIONS_MEMBER);
+static LISTCAPACITYRESERVATIONSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListCapacityReservationsOutput",
+        "com.amazonaws.athena.synthetic",
+        "ListCapacityReservationsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_CAPACITY_RESERVATIONS,
+    ],
+)
+.with_original_name("ListCapacityReservationsOutput");
+impl ListCapacityReservationsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCAPACITYRESERVATIONSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListCapacityReservationsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        {
+            let val = &self.capacity_reservations;
+
+            ser.write_list(
+                &LISTCAPACITYRESERVATIONSOUTPUT_MEMBER_CAPACITY_RESERVATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityReservation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_capacity_reservations::builders::ListCapacityReservationsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCAPACITYRESERVATIONSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.capacity_reservations = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::CapacityReservation::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListCapacityReservationsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.capacity_reservations = builder.capacity_reservations.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for ListCapacityReservationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

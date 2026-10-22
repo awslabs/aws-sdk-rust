@@ -45,6 +45,195 @@ impl Scope {
         self.service_principals.as_deref().unwrap_or_default()
     }
 }
+static SCOPE_MEMBER_COMPLIANCE_RESOURCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ComplianceResourceTypes$member",
+        "com.amazonaws.configservice",
+        "ComplianceResourceTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SCOPE_MEMBER_COMPLIANCE_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Scope$ComplianceResourceTypes",
+        "com.amazonaws.configservice",
+        "Scope",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ComplianceResourceTypes",
+    0,
+)
+.with_list_member(&SCOPE_MEMBER_COMPLIANCE_RESOURCE_TYPES_MEMBER);
+static SCOPE_MEMBER_TAG_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Scope$TagKey", "com.amazonaws.configservice", "Scope"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TagKey",
+    1,
+);
+static SCOPE_MEMBER_TAG_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Scope$TagValue", "com.amazonaws.configservice", "Scope"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TagValue",
+    2,
+);
+static SCOPE_MEMBER_COMPLIANCE_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Scope$ComplianceResourceId",
+        "com.amazonaws.configservice",
+        "Scope",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceResourceId",
+    3,
+);
+static SCOPE_MEMBER_SERVICE_PRINCIPALS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ServicePrincipals$member",
+        "com.amazonaws.configservice",
+        "ServicePrincipals",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SCOPE_MEMBER_SERVICE_PRINCIPALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Scope$ServicePrincipals",
+        "com.amazonaws.configservice",
+        "Scope",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ServicePrincipals",
+    4,
+)
+.with_list_member(&SCOPE_MEMBER_SERVICE_PRINCIPALS_MEMBER);
+static SCOPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Scope", "com.amazonaws.configservice", "Scope"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCOPE_MEMBER_COMPLIANCE_RESOURCE_TYPES,
+        &SCOPE_MEMBER_TAG_KEY,
+        &SCOPE_MEMBER_TAG_VALUE,
+        &SCOPE_MEMBER_COMPLIANCE_RESOURCE_ID,
+        &SCOPE_MEMBER_SERVICE_PRINCIPALS,
+    ],
+);
+impl Scope {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCOPE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Scope {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compliance_resource_types {
+            ser.write_list(
+                &SCOPE_MEMBER_COMPLIANCE_RESOURCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tag_key {
+            ser.write_string(&SCOPE_MEMBER_TAG_KEY, val)?;
+        }
+        if let Some(ref val) = self.tag_value {
+            ser.write_string(&SCOPE_MEMBER_TAG_VALUE, val)?;
+        }
+        if let Some(ref val) = self.compliance_resource_id {
+            ser.write_string(&SCOPE_MEMBER_COMPLIANCE_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.service_principals {
+            ser.write_list(
+                &SCOPE_MEMBER_SERVICE_PRINCIPALS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScopeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCOPE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_resource_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_principals = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Scope {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Scope {
     /// Creates a new builder-style object to manufacture [`Scope`](crate::types::Scope).
     pub fn builder() -> crate::types::builders::ScopeBuilder {

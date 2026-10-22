@@ -136,17 +136,17 @@ impl UpdateCollectionGroupFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub fn capacity_limits(mut self, input: crate::types::CollectionGroupCapacityLimits) -> Self {
         self.inner = self.inner.capacity_limits(input);
         self
     }
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub fn set_capacity_limits(mut self, input: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>) -> Self {
         self.inner = self.inner.set_capacity_limits(input);
         self
     }
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CollectionGroupCapacityLimits> {
         self.inner.get_capacity_limits()
     }

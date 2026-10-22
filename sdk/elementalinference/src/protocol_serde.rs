@@ -29,11 +29,15 @@ pub(crate) mod shape_create_dictionary;
 
 pub(crate) mod shape_create_feed;
 
+pub(crate) mod shape_create_schedule_action;
+
 pub(crate) mod shape_delete_dictionary;
 
 pub(crate) mod shape_delete_feed;
 
 pub(crate) mod shape_delete_feed_policy;
+
+pub(crate) mod shape_delete_schedule_action;
 
 pub(crate) mod shape_disassociate_feed;
 
@@ -50,6 +54,8 @@ pub(crate) mod shape_get_fixture;
 pub(crate) mod shape_list_dictionaries;
 
 pub(crate) mod shape_list_feeds;
+
+pub(crate) mod shape_list_schedule_actions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -82,6 +88,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_dictionary_input;
 
 pub(crate) mod shape_create_feed_input;
+
+pub(crate) mod shape_create_schedule_action_input;
 
 pub(crate) mod shape_disassociate_feed_input;
 
@@ -125,6 +133,16 @@ pub(crate) mod shape_fixture_summary_list;
 
 pub(crate) mod shape_get_output_list;
 
+pub(crate) mod shape_schedule_action_error;
+
+pub(crate) mod shape_schedule_action_list;
+
+pub(crate) mod shape_schedule_action_operation;
+
+pub(crate) mod shape_schedule_action_operations;
+
+pub(crate) mod shape_schedule_action_start_configuration;
+
 pub(crate) mod shape_search_filter;
 
 pub(crate) mod shape_string_list;
@@ -139,11 +157,21 @@ pub(crate) mod shape_dictionary_summary;
 
 pub(crate) mod shape_feed_summary;
 
+pub(crate) mod shape_fixed_mode_schedule_action_start_settings;
+
 pub(crate) mod shape_fixture_summary;
 
 pub(crate) mod shape_get_output;
 
 pub(crate) mod shape_output_config;
+
+pub(crate) mod shape_remove_clipping_data_source_configuration;
+
+pub(crate) mod shape_schedule_action;
+
+pub(crate) mod shape_update_clipping_data_source_configuration;
+
+pub(crate) mod shape_update_output_status;
 
 pub(crate) mod shape_clipping_config;
 
@@ -151,11 +179,11 @@ pub(crate) mod shape_contextual_metadata_config;
 
 pub(crate) mod shape_cropping_config;
 
+pub(crate) mod shape_data_source_configuration;
+
 pub(crate) mod shape_subtitling_config;
 
 pub(crate) mod shape_aspect_ratio;
-
-pub(crate) mod shape_data_source_configuration;
 
 pub(crate) mod shape_template_group;
 

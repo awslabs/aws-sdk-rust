@@ -21,6 +21,129 @@ impl LambdaStepMetadata {
         self.output_parameters.as_deref().unwrap_or_default()
     }
 }
+static LAMBDASTEPMETADATA_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LambdaStepMetadata$Arn",
+        "com.amazonaws.sagemaker",
+        "LambdaStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static LAMBDASTEPMETADATA_MEMBER_OUTPUT_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OutputParameterList$member",
+        "com.amazonaws.sagemaker",
+        "OutputParameterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LAMBDASTEPMETADATA_MEMBER_OUTPUT_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LambdaStepMetadata$OutputParameters",
+        "com.amazonaws.sagemaker",
+        "LambdaStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OutputParameters",
+    1,
+)
+.with_list_member(&LAMBDASTEPMETADATA_MEMBER_OUTPUT_PARAMETERS_MEMBER);
+static LAMBDASTEPMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LambdaStepMetadata",
+        "com.amazonaws.sagemaker",
+        "LambdaStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&LAMBDASTEPMETADATA_MEMBER_ARN, &LAMBDASTEPMETADATA_MEMBER_OUTPUT_PARAMETERS],
+);
+impl LambdaStepMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LAMBDASTEPMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LambdaStepMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&LAMBDASTEPMETADATA_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.output_parameters {
+            ser.write_list(
+                &LAMBDASTEPMETADATA_MEMBER_OUTPUT_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OutputParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LambdaStepMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LAMBDASTEPMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OutputParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LambdaStepMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LambdaStepMetadata {
     /// Creates a new builder-style object to manufacture [`LambdaStepMetadata`](crate::types::LambdaStepMetadata).
     pub fn builder() -> crate::types::builders::LambdaStepMetadataBuilder {

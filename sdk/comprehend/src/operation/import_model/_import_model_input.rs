@@ -56,6 +56,215 @@ impl ImportModelInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static IMPORTMODELINPUT_MEMBER_SOURCE_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ImportModelInput$SourceModelArn",
+        "com.amazonaws.comprehend.synthetic",
+        "ImportModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceModelArn",
+    0,
+);
+static IMPORTMODELINPUT_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ImportModelInput$ModelName",
+        "com.amazonaws.comprehend.synthetic",
+        "ImportModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    1,
+);
+static IMPORTMODELINPUT_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ImportModelInput$VersionName",
+        "com.amazonaws.comprehend.synthetic",
+        "ImportModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    2,
+);
+static IMPORTMODELINPUT_MEMBER_MODEL_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ImportModelInput$ModelKmsKeyId",
+        "com.amazonaws.comprehend.synthetic",
+        "ImportModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelKmsKeyId",
+    3,
+);
+static IMPORTMODELINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ImportModelInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "ImportModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    4,
+);
+static IMPORTMODELINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static IMPORTMODELINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ImportModelInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "ImportModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&IMPORTMODELINPUT_MEMBER_TAGS_MEMBER);
+static IMPORTMODELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ImportModelInput",
+        "com.amazonaws.comprehend.synthetic",
+        "ImportModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMPORTMODELINPUT_MEMBER_SOURCE_MODEL_ARN,
+        &IMPORTMODELINPUT_MEMBER_MODEL_NAME,
+        &IMPORTMODELINPUT_MEMBER_VERSION_NAME,
+        &IMPORTMODELINPUT_MEMBER_MODEL_KMS_KEY_ID,
+        &IMPORTMODELINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &IMPORTMODELINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ImportModelRequest");
+impl ImportModelInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMPORTMODELINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImportModelInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_model_arn {
+            ser.write_string(&IMPORTMODELINPUT_MEMBER_SOURCE_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&IMPORTMODELINPUT_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&IMPORTMODELINPUT_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_kms_key_id {
+            ser.write_string(&IMPORTMODELINPUT_MEMBER_MODEL_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&IMPORTMODELINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &IMPORTMODELINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::import_model::builders::ImportModelInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMPORTMODELINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ImportModelInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.source_model_arn = builder.source_model_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ImportModelInput {
     /// Creates a new builder-style object to manufacture [`ImportModelInput`](crate::operation::import_model::ImportModelInput).
     pub fn builder() -> crate::operation::import_model::builders::ImportModelInputBuilder {

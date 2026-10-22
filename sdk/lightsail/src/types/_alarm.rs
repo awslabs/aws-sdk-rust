@@ -206,6 +206,492 @@ impl Alarm {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static ALARM_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$name", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static ALARM_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$arn", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static ALARM_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$createdAt", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    2,
+);
+static ALARM_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$location", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    3,
+);
+static ALARM_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$resourceType", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    4,
+);
+static ALARM_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$supportCode", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    5,
+);
+static ALARM_MEMBER_MONITORED_RESOURCE_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$monitoredResourceInfo", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "monitoredResourceInfo",
+    6,
+);
+static ALARM_MEMBER_COMPARISON_OPERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$comparisonOperator", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "comparisonOperator",
+    7,
+);
+static ALARM_MEMBER_EVALUATION_PERIODS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$evaluationPeriods", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "evaluationPeriods",
+    8,
+);
+static ALARM_MEMBER_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$period", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "period",
+    9,
+);
+static ALARM_MEMBER_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$threshold", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Double,
+    "threshold",
+    10,
+);
+static ALARM_MEMBER_DATAPOINTS_TO_ALARM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$datapointsToAlarm", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "datapointsToAlarm",
+    11,
+);
+static ALARM_MEMBER_TREAT_MISSING_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$treatMissingData", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "treatMissingData",
+    12,
+);
+static ALARM_MEMBER_STATISTIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$statistic", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "statistic",
+    13,
+);
+static ALARM_MEMBER_METRIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$metricName", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "metricName",
+    14,
+);
+static ALARM_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$state", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "state",
+    15,
+);
+static ALARM_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$unit", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::String,
+    "unit",
+    16,
+);
+static ALARM_MEMBER_CONTACT_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContactProtocolsList$member",
+        "com.amazonaws.lightsail",
+        "ContactProtocolsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ALARM_MEMBER_CONTACT_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$contactProtocols", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::List,
+    "contactProtocols",
+    17,
+)
+.with_list_member(&ALARM_MEMBER_CONTACT_PROTOCOLS_MEMBER);
+static ALARM_MEMBER_NOTIFICATION_TRIGGERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#NotificationTriggerList$member",
+        "com.amazonaws.lightsail",
+        "NotificationTriggerList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ALARM_MEMBER_NOTIFICATION_TRIGGERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$notificationTriggers", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::List,
+    "notificationTriggers",
+    18,
+)
+.with_list_member(&ALARM_MEMBER_NOTIFICATION_TRIGGERS_MEMBER);
+static ALARM_MEMBER_NOTIFICATION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$notificationEnabled", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "notificationEnabled",
+    19,
+);
+static ALARM_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ALARM_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm$tags", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    20,
+)
+.with_list_member(&ALARM_MEMBER_TAGS_MEMBER);
+static ALARM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Alarm", "com.amazonaws.lightsail", "Alarm"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ALARM_MEMBER_NAME,
+        &ALARM_MEMBER_ARN,
+        &ALARM_MEMBER_CREATED_AT,
+        &ALARM_MEMBER_LOCATION,
+        &ALARM_MEMBER_RESOURCE_TYPE,
+        &ALARM_MEMBER_SUPPORT_CODE,
+        &ALARM_MEMBER_MONITORED_RESOURCE_INFO,
+        &ALARM_MEMBER_COMPARISON_OPERATOR,
+        &ALARM_MEMBER_EVALUATION_PERIODS,
+        &ALARM_MEMBER_PERIOD,
+        &ALARM_MEMBER_THRESHOLD,
+        &ALARM_MEMBER_DATAPOINTS_TO_ALARM,
+        &ALARM_MEMBER_TREAT_MISSING_DATA,
+        &ALARM_MEMBER_STATISTIC,
+        &ALARM_MEMBER_METRIC_NAME,
+        &ALARM_MEMBER_STATE,
+        &ALARM_MEMBER_UNIT,
+        &ALARM_MEMBER_CONTACT_PROTOCOLS,
+        &ALARM_MEMBER_NOTIFICATION_TRIGGERS,
+        &ALARM_MEMBER_NOTIFICATION_ENABLED,
+        &ALARM_MEMBER_TAGS,
+    ],
+);
+impl Alarm {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ALARM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Alarm {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&ALARM_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&ALARM_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&ALARM_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&ALARM_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&ALARM_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&ALARM_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.monitored_resource_info {
+            ser.write_struct(&ALARM_MEMBER_MONITORED_RESOURCE_INFO, val)?;
+        }
+        if let Some(ref val) = self.comparison_operator {
+            ser.write_string(&ALARM_MEMBER_COMPARISON_OPERATOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.evaluation_periods {
+            ser.write_integer(&ALARM_MEMBER_EVALUATION_PERIODS, *val)?;
+        }
+        if let Some(ref val) = self.period {
+            ser.write_integer(&ALARM_MEMBER_PERIOD, *val)?;
+        }
+        if let Some(ref val) = self.threshold {
+            ser.write_double(&ALARM_MEMBER_THRESHOLD, *val)?;
+        }
+        if let Some(ref val) = self.datapoints_to_alarm {
+            ser.write_integer(&ALARM_MEMBER_DATAPOINTS_TO_ALARM, *val)?;
+        }
+        if let Some(ref val) = self.treat_missing_data {
+            ser.write_string(&ALARM_MEMBER_TREAT_MISSING_DATA, val.as_str())?;
+        }
+        if let Some(ref val) = self.statistic {
+            ser.write_string(&ALARM_MEMBER_STATISTIC, val.as_str())?;
+        }
+        if let Some(ref val) = self.metric_name {
+            ser.write_string(&ALARM_MEMBER_METRIC_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&ALARM_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.unit {
+            ser.write_string(&ALARM_MEMBER_UNIT, val.as_str())?;
+        }
+        if let Some(ref val) = self.contact_protocols {
+            ser.write_list(
+                &ALARM_MEMBER_CONTACT_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.notification_triggers {
+            ser.write_list(
+                &ALARM_MEMBER_NOTIFICATION_TRIGGERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.notification_enabled {
+            ser.write_boolean(&ALARM_MEMBER_NOTIFICATION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&ALARM_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AlarmBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ALARM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitored_resource_info = Some(crate::types::MonitoredResourceInfo::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.comparison_operator = Some(crate::types::ComparisonOperator::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_periods = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.period = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.threshold = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.datapoints_to_alarm = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.treat_missing_data = Some(crate::types::TreatMissingData::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.statistic = Some(crate::types::MetricStatistic::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_name = Some(crate::types::MetricName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::AlarmState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unit = Some(crate::types::MetricUnit::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact_protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContactProtocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_triggers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AlarmState::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Alarm {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Alarm {
     /// Creates a new builder-style object to manufacture [`Alarm`](crate::types::Alarm).
     pub fn builder() -> crate::types::builders::AlarmBuilder {

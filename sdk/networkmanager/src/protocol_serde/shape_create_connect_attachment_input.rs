@@ -12,29 +12,44 @@ pub fn ser_create_connect_attachment_input_input(
     if let Some(var_3) = &input.edge_location {
         object.key("EdgeLocation").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.options {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("Options").start_object();
-        crate::protocol_serde::shape_connect_attachment_options::ser_connect_attachment_options(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.routing_policy_label {
-        object.key("RoutingPolicyLabel").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.tags {
-        let mut array_8 = object.key("Tags").start_array();
-        for item_9 in var_7 {
+    if let Some(var_4) = &input.nat_gateway_rules {
+        let mut array_5 = object.key("NatGatewayRules").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_nat_rule_request::ser_nat_rule_request(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_8.finish();
+        array_5.finish();
     }
-    if let Some(var_11) = &input.transport_attachment_id {
-        object.key("TransportAttachmentId").string(var_11.as_str());
+    if let Some(var_8) = &input.nat_gateway_support {
+        object.key("NatGatewaySupport").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.options {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("Options").start_object();
+        crate::protocol_serde::shape_connect_attachment_options::ser_connect_attachment_options(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.routing_policy_label {
+        object.key("RoutingPolicyLabel").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("Tags").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_16) = &input.transport_attachment_id {
+        object.key("TransportAttachmentId").string(var_16.as_str());
     }
     Ok(())
 }

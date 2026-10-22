@@ -46,6 +46,259 @@ impl EngineConfiguration {
         self.classifications.as_deref().unwrap_or_default()
     }
 }
+static ENGINECONFIGURATION_MEMBER_COORDINATOR_DPU_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineConfiguration$CoordinatorDpuSize",
+        "com.amazonaws.athena",
+        "EngineConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CoordinatorDpuSize",
+    0,
+);
+static ENGINECONFIGURATION_MEMBER_MAX_CONCURRENT_DPUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineConfiguration$MaxConcurrentDpus",
+        "com.amazonaws.athena",
+        "EngineConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxConcurrentDpus",
+    1,
+);
+static ENGINECONFIGURATION_MEMBER_DEFAULT_EXECUTOR_DPU_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineConfiguration$DefaultExecutorDpuSize",
+        "com.amazonaws.athena",
+        "EngineConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DefaultExecutorDpuSize",
+    2,
+);
+static ENGINECONFIGURATION_MEMBER_ADDITIONAL_CONFIGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$key", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ENGINECONFIGURATION_MEMBER_ADDITIONAL_CONFIGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$value", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ENGINECONFIGURATION_MEMBER_ADDITIONAL_CONFIGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineConfiguration$AdditionalConfigs",
+        "com.amazonaws.athena",
+        "EngineConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "AdditionalConfigs",
+    3,
+)
+.with_map_members(
+    &ENGINECONFIGURATION_MEMBER_ADDITIONAL_CONFIGS_KEY,
+    &ENGINECONFIGURATION_MEMBER_ADDITIONAL_CONFIGS_VALUE,
+);
+static ENGINECONFIGURATION_MEMBER_SPARK_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$key", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ENGINECONFIGURATION_MEMBER_SPARK_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$value", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ENGINECONFIGURATION_MEMBER_SPARK_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineConfiguration$SparkProperties",
+        "com.amazonaws.athena",
+        "EngineConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "SparkProperties",
+    4,
+)
+.with_map_members(
+    &ENGINECONFIGURATION_MEMBER_SPARK_PROPERTIES_KEY,
+    &ENGINECONFIGURATION_MEMBER_SPARK_PROPERTIES_VALUE,
+);
+static ENGINECONFIGURATION_MEMBER_CLASSIFICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ClassificationList$member",
+        "com.amazonaws.athena",
+        "ClassificationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ENGINECONFIGURATION_MEMBER_CLASSIFICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#EngineConfiguration$Classifications",
+        "com.amazonaws.athena",
+        "EngineConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Classifications",
+    5,
+)
+.with_list_member(&ENGINECONFIGURATION_MEMBER_CLASSIFICATIONS_MEMBER);
+static ENGINECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#EngineConfiguration", "com.amazonaws.athena", "EngineConfiguration"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENGINECONFIGURATION_MEMBER_COORDINATOR_DPU_SIZE,
+        &ENGINECONFIGURATION_MEMBER_MAX_CONCURRENT_DPUS,
+        &ENGINECONFIGURATION_MEMBER_DEFAULT_EXECUTOR_DPU_SIZE,
+        &ENGINECONFIGURATION_MEMBER_ADDITIONAL_CONFIGS,
+        &ENGINECONFIGURATION_MEMBER_SPARK_PROPERTIES,
+        &ENGINECONFIGURATION_MEMBER_CLASSIFICATIONS,
+    ],
+);
+impl EngineConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENGINECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EngineConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.coordinator_dpu_size {
+            ser.write_integer(&ENGINECONFIGURATION_MEMBER_COORDINATOR_DPU_SIZE, *val)?;
+        }
+        {
+            let val = &self.max_concurrent_dpus;
+            ser.write_integer(&ENGINECONFIGURATION_MEMBER_MAX_CONCURRENT_DPUS, *val)?;
+        }
+        if let Some(ref val) = self.default_executor_dpu_size {
+            ser.write_integer(&ENGINECONFIGURATION_MEMBER_DEFAULT_EXECUTOR_DPU_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.additional_configs {
+            ser.write_map(
+                &ENGINECONFIGURATION_MEMBER_ADDITIONAL_CONFIGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.spark_properties {
+            ser.write_map(
+                &ENGINECONFIGURATION_MEMBER_SPARK_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.classifications {
+            ser.write_list(
+                &ENGINECONFIGURATION_MEMBER_CLASSIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Classification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EngineConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENGINECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.coordinator_dpu_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.max_concurrent_dpus = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_executor_dpu_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_configs = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.spark_properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.classifications = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Classification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EngineConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EngineConfiguration {
     /// Creates a new builder-style object to manufacture [`EngineConfiguration`](crate::types::EngineConfiguration).
     pub fn builder() -> crate::types::builders::EngineConfigurationBuilder {

@@ -25,6 +25,128 @@ impl UpdateLanguageModelOutput {
         self.last_modified_time.as_ref()
     }
 }
+static UPDATELANGUAGEMODELOUTPUT_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateLanguageModelOutput$ModelName",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    0,
+);
+static UPDATELANGUAGEMODELOUTPUT_MEMBER_MODEL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateLanguageModelOutput$ModelStatus",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelStatus",
+    1,
+);
+static UPDATELANGUAGEMODELOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateLanguageModelOutput$LastModifiedTime",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    2,
+);
+static UPDATELANGUAGEMODELOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateLanguageModelOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATELANGUAGEMODELOUTPUT_MEMBER_MODEL_NAME,
+        &UPDATELANGUAGEMODELOUTPUT_MEMBER_MODEL_STATUS,
+        &UPDATELANGUAGEMODELOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+    ],
+)
+.with_original_name("UpdateLanguageModelResponse");
+impl UpdateLanguageModelOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATELANGUAGEMODELOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLanguageModelOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&UPDATELANGUAGEMODELOUTPUT_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_status {
+            ser.write_string(&UPDATELANGUAGEMODELOUTPUT_MEMBER_MODEL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&UPDATELANGUAGEMODELOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_language_model::builders::UpdateLanguageModelOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATELANGUAGEMODELOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_status = Some(crate::types::ModelStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateLanguageModelOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateLanguageModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

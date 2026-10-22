@@ -82,6 +82,276 @@ impl ListModelPackagesInput {
         self.sort_order.as_ref()
     }
 }
+static LISTMODELPACKAGESINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    0,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    1,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$NameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NameContains",
+    3,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_MODEL_APPROVAL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$ModelApprovalStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelApprovalStatus",
+    4,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_MODEL_PACKAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$ModelPackageGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupName",
+    5,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_MODEL_PACKAGE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$ModelPackageType",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageType",
+    6,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    7,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    8,
+);
+static LISTMODELPACKAGESINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    9,
+);
+static LISTMODELPACKAGESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelPackagesInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelPackagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTMODELPACKAGESINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTMODELPACKAGESINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTMODELPACKAGESINPUT_MEMBER_MAX_RESULTS,
+        &LISTMODELPACKAGESINPUT_MEMBER_NAME_CONTAINS,
+        &LISTMODELPACKAGESINPUT_MEMBER_MODEL_APPROVAL_STATUS,
+        &LISTMODELPACKAGESINPUT_MEMBER_MODEL_PACKAGE_GROUP_NAME,
+        &LISTMODELPACKAGESINPUT_MEMBER_MODEL_PACKAGE_TYPE,
+        &LISTMODELPACKAGESINPUT_MEMBER_NEXT_TOKEN,
+        &LISTMODELPACKAGESINPUT_MEMBER_SORT_BY,
+        &LISTMODELPACKAGESINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListModelPackagesInput");
+impl ListModelPackagesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTMODELPACKAGESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListModelPackagesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTMODELPACKAGESINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTMODELPACKAGESINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTMODELPACKAGESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.name_contains {
+            ser.write_string(&LISTMODELPACKAGESINPUT_MEMBER_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.model_approval_status {
+            ser.write_string(&LISTMODELPACKAGESINPUT_MEMBER_MODEL_APPROVAL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_package_group_name {
+            ser.write_string(&LISTMODELPACKAGESINPUT_MEMBER_MODEL_PACKAGE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_package_type {
+            ser.write_string(&LISTMODELPACKAGESINPUT_MEMBER_MODEL_PACKAGE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTMODELPACKAGESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTMODELPACKAGESINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTMODELPACKAGESINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTMODELPACKAGESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_approval_status = Some(crate::types::ModelApprovalStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_type = Some(crate::types::ModelPackageType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ModelPackageSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListModelPackagesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListModelPackagesInput {
     /// Creates a new builder-style object to manufacture [`ListModelPackagesInput`](crate::operation::list_model_packages::ListModelPackagesInput).
     pub fn builder() -> crate::operation::list_model_packages::builders::ListModelPackagesInputBuilder {

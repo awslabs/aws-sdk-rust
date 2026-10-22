@@ -9,23 +9,41 @@ pub fn ser_create_site_to_site_vpn_attachment_input_input(
     if let Some(var_2) = &input.core_network_id {
         object.key("CoreNetworkId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.routing_policy_label {
-        object.key("RoutingPolicyLabel").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.tags {
-        let mut array_5 = object.key("Tags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_3) = &input.nat_gateway_rules {
+        let mut array_4 = object.key("NatGatewayRules").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_nat_rule_request::ser_nat_rule_request(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_5.finish();
+        array_4.finish();
     }
-    if let Some(var_8) = &input.vpn_connection_arn {
-        object.key("VpnConnectionArn").string(var_8.as_str());
+    if let Some(var_7) = &input.nat_gateway_support {
+        object.key("NatGatewaySupport").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.nat_system_route_support {
+        object.key("NatSystemRouteSupport").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.routing_policy_label {
+        object.key("RoutingPolicyLabel").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("Tags").start_array();
+        for item_12 in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_14) = &input.vpn_connection_arn {
+        object.key("VpnConnectionArn").string(var_14.as_str());
     }
     Ok(())
 }

@@ -31,6 +31,148 @@ impl Ec2CapacityReservation {
         self.used_by_current_endpoint
     }
 }
+static EC2CAPACITYRESERVATION_MEMBER_EC2_CAPACITY_RESERVATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Ec2CapacityReservation$Ec2CapacityReservationId",
+        "com.amazonaws.sagemaker",
+        "Ec2CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ec2CapacityReservationId",
+    0,
+);
+static EC2CAPACITYRESERVATION_MEMBER_TOTAL_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Ec2CapacityReservation$TotalInstanceCount",
+        "com.amazonaws.sagemaker",
+        "Ec2CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalInstanceCount",
+    1,
+);
+static EC2CAPACITYRESERVATION_MEMBER_AVAILABLE_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Ec2CapacityReservation$AvailableInstanceCount",
+        "com.amazonaws.sagemaker",
+        "Ec2CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AvailableInstanceCount",
+    2,
+);
+static EC2CAPACITYRESERVATION_MEMBER_USED_BY_CURRENT_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Ec2CapacityReservation$UsedByCurrentEndpoint",
+        "com.amazonaws.sagemaker",
+        "Ec2CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UsedByCurrentEndpoint",
+    3,
+);
+static EC2CAPACITYRESERVATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Ec2CapacityReservation",
+        "com.amazonaws.sagemaker",
+        "Ec2CapacityReservation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EC2CAPACITYRESERVATION_MEMBER_EC2_CAPACITY_RESERVATION_ID,
+        &EC2CAPACITYRESERVATION_MEMBER_TOTAL_INSTANCE_COUNT,
+        &EC2CAPACITYRESERVATION_MEMBER_AVAILABLE_INSTANCE_COUNT,
+        &EC2CAPACITYRESERVATION_MEMBER_USED_BY_CURRENT_ENDPOINT,
+    ],
+);
+impl Ec2CapacityReservation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EC2CAPACITYRESERVATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Ec2CapacityReservation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ec2_capacity_reservation_id {
+            ser.write_string(&EC2CAPACITYRESERVATION_MEMBER_EC2_CAPACITY_RESERVATION_ID, val)?;
+        }
+        if let Some(ref val) = self.total_instance_count {
+            ser.write_integer(&EC2CAPACITYRESERVATION_MEMBER_TOTAL_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.available_instance_count {
+            ser.write_integer(&EC2CAPACITYRESERVATION_MEMBER_AVAILABLE_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.used_by_current_endpoint {
+            ser.write_integer(&EC2CAPACITYRESERVATION_MEMBER_USED_BY_CURRENT_ENDPOINT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::Ec2CapacityReservationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EC2CAPACITYRESERVATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_capacity_reservation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.available_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.used_by_current_endpoint = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Ec2CapacityReservation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Ec2CapacityReservation {
     /// Creates a new builder-style object to manufacture [`Ec2CapacityReservation`](crate::types::Ec2CapacityReservation).
     pub fn builder() -> crate::types::builders::Ec2CapacityReservationBuilder {

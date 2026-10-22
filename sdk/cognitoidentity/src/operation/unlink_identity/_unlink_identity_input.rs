@@ -27,6 +27,181 @@ impl UnlinkIdentityInput {
         self.logins_to_remove.as_deref().unwrap_or_default()
     }
 }
+static UNLINKIDENTITYINPUT_MEMBER_IDENTITY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkIdentityInput$IdentityId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityId",
+    0,
+);
+static UNLINKIDENTITYINPUT_MEMBER_LOGINS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsMap$key",
+        "com.amazonaws.cognitoidentity",
+        "LoginsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UNLINKIDENTITYINPUT_MEMBER_LOGINS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsMap$value",
+        "com.amazonaws.cognitoidentity",
+        "LoginsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static UNLINKIDENTITYINPUT_MEMBER_LOGINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkIdentityInput$Logins",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Logins",
+    1,
+)
+.with_map_members(&UNLINKIDENTITYINPUT_MEMBER_LOGINS_KEY, &UNLINKIDENTITYINPUT_MEMBER_LOGINS_VALUE);
+static UNLINKIDENTITYINPUT_MEMBER_LOGINS_TO_REMOVE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsList$member",
+        "com.amazonaws.cognitoidentity",
+        "LoginsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UNLINKIDENTITYINPUT_MEMBER_LOGINS_TO_REMOVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkIdentityInput$LoginsToRemove",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LoginsToRemove",
+    2,
+)
+.with_list_member(&UNLINKIDENTITYINPUT_MEMBER_LOGINS_TO_REMOVE_MEMBER);
+static UNLINKIDENTITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#UnlinkIdentityInput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "UnlinkIdentityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UNLINKIDENTITYINPUT_MEMBER_IDENTITY_ID,
+        &UNLINKIDENTITYINPUT_MEMBER_LOGINS,
+        &UNLINKIDENTITYINPUT_MEMBER_LOGINS_TO_REMOVE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UnlinkIdentityInput");
+impl UnlinkIdentityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UNLINKIDENTITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UnlinkIdentityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_id {
+            ser.write_string(&UNLINKIDENTITYINPUT_MEMBER_IDENTITY_ID, val)?;
+        }
+        if let Some(ref val) = self.logins {
+            ser.write_map(
+                &UNLINKIDENTITYINPUT_MEMBER_LOGINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.logins_to_remove {
+            ser.write_list(
+                &UNLINKIDENTITYINPUT_MEMBER_LOGINS_TO_REMOVE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::unlink_identity::builders::UnlinkIdentityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UNLINKIDENTITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logins = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logins_to_remove = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UnlinkIdentityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identity_id = builder.identity_id.or(Some(String::new()));
+        builder.logins = builder.logins.or(Some(::std::collections::HashMap::new()));
+        builder.logins_to_remove = builder.logins_to_remove.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UnlinkIdentityInput {
     /// Creates a new builder-style object to manufacture [`UnlinkIdentityInput`](crate::operation::unlink_identity::UnlinkIdentityInput).
     pub fn builder() -> crate::operation::unlink_identity::builders::UnlinkIdentityInputBuilder {

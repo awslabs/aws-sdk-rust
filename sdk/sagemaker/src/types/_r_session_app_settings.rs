@@ -25,6 +25,128 @@ impl RSessionAppSettings {
         self.custom_images.as_deref().unwrap_or_default()
     }
 }
+static RSESSIONAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RSessionAppSettings$DefaultResourceSpec",
+        "com.amazonaws.sagemaker",
+        "RSessionAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultResourceSpec",
+    0,
+);
+static RSESSIONAPPSETTINGS_MEMBER_CUSTOM_IMAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#CustomImages$member", "com.amazonaws.sagemaker", "CustomImages"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RSESSIONAPPSETTINGS_MEMBER_CUSTOM_IMAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RSessionAppSettings$CustomImages",
+        "com.amazonaws.sagemaker",
+        "RSessionAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomImages",
+    1,
+)
+.with_list_member(&RSESSIONAPPSETTINGS_MEMBER_CUSTOM_IMAGES_MEMBER);
+static RSESSIONAPPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RSessionAppSettings",
+        "com.amazonaws.sagemaker",
+        "RSessionAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RSESSIONAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC,
+        &RSESSIONAPPSETTINGS_MEMBER_CUSTOM_IMAGES,
+    ],
+);
+impl RSessionAppSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RSESSIONAPPSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RSessionAppSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_resource_spec {
+            ser.write_struct(&RSESSIONAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.custom_images {
+            ser.write_list(
+                &RSESSIONAPPSETTINGS_MEMBER_CUSTOM_IMAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RSessionAppSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RSESSIONAPPSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_images = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RSessionAppSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RSessionAppSettings {
     /// Creates a new builder-style object to manufacture [`RSessionAppSettings`](crate::types::RSessionAppSettings).
     pub fn builder() -> crate::types::builders::RSessionAppSettingsBuilder {

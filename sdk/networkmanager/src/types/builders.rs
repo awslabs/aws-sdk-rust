@@ -57,6 +57,8 @@ pub use crate::types::_route_table_identifier::RouteTableIdentifierBuilder;
 
 pub use crate::types::_core_network_segment_edge_identifier::CoreNetworkSegmentEdgeIdentifierBuilder;
 
+pub use crate::types::_core_network_network_function_group_identifier::CoreNetworkNetworkFunctionGroupIdentifierBuilder;
+
 pub use crate::types::_route_analysis::RouteAnalysisBuilder;
 
 pub use crate::types::_organization_status::OrganizationStatusBuilder;
@@ -68,6 +70,8 @@ pub use crate::types::_proposed_segment_change::ProposedSegmentChangeBuilder;
 pub use crate::types::_proposed_network_function_group_change::ProposedNetworkFunctionGroupChangeBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
+
+pub use crate::types::_nat_rule_request::NatRuleRequestBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
@@ -87,8 +91,6 @@ pub use crate::types::_relationship::RelationshipBuilder;
 
 pub use crate::types::_network_resource::NetworkResourceBuilder;
 
-pub use crate::types::_core_network_network_function_group_identifier::CoreNetworkNetworkFunctionGroupIdentifierBuilder;
-
 pub use crate::types::_network_route::NetworkRouteBuilder;
 
 pub use crate::types::_network_telemetry::NetworkTelemetryBuilder;
@@ -96,6 +98,8 @@ pub use crate::types::_network_telemetry::NetworkTelemetryBuilder;
 pub use crate::types::_route_analysis_endpoint_options::RouteAnalysisEndpointOptionsBuilder;
 
 pub use crate::types::_route_analysis_path::RouteAnalysisPathBuilder;
+
+pub use crate::types::_attachment_nat_configuration::AttachmentNatConfigurationBuilder;
 
 pub use crate::types::_attachment_routing_policy_association_summary::AttachmentRoutingPolicyAssociationSummaryBuilder;
 
@@ -108,6 +112,8 @@ pub use crate::types::_prefix_list_association::PrefixListAssociationBuilder;
 pub use crate::types::_core_network_routing_information::CoreNetworkRoutingInformationBuilder;
 
 pub use crate::types::_core_network_summary::CoreNetworkSummaryBuilder;
+
+pub use crate::types::_nat_rule::NatRuleBuilder;
 
 pub use crate::types::_attachment_error::AttachmentErrorBuilder;
 

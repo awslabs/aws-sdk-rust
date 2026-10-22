@@ -55,6 +55,233 @@ impl DescribeDeviceFleetOutput {
         self.iot_role_alias.as_deref()
     }
 }
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DEVICE_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$DeviceFleetName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetName",
+    0,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DEVICE_FLEET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$DeviceFleetArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetArn",
+    1,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    2,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    5,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    6,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_MEMBER_IOT_ROLE_ALIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput$IotRoleAlias",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IotRoleAlias",
+    7,
+);
+static DESCRIBEDEVICEFLEETOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDeviceFleetOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDeviceFleetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DEVICE_FLEET_NAME,
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DEVICE_FLEET_ARN,
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_OUTPUT_CONFIG,
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBEDEVICEFLEETOUTPUT_MEMBER_IOT_ROLE_ALIAS,
+    ],
+)
+.with_original_name("DescribeDeviceFleetResponse");
+impl DescribeDeviceFleetOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDEVICEFLEETOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeDeviceFleetOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_fleet_name {
+            ser.write_string(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DEVICE_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.device_fleet_arn {
+            ser.write_string(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DEVICE_FLEET_ARN, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.iot_role_alias {
+            ser.write_string(&DESCRIBEDEVICEFLEETOUTPUT_MEMBER_IOT_ROLE_ALIAS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_device_fleet::builders::DescribeDeviceFleetOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDEVICEFLEETOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::EdgeOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iot_role_alias = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeDeviceFleetOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeDeviceFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -25,6 +25,123 @@ impl ContainerImage {
         self.created_at.as_ref()
     }
 }
+static CONTAINERIMAGE_MEMBER_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerImage$image",
+        "com.amazonaws.lightsail",
+        "ContainerImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "image",
+    0,
+);
+static CONTAINERIMAGE_MEMBER_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerImage$digest",
+        "com.amazonaws.lightsail",
+        "ContainerImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "digest",
+    1,
+);
+static CONTAINERIMAGE_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerImage$createdAt",
+        "com.amazonaws.lightsail",
+        "ContainerImage",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    2,
+);
+static CONTAINERIMAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#ContainerImage", "com.amazonaws.lightsail", "ContainerImage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERIMAGE_MEMBER_IMAGE,
+        &CONTAINERIMAGE_MEMBER_DIGEST,
+        &CONTAINERIMAGE_MEMBER_CREATED_AT,
+    ],
+);
+impl ContainerImage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERIMAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerImage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image {
+            ser.write_string(&CONTAINERIMAGE_MEMBER_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.digest {
+            ser.write_string(&CONTAINERIMAGE_MEMBER_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&CONTAINERIMAGE_MEMBER_CREATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerImageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERIMAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerImage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerImage {
     /// Creates a new builder-style object to manufacture [`ContainerImage`](crate::types::ContainerImage).
     pub fn builder() -> crate::types::builders::ContainerImageBuilder {

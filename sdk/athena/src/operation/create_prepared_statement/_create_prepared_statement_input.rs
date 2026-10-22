@@ -30,6 +30,153 @@ impl CreatePreparedStatementInput {
         self.description.as_deref()
     }
 }
+static CREATEPREPAREDSTATEMENTINPUT_MEMBER_STATEMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreatePreparedStatementInput$StatementName",
+        "com.amazonaws.athena.synthetic",
+        "CreatePreparedStatementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatementName",
+    0,
+);
+static CREATEPREPAREDSTATEMENTINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreatePreparedStatementInput$WorkGroup",
+        "com.amazonaws.athena.synthetic",
+        "CreatePreparedStatementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    1,
+);
+static CREATEPREPAREDSTATEMENTINPUT_MEMBER_QUERY_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreatePreparedStatementInput$QueryStatement",
+        "com.amazonaws.athena.synthetic",
+        "CreatePreparedStatementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryStatement",
+    2,
+);
+static CREATEPREPAREDSTATEMENTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreatePreparedStatementInput$Description",
+        "com.amazonaws.athena.synthetic",
+        "CreatePreparedStatementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static CREATEPREPAREDSTATEMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreatePreparedStatementInput",
+        "com.amazonaws.athena.synthetic",
+        "CreatePreparedStatementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPREPAREDSTATEMENTINPUT_MEMBER_STATEMENT_NAME,
+        &CREATEPREPAREDSTATEMENTINPUT_MEMBER_WORK_GROUP,
+        &CREATEPREPAREDSTATEMENTINPUT_MEMBER_QUERY_STATEMENT,
+        &CREATEPREPAREDSTATEMENTINPUT_MEMBER_DESCRIPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePreparedStatementInput");
+impl CreatePreparedStatementInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPREPAREDSTATEMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePreparedStatementInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.statement_name {
+            ser.write_string(&CREATEPREPAREDSTATEMENTINPUT_MEMBER_STATEMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&CREATEPREPAREDSTATEMENTINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        if let Some(ref val) = self.query_statement {
+            ser.write_string(&CREATEPREPAREDSTATEMENTINPUT_MEMBER_QUERY_STATEMENT, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEPREPAREDSTATEMENTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPREPAREDSTATEMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.statement_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_statement = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePreparedStatementInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.statement_name = builder.statement_name.or(Some(String::new()));
+        builder.work_group = builder.work_group.or(Some(String::new()));
+        builder.query_statement = builder.query_statement.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePreparedStatementInput {
     /// Creates a new builder-style object to manufacture [`CreatePreparedStatementInput`](crate::operation::create_prepared_statement::CreatePreparedStatementInput).
     pub fn builder() -> crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder {

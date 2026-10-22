@@ -25,6 +25,123 @@ impl DeploymentStage {
         self.deployment_config.as_ref()
     }
 }
+static DEPLOYMENTSTAGE_MEMBER_STAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStage$StageName",
+        "com.amazonaws.sagemaker",
+        "DeploymentStage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StageName",
+    0,
+);
+static DEPLOYMENTSTAGE_MEMBER_DEVICE_SELECTION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStage$DeviceSelectionConfig",
+        "com.amazonaws.sagemaker",
+        "DeploymentStage",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceSelectionConfig",
+    1,
+);
+static DEPLOYMENTSTAGE_MEMBER_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeploymentStage$DeploymentConfig",
+        "com.amazonaws.sagemaker",
+        "DeploymentStage",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentConfig",
+    2,
+);
+static DEPLOYMENTSTAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DeploymentStage", "com.amazonaws.sagemaker", "DeploymentStage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTSTAGE_MEMBER_STAGE_NAME,
+        &DEPLOYMENTSTAGE_MEMBER_DEVICE_SELECTION_CONFIG,
+        &DEPLOYMENTSTAGE_MEMBER_DEPLOYMENT_CONFIG,
+    ],
+);
+impl DeploymentStage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTSTAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentStage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stage_name {
+            ser.write_string(&DEPLOYMENTSTAGE_MEMBER_STAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.device_selection_config {
+            ser.write_struct(&DEPLOYMENTSTAGE_MEMBER_DEVICE_SELECTION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.deployment_config {
+            ser.write_struct(&DEPLOYMENTSTAGE_MEMBER_DEPLOYMENT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentStageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTSTAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_selection_config = Some(crate::types::DeviceSelectionConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config = Some(crate::types::EdgeDeploymentConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentStage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentStage {
     /// Creates a new builder-style object to manufacture [`DeploymentStage`](crate::types::DeploymentStage).
     pub fn builder() -> crate::types::builders::DeploymentStageBuilder {

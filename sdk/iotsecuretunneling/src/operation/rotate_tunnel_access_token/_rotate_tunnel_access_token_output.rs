@@ -35,6 +35,128 @@ impl ::std::fmt::Debug for RotateTunnelAccessTokenOutput {
         formatter.finish()
     }
 }
+static ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_TUNNEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenOutput$tunnelArn",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tunnelArn",
+    0,
+);
+static ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_SOURCE_ACCESS_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenOutput$sourceAccessToken",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceAccessToken",
+    1,
+);
+static ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_DESTINATION_ACCESS_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenOutput$destinationAccessToken",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "destinationAccessToken",
+    2,
+);
+static ROTATETUNNELACCESSTOKENOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#RotateTunnelAccessTokenOutput",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "RotateTunnelAccessTokenOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_TUNNEL_ARN,
+        &ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_SOURCE_ACCESS_TOKEN,
+        &ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_DESTINATION_ACCESS_TOKEN,
+    ],
+)
+.with_original_name("RotateTunnelAccessTokenResponse");
+impl RotateTunnelAccessTokenOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ROTATETUNNELACCESSTOKENOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RotateTunnelAccessTokenOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tunnel_arn {
+            ser.write_string(&ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_TUNNEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.source_access_token {
+            ser.write_string(&ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_SOURCE_ACCESS_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.destination_access_token {
+            ser.write_string(&ROTATETUNNELACCESSTOKENOUTPUT_MEMBER_DESTINATION_ACCESS_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ROTATETUNNELACCESSTOKENOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tunnel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_access_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_access_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RotateTunnelAccessTokenOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for RotateTunnelAccessTokenOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -37,6 +37,148 @@ impl PipelineMetadata {
         self.polling_disabled_at.as_ref()
     }
 }
+static PIPELINEMETADATA_MEMBER_PIPELINE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineMetadata$pipelineArn",
+        "com.amazonaws.codepipeline",
+        "PipelineMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineArn",
+    0,
+);
+static PIPELINEMETADATA_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineMetadata$created",
+        "com.amazonaws.codepipeline",
+        "PipelineMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "created",
+    1,
+);
+static PIPELINEMETADATA_MEMBER_UPDATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineMetadata$updated",
+        "com.amazonaws.codepipeline",
+        "PipelineMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updated",
+    2,
+);
+static PIPELINEMETADATA_MEMBER_POLLING_DISABLED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineMetadata$pollingDisabledAt",
+        "com.amazonaws.codepipeline",
+        "PipelineMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "pollingDisabledAt",
+    3,
+);
+static PIPELINEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineMetadata",
+        "com.amazonaws.codepipeline",
+        "PipelineMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINEMETADATA_MEMBER_PIPELINE_ARN,
+        &PIPELINEMETADATA_MEMBER_CREATED,
+        &PIPELINEMETADATA_MEMBER_UPDATED,
+        &PIPELINEMETADATA_MEMBER_POLLING_DISABLED_AT,
+    ],
+);
+impl PipelineMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_arn {
+            ser.write_string(&PIPELINEMETADATA_MEMBER_PIPELINE_ARN, val)?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&PIPELINEMETADATA_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.updated {
+            ser.write_timestamp(&PIPELINEMETADATA_MEMBER_UPDATED, val)?;
+        }
+        if let Some(ref val) = self.polling_disabled_at {
+            ser.write_timestamp(&PIPELINEMETADATA_MEMBER_POLLING_DISABLED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.polling_disabled_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PipelineMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineMetadata`](crate::types::PipelineMetadata).
     pub fn builder() -> crate::types::builders::PipelineMetadataBuilder {

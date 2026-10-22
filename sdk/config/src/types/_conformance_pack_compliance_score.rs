@@ -25,6 +25,127 @@ impl ConformancePackComplianceScore {
         self.last_updated_time.as_ref()
     }
 }
+static CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceScore$Score",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceScore",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Score",
+    0,
+);
+static CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_CONFORMANCE_PACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceScore$ConformancePackName",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceScore",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConformancePackName",
+    1,
+);
+static CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_LAST_UPDATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceScore$LastUpdatedTime",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceScore",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedTime",
+    2,
+);
+static CONFORMANCEPACKCOMPLIANCESCORE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceScore",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceScore",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_SCORE,
+        &CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_CONFORMANCE_PACK_NAME,
+        &CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_LAST_UPDATED_TIME,
+    ],
+);
+impl ConformancePackComplianceScore {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFORMANCEPACKCOMPLIANCESCORE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConformancePackComplianceScore {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.score {
+            ser.write_string(&CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_SCORE, val)?;
+        }
+        if let Some(ref val) = self.conformance_pack_name {
+            ser.write_string(&CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_CONFORMANCE_PACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.last_updated_time {
+            ser.write_timestamp(&CONFORMANCEPACKCOMPLIANCESCORE_MEMBER_LAST_UPDATED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConformancePackComplianceScoreBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFORMANCEPACKCOMPLIANCESCORE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.score = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conformance_pack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConformancePackComplianceScore {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConformancePackComplianceScore {
     /// Creates a new builder-style object to manufacture [`ConformancePackComplianceScore`](crate::types::ConformancePackComplianceScore).
     pub fn builder() -> crate::types::builders::ConformancePackComplianceScoreBuilder {

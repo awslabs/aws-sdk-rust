@@ -30,6 +30,185 @@ impl SetPrincipalTagAttributeMapInput {
         self.principal_tags.as_ref()
     }
 }
+static SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_IDENTITY_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#SetPrincipalTagAttributeMapInput$IdentityPoolId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "SetPrincipalTagAttributeMapInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityPoolId",
+    0,
+);
+static SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_IDENTITY_PROVIDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#SetPrincipalTagAttributeMapInput$IdentityProviderName",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "SetPrincipalTagAttributeMapInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityProviderName",
+    1,
+);
+static SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_USE_DEFAULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#SetPrincipalTagAttributeMapInput$UseDefaults",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "SetPrincipalTagAttributeMapInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "UseDefaults",
+    2,
+);
+static SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_PRINCIPAL_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#PrincipalTags$key",
+        "com.amazonaws.cognitoidentity",
+        "PrincipalTags",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_PRINCIPAL_TAGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#PrincipalTags$value",
+        "com.amazonaws.cognitoidentity",
+        "PrincipalTags",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_PRINCIPAL_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#SetPrincipalTagAttributeMapInput$PrincipalTags",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "SetPrincipalTagAttributeMapInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "PrincipalTags",
+    3,
+)
+.with_map_members(
+    &SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_PRINCIPAL_TAGS_KEY,
+    &SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_PRINCIPAL_TAGS_VALUE,
+);
+static SETPRINCIPALTAGATTRIBUTEMAPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#SetPrincipalTagAttributeMapInput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "SetPrincipalTagAttributeMapInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_IDENTITY_POOL_ID,
+        &SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_IDENTITY_PROVIDER_NAME,
+        &SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_USE_DEFAULTS,
+        &SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_PRINCIPAL_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SetPrincipalTagAttributeMapInput");
+impl SetPrincipalTagAttributeMapInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETPRINCIPALTAGATTRIBUTEMAPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetPrincipalTagAttributeMapInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_pool_id {
+            ser.write_string(&SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_IDENTITY_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.identity_provider_name {
+            ser.write_string(&SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_IDENTITY_PROVIDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.use_defaults {
+            ser.write_boolean(&SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_USE_DEFAULTS, *val)?;
+        }
+        if let Some(ref val) = self.principal_tags {
+            ser.write_map(
+                &SETPRINCIPALTAGATTRIBUTEMAPINPUT_MEMBER_PRINCIPAL_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETPRINCIPALTAGATTRIBUTEMAPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_provider_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.use_defaults = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principal_tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetPrincipalTagAttributeMapInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identity_pool_id = builder.identity_pool_id.or(Some(String::new()));
+        builder.identity_provider_name = builder.identity_provider_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SetPrincipalTagAttributeMapInput {
     /// Creates a new builder-style object to manufacture [`SetPrincipalTagAttributeMapInput`](crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapInput).
     pub fn builder() -> crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder {

@@ -39,6 +39,157 @@ impl ServiceAttributes {
         self.attributes.as_ref()
     }
 }
+static SERVICEATTRIBUTES_MEMBER_SERVICE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceAttributes$ServiceArn",
+        "com.amazonaws.servicediscovery",
+        "ServiceAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceArn",
+    0,
+);
+static SERVICEATTRIBUTES_MEMBER_RESOURCE_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceAttributes$ResourceOwner",
+        "com.amazonaws.servicediscovery",
+        "ServiceAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceOwner",
+    1,
+);
+static SERVICEATTRIBUTES_MEMBER_ATTRIBUTES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceAttributesMap$key",
+        "com.amazonaws.servicediscovery",
+        "ServiceAttributesMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static SERVICEATTRIBUTES_MEMBER_ATTRIBUTES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceAttributesMap$value",
+        "com.amazonaws.servicediscovery",
+        "ServiceAttributesMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static SERVICEATTRIBUTES_MEMBER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceAttributes$Attributes",
+        "com.amazonaws.servicediscovery",
+        "ServiceAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Attributes",
+    2,
+)
+.with_map_members(&SERVICEATTRIBUTES_MEMBER_ATTRIBUTES_KEY, &SERVICEATTRIBUTES_MEMBER_ATTRIBUTES_VALUE);
+static SERVICEATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceAttributes",
+        "com.amazonaws.servicediscovery",
+        "ServiceAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICEATTRIBUTES_MEMBER_SERVICE_ARN,
+        &SERVICEATTRIBUTES_MEMBER_RESOURCE_OWNER,
+        &SERVICEATTRIBUTES_MEMBER_ATTRIBUTES,
+    ],
+);
+impl ServiceAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICEATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_arn {
+            ser.write_string(&SERVICEATTRIBUTES_MEMBER_SERVICE_ARN, val)?;
+        }
+        if let Some(ref val) = self.resource_owner {
+            ser.write_string(&SERVICEATTRIBUTES_MEMBER_RESOURCE_OWNER, val)?;
+        }
+        if let Some(ref val) = self.attributes {
+            ser.write_map(
+                &SERVICEATTRIBUTES_MEMBER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICEATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ServiceAttributes {
     /// Creates a new builder-style object to manufacture [`ServiceAttributes`](crate::types::ServiceAttributes).
     pub fn builder() -> crate::types::builders::ServiceAttributesBuilder {

@@ -138,6 +138,431 @@ impl StartMedicalTranscriptionJobInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDICAL_TRANSCRIPTION_JOB_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$MedicalTranscriptionJobName",
+            "com.amazonaws.transcribe.synthetic",
+            "StartMedicalTranscriptionJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "MedicalTranscriptionJobName",
+        0,
+    )
+    .with_http_label();
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_SAMPLE_RATE_HERTZ: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$MediaSampleRateHertz",
+            "com.amazonaws.transcribe.synthetic",
+            "StartMedicalTranscriptionJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MediaSampleRateHertz",
+        2,
+    );
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$MediaFormat",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MediaFormat",
+    3,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$Media",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Media",
+    4,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$OutputBucketName",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputBucketName",
+    5,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$OutputKey",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputKey",
+    6,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$OutputEncryptionKMSKeyId",
+            "com.amazonaws.transcribe.synthetic",
+            "StartMedicalTranscriptionJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "OutputEncryptionKMSKeyId",
+        7,
+    );
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe#KMSEncryptionContextMap$key",
+            "com.amazonaws.transcribe",
+            "KMSEncryptionContextMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe#KMSEncryptionContextMap$value",
+            "com.amazonaws.transcribe",
+            "KMSEncryptionContextMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$KMSEncryptionContext",
+            "com.amazonaws.transcribe.synthetic",
+            "StartMedicalTranscriptionJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Map,
+        "KMSEncryptionContext",
+        8,
+    )
+    .with_map_members(
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE,
+    );
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$Settings",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Settings",
+    9,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_CONTENT_IDENTIFICATION_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$ContentIdentificationType",
+            "com.amazonaws.transcribe.synthetic",
+            "StartMedicalTranscriptionJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ContentIdentificationType",
+        10,
+    );
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_SPECIALTY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$Specialty",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Specialty",
+    11,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$Type",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    12,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#TagList$member", "com.amazonaws.transcribe", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput$Tags",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    13,
+)
+.with_list_member(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TAGS_MEMBER);
+static STARTMEDICALTRANSCRIPTIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartMedicalTranscriptionJobInput",
+        "com.amazonaws.transcribe.synthetic",
+        "StartMedicalTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDICAL_TRANSCRIPTION_JOB_NAME,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_CODE,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_SAMPLE_RATE_HERTZ,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_FORMAT,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_KEY,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_SETTINGS,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_CONTENT_IDENTIFICATION_TYPE,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_SPECIALTY,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TYPE,
+        &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TAGS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PUT",
+    "/medicaltranscriptionjobs/{MedicalTranscriptionJobName}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartMedicalTranscriptionJobRequest");
+impl StartMedicalTranscriptionJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTMEDICALTRANSCRIPTIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartMedicalTranscriptionJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.medical_transcription_job_name {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDICAL_TRANSCRIPTION_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.media_sample_rate_hertz {
+            ser.write_integer(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_SAMPLE_RATE_HERTZ, *val)?;
+        }
+        if let Some(ref val) = self.media_format {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.media {
+            ser.write_struct(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA, val)?;
+        }
+        if let Some(ref val) = self.output_bucket_name {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.output_key {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_KEY, val)?;
+        }
+        if let Some(ref val) = self.output_encryption_kms_key_id {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_encryption_context {
+            ser.write_map(
+                &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.content_identification_type {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_CONTENT_IDENTIFICATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.specialty {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_SPECIALTY, val.as_str())?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTMEDICALTRANSCRIPTIONJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTMEDICALTRANSCRIPTIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_transcription_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media_sample_rate_hertz = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media_format = Some(crate::types::MediaFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media = Some(crate::types::Media::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_encryption_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_encryption_context = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::MedicalTranscriptionSetting::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_identification_type =
+                            Some(crate::types::MedicalContentIdentificationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.specialty = Some(crate::types::Specialty::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::Type::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartMedicalTranscriptionJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.medical_transcription_job_name = builder.medical_transcription_job_name.or(Some(String::new()));
+        builder.output_bucket_name = builder.output_bucket_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartMedicalTranscriptionJobInput {
     /// Creates a new builder-style object to manufacture [`StartMedicalTranscriptionJobInput`](crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobInput).
     pub fn builder() -> crate::operation::start_medical_transcription_job::builders::StartMedicalTranscriptionJobInputBuilder {

@@ -55,6 +55,269 @@ impl ListOperationsInput {
         self.sort_order.as_ref()
     }
 }
+static LISTOPERATIONSINPUT_MEMBER_SUBMITTED_SINCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput$SubmittedSince",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SubmittedSince",
+    0,
+);
+static LISTOPERATIONSINPUT_MEMBER_MARKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput$Marker",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Marker",
+    1,
+);
+static LISTOPERATIONSINPUT_MEMBER_MAX_ITEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput$MaxItems",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxItems",
+    2,
+);
+static LISTOPERATIONSINPUT_MEMBER_STATUS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationStatusList$member",
+        "com.amazonaws.route53domains",
+        "OperationStatusList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTOPERATIONSINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput$Status",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Status",
+    3,
+)
+.with_list_member(&LISTOPERATIONSINPUT_MEMBER_STATUS_MEMBER);
+static LISTOPERATIONSINPUT_MEMBER_TYPE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationTypeList$member",
+        "com.amazonaws.route53domains",
+        "OperationTypeList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTOPERATIONSINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput$Type",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Type",
+    4,
+)
+.with_list_member(&LISTOPERATIONSINPUT_MEMBER_TYPE_MEMBER);
+static LISTOPERATIONSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput$SortBy",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    5,
+);
+static LISTOPERATIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput$SortOrder",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    6,
+);
+static LISTOPERATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#ListOperationsInput",
+        "com.amazonaws.route53domains.synthetic",
+        "ListOperationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTOPERATIONSINPUT_MEMBER_SUBMITTED_SINCE,
+        &LISTOPERATIONSINPUT_MEMBER_MARKER,
+        &LISTOPERATIONSINPUT_MEMBER_MAX_ITEMS,
+        &LISTOPERATIONSINPUT_MEMBER_STATUS,
+        &LISTOPERATIONSINPUT_MEMBER_TYPE,
+        &LISTOPERATIONSINPUT_MEMBER_SORT_BY,
+        &LISTOPERATIONSINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListOperationsRequest");
+impl ListOperationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTOPERATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListOperationsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.submitted_since {
+            ser.write_timestamp(&LISTOPERATIONSINPUT_MEMBER_SUBMITTED_SINCE, val)?;
+        }
+        if let Some(ref val) = self.marker {
+            ser.write_string(&LISTOPERATIONSINPUT_MEMBER_MARKER, val)?;
+        }
+        if let Some(ref val) = self.max_items {
+            ser.write_integer(&LISTOPERATIONSINPUT_MEMBER_MAX_ITEMS, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_list(
+                &LISTOPERATIONSINPUT_MEMBER_STATUS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_list(
+                &LISTOPERATIONSINPUT_MEMBER_TYPE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTOPERATIONSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTOPERATIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_operations::builders::ListOperationsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTOPERATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submitted_since = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marker = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_items = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OperationStatus::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OperationType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ListOperationsSortAttributeName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListOperationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListOperationsInput {
     /// Creates a new builder-style object to manufacture [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
     pub fn builder() -> crate::operation::list_operations::builders::ListOperationsInputBuilder {

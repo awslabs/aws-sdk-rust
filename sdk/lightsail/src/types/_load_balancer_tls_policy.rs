@@ -44,6 +44,199 @@ impl LoadBalancerTlsPolicy {
         self.ciphers.as_deref().unwrap_or_default()
     }
 }
+static LOADBALANCERTLSPOLICY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsPolicy$name",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static LOADBALANCERTLSPOLICY_MEMBER_IS_DEFAULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsPolicy$isDefault",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isDefault",
+    1,
+);
+static LOADBALANCERTLSPOLICY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsPolicy$description",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    2,
+);
+static LOADBALANCERTLSPOLICY_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LOADBALANCERTLSPOLICY_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsPolicy$protocols",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "protocols",
+    3,
+)
+.with_list_member(&LOADBALANCERTLSPOLICY_MEMBER_PROTOCOLS_MEMBER);
+static LOADBALANCERTLSPOLICY_MEMBER_CIPHERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LOADBALANCERTLSPOLICY_MEMBER_CIPHERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsPolicy$ciphers",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ciphers",
+    4,
+)
+.with_list_member(&LOADBALANCERTLSPOLICY_MEMBER_CIPHERS_MEMBER);
+static LOADBALANCERTLSPOLICY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsPolicy",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsPolicy",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOADBALANCERTLSPOLICY_MEMBER_NAME,
+        &LOADBALANCERTLSPOLICY_MEMBER_IS_DEFAULT,
+        &LOADBALANCERTLSPOLICY_MEMBER_DESCRIPTION,
+        &LOADBALANCERTLSPOLICY_MEMBER_PROTOCOLS,
+        &LOADBALANCERTLSPOLICY_MEMBER_CIPHERS,
+    ],
+);
+impl LoadBalancerTlsPolicy {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOADBALANCERTLSPOLICY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LoadBalancerTlsPolicy {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&LOADBALANCERTLSPOLICY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.is_default {
+            ser.write_boolean(&LOADBALANCERTLSPOLICY_MEMBER_IS_DEFAULT, *val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&LOADBALANCERTLSPOLICY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &LOADBALANCERTLSPOLICY_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ciphers {
+            ser.write_list(
+                &LOADBALANCERTLSPOLICY_MEMBER_CIPHERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LoadBalancerTlsPolicyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOADBALANCERTLSPOLICY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_default = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ciphers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LoadBalancerTlsPolicy {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LoadBalancerTlsPolicy {
     /// Creates a new builder-style object to manufacture [`LoadBalancerTlsPolicy`](crate::types::LoadBalancerTlsPolicy).
     pub fn builder() -> crate::types::builders::LoadBalancerTlsPolicyBuilder {

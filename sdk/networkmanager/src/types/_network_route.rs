@@ -12,7 +12,7 @@ pub struct NetworkRoute {
     pub prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
     pub state: ::std::option::Option<crate::types::RouteState>,
-    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    /// <p>The route type. The possible values are <code>PROPAGATED</code>, <code>STATIC</code>, and <code>SYSTEM</code>. A <code>SYSTEM</code> route is installed by the core network for the NAT CIDR block of an attachment's NAT rule.</p>
     pub r#type: ::std::option::Option<crate::types::RouteType>,
 }
 impl NetworkRoute {
@@ -34,7 +34,7 @@ impl NetworkRoute {
     pub fn state(&self) -> ::std::option::Option<&crate::types::RouteState> {
         self.state.as_ref()
     }
-    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    /// <p>The route type. The possible values are <code>PROPAGATED</code>, <code>STATIC</code>, and <code>SYSTEM</code>. A <code>SYSTEM</code> route is installed by the core network for the NAT CIDR block of an attachment's NAT rule.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::RouteType> {
         self.r#type.as_ref()
     }
@@ -119,17 +119,17 @@ impl NetworkRouteBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::RouteState> {
         &self.state
     }
-    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    /// <p>The route type. The possible values are <code>PROPAGATED</code>, <code>STATIC</code>, and <code>SYSTEM</code>. A <code>SYSTEM</code> route is installed by the core network for the NAT CIDR block of an attachment's NAT rule.</p>
     pub fn r#type(mut self, input: crate::types::RouteType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    /// <p>The route type. The possible values are <code>PROPAGATED</code>, <code>STATIC</code>, and <code>SYSTEM</code>. A <code>SYSTEM</code> route is installed by the core network for the NAT CIDR block of an attachment's NAT rule.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
+    /// <p>The route type. The possible values are <code>PROPAGATED</code>, <code>STATIC</code>, and <code>SYSTEM</code>. A <code>SYSTEM</code> route is installed by the core network for the NAT CIDR block of an attachment's NAT rule.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RouteType> {
         &self.r#type
     }

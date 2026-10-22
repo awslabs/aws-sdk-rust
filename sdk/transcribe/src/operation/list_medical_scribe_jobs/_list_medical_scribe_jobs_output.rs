@@ -27,6 +27,156 @@ impl ListMedicalScribeJobsOutput {
         self.medical_scribe_job_summaries.as_deref().unwrap_or_default()
     }
 }
+static LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListMedicalScribeJobsOutput$Status",
+        "com.amazonaws.transcribe.synthetic",
+        "ListMedicalScribeJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    0,
+);
+static LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListMedicalScribeJobsOutput$NextToken",
+        "com.amazonaws.transcribe.synthetic",
+        "ListMedicalScribeJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_MEDICAL_SCRIBE_JOB_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe#MedicalScribeJobSummaries$member",
+            "com.amazonaws.transcribe",
+            "MedicalScribeJobSummaries",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_MEDICAL_SCRIBE_JOB_SUMMARIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.transcribe.synthetic#ListMedicalScribeJobsOutput$MedicalScribeJobSummaries",
+            "com.amazonaws.transcribe.synthetic",
+            "ListMedicalScribeJobsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "MedicalScribeJobSummaries",
+        2,
+    )
+    .with_list_member(&LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_MEDICAL_SCRIBE_JOB_SUMMARIES_MEMBER);
+static LISTMEDICALSCRIBEJOBSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#ListMedicalScribeJobsOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "ListMedicalScribeJobsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_STATUS,
+        &LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_MEDICAL_SCRIBE_JOB_SUMMARIES,
+    ],
+)
+.with_original_name("ListMedicalScribeJobsResponse");
+impl ListMedicalScribeJobsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTMEDICALSCRIBEJOBSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListMedicalScribeJobsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.medical_scribe_job_summaries {
+            ser.write_list(
+                &LISTMEDICALSCRIBEJOBSOUTPUT_MEMBER_MEDICAL_SCRIBE_JOB_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MedicalScribeJobSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_medical_scribe_jobs::builders::ListMedicalScribeJobsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTMEDICALSCRIBEJOBSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::MedicalScribeJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.medical_scribe_job_summaries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MedicalScribeJobSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListMedicalScribeJobsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListMedicalScribeJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

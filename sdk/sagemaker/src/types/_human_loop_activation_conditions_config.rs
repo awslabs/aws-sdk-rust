@@ -13,6 +13,85 @@ impl HumanLoopActivationConditionsConfig {
         self.human_loop_activation_conditions.as_deref()
     }
 }
+static HUMANLOOPACTIVATIONCONDITIONSCONFIG_MEMBER_HUMAN_LOOP_ACTIVATION_CONDITIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HumanLoopActivationConditionsConfig$HumanLoopActivationConditions",
+            "com.amazonaws.sagemaker",
+            "HumanLoopActivationConditionsConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "HumanLoopActivationConditions",
+        0,
+    )
+    .with_media_type("application/json");
+static HUMANLOOPACTIVATIONCONDITIONSCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopActivationConditionsConfig",
+        "com.amazonaws.sagemaker",
+        "HumanLoopActivationConditionsConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&HUMANLOOPACTIVATIONCONDITIONSCONFIG_MEMBER_HUMAN_LOOP_ACTIVATION_CONDITIONS],
+);
+impl HumanLoopActivationConditionsConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HUMANLOOPACTIVATIONCONDITIONSCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HumanLoopActivationConditionsConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.human_loop_activation_conditions {
+            ser.write_string(&HUMANLOOPACTIVATIONCONDITIONSCONFIG_MEMBER_HUMAN_LOOP_ACTIVATION_CONDITIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HumanLoopActivationConditionsConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HUMANLOOPACTIVATIONCONDITIONSCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_loop_activation_conditions = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HumanLoopActivationConditionsConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HumanLoopActivationConditionsConfig {
     /// Creates a new builder-style object to manufacture [`HumanLoopActivationConditionsConfig`](crate::types::HumanLoopActivationConditionsConfig).
     pub fn builder() -> crate::types::builders::HumanLoopActivationConditionsConfigBuilder {

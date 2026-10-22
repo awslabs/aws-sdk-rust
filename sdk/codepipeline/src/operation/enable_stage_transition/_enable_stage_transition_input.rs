@@ -25,6 +25,131 @@ impl EnableStageTransitionInput {
         self.transition_type.as_ref()
     }
 }
+static ENABLESTAGETRANSITIONINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#EnableStageTransitionInput$pipelineName",
+        "com.amazonaws.codepipeline.synthetic",
+        "EnableStageTransitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineName",
+    0,
+);
+static ENABLESTAGETRANSITIONINPUT_MEMBER_STAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#EnableStageTransitionInput$stageName",
+        "com.amazonaws.codepipeline.synthetic",
+        "EnableStageTransitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "stageName",
+    1,
+);
+static ENABLESTAGETRANSITIONINPUT_MEMBER_TRANSITION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#EnableStageTransitionInput$transitionType",
+        "com.amazonaws.codepipeline.synthetic",
+        "EnableStageTransitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "transitionType",
+    2,
+);
+static ENABLESTAGETRANSITIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#EnableStageTransitionInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "EnableStageTransitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENABLESTAGETRANSITIONINPUT_MEMBER_PIPELINE_NAME,
+        &ENABLESTAGETRANSITIONINPUT_MEMBER_STAGE_NAME,
+        &ENABLESTAGETRANSITIONINPUT_MEMBER_TRANSITION_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("EnableStageTransitionInput");
+impl EnableStageTransitionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENABLESTAGETRANSITIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EnableStageTransitionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&ENABLESTAGETRANSITIONINPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.stage_name {
+            ser.write_string(&ENABLESTAGETRANSITIONINPUT_MEMBER_STAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.transition_type {
+            ser.write_string(&ENABLESTAGETRANSITIONINPUT_MEMBER_TRANSITION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENABLESTAGETRANSITIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transition_type = Some(crate::types::StageTransitionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EnableStageTransitionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
+        builder.stage_name = builder.stage_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EnableStageTransitionInput {
     /// Creates a new builder-style object to manufacture [`EnableStageTransitionInput`](crate::operation::enable_stage_transition::EnableStageTransitionInput).
     pub fn builder() -> crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder {

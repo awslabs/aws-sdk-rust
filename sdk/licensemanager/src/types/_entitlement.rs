@@ -44,6 +44,181 @@ impl Entitlement {
         self.allow_check_in
     }
 }
+static ENTITLEMENT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Entitlement$Name",
+        "com.amazonaws.licensemanager",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static ENTITLEMENT_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Entitlement$Value",
+        "com.amazonaws.licensemanager",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    1,
+);
+static ENTITLEMENT_MEMBER_MAX_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Entitlement$MaxCount",
+        "com.amazonaws.licensemanager",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "MaxCount",
+    2,
+);
+static ENTITLEMENT_MEMBER_OVERAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Entitlement$Overage",
+        "com.amazonaws.licensemanager",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Overage",
+    3,
+);
+static ENTITLEMENT_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Entitlement$Unit",
+        "com.amazonaws.licensemanager",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Unit",
+    4,
+);
+static ENTITLEMENT_MEMBER_ALLOW_CHECK_IN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#Entitlement$AllowCheckIn",
+        "com.amazonaws.licensemanager",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AllowCheckIn",
+    5,
+);
+static ENTITLEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#Entitlement", "com.amazonaws.licensemanager", "Entitlement"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITLEMENT_MEMBER_NAME,
+        &ENTITLEMENT_MEMBER_VALUE,
+        &ENTITLEMENT_MEMBER_MAX_COUNT,
+        &ENTITLEMENT_MEMBER_OVERAGE,
+        &ENTITLEMENT_MEMBER_UNIT,
+        &ENTITLEMENT_MEMBER_ALLOW_CHECK_IN,
+    ],
+);
+impl Entitlement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITLEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Entitlement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&ENTITLEMENT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_string(&ENTITLEMENT_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.max_count {
+            ser.write_long(&ENTITLEMENT_MEMBER_MAX_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.overage {
+            ser.write_boolean(&ENTITLEMENT_MEMBER_OVERAGE, *val)?;
+        }
+        {
+            let val = &self.unit;
+            ser.write_string(&ENTITLEMENT_MEMBER_UNIT, val.as_str())?;
+        }
+        if let Some(ref val) = self.allow_check_in {
+            ser.write_boolean(&ENTITLEMENT_MEMBER_ALLOW_CHECK_IN, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntitlementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITLEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overage = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.unit = Some(crate::types::EntitlementUnit::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allow_check_in = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Entitlement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Entitlement {
     /// Creates a new builder-style object to manufacture [`Entitlement`](crate::types::Entitlement).
     pub fn builder() -> crate::types::builders::EntitlementBuilder {

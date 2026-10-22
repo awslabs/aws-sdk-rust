@@ -54,6 +54,238 @@ impl ListModelExplainabilityJobDefinitionsInput {
         self.creation_time_after.as_ref()
     }
 }
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$EndpointName",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListModelExplainabilityJobDefinitionsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EndpointName",
+        0,
+    );
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelExplainabilityJobDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    1,
+);
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelExplainabilityJobDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    2,
+);
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelExplainabilityJobDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelExplainabilityJobDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    4,
+);
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$NameContains",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListModelExplainabilityJobDefinitionsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NameContains",
+        5,
+    );
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$CreationTimeBefore",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListModelExplainabilityJobDefinitionsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "CreationTimeBefore",
+        6,
+    );
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput$CreationTimeAfter",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListModelExplainabilityJobDefinitionsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "CreationTimeAfter",
+        7,
+    );
+static LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListModelExplainabilityJobDefinitionsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListModelExplainabilityJobDefinitionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_ENDPOINT_NAME,
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_SORT_BY,
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_SORT_ORDER,
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_NAME_CONTAINS,
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_CREATION_TIME_AFTER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListModelExplainabilityJobDefinitionsRequest");
+impl ListModelExplainabilityJobDefinitionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListModelExplainabilityJobDefinitionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.name_contains {
+            ser.write_string(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTMODELEXPLAINABILITYJOBDEFINITIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::MonitoringJobDefinitionSortKey::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListModelExplainabilityJobDefinitionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListModelExplainabilityJobDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListModelExplainabilityJobDefinitionsInput`](crate::operation::list_model_explainability_job_definitions::ListModelExplainabilityJobDefinitionsInput).
     pub fn builder() -> crate::operation::list_model_explainability_job_definitions::builders::ListModelExplainabilityJobDefinitionsInputBuilder {

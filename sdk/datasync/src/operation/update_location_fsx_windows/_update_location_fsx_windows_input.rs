@@ -65,6 +65,214 @@ impl ::std::fmt::Debug for UpdateLocationFsxWindowsInput {
         formatter.finish()
     }
 }
+static UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    1,
+);
+static UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput$Domain",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    2,
+);
+static UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput$User",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "User",
+    3,
+);
+static UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput$Password",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    4,
+);
+static UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput$CmkSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    5,
+);
+static UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput$CustomSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    6,
+);
+static UPDATELOCATIONFSXWINDOWSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationFsxWindowsInput",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_LOCATION_ARN,
+        &UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_SUBDIRECTORY,
+        &UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_DOMAIN,
+        &UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_USER,
+        &UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_PASSWORD,
+        &UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_CMK_SECRET_CONFIG,
+        &UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_CUSTOM_SECRET_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateLocationFsxWindowsRequest");
+impl UpdateLocationFsxWindowsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATELOCATIONFSXWINDOWSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLocationFsxWindowsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.user {
+            ser.write_string(&UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&UPDATELOCATIONFSXWINDOWSINPUT_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_location_fsx_windows::builders::UpdateLocationFsxWindowsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATELOCATIONFSXWINDOWSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateLocationFsxWindowsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.location_arn = builder.location_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateLocationFsxWindowsInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationFsxWindowsInput`](crate::operation::update_location_fsx_windows::UpdateLocationFsxWindowsInput).
     pub fn builder() -> crate::operation::update_location_fsx_windows::builders::UpdateLocationFsxWindowsInputBuilder {

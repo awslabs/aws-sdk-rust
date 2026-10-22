@@ -230,6 +230,824 @@ impl CreateTrainingJobInput {
         self.model_package_config.as_ref()
     }
 }
+static CREATETRAININGJOBINPUT_MEMBER_TRAINING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$TrainingJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingJobName",
+    0,
+);
+static CREATETRAININGJOBINPUT_MEMBER_HYPER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameters$key",
+        "com.amazonaws.sagemaker",
+        "HyperParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATETRAININGJOBINPUT_MEMBER_HYPER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameters$value",
+        "com.amazonaws.sagemaker",
+        "HyperParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATETRAININGJOBINPUT_MEMBER_HYPER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$HyperParameters",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "HyperParameters",
+    1,
+)
+.with_map_members(
+    &CREATETRAININGJOBINPUT_MEMBER_HYPER_PARAMETERS_KEY,
+    &CREATETRAININGJOBINPUT_MEMBER_HYPER_PARAMETERS_VALUE,
+);
+static CREATETRAININGJOBINPUT_MEMBER_ALGORITHM_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$AlgorithmSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlgorithmSpecification",
+    2,
+);
+static CREATETRAININGJOBINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    3,
+);
+static CREATETRAININGJOBINPUT_MEMBER_INPUT_DATA_CONFIG_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InputDataConfig$member",
+        "com.amazonaws.sagemaker",
+        "InputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETRAININGJOBINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$InputDataConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InputDataConfig",
+    4,
+)
+.with_list_member(&CREATETRAININGJOBINPUT_MEMBER_INPUT_DATA_CONFIG_MEMBER);
+static CREATETRAININGJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$OutputDataConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    5,
+);
+static CREATETRAININGJOBINPUT_MEMBER_RESOURCE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$ResourceConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceConfig",
+    6,
+);
+static CREATETRAININGJOBINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$VpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    7,
+);
+static CREATETRAININGJOBINPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$StoppingCondition",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    8,
+);
+static CREATETRAININGJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETRAININGJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATETRAININGJOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATETRAININGJOBINPUT_MEMBER_ENABLE_NETWORK_ISOLATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$EnableNetworkIsolation",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNetworkIsolation",
+    10,
+);
+static CREATETRAININGJOBINPUT_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$EnableInterContainerTrafficEncryption",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateTrainingJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableInterContainerTrafficEncryption",
+        11,
+    );
+static CREATETRAININGJOBINPUT_MEMBER_ENABLE_MANAGED_SPOT_TRAINING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$EnableManagedSpotTraining",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableManagedSpotTraining",
+    12,
+);
+static CREATETRAININGJOBINPUT_MEMBER_CHECKPOINT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$CheckpointConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CheckpointConfig",
+    13,
+);
+static CREATETRAININGJOBINPUT_MEMBER_DEBUG_HOOK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$DebugHookConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DebugHookConfig",
+    14,
+);
+static CREATETRAININGJOBINPUT_MEMBER_DEBUG_RULE_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DebugRuleConfigurations$member",
+        "com.amazonaws.sagemaker",
+        "DebugRuleConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETRAININGJOBINPUT_MEMBER_DEBUG_RULE_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$DebugRuleConfigurations",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DebugRuleConfigurations",
+    15,
+)
+.with_list_member(&CREATETRAININGJOBINPUT_MEMBER_DEBUG_RULE_CONFIGURATIONS_MEMBER);
+static CREATETRAININGJOBINPUT_MEMBER_TENSOR_BOARD_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$TensorBoardOutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TensorBoardOutputConfig",
+    16,
+);
+static CREATETRAININGJOBINPUT_MEMBER_EXPERIMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$ExperimentConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExperimentConfig",
+    17,
+);
+static CREATETRAININGJOBINPUT_MEMBER_PROFILER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$ProfilerConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProfilerConfig",
+    18,
+);
+static CREATETRAININGJOBINPUT_MEMBER_PROFILER_RULE_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProfilerRuleConfigurations$member",
+            "com.amazonaws.sagemaker",
+            "ProfilerRuleConfigurations",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATETRAININGJOBINPUT_MEMBER_PROFILER_RULE_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$ProfilerRuleConfigurations",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ProfilerRuleConfigurations",
+    19,
+)
+.with_list_member(&CREATETRAININGJOBINPUT_MEMBER_PROFILER_RULE_CONFIGURATIONS_MEMBER);
+static CREATETRAININGJOBINPUT_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingEnvironmentMap$key",
+        "com.amazonaws.sagemaker",
+        "TrainingEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATETRAININGJOBINPUT_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingEnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "TrainingEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATETRAININGJOBINPUT_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$Environment",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    20,
+)
+.with_map_members(
+    &CREATETRAININGJOBINPUT_MEMBER_ENVIRONMENT_KEY,
+    &CREATETRAININGJOBINPUT_MEMBER_ENVIRONMENT_VALUE,
+);
+static CREATETRAININGJOBINPUT_MEMBER_RETRY_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$RetryStrategy",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryStrategy",
+    21,
+);
+static CREATETRAININGJOBINPUT_MEMBER_REMOTE_DEBUG_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$RemoteDebugConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RemoteDebugConfig",
+    22,
+);
+static CREATETRAININGJOBINPUT_MEMBER_INFRA_CHECK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$InfraCheckConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InfraCheckConfig",
+    23,
+);
+static CREATETRAININGJOBINPUT_MEMBER_SESSION_CHAINING_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$SessionChainingConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SessionChainingConfig",
+    24,
+);
+static CREATETRAININGJOBINPUT_MEMBER_SERVERLESS_JOB_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$ServerlessJobConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ServerlessJobConfig",
+    25,
+);
+static CREATETRAININGJOBINPUT_MEMBER_MLFLOW_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$MlflowConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MlflowConfig",
+    26,
+);
+static CREATETRAININGJOBINPUT_MEMBER_MODEL_PACKAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput$ModelPackageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelPackageConfig",
+    27,
+);
+static CREATETRAININGJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateTrainingJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateTrainingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATETRAININGJOBINPUT_MEMBER_TRAINING_JOB_NAME,
+        &CREATETRAININGJOBINPUT_MEMBER_HYPER_PARAMETERS,
+        &CREATETRAININGJOBINPUT_MEMBER_ALGORITHM_SPECIFICATION,
+        &CREATETRAININGJOBINPUT_MEMBER_ROLE_ARN,
+        &CREATETRAININGJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_RESOURCE_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_VPC_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_STOPPING_CONDITION,
+        &CREATETRAININGJOBINPUT_MEMBER_TAGS,
+        &CREATETRAININGJOBINPUT_MEMBER_ENABLE_NETWORK_ISOLATION,
+        &CREATETRAININGJOBINPUT_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION,
+        &CREATETRAININGJOBINPUT_MEMBER_ENABLE_MANAGED_SPOT_TRAINING,
+        &CREATETRAININGJOBINPUT_MEMBER_CHECKPOINT_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_DEBUG_HOOK_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_DEBUG_RULE_CONFIGURATIONS,
+        &CREATETRAININGJOBINPUT_MEMBER_TENSOR_BOARD_OUTPUT_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_EXPERIMENT_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_PROFILER_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_PROFILER_RULE_CONFIGURATIONS,
+        &CREATETRAININGJOBINPUT_MEMBER_ENVIRONMENT,
+        &CREATETRAININGJOBINPUT_MEMBER_RETRY_STRATEGY,
+        &CREATETRAININGJOBINPUT_MEMBER_REMOTE_DEBUG_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_INFRA_CHECK_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_SESSION_CHAINING_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_SERVERLESS_JOB_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_MLFLOW_CONFIG,
+        &CREATETRAININGJOBINPUT_MEMBER_MODEL_PACKAGE_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateTrainingJobRequest");
+impl CreateTrainingJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATETRAININGJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateTrainingJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_job_name {
+            ser.write_string(&CREATETRAININGJOBINPUT_MEMBER_TRAINING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameters {
+            ser.write_map(
+                &CREATETRAININGJOBINPUT_MEMBER_HYPER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.algorithm_specification {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_ALGORITHM_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATETRAININGJOBINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_list(
+                &CREATETRAININGJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Channel::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.resource_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_RESOURCE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATETRAININGJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.enable_network_isolation {
+            ser.write_boolean(&CREATETRAININGJOBINPUT_MEMBER_ENABLE_NETWORK_ISOLATION, *val)?;
+        }
+        if let Some(ref val) = self.enable_inter_container_traffic_encryption {
+            ser.write_boolean(&CREATETRAININGJOBINPUT_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION, *val)?;
+        }
+        if let Some(ref val) = self.enable_managed_spot_training {
+            ser.write_boolean(&CREATETRAININGJOBINPUT_MEMBER_ENABLE_MANAGED_SPOT_TRAINING, *val)?;
+        }
+        if let Some(ref val) = self.checkpoint_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_CHECKPOINT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.debug_hook_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_DEBUG_HOOK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.debug_rule_configurations {
+            ser.write_list(
+                &CREATETRAININGJOBINPUT_MEMBER_DEBUG_RULE_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DebugRuleConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tensor_board_output_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_TENSOR_BOARD_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.experiment_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_EXPERIMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.profiler_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_PROFILER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.profiler_rule_configurations {
+            ser.write_list(
+                &CREATETRAININGJOBINPUT_MEMBER_PROFILER_RULE_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProfilerRuleConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &CREATETRAININGJOBINPUT_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.retry_strategy {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_RETRY_STRATEGY, val)?;
+        }
+        if let Some(ref val) = self.remote_debug_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_REMOTE_DEBUG_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.infra_check_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_INFRA_CHECK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.session_chaining_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_SESSION_CHAINING_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.serverless_job_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_SERVERLESS_JOB_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.mlflow_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_MLFLOW_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_package_config {
+            ser.write_struct(&CREATETRAININGJOBINPUT_MEMBER_MODEL_PACKAGE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATETRAININGJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_specification = Some(crate::types::AlgorithmSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Channel::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_config = Some(crate::types::ResourceConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::StoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_network_isolation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_inter_container_traffic_encryption = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_managed_spot_training = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checkpoint_config = Some(crate::types::CheckpointConfig::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_hook_config = Some(crate::types::DebugHookConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_rule_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DebugRuleConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tensor_board_output_config = Some(crate::types::TensorBoardOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_config = Some(crate::types::ExperimentConfig::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profiler_config = Some(crate::types::ProfilerConfig::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profiler_rule_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProfilerRuleConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_strategy = Some(crate::types::RetryStrategy::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remote_debug_config = Some(crate::types::RemoteDebugConfig::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.infra_check_config = Some(crate::types::InfraCheckConfig::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_chaining_config = Some(crate::types::SessionChainingConfig::deserialize(deser)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serverless_job_config = Some(crate::types::ServerlessJobConfig::deserialize(deser)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mlflow_config = Some(crate::types::MlflowConfig::deserialize(deser)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_config = Some(crate::types::ModelPackageConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateTrainingJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.training_job_name = builder.training_job_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateTrainingJobInput {
     /// Creates a new builder-style object to manufacture [`CreateTrainingJobInput`](crate::operation::create_training_job::CreateTrainingJobInput).
     pub fn builder() -> crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder {

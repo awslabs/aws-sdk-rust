@@ -19,6 +19,106 @@ impl AiBenchmarkOutputConfig {
         self.mlflow_config.as_ref()
     }
 }
+static AIBENCHMARKOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIBenchmarkOutputConfig$S3OutputLocation",
+        "com.amazonaws.sagemaker",
+        "AIBenchmarkOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3OutputLocation",
+    0,
+);
+static AIBENCHMARKOUTPUTCONFIG_MEMBER_MLFLOW_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIBenchmarkOutputConfig$MlflowConfig",
+        "com.amazonaws.sagemaker",
+        "AIBenchmarkOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MlflowConfig",
+    1,
+);
+static AIBENCHMARKOUTPUTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIBenchmarkOutputConfig",
+        "com.amazonaws.sagemaker",
+        "AIBenchmarkOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AIBENCHMARKOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION,
+        &AIBENCHMARKOUTPUTCONFIG_MEMBER_MLFLOW_CONFIG,
+    ],
+);
+impl AiBenchmarkOutputConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIBENCHMARKOUTPUTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiBenchmarkOutputConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_output_location {
+            ser.write_string(&AIBENCHMARKOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.mlflow_config {
+            ser.write_struct(&AIBENCHMARKOUTPUTCONFIG_MEMBER_MLFLOW_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiBenchmarkOutputConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIBENCHMARKOUTPUTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_output_location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mlflow_config = Some(crate::types::AiMlflowConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiBenchmarkOutputConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiBenchmarkOutputConfig {
     /// Creates a new builder-style object to manufacture [`AiBenchmarkOutputConfig`](crate::types::AiBenchmarkOutputConfig).
     pub fn builder() -> crate::types::builders::AiBenchmarkOutputConfigBuilder {

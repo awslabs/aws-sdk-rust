@@ -98,6 +98,404 @@ impl UpdateModelPackageInput {
         self.client_token.as_deref()
     }
 }
+static UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_PACKAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$ModelPackageArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageArn",
+    0,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_APPROVAL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$ModelApprovalStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelApprovalStatus",
+    1,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_PACKAGE_REGISTRATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$ModelPackageRegistrationType",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageRegistrationType",
+    2,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_APPROVAL_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$ApprovalDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ApprovalDescription",
+    3,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#CustomerMetadataMap$key",
+            "com.amazonaws.sagemaker",
+            "CustomerMetadataMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#CustomerMetadataMap$value",
+            "com.amazonaws.sagemaker",
+            "CustomerMetadataMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$CustomerMetadataProperties",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "CustomerMetadataProperties",
+    4,
+)
+.with_map_members(
+    &UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_KEY,
+    &UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_VALUE,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_TO_REMOVE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#CustomerMetadataKeyList$member",
+            "com.amazonaws.sagemaker",
+            "CustomerMetadataKeyList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_TO_REMOVE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$CustomerMetadataPropertiesToRemove",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateModelPackageInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CustomerMetadataPropertiesToRemove",
+        5,
+    )
+    .with_list_member(&UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_TO_REMOVE_MEMBER);
+static UPDATEMODELPACKAGEINPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS_TO_ADD_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AdditionalInferenceSpecifications$member",
+            "com.amazonaws.sagemaker",
+            "AdditionalInferenceSpecifications",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static UPDATEMODELPACKAGEINPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS_TO_ADD: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$AdditionalInferenceSpecificationsToAdd",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateModelPackageInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AdditionalInferenceSpecificationsToAdd",
+        6,
+    )
+    .with_list_member(&UPDATEMODELPACKAGEINPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS_TO_ADD_MEMBER);
+static UPDATEMODELPACKAGEINPUT_MEMBER_INFERENCE_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$InferenceSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InferenceSpecification",
+    7,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_SOURCE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$SourceUri",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceUri",
+    8,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_CARD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$ModelCard",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelCard",
+    9,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_LIFE_CYCLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$ModelLifeCycle",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelLifeCycle",
+    10,
+);
+static UPDATEMODELPACKAGEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput$ClientToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    11,
+);
+static UPDATEMODELPACKAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelPackageInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelPackageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_PACKAGE_ARN,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_APPROVAL_STATUS,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_PACKAGE_REGISTRATION_TYPE,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_APPROVAL_DESCRIPTION,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_TO_REMOVE,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS_TO_ADD,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_INFERENCE_SPECIFICATION,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_SOURCE_URI,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_CARD,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_LIFE_CYCLE,
+        &UPDATEMODELPACKAGEINPUT_MEMBER_CLIENT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateModelPackageInput");
+impl UpdateModelPackageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEMODELPACKAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateModelPackageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_package_arn {
+            ser.write_string(&UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_PACKAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_approval_status {
+            ser.write_string(&UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_APPROVAL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_package_registration_type {
+            ser.write_string(&UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_PACKAGE_REGISTRATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.approval_description {
+            ser.write_string(&UPDATEMODELPACKAGEINPUT_MEMBER_APPROVAL_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.customer_metadata_properties {
+            ser.write_map(
+                &UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.customer_metadata_properties_to_remove {
+            ser.write_list(
+                &UPDATEMODELPACKAGEINPUT_MEMBER_CUSTOMER_METADATA_PROPERTIES_TO_REMOVE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.additional_inference_specifications_to_add {
+            ser.write_list(
+                &UPDATEMODELPACKAGEINPUT_MEMBER_ADDITIONAL_INFERENCE_SPECIFICATIONS_TO_ADD,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AdditionalInferenceSpecificationDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.inference_specification {
+            ser.write_struct(&UPDATEMODELPACKAGEINPUT_MEMBER_INFERENCE_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.source_uri {
+            ser.write_string(&UPDATEMODELPACKAGEINPUT_MEMBER_SOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.model_card {
+            ser.write_struct(&UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_CARD, val)?;
+        }
+        if let Some(ref val) = self.model_life_cycle {
+            ser.write_struct(&UPDATEMODELPACKAGEINPUT_MEMBER_MODEL_LIFE_CYCLE, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&UPDATEMODELPACKAGEINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEMODELPACKAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_approval_status = Some(crate::types::ModelApprovalStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_registration_type =
+                            Some(crate::types::ModelPackageRegistrationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_metadata_properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_metadata_properties_to_remove = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_inference_specifications_to_add = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AdditionalInferenceSpecificationDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_specification = Some(crate::types::InferenceSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card = Some(crate::types::ModelPackageModelCard::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_life_cycle = Some(crate::types::ModelLifeCycle::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateModelPackageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.model_package_arn = builder.model_package_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateModelPackageInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelPackageInput`](crate::operation::update_model_package::UpdateModelPackageInput).
     pub fn builder() -> crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder {

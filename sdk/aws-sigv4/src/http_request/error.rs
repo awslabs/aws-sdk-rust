@@ -10,8 +10,14 @@ use std::fmt;
 
 #[derive(Debug)]
 enum SigningErrorKind {
-    FailedToCreateCanonicalRequest { source: CanonicalRequestError },
+    FailedToCreateCanonicalRequest {
+        source: CanonicalRequestError,
+    },
     UnsupportedIdentityType,
+    #[cfg(feature = "sign-eventstream")]
+    FailedToEncodeMessage {
+        source: aws_smithy_eventstream::error::Error,
+    },
 }
 
 /// Error signing request
@@ -26,6 +32,13 @@ impl SigningError {
             kind: SigningErrorKind::UnsupportedIdentityType,
         }
     }
+
+    #[cfg(feature = "sign-eventstream")]
+    pub(crate) fn failed_to_encode_message(source: aws_smithy_eventstream::error::Error) -> Self {
+        Self {
+            kind: SigningErrorKind::FailedToEncodeMessage { source },
+        }
+    }
 }
 
 impl fmt::Display for SigningError {
@@ -37,6 +50,10 @@ impl fmt::Display for SigningError {
             SigningErrorKind::UnsupportedIdentityType => {
                 write!(f, "only 'AWS credentials' are supported for signing")
             }
+            #[cfg(feature = "sign-eventstream")]
+            SigningErrorKind::FailedToEncodeMessage { .. } => {
+                write!(f, "failed to encode the event stream message to sign")
+            }
         }
     }
 }
@@ -46,6 +63,8 @@ impl Error for SigningError {
         match &self.kind {
             SigningErrorKind::FailedToCreateCanonicalRequest { source } => Some(source),
             SigningErrorKind::UnsupportedIdentityType => None,
+            #[cfg(feature = "sign-eventstream")]
+            SigningErrorKind::FailedToEncodeMessage { source } => Some(source),
         }
     }
 }

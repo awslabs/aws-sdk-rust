@@ -98,6 +98,228 @@ impl CacheSettings {
         self.forwarded_query_strings.as_ref()
     }
 }
+static CACHESETTINGS_MEMBER_DEFAULT_TTL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$defaultTTL",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "defaultTTL",
+    0,
+);
+static CACHESETTINGS_MEMBER_MINIMUM_TTL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$minimumTTL",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "minimumTTL",
+    1,
+);
+static CACHESETTINGS_MEMBER_MAXIMUM_TTL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$maximumTTL",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "maximumTTL",
+    2,
+);
+static CACHESETTINGS_MEMBER_ALLOWED_HTTP_METHODS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$allowedHTTPMethods",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "allowedHTTPMethods",
+    3,
+);
+static CACHESETTINGS_MEMBER_CACHED_HTTP_METHODS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$cachedHTTPMethods",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cachedHTTPMethods",
+    4,
+);
+static CACHESETTINGS_MEMBER_FORWARDED_COOKIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$forwardedCookies",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "forwardedCookies",
+    5,
+);
+static CACHESETTINGS_MEMBER_FORWARDED_HEADERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$forwardedHeaders",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "forwardedHeaders",
+    6,
+);
+static CACHESETTINGS_MEMBER_FORWARDED_QUERY_STRINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CacheSettings$forwardedQueryStrings",
+        "com.amazonaws.lightsail",
+        "CacheSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "forwardedQueryStrings",
+    7,
+);
+static CACHESETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#CacheSettings", "com.amazonaws.lightsail", "CacheSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CACHESETTINGS_MEMBER_DEFAULT_TTL,
+        &CACHESETTINGS_MEMBER_MINIMUM_TTL,
+        &CACHESETTINGS_MEMBER_MAXIMUM_TTL,
+        &CACHESETTINGS_MEMBER_ALLOWED_HTTP_METHODS,
+        &CACHESETTINGS_MEMBER_CACHED_HTTP_METHODS,
+        &CACHESETTINGS_MEMBER_FORWARDED_COOKIES,
+        &CACHESETTINGS_MEMBER_FORWARDED_HEADERS,
+        &CACHESETTINGS_MEMBER_FORWARDED_QUERY_STRINGS,
+    ],
+);
+impl CacheSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CACHESETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CacheSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_ttl {
+            ser.write_long(&CACHESETTINGS_MEMBER_DEFAULT_TTL, *val)?;
+        }
+        if let Some(ref val) = self.minimum_ttl {
+            ser.write_long(&CACHESETTINGS_MEMBER_MINIMUM_TTL, *val)?;
+        }
+        if let Some(ref val) = self.maximum_ttl {
+            ser.write_long(&CACHESETTINGS_MEMBER_MAXIMUM_TTL, *val)?;
+        }
+        if let Some(ref val) = self.allowed_http_methods {
+            ser.write_string(&CACHESETTINGS_MEMBER_ALLOWED_HTTP_METHODS, val)?;
+        }
+        if let Some(ref val) = self.cached_http_methods {
+            ser.write_string(&CACHESETTINGS_MEMBER_CACHED_HTTP_METHODS, val)?;
+        }
+        if let Some(ref val) = self.forwarded_cookies {
+            ser.write_struct(&CACHESETTINGS_MEMBER_FORWARDED_COOKIES, val)?;
+        }
+        if let Some(ref val) = self.forwarded_headers {
+            ser.write_struct(&CACHESETTINGS_MEMBER_FORWARDED_HEADERS, val)?;
+        }
+        if let Some(ref val) = self.forwarded_query_strings {
+            ser.write_struct(&CACHESETTINGS_MEMBER_FORWARDED_QUERY_STRINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CacheSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CACHESETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_ttl = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.minimum_ttl = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_ttl = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_http_methods = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cached_http_methods = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.forwarded_cookies = Some(crate::types::CookieObject::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.forwarded_headers = Some(crate::types::HeaderObject::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.forwarded_query_strings = Some(crate::types::QueryStringObject::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CacheSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CacheSettings {
     /// Creates a new builder-style object to manufacture [`CacheSettings`](crate::types::CacheSettings).
     pub fn builder() -> crate::types::builders::CacheSettingsBuilder {

@@ -42,6 +42,195 @@ impl CreateStreamingUrlInput {
         self.session_context.as_deref()
     }
 }
+static CREATESTREAMINGURLINPUT_MEMBER_STACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStreamingURLInput$StackName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StackName",
+    0,
+);
+static CREATESTREAMINGURLINPUT_MEMBER_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStreamingURLInput$FleetName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FleetName",
+    1,
+);
+static CREATESTREAMINGURLINPUT_MEMBER_USER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStreamingURLInput$UserId",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserId",
+    2,
+);
+static CREATESTREAMINGURLINPUT_MEMBER_APPLICATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStreamingURLInput$ApplicationId",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ApplicationId",
+    3,
+);
+static CREATESTREAMINGURLINPUT_MEMBER_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStreamingURLInput$Validity",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Validity",
+    4,
+);
+static CREATESTREAMINGURLINPUT_MEMBER_SESSION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStreamingURLInput$SessionContext",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionContext",
+    5,
+);
+static CREATESTREAMINGURLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStreamingURLInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATESTREAMINGURLINPUT_MEMBER_STACK_NAME,
+        &CREATESTREAMINGURLINPUT_MEMBER_FLEET_NAME,
+        &CREATESTREAMINGURLINPUT_MEMBER_USER_ID,
+        &CREATESTREAMINGURLINPUT_MEMBER_APPLICATION_ID,
+        &CREATESTREAMINGURLINPUT_MEMBER_VALIDITY,
+        &CREATESTREAMINGURLINPUT_MEMBER_SESSION_CONTEXT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateStreamingURLRequest");
+impl CreateStreamingUrlInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATESTREAMINGURLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateStreamingUrlInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stack_name {
+            ser.write_string(&CREATESTREAMINGURLINPUT_MEMBER_STACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.fleet_name {
+            ser.write_string(&CREATESTREAMINGURLINPUT_MEMBER_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.user_id {
+            ser.write_string(&CREATESTREAMINGURLINPUT_MEMBER_USER_ID, val)?;
+        }
+        if let Some(ref val) = self.application_id {
+            ser.write_string(&CREATESTREAMINGURLINPUT_MEMBER_APPLICATION_ID, val)?;
+        }
+        if let Some(ref val) = self.validity {
+            ser.write_long(&CREATESTREAMINGURLINPUT_MEMBER_VALIDITY, *val)?;
+        }
+        if let Some(ref val) = self.session_context {
+            ser.write_string(&CREATESTREAMINGURLINPUT_MEMBER_SESSION_CONTEXT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATESTREAMINGURLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validity = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_context = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateStreamingUrlInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.stack_name = builder.stack_name.or(Some(String::new()));
+        builder.fleet_name = builder.fleet_name.or(Some(String::new()));
+        builder.user_id = builder.user_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateStreamingUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingUrlInput`](crate::operation::create_streaming_url::CreateStreamingUrlInput).
     pub fn builder() -> crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder {

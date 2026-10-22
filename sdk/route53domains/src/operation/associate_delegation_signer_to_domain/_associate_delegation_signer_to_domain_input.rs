@@ -18,6 +18,110 @@ impl AssociateDelegationSignerToDomainInput {
         self.signing_attributes.as_ref()
     }
 }
+static ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#AssociateDelegationSignerToDomainInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "AssociateDelegationSignerToDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_MEMBER_SIGNING_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53domains.synthetic#AssociateDelegationSignerToDomainInput$SigningAttributes",
+            "com.amazonaws.route53domains.synthetic",
+            "AssociateDelegationSignerToDomainInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "SigningAttributes",
+        1,
+    );
+static ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#AssociateDelegationSignerToDomainInput",
+        "com.amazonaws.route53domains.synthetic",
+        "AssociateDelegationSignerToDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_MEMBER_DOMAIN_NAME,
+        &ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_MEMBER_SIGNING_ATTRIBUTES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AssociateDelegationSignerToDomainRequest");
+impl AssociateDelegationSignerToDomainInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociateDelegationSignerToDomainInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.signing_attributes {
+            ser.write_struct(&ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_MEMBER_SIGNING_ATTRIBUTES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATEDELEGATIONSIGNERTODOMAININPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.signing_attributes = Some(crate::types::DnssecSigningAttributes::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociateDelegationSignerToDomainInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssociateDelegationSignerToDomainInput {
     /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainInput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainInput).
     pub fn builder() -> crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainInputBuilder {

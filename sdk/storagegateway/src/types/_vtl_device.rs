@@ -37,6 +37,165 @@ impl VtlDevice {
         self.devicei_scsi_attributes.as_ref()
     }
 }
+static VTLDEVICE_MEMBER_VTL_DEVICE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VTLDevice$VTLDeviceARN",
+        "com.amazonaws.storagegateway",
+        "VTLDevice",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VTLDeviceARN",
+    0,
+);
+static VTLDEVICE_MEMBER_VTL_DEVICE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VTLDevice$VTLDeviceType",
+        "com.amazonaws.storagegateway",
+        "VTLDevice",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VTLDeviceType",
+    1,
+);
+static VTLDEVICE_MEMBER_VTL_DEVICE_VENDOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VTLDevice$VTLDeviceVendor",
+        "com.amazonaws.storagegateway",
+        "VTLDevice",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VTLDeviceVendor",
+    2,
+);
+static VTLDEVICE_MEMBER_VTL_DEVICE_PRODUCT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VTLDevice$VTLDeviceProductIdentifier",
+        "com.amazonaws.storagegateway",
+        "VTLDevice",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VTLDeviceProductIdentifier",
+    3,
+);
+static VTLDEVICE_MEMBER_DEVICEI_SCSI_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VTLDevice$DeviceiSCSIAttributes",
+        "com.amazonaws.storagegateway",
+        "VTLDevice",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceiSCSIAttributes",
+    4,
+);
+static VTLDEVICE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#VTLDevice", "com.amazonaws.storagegateway", "VTLDevice"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VTLDEVICE_MEMBER_VTL_DEVICE_ARN,
+        &VTLDEVICE_MEMBER_VTL_DEVICE_TYPE,
+        &VTLDEVICE_MEMBER_VTL_DEVICE_VENDOR,
+        &VTLDEVICE_MEMBER_VTL_DEVICE_PRODUCT_IDENTIFIER,
+        &VTLDEVICE_MEMBER_DEVICEI_SCSI_ATTRIBUTES,
+    ],
+);
+impl VtlDevice {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VTLDEVICE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VtlDevice {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vtl_device_arn {
+            ser.write_string(&VTLDEVICE_MEMBER_VTL_DEVICE_ARN, val)?;
+        }
+        if let Some(ref val) = self.vtl_device_type {
+            ser.write_string(&VTLDEVICE_MEMBER_VTL_DEVICE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.vtl_device_vendor {
+            ser.write_string(&VTLDEVICE_MEMBER_VTL_DEVICE_VENDOR, val)?;
+        }
+        if let Some(ref val) = self.vtl_device_product_identifier {
+            ser.write_string(&VTLDEVICE_MEMBER_VTL_DEVICE_PRODUCT_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.devicei_scsi_attributes {
+            ser.write_struct(&VTLDEVICE_MEMBER_DEVICEI_SCSI_ATTRIBUTES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VtlDeviceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VTLDEVICE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vtl_device_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vtl_device_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vtl_device_vendor = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vtl_device_product_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.devicei_scsi_attributes = Some(crate::types::DeviceiScsiAttributes::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VtlDevice {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl VtlDevice {
     /// Creates a new builder-style object to manufacture [`VtlDevice`](crate::types::VtlDevice).
     pub fn builder() -> crate::types::builders::VtlDeviceBuilder {

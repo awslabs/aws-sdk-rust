@@ -42,6 +42,171 @@ impl ListConformancePackComplianceScoresInput {
         self.next_token.as_deref()
     }
 }
+static LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresInput$Filters",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Filters",
+    0,
+);
+static LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresInput$SortOrder",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    1,
+);
+static LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresInput$SortBy",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    2,
+);
+static LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresInput$Limit",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    3,
+);
+static LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresInput$NextToken",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresInput",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_FILTERS,
+        &LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_SORT_ORDER,
+        &LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_SORT_BY,
+        &LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_LIMIT,
+        &LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListConformancePackComplianceScoresRequest");
+impl ListConformancePackComplianceScoresInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListConformancePackComplianceScoresInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.filters {
+            ser.write_struct(&LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_FILTERS, val)?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCONFORMANCEPACKCOMPLIANCESCORESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filters = Some(crate::types::ConformancePackComplianceScoresFilters::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::SortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListConformancePackComplianceScoresInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListConformancePackComplianceScoresInput {
     /// Creates a new builder-style object to manufacture [`ListConformancePackComplianceScoresInput`](crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresInput).
     pub fn builder() -> crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresInputBuilder {

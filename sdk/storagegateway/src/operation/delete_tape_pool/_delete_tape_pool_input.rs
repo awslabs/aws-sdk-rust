@@ -12,6 +12,86 @@ impl DeleteTapePoolInput {
         self.pool_arn.as_deref()
     }
 }
+static DELETETAPEPOOLINPUT_MEMBER_POOL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DeleteTapePoolInput$PoolARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "DeleteTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolARN",
+    0,
+);
+static DELETETAPEPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DeleteTapePoolInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "DeleteTapePoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETETAPEPOOLINPUT_MEMBER_POOL_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteTapePoolInput");
+impl DeleteTapePoolInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETETAPEPOOLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteTapePoolInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pool_arn {
+            ser.write_string(&DELETETAPEPOOLINPUT_MEMBER_POOL_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_tape_pool::builders::DeleteTapePoolInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETETAPEPOOLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pool_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteTapePoolInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pool_arn = builder.pool_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteTapePoolInput {
     /// Creates a new builder-style object to manufacture [`DeleteTapePoolInput`](crate::operation::delete_tape_pool::DeleteTapePoolInput).
     pub fn builder() -> crate::operation::delete_tape_pool::builders::DeleteTapePoolInputBuilder {

@@ -31,6 +31,148 @@ impl EntitlementValue {
         self.string_value.as_deref()
     }
 }
+static ENTITLEMENTVALUE_MEMBER_INTEGER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#EntitlementValue$IntegerValue",
+        "com.amazonaws.marketplaceentitlementservice",
+        "EntitlementValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "IntegerValue",
+    0,
+);
+static ENTITLEMENTVALUE_MEMBER_DOUBLE_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#EntitlementValue$DoubleValue",
+        "com.amazonaws.marketplaceentitlementservice",
+        "EntitlementValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "DoubleValue",
+    1,
+);
+static ENTITLEMENTVALUE_MEMBER_BOOLEAN_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#EntitlementValue$BooleanValue",
+        "com.amazonaws.marketplaceentitlementservice",
+        "EntitlementValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "BooleanValue",
+    2,
+);
+static ENTITLEMENTVALUE_MEMBER_STRING_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#EntitlementValue$StringValue",
+        "com.amazonaws.marketplaceentitlementservice",
+        "EntitlementValue",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StringValue",
+    3,
+);
+static ENTITLEMENTVALUE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#EntitlementValue",
+        "com.amazonaws.marketplaceentitlementservice",
+        "EntitlementValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITLEMENTVALUE_MEMBER_INTEGER_VALUE,
+        &ENTITLEMENTVALUE_MEMBER_DOUBLE_VALUE,
+        &ENTITLEMENTVALUE_MEMBER_BOOLEAN_VALUE,
+        &ENTITLEMENTVALUE_MEMBER_STRING_VALUE,
+    ],
+);
+impl EntitlementValue {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITLEMENTVALUE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntitlementValue {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.integer_value {
+            ser.write_integer(&ENTITLEMENTVALUE_MEMBER_INTEGER_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.double_value {
+            ser.write_double(&ENTITLEMENTVALUE_MEMBER_DOUBLE_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.boolean_value {
+            ser.write_boolean(&ENTITLEMENTVALUE_MEMBER_BOOLEAN_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.string_value {
+            ser.write_string(&ENTITLEMENTVALUE_MEMBER_STRING_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntitlementValueBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITLEMENTVALUE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.integer_value = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.double_value = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.boolean_value = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.string_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntitlementValue {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EntitlementValue {
     /// Creates a new builder-style object to manufacture [`EntitlementValue`](crate::types::EntitlementValue).
     pub fn builder() -> crate::types::builders::EntitlementValueBuilder {

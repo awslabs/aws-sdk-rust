@@ -55,6 +55,168 @@ impl KernelGatewayAppSettings {
         self.lifecycle_config_arns.as_deref().unwrap_or_default()
     }
 }
+static KERNELGATEWAYAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#KernelGatewayAppSettings$DefaultResourceSpec",
+        "com.amazonaws.sagemaker",
+        "KernelGatewayAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultResourceSpec",
+    0,
+);
+static KERNELGATEWAYAPPSETTINGS_MEMBER_CUSTOM_IMAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#CustomImages$member", "com.amazonaws.sagemaker", "CustomImages"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static KERNELGATEWAYAPPSETTINGS_MEMBER_CUSTOM_IMAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#KernelGatewayAppSettings$CustomImages",
+        "com.amazonaws.sagemaker",
+        "KernelGatewayAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomImages",
+    1,
+)
+.with_list_member(&KERNELGATEWAYAPPSETTINGS_MEMBER_CUSTOM_IMAGES_MEMBER);
+static KERNELGATEWAYAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LifecycleConfigArns$member",
+        "com.amazonaws.sagemaker",
+        "LifecycleConfigArns",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static KERNELGATEWAYAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#KernelGatewayAppSettings$LifecycleConfigArns",
+        "com.amazonaws.sagemaker",
+        "KernelGatewayAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LifecycleConfigArns",
+    2,
+)
+.with_list_member(&KERNELGATEWAYAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS_MEMBER);
+static KERNELGATEWAYAPPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#KernelGatewayAppSettings",
+        "com.amazonaws.sagemaker",
+        "KernelGatewayAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &KERNELGATEWAYAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC,
+        &KERNELGATEWAYAPPSETTINGS_MEMBER_CUSTOM_IMAGES,
+        &KERNELGATEWAYAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS,
+    ],
+);
+impl KernelGatewayAppSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &KERNELGATEWAYAPPSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for KernelGatewayAppSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_resource_spec {
+            ser.write_struct(&KERNELGATEWAYAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.custom_images {
+            ser.write_list(
+                &KERNELGATEWAYAPPSETTINGS_MEMBER_CUSTOM_IMAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.lifecycle_config_arns {
+            ser.write_list(
+                &KERNELGATEWAYAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::KernelGatewayAppSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&KERNELGATEWAYAPPSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_images = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_config_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl KernelGatewayAppSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl KernelGatewayAppSettings {
     /// Creates a new builder-style object to manufacture [`KernelGatewayAppSettings`](crate::types::KernelGatewayAppSettings).
     pub fn builder() -> crate::types::builders::KernelGatewayAppSettingsBuilder {

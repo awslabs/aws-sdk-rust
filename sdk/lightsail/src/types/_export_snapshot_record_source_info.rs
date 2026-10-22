@@ -55,6 +55,232 @@ impl ExportSnapshotRecordSourceInfo {
         self.disk_snapshot_info.as_ref()
     }
 }
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$resourceType",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    0,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$createdAt",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    1,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$name",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    2,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$arn",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    3,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_FROM_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$fromResourceName",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromResourceName",
+    4,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_FROM_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$fromResourceArn",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromResourceArn",
+    5,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_INSTANCE_SNAPSHOT_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$instanceSnapshotInfo",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "instanceSnapshotInfo",
+    6,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_DISK_SNAPSHOT_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo$diskSnapshotInfo",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "diskSnapshotInfo",
+    7,
+);
+static EXPORTSNAPSHOTRECORDSOURCEINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ExportSnapshotRecordSourceInfo",
+        "com.amazonaws.lightsail",
+        "ExportSnapshotRecordSourceInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_RESOURCE_TYPE,
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_CREATED_AT,
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_NAME,
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_ARN,
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_FROM_RESOURCE_NAME,
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_FROM_RESOURCE_ARN,
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_INSTANCE_SNAPSHOT_INFO,
+        &EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_DISK_SNAPSHOT_INFO,
+    ],
+);
+impl ExportSnapshotRecordSourceInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXPORTSNAPSHOTRECORDSOURCEINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExportSnapshotRecordSourceInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.from_resource_name {
+            ser.write_string(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_FROM_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.from_resource_arn {
+            ser.write_string(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_FROM_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.instance_snapshot_info {
+            ser.write_struct(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_INSTANCE_SNAPSHOT_INFO, val)?;
+        }
+        if let Some(ref val) = self.disk_snapshot_info {
+            ser.write_struct(&EXPORTSNAPSHOTRECORDSOURCEINFO_MEMBER_DISK_SNAPSHOT_INFO, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExportSnapshotRecordSourceInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXPORTSNAPSHOTRECORDSOURCEINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ExportSnapshotRecordSourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_snapshot_info = Some(crate::types::InstanceSnapshotInfo::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_snapshot_info = Some(crate::types::DiskSnapshotInfo::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExportSnapshotRecordSourceInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExportSnapshotRecordSourceInfo {
     /// Creates a new builder-style object to manufacture [`ExportSnapshotRecordSourceInfo`](crate::types::ExportSnapshotRecordSourceInfo).
     pub fn builder() -> crate::types::builders::ExportSnapshotRecordSourceInfoBuilder {

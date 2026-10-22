@@ -33,6 +33,163 @@ impl RelationalDatabaseEvent {
         self.event_categories.as_deref().unwrap_or_default()
     }
 }
+static RELATIONALDATABASEEVENT_MEMBER_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseEvent$resource",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resource",
+    0,
+);
+static RELATIONALDATABASEEVENT_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseEvent$createdAt",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    1,
+);
+static RELATIONALDATABASEEVENT_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseEvent$message",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    2,
+);
+static RELATIONALDATABASEEVENT_MEMBER_EVENT_CATEGORIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RELATIONALDATABASEEVENT_MEMBER_EVENT_CATEGORIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseEvent$eventCategories",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "eventCategories",
+    3,
+)
+.with_list_member(&RELATIONALDATABASEEVENT_MEMBER_EVENT_CATEGORIES_MEMBER);
+static RELATIONALDATABASEEVENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseEvent",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RELATIONALDATABASEEVENT_MEMBER_RESOURCE,
+        &RELATIONALDATABASEEVENT_MEMBER_CREATED_AT,
+        &RELATIONALDATABASEEVENT_MEMBER_MESSAGE,
+        &RELATIONALDATABASEEVENT_MEMBER_EVENT_CATEGORIES,
+    ],
+);
+impl RelationalDatabaseEvent {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RELATIONALDATABASEEVENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RelationalDatabaseEvent {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource {
+            ser.write_string(&RELATIONALDATABASEEVENT_MEMBER_RESOURCE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&RELATIONALDATABASEEVENT_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&RELATIONALDATABASEEVENT_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.event_categories {
+            ser.write_list(
+                &RELATIONALDATABASEEVENT_MEMBER_EVENT_CATEGORIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RelationalDatabaseEventBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RELATIONALDATABASEEVENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_categories = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RelationalDatabaseEvent {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RelationalDatabaseEvent {
     /// Creates a new builder-style object to manufacture [`RelationalDatabaseEvent`](crate::types::RelationalDatabaseEvent).
     pub fn builder() -> crate::types::builders::RelationalDatabaseEventBuilder {

@@ -20,6 +20,30 @@ pub(crate) fn ocu_limit_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn ingestion_job_source_correct_errors(
+    mut builder: crate::types::builders::IngestionJobSourceBuilder,
+) -> crate::types::builders::IngestionJobSourceBuilder {
+    if builder.s3.is_none() {
+        builder.s3 = {
+            let builder = crate::types::builders::IngestionJobS3SourceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn ingestion_stream_source_correct_errors(
+    mut builder: crate::types::builders::IngestionStreamSourceBuilder,
+) -> crate::types::builders::IngestionStreamSourceBuilder {
+    if builder.s3.is_none() {
+        builder.s3 = {
+            let builder = crate::types::builders::IngestionStreamS3SourceBuilder::default();
+            crate::serde_util::ingestion_stream_s3_source_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn saml_config_options_correct_errors(
     mut builder: crate::types::builders::SamlConfigOptionsBuilder,
 ) -> crate::types::builders::SamlConfigOptionsBuilder {
@@ -44,6 +68,24 @@ pub(crate) fn vector_options_correct_errors(
 ) -> crate::types::builders::VectorOptionsBuilder {
     if builder.serverless_vector_acceleration.is_none() {
         builder.serverless_vector_acceleration = "no value was set".parse::<crate::types::ServerlessVectorAccelerationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn ingestion_stream_s3_source_correct_errors(
+    mut builder: crate::types::builders::IngestionStreamS3SourceBuilder,
+) -> crate::types::builders::IngestionStreamS3SourceBuilder {
+    if builder.sqs_arn.is_none() {
+        builder.sqs_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn stream_bucket_config_correct_errors(
+    mut builder: crate::types::builders::StreamBucketConfigBuilder,
+) -> crate::types::builders::StreamBucketConfigBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
     }
     builder
 }

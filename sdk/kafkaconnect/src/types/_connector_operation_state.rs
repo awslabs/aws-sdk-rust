@@ -12,10 +12,16 @@
 /// ```text
 /// # let connectoroperationstate = unimplemented!();
 /// match connectoroperationstate {
+///     ConnectorOperationState::PauseComplete => { /* ... */ },
+///     ConnectorOperationState::PauseFailed => { /* ... */ },
+///     ConnectorOperationState::PauseInProgress => { /* ... */ },
 ///     ConnectorOperationState::Pending => { /* ... */ },
 ///     ConnectorOperationState::RestartComplete => { /* ... */ },
 ///     ConnectorOperationState::RestartFailed => { /* ... */ },
 ///     ConnectorOperationState::RestartInProgress => { /* ... */ },
+///     ConnectorOperationState::ResumeComplete => { /* ... */ },
+///     ConnectorOperationState::ResumeFailed => { /* ... */ },
+///     ConnectorOperationState::ResumeInProgress => { /* ... */ },
 ///     ConnectorOperationState::RollbackComplete => { /* ... */ },
 ///     ConnectorOperationState::RollbackFailed => { /* ... */ },
 ///     ConnectorOperationState::RollbackInProgress => { /* ... */ },
@@ -51,6 +57,12 @@
 )]
 pub enum ConnectorOperationState {
     #[allow(missing_docs)] // documentation missing in model
+    PauseComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    PauseFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    PauseInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
     RestartComplete,
@@ -58,6 +70,12 @@ pub enum ConnectorOperationState {
     RestartFailed,
     #[allow(missing_docs)] // documentation missing in model
     RestartInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    ResumeComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    ResumeFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    ResumeInProgress,
     #[allow(missing_docs)] // documentation missing in model
     RollbackComplete,
     #[allow(missing_docs)] // documentation missing in model
@@ -77,10 +95,16 @@ pub enum ConnectorOperationState {
 impl ::std::convert::From<&str> for ConnectorOperationState {
     fn from(s: &str) -> Self {
         match s {
+            "PAUSE_COMPLETE" => ConnectorOperationState::PauseComplete,
+            "PAUSE_FAILED" => ConnectorOperationState::PauseFailed,
+            "PAUSE_IN_PROGRESS" => ConnectorOperationState::PauseInProgress,
             "PENDING" => ConnectorOperationState::Pending,
             "RESTART_COMPLETE" => ConnectorOperationState::RestartComplete,
             "RESTART_FAILED" => ConnectorOperationState::RestartFailed,
             "RESTART_IN_PROGRESS" => ConnectorOperationState::RestartInProgress,
+            "RESUME_COMPLETE" => ConnectorOperationState::ResumeComplete,
+            "RESUME_FAILED" => ConnectorOperationState::ResumeFailed,
+            "RESUME_IN_PROGRESS" => ConnectorOperationState::ResumeInProgress,
             "ROLLBACK_COMPLETE" => ConnectorOperationState::RollbackComplete,
             "ROLLBACK_FAILED" => ConnectorOperationState::RollbackFailed,
             "ROLLBACK_IN_PROGRESS" => ConnectorOperationState::RollbackInProgress,
@@ -102,10 +126,16 @@ impl ConnectorOperationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConnectorOperationState::PauseComplete => "PAUSE_COMPLETE",
+            ConnectorOperationState::PauseFailed => "PAUSE_FAILED",
+            ConnectorOperationState::PauseInProgress => "PAUSE_IN_PROGRESS",
             ConnectorOperationState::Pending => "PENDING",
             ConnectorOperationState::RestartComplete => "RESTART_COMPLETE",
             ConnectorOperationState::RestartFailed => "RESTART_FAILED",
             ConnectorOperationState::RestartInProgress => "RESTART_IN_PROGRESS",
+            ConnectorOperationState::ResumeComplete => "RESUME_COMPLETE",
+            ConnectorOperationState::ResumeFailed => "RESUME_FAILED",
+            ConnectorOperationState::ResumeInProgress => "RESUME_IN_PROGRESS",
             ConnectorOperationState::RollbackComplete => "ROLLBACK_COMPLETE",
             ConnectorOperationState::RollbackFailed => "ROLLBACK_FAILED",
             ConnectorOperationState::RollbackInProgress => "ROLLBACK_IN_PROGRESS",
@@ -118,10 +148,16 @@ impl ConnectorOperationState {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "PAUSE_COMPLETE",
+            "PAUSE_FAILED",
+            "PAUSE_IN_PROGRESS",
             "PENDING",
             "RESTART_COMPLETE",
             "RESTART_FAILED",
             "RESTART_IN_PROGRESS",
+            "RESUME_COMPLETE",
+            "RESUME_FAILED",
+            "RESUME_IN_PROGRESS",
             "ROLLBACK_COMPLETE",
             "ROLLBACK_FAILED",
             "ROLLBACK_IN_PROGRESS",
@@ -151,10 +187,16 @@ impl ConnectorOperationState {
 impl ::std::fmt::Display for ConnectorOperationState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConnectorOperationState::PauseComplete => write!(f, "PAUSE_COMPLETE"),
+            ConnectorOperationState::PauseFailed => write!(f, "PAUSE_FAILED"),
+            ConnectorOperationState::PauseInProgress => write!(f, "PAUSE_IN_PROGRESS"),
             ConnectorOperationState::Pending => write!(f, "PENDING"),
             ConnectorOperationState::RestartComplete => write!(f, "RESTART_COMPLETE"),
             ConnectorOperationState::RestartFailed => write!(f, "RESTART_FAILED"),
             ConnectorOperationState::RestartInProgress => write!(f, "RESTART_IN_PROGRESS"),
+            ConnectorOperationState::ResumeComplete => write!(f, "RESUME_COMPLETE"),
+            ConnectorOperationState::ResumeFailed => write!(f, "RESUME_FAILED"),
+            ConnectorOperationState::ResumeInProgress => write!(f, "RESUME_IN_PROGRESS"),
             ConnectorOperationState::RollbackComplete => write!(f, "ROLLBACK_COMPLETE"),
             ConnectorOperationState::RollbackFailed => write!(f, "ROLLBACK_FAILED"),
             ConnectorOperationState::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),

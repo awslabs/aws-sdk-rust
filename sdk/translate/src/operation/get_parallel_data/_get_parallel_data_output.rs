@@ -39,6 +39,150 @@ impl GetParallelDataOutput {
         self.latest_update_attempt_auxiliary_data_location.as_ref()
     }
 }
+static GETPARALLELDATAOUTPUT_MEMBER_PARALLEL_DATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#GetParallelDataOutput$ParallelDataProperties",
+        "com.amazonaws.translate.synthetic",
+        "GetParallelDataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParallelDataProperties",
+    0,
+);
+static GETPARALLELDATAOUTPUT_MEMBER_DATA_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#GetParallelDataOutput$DataLocation",
+        "com.amazonaws.translate.synthetic",
+        "GetParallelDataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataLocation",
+    1,
+);
+static GETPARALLELDATAOUTPUT_MEMBER_AUXILIARY_DATA_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#GetParallelDataOutput$AuxiliaryDataLocation",
+        "com.amazonaws.translate.synthetic",
+        "GetParallelDataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AuxiliaryDataLocation",
+    2,
+);
+static GETPARALLELDATAOUTPUT_MEMBER_LATEST_UPDATE_ATTEMPT_AUXILIARY_DATA_LOCATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.translate.synthetic#GetParallelDataOutput$LatestUpdateAttemptAuxiliaryDataLocation",
+            "com.amazonaws.translate.synthetic",
+            "GetParallelDataOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "LatestUpdateAttemptAuxiliaryDataLocation",
+        3,
+    );
+static GETPARALLELDATAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#GetParallelDataOutput",
+        "com.amazonaws.translate.synthetic",
+        "GetParallelDataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETPARALLELDATAOUTPUT_MEMBER_PARALLEL_DATA_PROPERTIES,
+        &GETPARALLELDATAOUTPUT_MEMBER_DATA_LOCATION,
+        &GETPARALLELDATAOUTPUT_MEMBER_AUXILIARY_DATA_LOCATION,
+        &GETPARALLELDATAOUTPUT_MEMBER_LATEST_UPDATE_ATTEMPT_AUXILIARY_DATA_LOCATION,
+    ],
+)
+.with_original_name("GetParallelDataResponse");
+impl GetParallelDataOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETPARALLELDATAOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetParallelDataOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.parallel_data_properties {
+            ser.write_struct(&GETPARALLELDATAOUTPUT_MEMBER_PARALLEL_DATA_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.data_location {
+            ser.write_struct(&GETPARALLELDATAOUTPUT_MEMBER_DATA_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.auxiliary_data_location {
+            ser.write_struct(&GETPARALLELDATAOUTPUT_MEMBER_AUXILIARY_DATA_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.latest_update_attempt_auxiliary_data_location {
+            ser.write_struct(&GETPARALLELDATAOUTPUT_MEMBER_LATEST_UPDATE_ATTEMPT_AUXILIARY_DATA_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_parallel_data::builders::GetParallelDataOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETPARALLELDATAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallel_data_properties = Some(crate::types::ParallelDataProperties::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_location = Some(crate::types::ParallelDataDataLocation::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auxiliary_data_location = Some(crate::types::ParallelDataDataLocation::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_update_attempt_auxiliary_data_location = Some(crate::types::ParallelDataDataLocation::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetParallelDataOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetParallelDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

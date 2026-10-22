@@ -117,6 +117,443 @@ impl DescribeCompilationJobOutput {
         self.derived_information.as_ref()
     }
 }
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$CompilationJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompilationJobName",
+    0,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$CompilationJobArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompilationJobArn",
+    1,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$CompilationJobStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompilationJobStatus",
+    2,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$CompilationStartTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompilationStartTime",
+    3,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$CompilationEndTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompilationEndTime",
+    4,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$StoppingCondition",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    5,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_INFERENCE_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$InferenceImage",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InferenceImage",
+    6,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_PACKAGE_VERSION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$ModelPackageVersionArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageVersionArn",
+    7,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    8,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    9,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    10,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$ModelArtifacts",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelArtifacts",
+    11,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_DIGESTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$ModelDigests",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDigests",
+    12,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    13,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_INPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$InputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputConfig",
+    14,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    15,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$VpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    16,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_DERIVED_INFORMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput$DerivedInformation",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DerivedInformation",
+    17,
+);
+static DESCRIBECOMPILATIONJOBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeCompilationJobOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeCompilationJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_NAME,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_ARN,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_STATUS,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_START_TIME,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_END_TIME,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_STOPPING_CONDITION,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_INFERENCE_IMAGE,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_PACKAGE_VERSION_ARN,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_ARTIFACTS,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_DIGESTS,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_INPUT_CONFIG,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_OUTPUT_CONFIG,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_VPC_CONFIG,
+        &DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_DERIVED_INFORMATION,
+    ],
+)
+.with_original_name("DescribeCompilationJobResponse");
+impl DescribeCompilationJobOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECOMPILATIONJOBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCompilationJobOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compilation_job_name {
+            ser.write_string(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.compilation_job_arn {
+            ser.write_string(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.compilation_job_status {
+            ser.write_string(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.compilation_start_time {
+            ser.write_timestamp(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.compilation_end_time {
+            ser.write_timestamp(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_COMPILATION_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.inference_image {
+            ser.write_string(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_INFERENCE_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.model_package_version_arn {
+            ser.write_string(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_PACKAGE_VERSION_ARN, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.model_artifacts {
+            ser.write_struct(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_ARTIFACTS, val)?;
+        }
+        if let Some(ref val) = self.model_digests {
+            ser.write_struct(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_MODEL_DIGESTS, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.input_config {
+            ser.write_struct(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_INPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.derived_information {
+            ser.write_struct(&DESCRIBECOMPILATIONJOBOUTPUT_MEMBER_DERIVED_INFORMATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_compilation_job::builders::DescribeCompilationJobOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECOMPILATIONJOBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compilation_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compilation_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compilation_job_status = Some(crate::types::CompilationJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compilation_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compilation_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::StoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_version_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_artifacts = Some(crate::types::ModelArtifacts::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_digests = Some(crate::types::ModelDigests::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_config = Some(crate::types::InputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::OutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::NeoVpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.derived_information = Some(crate::types::DerivedInformation::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCompilationJobOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeCompilationJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

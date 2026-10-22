@@ -23,6 +23,152 @@ impl RemoveTagsFromOnPremisesInstancesInput {
         self.instance_names.as_deref().unwrap_or_default()
     }
 }
+static REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#TagList$member", "com.amazonaws.codedeploy", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#RemoveTagsFromOnPremisesInstancesInput$tags",
+        "com.amazonaws.codedeploy.synthetic",
+        "RemoveTagsFromOnPremisesInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    0,
+)
+.with_list_member(&REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_TAGS_MEMBER);
+static REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_INSTANCE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#InstanceNameList$member",
+            "com.amazonaws.codedeploy",
+            "InstanceNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_INSTANCE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#RemoveTagsFromOnPremisesInstancesInput$instanceNames",
+        "com.amazonaws.codedeploy.synthetic",
+        "RemoveTagsFromOnPremisesInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "instanceNames",
+    1,
+)
+.with_list_member(&REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_INSTANCE_NAMES_MEMBER);
+static REMOVETAGSFROMONPREMISESINSTANCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#RemoveTagsFromOnPremisesInstancesInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "RemoveTagsFromOnPremisesInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_TAGS,
+        &REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_INSTANCE_NAMES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RemoveTagsFromOnPremisesInstancesInput");
+impl RemoveTagsFromOnPremisesInstancesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMOVETAGSFROMONPREMISESINSTANCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemoveTagsFromOnPremisesInstancesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_names {
+            ser.write_list(
+                &REMOVETAGSFROMONPREMISESINSTANCESINPUT_MEMBER_INSTANCE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REMOVETAGSFROMONPREMISESINSTANCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RemoveTagsFromOnPremisesInstancesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tags = builder.tags.or(Some(Vec::new()));
+        builder.instance_names = builder.instance_names.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RemoveTagsFromOnPremisesInstancesInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromOnPremisesInstancesInput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput).
     pub fn builder() -> crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder {

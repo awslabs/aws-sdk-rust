@@ -19,6 +19,107 @@ impl UpdateComputeQuotaOutput {
         self.compute_quota_version
     }
 }
+static UPDATECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaOutput$ComputeQuotaArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComputeQuotaArn",
+    0,
+);
+static UPDATECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaOutput$ComputeQuotaVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ComputeQuotaVersion",
+    1,
+);
+static UPDATECOMPUTEQUOTAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateComputeQuotaOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateComputeQuotaOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ARN,
+        &UPDATECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_VERSION,
+    ],
+)
+.with_original_name("UpdateComputeQuotaResponse");
+impl UpdateComputeQuotaOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECOMPUTEQUOTAOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateComputeQuotaOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compute_quota_arn {
+            ser.write_string(&UPDATECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_ARN, val)?;
+        }
+        if let Some(ref val) = self.compute_quota_version {
+            ser.write_integer(&UPDATECOMPUTEQUOTAOUTPUT_MEMBER_COMPUTE_QUOTA_VERSION, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_compute_quota::builders::UpdateComputeQuotaOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECOMPUTEQUOTAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_quota_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateComputeQuotaOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateComputeQuotaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -12,6 +12,86 @@ impl DescribeArtifactInput {
         self.artifact_arn.as_deref()
     }
 }
+static DESCRIBEARTIFACTINPUT_MEMBER_ARTIFACT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeArtifactInput$ArtifactArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactArn",
+    0,
+);
+static DESCRIBEARTIFACTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeArtifactInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEARTIFACTINPUT_MEMBER_ARTIFACT_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeArtifactRequest");
+impl DescribeArtifactInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEARTIFACTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeArtifactInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.artifact_arn {
+            ser.write_string(&DESCRIBEARTIFACTINPUT_MEMBER_ARTIFACT_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_artifact::builders::DescribeArtifactInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEARTIFACTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeArtifactInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.artifact_arn = builder.artifact_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeArtifactInput {
     /// Creates a new builder-style object to manufacture [`DescribeArtifactInput`](crate::operation::describe_artifact::DescribeArtifactInput).
     pub fn builder() -> crate::operation::describe_artifact::builders::DescribeArtifactInputBuilder {

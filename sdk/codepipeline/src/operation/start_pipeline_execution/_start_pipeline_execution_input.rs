@@ -35,6 +35,203 @@ impl StartPipelineExecutionInput {
         self.source_revisions.as_deref().unwrap_or_default()
     }
 }
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#StartPipelineExecutionInput$name",
+        "com.amazonaws.codepipeline.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_VARIABLES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineVariableList$member",
+        "com.amazonaws.codepipeline",
+        "PipelineVariableList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#StartPipelineExecutionInput$variables",
+        "com.amazonaws.codepipeline.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "variables",
+    1,
+)
+.with_list_member(&STARTPIPELINEEXECUTIONINPUT_MEMBER_VARIABLES_MEMBER);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#StartPipelineExecutionInput$clientRequestToken",
+        "com.amazonaws.codepipeline.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientRequestToken",
+    2,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_SOURCE_REVISIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#SourceRevisionOverrideList$member",
+        "com.amazonaws.codepipeline",
+        "SourceRevisionOverrideList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTPIPELINEEXECUTIONINPUT_MEMBER_SOURCE_REVISIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#StartPipelineExecutionInput$sourceRevisions",
+        "com.amazonaws.codepipeline.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "sourceRevisions",
+    3,
+)
+.with_list_member(&STARTPIPELINEEXECUTIONINPUT_MEMBER_SOURCE_REVISIONS_MEMBER);
+static STARTPIPELINEEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#StartPipelineExecutionInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "StartPipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_NAME,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_VARIABLES,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &STARTPIPELINEEXECUTIONINPUT_MEMBER_SOURCE_REVISIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartPipelineExecutionInput");
+impl StartPipelineExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTPIPELINEEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartPipelineExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&STARTPIPELINEEXECUTIONINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.variables {
+            ser.write_list(
+                &STARTPIPELINEEXECUTIONINPUT_MEMBER_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PipelineVariable::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTPIPELINEEXECUTIONINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.source_revisions {
+            ser.write_list(
+                &STARTPIPELINEEXECUTIONINPUT_MEMBER_SOURCE_REVISIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SourceRevisionOverride::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTPIPELINEEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.variables = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PipelineVariable::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_revisions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SourceRevisionOverride::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartPipelineExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartPipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPipelineExecutionInput`](crate::operation::start_pipeline_execution::StartPipelineExecutionInput).
     pub fn builder() -> crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder {

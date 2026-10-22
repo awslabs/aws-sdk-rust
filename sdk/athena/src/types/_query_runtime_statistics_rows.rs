@@ -31,6 +31,148 @@ impl QueryRuntimeStatisticsRows {
         self.output_rows
     }
 }
+static QUERYRUNTIMESTATISTICSROWS_MEMBER_INPUT_ROWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryRuntimeStatisticsRows$InputRows",
+        "com.amazonaws.athena",
+        "QueryRuntimeStatisticsRows",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "InputRows",
+    0,
+);
+static QUERYRUNTIMESTATISTICSROWS_MEMBER_INPUT_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryRuntimeStatisticsRows$InputBytes",
+        "com.amazonaws.athena",
+        "QueryRuntimeStatisticsRows",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "InputBytes",
+    1,
+);
+static QUERYRUNTIMESTATISTICSROWS_MEMBER_OUTPUT_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryRuntimeStatisticsRows$OutputBytes",
+        "com.amazonaws.athena",
+        "QueryRuntimeStatisticsRows",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "OutputBytes",
+    2,
+);
+static QUERYRUNTIMESTATISTICSROWS_MEMBER_OUTPUT_ROWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryRuntimeStatisticsRows$OutputRows",
+        "com.amazonaws.athena",
+        "QueryRuntimeStatisticsRows",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "OutputRows",
+    3,
+);
+static QUERYRUNTIMESTATISTICSROWS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryRuntimeStatisticsRows",
+        "com.amazonaws.athena",
+        "QueryRuntimeStatisticsRows",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYRUNTIMESTATISTICSROWS_MEMBER_INPUT_ROWS,
+        &QUERYRUNTIMESTATISTICSROWS_MEMBER_INPUT_BYTES,
+        &QUERYRUNTIMESTATISTICSROWS_MEMBER_OUTPUT_BYTES,
+        &QUERYRUNTIMESTATISTICSROWS_MEMBER_OUTPUT_ROWS,
+    ],
+);
+impl QueryRuntimeStatisticsRows {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYRUNTIMESTATISTICSROWS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryRuntimeStatisticsRows {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.input_rows {
+            ser.write_long(&QUERYRUNTIMESTATISTICSROWS_MEMBER_INPUT_ROWS, *val)?;
+        }
+        if let Some(ref val) = self.input_bytes {
+            ser.write_long(&QUERYRUNTIMESTATISTICSROWS_MEMBER_INPUT_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.output_bytes {
+            ser.write_long(&QUERYRUNTIMESTATISTICSROWS_MEMBER_OUTPUT_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.output_rows {
+            ser.write_long(&QUERYRUNTIMESTATISTICSROWS_MEMBER_OUTPUT_ROWS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QueryRuntimeStatisticsRowsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYRUNTIMESTATISTICSROWS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_rows = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_rows = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryRuntimeStatisticsRows {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QueryRuntimeStatisticsRows {
     /// Creates a new builder-style object to manufacture [`QueryRuntimeStatisticsRows`](crate::types::QueryRuntimeStatisticsRows).
     pub fn builder() -> crate::types::builders::QueryRuntimeStatisticsRowsBuilder {

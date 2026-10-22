@@ -28,6 +28,18 @@ pub fn ser_rating_scale(
             }
             array_4.finish();
         }
+        crate::types::RatingScale::MultiDimensional(inner) => {
+            let mut array_7 = object_2.key("multiDimensional").start_array();
+            for item_8 in inner {
+                {
+                    #[allow(unused_mut)]
+                    let mut object_9 = array_7.value().start_object();
+                    crate::protocol_serde::shape_evaluation_dimension::ser_evaluation_dimension(&mut object_9, item_8)?;
+                    object_9.finish();
+                }
+            }
+            array_7.finish();
+        }
         crate::types::RatingScale::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("RatingScale")),
     }
     Ok(())
@@ -81,6 +93,11 @@ where
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'categorical' cannot be null")
                                 })?,
+                        )),
+                        "multiDimensional" => Some(crate::types::RatingScale::MultiDimensional(
+                            crate::protocol_serde::shape_evaluation_dimensions::de_evaluation_dimensions(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'multiDimensional' cannot be null"),
+                            )?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

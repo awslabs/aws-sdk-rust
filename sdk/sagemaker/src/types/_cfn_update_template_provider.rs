@@ -27,6 +27,153 @@ impl CfnUpdateTemplateProvider {
         self.parameters.as_deref().unwrap_or_default()
     }
 }
+static CFNUPDATETEMPLATEPROVIDER_MEMBER_TEMPLATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnUpdateTemplateProvider$TemplateName",
+        "com.amazonaws.sagemaker",
+        "CfnUpdateTemplateProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemplateName",
+    0,
+);
+static CFNUPDATETEMPLATEPROVIDER_MEMBER_TEMPLATE_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnUpdateTemplateProvider$TemplateURL",
+        "com.amazonaws.sagemaker",
+        "CfnUpdateTemplateProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemplateURL",
+    1,
+);
+static CFNUPDATETEMPLATEPROVIDER_MEMBER_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnStackUpdateParameters$member",
+        "com.amazonaws.sagemaker",
+        "CfnStackUpdateParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CFNUPDATETEMPLATEPROVIDER_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnUpdateTemplateProvider$Parameters",
+        "com.amazonaws.sagemaker",
+        "CfnUpdateTemplateProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Parameters",
+    2,
+)
+.with_list_member(&CFNUPDATETEMPLATEPROVIDER_MEMBER_PARAMETERS_MEMBER);
+static CFNUPDATETEMPLATEPROVIDER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CfnUpdateTemplateProvider",
+        "com.amazonaws.sagemaker",
+        "CfnUpdateTemplateProvider",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CFNUPDATETEMPLATEPROVIDER_MEMBER_TEMPLATE_NAME,
+        &CFNUPDATETEMPLATEPROVIDER_MEMBER_TEMPLATE_URL,
+        &CFNUPDATETEMPLATEPROVIDER_MEMBER_PARAMETERS,
+    ],
+);
+impl CfnUpdateTemplateProvider {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CFNUPDATETEMPLATEPROVIDER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CfnUpdateTemplateProvider {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.template_name {
+            ser.write_string(&CFNUPDATETEMPLATEPROVIDER_MEMBER_TEMPLATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.template_url {
+            ser.write_string(&CFNUPDATETEMPLATEPROVIDER_MEMBER_TEMPLATE_URL, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_list(
+                &CFNUPDATETEMPLATEPROVIDER_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CfnStackUpdateParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CfnUpdateTemplateProviderBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CFNUPDATETEMPLATEPROVIDER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CfnStackUpdateParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CfnUpdateTemplateProvider {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CfnUpdateTemplateProvider {
     /// Creates a new builder-style object to manufacture [`CfnUpdateTemplateProvider`](crate::types::CfnUpdateTemplateProvider).
     pub fn builder() -> crate::types::builders::CfnUpdateTemplateProviderBuilder {

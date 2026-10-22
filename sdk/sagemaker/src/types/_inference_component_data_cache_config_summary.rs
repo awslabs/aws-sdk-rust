@@ -13,6 +13,83 @@ impl InferenceComponentDataCacheConfigSummary {
         self.enable_caching
     }
 }
+static INFERENCECOMPONENTDATACACHECONFIGSUMMARY_MEMBER_ENABLE_CACHING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentDataCacheConfigSummary$EnableCaching",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentDataCacheConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableCaching",
+    0,
+);
+static INFERENCECOMPONENTDATACACHECONFIGSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentDataCacheConfigSummary",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentDataCacheConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INFERENCECOMPONENTDATACACHECONFIGSUMMARY_MEMBER_ENABLE_CACHING],
+);
+impl InferenceComponentDataCacheConfigSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INFERENCECOMPONENTDATACACHECONFIGSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InferenceComponentDataCacheConfigSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_caching {
+            ser.write_boolean(&INFERENCECOMPONENTDATACACHECONFIGSUMMARY_MEMBER_ENABLE_CACHING, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InferenceComponentDataCacheConfigSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INFERENCECOMPONENTDATACACHECONFIGSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_caching = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InferenceComponentDataCacheConfigSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InferenceComponentDataCacheConfigSummary {
     /// Creates a new builder-style object to manufacture [`InferenceComponentDataCacheConfigSummary`](crate::types::InferenceComponentDataCacheConfigSummary).
     pub fn builder() -> crate::types::builders::InferenceComponentDataCacheConfigSummaryBuilder {

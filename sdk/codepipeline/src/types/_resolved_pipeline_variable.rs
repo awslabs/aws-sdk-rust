@@ -19,6 +19,103 @@ impl ResolvedPipelineVariable {
         self.resolved_value.as_deref()
     }
 }
+static RESOLVEDPIPELINEVARIABLE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedPipelineVariable$name",
+        "com.amazonaws.codepipeline",
+        "ResolvedPipelineVariable",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static RESOLVEDPIPELINEVARIABLE_MEMBER_RESOLVED_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedPipelineVariable$resolvedValue",
+        "com.amazonaws.codepipeline",
+        "ResolvedPipelineVariable",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resolvedValue",
+    1,
+);
+static RESOLVEDPIPELINEVARIABLE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedPipelineVariable",
+        "com.amazonaws.codepipeline",
+        "ResolvedPipelineVariable",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RESOLVEDPIPELINEVARIABLE_MEMBER_NAME, &RESOLVEDPIPELINEVARIABLE_MEMBER_RESOLVED_VALUE],
+);
+impl ResolvedPipelineVariable {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOLVEDPIPELINEVARIABLE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResolvedPipelineVariable {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&RESOLVEDPIPELINEVARIABLE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.resolved_value {
+            ser.write_string(&RESOLVEDPIPELINEVARIABLE_MEMBER_RESOLVED_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResolvedPipelineVariableBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOLVEDPIPELINEVARIABLE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolved_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResolvedPipelineVariable {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResolvedPipelineVariable {
     /// Creates a new builder-style object to manufacture [`ResolvedPipelineVariable`](crate::types::ResolvedPipelineVariable).
     pub fn builder() -> crate::types::builders::ResolvedPipelineVariableBuilder {

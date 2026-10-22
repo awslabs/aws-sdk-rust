@@ -31,6 +31,154 @@ impl NotebookInstanceLifecycleConfigSummary {
         self.last_modified_time.as_ref()
     }
 }
+static NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#NotebookInstanceLifecycleConfigSummary$NotebookInstanceLifecycleConfigName",
+            "com.amazonaws.sagemaker",
+            "NotebookInstanceLifecycleConfigSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NotebookInstanceLifecycleConfigName",
+        0,
+    );
+static NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#NotebookInstanceLifecycleConfigSummary$NotebookInstanceLifecycleConfigArn",
+            "com.amazonaws.sagemaker",
+            "NotebookInstanceLifecycleConfigSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NotebookInstanceLifecycleConfigArn",
+        1,
+    );
+static NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceLifecycleConfigSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceLifecycleConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    2,
+);
+static NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#NotebookInstanceLifecycleConfigSummary$LastModifiedTime",
+            "com.amazonaws.sagemaker",
+            "NotebookInstanceLifecycleConfigSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastModifiedTime",
+        3,
+    );
+static NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NotebookInstanceLifecycleConfigSummary",
+        "com.amazonaws.sagemaker",
+        "NotebookInstanceLifecycleConfigSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_NAME,
+        &NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_ARN,
+        &NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_CREATION_TIME,
+        &NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl NotebookInstanceLifecycleConfigSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NotebookInstanceLifecycleConfigSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.notebook_instance_lifecycle_config_name {
+            ser.write_string(
+                &NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_NAME,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.notebook_instance_lifecycle_config_arn {
+            ser.write_string(&NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_NOTEBOOK_INSTANCE_LIFECYCLE_CONFIG_ARN, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NotebookInstanceLifecycleConfigSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NOTEBOOKINSTANCELIFECYCLECONFIGSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_lifecycle_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notebook_instance_lifecycle_config_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NotebookInstanceLifecycleConfigSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NotebookInstanceLifecycleConfigSummary {
     /// Creates a new builder-style object to manufacture [`NotebookInstanceLifecycleConfigSummary`](crate::types::NotebookInstanceLifecycleConfigSummary).
     pub fn builder() -> crate::types::builders::NotebookInstanceLifecycleConfigSummaryBuilder {

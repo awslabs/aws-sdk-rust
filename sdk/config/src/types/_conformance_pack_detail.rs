@@ -74,6 +74,275 @@ impl ConformancePackDetail {
         self.template_ssm_document_details.as_ref()
     }
 }
+static CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$ConformancePackName",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConformancePackName",
+    0,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$ConformancePackArn",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConformancePackArn",
+    1,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$ConformancePackId",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConformancePackId",
+    2,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_DELIVERY_S3_BUCKET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$DeliveryS3Bucket",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryS3Bucket",
+    3,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_DELIVERY_S3_KEY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$DeliveryS3KeyPrefix",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeliveryS3KeyPrefix",
+    4,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_INPUT_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConformancePackInputParameters$member",
+            "com.amazonaws.configservice",
+            "ConformancePackInputParameters",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_INPUT_PARAMETERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConformancePackDetail$ConformancePackInputParameters",
+            "com.amazonaws.configservice",
+            "ConformancePackDetail",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ConformancePackInputParameters",
+        5,
+    )
+    .with_list_member(&CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_INPUT_PARAMETERS_MEMBER);
+static CONFORMANCEPACKDETAIL_MEMBER_LAST_UPDATE_REQUESTED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$LastUpdateRequestedTime",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdateRequestedTime",
+    6,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$CreatedBy",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatedBy",
+    7,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_TEMPLATE_SSM_DOCUMENT_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$TemplateSSMDocumentDetails",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TemplateSSMDocumentDetails",
+    8,
+);
+static CONFORMANCEPACKDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_NAME,
+        &CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_ARN,
+        &CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_ID,
+        &CONFORMANCEPACKDETAIL_MEMBER_DELIVERY_S3_BUCKET,
+        &CONFORMANCEPACKDETAIL_MEMBER_DELIVERY_S3_KEY_PREFIX,
+        &CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_INPUT_PARAMETERS,
+        &CONFORMANCEPACKDETAIL_MEMBER_LAST_UPDATE_REQUESTED_TIME,
+        &CONFORMANCEPACKDETAIL_MEMBER_CREATED_BY,
+        &CONFORMANCEPACKDETAIL_MEMBER_TEMPLATE_SSM_DOCUMENT_DETAILS,
+    ],
+);
+impl ConformancePackDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFORMANCEPACKDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConformancePackDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.conformance_pack_name;
+            ser.write_string(&CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_NAME, val)?;
+        }
+        {
+            let val = &self.conformance_pack_arn;
+            ser.write_string(&CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_ARN, val)?;
+        }
+        {
+            let val = &self.conformance_pack_id;
+            ser.write_string(&CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_ID, val)?;
+        }
+        if let Some(ref val) = self.delivery_s3_bucket {
+            ser.write_string(&CONFORMANCEPACKDETAIL_MEMBER_DELIVERY_S3_BUCKET, val)?;
+        }
+        if let Some(ref val) = self.delivery_s3_key_prefix {
+            ser.write_string(&CONFORMANCEPACKDETAIL_MEMBER_DELIVERY_S3_KEY_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.conformance_pack_input_parameters {
+            ser.write_list(
+                &CONFORMANCEPACKDETAIL_MEMBER_CONFORMANCE_PACK_INPUT_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ConformancePackInputParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.last_update_requested_time {
+            ser.write_timestamp(&CONFORMANCEPACKDETAIL_MEMBER_LAST_UPDATE_REQUESTED_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_string(&CONFORMANCEPACKDETAIL_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.template_ssm_document_details {
+            ser.write_struct(&CONFORMANCEPACKDETAIL_MEMBER_TEMPLATE_SSM_DOCUMENT_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConformancePackDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFORMANCEPACKDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.conformance_pack_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.conformance_pack_arn = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.conformance_pack_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_s3_bucket = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_s3_key_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conformance_pack_input_parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ConformancePackInputParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_requested_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.template_ssm_document_details = Some(crate::types::TemplateSsmDocumentDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConformancePackDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.conformance_pack_name = builder.conformance_pack_name.or(Some(String::new()));
+        builder.conformance_pack_arn = builder.conformance_pack_arn.or(Some(String::new()));
+        builder.conformance_pack_id = builder.conformance_pack_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ConformancePackDetail {
     /// Creates a new builder-style object to manufacture [`ConformancePackDetail`](crate::types::ConformancePackDetail).
     pub fn builder() -> crate::types::builders::ConformancePackDetailBuilder {

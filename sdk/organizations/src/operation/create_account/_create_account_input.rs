@@ -115,6 +115,195 @@ impl ::std::fmt::Debug for CreateAccountInput {
         formatter.finish()
     }
 }
+static CREATEACCOUNTINPUT_MEMBER_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateAccountInput$Email",
+        "com.amazonaws.organizations.synthetic",
+        "CreateAccountInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Email",
+    0,
+);
+static CREATEACCOUNTINPUT_MEMBER_ACCOUNT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateAccountInput$AccountName",
+        "com.amazonaws.organizations.synthetic",
+        "CreateAccountInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountName",
+    1,
+);
+static CREATEACCOUNTINPUT_MEMBER_ROLE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateAccountInput$RoleName",
+        "com.amazonaws.organizations.synthetic",
+        "CreateAccountInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleName",
+    2,
+);
+static CREATEACCOUNTINPUT_MEMBER_IAM_USER_ACCESS_TO_BILLING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateAccountInput$IamUserAccessToBilling",
+        "com.amazonaws.organizations.synthetic",
+        "CreateAccountInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IamUserAccessToBilling",
+    3,
+);
+static CREATEACCOUNTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Tags$member", "com.amazonaws.organizations", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEACCOUNTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateAccountInput$Tags",
+        "com.amazonaws.organizations.synthetic",
+        "CreateAccountInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEACCOUNTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEACCOUNTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateAccountInput",
+        "com.amazonaws.organizations.synthetic",
+        "CreateAccountInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEACCOUNTINPUT_MEMBER_EMAIL,
+        &CREATEACCOUNTINPUT_MEMBER_ACCOUNT_NAME,
+        &CREATEACCOUNTINPUT_MEMBER_ROLE_NAME,
+        &CREATEACCOUNTINPUT_MEMBER_IAM_USER_ACCESS_TO_BILLING,
+        &CREATEACCOUNTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAccountRequest");
+impl CreateAccountInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEACCOUNTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAccountInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.email {
+            ser.write_string(&CREATEACCOUNTINPUT_MEMBER_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.account_name {
+            ser.write_string(&CREATEACCOUNTINPUT_MEMBER_ACCOUNT_NAME, val)?;
+        }
+        if let Some(ref val) = self.role_name {
+            ser.write_string(&CREATEACCOUNTINPUT_MEMBER_ROLE_NAME, val)?;
+        }
+        if let Some(ref val) = self.iam_user_access_to_billing {
+            ser.write_string(&CREATEACCOUNTINPUT_MEMBER_IAM_USER_ACCESS_TO_BILLING, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEACCOUNTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_account::builders::CreateAccountInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEACCOUNTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_user_access_to_billing = Some(crate::types::IamUserAccessToBilling::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAccountInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.email = builder.email.or(Some(String::new()));
+        builder.account_name = builder.account_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAccountInput {
     /// Creates a new builder-style object to manufacture [`CreateAccountInput`](crate::operation::create_account::CreateAccountInput).
     pub fn builder() -> crate::operation::create_account::builders::CreateAccountInputBuilder {

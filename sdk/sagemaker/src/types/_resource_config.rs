@@ -117,6 +117,343 @@ impl ResourceConfig {
         self.selected_instance_count
     }
 }
+static RESOURCECONFIG_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$InstanceType",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    0,
+);
+static RESOURCECONFIG_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$InstanceCount",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    1,
+);
+static RESOURCECONFIG_MEMBER_VOLUME_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$VolumeSizeInGB",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "VolumeSizeInGB",
+    2,
+);
+static RESOURCECONFIG_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$VolumeKmsKeyId",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    3,
+);
+static RESOURCECONFIG_MEMBER_KEEP_ALIVE_PERIOD_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$KeepAlivePeriodInSeconds",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "KeepAlivePeriodInSeconds",
+    4,
+);
+static RESOURCECONFIG_MEMBER_INSTANCE_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstanceGroups$member",
+        "com.amazonaws.sagemaker",
+        "InstanceGroups",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RESOURCECONFIG_MEMBER_INSTANCE_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$InstanceGroups",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceGroups",
+    5,
+)
+.with_list_member(&RESOURCECONFIG_MEMBER_INSTANCE_GROUPS_MEMBER);
+static RESOURCECONFIG_MEMBER_TRAINING_PLAN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$TrainingPlanArn",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingPlanArn",
+    6,
+);
+static RESOURCECONFIG_MEMBER_INSTANCE_PLACEMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$InstancePlacementConfig",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InstancePlacementConfig",
+    7,
+);
+static RESOURCECONFIG_MEMBER_INSTANCE_PREFERENCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstancePreferenceList$member",
+        "com.amazonaws.sagemaker",
+        "InstancePreferenceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RESOURCECONFIG_MEMBER_INSTANCE_PREFERENCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$InstancePreferences",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstancePreferences",
+    8,
+)
+.with_list_member(&RESOURCECONFIG_MEMBER_INSTANCE_PREFERENCES_MEMBER);
+static RESOURCECONFIG_MEMBER_SELECTED_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$SelectedInstanceType",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SelectedInstanceType",
+    9,
+);
+static RESOURCECONFIG_MEMBER_SELECTED_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceConfig$SelectedInstanceCount",
+        "com.amazonaws.sagemaker",
+        "ResourceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SelectedInstanceCount",
+    10,
+);
+static RESOURCECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ResourceConfig", "com.amazonaws.sagemaker", "ResourceConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCECONFIG_MEMBER_INSTANCE_TYPE,
+        &RESOURCECONFIG_MEMBER_INSTANCE_COUNT,
+        &RESOURCECONFIG_MEMBER_VOLUME_SIZE_IN_GB,
+        &RESOURCECONFIG_MEMBER_VOLUME_KMS_KEY_ID,
+        &RESOURCECONFIG_MEMBER_KEEP_ALIVE_PERIOD_IN_SECONDS,
+        &RESOURCECONFIG_MEMBER_INSTANCE_GROUPS,
+        &RESOURCECONFIG_MEMBER_TRAINING_PLAN_ARN,
+        &RESOURCECONFIG_MEMBER_INSTANCE_PLACEMENT_CONFIG,
+        &RESOURCECONFIG_MEMBER_INSTANCE_PREFERENCES,
+        &RESOURCECONFIG_MEMBER_SELECTED_INSTANCE_TYPE,
+        &RESOURCECONFIG_MEMBER_SELECTED_INSTANCE_COUNT,
+    ],
+);
+impl ResourceConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&RESOURCECONFIG_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&RESOURCECONFIG_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.volume_size_in_gb {
+            ser.write_integer(&RESOURCECONFIG_MEMBER_VOLUME_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&RESOURCECONFIG_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.keep_alive_period_in_seconds {
+            ser.write_integer(&RESOURCECONFIG_MEMBER_KEEP_ALIVE_PERIOD_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.instance_groups {
+            ser.write_list(
+                &RESOURCECONFIG_MEMBER_INSTANCE_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InstanceGroup::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.training_plan_arn {
+            ser.write_string(&RESOURCECONFIG_MEMBER_TRAINING_PLAN_ARN, val)?;
+        }
+        if let Some(ref val) = self.instance_placement_config {
+            ser.write_struct(&RESOURCECONFIG_MEMBER_INSTANCE_PLACEMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.instance_preferences {
+            ser.write_list(
+                &RESOURCECONFIG_MEMBER_INSTANCE_PREFERENCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InstancePreference::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.selected_instance_type {
+            ser.write_string(&RESOURCECONFIG_MEMBER_SELECTED_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.selected_instance_count {
+            ser.write_integer(&RESOURCECONFIG_MEMBER_SELECTED_INSTANCE_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::TrainingInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.keep_alive_period_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstanceGroup::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_placement_config = Some(crate::types::InstancePlacementConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_preferences = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstancePreference::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selected_instance_type = Some(crate::types::TrainingInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.selected_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResourceConfig {
     /// Creates a new builder-style object to manufacture [`ResourceConfig`](crate::types::ResourceConfig).
     pub fn builder() -> crate::types::builders::ResourceConfigBuilder {

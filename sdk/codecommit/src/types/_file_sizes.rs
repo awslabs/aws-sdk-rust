@@ -25,6 +25,98 @@ impl FileSizes {
         self.base
     }
 }
+static FILESIZES_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileSizes$source", "com.amazonaws.codecommit", "FileSizes"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "source",
+    0,
+);
+static FILESIZES_MEMBER_DESTINATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileSizes$destination", "com.amazonaws.codecommit", "FileSizes"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "destination",
+    1,
+);
+static FILESIZES_MEMBER_BASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileSizes$base", "com.amazonaws.codecommit", "FileSizes"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "base",
+    2,
+);
+static FILESIZES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileSizes", "com.amazonaws.codecommit", "FileSizes"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&FILESIZES_MEMBER_SOURCE, &FILESIZES_MEMBER_DESTINATION, &FILESIZES_MEMBER_BASE],
+);
+impl FileSizes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILESIZES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileSizes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.source;
+            ser.write_long(&FILESIZES_MEMBER_SOURCE, *val)?;
+        }
+        {
+            let val = &self.destination;
+            ser.write_long(&FILESIZES_MEMBER_DESTINATION, *val)?;
+        }
+        {
+            let val = &self.base;
+            ser.write_long(&FILESIZES_MEMBER_BASE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileSizesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILESIZES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.source = Some(deser.read_long(member)?);
+                }
+                Some(1) => {
+                    self.destination = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.base = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileSizes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileSizes {
     /// Creates a new builder-style object to manufacture [`FileSizes`](crate::types::FileSizes).
     pub fn builder() -> crate::types::builders::FileSizesBuilder {

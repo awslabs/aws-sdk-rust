@@ -7,7 +7,7 @@ pub struct UpdateCollectionGroupInput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the collection group.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub capacity_limits: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -21,7 +21,7 @@ impl UpdateCollectionGroupInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub fn capacity_limits(&self) -> ::std::option::Option<&crate::types::CollectionGroupCapacityLimits> {
         self.capacity_limits.as_ref()
     }
@@ -76,17 +76,17 @@ impl UpdateCollectionGroupInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub fn capacity_limits(mut self, input: crate::types::CollectionGroupCapacityLimits) -> Self {
         self.capacity_limits = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub fn set_capacity_limits(mut self, input: ::std::option::Option<crate::types::CollectionGroupCapacityLimits>) -> Self {
         self.capacity_limits = input;
         self
     }
-    /// <p>Updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs).</p>
+    /// <p>The updated capacity limits for the collection group, in OpenSearch Compute Units (OCUs). Updates to capacity limits are not incremental. Any field not specified resets to its default value.</p>
     pub fn get_capacity_limits(&self) -> &::std::option::Option<crate::types::CollectionGroupCapacityLimits> {
         &self.capacity_limits
     }

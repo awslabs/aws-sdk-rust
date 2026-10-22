@@ -38,6 +38,194 @@ impl CreateAppImageConfigInput {
         self.code_editor_app_image_config.as_ref()
     }
 }
+static CREATEAPPIMAGECONFIGINPUT_MEMBER_APP_IMAGE_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppImageConfigInput$AppImageConfigName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppImageConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppImageConfigName",
+    0,
+);
+static CREATEAPPIMAGECONFIGINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEAPPIMAGECONFIGINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppImageConfigInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppImageConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&CREATEAPPIMAGECONFIGINPUT_MEMBER_TAGS_MEMBER);
+static CREATEAPPIMAGECONFIGINPUT_MEMBER_KERNEL_GATEWAY_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppImageConfigInput$KernelGatewayImageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppImageConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "KernelGatewayImageConfig",
+    2,
+);
+static CREATEAPPIMAGECONFIGINPUT_MEMBER_JUPYTER_LAB_APP_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppImageConfigInput$JupyterLabAppImageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppImageConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JupyterLabAppImageConfig",
+    3,
+);
+static CREATEAPPIMAGECONFIGINPUT_MEMBER_CODE_EDITOR_APP_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppImageConfigInput$CodeEditorAppImageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppImageConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CodeEditorAppImageConfig",
+    4,
+);
+static CREATEAPPIMAGECONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppImageConfigInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppImageConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAPPIMAGECONFIGINPUT_MEMBER_APP_IMAGE_CONFIG_NAME,
+        &CREATEAPPIMAGECONFIGINPUT_MEMBER_TAGS,
+        &CREATEAPPIMAGECONFIGINPUT_MEMBER_KERNEL_GATEWAY_IMAGE_CONFIG,
+        &CREATEAPPIMAGECONFIGINPUT_MEMBER_JUPYTER_LAB_APP_IMAGE_CONFIG,
+        &CREATEAPPIMAGECONFIGINPUT_MEMBER_CODE_EDITOR_APP_IMAGE_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAppImageConfigRequest");
+impl CreateAppImageConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAPPIMAGECONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAppImageConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.app_image_config_name {
+            ser.write_string(&CREATEAPPIMAGECONFIGINPUT_MEMBER_APP_IMAGE_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEAPPIMAGECONFIGINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.kernel_gateway_image_config {
+            ser.write_struct(&CREATEAPPIMAGECONFIGINPUT_MEMBER_KERNEL_GATEWAY_IMAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.jupyter_lab_app_image_config {
+            ser.write_struct(&CREATEAPPIMAGECONFIGINPUT_MEMBER_JUPYTER_LAB_APP_IMAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.code_editor_app_image_config {
+            ser.write_struct(&CREATEAPPIMAGECONFIGINPUT_MEMBER_CODE_EDITOR_APP_IMAGE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAPPIMAGECONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_image_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kernel_gateway_image_config = Some(crate::types::KernelGatewayImageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_lab_app_image_config = Some(crate::types::JupyterLabAppImageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_editor_app_image_config = Some(crate::types::CodeEditorAppImageConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAppImageConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.app_image_config_name = builder.app_image_config_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAppImageConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateAppImageConfigInput`](crate::operation::create_app_image_config::CreateAppImageConfigInput).
     pub fn builder() -> crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder {

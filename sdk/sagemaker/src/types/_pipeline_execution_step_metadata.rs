@@ -241,6 +241,634 @@ impl PipelineExecutionStepMetadata {
         self.for_each.as_ref()
     }
 }
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TRAINING_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$TrainingJob",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrainingJob",
+    0,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_PROCESSING_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$ProcessingJob",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProcessingJob",
+    1,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TRANSFORM_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$TransformJob",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransformJob",
+    2,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TUNING_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$TuningJob",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TuningJob",
+    3,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_MODEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Model",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Model",
+    4,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_REGISTER_MODEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$RegisterModel",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RegisterModel",
+    5,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Condition",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Condition",
+    6,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CALLBACK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Callback",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Callback",
+    7,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_LAMBDA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Lambda",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Lambda",
+    8,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_EMR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$EMR",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EMR",
+    9,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_EMR_SERVERLESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$EMRServerless",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EMRServerless",
+    10,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_QUALITY_CHECK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$QualityCheck",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "QualityCheck",
+    11,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CLARIFY_CHECK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$ClarifyCheck",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ClarifyCheck",
+    12,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_FAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Fail",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Fail",
+    13,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_AUTO_ML_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$AutoMLJob",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoMLJob",
+    14,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Endpoint",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Endpoint",
+    15,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ENDPOINT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$EndpointConfig",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EndpointConfig",
+    16,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_CUSTOM_MODEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$BedrockCustomModel",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BedrockCustomModel",
+    17,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_CUSTOM_MODEL_DEPLOYMENT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$BedrockCustomModelDeployment",
+            "com.amazonaws.sagemaker",
+            "PipelineExecutionStepMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "BedrockCustomModelDeployment",
+        18,
+    );
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_PROVISIONED_MODEL_THROUGHPUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$BedrockProvisionedModelThroughput",
+            "com.amazonaws.sagemaker",
+            "PipelineExecutionStepMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "BedrockProvisionedModelThroughput",
+        19,
+    );
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_MODEL_IMPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$BedrockModelImport",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BedrockModelImport",
+    20,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_INFERENCE_COMPONENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$InferenceComponent",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InferenceComponent",
+    21,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_LINEAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Lineage",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Lineage",
+    22,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Job",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Job",
+    23,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ATHENA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Athena",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Athena",
+    24,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CLEANUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$Cleanup",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Cleanup",
+    25,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_MEMBER_FOR_EACH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata$ForEach",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ForEach",
+    26,
+);
+static PIPELINEEXECUTIONSTEPMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionStepMetadata",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TRAINING_JOB,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_PROCESSING_JOB,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TRANSFORM_JOB,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TUNING_JOB,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_MODEL,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_REGISTER_MODEL,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CONDITION,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CALLBACK,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_LAMBDA,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_EMR,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_EMR_SERVERLESS,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_QUALITY_CHECK,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CLARIFY_CHECK,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_FAIL,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_AUTO_ML_JOB,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ENDPOINT,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ENDPOINT_CONFIG,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_CUSTOM_MODEL,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_CUSTOM_MODEL_DEPLOYMENT,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_PROVISIONED_MODEL_THROUGHPUT,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_MODEL_IMPORT,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_INFERENCE_COMPONENT,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_LINEAGE,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_JOB,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ATHENA,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CLEANUP,
+        &PIPELINEEXECUTIONSTEPMETADATA_MEMBER_FOR_EACH,
+    ],
+);
+impl PipelineExecutionStepMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINEEXECUTIONSTEPMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineExecutionStepMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_job {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TRAINING_JOB, val)?;
+        }
+        if let Some(ref val) = self.processing_job {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_PROCESSING_JOB, val)?;
+        }
+        if let Some(ref val) = self.transform_job {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TRANSFORM_JOB, val)?;
+        }
+        if let Some(ref val) = self.tuning_job {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_TUNING_JOB, val)?;
+        }
+        if let Some(ref val) = self.model {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_MODEL, val)?;
+        }
+        if let Some(ref val) = self.register_model {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_REGISTER_MODEL, val)?;
+        }
+        if let Some(ref val) = self.condition {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.callback {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CALLBACK, val)?;
+        }
+        if let Some(ref val) = self.lambda {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_LAMBDA, val)?;
+        }
+        if let Some(ref val) = self.emr {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_EMR, val)?;
+        }
+        if let Some(ref val) = self.emr_serverless {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_EMR_SERVERLESS, val)?;
+        }
+        if let Some(ref val) = self.quality_check {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_QUALITY_CHECK, val)?;
+        }
+        if let Some(ref val) = self.clarify_check {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CLARIFY_CHECK, val)?;
+        }
+        if let Some(ref val) = self.fail {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_FAIL, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_AUTO_ML_JOB, val)?;
+        }
+        if let Some(ref val) = self.endpoint {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.endpoint_config {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ENDPOINT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.bedrock_custom_model {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_CUSTOM_MODEL, val)?;
+        }
+        if let Some(ref val) = self.bedrock_custom_model_deployment {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_CUSTOM_MODEL_DEPLOYMENT, val)?;
+        }
+        if let Some(ref val) = self.bedrock_provisioned_model_throughput {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_PROVISIONED_MODEL_THROUGHPUT, val)?;
+        }
+        if let Some(ref val) = self.bedrock_model_import {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_BEDROCK_MODEL_IMPORT, val)?;
+        }
+        if let Some(ref val) = self.inference_component {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_INFERENCE_COMPONENT, val)?;
+        }
+        if let Some(ref val) = self.lineage {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_LINEAGE, val)?;
+        }
+        if let Some(ref val) = self.job {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_JOB, val)?;
+        }
+        if let Some(ref val) = self.athena {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_ATHENA, val)?;
+        }
+        if let Some(ref val) = self.cleanup {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_CLEANUP, val)?;
+        }
+        if let Some(ref val) = self.for_each {
+            ser.write_struct(&PIPELINEEXECUTIONSTEPMETADATA_MEMBER_FOR_EACH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineExecutionStepMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINEEXECUTIONSTEPMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job = Some(crate::types::TrainingJobStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_job = Some(crate::types::ProcessingJobStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_job = Some(crate::types::TransformJobStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tuning_job = Some(crate::types::TuningJobStepMetaData::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model = Some(crate::types::ModelStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.register_model = Some(crate::types::RegisterModelStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.condition = Some(crate::types::ConditionStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.callback = Some(crate::types::CallbackStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda = Some(crate::types::LambdaStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.emr = Some(crate::types::EmrStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.emr_serverless = Some(crate::types::EmrServerlessStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.quality_check = Some(crate::types::QualityCheckStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.clarify_check = Some(crate::types::ClarifyCheckStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fail = Some(crate::types::FailStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job = Some(crate::types::AutoMlJobStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint = Some(crate::types::EndpointStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_config = Some(crate::types::EndpointConfigStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bedrock_custom_model = Some(crate::types::BedrockCustomModelMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bedrock_custom_model_deployment = Some(crate::types::BedrockCustomModelDeploymentMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bedrock_provisioned_model_throughput =
+                            Some(crate::types::BedrockProvisionedModelThroughputMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bedrock_model_import = Some(crate::types::BedrockModelImportMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_component = Some(crate::types::InferenceComponentMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lineage = Some(crate::types::LineageMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job = Some(crate::types::JobStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.athena = Some(crate::types::AthenaStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cleanup = Some(crate::types::CleanupStepMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.for_each = Some(crate::types::ForEachStepMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineExecutionStepMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PipelineExecutionStepMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionStepMetadata`](crate::types::PipelineExecutionStepMetadata).
     pub fn builder() -> crate::types::builders::PipelineExecutionStepMetadataBuilder {

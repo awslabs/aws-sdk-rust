@@ -41,6 +41,209 @@ impl MonitoringAppSpecification {
         self.post_analytics_processor_source_uri.as_deref()
     }
 }
+static MONITORINGAPPSPECIFICATION_MEMBER_IMAGE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAppSpecification$ImageUri",
+        "com.amazonaws.sagemaker",
+        "MonitoringAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageUri",
+    0,
+);
+static MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerEntrypoint$member",
+        "com.amazonaws.sagemaker",
+        "ContainerEntrypoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAppSpecification$ContainerEntrypoint",
+        "com.amazonaws.sagemaker",
+        "MonitoringAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerEntrypoint",
+    1,
+)
+.with_list_member(&MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER);
+static MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringContainerArguments$member",
+        "com.amazonaws.sagemaker",
+        "MonitoringContainerArguments",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAppSpecification$ContainerArguments",
+        "com.amazonaws.sagemaker",
+        "MonitoringAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerArguments",
+    2,
+)
+.with_list_member(&MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER);
+static MONITORINGAPPSPECIFICATION_MEMBER_RECORD_PREPROCESSOR_SOURCE_URI: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#MonitoringAppSpecification$RecordPreprocessorSourceUri",
+            "com.amazonaws.sagemaker",
+            "MonitoringAppSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RecordPreprocessorSourceUri",
+        3,
+    );
+static MONITORINGAPPSPECIFICATION_MEMBER_POST_ANALYTICS_PROCESSOR_SOURCE_URI: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#MonitoringAppSpecification$PostAnalyticsProcessorSourceUri",
+            "com.amazonaws.sagemaker",
+            "MonitoringAppSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PostAnalyticsProcessorSourceUri",
+        4,
+    );
+static MONITORINGAPPSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAppSpecification",
+        "com.amazonaws.sagemaker",
+        "MonitoringAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGAPPSPECIFICATION_MEMBER_IMAGE_URI,
+        &MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+        &MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+        &MONITORINGAPPSPECIFICATION_MEMBER_RECORD_PREPROCESSOR_SOURCE_URI,
+        &MONITORINGAPPSPECIFICATION_MEMBER_POST_ANALYTICS_PROCESSOR_SOURCE_URI,
+    ],
+);
+impl MonitoringAppSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGAPPSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringAppSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_uri {
+            ser.write_string(&MONITORINGAPPSPECIFICATION_MEMBER_IMAGE_URI, val)?;
+        }
+        if let Some(ref val) = self.container_entrypoint {
+            ser.write_list(
+                &MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.container_arguments {
+            ser.write_list(
+                &MONITORINGAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.record_preprocessor_source_uri {
+            ser.write_string(&MONITORINGAPPSPECIFICATION_MEMBER_RECORD_PREPROCESSOR_SOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.post_analytics_processor_source_uri {
+            ser.write_string(&MONITORINGAPPSPECIFICATION_MEMBER_POST_ANALYTICS_PROCESSOR_SOURCE_URI, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringAppSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGAPPSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_entrypoint = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_arguments = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_preprocessor_source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.post_analytics_processor_source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringAppSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringAppSpecification {
     /// Creates a new builder-style object to manufacture [`MonitoringAppSpecification`](crate::types::MonitoringAppSpecification).
     pub fn builder() -> crate::types::builders::MonitoringAppSpecificationBuilder {

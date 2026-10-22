@@ -31,6 +31,205 @@ impl ConflictResolution {
         self.set_file_modes.as_deref().unwrap_or_default()
     }
 }
+static CONFLICTRESOLUTION_MEMBER_REPLACE_CONTENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReplaceContentEntries$member",
+        "com.amazonaws.codecommit",
+        "ReplaceContentEntries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONFLICTRESOLUTION_MEMBER_REPLACE_CONTENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictResolution$replaceContents",
+        "com.amazonaws.codecommit",
+        "ConflictResolution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "replaceContents",
+    0,
+)
+.with_list_member(&CONFLICTRESOLUTION_MEMBER_REPLACE_CONTENTS_MEMBER);
+static CONFLICTRESOLUTION_MEMBER_DELETE_FILES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#DeleteFileEntries$member",
+        "com.amazonaws.codecommit",
+        "DeleteFileEntries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONFLICTRESOLUTION_MEMBER_DELETE_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictResolution$deleteFiles",
+        "com.amazonaws.codecommit",
+        "ConflictResolution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "deleteFiles",
+    1,
+)
+.with_list_member(&CONFLICTRESOLUTION_MEMBER_DELETE_FILES_MEMBER);
+static CONFLICTRESOLUTION_MEMBER_SET_FILE_MODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#SetFileModeEntries$member",
+        "com.amazonaws.codecommit",
+        "SetFileModeEntries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONFLICTRESOLUTION_MEMBER_SET_FILE_MODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictResolution$setFileModes",
+        "com.amazonaws.codecommit",
+        "ConflictResolution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "setFileModes",
+    2,
+)
+.with_list_member(&CONFLICTRESOLUTION_MEMBER_SET_FILE_MODES_MEMBER);
+static CONFLICTRESOLUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictResolution",
+        "com.amazonaws.codecommit",
+        "ConflictResolution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFLICTRESOLUTION_MEMBER_REPLACE_CONTENTS,
+        &CONFLICTRESOLUTION_MEMBER_DELETE_FILES,
+        &CONFLICTRESOLUTION_MEMBER_SET_FILE_MODES,
+    ],
+);
+impl ConflictResolution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFLICTRESOLUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConflictResolution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.replace_contents {
+            ser.write_list(
+                &CONFLICTRESOLUTION_MEMBER_REPLACE_CONTENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ReplaceContentEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.delete_files {
+            ser.write_list(
+                &CONFLICTRESOLUTION_MEMBER_DELETE_FILES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DeleteFileEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.set_file_modes {
+            ser.write_list(
+                &CONFLICTRESOLUTION_MEMBER_SET_FILE_MODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SetFileModeEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConflictResolutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFLICTRESOLUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.replace_contents = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ReplaceContentEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_files = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeleteFileEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.set_file_modes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SetFileModeEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConflictResolution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConflictResolution {
     /// Creates a new builder-style object to manufacture [`ConflictResolution`](crate::types::ConflictResolution).
     pub fn builder() -> crate::types::builders::ConflictResolutionBuilder {

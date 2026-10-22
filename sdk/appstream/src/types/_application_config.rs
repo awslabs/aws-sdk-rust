@@ -62,6 +62,212 @@ impl ::std::fmt::Debug for ApplicationConfig {
         formatter.finish()
     }
 }
+static APPLICATIONCONFIG_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig$Name",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static APPLICATIONCONFIG_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig$DisplayName",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    1,
+);
+static APPLICATIONCONFIG_MEMBER_ABSOLUTE_APP_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig$AbsoluteAppPath",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AbsoluteAppPath",
+    2,
+);
+static APPLICATIONCONFIG_MEMBER_ABSOLUTE_ICON_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig$AbsoluteIconPath",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AbsoluteIconPath",
+    3,
+);
+static APPLICATIONCONFIG_MEMBER_ABSOLUTE_MANIFEST_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig$AbsoluteManifestPath",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AbsoluteManifestPath",
+    4,
+);
+static APPLICATIONCONFIG_MEMBER_WORKING_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig$WorkingDirectory",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkingDirectory",
+    5,
+);
+static APPLICATIONCONFIG_MEMBER_LAUNCH_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig$LaunchParameters",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LaunchParameters",
+    6,
+);
+static APPLICATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationConfig",
+        "com.amazonaws.appstream",
+        "ApplicationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &APPLICATIONCONFIG_MEMBER_NAME,
+        &APPLICATIONCONFIG_MEMBER_DISPLAY_NAME,
+        &APPLICATIONCONFIG_MEMBER_ABSOLUTE_APP_PATH,
+        &APPLICATIONCONFIG_MEMBER_ABSOLUTE_ICON_PATH,
+        &APPLICATIONCONFIG_MEMBER_ABSOLUTE_MANIFEST_PATH,
+        &APPLICATIONCONFIG_MEMBER_WORKING_DIRECTORY,
+        &APPLICATIONCONFIG_MEMBER_LAUNCH_PARAMETERS,
+    ],
+)
+.with_sensitive();
+impl ApplicationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPLICATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ApplicationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&APPLICATIONCONFIG_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&APPLICATIONCONFIG_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.absolute_app_path {
+            ser.write_string(&APPLICATIONCONFIG_MEMBER_ABSOLUTE_APP_PATH, val)?;
+        }
+        if let Some(ref val) = self.absolute_icon_path {
+            ser.write_string(&APPLICATIONCONFIG_MEMBER_ABSOLUTE_ICON_PATH, val)?;
+        }
+        if let Some(ref val) = self.absolute_manifest_path {
+            ser.write_string(&APPLICATIONCONFIG_MEMBER_ABSOLUTE_MANIFEST_PATH, val)?;
+        }
+        if let Some(ref val) = self.working_directory {
+            ser.write_string(&APPLICATIONCONFIG_MEMBER_WORKING_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.launch_parameters {
+            ser.write_string(&APPLICATIONCONFIG_MEMBER_LAUNCH_PARAMETERS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ApplicationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPLICATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_app_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_icon_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_manifest_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.working_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_parameters = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ApplicationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ApplicationConfig {
     /// Creates a new builder-style object to manufacture [`ApplicationConfig`](crate::types::ApplicationConfig).
     pub fn builder() -> crate::types::builders::ApplicationConfigBuilder {

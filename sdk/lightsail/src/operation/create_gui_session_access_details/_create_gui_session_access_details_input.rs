@@ -12,6 +12,91 @@ impl CreateGuiSessionAccessDetailsInput {
         self.resource_name.as_deref()
     }
 }
+static CREATEGUISESSIONACCESSDETAILSINPUT_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateGUISessionAccessDetailsInput$resourceName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateGUISessionAccessDetailsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceName",
+    0,
+);
+static CREATEGUISESSIONACCESSDETAILSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateGUISessionAccessDetailsInput",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateGUISessionAccessDetailsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATEGUISESSIONACCESSDETAILSINPUT_MEMBER_RESOURCE_NAME],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/create-gui-session-access-details",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateGUISessionAccessDetailsRequest");
+impl CreateGuiSessionAccessDetailsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEGUISESSIONACCESSDETAILSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateGuiSessionAccessDetailsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&CREATEGUISESSIONACCESSDETAILSINPUT_MEMBER_RESOURCE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEGUISESSIONACCESSDETAILSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateGuiSessionAccessDetailsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_name = builder.resource_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateGuiSessionAccessDetailsInput {
     /// Creates a new builder-style object to manufacture [`CreateGuiSessionAccessDetailsInput`](crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsInput).
     pub fn builder() -> crate::operation::create_gui_session_access_details::builders::CreateGuiSessionAccessDetailsInputBuilder {

@@ -43,35 +43,3 @@ pub(crate) fn update_identity_pool_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn role_mapping_correct_errors(mut builder: crate::types::builders::RoleMappingBuilder) -> crate::types::builders::RoleMappingBuilder {
-    if builder.r#type.is_none() {
-        builder.r#type = "no value was set".parse::<crate::types::RoleMappingType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn rules_configuration_type_correct_errors(
-    mut builder: crate::types::builders::RulesConfigurationTypeBuilder,
-) -> crate::types::builders::RulesConfigurationTypeBuilder {
-    if builder.rules.is_none() {
-        builder.rules = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn mapping_rule_correct_errors(mut builder: crate::types::builders::MappingRuleBuilder) -> crate::types::builders::MappingRuleBuilder {
-    if builder.claim.is_none() {
-        builder.claim = Some(Default::default())
-    }
-    if builder.match_type.is_none() {
-        builder.match_type = "no value was set".parse::<crate::types::MappingRuleMatchType>().ok()
-    }
-    if builder.value.is_none() {
-        builder.value = Some(Default::default())
-    }
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
-    }
-    builder
-}

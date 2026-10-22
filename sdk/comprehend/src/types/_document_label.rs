@@ -25,6 +25,111 @@ impl DocumentLabel {
         self.page
     }
 }
+static DOCUMENTLABEL_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#DocumentLabel$Name", "com.amazonaws.comprehend", "DocumentLabel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static DOCUMENTLABEL_MEMBER_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentLabel$Score",
+        "com.amazonaws.comprehend",
+        "DocumentLabel",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Score",
+    1,
+);
+static DOCUMENTLABEL_MEMBER_PAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#DocumentLabel$Page", "com.amazonaws.comprehend", "DocumentLabel"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Page",
+    2,
+);
+static DOCUMENTLABEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#DocumentLabel", "com.amazonaws.comprehend", "DocumentLabel"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DOCUMENTLABEL_MEMBER_NAME, &DOCUMENTLABEL_MEMBER_SCORE, &DOCUMENTLABEL_MEMBER_PAGE],
+);
+impl DocumentLabel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTLABEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentLabel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DOCUMENTLABEL_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.score {
+            ser.write_float(&DOCUMENTLABEL_MEMBER_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.page {
+            ser.write_integer(&DOCUMENTLABEL_MEMBER_PAGE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentLabelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENTLABEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.score = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DocumentLabel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DocumentLabel {
     /// Creates a new builder-style object to manufacture [`DocumentLabel`](crate::types::DocumentLabel).
     pub fn builder() -> crate::types::builders::DocumentLabelBuilder {

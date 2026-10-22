@@ -54,6 +54,238 @@ impl ListLabelingJobsForWorkteamInput {
         self.sort_order.as_ref()
     }
 }
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_WORKTEAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$WorkteamArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkteamArn",
+    0,
+);
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    1,
+);
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    3,
+);
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    4,
+);
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_JOB_REFERENCE_CODE_CONTAINS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$JobReferenceCodeContains",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListLabelingJobsForWorkteamInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "JobReferenceCodeContains",
+        5,
+    );
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    6,
+);
+static LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    7,
+);
+static LISTLABELINGJOBSFORWORKTEAMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListLabelingJobsForWorkteamInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListLabelingJobsForWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_WORKTEAM_ARN,
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_MAX_RESULTS,
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_NEXT_TOKEN,
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_JOB_REFERENCE_CODE_CONTAINS,
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_SORT_BY,
+        &LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_SORT_ORDER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListLabelingJobsForWorkteamRequest");
+impl ListLabelingJobsForWorkteamInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTLABELINGJOBSFORWORKTEAMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListLabelingJobsForWorkteamInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workteam_arn {
+            ser.write_string(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_WORKTEAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.job_reference_code_contains {
+            ser.write_string(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_JOB_REFERENCE_CODE_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTLABELINGJOBSFORWORKTEAMINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTLABELINGJOBSFORWORKTEAMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workteam_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_reference_code_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ListLabelingJobsForWorkteamSortByOptions::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListLabelingJobsForWorkteamInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workteam_arn = builder.workteam_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListLabelingJobsForWorkteamInput {
     /// Creates a new builder-style object to manufacture [`ListLabelingJobsForWorkteamInput`](crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamInput).
     pub fn builder() -> crate::operation::list_labeling_jobs_for_workteam::builders::ListLabelingJobsForWorkteamInputBuilder {

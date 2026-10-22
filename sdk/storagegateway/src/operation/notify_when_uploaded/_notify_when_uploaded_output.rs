@@ -19,6 +19,107 @@ impl NotifyWhenUploadedOutput {
         self.notification_id.as_deref()
     }
 }
+static NOTIFYWHENUPLOADEDOUTPUT_MEMBER_FILE_SHARE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#NotifyWhenUploadedOutput$FileShareARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "NotifyWhenUploadedOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareARN",
+    0,
+);
+static NOTIFYWHENUPLOADEDOUTPUT_MEMBER_NOTIFICATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#NotifyWhenUploadedOutput$NotificationId",
+        "com.amazonaws.storagegateway.synthetic",
+        "NotifyWhenUploadedOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotificationId",
+    1,
+);
+static NOTIFYWHENUPLOADEDOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#NotifyWhenUploadedOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "NotifyWhenUploadedOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NOTIFYWHENUPLOADEDOUTPUT_MEMBER_FILE_SHARE_ARN,
+        &NOTIFYWHENUPLOADEDOUTPUT_MEMBER_NOTIFICATION_ID,
+    ],
+)
+.with_original_name("NotifyWhenUploadedOutput");
+impl NotifyWhenUploadedOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NOTIFYWHENUPLOADEDOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NotifyWhenUploadedOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_share_arn {
+            ser.write_string(&NOTIFYWHENUPLOADEDOUTPUT_MEMBER_FILE_SHARE_ARN, val)?;
+        }
+        if let Some(ref val) = self.notification_id {
+            ser.write_string(&NOTIFYWHENUPLOADEDOUTPUT_MEMBER_NOTIFICATION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::notify_when_uploaded::builders::NotifyWhenUploadedOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NOTIFYWHENUPLOADEDOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NotifyWhenUploadedOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for NotifyWhenUploadedOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

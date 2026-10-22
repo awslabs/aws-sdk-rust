@@ -51,6 +51,271 @@ impl AiRecommendationDeploymentConfiguration {
         self.min_cpu_memory_required_in_mb
     }
 }
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_S3_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentS3ChannelList$member",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentS3ChannelList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_S3: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration$S3",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "S3",
+    0,
+)
+.with_list_member(&AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_S3_MEMBER);
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_IMAGE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration$ImageUri",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageUri",
+    1,
+);
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration$InstanceType",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    2,
+);
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration$InstanceCount",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    3,
+);
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_COPY_COUNT_PER_INSTANCE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration$CopyCountPerInstance",
+            "com.amazonaws.sagemaker",
+            "AIRecommendationDeploymentConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "CopyCountPerInstance",
+        4,
+    );
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_ENVIRONMENT_VARIABLES_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EnvironmentMap$key", "com.amazonaws.sagemaker", "EnvironmentMap"),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_ENVIRONMENT_VARIABLES_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#EnvironmentMap$value",
+            "com.amazonaws.sagemaker",
+            "EnvironmentMap",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "value",
+        1,
+    );
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_ENVIRONMENT_VARIABLES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration$EnvironmentVariables",
+            "com.amazonaws.sagemaker",
+            "AIRecommendationDeploymentConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Map,
+        "EnvironmentVariables",
+        5,
+    )
+    .with_map_members(
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_ENVIRONMENT_VARIABLES_KEY,
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_ENVIRONMENT_VARIABLES_VALUE,
+    );
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_MIN_CPU_MEMORY_REQUIRED_IN_MB: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration$MinCpuMemoryRequiredInMb",
+            "com.amazonaws.sagemaker",
+            "AIRecommendationDeploymentConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MinCpuMemoryRequiredInMb",
+        6,
+    );
+static AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationDeploymentConfiguration",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_S3,
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_IMAGE_URI,
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_INSTANCE_TYPE,
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_INSTANCE_COUNT,
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_COPY_COUNT_PER_INSTANCE,
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_ENVIRONMENT_VARIABLES,
+        &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_MIN_CPU_MEMORY_REQUIRED_IN_MB,
+    ],
+);
+impl AiRecommendationDeploymentConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiRecommendationDeploymentConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3 {
+            ser.write_list(
+                &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_S3,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AiRecommendationDeploymentS3Channel::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.image_uri {
+            ser.write_string(&AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_IMAGE_URI, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.copy_count_per_instance {
+            ser.write_integer(&AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_COPY_COUNT_PER_INSTANCE, *val)?;
+        }
+        if let Some(ref val) = self.environment_variables {
+            ser.write_map(
+                &AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_ENVIRONMENT_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.min_cpu_memory_required_in_mb {
+            ser.write_integer(&AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_MEMBER_MIN_CPU_MEMORY_REQUIRED_IN_MB, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiRecommendationDeploymentConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIRECOMMENDATIONDEPLOYMENTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3 = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AiRecommendationDeploymentS3Channel::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::AiRecommendationInstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.copy_count_per_instance = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_variables = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_cpu_memory_required_in_mb = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiRecommendationDeploymentConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiRecommendationDeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`AiRecommendationDeploymentConfiguration`](crate::types::AiRecommendationDeploymentConfiguration).
     pub fn builder() -> crate::types::builders::AiRecommendationDeploymentConfigurationBuilder {

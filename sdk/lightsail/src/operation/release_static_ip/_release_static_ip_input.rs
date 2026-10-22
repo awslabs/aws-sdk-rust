@@ -12,6 +12,91 @@ impl ReleaseStaticIpInput {
         self.static_ip_name.as_deref()
     }
 }
+static RELEASESTATICIPINPUT_MEMBER_STATIC_IP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#ReleaseStaticIpInput$staticIpName",
+        "com.amazonaws.lightsail.synthetic",
+        "ReleaseStaticIpInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "staticIpName",
+    0,
+);
+static RELEASESTATICIPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#ReleaseStaticIpInput",
+        "com.amazonaws.lightsail.synthetic",
+        "ReleaseStaticIpInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RELEASESTATICIPINPUT_MEMBER_STATIC_IP_NAME],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/ReleaseStaticIp",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ReleaseStaticIpRequest");
+impl ReleaseStaticIpInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RELEASESTATICIPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ReleaseStaticIpInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.static_ip_name {
+            ser.write_string(&RELEASESTATICIPINPUT_MEMBER_STATIC_IP_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::release_static_ip::builders::ReleaseStaticIpInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RELEASESTATICIPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.static_ip_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ReleaseStaticIpInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.static_ip_name = builder.static_ip_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ReleaseStaticIpInput {
     /// Creates a new builder-style object to manufacture [`ReleaseStaticIpInput`](crate::operation::release_static_ip::ReleaseStaticIpInput).
     pub fn builder() -> crate::operation::release_static_ip::builders::ReleaseStaticIpInputBuilder {

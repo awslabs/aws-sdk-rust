@@ -101,6 +101,421 @@ impl DescribeLocationHdfsOutput {
         self.custom_secret_config.as_ref()
     }
 }
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_LOCATION_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$LocationUri",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationUri",
+    1,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_NAME_NODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#HdfsNameNodeList$member",
+        "com.amazonaws.datasync",
+        "HdfsNameNodeList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_NAME_NODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$NameNodes",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "NameNodes",
+    2,
+)
+.with_list_member(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_NAME_NODES_MEMBER);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_BLOCK_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$BlockSize",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BlockSize",
+    3,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_REPLICATION_FACTOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$ReplicationFactor",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ReplicationFactor",
+    4,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_KMS_KEY_PROVIDER_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$KmsKeyProviderUri",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyProviderUri",
+    5,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_QOP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$QopConfiguration",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "QopConfiguration",
+    6,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$AuthenticationType",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    7,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_SIMPLE_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$SimpleUser",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SimpleUser",
+    8,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_KERBEROS_PRINCIPAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$KerberosPrincipal",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KerberosPrincipal",
+    9,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$AgentArns",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AgentArns",
+    10,
+)
+.with_list_member(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AGENT_ARNS_MEMBER);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$CreationTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    11,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_MANAGED_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$ManagedSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManagedSecretConfig",
+    12,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$CmkSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    13,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput$CustomSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    14,
+);
+static DESCRIBELOCATIONHDFSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationHdfsOutput",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationHdfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_LOCATION_ARN,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_LOCATION_URI,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_NAME_NODES,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_BLOCK_SIZE,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_REPLICATION_FACTOR,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_KMS_KEY_PROVIDER_URI,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_QOP_CONFIGURATION,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AUTHENTICATION_TYPE,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_SIMPLE_USER,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_KERBEROS_PRINCIPAL,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AGENT_ARNS,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_MANAGED_SECRET_CONFIG,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CMK_SECRET_CONFIG,
+        &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG,
+    ],
+)
+.with_original_name("DescribeLocationHdfsResponse");
+impl DescribeLocationHdfsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELOCATIONHDFSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLocationHdfsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_uri {
+            ser.write_string(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_LOCATION_URI, val)?;
+        }
+        if let Some(ref val) = self.name_nodes {
+            ser.write_list(
+                &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_NAME_NODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HdfsNameNode::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.block_size {
+            ser.write_integer(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_BLOCK_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.replication_factor {
+            ser.write_integer(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_REPLICATION_FACTOR, *val)?;
+        }
+        if let Some(ref val) = self.kms_key_provider_uri {
+            ser.write_string(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_KMS_KEY_PROVIDER_URI, val)?;
+        }
+        if let Some(ref val) = self.qop_configuration {
+            ser.write_struct(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_QOP_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.simple_user {
+            ser.write_string(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_SIMPLE_USER, val)?;
+        }
+        if let Some(ref val) = self.kerberos_principal {
+            ser.write_string(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_KERBEROS_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.agent_arns {
+            ser.write_list(
+                &DESCRIBELOCATIONHDFSOUTPUT_MEMBER_AGENT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.managed_secret_config {
+            ser.write_struct(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_MANAGED_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&DESCRIBELOCATIONHDFSOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELOCATIONHDFSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_nodes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HdfsNameNode::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.replication_factor = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_provider_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.qop_configuration = Some(crate::types::QopConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::HdfsAuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.simple_user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kerberos_principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_secret_config = Some(crate::types::ManagedSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLocationHdfsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLocationHdfsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

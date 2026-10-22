@@ -89,6 +89,432 @@ impl AutoMlCandidate {
         self.inference_container_definitions.as_ref()
     }
 }
+static AUTOMLCANDIDATE_MEMBER_CANDIDATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$CandidateName",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CandidateName",
+    0,
+);
+static AUTOMLCANDIDATE_MEMBER_FINAL_AUTO_ML_JOB_OBJECTIVE_METRIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$FinalAutoMLJobObjectiveMetric",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FinalAutoMLJobObjectiveMetric",
+    1,
+);
+static AUTOMLCANDIDATE_MEMBER_OBJECTIVE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$ObjectiveStatus",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ObjectiveStatus",
+    2,
+);
+static AUTOMLCANDIDATE_MEMBER_CANDIDATE_STEPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CandidateSteps$member",
+        "com.amazonaws.sagemaker",
+        "CandidateSteps",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AUTOMLCANDIDATE_MEMBER_CANDIDATE_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$CandidateSteps",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CandidateSteps",
+    3,
+)
+.with_list_member(&AUTOMLCANDIDATE_MEMBER_CANDIDATE_STEPS_MEMBER);
+static AUTOMLCANDIDATE_MEMBER_CANDIDATE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$CandidateStatus",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CandidateStatus",
+    4,
+);
+static AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLContainerDefinitions$member",
+        "com.amazonaws.sagemaker",
+        "AutoMLContainerDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$InferenceContainers",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InferenceContainers",
+    5,
+)
+.with_list_member(&AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINERS_MEMBER);
+static AUTOMLCANDIDATE_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$CreationTime",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static AUTOMLCANDIDATE_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$EndTime",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    7,
+);
+static AUTOMLCANDIDATE_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static AUTOMLCANDIDATE_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$FailureReason",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    9,
+);
+static AUTOMLCANDIDATE_MEMBER_CANDIDATE_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$CandidateProperties",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CandidateProperties",
+    10,
+);
+static AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AutoMLContainerDefinitions$member",
+            "com.amazonaws.sagemaker",
+            "AutoMLContainerDefinitions",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLInferenceContainerDefinitions$key",
+        "com.amazonaws.sagemaker",
+        "AutoMLInferenceContainerDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLInferenceContainerDefinitions$value",
+        "com.amazonaws.sagemaker",
+        "AutoMLInferenceContainerDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_VALUE_MEMBER);
+static AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLCandidate$InferenceContainerDefinitions",
+        "com.amazonaws.sagemaker",
+        "AutoMLCandidate",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "InferenceContainerDefinitions",
+    11,
+)
+.with_map_members(
+    &AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_KEY,
+    &AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_VALUE,
+);
+static AUTOMLCANDIDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AutoMLCandidate", "com.amazonaws.sagemaker", "AutoMLCandidate"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTOMLCANDIDATE_MEMBER_CANDIDATE_NAME,
+        &AUTOMLCANDIDATE_MEMBER_FINAL_AUTO_ML_JOB_OBJECTIVE_METRIC,
+        &AUTOMLCANDIDATE_MEMBER_OBJECTIVE_STATUS,
+        &AUTOMLCANDIDATE_MEMBER_CANDIDATE_STEPS,
+        &AUTOMLCANDIDATE_MEMBER_CANDIDATE_STATUS,
+        &AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINERS,
+        &AUTOMLCANDIDATE_MEMBER_CREATION_TIME,
+        &AUTOMLCANDIDATE_MEMBER_END_TIME,
+        &AUTOMLCANDIDATE_MEMBER_LAST_MODIFIED_TIME,
+        &AUTOMLCANDIDATE_MEMBER_FAILURE_REASON,
+        &AUTOMLCANDIDATE_MEMBER_CANDIDATE_PROPERTIES,
+        &AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS,
+    ],
+);
+impl AutoMlCandidate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOMLCANDIDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutoMlCandidate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.candidate_name {
+            ser.write_string(&AUTOMLCANDIDATE_MEMBER_CANDIDATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.final_auto_ml_job_objective_metric {
+            ser.write_struct(&AUTOMLCANDIDATE_MEMBER_FINAL_AUTO_ML_JOB_OBJECTIVE_METRIC, val)?;
+        }
+        if let Some(ref val) = self.objective_status {
+            ser.write_string(&AUTOMLCANDIDATE_MEMBER_OBJECTIVE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.candidate_steps {
+            ser.write_list(
+                &AUTOMLCANDIDATE_MEMBER_CANDIDATE_STEPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AutoMlCandidateStep::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.candidate_status {
+            ser.write_string(&AUTOMLCANDIDATE_MEMBER_CANDIDATE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.inference_containers {
+            ser.write_list(
+                &AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AutoMlContainerDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&AUTOMLCANDIDATE_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&AUTOMLCANDIDATE_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&AUTOMLCANDIDATE_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&AUTOMLCANDIDATE_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.candidate_properties {
+            ser.write_struct(&AUTOMLCANDIDATE_MEMBER_CANDIDATE_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.inference_container_definitions {
+            ser.write_map(
+                &AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key.as_str())?;
+
+                        ser.write_list(
+                            &AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_struct(crate::types::AutoMlContainerDefinition::SCHEMA, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutoMlCandidateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTOMLCANDIDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.final_auto_ml_job_objective_metric = Some(crate::types::FinalAutoMlJobObjectiveMetric::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.objective_status = Some(crate::types::ObjectiveStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_steps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoMlCandidateStep::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_status = Some(crate::types::CandidateStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_containers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoMlContainerDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_properties = Some(crate::types::CandidateProperties::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_container_definitions = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(crate::types::AutoMlProcessingUnit::from(key.as_str()), {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&AUTOMLCANDIDATE_MEMBER_INFERENCE_CONTAINER_DEFINITIONS_VALUE, &mut |deser| {
+                                        list.push(crate::types::AutoMlContainerDefinition::deserialize(deser)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AutoMlCandidate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AutoMlCandidate {
     /// Creates a new builder-style object to manufacture [`AutoMlCandidate`](crate::types::AutoMlCandidate).
     pub fn builder() -> crate::types::builders::AutoMlCandidateBuilder {

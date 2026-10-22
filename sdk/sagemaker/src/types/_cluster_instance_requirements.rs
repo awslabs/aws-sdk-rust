@@ -15,6 +15,111 @@ impl ClusterInstanceRequirements {
         self.instance_types.as_deref().unwrap_or_default()
     }
 }
+static CLUSTERINSTANCEREQUIREMENTS_MEMBER_INSTANCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceTypes$member",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CLUSTERINSTANCEREQUIREMENTS_MEMBER_INSTANCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceRequirements$InstanceTypes",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceRequirements",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceTypes",
+    0,
+)
+.with_list_member(&CLUSTERINSTANCEREQUIREMENTS_MEMBER_INSTANCE_TYPES_MEMBER);
+static CLUSTERINSTANCEREQUIREMENTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceRequirements",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceRequirements",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CLUSTERINSTANCEREQUIREMENTS_MEMBER_INSTANCE_TYPES],
+);
+impl ClusterInstanceRequirements {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERINSTANCEREQUIREMENTS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterInstanceRequirements {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_types {
+            ser.write_list(
+                &CLUSTERINSTANCEREQUIREMENTS_MEMBER_INSTANCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterInstanceRequirementsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERINSTANCEREQUIREMENTS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClusterInstanceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterInstanceRequirements {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterInstanceRequirements {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceRequirements`](crate::types::ClusterInstanceRequirements).
     pub fn builder() -> crate::types::builders::ClusterInstanceRequirementsBuilder {

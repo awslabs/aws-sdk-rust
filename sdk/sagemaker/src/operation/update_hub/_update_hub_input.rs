@@ -32,6 +32,170 @@ impl UpdateHubInput {
         self.hub_search_keywords.as_deref().unwrap_or_default()
     }
 }
+static UPDATEHUBINPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubInput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    0,
+);
+static UPDATEHUBINPUT_MEMBER_HUB_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubInput$HubDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubDescription",
+    1,
+);
+static UPDATEHUBINPUT_MEMBER_HUB_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubInput$HubDisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubDisplayName",
+    2,
+);
+static UPDATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubSearchKeywordList$member",
+        "com.amazonaws.sagemaker",
+        "HubSearchKeywordList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubInput$HubSearchKeywords",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HubSearchKeywords",
+    3,
+)
+.with_list_member(&UPDATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS_MEMBER);
+static UPDATEHUBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEHUBINPUT_MEMBER_HUB_NAME,
+        &UPDATEHUBINPUT_MEMBER_HUB_DESCRIPTION,
+        &UPDATEHUBINPUT_MEMBER_HUB_DISPLAY_NAME,
+        &UPDATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateHubRequest");
+impl UpdateHubInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEHUBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateHubInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&UPDATEHUBINPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_description {
+            ser.write_string(&UPDATEHUBINPUT_MEMBER_HUB_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.hub_display_name {
+            ser.write_string(&UPDATEHUBINPUT_MEMBER_HUB_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_search_keywords {
+            ser.write_list(
+                &UPDATEHUBINPUT_MEMBER_HUB_SEARCH_KEYWORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_hub::builders::UpdateHubInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEHUBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_search_keywords = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateHubInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hub_name = builder.hub_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateHubInput {
     /// Creates a new builder-style object to manufacture [`UpdateHubInput`](crate::operation::update_hub::UpdateHubInput).
     pub fn builder() -> crate::operation::update_hub::builders::UpdateHubInputBuilder {

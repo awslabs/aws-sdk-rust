@@ -19,6 +19,107 @@ impl StartFlywheelIterationOutput {
         self.flywheel_iteration_id.as_deref()
     }
 }
+static STARTFLYWHEELITERATIONOUTPUT_MEMBER_FLYWHEEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartFlywheelIterationOutput$FlywheelArn",
+        "com.amazonaws.comprehend.synthetic",
+        "StartFlywheelIterationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelArn",
+    0,
+);
+static STARTFLYWHEELITERATIONOUTPUT_MEMBER_FLYWHEEL_ITERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartFlywheelIterationOutput$FlywheelIterationId",
+        "com.amazonaws.comprehend.synthetic",
+        "StartFlywheelIterationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelIterationId",
+    1,
+);
+static STARTFLYWHEELITERATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartFlywheelIterationOutput",
+        "com.amazonaws.comprehend.synthetic",
+        "StartFlywheelIterationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTFLYWHEELITERATIONOUTPUT_MEMBER_FLYWHEEL_ARN,
+        &STARTFLYWHEELITERATIONOUTPUT_MEMBER_FLYWHEEL_ITERATION_ID,
+    ],
+)
+.with_original_name("StartFlywheelIterationResponse");
+impl StartFlywheelIterationOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTFLYWHEELITERATIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartFlywheelIterationOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.flywheel_arn {
+            ser.write_string(&STARTFLYWHEELITERATIONOUTPUT_MEMBER_FLYWHEEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.flywheel_iteration_id {
+            ser.write_string(&STARTFLYWHEELITERATIONOUTPUT_MEMBER_FLYWHEEL_ITERATION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_flywheel_iteration::builders::StartFlywheelIterationOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTFLYWHEELITERATIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_iteration_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartFlywheelIterationOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for StartFlywheelIterationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

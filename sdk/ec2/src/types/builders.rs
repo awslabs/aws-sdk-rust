@@ -1105,6 +1105,8 @@ pub use crate::types::_security_group_for_vpc::SecurityGroupForVpcBuilder;
 
 pub use crate::types::_spot_placement_score::SpotPlacementScoreBuilder;
 
+pub use crate::types::_transit_gateway_nat_rule::TransitGatewayNatRuleBuilder;
+
 pub use crate::types::_transit_gateway_attachment_propagation::TransitGatewayAttachmentPropagationBuilder;
 
 pub use crate::types::_transit_gateway_multicast_domain_association::TransitGatewayMulticastDomainAssociationBuilder;
@@ -1172,6 +1174,8 @@ pub use crate::types::_reserved_instances_configuration::ReservedInstancesConfig
 pub use crate::types::_security_group_rule_update::SecurityGroupRuleUpdateBuilder;
 
 pub use crate::types::_launch_template_config::LaunchTemplateConfigBuilder;
+
+pub use crate::types::_transit_gateway_nat_rule_request::TransitGatewayNatRuleRequestBuilder;
 
 pub use crate::types::_verified_access_log_s3_destination_options::VerifiedAccessLogS3DestinationOptionsBuilder;
 

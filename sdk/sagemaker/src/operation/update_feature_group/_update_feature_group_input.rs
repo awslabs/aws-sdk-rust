@@ -32,6 +32,177 @@ impl UpdateFeatureGroupInput {
         self.throughput_config.as_ref()
     }
 }
+static UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureGroupInput$FeatureGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupName",
+    0,
+);
+static UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_ADDITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureAdditions$member",
+        "com.amazonaws.sagemaker",
+        "FeatureAdditions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_ADDITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureGroupInput$FeatureAdditions",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FeatureAdditions",
+    1,
+)
+.with_list_member(&UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_ADDITIONS_MEMBER);
+static UPDATEFEATUREGROUPINPUT_MEMBER_ONLINE_STORE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureGroupInput$OnlineStoreConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OnlineStoreConfig",
+    2,
+);
+static UPDATEFEATUREGROUPINPUT_MEMBER_THROUGHPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureGroupInput$ThroughputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ThroughputConfig",
+    3,
+);
+static UPDATEFEATUREGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureGroupInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_GROUP_NAME,
+        &UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_ADDITIONS,
+        &UPDATEFEATUREGROUPINPUT_MEMBER_ONLINE_STORE_CONFIG,
+        &UPDATEFEATUREGROUPINPUT_MEMBER_THROUGHPUT_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateFeatureGroupRequest");
+impl UpdateFeatureGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEFEATUREGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateFeatureGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.feature_group_name {
+            ser.write_string(&UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.feature_additions {
+            ser.write_list(
+                &UPDATEFEATUREGROUPINPUT_MEMBER_FEATURE_ADDITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FeatureDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.online_store_config {
+            ser.write_struct(&UPDATEFEATUREGROUPINPUT_MEMBER_ONLINE_STORE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.throughput_config {
+            ser.write_struct(&UPDATEFEATUREGROUPINPUT_MEMBER_THROUGHPUT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEFEATUREGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_additions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FeatureDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.online_store_config = Some(crate::types::OnlineStoreConfigUpdate::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.throughput_config = Some(crate::types::ThroughputConfigUpdate::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateFeatureGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.feature_group_name = builder.feature_group_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateFeatureGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
     pub fn builder() -> crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder {

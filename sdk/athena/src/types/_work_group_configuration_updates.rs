@@ -107,6 +107,416 @@ impl WorkGroupConfigurationUpdates {
         self.engine_configuration.as_ref()
     }
 }
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENFORCE_WORK_GROUP_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$EnforceWorkGroupConfiguration",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnforceWorkGroupConfiguration",
+        0,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_RESULT_CONFIGURATION_UPDATES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$ResultConfigurationUpdates",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ResultConfigurationUpdates",
+        1,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_MANAGED_QUERY_RESULTS_CONFIGURATION_UPDATES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$ManagedQueryResultsConfigurationUpdates",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ManagedQueryResultsConfigurationUpdates",
+        2,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_PUBLISH_CLOUD_WATCH_METRICS_ENABLED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$PublishCloudWatchMetricsEnabled",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "PublishCloudWatchMetricsEnabled",
+        3,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_BYTES_SCANNED_CUTOFF_PER_QUERY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$BytesScannedCutoffPerQuery",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "BytesScannedCutoffPerQuery",
+        4,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_REMOVE_BYTES_SCANNED_CUTOFF_PER_QUERY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$RemoveBytesScannedCutoffPerQuery",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "RemoveBytesScannedCutoffPerQuery",
+        5,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_REQUESTER_PAYS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfigurationUpdates$RequesterPaysEnabled",
+        "com.amazonaws.athena",
+        "WorkGroupConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RequesterPaysEnabled",
+    6,
+);
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENGINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfigurationUpdates$EngineVersion",
+        "com.amazonaws.athena",
+        "WorkGroupConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EngineVersion",
+    7,
+);
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_REMOVE_CUSTOMER_CONTENT_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$RemoveCustomerContentEncryptionConfiguration",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "RemoveCustomerContentEncryptionConfiguration",
+        8,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_ADDITIONAL_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfigurationUpdates$AdditionalConfiguration",
+        "com.amazonaws.athena",
+        "WorkGroupConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AdditionalConfiguration",
+    9,
+);
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_EXECUTION_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfigurationUpdates$ExecutionRole",
+        "com.amazonaws.athena",
+        "WorkGroupConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRole",
+    10,
+);
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_CUSTOMER_CONTENT_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$CustomerContentEncryptionConfiguration",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CustomerContentEncryptionConfiguration",
+        11,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENABLE_MINIMUM_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$EnableMinimumEncryptionConfiguration",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableMinimumEncryptionConfiguration",
+        12,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#WorkGroupConfigurationUpdates$QueryResultsS3AccessGrantsConfiguration",
+            "com.amazonaws.athena",
+            "WorkGroupConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "QueryResultsS3AccessGrantsConfiguration",
+        13,
+    );
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_MONITORING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfigurationUpdates$MonitoringConfiguration",
+        "com.amazonaws.athena",
+        "WorkGroupConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MonitoringConfiguration",
+    14,
+);
+static WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENGINE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfigurationUpdates$EngineConfiguration",
+        "com.amazonaws.athena",
+        "WorkGroupConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EngineConfiguration",
+    15,
+);
+static WORKGROUPCONFIGURATIONUPDATES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#WorkGroupConfigurationUpdates",
+        "com.amazonaws.athena",
+        "WorkGroupConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENFORCE_WORK_GROUP_CONFIGURATION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_RESULT_CONFIGURATION_UPDATES,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_MANAGED_QUERY_RESULTS_CONFIGURATION_UPDATES,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_PUBLISH_CLOUD_WATCH_METRICS_ENABLED,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_BYTES_SCANNED_CUTOFF_PER_QUERY,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_REMOVE_BYTES_SCANNED_CUTOFF_PER_QUERY,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_REQUESTER_PAYS_ENABLED,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENGINE_VERSION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_REMOVE_CUSTOMER_CONTENT_ENCRYPTION_CONFIGURATION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_ADDITIONAL_CONFIGURATION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_EXECUTION_ROLE,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_CUSTOMER_CONTENT_ENCRYPTION_CONFIGURATION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENABLE_MINIMUM_ENCRYPTION_CONFIGURATION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_MONITORING_CONFIGURATION,
+        &WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENGINE_CONFIGURATION,
+    ],
+);
+impl WorkGroupConfigurationUpdates {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WORKGROUPCONFIGURATIONUPDATES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WorkGroupConfigurationUpdates {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enforce_work_group_configuration {
+            ser.write_boolean(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENFORCE_WORK_GROUP_CONFIGURATION, *val)?;
+        }
+        if let Some(ref val) = self.result_configuration_updates {
+            ser.write_struct(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_RESULT_CONFIGURATION_UPDATES, val)?;
+        }
+        if let Some(ref val) = self.managed_query_results_configuration_updates {
+            ser.write_struct(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_MANAGED_QUERY_RESULTS_CONFIGURATION_UPDATES, val)?;
+        }
+        if let Some(ref val) = self.publish_cloud_watch_metrics_enabled {
+            ser.write_boolean(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_PUBLISH_CLOUD_WATCH_METRICS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.bytes_scanned_cutoff_per_query {
+            ser.write_long(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_BYTES_SCANNED_CUTOFF_PER_QUERY, *val)?;
+        }
+        if let Some(ref val) = self.remove_bytes_scanned_cutoff_per_query {
+            ser.write_boolean(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_REMOVE_BYTES_SCANNED_CUTOFF_PER_QUERY, *val)?;
+        }
+        if let Some(ref val) = self.requester_pays_enabled {
+            ser.write_boolean(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_REQUESTER_PAYS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.engine_version {
+            ser.write_struct(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENGINE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.remove_customer_content_encryption_configuration {
+            ser.write_boolean(
+                &WORKGROUPCONFIGURATIONUPDATES_MEMBER_REMOVE_CUSTOMER_CONTENT_ENCRYPTION_CONFIGURATION,
+                *val,
+            )?;
+        }
+        if let Some(ref val) = self.additional_configuration {
+            ser.write_string(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_ADDITIONAL_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.execution_role {
+            ser.write_string(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_EXECUTION_ROLE, val)?;
+        }
+        if let Some(ref val) = self.customer_content_encryption_configuration {
+            ser.write_struct(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_CUSTOMER_CONTENT_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.enable_minimum_encryption_configuration {
+            ser.write_boolean(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENABLE_MINIMUM_ENCRYPTION_CONFIGURATION, *val)?;
+        }
+        if let Some(ref val) = self.query_results_s3_access_grants_configuration {
+            ser.write_struct(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.monitoring_configuration {
+            ser.write_struct(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_MONITORING_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.engine_configuration {
+            ser.write_struct(&WORKGROUPCONFIGURATIONUPDATES_MEMBER_ENGINE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WorkGroupConfigurationUpdatesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WORKGROUPCONFIGURATIONUPDATES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enforce_work_group_configuration = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_configuration_updates = Some(crate::types::ResultConfigurationUpdates::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_query_results_configuration_updates =
+                            Some(crate::types::ManagedQueryResultsConfigurationUpdates::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.publish_cloud_watch_metrics_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bytes_scanned_cutoff_per_query = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remove_bytes_scanned_cutoff_per_query = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requester_pays_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_version = Some(crate::types::EngineVersion::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remove_customer_content_encryption_configuration = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_configuration = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_content_encryption_configuration =
+                            Some(crate::types::CustomerContentEncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_minimum_encryption_configuration = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_results_s3_access_grants_configuration =
+                            Some(crate::types::QueryResultsS3AccessGrantsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_configuration = Some(crate::types::MonitoringConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_configuration = Some(crate::types::EngineConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WorkGroupConfigurationUpdates {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WorkGroupConfigurationUpdates {
     /// Creates a new builder-style object to manufacture [`WorkGroupConfigurationUpdates`](crate::types::WorkGroupConfigurationUpdates).
     pub fn builder() -> crate::types::builders::WorkGroupConfigurationUpdatesBuilder {

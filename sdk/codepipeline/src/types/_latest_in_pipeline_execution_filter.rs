@@ -34,6 +34,101 @@ impl LatestInPipelineExecutionFilter {
         &self.start_time_range
     }
 }
+static LATESTINPIPELINEEXECUTIONFILTER_MEMBER_PIPELINE_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#LatestInPipelineExecutionFilter$pipelineExecutionId",
+        "com.amazonaws.codepipeline",
+        "LatestInPipelineExecutionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineExecutionId",
+    0,
+);
+static LATESTINPIPELINEEXECUTIONFILTER_MEMBER_START_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#LatestInPipelineExecutionFilter$startTimeRange",
+        "com.amazonaws.codepipeline",
+        "LatestInPipelineExecutionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "startTimeRange",
+    1,
+);
+static LATESTINPIPELINEEXECUTIONFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#LatestInPipelineExecutionFilter",
+        "com.amazonaws.codepipeline",
+        "LatestInPipelineExecutionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LATESTINPIPELINEEXECUTIONFILTER_MEMBER_PIPELINE_EXECUTION_ID,
+        &LATESTINPIPELINEEXECUTIONFILTER_MEMBER_START_TIME_RANGE,
+    ],
+);
+impl LatestInPipelineExecutionFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LATESTINPIPELINEEXECUTIONFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LatestInPipelineExecutionFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.pipeline_execution_id;
+            ser.write_string(&LATESTINPIPELINEEXECUTIONFILTER_MEMBER_PIPELINE_EXECUTION_ID, val)?;
+        }
+        {
+            let val = &self.start_time_range;
+            ser.write_string(&LATESTINPIPELINEEXECUTIONFILTER_MEMBER_START_TIME_RANGE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LatestInPipelineExecutionFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LATESTINPIPELINEEXECUTIONFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.pipeline_execution_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.start_time_range = Some(crate::types::StartTimeRange::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LatestInPipelineExecutionFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_execution_id = builder.pipeline_execution_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl LatestInPipelineExecutionFilter {
     /// Creates a new builder-style object to manufacture [`LatestInPipelineExecutionFilter`](crate::types::LatestInPipelineExecutionFilter).
     pub fn builder() -> crate::types::builders::LatestInPipelineExecutionFilterBuilder {

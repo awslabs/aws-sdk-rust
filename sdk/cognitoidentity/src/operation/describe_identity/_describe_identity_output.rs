@@ -34,6 +34,168 @@ impl DescribeIdentityOutput {
         self.last_modified_date.as_ref()
     }
 }
+static DESCRIBEIDENTITYOUTPUT_MEMBER_IDENTITY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#DescribeIdentityOutput$IdentityId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "DescribeIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityId",
+    0,
+);
+static DESCRIBEIDENTITYOUTPUT_MEMBER_LOGINS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsList$member",
+        "com.amazonaws.cognitoidentity",
+        "LoginsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEIDENTITYOUTPUT_MEMBER_LOGINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#DescribeIdentityOutput$Logins",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "DescribeIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Logins",
+    1,
+)
+.with_list_member(&DESCRIBEIDENTITYOUTPUT_MEMBER_LOGINS_MEMBER);
+static DESCRIBEIDENTITYOUTPUT_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#DescribeIdentityOutput$CreationDate",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "DescribeIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    2,
+);
+static DESCRIBEIDENTITYOUTPUT_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#DescribeIdentityOutput$LastModifiedDate",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "DescribeIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedDate",
+    3,
+);
+static DESCRIBEIDENTITYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#DescribeIdentityOutput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "DescribeIdentityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEIDENTITYOUTPUT_MEMBER_IDENTITY_ID,
+        &DESCRIBEIDENTITYOUTPUT_MEMBER_LOGINS,
+        &DESCRIBEIDENTITYOUTPUT_MEMBER_CREATION_DATE,
+        &DESCRIBEIDENTITYOUTPUT_MEMBER_LAST_MODIFIED_DATE,
+    ],
+)
+.with_original_name("IdentityDescription");
+impl DescribeIdentityOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEIDENTITYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeIdentityOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_id {
+            ser.write_string(&DESCRIBEIDENTITYOUTPUT_MEMBER_IDENTITY_ID, val)?;
+        }
+        if let Some(ref val) = self.logins {
+            ser.write_list(
+                &DESCRIBEIDENTITYOUTPUT_MEMBER_LOGINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&DESCRIBEIDENTITYOUTPUT_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&DESCRIBEIDENTITYOUTPUT_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_identity::builders::DescribeIdentityOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEIDENTITYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logins = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeIdentityOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -19,6 +19,104 @@ impl GetInstanceOutput {
         self.instance.as_ref()
     }
 }
+static GETINSTANCEOUTPUT_MEMBER_RESOURCE_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#GetInstanceOutput$ResourceOwner",
+        "com.amazonaws.servicediscovery.synthetic",
+        "GetInstanceOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceOwner",
+    0,
+);
+static GETINSTANCEOUTPUT_MEMBER_INSTANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#GetInstanceOutput$Instance",
+        "com.amazonaws.servicediscovery.synthetic",
+        "GetInstanceOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Instance",
+    1,
+);
+static GETINSTANCEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#GetInstanceOutput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "GetInstanceOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETINSTANCEOUTPUT_MEMBER_RESOURCE_OWNER, &GETINSTANCEOUTPUT_MEMBER_INSTANCE],
+)
+.with_original_name("GetInstanceResponse");
+impl GetInstanceOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETINSTANCEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetInstanceOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_owner {
+            ser.write_string(&GETINSTANCEOUTPUT_MEMBER_RESOURCE_OWNER, val)?;
+        }
+        if let Some(ref val) = self.instance {
+            ser.write_struct(&GETINSTANCEOUTPUT_MEMBER_INSTANCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_instance::builders::GetInstanceOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETINSTANCEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance = Some(crate::types::Instance::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetInstanceOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

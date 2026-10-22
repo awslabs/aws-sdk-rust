@@ -85,6 +85,368 @@ impl DescribeActionOutput {
         self.lineage_group_arn.as_deref()
     }
 }
+static DESCRIBEACTIONOUTPUT_MEMBER_ACTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$ActionName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActionName",
+    0,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_ACTION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$ActionArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActionArn",
+    1,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$Source",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    2,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_ACTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$ActionType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActionType",
+    3,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    4,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    5,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$key",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$value",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$Properties",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Properties",
+    6,
+)
+.with_map_members(&DESCRIBEACTIONOUTPUT_MEMBER_PROPERTIES_KEY, &DESCRIBEACTIONOUTPUT_MEMBER_PROPERTIES_VALUE);
+static DESCRIBEACTIONOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    7,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    8,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    9,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    10,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_METADATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$MetadataProperties",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MetadataProperties",
+    11,
+);
+static DESCRIBEACTIONOUTPUT_MEMBER_LINEAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput$LineageGroupArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LineageGroupArn",
+    12,
+);
+static DESCRIBEACTIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeActionOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeActionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEACTIONOUTPUT_MEMBER_ACTION_NAME,
+        &DESCRIBEACTIONOUTPUT_MEMBER_ACTION_ARN,
+        &DESCRIBEACTIONOUTPUT_MEMBER_SOURCE,
+        &DESCRIBEACTIONOUTPUT_MEMBER_ACTION_TYPE,
+        &DESCRIBEACTIONOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBEACTIONOUTPUT_MEMBER_STATUS,
+        &DESCRIBEACTIONOUTPUT_MEMBER_PROPERTIES,
+        &DESCRIBEACTIONOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEACTIONOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBEACTIONOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEACTIONOUTPUT_MEMBER_LAST_MODIFIED_BY,
+        &DESCRIBEACTIONOUTPUT_MEMBER_METADATA_PROPERTIES,
+        &DESCRIBEACTIONOUTPUT_MEMBER_LINEAGE_GROUP_ARN,
+    ],
+)
+.with_original_name("DescribeActionResponse");
+impl DescribeActionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEACTIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeActionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action_name {
+            ser.write_string(&DESCRIBEACTIONOUTPUT_MEMBER_ACTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.action_arn {
+            ser.write_string(&DESCRIBEACTIONOUTPUT_MEMBER_ACTION_ARN, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&DESCRIBEACTIONOUTPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.action_type {
+            ser.write_string(&DESCRIBEACTIONOUTPUT_MEMBER_ACTION_TYPE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBEACTIONOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBEACTIONOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_map(
+                &DESCRIBEACTIONOUTPUT_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEACTIONOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBEACTIONOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEACTIONOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBEACTIONOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.metadata_properties {
+            ser.write_struct(&DESCRIBEACTIONOUTPUT_MEMBER_METADATA_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.lineage_group_arn {
+            ser.write_string(&DESCRIBEACTIONOUTPUT_MEMBER_LINEAGE_GROUP_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_action::builders::DescribeActionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEACTIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ActionSource::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ActionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata_properties = Some(crate::types::MetadataProperties::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lineage_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeActionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeActionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

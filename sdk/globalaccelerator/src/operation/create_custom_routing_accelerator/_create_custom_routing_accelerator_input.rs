@@ -58,6 +58,235 @@ impl CreateCustomRoutingAcceleratorInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCustomRoutingAcceleratorInput$Name",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCustomRoutingAcceleratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCustomRoutingAcceleratorInput$IpAddressType",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCustomRoutingAcceleratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    1,
+);
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#IpAddresses$member",
+        "com.amazonaws.globalaccelerator",
+        "IpAddresses",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCustomRoutingAcceleratorInput$IpAddresses",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCustomRoutingAcceleratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpAddresses",
+    2,
+)
+.with_list_member(&CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESSES_MEMBER);
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCustomRoutingAcceleratorInput$Enabled",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCustomRoutingAcceleratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    3,
+);
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCustomRoutingAcceleratorInput$IdempotencyToken",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCustomRoutingAcceleratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    4,
+);
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.globalaccelerator#Tags$member", "com.amazonaws.globalaccelerator", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCustomRoutingAcceleratorInput$Tags",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCustomRoutingAcceleratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_TAGS_MEMBER);
+static CREATECUSTOMROUTINGACCELERATORINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateCustomRoutingAcceleratorInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateCustomRoutingAcceleratorInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_NAME,
+        &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESS_TYPE,
+        &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESSES,
+        &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_ENABLED,
+        &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+        &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCustomRoutingAcceleratorRequest");
+impl CreateCustomRoutingAcceleratorInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECUSTOMROUTINGACCELERATORINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCustomRoutingAcceleratorInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ip_addresses {
+            ser.write_list(
+                &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.enabled {
+            ser.write_boolean(&CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECUSTOMROUTINGACCELERATORINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECUSTOMROUTINGACCELERATORINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCustomRoutingAcceleratorInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.idempotency_token = builder.idempotency_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCustomRoutingAcceleratorInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorInput`](crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorInput).
     pub fn builder() -> crate::operation::create_custom_routing_accelerator::builders::CreateCustomRoutingAcceleratorInputBuilder {

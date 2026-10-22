@@ -57,6 +57,248 @@ impl DomainSettings {
         self.ip_address_type.as_ref()
     }
 }
+static DOMAINSETTINGS_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSecurityGroupIds$member",
+        "com.amazonaws.sagemaker",
+        "DomainSecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOMAINSETTINGS_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$SecurityGroupIds",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    0,
+)
+.with_list_member(&DOMAINSETTINGS_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static DOMAINSETTINGS_MEMBER_R_STUDIO_SERVER_PRO_DOMAIN_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$RStudioServerProDomainSettings",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RStudioServerProDomainSettings",
+    1,
+);
+static DOMAINSETTINGS_MEMBER_EXECUTION_ROLE_IDENTITY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$ExecutionRoleIdentityConfig",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRoleIdentityConfig",
+    2,
+);
+static DOMAINSETTINGS_MEMBER_TRUSTED_IDENTITY_PROPAGATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$TrustedIdentityPropagationSettings",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrustedIdentityPropagationSettings",
+    3,
+);
+static DOMAINSETTINGS_MEMBER_DOCKER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$DockerSettings",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DockerSettings",
+    4,
+);
+static DOMAINSETTINGS_MEMBER_AMAZON_Q_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$AmazonQSettings",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AmazonQSettings",
+    5,
+);
+static DOMAINSETTINGS_MEMBER_UNIFIED_STUDIO_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$UnifiedStudioSettings",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "UnifiedStudioSettings",
+    6,
+);
+static DOMAINSETTINGS_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DomainSettings$IpAddressType",
+        "com.amazonaws.sagemaker",
+        "DomainSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    7,
+);
+static DOMAINSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DomainSettings", "com.amazonaws.sagemaker", "DomainSettings"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINSETTINGS_MEMBER_SECURITY_GROUP_IDS,
+        &DOMAINSETTINGS_MEMBER_R_STUDIO_SERVER_PRO_DOMAIN_SETTINGS,
+        &DOMAINSETTINGS_MEMBER_EXECUTION_ROLE_IDENTITY_CONFIG,
+        &DOMAINSETTINGS_MEMBER_TRUSTED_IDENTITY_PROPAGATION_SETTINGS,
+        &DOMAINSETTINGS_MEMBER_DOCKER_SETTINGS,
+        &DOMAINSETTINGS_MEMBER_AMAZON_Q_SETTINGS,
+        &DOMAINSETTINGS_MEMBER_UNIFIED_STUDIO_SETTINGS,
+        &DOMAINSETTINGS_MEMBER_IP_ADDRESS_TYPE,
+    ],
+);
+impl DomainSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.security_group_ids {
+            ser.write_list(
+                &DOMAINSETTINGS_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.r_studio_server_pro_domain_settings {
+            ser.write_struct(&DOMAINSETTINGS_MEMBER_R_STUDIO_SERVER_PRO_DOMAIN_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.execution_role_identity_config {
+            ser.write_string(&DOMAINSETTINGS_MEMBER_EXECUTION_ROLE_IDENTITY_CONFIG, val.as_str())?;
+        }
+        if let Some(ref val) = self.trusted_identity_propagation_settings {
+            ser.write_struct(&DOMAINSETTINGS_MEMBER_TRUSTED_IDENTITY_PROPAGATION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.docker_settings {
+            ser.write_struct(&DOMAINSETTINGS_MEMBER_DOCKER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.amazon_q_settings {
+            ser.write_struct(&DOMAINSETTINGS_MEMBER_AMAZON_Q_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.unified_studio_settings {
+            ser.write_struct(&DOMAINSETTINGS_MEMBER_UNIFIED_STUDIO_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&DOMAINSETTINGS_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r_studio_server_pro_domain_settings = Some(crate::types::RStudioServerProDomainSettings::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_identity_config =
+                            Some(crate::types::ExecutionRoleIdentityConfig::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trusted_identity_propagation_settings = Some(crate::types::TrustedIdentityPropagationSettings::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.docker_settings = Some(crate::types::DockerSettings::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.amazon_q_settings = Some(crate::types::AmazonQSettings::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unified_studio_settings = Some(crate::types::UnifiedStudioSettings::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DomainSettings {
     /// Creates a new builder-style object to manufacture [`DomainSettings`](crate::types::DomainSettings).
     pub fn builder() -> crate::types::builders::DomainSettingsBuilder {

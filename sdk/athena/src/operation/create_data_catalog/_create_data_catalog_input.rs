@@ -122,6 +122,219 @@ impl CreateDataCatalogInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEDATACATALOGINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateDataCatalogInput$Name",
+        "com.amazonaws.athena.synthetic",
+        "CreateDataCatalogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEDATACATALOGINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateDataCatalogInput$Type",
+        "com.amazonaws.athena.synthetic",
+        "CreateDataCatalogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    1,
+);
+static CREATEDATACATALOGINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateDataCatalogInput$Description",
+        "com.amazonaws.athena.synthetic",
+        "CreateDataCatalogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static CREATEDATACATALOGINPUT_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$key", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEDATACATALOGINPUT_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$value", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEDATACATALOGINPUT_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateDataCatalogInput$Parameters",
+        "com.amazonaws.athena.synthetic",
+        "CreateDataCatalogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    3,
+)
+.with_map_members(
+    &CREATEDATACATALOGINPUT_MEMBER_PARAMETERS_KEY,
+    &CREATEDATACATALOGINPUT_MEMBER_PARAMETERS_VALUE,
+);
+static CREATEDATACATALOGINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#TagList$member", "com.amazonaws.athena", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDATACATALOGINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateDataCatalogInput$Tags",
+        "com.amazonaws.athena.synthetic",
+        "CreateDataCatalogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEDATACATALOGINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDATACATALOGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateDataCatalogInput",
+        "com.amazonaws.athena.synthetic",
+        "CreateDataCatalogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDATACATALOGINPUT_MEMBER_NAME,
+        &CREATEDATACATALOGINPUT_MEMBER_TYPE,
+        &CREATEDATACATALOGINPUT_MEMBER_DESCRIPTION,
+        &CREATEDATACATALOGINPUT_MEMBER_PARAMETERS,
+        &CREATEDATACATALOGINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDataCatalogInput");
+impl CreateDataCatalogInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDATACATALOGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDataCatalogInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEDATACATALOGINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CREATEDATACATALOGINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEDATACATALOGINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &CREATEDATACATALOGINPUT_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDATACATALOGINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDATACATALOGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::DataCatalogType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDataCatalogInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDataCatalogInput {
     /// Creates a new builder-style object to manufacture [`CreateDataCatalogInput`](crate::operation::create_data_catalog::CreateDataCatalogInput).
     pub fn builder() -> crate::operation::create_data_catalog::builders::CreateDataCatalogInputBuilder {

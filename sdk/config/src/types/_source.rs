@@ -43,6 +43,163 @@ impl Source {
         self.custom_policy_details.as_ref()
     }
 }
+static SOURCE_MEMBER_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Source$Owner", "com.amazonaws.configservice", "Source"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Owner",
+    0,
+);
+static SOURCE_MEMBER_SOURCE_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Source$SourceIdentifier",
+        "com.amazonaws.configservice",
+        "Source",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceIdentifier",
+    1,
+);
+static SOURCE_MEMBER_SOURCE_DETAILS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#SourceDetails$member",
+        "com.amazonaws.configservice",
+        "SourceDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SOURCE_MEMBER_SOURCE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Source$SourceDetails",
+        "com.amazonaws.configservice",
+        "Source",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SourceDetails",
+    2,
+)
+.with_list_member(&SOURCE_MEMBER_SOURCE_DETAILS_MEMBER);
+static SOURCE_MEMBER_CUSTOM_POLICY_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#Source$CustomPolicyDetails",
+        "com.amazonaws.configservice",
+        "Source",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomPolicyDetails",
+    3,
+);
+static SOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#Source", "com.amazonaws.configservice", "Source"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SOURCE_MEMBER_OWNER,
+        &SOURCE_MEMBER_SOURCE_IDENTIFIER,
+        &SOURCE_MEMBER_SOURCE_DETAILS,
+        &SOURCE_MEMBER_CUSTOM_POLICY_DETAILS,
+    ],
+);
+impl Source {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Source {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.owner;
+            ser.write_string(&SOURCE_MEMBER_OWNER, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_identifier {
+            ser.write_string(&SOURCE_MEMBER_SOURCE_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.source_details {
+            ser.write_list(
+                &SOURCE_MEMBER_SOURCE_DETAILS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SourceDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.custom_policy_details {
+            ser.write_struct(&SOURCE_MEMBER_CUSTOM_POLICY_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.owner = Some(crate::types::Owner::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_details = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SourceDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_policy_details = Some(crate::types::CustomPolicyDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Source {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl Source {
     /// Creates a new builder-style object to manufacture [`Source`](crate::types::Source).
     pub fn builder() -> crate::types::builders::SourceBuilder {

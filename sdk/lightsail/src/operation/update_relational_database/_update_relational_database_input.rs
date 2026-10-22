@@ -161,6 +161,306 @@ impl ::std::fmt::Debug for UpdateRelationalDatabaseInput {
         formatter.finish()
     }
 }
+static UPDATERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$relationalDatabaseName",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "relationalDatabaseName",
+    0,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_MASTER_USER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$masterUserPassword",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "masterUserPassword",
+    1,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_ROTATE_MASTER_USER_PASSWORD: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$rotateMasterUserPassword",
+            "com.amazonaws.lightsail.synthetic",
+            "UpdateRelationalDatabaseInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "rotateMasterUserPassword",
+        2,
+    );
+static UPDATERELATIONALDATABASEINPUT_MEMBER_PREFERRED_BACKUP_WINDOW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$preferredBackupWindow",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "preferredBackupWindow",
+    3,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_PREFERRED_MAINTENANCE_WINDOW: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$preferredMaintenanceWindow",
+            "com.amazonaws.lightsail.synthetic",
+            "UpdateRelationalDatabaseInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "preferredMaintenanceWindow",
+        4,
+    );
+static UPDATERELATIONALDATABASEINPUT_MEMBER_ENABLE_BACKUP_RETENTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$enableBackupRetention",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "enableBackupRetention",
+    5,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_DISABLE_BACKUP_RETENTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$disableBackupRetention",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "disableBackupRetention",
+    6,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_PUBLICLY_ACCESSIBLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$publiclyAccessible",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "publiclyAccessible",
+    7,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_APPLY_IMMEDIATELY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$applyImmediately",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "applyImmediately",
+    8,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_CA_CERTIFICATE_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$caCertificateIdentifier",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "caCertificateIdentifier",
+    9,
+);
+static UPDATERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_BLUEPRINT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput$relationalDatabaseBlueprintId",
+            "com.amazonaws.lightsail.synthetic",
+            "UpdateRelationalDatabaseInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "relationalDatabaseBlueprintId",
+        10,
+    );
+static UPDATERELATIONALDATABASEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseInput",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_NAME,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_MASTER_USER_PASSWORD,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_ROTATE_MASTER_USER_PASSWORD,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_PREFERRED_BACKUP_WINDOW,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_PREFERRED_MAINTENANCE_WINDOW,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_ENABLE_BACKUP_RETENTION,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_DISABLE_BACKUP_RETENTION,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_PUBLICLY_ACCESSIBLE,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_APPLY_IMMEDIATELY,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_CA_CERTIFICATE_IDENTIFIER,
+        &UPDATERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_BLUEPRINT_ID,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/UpdateRelationalDatabase",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateRelationalDatabaseRequest");
+impl UpdateRelationalDatabaseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATERELATIONALDATABASEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateRelationalDatabaseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_database_name {
+            ser.write_string(&UPDATERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.master_user_password {
+            ser.write_string(&UPDATERELATIONALDATABASEINPUT_MEMBER_MASTER_USER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.rotate_master_user_password {
+            ser.write_boolean(&UPDATERELATIONALDATABASEINPUT_MEMBER_ROTATE_MASTER_USER_PASSWORD, *val)?;
+        }
+        if let Some(ref val) = self.preferred_backup_window {
+            ser.write_string(&UPDATERELATIONALDATABASEINPUT_MEMBER_PREFERRED_BACKUP_WINDOW, val)?;
+        }
+        if let Some(ref val) = self.preferred_maintenance_window {
+            ser.write_string(&UPDATERELATIONALDATABASEINPUT_MEMBER_PREFERRED_MAINTENANCE_WINDOW, val)?;
+        }
+        if let Some(ref val) = self.enable_backup_retention {
+            ser.write_boolean(&UPDATERELATIONALDATABASEINPUT_MEMBER_ENABLE_BACKUP_RETENTION, *val)?;
+        }
+        if let Some(ref val) = self.disable_backup_retention {
+            ser.write_boolean(&UPDATERELATIONALDATABASEINPUT_MEMBER_DISABLE_BACKUP_RETENTION, *val)?;
+        }
+        if let Some(ref val) = self.publicly_accessible {
+            ser.write_boolean(&UPDATERELATIONALDATABASEINPUT_MEMBER_PUBLICLY_ACCESSIBLE, *val)?;
+        }
+        if let Some(ref val) = self.apply_immediately {
+            ser.write_boolean(&UPDATERELATIONALDATABASEINPUT_MEMBER_APPLY_IMMEDIATELY, *val)?;
+        }
+        if let Some(ref val) = self.ca_certificate_identifier {
+            ser.write_string(&UPDATERELATIONALDATABASEINPUT_MEMBER_CA_CERTIFICATE_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.relational_database_blueprint_id {
+            ser.write_string(&UPDATERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_BLUEPRINT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATERELATIONALDATABASEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_user_password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rotate_master_user_password = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_backup_window = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_maintenance_window = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_backup_retention = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disable_backup_retention = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.publicly_accessible = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.apply_immediately = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ca_certificate_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_blueprint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateRelationalDatabaseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.relational_database_name = builder.relational_database_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseInput`](crate::operation::update_relational_database::UpdateRelationalDatabaseInput).
     pub fn builder() -> crate::operation::update_relational_database::builders::UpdateRelationalDatabaseInputBuilder {

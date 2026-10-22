@@ -20,6 +20,121 @@ impl DestinationConfig {
         self.services.deref()
     }
 }
+static DESTINATIONCONFIG_MEMBER_THING_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#DestinationConfig$thingName",
+        "com.amazonaws.iotsecuretunneling",
+        "DestinationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "thingName",
+    0,
+);
+static DESTINATIONCONFIG_MEMBER_SERVICES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#ServiceList$member",
+        "com.amazonaws.iotsecuretunneling",
+        "ServiceList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESTINATIONCONFIG_MEMBER_SERVICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#DestinationConfig$services",
+        "com.amazonaws.iotsecuretunneling",
+        "DestinationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "services",
+    1,
+)
+.with_list_member(&DESTINATIONCONFIG_MEMBER_SERVICES_MEMBER);
+static DESTINATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#DestinationConfig",
+        "com.amazonaws.iotsecuretunneling",
+        "DestinationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESTINATIONCONFIG_MEMBER_THING_NAME, &DESTINATIONCONFIG_MEMBER_SERVICES],
+);
+impl DestinationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESTINATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DestinationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.thing_name {
+            ser.write_string(&DESTINATIONCONFIG_MEMBER_THING_NAME, val)?;
+        }
+        {
+            let val = &self.services;
+
+            ser.write_list(
+                &DESTINATIONCONFIG_MEMBER_SERVICES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DestinationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESTINATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.thing_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.services = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DestinationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.services = builder.services.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DestinationConfig {
     /// Creates a new builder-style object to manufacture [`DestinationConfig`](crate::types::DestinationConfig).
     pub fn builder() -> crate::types::builders::DestinationConfigBuilder {

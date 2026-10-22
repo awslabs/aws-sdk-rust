@@ -26,6 +26,150 @@ impl CustomRoutingDestinationConfiguration {
         self.protocols.deref()
     }
 }
+static CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_FROM_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingDestinationConfiguration$FromPort",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "FromPort",
+    0,
+);
+static CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_TO_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingDestinationConfiguration$ToPort",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ToPort",
+    1,
+);
+static CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingProtocols$member",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingProtocols",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingDestinationConfiguration$Protocols",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    2,
+)
+.with_list_member(&CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_PROTOCOLS_MEMBER);
+static CUSTOMROUTINGDESTINATIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingDestinationConfiguration",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingDestinationConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_FROM_PORT,
+        &CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_TO_PORT,
+        &CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_PROTOCOLS,
+    ],
+);
+impl CustomRoutingDestinationConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CUSTOMROUTINGDESTINATIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CustomRoutingDestinationConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.from_port;
+            ser.write_integer(&CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_FROM_PORT, *val)?;
+        }
+        {
+            let val = &self.to_port;
+            ser.write_integer(&CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_TO_PORT, *val)?;
+        }
+        {
+            let val = &self.protocols;
+
+            ser.write_list(
+                &CUSTOMROUTINGDESTINATIONCONFIGURATION_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CustomRoutingDestinationConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CUSTOMROUTINGDESTINATIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.from_port = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.to_port = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.protocols = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::CustomRoutingProtocol::from(
+                                deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                            ));
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CustomRoutingDestinationConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.from_port = builder.from_port.or(Some(0i32));
+        builder.to_port = builder.to_port.or(Some(0i32));
+        builder.protocols = builder.protocols.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CustomRoutingDestinationConfiguration {
     /// Creates a new builder-style object to manufacture [`CustomRoutingDestinationConfiguration`](crate::types::CustomRoutingDestinationConfiguration).
     pub fn builder() -> crate::types::builders::CustomRoutingDestinationConfigurationBuilder {

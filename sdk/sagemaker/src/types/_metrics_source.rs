@@ -25,6 +25,119 @@ impl MetricsSource {
         self.s3_uri.as_deref()
     }
 }
+static METRICSSOURCE_MEMBER_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricsSource$ContentType",
+        "com.amazonaws.sagemaker",
+        "MetricsSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentType",
+    0,
+);
+static METRICSSOURCE_MEMBER_CONTENT_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricsSource$ContentDigest",
+        "com.amazonaws.sagemaker",
+        "MetricsSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentDigest",
+    1,
+);
+static METRICSSOURCE_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricsSource$S3Uri", "com.amazonaws.sagemaker", "MetricsSource"),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    2,
+);
+static METRICSSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricsSource", "com.amazonaws.sagemaker", "MetricsSource"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &METRICSSOURCE_MEMBER_CONTENT_TYPE,
+        &METRICSSOURCE_MEMBER_CONTENT_DIGEST,
+        &METRICSSOURCE_MEMBER_S3_URI,
+    ],
+);
+impl MetricsSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METRICSSOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MetricsSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.content_type {
+            ser.write_string(&METRICSSOURCE_MEMBER_CONTENT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.content_digest {
+            ser.write_string(&METRICSSOURCE_MEMBER_CONTENT_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.s3_uri {
+            ser.write_string(&METRICSSOURCE_MEMBER_S3_URI, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MetricsSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METRICSSOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MetricsSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MetricsSource {
     /// Creates a new builder-style object to manufacture [`MetricsSource`](crate::types::MetricsSource).
     pub fn builder() -> crate::types::builders::MetricsSourceBuilder {

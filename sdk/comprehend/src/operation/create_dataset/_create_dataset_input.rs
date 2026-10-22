@@ -50,6 +50,237 @@ impl CreateDatasetInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEDATASETINPUT_MEMBER_FLYWHEEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput$FlywheelArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelArn",
+    0,
+);
+static CREATEDATASETINPUT_MEMBER_DATASET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput$DatasetName",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DatasetName",
+    1,
+);
+static CREATEDATASETINPUT_MEMBER_DATASET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput$DatasetType",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DatasetType",
+    2,
+);
+static CREATEDATASETINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput$Description",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static CREATEDATASETINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput$InputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    4,
+);
+static CREATEDATASETINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    5,
+);
+static CREATEDATASETINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDATASETINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATEDATASETINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDATASETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateDatasetInput",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateDatasetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDATASETINPUT_MEMBER_FLYWHEEL_ARN,
+        &CREATEDATASETINPUT_MEMBER_DATASET_NAME,
+        &CREATEDATASETINPUT_MEMBER_DATASET_TYPE,
+        &CREATEDATASETINPUT_MEMBER_DESCRIPTION,
+        &CREATEDATASETINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &CREATEDATASETINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEDATASETINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDatasetRequest");
+impl CreateDatasetInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDATASETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDatasetInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.flywheel_arn {
+            ser.write_string(&CREATEDATASETINPUT_MEMBER_FLYWHEEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.dataset_name {
+            ser.write_string(&CREATEDATASETINPUT_MEMBER_DATASET_NAME, val)?;
+        }
+        if let Some(ref val) = self.dataset_type {
+            ser.write_string(&CREATEDATASETINPUT_MEMBER_DATASET_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEDATASETINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&CREATEDATASETINPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEDATASETINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDATASETINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDATASETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dataset_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dataset_type = Some(crate::types::DatasetType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::DatasetInputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDatasetInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.flywheel_arn = builder.flywheel_arn.or(Some(String::new()));
+        builder.dataset_name = builder.dataset_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDatasetInput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
     pub fn builder() -> crate::operation::create_dataset::builders::CreateDatasetInputBuilder {

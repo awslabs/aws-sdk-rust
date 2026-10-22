@@ -45,6 +45,211 @@ impl ListDiscoveredResourcesInput {
         self.next_token.as_deref()
     }
 }
+static LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListDiscoveredResourcesInput$resourceType",
+        "com.amazonaws.configservice.synthetic",
+        "ListDiscoveredResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    0,
+);
+static LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceIdList$member",
+        "com.amazonaws.configservice",
+        "ResourceIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListDiscoveredResourcesInput$resourceIds",
+        "com.amazonaws.configservice.synthetic",
+        "ListDiscoveredResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourceIds",
+    1,
+)
+.with_list_member(&LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_IDS_MEMBER);
+static LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListDiscoveredResourcesInput$resourceName",
+        "com.amazonaws.configservice.synthetic",
+        "ListDiscoveredResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceName",
+    2,
+);
+static LISTDISCOVEREDRESOURCESINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListDiscoveredResourcesInput$limit",
+        "com.amazonaws.configservice.synthetic",
+        "ListDiscoveredResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "limit",
+    3,
+);
+static LISTDISCOVEREDRESOURCESINPUT_MEMBER_INCLUDE_DELETED_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListDiscoveredResourcesInput$includeDeletedResources",
+        "com.amazonaws.configservice.synthetic",
+        "ListDiscoveredResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "includeDeletedResources",
+    4,
+);
+static LISTDISCOVEREDRESOURCESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListDiscoveredResourcesInput$nextToken",
+        "com.amazonaws.configservice.synthetic",
+        "ListDiscoveredResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    5,
+);
+static LISTDISCOVEREDRESOURCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListDiscoveredResourcesInput",
+        "com.amazonaws.configservice.synthetic",
+        "ListDiscoveredResourcesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_TYPE,
+        &LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_IDS,
+        &LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_NAME,
+        &LISTDISCOVEREDRESOURCESINPUT_MEMBER_LIMIT,
+        &LISTDISCOVEREDRESOURCESINPUT_MEMBER_INCLUDE_DELETED_RESOURCES,
+        &LISTDISCOVEREDRESOURCESINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListDiscoveredResourcesRequest");
+impl ListDiscoveredResourcesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTDISCOVEREDRESOURCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListDiscoveredResourcesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_ids {
+            ser.write_list(
+                &LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&LISTDISCOVEREDRESOURCESINPUT_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&LISTDISCOVEREDRESOURCESINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.include_deleted_resources {
+            ser.write_boolean(&LISTDISCOVEREDRESOURCESINPUT_MEMBER_INCLUDE_DELETED_RESOURCES, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTDISCOVEREDRESOURCESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTDISCOVEREDRESOURCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include_deleted_resources = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListDiscoveredResourcesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListDiscoveredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
     pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {

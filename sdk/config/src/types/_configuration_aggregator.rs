@@ -57,6 +57,259 @@ impl ConfigurationAggregator {
         self.aggregator_filters.as_ref()
     }
 }
+static CONFIGURATIONAGGREGATOR_MEMBER_CONFIGURATION_AGGREGATOR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$ConfigurationAggregatorName",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigurationAggregatorName",
+    0,
+);
+static CONFIGURATIONAGGREGATOR_MEMBER_CONFIGURATION_AGGREGATOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$ConfigurationAggregatorArn",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigurationAggregatorArn",
+    1,
+);
+static CONFIGURATIONAGGREGATOR_MEMBER_ACCOUNT_AGGREGATION_SOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#AccountAggregationSourceList$member",
+            "com.amazonaws.configservice",
+            "AccountAggregationSourceList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CONFIGURATIONAGGREGATOR_MEMBER_ACCOUNT_AGGREGATION_SOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$AccountAggregationSources",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AccountAggregationSources",
+    2,
+)
+.with_list_member(&CONFIGURATIONAGGREGATOR_MEMBER_ACCOUNT_AGGREGATION_SOURCES_MEMBER);
+static CONFIGURATIONAGGREGATOR_MEMBER_ORGANIZATION_AGGREGATION_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$OrganizationAggregationSource",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OrganizationAggregationSource",
+    3,
+);
+static CONFIGURATIONAGGREGATOR_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$CreationTime",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static CONFIGURATIONAGGREGATOR_MEMBER_LAST_UPDATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$LastUpdatedTime",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedTime",
+    5,
+);
+static CONFIGURATIONAGGREGATOR_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$CreatedBy",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatedBy",
+    6,
+);
+static CONFIGURATIONAGGREGATOR_MEMBER_AGGREGATOR_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator$AggregatorFilters",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AggregatorFilters",
+    7,
+);
+static CONFIGURATIONAGGREGATOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationAggregator",
+        "com.amazonaws.configservice",
+        "ConfigurationAggregator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFIGURATIONAGGREGATOR_MEMBER_CONFIGURATION_AGGREGATOR_NAME,
+        &CONFIGURATIONAGGREGATOR_MEMBER_CONFIGURATION_AGGREGATOR_ARN,
+        &CONFIGURATIONAGGREGATOR_MEMBER_ACCOUNT_AGGREGATION_SOURCES,
+        &CONFIGURATIONAGGREGATOR_MEMBER_ORGANIZATION_AGGREGATION_SOURCE,
+        &CONFIGURATIONAGGREGATOR_MEMBER_CREATION_TIME,
+        &CONFIGURATIONAGGREGATOR_MEMBER_LAST_UPDATED_TIME,
+        &CONFIGURATIONAGGREGATOR_MEMBER_CREATED_BY,
+        &CONFIGURATIONAGGREGATOR_MEMBER_AGGREGATOR_FILTERS,
+    ],
+);
+impl ConfigurationAggregator {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFIGURATIONAGGREGATOR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConfigurationAggregator {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.configuration_aggregator_name {
+            ser.write_string(&CONFIGURATIONAGGREGATOR_MEMBER_CONFIGURATION_AGGREGATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.configuration_aggregator_arn {
+            ser.write_string(&CONFIGURATIONAGGREGATOR_MEMBER_CONFIGURATION_AGGREGATOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.account_aggregation_sources {
+            ser.write_list(
+                &CONFIGURATIONAGGREGATOR_MEMBER_ACCOUNT_AGGREGATION_SOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AccountAggregationSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.organization_aggregation_source {
+            ser.write_struct(&CONFIGURATIONAGGREGATOR_MEMBER_ORGANIZATION_AGGREGATION_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&CONFIGURATIONAGGREGATOR_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_updated_time {
+            ser.write_timestamp(&CONFIGURATIONAGGREGATOR_MEMBER_LAST_UPDATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_string(&CONFIGURATIONAGGREGATOR_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.aggregator_filters {
+            ser.write_struct(&CONFIGURATIONAGGREGATOR_MEMBER_AGGREGATOR_FILTERS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConfigurationAggregatorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFIGURATIONAGGREGATOR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_aggregator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_aggregator_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_aggregation_sources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AccountAggregationSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_aggregation_source = Some(crate::types::OrganizationAggregationSource::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aggregator_filters = Some(crate::types::AggregatorFilters::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConfigurationAggregator {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConfigurationAggregator {
     /// Creates a new builder-style object to manufacture [`ConfigurationAggregator`](crate::types::ConfigurationAggregator).
     pub fn builder() -> crate::types::builders::ConfigurationAggregatorBuilder {

@@ -87,6 +87,282 @@ impl CreateStorediScsiVolumeInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_DISK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$DiskId",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DiskId",
+    1,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$SnapshotId",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    2,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_PRESERVE_EXISTING_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$PreserveExistingData",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PreserveExistingData",
+    3,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TARGET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$TargetName",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetName",
+    4,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_NETWORK_INTERFACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$NetworkInterfaceId",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NetworkInterfaceId",
+    5,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_KMS_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$KMSEncrypted",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "KMSEncrypted",
+    6,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$KMSKey",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    7,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput$Tags",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TAGS_MEMBER);
+static CREATESTOREDISCSIVOLUMEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateStorediSCSIVolumeInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateStorediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_GATEWAY_ARN,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_DISK_ID,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_SNAPSHOT_ID,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_PRESERVE_EXISTING_DATA,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TARGET_NAME,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_NETWORK_INTERFACE_ID,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_KMS_ENCRYPTED,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_KMS_KEY,
+        &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateStorediSCSIVolumeInput");
+impl CreateStorediScsiVolumeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATESTOREDISCSIVOLUMEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateStorediScsiVolumeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.disk_id {
+            ser.write_string(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_DISK_ID, val)?;
+        }
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.preserve_existing_data {
+            ser.write_boolean(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_PRESERVE_EXISTING_DATA, *val)?;
+        }
+        if let Some(ref val) = self.target_name {
+            ser.write_string(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TARGET_NAME, val)?;
+        }
+        if let Some(ref val) = self.network_interface_id {
+            ser.write_string(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_NETWORK_INTERFACE_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_encrypted {
+            ser.write_boolean(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_KMS_ENCRYPTED, *val)?;
+        }
+        if let Some(ref val) = self.kms_key {
+            ser.write_string(&CREATESTOREDISCSIVOLUMEINPUT_MEMBER_KMS_KEY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATESTOREDISCSIVOLUMEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATESTOREDISCSIVOLUMEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preserve_existing_data = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_encrypted = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateStorediScsiVolumeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.gateway_arn = builder.gateway_arn.or(Some(String::new()));
+        builder.disk_id = builder.disk_id.or(Some(String::new()));
+        builder.preserve_existing_data = builder.preserve_existing_data.or(Some(false));
+        builder.target_name = builder.target_name.or(Some(String::new()));
+        builder.network_interface_id = builder.network_interface_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateStorediScsiVolumeInput {
     /// Creates a new builder-style object to manufacture [`CreateStorediScsiVolumeInput`](crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeInput).
     pub fn builder() -> crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder {

@@ -69,6 +69,211 @@ impl MedicalScribeSettings {
         self.clinical_note_generation_settings.as_ref()
     }
 }
+static MEDICALSCRIBESETTINGS_MEMBER_SHOW_SPEAKER_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings$ShowSpeakerLabels",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ShowSpeakerLabels",
+    0,
+);
+static MEDICALSCRIBESETTINGS_MEMBER_MAX_SPEAKER_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings$MaxSpeakerLabels",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxSpeakerLabels",
+    1,
+);
+static MEDICALSCRIBESETTINGS_MEMBER_CHANNEL_IDENTIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings$ChannelIdentification",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ChannelIdentification",
+    2,
+);
+static MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings$VocabularyName",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyName",
+    3,
+);
+static MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_FILTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings$VocabularyFilterName",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterName",
+    4,
+);
+static MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_FILTER_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings$VocabularyFilterMethod",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterMethod",
+    5,
+);
+static MEDICALSCRIBESETTINGS_MEMBER_CLINICAL_NOTE_GENERATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings$ClinicalNoteGenerationSettings",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ClinicalNoteGenerationSettings",
+    6,
+);
+static MEDICALSCRIBESETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeSettings",
+        "com.amazonaws.transcribe",
+        "MedicalScribeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MEDICALSCRIBESETTINGS_MEMBER_SHOW_SPEAKER_LABELS,
+        &MEDICALSCRIBESETTINGS_MEMBER_MAX_SPEAKER_LABELS,
+        &MEDICALSCRIBESETTINGS_MEMBER_CHANNEL_IDENTIFICATION,
+        &MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_NAME,
+        &MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_FILTER_NAME,
+        &MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_FILTER_METHOD,
+        &MEDICALSCRIBESETTINGS_MEMBER_CLINICAL_NOTE_GENERATION_SETTINGS,
+    ],
+);
+impl MedicalScribeSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MEDICALSCRIBESETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MedicalScribeSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.show_speaker_labels {
+            ser.write_boolean(&MEDICALSCRIBESETTINGS_MEMBER_SHOW_SPEAKER_LABELS, *val)?;
+        }
+        if let Some(ref val) = self.max_speaker_labels {
+            ser.write_integer(&MEDICALSCRIBESETTINGS_MEMBER_MAX_SPEAKER_LABELS, *val)?;
+        }
+        if let Some(ref val) = self.channel_identification {
+            ser.write_boolean(&MEDICALSCRIBESETTINGS_MEMBER_CHANNEL_IDENTIFICATION, *val)?;
+        }
+        if let Some(ref val) = self.vocabulary_name {
+            ser.write_string(&MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_NAME, val)?;
+        }
+        if let Some(ref val) = self.vocabulary_filter_name {
+            ser.write_string(&MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_FILTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.vocabulary_filter_method {
+            ser.write_string(&MEDICALSCRIBESETTINGS_MEMBER_VOCABULARY_FILTER_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.clinical_note_generation_settings {
+            ser.write_struct(&MEDICALSCRIBESETTINGS_MEMBER_CLINICAL_NOTE_GENERATION_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MedicalScribeSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MEDICALSCRIBESETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.show_speaker_labels = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_speaker_labels = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_identification = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_method = Some(crate::types::VocabularyFilterMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.clinical_note_generation_settings = Some(crate::types::ClinicalNoteGenerationSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MedicalScribeSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MedicalScribeSettings {
     /// Creates a new builder-style object to manufacture [`MedicalScribeSettings`](crate::types::MedicalScribeSettings).
     pub fn builder() -> crate::types::builders::MedicalScribeSettingsBuilder {

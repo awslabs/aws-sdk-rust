@@ -89,6 +89,192 @@ impl DomainEntry {
         self.options.as_ref()
     }
 }
+static DOMAINENTRY_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DomainEntry$id", "com.amazonaws.lightsail", "DomainEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "id",
+    0,
+);
+static DOMAINENTRY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DomainEntry$name", "com.amazonaws.lightsail", "DomainEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static DOMAINENTRY_MEMBER_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DomainEntry$target", "com.amazonaws.lightsail", "DomainEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "target",
+    2,
+);
+static DOMAINENTRY_MEMBER_IS_ALIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DomainEntry$isAlias", "com.amazonaws.lightsail", "DomainEntry"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isAlias",
+    3,
+);
+static DOMAINENTRY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DomainEntry$type", "com.amazonaws.lightsail", "DomainEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    4,
+);
+static DOMAINENTRY_MEMBER_OPTIONS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#DomainEntryOptions$key",
+        "com.amazonaws.lightsail",
+        "DomainEntryOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DOMAINENTRY_MEMBER_OPTIONS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#DomainEntryOptions$value",
+        "com.amazonaws.lightsail",
+        "DomainEntryOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DOMAINENTRY_MEMBER_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DomainEntry$options", "com.amazonaws.lightsail", "DomainEntry"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "options",
+    5,
+)
+.with_map_members(&DOMAINENTRY_MEMBER_OPTIONS_KEY, &DOMAINENTRY_MEMBER_OPTIONS_VALUE);
+static DOMAINENTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DomainEntry", "com.amazonaws.lightsail", "DomainEntry"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINENTRY_MEMBER_ID,
+        &DOMAINENTRY_MEMBER_NAME,
+        &DOMAINENTRY_MEMBER_TARGET,
+        &DOMAINENTRY_MEMBER_IS_ALIAS,
+        &DOMAINENTRY_MEMBER_TYPE,
+        &DOMAINENTRY_MEMBER_OPTIONS,
+    ],
+);
+impl DomainEntry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINENTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainEntry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&DOMAINENTRY_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&DOMAINENTRY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.target {
+            ser.write_string(&DOMAINENTRY_MEMBER_TARGET, val)?;
+        }
+        if let Some(ref val) = self.is_alias {
+            ser.write_boolean(&DOMAINENTRY_MEMBER_IS_ALIAS, *val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&DOMAINENTRY_MEMBER_TYPE, val)?;
+        }
+        if let Some(ref val) = self.options {
+            ser.write_map(
+                &DOMAINENTRY_MEMBER_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainEntryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINENTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_alias = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.options = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainEntry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DomainEntry {
     /// Creates a new builder-style object to manufacture [`DomainEntry`](crate::types::DomainEntry).
     pub fn builder() -> crate::types::builders::DomainEntryBuilder {

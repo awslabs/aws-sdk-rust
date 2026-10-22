@@ -31,6 +31,141 @@ impl MergeMetadata {
         self.merge_option.as_ref()
     }
 }
+static MERGEMETADATA_MEMBER_IS_MERGED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#MergeMetadata$isMerged",
+        "com.amazonaws.codecommit",
+        "MergeMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isMerged",
+    0,
+);
+static MERGEMETADATA_MEMBER_MERGED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#MergeMetadata$mergedBy",
+        "com.amazonaws.codecommit",
+        "MergeMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "mergedBy",
+    1,
+);
+static MERGEMETADATA_MEMBER_MERGE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#MergeMetadata$mergeCommitId",
+        "com.amazonaws.codecommit",
+        "MergeMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "mergeCommitId",
+    2,
+);
+static MERGEMETADATA_MEMBER_MERGE_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#MergeMetadata$mergeOption",
+        "com.amazonaws.codecommit",
+        "MergeMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "mergeOption",
+    3,
+);
+static MERGEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#MergeMetadata", "com.amazonaws.codecommit", "MergeMetadata"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MERGEMETADATA_MEMBER_IS_MERGED,
+        &MERGEMETADATA_MEMBER_MERGED_BY,
+        &MERGEMETADATA_MEMBER_MERGE_COMMIT_ID,
+        &MERGEMETADATA_MEMBER_MERGE_OPTION,
+    ],
+);
+impl MergeMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MERGEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MergeMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.is_merged;
+            ser.write_boolean(&MERGEMETADATA_MEMBER_IS_MERGED, *val)?;
+        }
+        if let Some(ref val) = self.merged_by {
+            ser.write_string(&MERGEMETADATA_MEMBER_MERGED_BY, val)?;
+        }
+        if let Some(ref val) = self.merge_commit_id {
+            ser.write_string(&MERGEMETADATA_MEMBER_MERGE_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.merge_option {
+            ser.write_string(&MERGEMETADATA_MEMBER_MERGE_OPTION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MergeMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MERGEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.is_merged = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.merged_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.merge_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.merge_option = Some(crate::types::MergeOptionTypeEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MergeMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MergeMetadata {
     /// Creates a new builder-style object to manufacture [`MergeMetadata`](crate::types::MergeMetadata).
     pub fn builder() -> crate::types::builders::MergeMetadataBuilder {

@@ -13,6 +13,84 @@ impl GetAggregateResourceConfigOutput {
         self.configuration_item.as_ref()
     }
 }
+static GETAGGREGATERESOURCECONFIGOUTPUT_MEMBER_CONFIGURATION_ITEM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateResourceConfigOutput$ConfigurationItem",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ConfigurationItem",
+    0,
+);
+static GETAGGREGATERESOURCECONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetAggregateResourceConfigOutput",
+        "com.amazonaws.configservice.synthetic",
+        "GetAggregateResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETAGGREGATERESOURCECONFIGOUTPUT_MEMBER_CONFIGURATION_ITEM],
+)
+.with_original_name("GetAggregateResourceConfigResponse");
+impl GetAggregateResourceConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETAGGREGATERESOURCECONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetAggregateResourceConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.configuration_item {
+            ser.write_struct(&GETAGGREGATERESOURCECONFIGOUTPUT_MEMBER_CONFIGURATION_ITEM, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_aggregate_resource_config::builders::GetAggregateResourceConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETAGGREGATERESOURCECONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_item = Some(crate::types::ConfigurationItem::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetAggregateResourceConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetAggregateResourceConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -153,6 +153,309 @@ impl InstancePortInfo {
         self.cidr_list_aliases.as_deref().unwrap_or_default()
     }
 }
+static INSTANCEPORTINFO_MEMBER_FROM_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$fromPort",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "fromPort",
+    0,
+);
+static INSTANCEPORTINFO_MEMBER_TO_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$toPort",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "toPort",
+    1,
+);
+static INSTANCEPORTINFO_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$protocol",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "protocol",
+    2,
+);
+static INSTANCEPORTINFO_MEMBER_ACCESS_FROM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$accessFrom",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "accessFrom",
+    3,
+);
+static INSTANCEPORTINFO_MEMBER_ACCESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$accessType",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "accessType",
+    4,
+);
+static INSTANCEPORTINFO_MEMBER_COMMON_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$commonName",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "commonName",
+    5,
+);
+static INSTANCEPORTINFO_MEMBER_ACCESS_DIRECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$accessDirection",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "accessDirection",
+    6,
+);
+static INSTANCEPORTINFO_MEMBER_CIDRS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static INSTANCEPORTINFO_MEMBER_CIDRS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$cidrs",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "cidrs",
+    7,
+)
+.with_list_member(&INSTANCEPORTINFO_MEMBER_CIDRS_MEMBER);
+static INSTANCEPORTINFO_MEMBER_IPV6_CIDRS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static INSTANCEPORTINFO_MEMBER_IPV6_CIDRS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$ipv6Cidrs",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ipv6Cidrs",
+    8,
+)
+.with_list_member(&INSTANCEPORTINFO_MEMBER_IPV6_CIDRS_MEMBER);
+static INSTANCEPORTINFO_MEMBER_CIDR_LIST_ALIASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static INSTANCEPORTINFO_MEMBER_CIDR_LIST_ALIASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfo$cidrListAliases",
+        "com.amazonaws.lightsail",
+        "InstancePortInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "cidrListAliases",
+    9,
+)
+.with_list_member(&INSTANCEPORTINFO_MEMBER_CIDR_LIST_ALIASES_MEMBER);
+static INSTANCEPORTINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#InstancePortInfo", "com.amazonaws.lightsail", "InstancePortInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEPORTINFO_MEMBER_FROM_PORT,
+        &INSTANCEPORTINFO_MEMBER_TO_PORT,
+        &INSTANCEPORTINFO_MEMBER_PROTOCOL,
+        &INSTANCEPORTINFO_MEMBER_ACCESS_FROM,
+        &INSTANCEPORTINFO_MEMBER_ACCESS_TYPE,
+        &INSTANCEPORTINFO_MEMBER_COMMON_NAME,
+        &INSTANCEPORTINFO_MEMBER_ACCESS_DIRECTION,
+        &INSTANCEPORTINFO_MEMBER_CIDRS,
+        &INSTANCEPORTINFO_MEMBER_IPV6_CIDRS,
+        &INSTANCEPORTINFO_MEMBER_CIDR_LIST_ALIASES,
+    ],
+);
+impl InstancePortInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEPORTINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstancePortInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.from_port;
+            ser.write_integer(&INSTANCEPORTINFO_MEMBER_FROM_PORT, *val)?;
+        }
+        {
+            let val = &self.to_port;
+            ser.write_integer(&INSTANCEPORTINFO_MEMBER_TO_PORT, *val)?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&INSTANCEPORTINFO_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.access_from {
+            ser.write_string(&INSTANCEPORTINFO_MEMBER_ACCESS_FROM, val)?;
+        }
+        if let Some(ref val) = self.access_type {
+            ser.write_string(&INSTANCEPORTINFO_MEMBER_ACCESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.common_name {
+            ser.write_string(&INSTANCEPORTINFO_MEMBER_COMMON_NAME, val)?;
+        }
+        if let Some(ref val) = self.access_direction {
+            ser.write_string(&INSTANCEPORTINFO_MEMBER_ACCESS_DIRECTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.cidrs {
+            ser.write_list(
+                &INSTANCEPORTINFO_MEMBER_CIDRS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ipv6_cidrs {
+            ser.write_list(
+                &INSTANCEPORTINFO_MEMBER_IPV6_CIDRS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cidr_list_aliases {
+            ser.write_list(
+                &INSTANCEPORTINFO_MEMBER_CIDR_LIST_ALIASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstancePortInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEPORTINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.from_port = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.to_port = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::NetworkProtocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_from = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_type = Some(crate::types::PortAccessType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.common_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_direction = Some(crate::types::AccessDirection::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cidrs = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ipv6_cidrs = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cidr_list_aliases = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstancePortInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstancePortInfo {
     /// Creates a new builder-style object to manufacture [`InstancePortInfo`](crate::types::InstancePortInfo).
     pub fn builder() -> crate::types::builders::InstancePortInfoBuilder {

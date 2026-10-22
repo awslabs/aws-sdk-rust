@@ -64,6 +64,153 @@ impl ::std::fmt::Debug for HandshakeResource {
         formatter.finish()
     }
 }
+static HANDSHAKERESOURCE_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#HandshakeResource$Value",
+        "com.amazonaws.organizations",
+        "HandshakeResource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    0,
+);
+static HANDSHAKERESOURCE_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#HandshakeResource$Type",
+        "com.amazonaws.organizations",
+        "HandshakeResource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    1,
+);
+static HANDSHAKERESOURCE_MEMBER_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#HandshakeResources$member",
+        "com.amazonaws.organizations",
+        "HandshakeResources",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static HANDSHAKERESOURCE_MEMBER_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#HandshakeResource$Resources",
+        "com.amazonaws.organizations",
+        "HandshakeResource",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Resources",
+    2,
+)
+.with_list_member(&HANDSHAKERESOURCE_MEMBER_RESOURCES_MEMBER);
+static HANDSHAKERESOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#HandshakeResource",
+        "com.amazonaws.organizations",
+        "HandshakeResource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HANDSHAKERESOURCE_MEMBER_VALUE,
+        &HANDSHAKERESOURCE_MEMBER_TYPE,
+        &HANDSHAKERESOURCE_MEMBER_RESOURCES,
+    ],
+);
+impl HandshakeResource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HANDSHAKERESOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HandshakeResource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.value {
+            ser.write_string(&HANDSHAKERESOURCE_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&HANDSHAKERESOURCE_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.resources {
+            ser.write_list(
+                &HANDSHAKERESOURCE_MEMBER_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HandshakeResource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HandshakeResourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HANDSHAKERESOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::HandshakeResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HandshakeResource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HandshakeResource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HandshakeResource {
     /// Creates a new builder-style object to manufacture [`HandshakeResource`](crate::types::HandshakeResource).
     pub fn builder() -> crate::types::builders::HandshakeResourceBuilder {

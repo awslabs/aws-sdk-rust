@@ -99,6 +99,270 @@ impl LanguageModel {
         self.encryption_configuration.as_ref()
     }
 }
+static LANGUAGEMODEL_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$ModelName",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    0,
+);
+static LANGUAGEMODEL_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$CreateTime",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateTime",
+    1,
+);
+static LANGUAGEMODEL_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$LastModifiedTime",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    2,
+);
+static LANGUAGEMODEL_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$LanguageCode",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    3,
+);
+static LANGUAGEMODEL_MEMBER_BASE_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$BaseModelName",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaseModelName",
+    4,
+);
+static LANGUAGEMODEL_MEMBER_MODEL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$ModelStatus",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelStatus",
+    5,
+);
+static LANGUAGEMODEL_MEMBER_UPGRADE_AVAILABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$UpgradeAvailability",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "UpgradeAvailability",
+    6,
+);
+static LANGUAGEMODEL_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$FailureReason",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    7,
+);
+static LANGUAGEMODEL_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$InputDataConfig",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    8,
+);
+static LANGUAGEMODEL_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageModel$EncryptionConfiguration",
+        "com.amazonaws.transcribe",
+        "LanguageModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    9,
+);
+static LANGUAGEMODEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#LanguageModel", "com.amazonaws.transcribe", "LanguageModel"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LANGUAGEMODEL_MEMBER_MODEL_NAME,
+        &LANGUAGEMODEL_MEMBER_CREATE_TIME,
+        &LANGUAGEMODEL_MEMBER_LAST_MODIFIED_TIME,
+        &LANGUAGEMODEL_MEMBER_LANGUAGE_CODE,
+        &LANGUAGEMODEL_MEMBER_BASE_MODEL_NAME,
+        &LANGUAGEMODEL_MEMBER_MODEL_STATUS,
+        &LANGUAGEMODEL_MEMBER_UPGRADE_AVAILABILITY,
+        &LANGUAGEMODEL_MEMBER_FAILURE_REASON,
+        &LANGUAGEMODEL_MEMBER_INPUT_DATA_CONFIG,
+        &LANGUAGEMODEL_MEMBER_ENCRYPTION_CONFIGURATION,
+    ],
+);
+impl LanguageModel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LANGUAGEMODEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LanguageModel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&LANGUAGEMODEL_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_timestamp(&LANGUAGEMODEL_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&LANGUAGEMODEL_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&LANGUAGEMODEL_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.base_model_name {
+            ser.write_string(&LANGUAGEMODEL_MEMBER_BASE_MODEL_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_status {
+            ser.write_string(&LANGUAGEMODEL_MEMBER_MODEL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.upgrade_availability {
+            ser.write_boolean(&LANGUAGEMODEL_MEMBER_UPGRADE_AVAILABILITY, *val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&LANGUAGEMODEL_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&LANGUAGEMODEL_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&LANGUAGEMODEL_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LanguageModelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LANGUAGEMODEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::ClmLanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_model_name = Some(crate::types::BaseModelName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_status = Some(crate::types::ModelStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.upgrade_availability = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::EncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LanguageModel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LanguageModel {
     /// Creates a new builder-style object to manufacture [`LanguageModel`](crate::types::LanguageModel).
     pub fn builder() -> crate::types::builders::LanguageModelBuilder {

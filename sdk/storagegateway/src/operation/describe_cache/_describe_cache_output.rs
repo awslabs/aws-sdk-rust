@@ -51,6 +51,212 @@ impl DescribeCacheOutput {
         self.cache_miss_percentage
     }
 }
+static DESCRIBECACHEOUTPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static DESCRIBECACHEOUTPUT_MEMBER_DISK_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#DiskIds$member", "com.amazonaws.storagegateway", "DiskIds"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBECACHEOUTPUT_MEMBER_DISK_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput$DiskIds",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DiskIds",
+    1,
+)
+.with_list_member(&DESCRIBECACHEOUTPUT_MEMBER_DISK_IDS_MEMBER);
+static DESCRIBECACHEOUTPUT_MEMBER_CACHE_ALLOCATED_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput$CacheAllocatedInBytes",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "CacheAllocatedInBytes",
+    2,
+);
+static DESCRIBECACHEOUTPUT_MEMBER_CACHE_USED_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput$CacheUsedPercentage",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "CacheUsedPercentage",
+    3,
+);
+static DESCRIBECACHEOUTPUT_MEMBER_CACHE_DIRTY_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput$CacheDirtyPercentage",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "CacheDirtyPercentage",
+    4,
+);
+static DESCRIBECACHEOUTPUT_MEMBER_CACHE_HIT_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput$CacheHitPercentage",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "CacheHitPercentage",
+    5,
+);
+static DESCRIBECACHEOUTPUT_MEMBER_CACHE_MISS_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput$CacheMissPercentage",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "CacheMissPercentage",
+    6,
+);
+static DESCRIBECACHEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeCacheOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeCacheOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECACHEOUTPUT_MEMBER_GATEWAY_ARN,
+        &DESCRIBECACHEOUTPUT_MEMBER_DISK_IDS,
+        &DESCRIBECACHEOUTPUT_MEMBER_CACHE_ALLOCATED_IN_BYTES,
+        &DESCRIBECACHEOUTPUT_MEMBER_CACHE_USED_PERCENTAGE,
+        &DESCRIBECACHEOUTPUT_MEMBER_CACHE_DIRTY_PERCENTAGE,
+        &DESCRIBECACHEOUTPUT_MEMBER_CACHE_HIT_PERCENTAGE,
+        &DESCRIBECACHEOUTPUT_MEMBER_CACHE_MISS_PERCENTAGE,
+    ],
+)
+.with_original_name("DescribeCacheOutput");
+impl DescribeCacheOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECACHEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCacheOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&DESCRIBECACHEOUTPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.disk_ids {
+            ser.write_list(
+                &DESCRIBECACHEOUTPUT_MEMBER_DISK_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.cache_allocated_in_bytes;
+            ser.write_long(&DESCRIBECACHEOUTPUT_MEMBER_CACHE_ALLOCATED_IN_BYTES, *val)?;
+        }
+        {
+            let val = &self.cache_used_percentage;
+            ser.write_double(&DESCRIBECACHEOUTPUT_MEMBER_CACHE_USED_PERCENTAGE, *val)?;
+        }
+        {
+            let val = &self.cache_dirty_percentage;
+            ser.write_double(&DESCRIBECACHEOUTPUT_MEMBER_CACHE_DIRTY_PERCENTAGE, *val)?;
+        }
+        {
+            let val = &self.cache_hit_percentage;
+            ser.write_double(&DESCRIBECACHEOUTPUT_MEMBER_CACHE_HIT_PERCENTAGE, *val)?;
+        }
+        {
+            let val = &self.cache_miss_percentage;
+            ser.write_double(&DESCRIBECACHEOUTPUT_MEMBER_CACHE_MISS_PERCENTAGE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_cache::builders::DescribeCacheOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECACHEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.cache_allocated_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    self.cache_used_percentage = Some(deser.read_double(member)?);
+                }
+                Some(4) => {
+                    self.cache_dirty_percentage = Some(deser.read_double(member)?);
+                }
+                Some(5) => {
+                    self.cache_hit_percentage = Some(deser.read_double(member)?);
+                }
+                Some(6) => {
+                    self.cache_miss_percentage = Some(deser.read_double(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCacheOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

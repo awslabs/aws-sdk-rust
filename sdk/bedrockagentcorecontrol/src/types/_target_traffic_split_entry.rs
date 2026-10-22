@@ -4,18 +4,35 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TargetTrafficSplitEntry {
+    /// <p>The name of the target to route traffic to.</p>
+    pub target_name: ::std::string::String,
+    /// <p>The model ID to send to the target for this variant. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub model: ::std::option::Option<::std::string::String>,
+    /// <p>The fallback configuration for this variant. Supported only for inference targets.</p>
+    pub fallback: ::std::option::Option<crate::types::Fallback>,
     /// <p>The name of this traffic split variant.</p>
     pub name: ::std::string::String,
     /// <p>The percentage of traffic to route to this variant.</p>
     pub weight: i32,
-    /// <p>The name of the target to route traffic to.</p>
-    pub target_name: ::std::string::String,
     /// <p>The description of this traffic split variant.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Key-value metadata associated with this traffic split variant.</p>
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TargetTrafficSplitEntry {
+    /// <p>The name of the target to route traffic to.</p>
+    pub fn target_name(&self) -> &str {
+        use std::ops::Deref;
+        self.target_name.deref()
+    }
+    /// <p>The model ID to send to the target for this variant. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn model(&self) -> ::std::option::Option<&str> {
+        self.model.as_deref()
+    }
+    /// <p>The fallback configuration for this variant. Supported only for inference targets.</p>
+    pub fn fallback(&self) -> ::std::option::Option<&crate::types::Fallback> {
+        self.fallback.as_ref()
+    }
     /// <p>The name of this traffic split variant.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
@@ -24,11 +41,6 @@ impl TargetTrafficSplitEntry {
     /// <p>The percentage of traffic to route to this variant.</p>
     pub fn weight(&self) -> i32 {
         self.weight
-    }
-    /// <p>The name of the target to route traffic to.</p>
-    pub fn target_name(&self) -> &str {
-        use std::ops::Deref;
-        self.target_name.deref()
     }
     /// <p>The description of this traffic split variant.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -42,9 +54,11 @@ impl TargetTrafficSplitEntry {
 impl ::std::fmt::Debug for TargetTrafficSplitEntry {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TargetTrafficSplitEntry");
+        formatter.field("target_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("model", &self.model);
+        formatter.field("fallback", &self.fallback);
         formatter.field("name", &self.name);
         formatter.field("weight", &self.weight);
-        formatter.field("target_name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &self.description);
         formatter.field("metadata", &self.metadata);
         formatter.finish()
@@ -61,13 +75,58 @@ impl TargetTrafficSplitEntry {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TargetTrafficSplitEntryBuilder {
+    pub(crate) target_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model: ::std::option::Option<::std::string::String>,
+    pub(crate) fallback: ::std::option::Option<crate::types::Fallback>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) weight: ::std::option::Option<i32>,
-    pub(crate) target_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TargetTrafficSplitEntryBuilder {
+    /// <p>The name of the target to route traffic to.</p>
+    /// This field is required.
+    pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the target to route traffic to.</p>
+    pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_name = input;
+        self
+    }
+    /// <p>The name of the target to route traffic to.</p>
+    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_name
+    }
+    /// <p>The model ID to send to the target for this variant. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The model ID to send to the target for this variant. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn set_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model = input;
+        self
+    }
+    /// <p>The model ID to send to the target for this variant. Supported only for inference targets. If you don't specify a model, the gateway sends the model from the original request.</p>
+    pub fn get_model(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model
+    }
+    /// <p>The fallback configuration for this variant. Supported only for inference targets.</p>
+    pub fn fallback(mut self, input: crate::types::Fallback) -> Self {
+        self.fallback = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The fallback configuration for this variant. Supported only for inference targets.</p>
+    pub fn set_fallback(mut self, input: ::std::option::Option<crate::types::Fallback>) -> Self {
+        self.fallback = input;
+        self
+    }
+    /// <p>The fallback configuration for this variant. Supported only for inference targets.</p>
+    pub fn get_fallback(&self) -> &::std::option::Option<crate::types::Fallback> {
+        &self.fallback
+    }
     /// <p>The name of this traffic split variant.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -97,21 +156,6 @@ impl TargetTrafficSplitEntryBuilder {
     /// <p>The percentage of traffic to route to this variant.</p>
     pub fn get_weight(&self) -> &::std::option::Option<i32> {
         &self.weight
-    }
-    /// <p>The name of the target to route traffic to.</p>
-    /// This field is required.
-    pub fn target_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.target_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The name of the target to route traffic to.</p>
-    pub fn set_target_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.target_name = input;
-        self
-    }
-    /// <p>The name of the target to route traffic to.</p>
-    pub fn get_target_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.target_name
     }
     /// <p>The description of this traffic split variant.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -149,11 +193,19 @@ impl TargetTrafficSplitEntryBuilder {
     }
     /// Consumes the builder and constructs a [`TargetTrafficSplitEntry`](crate::types::TargetTrafficSplitEntry).
     /// This method will fail if any of the following fields are not set:
+    /// - [`target_name`](crate::types::builders::TargetTrafficSplitEntryBuilder::target_name)
     /// - [`name`](crate::types::builders::TargetTrafficSplitEntryBuilder::name)
     /// - [`weight`](crate::types::builders::TargetTrafficSplitEntryBuilder::weight)
-    /// - [`target_name`](crate::types::builders::TargetTrafficSplitEntryBuilder::target_name)
     pub fn build(self) -> ::std::result::Result<crate::types::TargetTrafficSplitEntry, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::TargetTrafficSplitEntry {
+            target_name: self.target_name.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "target_name",
+                    "target_name was not specified but it is required when building TargetTrafficSplitEntry",
+                )
+            })?,
+            model: self.model,
+            fallback: self.fallback,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
@@ -166,12 +218,6 @@ impl TargetTrafficSplitEntryBuilder {
                     "weight was not specified but it is required when building TargetTrafficSplitEntry",
                 )
             })?,
-            target_name: self.target_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "target_name",
-                    "target_name was not specified but it is required when building TargetTrafficSplitEntry",
-                )
-            })?,
             description: self.description,
             metadata: self.metadata,
         })
@@ -180,9 +226,11 @@ impl TargetTrafficSplitEntryBuilder {
 impl ::std::fmt::Debug for TargetTrafficSplitEntryBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TargetTrafficSplitEntryBuilder");
+        formatter.field("target_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("model", &self.model);
+        formatter.field("fallback", &self.fallback);
         formatter.field("name", &self.name);
         formatter.field("weight", &self.weight);
-        formatter.field("target_name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &self.description);
         formatter.field("metadata", &self.metadata);
         formatter.finish()

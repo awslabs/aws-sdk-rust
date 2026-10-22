@@ -15,6 +15,105 @@ impl BatchGetDeploymentsInput {
         self.deployment_ids.as_deref().unwrap_or_default()
     }
 }
+static BATCHGETDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentsList$member",
+        "com.amazonaws.codedeploy",
+        "DeploymentsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHGETDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#BatchGetDeploymentsInput$deploymentIds",
+        "com.amazonaws.codedeploy.synthetic",
+        "BatchGetDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "deploymentIds",
+    0,
+)
+.with_list_member(&BATCHGETDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_IDS_MEMBER);
+static BATCHGETDEPLOYMENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#BatchGetDeploymentsInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "BatchGetDeploymentsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BATCHGETDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_IDS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchGetDeploymentsInput");
+impl BatchGetDeploymentsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETDEPLOYMENTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetDeploymentsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_ids {
+            ser.write_list(
+                &BATCHGETDEPLOYMENTSINPUT_MEMBER_DEPLOYMENT_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETDEPLOYMENTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetDeploymentsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.deployment_ids = builder.deployment_ids.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchGetDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentsInput`](crate::operation::batch_get_deployments::BatchGetDeploymentsInput).
     pub fn builder() -> crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder {

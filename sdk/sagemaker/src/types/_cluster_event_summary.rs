@@ -61,6 +61,253 @@ impl ClusterEventSummary {
         self.event_level.as_ref()
     }
 }
+static CLUSTEREVENTSUMMARY_MEMBER_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$EventId",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventId",
+    0,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_CLUSTER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$ClusterArn",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterArn",
+    1,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$ClusterName",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    2,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_INSTANCE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$InstanceGroupName",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceGroupName",
+    3,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$InstanceId",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    4,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$ResourceType",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    5,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_EVENT_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$EventTime",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EventTime",
+    6,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$Description",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    7,
+);
+static CLUSTEREVENTSUMMARY_MEMBER_EVENT_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$EventLevel",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventLevel",
+    8,
+);
+static CLUSTEREVENTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTEREVENTSUMMARY_MEMBER_EVENT_ID,
+        &CLUSTEREVENTSUMMARY_MEMBER_CLUSTER_ARN,
+        &CLUSTEREVENTSUMMARY_MEMBER_CLUSTER_NAME,
+        &CLUSTEREVENTSUMMARY_MEMBER_INSTANCE_GROUP_NAME,
+        &CLUSTEREVENTSUMMARY_MEMBER_INSTANCE_ID,
+        &CLUSTEREVENTSUMMARY_MEMBER_RESOURCE_TYPE,
+        &CLUSTEREVENTSUMMARY_MEMBER_EVENT_TIME,
+        &CLUSTEREVENTSUMMARY_MEMBER_DESCRIPTION,
+        &CLUSTEREVENTSUMMARY_MEMBER_EVENT_LEVEL,
+    ],
+);
+impl ClusterEventSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTEREVENTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterEventSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.event_id {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_EVENT_ID, val)?;
+        }
+        if let Some(ref val) = self.cluster_arn {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_CLUSTER_ARN, val)?;
+        }
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_group_name {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_INSTANCE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.event_time {
+            ser.write_timestamp(&CLUSTEREVENTSUMMARY_MEMBER_EVENT_TIME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.event_level {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_EVENT_LEVEL, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterEventSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTEREVENTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ClusterEventResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.event_level = Some(crate::types::ClusterEventLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterEventSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterEventSummary {
     /// Creates a new builder-style object to manufacture [`ClusterEventSummary`](crate::types::ClusterEventSummary).
     pub fn builder() -> crate::types::builders::ClusterEventSummaryBuilder {

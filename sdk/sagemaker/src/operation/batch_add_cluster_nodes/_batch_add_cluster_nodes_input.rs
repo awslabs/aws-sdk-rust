@@ -26,6 +26,157 @@ impl BatchAddClusterNodesInput {
         self.nodes_to_add.as_deref().unwrap_or_default()
     }
 }
+static BATCHADDCLUSTERNODESINPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchAddClusterNodesInput$ClusterName",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchAddClusterNodesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    0,
+);
+static BATCHADDCLUSTERNODESINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchAddClusterNodesInput$ClientToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchAddClusterNodesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    1,
+);
+static BATCHADDCLUSTERNODESINPUT_MEMBER_NODES_TO_ADD_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AddClusterNodeSpecificationList$member",
+        "com.amazonaws.sagemaker",
+        "AddClusterNodeSpecificationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHADDCLUSTERNODESINPUT_MEMBER_NODES_TO_ADD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchAddClusterNodesInput$NodesToAdd",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchAddClusterNodesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "NodesToAdd",
+    2,
+)
+.with_list_member(&BATCHADDCLUSTERNODESINPUT_MEMBER_NODES_TO_ADD_MEMBER);
+static BATCHADDCLUSTERNODESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#BatchAddClusterNodesInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "BatchAddClusterNodesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHADDCLUSTERNODESINPUT_MEMBER_CLUSTER_NAME,
+        &BATCHADDCLUSTERNODESINPUT_MEMBER_CLIENT_TOKEN,
+        &BATCHADDCLUSTERNODESINPUT_MEMBER_NODES_TO_ADD,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchAddClusterNodesRequest");
+impl BatchAddClusterNodesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHADDCLUSTERNODESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchAddClusterNodesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&BATCHADDCLUSTERNODESINPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&BATCHADDCLUSTERNODESINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.nodes_to_add {
+            ser.write_list(
+                &BATCHADDCLUSTERNODESINPUT_MEMBER_NODES_TO_ADD,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AddClusterNodeSpecification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_add_cluster_nodes::builders::BatchAddClusterNodesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHADDCLUSTERNODESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nodes_to_add = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AddClusterNodeSpecification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchAddClusterNodesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_name = builder.cluster_name.or(Some(String::new()));
+        builder.nodes_to_add = builder.nodes_to_add.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchAddClusterNodesInput {
     /// Creates a new builder-style object to manufacture [`BatchAddClusterNodesInput`](crate::operation::batch_add_cluster_nodes::BatchAddClusterNodesInput).
     pub fn builder() -> crate::operation::batch_add_cluster_nodes::builders::BatchAddClusterNodesInputBuilder {

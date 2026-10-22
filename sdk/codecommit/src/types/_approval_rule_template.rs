@@ -55,6 +55,232 @@ impl ApprovalRuleTemplate {
         self.last_modified_user.as_deref()
     }
 }
+static APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$approvalRuleTemplateId",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "approvalRuleTemplateId",
+    0,
+);
+static APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$approvalRuleTemplateName",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "approvalRuleTemplateName",
+    1,
+);
+static APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$approvalRuleTemplateDescription",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "approvalRuleTemplateDescription",
+    2,
+);
+static APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$approvalRuleTemplateContent",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "approvalRuleTemplateContent",
+    3,
+);
+static APPROVALRULETEMPLATE_MEMBER_RULE_CONTENT_SHA256: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$ruleContentSha256",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ruleContentSha256",
+    4,
+);
+static APPROVALRULETEMPLATE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$lastModifiedDate",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastModifiedDate",
+    5,
+);
+static APPROVALRULETEMPLATE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$creationDate",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "creationDate",
+    6,
+);
+static APPROVALRULETEMPLATE_MEMBER_LAST_MODIFIED_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate$lastModifiedUser",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastModifiedUser",
+    7,
+);
+static APPROVALRULETEMPLATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ApprovalRuleTemplate",
+        "com.amazonaws.codecommit",
+        "ApprovalRuleTemplate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_ID,
+        &APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_NAME,
+        &APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_DESCRIPTION,
+        &APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_CONTENT,
+        &APPROVALRULETEMPLATE_MEMBER_RULE_CONTENT_SHA256,
+        &APPROVALRULETEMPLATE_MEMBER_LAST_MODIFIED_DATE,
+        &APPROVALRULETEMPLATE_MEMBER_CREATION_DATE,
+        &APPROVALRULETEMPLATE_MEMBER_LAST_MODIFIED_USER,
+    ],
+);
+impl ApprovalRuleTemplate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPROVALRULETEMPLATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ApprovalRuleTemplate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.approval_rule_template_id {
+            ser.write_string(&APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_ID, val)?;
+        }
+        if let Some(ref val) = self.approval_rule_template_name {
+            ser.write_string(&APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.approval_rule_template_description {
+            ser.write_string(&APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.approval_rule_template_content {
+            ser.write_string(&APPROVALRULETEMPLATE_MEMBER_APPROVAL_RULE_TEMPLATE_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.rule_content_sha256 {
+            ser.write_string(&APPROVALRULETEMPLATE_MEMBER_RULE_CONTENT_SHA256, val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&APPROVALRULETEMPLATE_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&APPROVALRULETEMPLATE_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.last_modified_user {
+            ser.write_string(&APPROVALRULETEMPLATE_MEMBER_LAST_MODIFIED_USER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ApprovalRuleTemplateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPROVALRULETEMPLATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_template_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_template_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_template_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_template_content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule_content_sha256 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_user = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ApprovalRuleTemplate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ApprovalRuleTemplate {
     /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplate`](crate::types::ApprovalRuleTemplate).
     pub fn builder() -> crate::types::builders::ApprovalRuleTemplateBuilder {

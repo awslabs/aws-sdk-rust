@@ -43,6 +43,191 @@ impl ModelPackageGroupSummary {
         self.managed_configuration.as_ref()
     }
 }
+static MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroupSummary$ModelPackageGroupName",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroupSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupName",
+    0,
+);
+static MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroupSummary$ModelPackageGroupArn",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroupSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupArn",
+    1,
+);
+static MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ModelPackageGroupSummary$ModelPackageGroupDescription",
+            "com.amazonaws.sagemaker",
+            "ModelPackageGroupSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ModelPackageGroupDescription",
+        2,
+    );
+static MODELPACKAGEGROUPSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroupSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroupSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroupSummary$ModelPackageGroupStatus",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroupSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupStatus",
+    4,
+);
+static MODELPACKAGEGROUPSUMMARY_MEMBER_MANAGED_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroupSummary$ManagedConfiguration",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroupSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManagedConfiguration",
+    5,
+);
+static MODELPACKAGEGROUPSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageGroupSummary",
+        "com.amazonaws.sagemaker",
+        "ModelPackageGroupSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_NAME,
+        &MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_ARN,
+        &MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_DESCRIPTION,
+        &MODELPACKAGEGROUPSUMMARY_MEMBER_CREATION_TIME,
+        &MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_STATUS,
+        &MODELPACKAGEGROUPSUMMARY_MEMBER_MANAGED_CONFIGURATION,
+    ],
+);
+impl ModelPackageGroupSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELPACKAGEGROUPSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelPackageGroupSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_package_group_name {
+            ser.write_string(&MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_arn {
+            ser.write_string(&MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_description {
+            ser.write_string(&MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MODELPACKAGEGROUPSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_status {
+            ser.write_string(&MODELPACKAGEGROUPSUMMARY_MEMBER_MODEL_PACKAGE_GROUP_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_configuration {
+            ser.write_struct(&MODELPACKAGEGROUPSUMMARY_MEMBER_MANAGED_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelPackageGroupSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELPACKAGEGROUPSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_status = Some(crate::types::ModelPackageGroupStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_configuration = Some(crate::types::ManagedConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelPackageGroupSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelPackageGroupSummary {
     /// Creates a new builder-style object to manufacture [`ModelPackageGroupSummary`](crate::types::ModelPackageGroupSummary).
     pub fn builder() -> crate::types::builders::ModelPackageGroupSummaryBuilder {

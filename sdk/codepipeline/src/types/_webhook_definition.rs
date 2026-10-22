@@ -71,6 +71,206 @@ impl WebhookDefinition {
         self.authentication_configuration.as_ref()
     }
 }
+static WEBHOOKDEFINITION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookDefinition$name",
+        "com.amazonaws.codepipeline",
+        "WebhookDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static WEBHOOKDEFINITION_MEMBER_TARGET_PIPELINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookDefinition$targetPipeline",
+        "com.amazonaws.codepipeline",
+        "WebhookDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetPipeline",
+    1,
+);
+static WEBHOOKDEFINITION_MEMBER_TARGET_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookDefinition$targetAction",
+        "com.amazonaws.codepipeline",
+        "WebhookDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetAction",
+    2,
+);
+static WEBHOOKDEFINITION_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookFilters$member",
+        "com.amazonaws.codepipeline",
+        "WebhookFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static WEBHOOKDEFINITION_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookDefinition$filters",
+        "com.amazonaws.codepipeline",
+        "WebhookDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "filters",
+    3,
+)
+.with_list_member(&WEBHOOKDEFINITION_MEMBER_FILTERS_MEMBER);
+static WEBHOOKDEFINITION_MEMBER_AUTHENTICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookDefinition$authentication",
+        "com.amazonaws.codepipeline",
+        "WebhookDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "authentication",
+    4,
+);
+static WEBHOOKDEFINITION_MEMBER_AUTHENTICATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookDefinition$authenticationConfiguration",
+        "com.amazonaws.codepipeline",
+        "WebhookDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "authenticationConfiguration",
+    5,
+);
+static WEBHOOKDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookDefinition",
+        "com.amazonaws.codepipeline",
+        "WebhookDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WEBHOOKDEFINITION_MEMBER_NAME,
+        &WEBHOOKDEFINITION_MEMBER_TARGET_PIPELINE,
+        &WEBHOOKDEFINITION_MEMBER_TARGET_ACTION,
+        &WEBHOOKDEFINITION_MEMBER_FILTERS,
+        &WEBHOOKDEFINITION_MEMBER_AUTHENTICATION,
+        &WEBHOOKDEFINITION_MEMBER_AUTHENTICATION_CONFIGURATION,
+    ],
+);
+impl WebhookDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WEBHOOKDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WebhookDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&WEBHOOKDEFINITION_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.target_pipeline;
+            ser.write_string(&WEBHOOKDEFINITION_MEMBER_TARGET_PIPELINE, val)?;
+        }
+        {
+            let val = &self.target_action;
+            ser.write_string(&WEBHOOKDEFINITION_MEMBER_TARGET_ACTION, val)?;
+        }
+        {
+            let val = &self.filters;
+
+            ser.write_list(
+                &WEBHOOKDEFINITION_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::WebhookFilterRule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.authentication;
+            ser.write_string(&WEBHOOKDEFINITION_MEMBER_AUTHENTICATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.authentication_configuration {
+            ser.write_struct(&WEBHOOKDEFINITION_MEMBER_AUTHENTICATION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WebhookDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WEBHOOKDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.target_pipeline = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.target_action = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.filters = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::WebhookFilterRule::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(4) => {
+                    self.authentication = Some(crate::types::WebhookAuthenticationType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_configuration = Some(crate::types::WebhookAuthConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WebhookDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.target_pipeline = builder.target_pipeline.or(Some(String::new()));
+        builder.target_action = builder.target_action.or(Some(String::new()));
+        builder.filters = builder.filters.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl WebhookDefinition {
     /// Creates a new builder-style object to manufacture [`WebhookDefinition`](crate::types::WebhookDefinition).
     pub fn builder() -> crate::types::builders::WebhookDefinitionBuilder {

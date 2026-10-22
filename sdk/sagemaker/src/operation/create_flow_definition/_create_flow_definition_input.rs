@@ -50,6 +50,237 @@ impl CreateFlowDefinitionInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEFLOWDEFINITIONINPUT_MEMBER_FLOW_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput$FlowDefinitionName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlowDefinitionName",
+    0,
+);
+static CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_REQUEST_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput$HumanLoopRequestSource",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HumanLoopRequestSource",
+    1,
+);
+static CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_ACTIVATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput$HumanLoopActivationConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HumanLoopActivationConfig",
+    2,
+);
+static CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput$HumanLoopConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HumanLoopConfig",
+    3,
+);
+static CREATEFLOWDEFINITIONINPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    4,
+);
+static CREATEFLOWDEFINITIONINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    5,
+);
+static CREATEFLOWDEFINITIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEFLOWDEFINITIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATEFLOWDEFINITIONINPUT_MEMBER_TAGS_MEMBER);
+static CREATEFLOWDEFINITIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateFlowDefinitionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateFlowDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEFLOWDEFINITIONINPUT_MEMBER_FLOW_DEFINITION_NAME,
+        &CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_REQUEST_SOURCE,
+        &CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_ACTIVATION_CONFIG,
+        &CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_CONFIG,
+        &CREATEFLOWDEFINITIONINPUT_MEMBER_OUTPUT_CONFIG,
+        &CREATEFLOWDEFINITIONINPUT_MEMBER_ROLE_ARN,
+        &CREATEFLOWDEFINITIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateFlowDefinitionRequest");
+impl CreateFlowDefinitionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEFLOWDEFINITIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateFlowDefinitionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.flow_definition_name {
+            ser.write_string(&CREATEFLOWDEFINITIONINPUT_MEMBER_FLOW_DEFINITION_NAME, val)?;
+        }
+        if let Some(ref val) = self.human_loop_request_source {
+            ser.write_struct(&CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_REQUEST_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.human_loop_activation_config {
+            ser.write_struct(&CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_ACTIVATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.human_loop_config {
+            ser.write_struct(&CREATEFLOWDEFINITIONINPUT_MEMBER_HUMAN_LOOP_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&CREATEFLOWDEFINITIONINPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEFLOWDEFINITIONINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEFLOWDEFINITIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEFLOWDEFINITIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flow_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_loop_request_source = Some(crate::types::HumanLoopRequestSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_loop_activation_config = Some(crate::types::HumanLoopActivationConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_loop_config = Some(crate::types::HumanLoopConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::FlowDefinitionOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateFlowDefinitionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.flow_definition_name = builder.flow_definition_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateFlowDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateFlowDefinitionInput`](crate::operation::create_flow_definition::CreateFlowDefinitionInput).
     pub fn builder() -> crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder {

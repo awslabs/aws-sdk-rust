@@ -19,6 +19,106 @@ impl RepositoryTriggerExecutionFailure {
         self.failure_message.as_deref()
     }
 }
+static REPOSITORYTRIGGEREXECUTIONFAILURE_MEMBER_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTriggerExecutionFailure$trigger",
+        "com.amazonaws.codecommit",
+        "RepositoryTriggerExecutionFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "trigger",
+    0,
+);
+static REPOSITORYTRIGGEREXECUTIONFAILURE_MEMBER_FAILURE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTriggerExecutionFailure$failureMessage",
+        "com.amazonaws.codecommit",
+        "RepositoryTriggerExecutionFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "failureMessage",
+    1,
+);
+static REPOSITORYTRIGGEREXECUTIONFAILURE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTriggerExecutionFailure",
+        "com.amazonaws.codecommit",
+        "RepositoryTriggerExecutionFailure",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPOSITORYTRIGGEREXECUTIONFAILURE_MEMBER_TRIGGER,
+        &REPOSITORYTRIGGEREXECUTIONFAILURE_MEMBER_FAILURE_MESSAGE,
+    ],
+);
+impl RepositoryTriggerExecutionFailure {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPOSITORYTRIGGEREXECUTIONFAILURE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RepositoryTriggerExecutionFailure {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.trigger {
+            ser.write_string(&REPOSITORYTRIGGEREXECUTIONFAILURE_MEMBER_TRIGGER, val)?;
+        }
+        if let Some(ref val) = self.failure_message {
+            ser.write_string(&REPOSITORYTRIGGEREXECUTIONFAILURE_MEMBER_FAILURE_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RepositoryTriggerExecutionFailureBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPOSITORYTRIGGEREXECUTIONFAILURE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trigger = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RepositoryTriggerExecutionFailure {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RepositoryTriggerExecutionFailure {
     /// Creates a new builder-style object to manufacture [`RepositoryTriggerExecutionFailure`](crate::types::RepositoryTriggerExecutionFailure).
     pub fn builder() -> crate::types::builders::RepositoryTriggerExecutionFailureBuilder {

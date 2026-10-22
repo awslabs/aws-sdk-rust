@@ -43,6 +43,144 @@ impl ::std::fmt::Debug for ChapInfo {
         formatter.finish()
     }
 }
+static CHAPINFO_MEMBER_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#ChapInfo$TargetARN",
+        "com.amazonaws.storagegateway",
+        "ChapInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetARN",
+    0,
+);
+static CHAPINFO_MEMBER_SECRET_TO_AUTHENTICATE_INITIATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#ChapInfo$SecretToAuthenticateInitiator",
+        "com.amazonaws.storagegateway",
+        "ChapInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretToAuthenticateInitiator",
+    1,
+);
+static CHAPINFO_MEMBER_INITIATOR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#ChapInfo$InitiatorName",
+        "com.amazonaws.storagegateway",
+        "ChapInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InitiatorName",
+    2,
+);
+static CHAPINFO_MEMBER_SECRET_TO_AUTHENTICATE_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#ChapInfo$SecretToAuthenticateTarget",
+        "com.amazonaws.storagegateway",
+        "ChapInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretToAuthenticateTarget",
+    3,
+);
+static CHAPINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#ChapInfo", "com.amazonaws.storagegateway", "ChapInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHAPINFO_MEMBER_TARGET_ARN,
+        &CHAPINFO_MEMBER_SECRET_TO_AUTHENTICATE_INITIATOR,
+        &CHAPINFO_MEMBER_INITIATOR_NAME,
+        &CHAPINFO_MEMBER_SECRET_TO_AUTHENTICATE_TARGET,
+    ],
+);
+impl ChapInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHAPINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ChapInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target_arn {
+            ser.write_string(&CHAPINFO_MEMBER_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.secret_to_authenticate_initiator {
+            ser.write_string(&CHAPINFO_MEMBER_SECRET_TO_AUTHENTICATE_INITIATOR, val)?;
+        }
+        if let Some(ref val) = self.initiator_name {
+            ser.write_string(&CHAPINFO_MEMBER_INITIATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.secret_to_authenticate_target {
+            ser.write_string(&CHAPINFO_MEMBER_SECRET_TO_AUTHENTICATE_TARGET, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChapInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHAPINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_to_authenticate_initiator = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.initiator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_to_authenticate_target = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ChapInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ChapInfo {
     /// Creates a new builder-style object to manufacture [`ChapInfo`](crate::types::ChapInfo).
     pub fn builder() -> crate::types::builders::ChapInfoBuilder {

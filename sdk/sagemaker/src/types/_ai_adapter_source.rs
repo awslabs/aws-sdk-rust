@@ -50,3 +50,131 @@ impl AiAdapterSource {
         matches!(self, Self::Unknown)
     }
 }
+static AIADAPTERSOURCE_MEMBER_MODELPACKAGEARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIAdapterModelPackageEntryList$member",
+        "com.amazonaws.sagemaker",
+        "AIAdapterModelPackageEntryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIADAPTERSOURCE_MEMBER_MODELPACKAGEARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIAdapterSource$ModelPackageArns",
+        "com.amazonaws.sagemaker",
+        "AIAdapterSource",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ModelPackageArns",
+    0,
+)
+.with_list_member(&AIADAPTERSOURCE_MEMBER_MODELPACKAGEARNS_MEMBER);
+static AIADAPTERSOURCE_MEMBER_S3URIS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIAdapterS3EntryList$member",
+        "com.amazonaws.sagemaker",
+        "AIAdapterS3EntryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIADAPTERSOURCE_MEMBER_S3URIS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIAdapterSource$S3Uris",
+        "com.amazonaws.sagemaker",
+        "AIAdapterSource",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "S3Uris",
+    1,
+)
+.with_list_member(&AIADAPTERSOURCE_MEMBER_S3URIS_MEMBER);
+static AIADAPTERSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AIAdapterSource", "com.amazonaws.sagemaker", "AIAdapterSource"),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[&AIADAPTERSOURCE_MEMBER_MODELPACKAGEARNS, &AIADAPTERSOURCE_MEMBER_S3URIS],
+);
+impl AiAdapterSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIADAPTERSOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiAdapterSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::ModelPackageArns(val) => {
+                ser.write_list(
+                    &AIADAPTERSOURCE_MEMBER_MODELPACKAGEARNS,
+                    &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                        for item in val {
+                            ser.write_struct(crate::types::AiAdapterModelPackageEntry::SCHEMA, item)?;
+                        }
+                        Ok(())
+                    },
+                )?;
+            }
+            Self::S3Uris(val) => {
+                ser.write_list(
+                    &AIADAPTERSOURCE_MEMBER_S3URIS,
+                    &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                        for item in val {
+                            ser.write_struct(crate::types::AiAdapterS3Entry::SCHEMA, item)?;
+                        }
+                        Ok(())
+                    },
+                )?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl AiAdapterSource {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&AIADAPTERSOURCE_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::ModelPackageArns({
+                    let mut container = Vec::new();
+                    deser.read_list(member, &mut |deser| {
+                        container.push(crate::types::AiAdapterModelPackageEntry::deserialize(deser)?);
+                        Ok(())
+                    })?;
+                    container
+                }),
+                Some(1) => Self::S3Uris({
+                    let mut container = Vec::new();
+                    deser.read_list(member, &mut |deser| {
+                        container.push(crate::types::AiAdapterS3Entry::deserialize(deser)?);
+                        Ok(())
+                    })?;
+                    container
+                }),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

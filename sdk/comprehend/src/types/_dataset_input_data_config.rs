@@ -37,6 +37,177 @@ impl DatasetInputDataConfig {
         self.entity_recognizer_input_data_config.as_ref()
     }
 }
+static DATASETINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DatasetAugmentedManifestsList$member",
+        "com.amazonaws.comprehend",
+        "DatasetAugmentedManifestsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DATASETINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DatasetInputDataConfig$AugmentedManifests",
+        "com.amazonaws.comprehend",
+        "DatasetInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AugmentedManifests",
+    0,
+)
+.with_list_member(&DATASETINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS_MEMBER);
+static DATASETINPUTDATACONFIG_MEMBER_DATA_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DatasetInputDataConfig$DataFormat",
+        "com.amazonaws.comprehend",
+        "DatasetInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataFormat",
+    1,
+);
+static DATASETINPUTDATACONFIG_MEMBER_DOCUMENT_CLASSIFIER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#DatasetInputDataConfig$DocumentClassifierInputDataConfig",
+            "com.amazonaws.comprehend",
+            "DatasetInputDataConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DocumentClassifierInputDataConfig",
+        2,
+    );
+static DATASETINPUTDATACONFIG_MEMBER_ENTITY_RECOGNIZER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#DatasetInputDataConfig$EntityRecognizerInputDataConfig",
+            "com.amazonaws.comprehend",
+            "DatasetInputDataConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "EntityRecognizerInputDataConfig",
+        3,
+    );
+static DATASETINPUTDATACONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DatasetInputDataConfig",
+        "com.amazonaws.comprehend",
+        "DatasetInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATASETINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS,
+        &DATASETINPUTDATACONFIG_MEMBER_DATA_FORMAT,
+        &DATASETINPUTDATACONFIG_MEMBER_DOCUMENT_CLASSIFIER_INPUT_DATA_CONFIG,
+        &DATASETINPUTDATACONFIG_MEMBER_ENTITY_RECOGNIZER_INPUT_DATA_CONFIG,
+    ],
+);
+impl DatasetInputDataConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATASETINPUTDATACONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DatasetInputDataConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.augmented_manifests {
+            ser.write_list(
+                &DATASETINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DatasetAugmentedManifestsListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.data_format {
+            ser.write_string(&DATASETINPUTDATACONFIG_MEMBER_DATA_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.document_classifier_input_data_config {
+            ser.write_struct(&DATASETINPUTDATACONFIG_MEMBER_DOCUMENT_CLASSIFIER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.entity_recognizer_input_data_config {
+            ser.write_struct(&DATASETINPUTDATACONFIG_MEMBER_ENTITY_RECOGNIZER_INPUT_DATA_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DatasetInputDataConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATASETINPUTDATACONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.augmented_manifests = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DatasetAugmentedManifestsListItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_format = Some(crate::types::DatasetDataFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_classifier_input_data_config =
+                            Some(crate::types::DatasetDocumentClassifierInputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_recognizer_input_data_config = Some(crate::types::DatasetEntityRecognizerInputDataConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DatasetInputDataConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DatasetInputDataConfig {
     /// Creates a new builder-style object to manufacture [`DatasetInputDataConfig`](crate::types::DatasetInputDataConfig).
     pub fn builder() -> crate::types::builders::DatasetInputDataConfigBuilder {

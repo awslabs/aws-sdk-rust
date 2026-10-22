@@ -93,6 +93,359 @@ impl QueryExecution {
         self.query_results_s3_access_grants_configuration.as_ref()
     }
 }
+static QUERYEXECUTION_MEMBER_QUERY_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$QueryExecutionId",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryExecutionId",
+    0,
+);
+static QUERYEXECUTION_MEMBER_QUERY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryExecution$Query", "com.amazonaws.athena", "QueryExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Query",
+    1,
+);
+static QUERYEXECUTION_MEMBER_STATEMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$StatementType",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatementType",
+    2,
+);
+static QUERYEXECUTION_MEMBER_MANAGED_QUERY_RESULTS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$ManagedQueryResultsConfiguration",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManagedQueryResultsConfiguration",
+    3,
+);
+static QUERYEXECUTION_MEMBER_RESULT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$ResultConfiguration",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResultConfiguration",
+    4,
+);
+static QUERYEXECUTION_MEMBER_RESULT_REUSE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$ResultReuseConfiguration",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResultReuseConfiguration",
+    5,
+);
+static QUERYEXECUTION_MEMBER_QUERY_EXECUTION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$QueryExecutionContext",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "QueryExecutionContext",
+    6,
+);
+static QUERYEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryExecution$Status", "com.amazonaws.athena", "QueryExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Status",
+    7,
+);
+static QUERYEXECUTION_MEMBER_STATISTICS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryExecution$Statistics", "com.amazonaws.athena", "QueryExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Statistics",
+    8,
+);
+static QUERYEXECUTION_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryExecution$WorkGroup", "com.amazonaws.athena", "QueryExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    9,
+);
+static QUERYEXECUTION_MEMBER_ENGINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$EngineVersion",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EngineVersion",
+    10,
+);
+static QUERYEXECUTION_MEMBER_EXECUTION_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ExecutionParameters$member",
+        "com.amazonaws.athena",
+        "ExecutionParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static QUERYEXECUTION_MEMBER_EXECUTION_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$ExecutionParameters",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExecutionParameters",
+    11,
+)
+.with_list_member(&QUERYEXECUTION_MEMBER_EXECUTION_PARAMETERS_MEMBER);
+static QUERYEXECUTION_MEMBER_SUBSTATEMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryExecution$SubstatementType",
+        "com.amazonaws.athena",
+        "QueryExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubstatementType",
+    12,
+);
+static QUERYEXECUTION_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#QueryExecution$QueryResultsS3AccessGrantsConfiguration",
+            "com.amazonaws.athena",
+            "QueryExecution",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "QueryResultsS3AccessGrantsConfiguration",
+        13,
+    );
+static QUERYEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryExecution", "com.amazonaws.athena", "QueryExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYEXECUTION_MEMBER_QUERY_EXECUTION_ID,
+        &QUERYEXECUTION_MEMBER_QUERY,
+        &QUERYEXECUTION_MEMBER_STATEMENT_TYPE,
+        &QUERYEXECUTION_MEMBER_MANAGED_QUERY_RESULTS_CONFIGURATION,
+        &QUERYEXECUTION_MEMBER_RESULT_CONFIGURATION,
+        &QUERYEXECUTION_MEMBER_RESULT_REUSE_CONFIGURATION,
+        &QUERYEXECUTION_MEMBER_QUERY_EXECUTION_CONTEXT,
+        &QUERYEXECUTION_MEMBER_STATUS,
+        &QUERYEXECUTION_MEMBER_STATISTICS,
+        &QUERYEXECUTION_MEMBER_WORK_GROUP,
+        &QUERYEXECUTION_MEMBER_ENGINE_VERSION,
+        &QUERYEXECUTION_MEMBER_EXECUTION_PARAMETERS,
+        &QUERYEXECUTION_MEMBER_SUBSTATEMENT_TYPE,
+        &QUERYEXECUTION_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION,
+    ],
+);
+impl QueryExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryExecution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.query_execution_id {
+            ser.write_string(&QUERYEXECUTION_MEMBER_QUERY_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.query {
+            ser.write_string(&QUERYEXECUTION_MEMBER_QUERY, val)?;
+        }
+        if let Some(ref val) = self.statement_type {
+            ser.write_string(&QUERYEXECUTION_MEMBER_STATEMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_query_results_configuration {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_MANAGED_QUERY_RESULTS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.result_configuration {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_RESULT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.result_reuse_configuration {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_RESULT_REUSE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.query_execution_context {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_QUERY_EXECUTION_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.statistics {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_STATISTICS, val)?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&QUERYEXECUTION_MEMBER_WORK_GROUP, val)?;
+        }
+        if let Some(ref val) = self.engine_version {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_ENGINE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.execution_parameters {
+            ser.write_list(
+                &QUERYEXECUTION_MEMBER_EXECUTION_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.substatement_type {
+            ser.write_string(&QUERYEXECUTION_MEMBER_SUBSTATEMENT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.query_results_s3_access_grants_configuration {
+            ser.write_struct(&QUERYEXECUTION_MEMBER_QUERY_RESULTS_S3_ACCESS_GRANTS_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QueryExecutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.statement_type = Some(crate::types::StatementType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_query_results_configuration = Some(crate::types::ManagedQueryResultsConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_configuration = Some(crate::types::ResultConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_reuse_configuration = Some(crate::types::ResultReuseConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_execution_context = Some(crate::types::QueryExecutionContext::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::QueryExecutionStatus::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.statistics = Some(crate::types::QueryExecutionStatistics::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_version = Some(crate::types::EngineVersion::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_parameters = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.substatement_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_results_s3_access_grants_configuration =
+                            Some(crate::types::QueryResultsS3AccessGrantsConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QueryExecution {
     /// Creates a new builder-style object to manufacture [`QueryExecution`](crate::types::QueryExecution).
     pub fn builder() -> crate::types::builders::QueryExecutionBuilder {

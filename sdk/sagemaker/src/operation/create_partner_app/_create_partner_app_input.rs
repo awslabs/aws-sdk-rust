@@ -98,6 +98,364 @@ impl CreatePartnerAppInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEPARTNERAPPINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$Name",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$Type",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    1,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$ExecutionRoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRoleArn",
+    2,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$KmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    3,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_MAINTENANCE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$MaintenanceConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MaintenanceConfig",
+    4,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_TIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$Tier",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Tier",
+    5,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_APPLICATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$ApplicationConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApplicationConfig",
+    6,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_IDC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$IdcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IdcConfig",
+    7,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_AUTH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$AuthType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthType",
+    8,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_ENABLE_IAM_SESSION_BASED_IDENTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$EnableIamSessionBasedIdentity",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableIamSessionBasedIdentity",
+    9,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_ENABLE_AUTO_MINOR_VERSION_UPGRADE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$EnableAutoMinorVersionUpgrade",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableAutoMinorVersionUpgrade",
+    10,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$ClientToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    11,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPARTNERAPPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    12,
+)
+.with_list_member(&CREATEPARTNERAPPINPUT_MEMBER_TAGS_MEMBER);
+static CREATEPARTNERAPPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreatePartnerAppInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreatePartnerAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPARTNERAPPINPUT_MEMBER_NAME,
+        &CREATEPARTNERAPPINPUT_MEMBER_TYPE,
+        &CREATEPARTNERAPPINPUT_MEMBER_EXECUTION_ROLE_ARN,
+        &CREATEPARTNERAPPINPUT_MEMBER_KMS_KEY_ID,
+        &CREATEPARTNERAPPINPUT_MEMBER_MAINTENANCE_CONFIG,
+        &CREATEPARTNERAPPINPUT_MEMBER_TIER,
+        &CREATEPARTNERAPPINPUT_MEMBER_APPLICATION_CONFIG,
+        &CREATEPARTNERAPPINPUT_MEMBER_IDC_CONFIG,
+        &CREATEPARTNERAPPINPUT_MEMBER_AUTH_TYPE,
+        &CREATEPARTNERAPPINPUT_MEMBER_ENABLE_IAM_SESSION_BASED_IDENTITY,
+        &CREATEPARTNERAPPINPUT_MEMBER_ENABLE_AUTO_MINOR_VERSION_UPGRADE,
+        &CREATEPARTNERAPPINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATEPARTNERAPPINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePartnerAppRequest");
+impl CreatePartnerAppInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPARTNERAPPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePartnerAppInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEPARTNERAPPINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CREATEPARTNERAPPINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&CREATEPARTNERAPPINPUT_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&CREATEPARTNERAPPINPUT_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.maintenance_config {
+            ser.write_struct(&CREATEPARTNERAPPINPUT_MEMBER_MAINTENANCE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tier {
+            ser.write_string(&CREATEPARTNERAPPINPUT_MEMBER_TIER, val)?;
+        }
+        if let Some(ref val) = self.application_config {
+            ser.write_struct(&CREATEPARTNERAPPINPUT_MEMBER_APPLICATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.idc_config {
+            ser.write_struct(&CREATEPARTNERAPPINPUT_MEMBER_IDC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.auth_type {
+            ser.write_string(&CREATEPARTNERAPPINPUT_MEMBER_AUTH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.enable_iam_session_based_identity {
+            ser.write_boolean(&CREATEPARTNERAPPINPUT_MEMBER_ENABLE_IAM_SESSION_BASED_IDENTITY, *val)?;
+        }
+        if let Some(ref val) = self.enable_auto_minor_version_upgrade {
+            ser.write_boolean(&CREATEPARTNERAPPINPUT_MEMBER_ENABLE_AUTO_MINOR_VERSION_UPGRADE, *val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATEPARTNERAPPINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEPARTNERAPPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_partner_app::builders::CreatePartnerAppInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPARTNERAPPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::PartnerAppType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maintenance_config = Some(crate::types::PartnerAppMaintenanceConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_config = Some(crate::types::PartnerAppConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idc_config = Some(crate::types::IdcConfigInput::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auth_type = Some(crate::types::PartnerAppAuthType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_iam_session_based_identity = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_auto_minor_version_upgrade = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePartnerAppInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.execution_role_arn = builder.execution_role_arn.or(Some(String::new()));
+        builder.tier = builder.tier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePartnerAppInput {
     /// Creates a new builder-style object to manufacture [`CreatePartnerAppInput`](crate::operation::create_partner_app::CreatePartnerAppInput).
     pub fn builder() -> crate::operation::create_partner_app::builders::CreatePartnerAppInputBuilder {

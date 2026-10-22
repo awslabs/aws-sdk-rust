@@ -12,6 +12,86 @@ impl GetLicenseAssetRulesetInput {
         self.license_asset_ruleset_arn.as_deref()
     }
 }
+static GETLICENSEASSETRULESETINPUT_MEMBER_LICENSE_ASSET_RULESET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseAssetRulesetInput$LicenseAssetRulesetArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseAssetRulesetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseAssetRulesetArn",
+    0,
+);
+static GETLICENSEASSETRULESETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseAssetRulesetInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseAssetRulesetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETLICENSEASSETRULESETINPUT_MEMBER_LICENSE_ASSET_RULESET_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetLicenseAssetRulesetRequest");
+impl GetLicenseAssetRulesetInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETLICENSEASSETRULESETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetLicenseAssetRulesetInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_asset_ruleset_arn {
+            ser.write_string(&GETLICENSEASSETRULESETINPUT_MEMBER_LICENSE_ASSET_RULESET_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_license_asset_ruleset::builders::GetLicenseAssetRulesetInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETLICENSEASSETRULESETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_asset_ruleset_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetLicenseAssetRulesetInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.license_asset_ruleset_arn = builder.license_asset_ruleset_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetLicenseAssetRulesetInput {
     /// Creates a new builder-style object to manufacture [`GetLicenseAssetRulesetInput`](crate::operation::get_license_asset_ruleset::GetLicenseAssetRulesetInput).
     pub fn builder() -> crate::operation::get_license_asset_ruleset::builders::GetLicenseAssetRulesetInputBuilder {

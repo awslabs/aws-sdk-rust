@@ -8,6 +8,12 @@ impl MergePullRequestByFastForward {
     pub fn new() -> Self {
         Self
     }
+    /// The schema for this operation's input shape.
+    pub const INPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput::SCHEMA;
+    /// The schema for this operation's output shape.
+    pub const OUTPUT_SCHEMA: &'static ::aws_smithy_schema::Schema<'static> =
+        crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput::SCHEMA;
     pub(crate) async fn orchestrate(
         runtime_plugins: &::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins,
         input: crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput,
@@ -89,6 +95,191 @@ impl MergePullRequestByFastForward {
         }
         runtime_plugins
     }
+}
+/// Per-operation error registry. Contains an entry for every modeled
+/// error this operation can throw.
+///
+/// Used by the schema-serde error path as the operation-scoped lookup
+/// for registry-backed error reification: an error code that does not
+/// match one of the operation's modeled errors directly is resolved
+/// against this registry first, then widened to the service-wide error
+/// registry.
+pub(crate) mod error_registry {
+    pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry::TypeRegistry> = ::std::sync::LazyLock::new(|| {
+        ::aws_smithy_schema::registry::TypeRegistry::builder()
+                            .insert_error_shape(
+                        crate::types::error::ConcurrentReferenceUpdateException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ConcurrentReferenceUpdateException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ConcurrentReferenceUpdateException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionIntegrityChecksFailedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionIntegrityChecksFailedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionIntegrityChecksFailedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyAccessDeniedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyAccessDeniedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyAccessDeniedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyDisabledException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyDisabledException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyDisabledException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyNotFoundException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyNotFoundException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyNotFoundException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::EncryptionKeyUnavailableException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EncryptionKeyUnavailableException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EncryptionKeyUnavailableException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidCommitIdException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidCommitIdException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidCommitIdException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidPullRequestIdException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidPullRequestIdException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidPullRequestIdException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidRepositoryNameException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidRepositoryNameException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidRepositoryNameException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ManualMergeRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ManualMergeRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ManualMergeRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::PullRequestAlreadyClosedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::PullRequestAlreadyClosedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::PullRequestAlreadyClosedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::PullRequestApprovalRulesNotSatisfiedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::PullRequestApprovalRulesNotSatisfiedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::PullRequestApprovalRulesNotSatisfiedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::PullRequestDoesNotExistException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::PullRequestDoesNotExistException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::PullRequestDoesNotExistException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::PullRequestIdRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::PullRequestIdRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::PullRequestIdRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::ReferenceDoesNotExistException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::ReferenceDoesNotExistException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::ReferenceDoesNotExistException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryDoesNotExistException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryDoesNotExistException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryDoesNotExistException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryNameRequiredException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryNameRequiredException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryNameRequiredException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::RepositoryNotAssociatedWithPullRequestException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::RepositoryNotAssociatedWithPullRequestException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::RepositoryNotAssociatedWithPullRequestException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::TipOfSourceReferenceIsDifferentException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::TipOfSourceReferenceIsDifferentException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::TipOfSourceReferenceIsDifferentException::deserialize(d)?))
+                        },
+                    )
+                            .build()
+    });
 }
 impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for MergePullRequestByFastForward {
     fn config(&self) -> ::std::option::Option<::aws_smithy_types::config_bag::FrozenLayer> {
@@ -220,21 +411,318 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for MergePull
         _cfg: &::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::aws_smithy_runtime_api::client::interceptors::context::OutputOrError {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
-        let headers = response.headers();
+        // Load body and headers BEFORE BeforeParseResponse so customizations
+        // (e.g., S3's `body_is_error` check that detects errors returned with
+        // HTTP 200) can inspect them. The legacy non-streaming path also
+        // loads `body` before firing this hook.
+        #[allow(unused_variables)]
         let body = response.body().bytes().expect("body loaded");
+        let headers = response.headers();
         #[allow(unused_mut)]
         let mut force_error = false;
         ::tracing::debug!(request_id = ?::aws_types::request_id::RequestId::request_id(response));
-        let parse_result = if !success && status != 200 || force_error {
-            crate::protocol_serde::shape_merge_pull_request_by_fast_forward::de_merge_pull_request_by_fast_forward_http_error(
-                status, headers, body, _cfg,
-            )
+        if !success && status != 200 || force_error {
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            #[allow(unused_mut)]
+            let mut generic_builder = protocol.parse_error_metadata(response, _cfg).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, headers);
+            let generic = generic_builder.build();
+            let error_code = match generic.code() {
+                ::std::option::Option::Some(code) => code,
+                ::std::option::Option::None => {
+                    return ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                        ::aws_smithy_runtime_api::box_error::BoxError::from(
+                            crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::unhandled(generic),
+                        ),
+                    ))
+                }
+            };
+            let _error_message = generic.message().map(|msg| msg.to_owned());
+            let err = match error_code {
+"ConcurrentReferenceUpdateException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::ConcurrentReferenceUpdateException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::ConcurrentReferenceUpdateExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"EncryptionIntegrityChecksFailedException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionIntegrityChecksFailedException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::EncryptionIntegrityChecksFailedExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"EncryptionKeyAccessDeniedException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyAccessDeniedException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::EncryptionKeyAccessDeniedExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"EncryptionKeyDisabledException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyDisabledException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::EncryptionKeyDisabledExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"EncryptionKeyNotFoundException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyNotFoundException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::EncryptionKeyNotFoundExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"EncryptionKeyUnavailableException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::EncryptionKeyUnavailableException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::EncryptionKeyUnavailableExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"InvalidCommitIdException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::InvalidCommitIdException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::InvalidCommitIdExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"InvalidPullRequestIdException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::InvalidPullRequestIdException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::InvalidPullRequestIdExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"InvalidRepositoryNameException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::InvalidRepositoryNameException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::InvalidRepositoryNameExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"ManualMergeRequiredException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::ManualMergeRequiredException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::ManualMergeRequiredExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"PullRequestAlreadyClosedException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestAlreadyClosedException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::PullRequestAlreadyClosedExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"PullRequestApprovalRulesNotSatisfiedException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestApprovalRulesNotSatisfiedException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::PullRequestApprovalRulesNotSatisfiedExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"PullRequestDoesNotExistException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestDoesNotExistException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::PullRequestDoesNotExistExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"PullRequestIdRequiredException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::PullRequestIdRequiredException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::PullRequestIdRequiredExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"ReferenceDoesNotExistException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::ReferenceDoesNotExistException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::ReferenceDoesNotExistExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"RepositoryDoesNotExistException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::RepositoryDoesNotExistException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::RepositoryDoesNotExistExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"RepositoryNameRequiredException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::RepositoryNameRequiredException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::RepositoryNameRequiredExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"RepositoryNotAssociatedWithPullRequestException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::RepositoryNotAssociatedWithPullRequestException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::RepositoryNotAssociatedWithPullRequestExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+"TipOfSourceReferenceIsDifferentException" => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::TipOfSourceReferenceIsDifferentException({
+let mut deser = protocol.deserialize_error_response(response, _cfg)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+                    let mut tmp = <crate::types::error::builders::TipOfSourceReferenceIsDifferentExceptionBuilder>::default();
+                    tmp.deserialize_members(&mut *deser)
+                        .map_err(|e| ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e)))?;
+if tmp.message.is_none() {
+                                tmp.message = _error_message;
+                            }
+let tmp = tmp.meta(generic);
+tmp.build()
+}),
+_ => {
+                    // Registry-backed, operation-scoped reification of an error whose
+                    // code this operation does not model directly: the operation's own
+                    // error registry is consulted first, then the lookup widens to the
+                    // service-wide error registry. On a hit, the reified error is attached
+                    // as the source of the returned unhandled error while its metadata
+                    // (code, message, request id) is preserved; on a miss the generic
+                    // error is returned unchanged.
+                    match protocol
+                        .deserialize_error_response(response, _cfg)
+                        .ok()
+                        .and_then(|mut deser| {
+                            ::aws_smithy_schema::registry::reify_error(
+                                crate::operation::merge_pull_request_by_fast_forward::error_registry::REGISTRY
+                                    .or(&crate::error_type_registry::REGISTRY),
+                                error_code,
+                                &mut *deser,
+                            )
+                        }) {
+                        ::std::option::Option::Some(source) => <crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError as ::aws_smithy_runtime_api::client::result::CreateUnhandledError>::create_unhandled_error(source, ::std::option::Option::Some(generic)),
+                        ::std::option::Option::None => crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError::generic(generic),
+                    }
+                }
+};
+            ::std::result::Result::Err(::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::operation(
+                ::aws_smithy_runtime_api::client::interceptors::context::Error::erase(err),
+            ))
         } else {
-            crate::protocol_serde::shape_merge_pull_request_by_fast_forward::de_merge_pull_request_by_fast_forward_http_response(
-                status, headers, body, _cfg,
-            )
-        };
-        crate::protocol_serde::type_erase_result(parse_result)
+            let protocol = _cfg
+                .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+                .expect("a SharedClientProtocol is required");
+            let mut deser = protocol
+                .deserialize_response(response, MergePullRequestByFastForward::OUTPUT_SCHEMA, _cfg)
+                .map_err(|e| {
+                    ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+                })?;
+            // `headers` is already in scope from the top of the function; alias it as
+            // `_response_headers` so MutateOutput customizations have a stable name to
+            // read from.
+            let _response_headers = headers;
+            // `mut` is required because `deserialize_members` and the `MutateOutput`
+            // builder setters take `&mut self`. Marked `allow(unused_mut)` because an
+            // empty output has no members and no customizations to run.
+            #[allow(unused_mut)]
+            let mut output = <crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardOutputBuilder>::default();
+            output.deserialize_members(&mut *deser).map_err(|e| {
+                ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(e))
+            })?;
+            output._set_request_id(::aws_types::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+            let output = output.build();
+            ::std::result::Result::Ok(::aws_smithy_runtime_api::client::interceptors::context::Output::erase(output))
+        }
     }
 }
 #[derive(Debug)]
@@ -249,46 +737,15 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for MergePullReq
         let input = input
             .downcast::<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput>()
             .expect("correct type");
-        let _header_serialization_settings = _cfg
-            .load::<crate::serialization_settings::HeaderSerializationSettings>()
-            .cloned()
-            .unwrap_or_default();
-        let mut request_builder = {
-            #[allow(clippy::uninlined_format_args)]
-            fn uri_base(
-                _input: &crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput,
-                output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                use ::std::fmt::Write as _;
-                ::std::write!(output, "/").expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            #[allow(clippy::unnecessary_wraps)]
-            fn update_http_builder(
-                input: &crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput,
-                builder: ::http_1x::request::Builder,
-            ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
-                let mut uri = ::std::string::String::new();
-                uri_base(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("POST").uri(uri))
-            }
-            let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
-            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/x-amz-json-1.1");
-            builder = _header_serialization_settings.set_default_header(
-                builder,
-                ::http_1x::header::HeaderName::from_static("x-amz-target"),
-                "CodeCommit_20150413.MergePullRequestByFastForward",
-            );
-            builder
-        };
-        let body = ::aws_smithy_types::body::SdkBody::from(
-            crate::protocol_serde::shape_merge_pull_request_by_fast_forward::ser_merge_pull_request_by_fast_forward_input(&input)?,
-        );
-        if let Some(content_length) = body.content_length() {
-            let content_length = content_length.to_string();
-            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
-        }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
+
+        let protocol = _cfg
+            .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+            .expect("a SharedClientProtocol is required");
+        let mut request = protocol
+            .serialize_request(&input, MergePullRequestByFastForward::INPUT_SCHEMA, "/", _cfg)
+            .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
+
+        return ::std::result::Result::Ok(request);
     }
 }
 #[derive(Debug)]

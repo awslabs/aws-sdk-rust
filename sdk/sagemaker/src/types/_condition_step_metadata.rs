@@ -13,6 +13,83 @@ impl ConditionStepMetadata {
         self.outcome.as_ref()
     }
 }
+static CONDITIONSTEPMETADATA_MEMBER_OUTCOME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ConditionStepMetadata$Outcome",
+        "com.amazonaws.sagemaker",
+        "ConditionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Outcome",
+    0,
+);
+static CONDITIONSTEPMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ConditionStepMetadata",
+        "com.amazonaws.sagemaker",
+        "ConditionStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CONDITIONSTEPMETADATA_MEMBER_OUTCOME],
+);
+impl ConditionStepMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONDITIONSTEPMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConditionStepMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.outcome {
+            ser.write_string(&CONDITIONSTEPMETADATA_MEMBER_OUTCOME, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConditionStepMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONDITIONSTEPMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.outcome = Some(crate::types::ConditionOutcome::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConditionStepMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConditionStepMetadata {
     /// Creates a new builder-style object to manufacture [`ConditionStepMetadata`](crate::types::ConditionStepMetadata).
     pub fn builder() -> crate::types::builders::ConditionStepMetadataBuilder {

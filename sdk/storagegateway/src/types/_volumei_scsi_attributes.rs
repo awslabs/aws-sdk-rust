@@ -37,6 +37,163 @@ impl VolumeiScsiAttributes {
         self.chap_enabled
     }
 }
+static VOLUMEISCSIATTRIBUTES_MEMBER_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeiSCSIAttributes$TargetARN",
+        "com.amazonaws.storagegateway",
+        "VolumeiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetARN",
+    0,
+);
+static VOLUMEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeiSCSIAttributes$NetworkInterfaceId",
+        "com.amazonaws.storagegateway",
+        "VolumeiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NetworkInterfaceId",
+    1,
+);
+static VOLUMEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeiSCSIAttributes$NetworkInterfacePort",
+        "com.amazonaws.storagegateway",
+        "VolumeiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "NetworkInterfacePort",
+    2,
+);
+static VOLUMEISCSIATTRIBUTES_MEMBER_LUN_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeiSCSIAttributes$LunNumber",
+        "com.amazonaws.storagegateway",
+        "VolumeiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "LunNumber",
+    3,
+);
+static VOLUMEISCSIATTRIBUTES_MEMBER_CHAP_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeiSCSIAttributes$ChapEnabled",
+        "com.amazonaws.storagegateway",
+        "VolumeiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ChapEnabled",
+    4,
+);
+static VOLUMEISCSIATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeiSCSIAttributes",
+        "com.amazonaws.storagegateway",
+        "VolumeiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VOLUMEISCSIATTRIBUTES_MEMBER_TARGET_ARN,
+        &VOLUMEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_ID,
+        &VOLUMEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_PORT,
+        &VOLUMEISCSIATTRIBUTES_MEMBER_LUN_NUMBER,
+        &VOLUMEISCSIATTRIBUTES_MEMBER_CHAP_ENABLED,
+    ],
+);
+impl VolumeiScsiAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VOLUMEISCSIATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VolumeiScsiAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target_arn {
+            ser.write_string(&VOLUMEISCSIATTRIBUTES_MEMBER_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.network_interface_id {
+            ser.write_string(&VOLUMEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_ID, val)?;
+        }
+        {
+            let val = &self.network_interface_port;
+            ser.write_integer(&VOLUMEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_PORT, *val)?;
+        }
+        if let Some(ref val) = self.lun_number {
+            ser.write_integer(&VOLUMEISCSIATTRIBUTES_MEMBER_LUN_NUMBER, *val)?;
+        }
+        {
+            let val = &self.chap_enabled;
+            ser.write_boolean(&VOLUMEISCSIATTRIBUTES_MEMBER_CHAP_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VolumeiScsiAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VOLUMEISCSIATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.network_interface_port = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lun_number = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.chap_enabled = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VolumeiScsiAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl VolumeiScsiAttributes {
     /// Creates a new builder-style object to manufacture [`VolumeiScsiAttributes`](crate::types::VolumeiScsiAttributes).
     pub fn builder() -> crate::types::builders::VolumeiScsiAttributesBuilder {

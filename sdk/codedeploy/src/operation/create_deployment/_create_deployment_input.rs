@@ -145,6 +145,340 @@ impl CreateDeploymentInput {
         self.ec2_deployment_options.as_ref()
     }
 }
+static CREATEDEPLOYMENTINPUT_MEMBER_APPLICATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$applicationName",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applicationName",
+    0,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$deploymentGroupName",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentGroupName",
+    1,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$revision",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "revision",
+    2,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$deploymentConfigName",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentConfigName",
+    3,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$description",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    4,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_IGNORE_APPLICATION_STOP_FAILURES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$ignoreApplicationStopFailures",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ignoreApplicationStopFailures",
+    5,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_TARGET_INSTANCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$targetInstances",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "targetInstances",
+    6,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_AUTO_ROLLBACK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$autoRollbackConfiguration",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "autoRollbackConfiguration",
+    7,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_UPDATE_OUTDATED_INSTANCES_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$updateOutdatedInstancesOnly",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "updateOutdatedInstancesOnly",
+    8,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_FILE_EXISTS_BEHAVIOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$fileExistsBehavior",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fileExistsBehavior",
+    9,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$deploymentMode",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentMode",
+    10,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_OVERRIDE_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$overrideAlarmConfiguration",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "overrideAlarmConfiguration",
+    11,
+);
+static CREATEDEPLOYMENTINPUT_MEMBER_EC2_DEPLOYMENT_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput$ec2DeploymentOptions",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ec2DeploymentOptions",
+    12,
+);
+static CREATEDEPLOYMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDEPLOYMENTINPUT_MEMBER_APPLICATION_NAME,
+        &CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_GROUP_NAME,
+        &CREATEDEPLOYMENTINPUT_MEMBER_REVISION,
+        &CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME,
+        &CREATEDEPLOYMENTINPUT_MEMBER_DESCRIPTION,
+        &CREATEDEPLOYMENTINPUT_MEMBER_IGNORE_APPLICATION_STOP_FAILURES,
+        &CREATEDEPLOYMENTINPUT_MEMBER_TARGET_INSTANCES,
+        &CREATEDEPLOYMENTINPUT_MEMBER_AUTO_ROLLBACK_CONFIGURATION,
+        &CREATEDEPLOYMENTINPUT_MEMBER_UPDATE_OUTDATED_INSTANCES_ONLY,
+        &CREATEDEPLOYMENTINPUT_MEMBER_FILE_EXISTS_BEHAVIOR,
+        &CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_MODE,
+        &CREATEDEPLOYMENTINPUT_MEMBER_OVERRIDE_ALARM_CONFIGURATION,
+        &CREATEDEPLOYMENTINPUT_MEMBER_EC2_DEPLOYMENT_OPTIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDeploymentInput");
+impl CreateDeploymentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDEPLOYMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDeploymentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.application_name {
+            ser.write_string(&CREATEDEPLOYMENTINPUT_MEMBER_APPLICATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.deployment_group_name {
+            ser.write_string(&CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.revision {
+            ser.write_struct(&CREATEDEPLOYMENTINPUT_MEMBER_REVISION, val)?;
+        }
+        if let Some(ref val) = self.deployment_config_name {
+            ser.write_string(&CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEDEPLOYMENTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.ignore_application_stop_failures {
+            ser.write_boolean(&CREATEDEPLOYMENTINPUT_MEMBER_IGNORE_APPLICATION_STOP_FAILURES, *val)?;
+        }
+        if let Some(ref val) = self.target_instances {
+            ser.write_struct(&CREATEDEPLOYMENTINPUT_MEMBER_TARGET_INSTANCES, val)?;
+        }
+        if let Some(ref val) = self.auto_rollback_configuration {
+            ser.write_struct(&CREATEDEPLOYMENTINPUT_MEMBER_AUTO_ROLLBACK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.update_outdated_instances_only {
+            ser.write_boolean(&CREATEDEPLOYMENTINPUT_MEMBER_UPDATE_OUTDATED_INSTANCES_ONLY, *val)?;
+        }
+        if let Some(ref val) = self.file_exists_behavior {
+            ser.write_string(&CREATEDEPLOYMENTINPUT_MEMBER_FILE_EXISTS_BEHAVIOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.deployment_mode {
+            ser.write_string(&CREATEDEPLOYMENTINPUT_MEMBER_DEPLOYMENT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.override_alarm_configuration {
+            ser.write_struct(&CREATEDEPLOYMENTINPUT_MEMBER_OVERRIDE_ALARM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.ec2_deployment_options {
+            ser.write_struct(&CREATEDEPLOYMENTINPUT_MEMBER_EC2_DEPLOYMENT_OPTIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDEPLOYMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision = Some(crate::types::RevisionLocation::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ignore_application_stop_failures = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_instances = Some(crate::types::TargetInstances::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_rollback_configuration = Some(crate::types::AutoRollbackConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.update_outdated_instances_only = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_exists_behavior = Some(crate::types::FileExistsBehavior::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_mode = Some(crate::types::DeploymentMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.override_alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_deployment_options = Some(crate::types::Ec2DeploymentOptions::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDeploymentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.application_name = builder.application_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {

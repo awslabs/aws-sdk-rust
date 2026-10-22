@@ -20,6 +20,109 @@ impl ProvisionByoipCidrInput {
         self.cidr_authorization_context.as_ref()
     }
 }
+static PROVISIONBYOIPCIDRINPUT_MEMBER_CIDR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#ProvisionByoipCidrInput$Cidr",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "ProvisionByoipCidrInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Cidr",
+    0,
+);
+static PROVISIONBYOIPCIDRINPUT_MEMBER_CIDR_AUTHORIZATION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#ProvisionByoipCidrInput$CidrAuthorizationContext",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "ProvisionByoipCidrInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CidrAuthorizationContext",
+    1,
+);
+static PROVISIONBYOIPCIDRINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#ProvisionByoipCidrInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "ProvisionByoipCidrInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PROVISIONBYOIPCIDRINPUT_MEMBER_CIDR,
+        &PROVISIONBYOIPCIDRINPUT_MEMBER_CIDR_AUTHORIZATION_CONTEXT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ProvisionByoipCidrRequest");
+impl ProvisionByoipCidrInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PROVISIONBYOIPCIDRINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProvisionByoipCidrInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cidr {
+            ser.write_string(&PROVISIONBYOIPCIDRINPUT_MEMBER_CIDR, val)?;
+        }
+        if let Some(ref val) = self.cidr_authorization_context {
+            ser.write_struct(&PROVISIONBYOIPCIDRINPUT_MEMBER_CIDR_AUTHORIZATION_CONTEXT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PROVISIONBYOIPCIDRINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cidr = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cidr_authorization_context = Some(crate::types::CidrAuthorizationContext::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProvisionByoipCidrInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cidr = builder.cidr.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ProvisionByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
     pub fn builder() -> crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {

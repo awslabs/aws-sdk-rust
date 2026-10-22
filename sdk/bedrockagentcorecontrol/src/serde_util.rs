@@ -4750,6 +4750,13 @@ pub(crate) fn lambda_evaluator_config_correct_errors(
     builder
 }
 
+pub(crate) fn match_models_correct_errors(mut builder: crate::types::builders::MatchModelsBuilder) -> crate::types::builders::MatchModelsBuilder {
+    if builder.any_of.is_none() {
+        builder.any_of = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn match_paths_correct_errors(mut builder: crate::types::builders::MatchPathsBuilder) -> crate::types::builders::MatchPathsBuilder {
     if builder.any_of.is_none() {
         builder.any_of = Some(Default::default())
@@ -5290,6 +5297,28 @@ pub(crate) fn ebs_volume_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn evaluation_dimension_correct_errors(
+    mut builder: crate::types::builders::EvaluationDimensionBuilder,
+) -> crate::types::builders::EvaluationDimensionBuilder {
+    if builder.dimension_name.is_none() {
+        builder.dimension_name = Some(Default::default())
+    }
+    if builder.dimension_instruction.is_none() {
+        builder.dimension_instruction = Some(Default::default())
+    }
+    if builder.dimension_rating_scale.is_none() {
+        builder.dimension_rating_scale = Some(crate::types::DimensionRatingScale::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn fallback_correct_errors(mut builder: crate::types::builders::FallbackBuilder) -> crate::types::builders::FallbackBuilder {
+    if builder.target_fallback.is_none() {
+        builder.target_fallback = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn harness_agent_core_gateway_config_correct_errors(
     mut builder: crate::types::builders::HarnessAgentCoreGatewayConfigBuilder,
 ) -> crate::types::builders::HarnessAgentCoreGatewayConfigBuilder {
@@ -5373,6 +5402,15 @@ pub(crate) fn kms_key_source_type_correct_errors(
 ) -> crate::types::builders::KmsKeySourceTypeBuilder {
     if builder.kms_key_arn.is_none() {
         builder.kms_key_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn match_model_entry_correct_errors(
+    mut builder: crate::types::builders::MatchModelEntryBuilder,
+) -> crate::types::builders::MatchModelEntryBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }
@@ -5513,14 +5551,14 @@ pub(crate) fn registry_record_o_auth_credential_provider_correct_errors(
 pub(crate) fn target_traffic_split_entry_correct_errors(
     mut builder: crate::types::builders::TargetTrafficSplitEntryBuilder,
 ) -> crate::types::builders::TargetTrafficSplitEntryBuilder {
+    if builder.target_name.is_none() {
+        builder.target_name = Some(Default::default())
+    }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
     if builder.weight.is_none() {
         builder.weight = Some(Default::default())
-    }
-    if builder.target_name.is_none() {
-        builder.target_name = Some(Default::default())
     }
     builder
 }
@@ -5623,6 +5661,15 @@ pub(crate) fn episodic_reflection_override_correct_errors(
     }
     if builder.model_id.is_none() {
         builder.model_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn fallback_target_correct_errors(
+    mut builder: crate::types::builders::FallbackTargetBuilder,
+) -> crate::types::builders::FallbackTargetBuilder {
+    if builder.target_name.is_none() {
+        builder.target_name = Some(Default::default())
     }
     builder
 }

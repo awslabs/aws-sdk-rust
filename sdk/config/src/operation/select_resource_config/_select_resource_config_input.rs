@@ -24,6 +24,130 @@ impl SelectResourceConfigInput {
         self.next_token.as_deref()
     }
 }
+static SELECTRESOURCECONFIGINPUT_MEMBER_EXPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectResourceConfigInput$Expression",
+        "com.amazonaws.configservice.synthetic",
+        "SelectResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Expression",
+    0,
+);
+static SELECTRESOURCECONFIGINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectResourceConfigInput$Limit",
+        "com.amazonaws.configservice.synthetic",
+        "SelectResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    1,
+);
+static SELECTRESOURCECONFIGINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectResourceConfigInput$NextToken",
+        "com.amazonaws.configservice.synthetic",
+        "SelectResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static SELECTRESOURCECONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectResourceConfigInput",
+        "com.amazonaws.configservice.synthetic",
+        "SelectResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SELECTRESOURCECONFIGINPUT_MEMBER_EXPRESSION,
+        &SELECTRESOURCECONFIGINPUT_MEMBER_LIMIT,
+        &SELECTRESOURCECONFIGINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SelectResourceConfigRequest");
+impl SelectResourceConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SELECTRESOURCECONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SelectResourceConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.expression {
+            ser.write_string(&SELECTRESOURCECONFIGINPUT_MEMBER_EXPRESSION, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&SELECTRESOURCECONFIGINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&SELECTRESOURCECONFIGINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SELECTRESOURCECONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expression = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SelectResourceConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.expression = builder.expression.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SelectResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`SelectResourceConfigInput`](crate::operation::select_resource_config::SelectResourceConfigInput).
     pub fn builder() -> crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder {

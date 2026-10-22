@@ -55,6 +55,233 @@ impl PostCommentForPullRequestOutput {
         self.comment.as_ref()
     }
 }
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_PULL_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$pullRequestId",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pullRequestId",
+    1,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_BEFORE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$beforeCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforeCommitId",
+    2,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_AFTER_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$afterCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterCommitId",
+    3,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_BEFORE_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$beforeBlobId",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "beforeBlobId",
+    4,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_AFTER_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$afterBlobId",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "afterBlobId",
+    5,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$location",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    6,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_COMMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput$comment",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "comment",
+    7,
+);
+static POSTCOMMENTFORPULLREQUESTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#PostCommentForPullRequestOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "PostCommentForPullRequestOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_REPOSITORY_NAME,
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_PULL_REQUEST_ID,
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_BEFORE_COMMIT_ID,
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_AFTER_COMMIT_ID,
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_BEFORE_BLOB_ID,
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_AFTER_BLOB_ID,
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_LOCATION,
+        &POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_COMMENT,
+    ],
+)
+.with_original_name("PostCommentForPullRequestOutput");
+impl PostCommentForPullRequestOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POSTCOMMENTFORPULLREQUESTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PostCommentForPullRequestOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.pull_request_id {
+            ser.write_string(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_PULL_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.before_commit_id {
+            ser.write_string(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_BEFORE_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.after_commit_id {
+            ser.write_string(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_AFTER_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.before_blob_id {
+            ser.write_string(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_BEFORE_BLOB_ID, val)?;
+        }
+        if let Some(ref val) = self.after_blob_id {
+            ser.write_string(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_AFTER_BLOB_ID, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.comment {
+            ser.write_struct(&POSTCOMMENTFORPULLREQUESTOUTPUT_MEMBER_COMMENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::post_comment_for_pull_request::builders::PostCommentForPullRequestOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POSTCOMMENTFORPULLREQUESTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_blob_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.after_blob_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::Location::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.comment = Some(crate::types::Comment::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PostCommentForPullRequestOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for PostCommentForPullRequestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

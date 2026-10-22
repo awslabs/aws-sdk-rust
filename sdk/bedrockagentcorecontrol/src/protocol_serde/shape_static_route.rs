@@ -6,6 +6,15 @@ pub fn ser_static_route(
     {
         object.key("targetName").string(input.target_name.as_str());
     }
+    if let Some(var_1) = &input.model {
+        object.key("model").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.fallback {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("fallback").start_object();
+        crate::protocol_serde::shape_fallback::ser_fallback(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -37,6 +46,16 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "model" => {
+                            builder = builder.set_model(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "fallback" => {
+                            builder = builder.set_fallback(crate::protocol_serde::shape_fallback::de_fallback(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

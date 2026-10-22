@@ -94,6 +94,194 @@ impl CopySnapshotInput {
         self.source_region.as_ref()
     }
 }
+static COPYSNAPSHOTINPUT_MEMBER_SOURCE_SNAPSHOT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CopySnapshotInput$sourceSnapshotName",
+        "com.amazonaws.lightsail.synthetic",
+        "CopySnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceSnapshotName",
+    0,
+);
+static COPYSNAPSHOTINPUT_MEMBER_SOURCE_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CopySnapshotInput$sourceResourceName",
+        "com.amazonaws.lightsail.synthetic",
+        "CopySnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceResourceName",
+    1,
+);
+static COPYSNAPSHOTINPUT_MEMBER_RESTORE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CopySnapshotInput$restoreDate",
+        "com.amazonaws.lightsail.synthetic",
+        "CopySnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "restoreDate",
+    2,
+);
+static COPYSNAPSHOTINPUT_MEMBER_USE_LATEST_RESTORABLE_AUTO_SNAPSHOT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CopySnapshotInput$useLatestRestorableAutoSnapshot",
+        "com.amazonaws.lightsail.synthetic",
+        "CopySnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "useLatestRestorableAutoSnapshot",
+    3,
+);
+static COPYSNAPSHOTINPUT_MEMBER_TARGET_SNAPSHOT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CopySnapshotInput$targetSnapshotName",
+        "com.amazonaws.lightsail.synthetic",
+        "CopySnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetSnapshotName",
+    4,
+);
+static COPYSNAPSHOTINPUT_MEMBER_SOURCE_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CopySnapshotInput$sourceRegion",
+        "com.amazonaws.lightsail.synthetic",
+        "CopySnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceRegion",
+    5,
+);
+static COPYSNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CopySnapshotInput",
+        "com.amazonaws.lightsail.synthetic",
+        "CopySnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COPYSNAPSHOTINPUT_MEMBER_SOURCE_SNAPSHOT_NAME,
+        &COPYSNAPSHOTINPUT_MEMBER_SOURCE_RESOURCE_NAME,
+        &COPYSNAPSHOTINPUT_MEMBER_RESTORE_DATE,
+        &COPYSNAPSHOTINPUT_MEMBER_USE_LATEST_RESTORABLE_AUTO_SNAPSHOT,
+        &COPYSNAPSHOTINPUT_MEMBER_TARGET_SNAPSHOT_NAME,
+        &COPYSNAPSHOTINPUT_MEMBER_SOURCE_REGION,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/CopySnapshot", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CopySnapshotRequest");
+impl CopySnapshotInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COPYSNAPSHOTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CopySnapshotInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_snapshot_name {
+            ser.write_string(&COPYSNAPSHOTINPUT_MEMBER_SOURCE_SNAPSHOT_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_resource_name {
+            ser.write_string(&COPYSNAPSHOTINPUT_MEMBER_SOURCE_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.restore_date {
+            ser.write_string(&COPYSNAPSHOTINPUT_MEMBER_RESTORE_DATE, val)?;
+        }
+        if let Some(ref val) = self.use_latest_restorable_auto_snapshot {
+            ser.write_boolean(&COPYSNAPSHOTINPUT_MEMBER_USE_LATEST_RESTORABLE_AUTO_SNAPSHOT, *val)?;
+        }
+        if let Some(ref val) = self.target_snapshot_name {
+            ser.write_string(&COPYSNAPSHOTINPUT_MEMBER_TARGET_SNAPSHOT_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_region {
+            ser.write_string(&COPYSNAPSHOTINPUT_MEMBER_SOURCE_REGION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::copy_snapshot::builders::CopySnapshotInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COPYSNAPSHOTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_snapshot_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restore_date = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.use_latest_restorable_auto_snapshot = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_snapshot_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_region = Some(crate::types::RegionName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CopySnapshotInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.target_snapshot_name = builder.target_snapshot_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CopySnapshotInput {
     /// Creates a new builder-style object to manufacture [`CopySnapshotInput`](crate::operation::copy_snapshot::CopySnapshotInput).
     pub fn builder() -> crate::operation::copy_snapshot::builders::CopySnapshotInputBuilder {

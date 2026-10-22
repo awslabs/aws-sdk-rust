@@ -15,6 +15,85 @@ impl InviteOrganizationToTransferResponsibilityOutput {
         self.handshake.as_ref()
     }
 }
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYOUTPUT_MEMBER_HANDSHAKE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityOutput$Handshake",
+            "com.amazonaws.organizations.synthetic",
+            "InviteOrganizationToTransferResponsibilityOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "Handshake",
+        0,
+    );
+static INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#InviteOrganizationToTransferResponsibilityOutput",
+        "com.amazonaws.organizations.synthetic",
+        "InviteOrganizationToTransferResponsibilityOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYOUTPUT_MEMBER_HANDSHAKE],
+)
+.with_original_name("InviteOrganizationToTransferResponsibilityResponse");
+impl InviteOrganizationToTransferResponsibilityOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InviteOrganizationToTransferResponsibilityOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.handshake {
+            ser.write_struct(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYOUTPUT_MEMBER_HANDSHAKE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::invite_organization_to_transfer_responsibility::builders::InviteOrganizationToTransferResponsibilityOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INVITEORGANIZATIONTOTRANSFERRESPONSIBILITYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.handshake = Some(crate::types::Handshake::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InviteOrganizationToTransferResponsibilityOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for InviteOrganizationToTransferResponsibilityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

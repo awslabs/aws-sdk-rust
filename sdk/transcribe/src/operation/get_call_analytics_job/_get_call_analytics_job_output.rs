@@ -13,6 +13,84 @@ impl GetCallAnalyticsJobOutput {
         self.call_analytics_job.as_ref()
     }
 }
+static GETCALLANALYTICSJOBOUTPUT_MEMBER_CALL_ANALYTICS_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetCallAnalyticsJobOutput$CallAnalyticsJob",
+        "com.amazonaws.transcribe.synthetic",
+        "GetCallAnalyticsJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CallAnalyticsJob",
+    0,
+);
+static GETCALLANALYTICSJOBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#GetCallAnalyticsJobOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "GetCallAnalyticsJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETCALLANALYTICSJOBOUTPUT_MEMBER_CALL_ANALYTICS_JOB],
+)
+.with_original_name("GetCallAnalyticsJobResponse");
+impl GetCallAnalyticsJobOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCALLANALYTICSJOBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetCallAnalyticsJobOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.call_analytics_job {
+            ser.write_struct(&GETCALLANALYTICSJOBOUTPUT_MEMBER_CALL_ANALYTICS_JOB, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCALLANALYTICSJOBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.call_analytics_job = Some(crate::types::CallAnalyticsJob::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetCallAnalyticsJobOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetCallAnalyticsJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

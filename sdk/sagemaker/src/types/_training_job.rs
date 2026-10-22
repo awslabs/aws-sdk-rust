@@ -447,6 +447,1118 @@ impl TrainingJob {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static TRAININGJOB_MEMBER_TRAINING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TrainingJobName",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingJobName",
+    0,
+);
+static TRAININGJOB_MEMBER_TRAINING_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TrainingJobArn",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingJobArn",
+    1,
+);
+static TRAININGJOB_MEMBER_TUNING_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TuningJobArn",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TuningJobArn",
+    2,
+);
+static TRAININGJOB_MEMBER_LABELING_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$LabelingJobArn",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelingJobArn",
+    3,
+);
+static TRAININGJOB_MEMBER_AUTO_ML_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$AutoMLJobArn",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobArn",
+    4,
+);
+static TRAININGJOB_MEMBER_MODEL_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$ModelArtifacts",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelArtifacts",
+    5,
+);
+static TRAININGJOB_MEMBER_TRAINING_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TrainingJobStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingJobStatus",
+    6,
+);
+static TRAININGJOB_MEMBER_SECONDARY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$SecondaryStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecondaryStatus",
+    7,
+);
+static TRAININGJOB_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$FailureReason",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    8,
+);
+static TRAININGJOB_MEMBER_HYPER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameters$key",
+        "com.amazonaws.sagemaker",
+        "HyperParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TRAININGJOB_MEMBER_HYPER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameters$value",
+        "com.amazonaws.sagemaker",
+        "HyperParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TRAININGJOB_MEMBER_HYPER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$HyperParameters",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "HyperParameters",
+    9,
+)
+.with_map_members(&TRAININGJOB_MEMBER_HYPER_PARAMETERS_KEY, &TRAININGJOB_MEMBER_HYPER_PARAMETERS_VALUE);
+static TRAININGJOB_MEMBER_ALGORITHM_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$AlgorithmSpecification",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlgorithmSpecification",
+    10,
+);
+static TRAININGJOB_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TrainingJob$RoleArn", "com.amazonaws.sagemaker", "TrainingJob"),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    11,
+);
+static TRAININGJOB_MEMBER_INPUT_DATA_CONFIG_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InputDataConfig$member",
+        "com.amazonaws.sagemaker",
+        "InputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGJOB_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$InputDataConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InputDataConfig",
+    12,
+)
+.with_list_member(&TRAININGJOB_MEMBER_INPUT_DATA_CONFIG_MEMBER);
+static TRAININGJOB_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$OutputDataConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    13,
+);
+static TRAININGJOB_MEMBER_RESOURCE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$ResourceConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceConfig",
+    14,
+);
+static TRAININGJOB_MEMBER_WARM_POOL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$WarmPoolStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WarmPoolStatus",
+    15,
+);
+static TRAININGJOB_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TrainingJob$VpcConfig", "com.amazonaws.sagemaker", "TrainingJob"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    16,
+);
+static TRAININGJOB_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$StoppingCondition",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    17,
+);
+static TRAININGJOB_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$CreationTime",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    18,
+);
+static TRAININGJOB_MEMBER_TRAINING_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TrainingStartTime",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TrainingStartTime",
+    19,
+);
+static TRAININGJOB_MEMBER_TRAINING_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TrainingEndTime",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TrainingEndTime",
+    20,
+);
+static TRAININGJOB_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    21,
+);
+static TRAININGJOB_MEMBER_SECONDARY_STATUS_TRANSITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SecondaryStatusTransitions$member",
+        "com.amazonaws.sagemaker",
+        "SecondaryStatusTransitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGJOB_MEMBER_SECONDARY_STATUS_TRANSITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$SecondaryStatusTransitions",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecondaryStatusTransitions",
+    22,
+)
+.with_list_member(&TRAININGJOB_MEMBER_SECONDARY_STATUS_TRANSITIONS_MEMBER);
+static TRAININGJOB_MEMBER_FINAL_METRIC_DATA_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FinalMetricDataList$member",
+        "com.amazonaws.sagemaker",
+        "FinalMetricDataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGJOB_MEMBER_FINAL_METRIC_DATA_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$FinalMetricDataList",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FinalMetricDataList",
+    23,
+)
+.with_list_member(&TRAININGJOB_MEMBER_FINAL_METRIC_DATA_LIST_MEMBER);
+static TRAININGJOB_MEMBER_ENABLE_NETWORK_ISOLATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$EnableNetworkIsolation",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableNetworkIsolation",
+    24,
+);
+static TRAININGJOB_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$EnableInterContainerTrafficEncryption",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableInterContainerTrafficEncryption",
+    25,
+);
+static TRAININGJOB_MEMBER_ENABLE_MANAGED_SPOT_TRAINING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$EnableManagedSpotTraining",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableManagedSpotTraining",
+    26,
+);
+static TRAININGJOB_MEMBER_CHECKPOINT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$CheckpointConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CheckpointConfig",
+    27,
+);
+static TRAININGJOB_MEMBER_TRAINING_TIME_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TrainingTimeInSeconds",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TrainingTimeInSeconds",
+    28,
+);
+static TRAININGJOB_MEMBER_BILLABLE_TIME_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$BillableTimeInSeconds",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BillableTimeInSeconds",
+    29,
+);
+static TRAININGJOB_MEMBER_DEBUG_HOOK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$DebugHookConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DebugHookConfig",
+    30,
+);
+static TRAININGJOB_MEMBER_EXPERIMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$ExperimentConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExperimentConfig",
+    31,
+);
+static TRAININGJOB_MEMBER_DEBUG_RULE_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DebugRuleConfigurations$member",
+        "com.amazonaws.sagemaker",
+        "DebugRuleConfigurations",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGJOB_MEMBER_DEBUG_RULE_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$DebugRuleConfigurations",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DebugRuleConfigurations",
+    32,
+)
+.with_list_member(&TRAININGJOB_MEMBER_DEBUG_RULE_CONFIGURATIONS_MEMBER);
+static TRAININGJOB_MEMBER_TENSOR_BOARD_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$TensorBoardOutputConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TensorBoardOutputConfig",
+    33,
+);
+static TRAININGJOB_MEMBER_DEBUG_RULE_EVALUATION_STATUSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DebugRuleEvaluationStatuses$member",
+        "com.amazonaws.sagemaker",
+        "DebugRuleEvaluationStatuses",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGJOB_MEMBER_DEBUG_RULE_EVALUATION_STATUSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$DebugRuleEvaluationStatuses",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DebugRuleEvaluationStatuses",
+    34,
+)
+.with_list_member(&TRAININGJOB_MEMBER_DEBUG_RULE_EVALUATION_STATUSES_MEMBER);
+static TRAININGJOB_MEMBER_OUTPUT_MODEL_PACKAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$OutputModelPackageArn",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputModelPackageArn",
+    35,
+);
+static TRAININGJOB_MEMBER_MODEL_PACKAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$ModelPackageConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelPackageConfig",
+    36,
+);
+static TRAININGJOB_MEMBER_PROFILER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$ProfilerConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProfilerConfig",
+    37,
+);
+static TRAININGJOB_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingEnvironmentMap$key",
+        "com.amazonaws.sagemaker",
+        "TrainingEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TRAININGJOB_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingEnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "TrainingEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TRAININGJOB_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$Environment",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    38,
+)
+.with_map_members(&TRAININGJOB_MEMBER_ENVIRONMENT_KEY, &TRAININGJOB_MEMBER_ENVIRONMENT_VALUE);
+static TRAININGJOB_MEMBER_RETRY_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJob$RetryStrategy",
+        "com.amazonaws.sagemaker",
+        "TrainingJob",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RetryStrategy",
+    39,
+);
+static TRAININGJOB_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGJOB_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TrainingJob$Tags", "com.amazonaws.sagemaker", "TrainingJob"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    40,
+)
+.with_list_member(&TRAININGJOB_MEMBER_TAGS_MEMBER);
+static TRAININGJOB_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TrainingJob", "com.amazonaws.sagemaker", "TrainingJob"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGJOB_MEMBER_TRAINING_JOB_NAME,
+        &TRAININGJOB_MEMBER_TRAINING_JOB_ARN,
+        &TRAININGJOB_MEMBER_TUNING_JOB_ARN,
+        &TRAININGJOB_MEMBER_LABELING_JOB_ARN,
+        &TRAININGJOB_MEMBER_AUTO_ML_JOB_ARN,
+        &TRAININGJOB_MEMBER_MODEL_ARTIFACTS,
+        &TRAININGJOB_MEMBER_TRAINING_JOB_STATUS,
+        &TRAININGJOB_MEMBER_SECONDARY_STATUS,
+        &TRAININGJOB_MEMBER_FAILURE_REASON,
+        &TRAININGJOB_MEMBER_HYPER_PARAMETERS,
+        &TRAININGJOB_MEMBER_ALGORITHM_SPECIFICATION,
+        &TRAININGJOB_MEMBER_ROLE_ARN,
+        &TRAININGJOB_MEMBER_INPUT_DATA_CONFIG,
+        &TRAININGJOB_MEMBER_OUTPUT_DATA_CONFIG,
+        &TRAININGJOB_MEMBER_RESOURCE_CONFIG,
+        &TRAININGJOB_MEMBER_WARM_POOL_STATUS,
+        &TRAININGJOB_MEMBER_VPC_CONFIG,
+        &TRAININGJOB_MEMBER_STOPPING_CONDITION,
+        &TRAININGJOB_MEMBER_CREATION_TIME,
+        &TRAININGJOB_MEMBER_TRAINING_START_TIME,
+        &TRAININGJOB_MEMBER_TRAINING_END_TIME,
+        &TRAININGJOB_MEMBER_LAST_MODIFIED_TIME,
+        &TRAININGJOB_MEMBER_SECONDARY_STATUS_TRANSITIONS,
+        &TRAININGJOB_MEMBER_FINAL_METRIC_DATA_LIST,
+        &TRAININGJOB_MEMBER_ENABLE_NETWORK_ISOLATION,
+        &TRAININGJOB_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION,
+        &TRAININGJOB_MEMBER_ENABLE_MANAGED_SPOT_TRAINING,
+        &TRAININGJOB_MEMBER_CHECKPOINT_CONFIG,
+        &TRAININGJOB_MEMBER_TRAINING_TIME_IN_SECONDS,
+        &TRAININGJOB_MEMBER_BILLABLE_TIME_IN_SECONDS,
+        &TRAININGJOB_MEMBER_DEBUG_HOOK_CONFIG,
+        &TRAININGJOB_MEMBER_EXPERIMENT_CONFIG,
+        &TRAININGJOB_MEMBER_DEBUG_RULE_CONFIGURATIONS,
+        &TRAININGJOB_MEMBER_TENSOR_BOARD_OUTPUT_CONFIG,
+        &TRAININGJOB_MEMBER_DEBUG_RULE_EVALUATION_STATUSES,
+        &TRAININGJOB_MEMBER_OUTPUT_MODEL_PACKAGE_ARN,
+        &TRAININGJOB_MEMBER_MODEL_PACKAGE_CONFIG,
+        &TRAININGJOB_MEMBER_PROFILER_CONFIG,
+        &TRAININGJOB_MEMBER_ENVIRONMENT,
+        &TRAININGJOB_MEMBER_RETRY_STRATEGY,
+        &TRAININGJOB_MEMBER_TAGS,
+    ],
+);
+impl TrainingJob {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGJOB_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingJob {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_job_name {
+            ser.write_string(&TRAININGJOB_MEMBER_TRAINING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.training_job_arn {
+            ser.write_string(&TRAININGJOB_MEMBER_TRAINING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.tuning_job_arn {
+            ser.write_string(&TRAININGJOB_MEMBER_TUNING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.labeling_job_arn {
+            ser.write_string(&TRAININGJOB_MEMBER_LABELING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job_arn {
+            ser.write_string(&TRAININGJOB_MEMBER_AUTO_ML_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_artifacts {
+            ser.write_struct(&TRAININGJOB_MEMBER_MODEL_ARTIFACTS, val)?;
+        }
+        if let Some(ref val) = self.training_job_status {
+            ser.write_string(&TRAININGJOB_MEMBER_TRAINING_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.secondary_status {
+            ser.write_string(&TRAININGJOB_MEMBER_SECONDARY_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&TRAININGJOB_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameters {
+            ser.write_map(
+                &TRAININGJOB_MEMBER_HYPER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.algorithm_specification {
+            ser.write_struct(&TRAININGJOB_MEMBER_ALGORITHM_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&TRAININGJOB_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_list(
+                &TRAININGJOB_MEMBER_INPUT_DATA_CONFIG,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Channel::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.resource_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_RESOURCE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.warm_pool_status {
+            ser.write_struct(&TRAININGJOB_MEMBER_WARM_POOL_STATUS, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&TRAININGJOB_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&TRAININGJOB_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_start_time {
+            ser.write_timestamp(&TRAININGJOB_MEMBER_TRAINING_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_end_time {
+            ser.write_timestamp(&TRAININGJOB_MEMBER_TRAINING_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&TRAININGJOB_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.secondary_status_transitions {
+            ser.write_list(
+                &TRAININGJOB_MEMBER_SECONDARY_STATUS_TRANSITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SecondaryStatusTransition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.final_metric_data_list {
+            ser.write_list(
+                &TRAININGJOB_MEMBER_FINAL_METRIC_DATA_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MetricData::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.enable_network_isolation {
+            ser.write_boolean(&TRAININGJOB_MEMBER_ENABLE_NETWORK_ISOLATION, *val)?;
+        }
+        if let Some(ref val) = self.enable_inter_container_traffic_encryption {
+            ser.write_boolean(&TRAININGJOB_MEMBER_ENABLE_INTER_CONTAINER_TRAFFIC_ENCRYPTION, *val)?;
+        }
+        if let Some(ref val) = self.enable_managed_spot_training {
+            ser.write_boolean(&TRAININGJOB_MEMBER_ENABLE_MANAGED_SPOT_TRAINING, *val)?;
+        }
+        if let Some(ref val) = self.checkpoint_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_CHECKPOINT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.training_time_in_seconds {
+            ser.write_integer(&TRAININGJOB_MEMBER_TRAINING_TIME_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.billable_time_in_seconds {
+            ser.write_integer(&TRAININGJOB_MEMBER_BILLABLE_TIME_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.debug_hook_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_DEBUG_HOOK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.experiment_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_EXPERIMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.debug_rule_configurations {
+            ser.write_list(
+                &TRAININGJOB_MEMBER_DEBUG_RULE_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DebugRuleConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tensor_board_output_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_TENSOR_BOARD_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.debug_rule_evaluation_statuses {
+            ser.write_list(
+                &TRAININGJOB_MEMBER_DEBUG_RULE_EVALUATION_STATUSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DebugRuleEvaluationStatus::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_model_package_arn {
+            ser.write_string(&TRAININGJOB_MEMBER_OUTPUT_MODEL_PACKAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_package_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_MODEL_PACKAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.profiler_config {
+            ser.write_struct(&TRAININGJOB_MEMBER_PROFILER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &TRAININGJOB_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.retry_strategy {
+            ser.write_struct(&TRAININGJOB_MEMBER_RETRY_STRATEGY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&TRAININGJOB_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingJobBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGJOB_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tuning_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_artifacts = Some(crate::types::ModelArtifacts::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_status = Some(crate::types::TrainingJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_status = Some(crate::types::SecondaryStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_specification = Some(crate::types::AlgorithmSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Channel::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_config = Some(crate::types::ResourceConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.warm_pool_status = Some(crate::types::WarmPoolStatus::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::StoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_status_transitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SecondaryStatusTransition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.final_metric_data_list = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricData::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_network_isolation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_inter_container_traffic_encryption = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_managed_spot_training = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.checkpoint_config = Some(crate::types::CheckpointConfig::deserialize(deser)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_time_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billable_time_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_hook_config = Some(crate::types::DebugHookConfig::deserialize(deser)?);
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_config = Some(crate::types::ExperimentConfig::deserialize(deser)?);
+                    }
+                }
+                Some(32) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_rule_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DebugRuleConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(33) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tensor_board_output_config = Some(crate::types::TensorBoardOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(34) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.debug_rule_evaluation_statuses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DebugRuleEvaluationStatus::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(35) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_model_package_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(36) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_config = Some(crate::types::ModelPackageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(37) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.profiler_config = Some(crate::types::ProfilerConfig::deserialize(deser)?);
+                    }
+                }
+                Some(38) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(39) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_strategy = Some(crate::types::RetryStrategy::deserialize(deser)?);
+                    }
+                }
+                Some(40) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingJob {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingJob {
     /// Creates a new builder-style object to manufacture [`TrainingJob`](crate::types::TrainingJob).
     pub fn builder() -> crate::types::builders::TrainingJobBuilder {

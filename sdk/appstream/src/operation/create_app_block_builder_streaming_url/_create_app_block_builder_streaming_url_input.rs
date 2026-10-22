@@ -18,6 +18,110 @@ impl CreateAppBlockBuilderStreamingUrlInput {
         self.validity
     }
 }
+static CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_MEMBER_APP_BLOCK_BUILDER_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderStreamingURLInput$AppBlockBuilderName",
+            "com.amazonaws.appstream.synthetic",
+            "CreateAppBlockBuilderStreamingURLInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AppBlockBuilderName",
+        0,
+    );
+static CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_MEMBER_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderStreamingURLInput$Validity",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Validity",
+    1,
+);
+static CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateAppBlockBuilderStreamingURLInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateAppBlockBuilderStreamingURLInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_MEMBER_APP_BLOCK_BUILDER_NAME,
+        &CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_MEMBER_VALIDITY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAppBlockBuilderStreamingURLRequest");
+impl CreateAppBlockBuilderStreamingUrlInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAppBlockBuilderStreamingUrlInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.app_block_builder_name {
+            ser.write_string(&CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_MEMBER_APP_BLOCK_BUILDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.validity {
+            ser.write_long(&CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_MEMBER_VALIDITY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAPPBLOCKBUILDERSTREAMINGURLINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_block_builder_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validity = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAppBlockBuilderStreamingUrlInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.app_block_builder_name = builder.app_block_builder_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAppBlockBuilderStreamingUrlInput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockBuilderStreamingUrlInput`](crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlInput).
     pub fn builder() -> crate::operation::create_app_block_builder_streaming_url::builders::CreateAppBlockBuilderStreamingUrlInputBuilder {

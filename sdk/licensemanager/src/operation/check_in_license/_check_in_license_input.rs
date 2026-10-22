@@ -18,6 +18,109 @@ impl CheckInLicenseInput {
         self.beneficiary.as_deref()
     }
 }
+static CHECKINLICENSEINPUT_MEMBER_LICENSE_CONSUMPTION_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckInLicenseInput$LicenseConsumptionToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckInLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseConsumptionToken",
+    0,
+);
+static CHECKINLICENSEINPUT_MEMBER_BENEFICIARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckInLicenseInput$Beneficiary",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckInLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Beneficiary",
+    1,
+);
+static CHECKINLICENSEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CheckInLicenseInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CheckInLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHECKINLICENSEINPUT_MEMBER_LICENSE_CONSUMPTION_TOKEN,
+        &CHECKINLICENSEINPUT_MEMBER_BENEFICIARY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CheckInLicenseRequest");
+impl CheckInLicenseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHECKINLICENSEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CheckInLicenseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_consumption_token {
+            ser.write_string(&CHECKINLICENSEINPUT_MEMBER_LICENSE_CONSUMPTION_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.beneficiary {
+            ser.write_string(&CHECKINLICENSEINPUT_MEMBER_BENEFICIARY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::check_in_license::builders::CheckInLicenseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHECKINLICENSEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_consumption_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.beneficiary = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CheckInLicenseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.license_consumption_token = builder.license_consumption_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CheckInLicenseInput {
     /// Creates a new builder-style object to manufacture [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
     pub fn builder() -> crate::operation::check_in_license::builders::CheckInLicenseInputBuilder {

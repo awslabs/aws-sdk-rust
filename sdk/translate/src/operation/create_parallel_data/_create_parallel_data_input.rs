@@ -44,6 +44,216 @@ impl CreateParallelDataInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEPARALLELDATAINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#CreateParallelDataInput$Name",
+        "com.amazonaws.translate.synthetic",
+        "CreateParallelDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEPARALLELDATAINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#CreateParallelDataInput$Description",
+        "com.amazonaws.translate.synthetic",
+        "CreateParallelDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATEPARALLELDATAINPUT_MEMBER_PARALLEL_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#CreateParallelDataInput$ParallelDataConfig",
+        "com.amazonaws.translate.synthetic",
+        "CreateParallelDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParallelDataConfig",
+    2,
+);
+static CREATEPARALLELDATAINPUT_MEMBER_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#CreateParallelDataInput$EncryptionKey",
+        "com.amazonaws.translate.synthetic",
+        "CreateParallelDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionKey",
+    3,
+);
+static CREATEPARALLELDATAINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#CreateParallelDataInput$ClientToken",
+        "com.amazonaws.translate.synthetic",
+        "CreateParallelDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    4,
+);
+static CREATEPARALLELDATAINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.translate#TagList$member", "com.amazonaws.translate", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPARALLELDATAINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#CreateParallelDataInput$Tags",
+        "com.amazonaws.translate.synthetic",
+        "CreateParallelDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEPARALLELDATAINPUT_MEMBER_TAGS_MEMBER);
+static CREATEPARALLELDATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#CreateParallelDataInput",
+        "com.amazonaws.translate.synthetic",
+        "CreateParallelDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPARALLELDATAINPUT_MEMBER_NAME,
+        &CREATEPARALLELDATAINPUT_MEMBER_DESCRIPTION,
+        &CREATEPARALLELDATAINPUT_MEMBER_PARALLEL_DATA_CONFIG,
+        &CREATEPARALLELDATAINPUT_MEMBER_ENCRYPTION_KEY,
+        &CREATEPARALLELDATAINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATEPARALLELDATAINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateParallelDataRequest");
+impl CreateParallelDataInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPARALLELDATAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateParallelDataInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEPARALLELDATAINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEPARALLELDATAINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.parallel_data_config {
+            ser.write_struct(&CREATEPARALLELDATAINPUT_MEMBER_PARALLEL_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.encryption_key {
+            ser.write_struct(&CREATEPARALLELDATAINPUT_MEMBER_ENCRYPTION_KEY, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATEPARALLELDATAINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEPARALLELDATAINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPARALLELDATAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallel_data_config = Some(crate::types::ParallelDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key = Some(crate::types::EncryptionKey::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateParallelDataInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateParallelDataInput {
     /// Creates a new builder-style object to manufacture [`CreateParallelDataInput`](crate::operation::create_parallel_data::CreateParallelDataInput).
     pub fn builder() -> crate::operation::create_parallel_data::builders::CreateParallelDataInputBuilder {

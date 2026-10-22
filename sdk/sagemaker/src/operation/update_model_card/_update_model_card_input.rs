@@ -55,6 +55,130 @@ impl ::std::fmt::Debug for UpdateModelCardInput {
         formatter.finish()
     }
 }
+static UPDATEMODELCARDINPUT_MEMBER_MODEL_CARD_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelCardInput$ModelCardName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardName",
+    0,
+);
+static UPDATEMODELCARDINPUT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelCardInput$Content",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    1,
+);
+static UPDATEMODELCARDINPUT_MEMBER_MODEL_CARD_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelCardInput$ModelCardStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelCardStatus",
+    2,
+);
+static UPDATEMODELCARDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateModelCardInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateModelCardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEMODELCARDINPUT_MEMBER_MODEL_CARD_NAME,
+        &UPDATEMODELCARDINPUT_MEMBER_CONTENT,
+        &UPDATEMODELCARDINPUT_MEMBER_MODEL_CARD_STATUS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateModelCardRequest");
+impl UpdateModelCardInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEMODELCARDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateModelCardInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_card_name {
+            ser.write_string(&UPDATEMODELCARDINPUT_MEMBER_MODEL_CARD_NAME, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&UPDATEMODELCARDINPUT_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.model_card_status {
+            ser.write_string(&UPDATEMODELCARDINPUT_MEMBER_MODEL_CARD_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_model_card::builders::UpdateModelCardInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEMODELCARDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card_status = Some(crate::types::ModelCardStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateModelCardInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.model_card_name = builder.model_card_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateModelCardInput {
     /// Creates a new builder-style object to manufacture [`UpdateModelCardInput`](crate::operation::update_model_card::UpdateModelCardInput).
     pub fn builder() -> crate::operation::update_model_card::builders::UpdateModelCardInputBuilder {

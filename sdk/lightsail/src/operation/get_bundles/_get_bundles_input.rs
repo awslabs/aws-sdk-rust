@@ -30,6 +30,130 @@ impl GetBundlesInput {
         self.app_category.as_ref()
     }
 }
+static GETBUNDLESINPUT_MEMBER_INCLUDE_INACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetBundlesInput$includeInactive",
+        "com.amazonaws.lightsail.synthetic",
+        "GetBundlesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "includeInactive",
+    0,
+);
+static GETBUNDLESINPUT_MEMBER_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetBundlesInput$pageToken",
+        "com.amazonaws.lightsail.synthetic",
+        "GetBundlesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pageToken",
+    1,
+);
+static GETBUNDLESINPUT_MEMBER_APP_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetBundlesInput$appCategory",
+        "com.amazonaws.lightsail.synthetic",
+        "GetBundlesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "appCategory",
+    2,
+);
+static GETBUNDLESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetBundlesInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetBundlesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETBUNDLESINPUT_MEMBER_INCLUDE_INACTIVE,
+        &GETBUNDLESINPUT_MEMBER_PAGE_TOKEN,
+        &GETBUNDLESINPUT_MEMBER_APP_CATEGORY,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/GetBundles", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetBundlesRequest");
+impl GetBundlesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETBUNDLESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetBundlesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.include_inactive {
+            ser.write_boolean(&GETBUNDLESINPUT_MEMBER_INCLUDE_INACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.page_token {
+            ser.write_string(&GETBUNDLESINPUT_MEMBER_PAGE_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.app_category {
+            ser.write_string(&GETBUNDLESINPUT_MEMBER_APP_CATEGORY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_bundles::builders::GetBundlesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETBUNDLESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.include_inactive = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_category = Some(crate::types::AppCategory::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetBundlesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetBundlesInput {
     /// Creates a new builder-style object to manufacture [`GetBundlesInput`](crate::operation::get_bundles::GetBundlesInput).
     pub fn builder() -> crate::operation::get_bundles::builders::GetBundlesInputBuilder {

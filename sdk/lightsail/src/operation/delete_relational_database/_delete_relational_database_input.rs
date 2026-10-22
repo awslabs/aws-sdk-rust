@@ -46,6 +46,136 @@ impl DeleteRelationalDatabaseInput {
         self.final_relational_database_snapshot_name.as_deref()
     }
 }
+static DELETERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DeleteRelationalDatabaseInput$relationalDatabaseName",
+        "com.amazonaws.lightsail.synthetic",
+        "DeleteRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "relationalDatabaseName",
+    0,
+);
+static DELETERELATIONALDATABASEINPUT_MEMBER_SKIP_FINAL_SNAPSHOT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DeleteRelationalDatabaseInput$skipFinalSnapshot",
+        "com.amazonaws.lightsail.synthetic",
+        "DeleteRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "skipFinalSnapshot",
+    1,
+);
+static DELETERELATIONALDATABASEINPUT_MEMBER_FINAL_RELATIONAL_DATABASE_SNAPSHOT_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#DeleteRelationalDatabaseInput$finalRelationalDatabaseSnapshotName",
+            "com.amazonaws.lightsail.synthetic",
+            "DeleteRelationalDatabaseInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "finalRelationalDatabaseSnapshotName",
+        2,
+    );
+static DELETERELATIONALDATABASEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DeleteRelationalDatabaseInput",
+        "com.amazonaws.lightsail.synthetic",
+        "DeleteRelationalDatabaseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_NAME,
+        &DELETERELATIONALDATABASEINPUT_MEMBER_SKIP_FINAL_SNAPSHOT,
+        &DELETERELATIONALDATABASEINPUT_MEMBER_FINAL_RELATIONAL_DATABASE_SNAPSHOT_NAME,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/DeleteRelationalDatabase",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteRelationalDatabaseRequest");
+impl DeleteRelationalDatabaseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETERELATIONALDATABASEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteRelationalDatabaseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_database_name {
+            ser.write_string(&DELETERELATIONALDATABASEINPUT_MEMBER_RELATIONAL_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.skip_final_snapshot {
+            ser.write_boolean(&DELETERELATIONALDATABASEINPUT_MEMBER_SKIP_FINAL_SNAPSHOT, *val)?;
+        }
+        if let Some(ref val) = self.final_relational_database_snapshot_name {
+            ser.write_string(&DELETERELATIONALDATABASEINPUT_MEMBER_FINAL_RELATIONAL_DATABASE_SNAPSHOT_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETERELATIONALDATABASEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.skip_final_snapshot = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.final_relational_database_snapshot_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteRelationalDatabaseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.relational_database_name = builder.relational_database_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`DeleteRelationalDatabaseInput`](crate::operation::delete_relational_database::DeleteRelationalDatabaseInput).
     pub fn builder() -> crate::operation::delete_relational_database::builders::DeleteRelationalDatabaseInputBuilder {

@@ -89,6 +89,361 @@ impl ClarifyInferenceConfig {
         self.feature_types.as_deref().unwrap_or_default()
     }
 }
+static CLARIFYINFERENCECONFIG_MEMBER_FEATURES_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$FeaturesAttribute",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeaturesAttribute",
+    0,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_CONTENT_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$ContentTemplate",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentTemplate",
+    1,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_MAX_RECORD_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$MaxRecordCount",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxRecordCount",
+    2,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_MAX_PAYLOAD_IN_MB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$MaxPayloadInMB",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxPayloadInMB",
+    3,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_PROBABILITY_INDEX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$ProbabilityIndex",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ProbabilityIndex",
+    4,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_LABEL_INDEX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$LabelIndex",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "LabelIndex",
+    5,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_PROBABILITY_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$ProbabilityAttribute",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProbabilityAttribute",
+    6,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_LABEL_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$LabelAttribute",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelAttribute",
+    7,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_LABEL_HEADERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyLabelHeaders$member",
+        "com.amazonaws.sagemaker",
+        "ClarifyLabelHeaders",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_LABEL_HEADERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$LabelHeaders",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LabelHeaders",
+    8,
+)
+.with_list_member(&CLARIFYINFERENCECONFIG_MEMBER_LABEL_HEADERS_MEMBER);
+static CLARIFYINFERENCECONFIG_MEMBER_FEATURE_HEADERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyFeatureHeaders$member",
+        "com.amazonaws.sagemaker",
+        "ClarifyFeatureHeaders",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_FEATURE_HEADERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$FeatureHeaders",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FeatureHeaders",
+    9,
+)
+.with_list_member(&CLARIFYINFERENCECONFIG_MEMBER_FEATURE_HEADERS_MEMBER);
+static CLARIFYINFERENCECONFIG_MEMBER_FEATURE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyFeatureTypes$member",
+        "com.amazonaws.sagemaker",
+        "ClarifyFeatureTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CLARIFYINFERENCECONFIG_MEMBER_FEATURE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig$FeatureTypes",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FeatureTypes",
+    10,
+)
+.with_list_member(&CLARIFYINFERENCECONFIG_MEMBER_FEATURE_TYPES_MEMBER);
+static CLARIFYINFERENCECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyInferenceConfig",
+        "com.amazonaws.sagemaker",
+        "ClarifyInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLARIFYINFERENCECONFIG_MEMBER_FEATURES_ATTRIBUTE,
+        &CLARIFYINFERENCECONFIG_MEMBER_CONTENT_TEMPLATE,
+        &CLARIFYINFERENCECONFIG_MEMBER_MAX_RECORD_COUNT,
+        &CLARIFYINFERENCECONFIG_MEMBER_MAX_PAYLOAD_IN_MB,
+        &CLARIFYINFERENCECONFIG_MEMBER_PROBABILITY_INDEX,
+        &CLARIFYINFERENCECONFIG_MEMBER_LABEL_INDEX,
+        &CLARIFYINFERENCECONFIG_MEMBER_PROBABILITY_ATTRIBUTE,
+        &CLARIFYINFERENCECONFIG_MEMBER_LABEL_ATTRIBUTE,
+        &CLARIFYINFERENCECONFIG_MEMBER_LABEL_HEADERS,
+        &CLARIFYINFERENCECONFIG_MEMBER_FEATURE_HEADERS,
+        &CLARIFYINFERENCECONFIG_MEMBER_FEATURE_TYPES,
+    ],
+);
+impl ClarifyInferenceConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLARIFYINFERENCECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClarifyInferenceConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.features_attribute {
+            ser.write_string(&CLARIFYINFERENCECONFIG_MEMBER_FEATURES_ATTRIBUTE, val)?;
+        }
+        if let Some(ref val) = self.content_template {
+            ser.write_string(&CLARIFYINFERENCECONFIG_MEMBER_CONTENT_TEMPLATE, val)?;
+        }
+        if let Some(ref val) = self.max_record_count {
+            ser.write_integer(&CLARIFYINFERENCECONFIG_MEMBER_MAX_RECORD_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.max_payload_in_mb {
+            ser.write_integer(&CLARIFYINFERENCECONFIG_MEMBER_MAX_PAYLOAD_IN_MB, *val)?;
+        }
+        if let Some(ref val) = self.probability_index {
+            ser.write_integer(&CLARIFYINFERENCECONFIG_MEMBER_PROBABILITY_INDEX, *val)?;
+        }
+        if let Some(ref val) = self.label_index {
+            ser.write_integer(&CLARIFYINFERENCECONFIG_MEMBER_LABEL_INDEX, *val)?;
+        }
+        if let Some(ref val) = self.probability_attribute {
+            ser.write_string(&CLARIFYINFERENCECONFIG_MEMBER_PROBABILITY_ATTRIBUTE, val)?;
+        }
+        if let Some(ref val) = self.label_attribute {
+            ser.write_string(&CLARIFYINFERENCECONFIG_MEMBER_LABEL_ATTRIBUTE, val)?;
+        }
+        if let Some(ref val) = self.label_headers {
+            ser.write_list(
+                &CLARIFYINFERENCECONFIG_MEMBER_LABEL_HEADERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.feature_headers {
+            ser.write_list(
+                &CLARIFYINFERENCECONFIG_MEMBER_FEATURE_HEADERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.feature_types {
+            ser.write_list(
+                &CLARIFYINFERENCECONFIG_MEMBER_FEATURE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClarifyInferenceConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLARIFYINFERENCECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.features_attribute = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_template = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_record_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_payload_in_mb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.probability_index = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_index = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.probability_attribute = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_attribute = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_headers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_headers = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClarifyFeatureType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClarifyInferenceConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClarifyInferenceConfig {
     /// Creates a new builder-style object to manufacture [`ClarifyInferenceConfig`](crate::types::ClarifyInferenceConfig).
     pub fn builder() -> crate::types::builders::ClarifyInferenceConfigBuilder {

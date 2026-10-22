@@ -86,6 +86,194 @@ impl ::std::fmt::Debug for FsxProtocolSmb {
         formatter.finish()
     }
 }
+static FSXPROTOCOLSMB_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#FsxProtocolSmb$Domain", "com.amazonaws.datasync", "FsxProtocolSmb"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    0,
+);
+static FSXPROTOCOLSMB_MEMBER_MOUNT_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#FsxProtocolSmb$MountOptions",
+        "com.amazonaws.datasync",
+        "FsxProtocolSmb",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MountOptions",
+    1,
+);
+static FSXPROTOCOLSMB_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#FsxProtocolSmb$Password",
+        "com.amazonaws.datasync",
+        "FsxProtocolSmb",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    2,
+);
+static FSXPROTOCOLSMB_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#FsxProtocolSmb$User", "com.amazonaws.datasync", "FsxProtocolSmb"),
+    ::aws_smithy_schema::ShapeType::String,
+    "User",
+    3,
+);
+static FSXPROTOCOLSMB_MEMBER_MANAGED_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#FsxProtocolSmb$ManagedSecretConfig",
+        "com.amazonaws.datasync",
+        "FsxProtocolSmb",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManagedSecretConfig",
+    4,
+);
+static FSXPROTOCOLSMB_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#FsxProtocolSmb$CmkSecretConfig",
+        "com.amazonaws.datasync",
+        "FsxProtocolSmb",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    5,
+);
+static FSXPROTOCOLSMB_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#FsxProtocolSmb$CustomSecretConfig",
+        "com.amazonaws.datasync",
+        "FsxProtocolSmb",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    6,
+);
+static FSXPROTOCOLSMB_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#FsxProtocolSmb", "com.amazonaws.datasync", "FsxProtocolSmb"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FSXPROTOCOLSMB_MEMBER_DOMAIN,
+        &FSXPROTOCOLSMB_MEMBER_MOUNT_OPTIONS,
+        &FSXPROTOCOLSMB_MEMBER_PASSWORD,
+        &FSXPROTOCOLSMB_MEMBER_USER,
+        &FSXPROTOCOLSMB_MEMBER_MANAGED_SECRET_CONFIG,
+        &FSXPROTOCOLSMB_MEMBER_CMK_SECRET_CONFIG,
+        &FSXPROTOCOLSMB_MEMBER_CUSTOM_SECRET_CONFIG,
+    ],
+);
+impl FsxProtocolSmb {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FSXPROTOCOLSMB_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FsxProtocolSmb {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain {
+            ser.write_string(&FSXPROTOCOLSMB_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.mount_options {
+            ser.write_struct(&FSXPROTOCOLSMB_MEMBER_MOUNT_OPTIONS, val)?;
+        }
+        {
+            let val = &self.password;
+            ser.write_string(&FSXPROTOCOLSMB_MEMBER_PASSWORD, val)?;
+        }
+        {
+            let val = &self.user;
+            ser.write_string(&FSXPROTOCOLSMB_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.managed_secret_config {
+            ser.write_struct(&FSXPROTOCOLSMB_MEMBER_MANAGED_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&FSXPROTOCOLSMB_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&FSXPROTOCOLSMB_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FsxProtocolSmbBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FSXPROTOCOLSMB_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_options = Some(crate::types::SmbMountOptions::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    self.password = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.user = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_secret_config = Some(crate::types::ManagedSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FsxProtocolSmb {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user = builder.user.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl FsxProtocolSmb {
     /// Creates a new builder-style object to manufacture [`FsxProtocolSmb`](crate::types::FsxProtocolSmb).
     pub fn builder() -> crate::types::builders::FsxProtocolSmbBuilder {

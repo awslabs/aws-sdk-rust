@@ -55,6 +55,170 @@ impl RenewalSummary {
         self.updated_at.as_ref()
     }
 }
+static RENEWALSUMMARY_MEMBER_DOMAIN_VALIDATION_RECORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#DomainValidationRecordList$member",
+        "com.amazonaws.lightsail",
+        "DomainValidationRecordList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RENEWALSUMMARY_MEMBER_DOMAIN_VALIDATION_RECORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RenewalSummary$domainValidationRecords",
+        "com.amazonaws.lightsail",
+        "RenewalSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "domainValidationRecords",
+    0,
+)
+.with_list_member(&RENEWALSUMMARY_MEMBER_DOMAIN_VALIDATION_RECORDS_MEMBER);
+static RENEWALSUMMARY_MEMBER_RENEWAL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RenewalSummary$renewalStatus",
+        "com.amazonaws.lightsail",
+        "RenewalSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "renewalStatus",
+    1,
+);
+static RENEWALSUMMARY_MEMBER_RENEWAL_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RenewalSummary$renewalStatusReason",
+        "com.amazonaws.lightsail",
+        "RenewalSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "renewalStatusReason",
+    2,
+);
+static RENEWALSUMMARY_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RenewalSummary$updatedAt",
+        "com.amazonaws.lightsail",
+        "RenewalSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updatedAt",
+    3,
+);
+static RENEWALSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#RenewalSummary", "com.amazonaws.lightsail", "RenewalSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RENEWALSUMMARY_MEMBER_DOMAIN_VALIDATION_RECORDS,
+        &RENEWALSUMMARY_MEMBER_RENEWAL_STATUS,
+        &RENEWALSUMMARY_MEMBER_RENEWAL_STATUS_REASON,
+        &RENEWALSUMMARY_MEMBER_UPDATED_AT,
+    ],
+);
+impl RenewalSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RENEWALSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RenewalSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_validation_records {
+            ser.write_list(
+                &RENEWALSUMMARY_MEMBER_DOMAIN_VALIDATION_RECORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DomainValidationRecord::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.renewal_status {
+            ser.write_string(&RENEWALSUMMARY_MEMBER_RENEWAL_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.renewal_status_reason {
+            ser.write_string(&RENEWALSUMMARY_MEMBER_RENEWAL_STATUS_REASON, val)?;
+        }
+        if let Some(ref val) = self.updated_at {
+            ser.write_timestamp(&RENEWALSUMMARY_MEMBER_UPDATED_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RenewalSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RENEWALSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_validation_records = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DomainValidationRecord::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.renewal_status = Some(crate::types::RenewalStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.renewal_status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RenewalSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RenewalSummary {
     /// Creates a new builder-style object to manufacture [`RenewalSummary`](crate::types::RenewalSummary).
     pub fn builder() -> crate::types::builders::RenewalSummaryBuilder {

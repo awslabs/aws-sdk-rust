@@ -149,6 +149,605 @@ impl DescribeAutoMlJobV2Output {
         self.auto_ml_compute_config.as_ref()
     }
 }
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobName",
+    0,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLJobArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobArn",
+    1,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_INPUT_DATA_CONFIG_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AutoMLJobInputDataConfig$member",
+            "com.amazonaws.sagemaker",
+            "AutoMLJobInputDataConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLJobInputDataConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeAutoMLJobV2Output",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "AutoMLJobInputDataConfig",
+        2,
+    )
+    .with_list_member(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_INPUT_DATA_CONFIG_MEMBER);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$OutputDataConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    3,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    4,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_OBJECTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLJobObjective",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoMLJobObjective",
+    5,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_PROBLEM_TYPE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLProblemTypeConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "AutoMLProblemTypeConfig",
+    6,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_PROBLEM_TYPE_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLProblemTypeConfigName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeAutoMLJobV2Output",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AutoMLProblemTypeConfigName",
+        7,
+    );
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    8,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$EndTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    9,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    10,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    11,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_PARTIAL_FAILURE_REASONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AutoMLPartialFailureReasons$member",
+            "com.amazonaws.sagemaker",
+            "AutoMLPartialFailureReasons",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_PARTIAL_FAILURE_REASONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$PartialFailureReasons",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PartialFailureReasons",
+    12,
+)
+.with_list_member(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_PARTIAL_FAILURE_REASONS_MEMBER);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_BEST_CANDIDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$BestCandidate",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BestCandidate",
+    13,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLJobStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobStatus",
+    14,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_SECONDARY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLJobSecondaryStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobSecondaryStatus",
+    15,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLJobArtifacts",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoMLJobArtifacts",
+    16,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_RESOLVED_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$ResolvedAttributes",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResolvedAttributes",
+    17,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_MODEL_DEPLOY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$ModelDeployConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDeployConfig",
+    18,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_MODEL_DEPLOY_RESULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$ModelDeployResult",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDeployResult",
+    19,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_DATA_SPLIT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$DataSplitConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataSplitConfig",
+    20,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_SECURITY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$SecurityConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SecurityConfig",
+    21,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_COMPUTE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output$AutoMLComputeConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoMLComputeConfig",
+    22,
+);
+static DESCRIBEAUTOMLJOBV2OUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Output",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Output",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_NAME,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_ARN,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_INPUT_DATA_CONFIG,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_OBJECTIVE,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_PROBLEM_TYPE_CONFIG,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_PROBLEM_TYPE_CONFIG_NAME,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_END_TIME,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_PARTIAL_FAILURE_REASONS,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_BEST_CANDIDATE,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_STATUS,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_SECONDARY_STATUS,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_ARTIFACTS,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_RESOLVED_ATTRIBUTES,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_MODEL_DEPLOY_CONFIG,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_MODEL_DEPLOY_RESULT,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_DATA_SPLIT_CONFIG,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_SECURITY_CONFIG,
+        &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_COMPUTE_CONFIG,
+    ],
+)
+.with_original_name("DescribeAutoMLJobV2Response");
+impl DescribeAutoMlJobV2Output {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAUTOMLJOBV2OUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAutoMlJobV2Output {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_ml_job_name {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job_arn {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job_input_data_config {
+            ser.write_list(
+                &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_INPUT_DATA_CONFIG,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AutoMlJobChannel::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job_objective {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_OBJECTIVE, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_problem_type_config {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_PROBLEM_TYPE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_problem_type_config_name {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_PROBLEM_TYPE_CONFIG_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.partial_failure_reasons {
+            ser.write_list(
+                &DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_PARTIAL_FAILURE_REASONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AutoMlPartialFailureReason::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.best_candidate {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_BEST_CANDIDATE, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_job_status {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.auto_ml_job_secondary_status {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_SECONDARY_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.auto_ml_job_artifacts {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_JOB_ARTIFACTS, val)?;
+        }
+        if let Some(ref val) = self.resolved_attributes {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_RESOLVED_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.model_deploy_config {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_MODEL_DEPLOY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_deploy_result {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_MODEL_DEPLOY_RESULT, val)?;
+        }
+        if let Some(ref val) = self.data_split_config {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_DATA_SPLIT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.security_config {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_SECURITY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.auto_ml_compute_config {
+            ser.write_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_MEMBER_AUTO_ML_COMPUTE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMlJobV2OutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAUTOMLJOBV2OUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_input_data_config = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoMlJobChannel::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::AutoMlOutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_objective = Some(crate::types::AutoMlJobObjective::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_problem_type_config = Some(crate::types::AutoMlProblemTypeConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_problem_type_config_name =
+                            Some(crate::types::AutoMlProblemTypeConfigName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partial_failure_reasons = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoMlPartialFailureReason::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.best_candidate = Some(crate::types::AutoMlCandidate::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_status = Some(crate::types::AutoMlJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_secondary_status = Some(crate::types::AutoMlJobSecondaryStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_artifacts = Some(crate::types::AutoMlJobArtifacts::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolved_attributes = Some(crate::types::AutoMlResolvedAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_deploy_config = Some(crate::types::ModelDeployConfig::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_deploy_result = Some(crate::types::ModelDeployResult::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_split_config = Some(crate::types::AutoMlDataSplitConfig::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_config = Some(crate::types::AutoMlSecurityConfig::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_compute_config = Some(crate::types::AutoMlComputeConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAutoMlJobV2Output {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeAutoMlJobV2Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

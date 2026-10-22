@@ -68,6 +68,299 @@ impl BatchDescribeMergeConflictsInput {
         self.next_token.as_deref()
     }
 }
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_DESTINATION_COMMIT_SPECIFIER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$destinationCommitSpecifier",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchDescribeMergeConflictsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "destinationCommitSpecifier",
+        1,
+    );
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_SOURCE_COMMIT_SPECIFIER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$sourceCommitSpecifier",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchDescribeMergeConflictsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "sourceCommitSpecifier",
+        2,
+    );
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MERGE_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$mergeOption",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "mergeOption",
+    3,
+);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MAX_MERGE_HUNKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$maxMergeHunks",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxMergeHunks",
+    4,
+);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MAX_CONFLICT_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$maxConflictFiles",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxConflictFiles",
+    5,
+);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_FILE_PATHS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FilePaths$member", "com.amazonaws.codecommit", "FilePaths"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_FILE_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$filePaths",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "filePaths",
+    6,
+)
+.with_list_member(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_FILE_PATHS_MEMBER);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_CONFLICT_DETAIL_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$conflictDetailLevel",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "conflictDetailLevel",
+    7,
+);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_CONFLICT_RESOLUTION_STRATEGY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$conflictResolutionStrategy",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchDescribeMergeConflictsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "conflictResolutionStrategy",
+        8,
+    );
+static BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput$nextToken",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    9,
+);
+static BATCHDESCRIBEMERGECONFLICTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#BatchDescribeMergeConflictsInput",
+        "com.amazonaws.codecommit.synthetic",
+        "BatchDescribeMergeConflictsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_REPOSITORY_NAME,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_DESTINATION_COMMIT_SPECIFIER,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_SOURCE_COMMIT_SPECIFIER,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MERGE_OPTION,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MAX_MERGE_HUNKS,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MAX_CONFLICT_FILES,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_FILE_PATHS,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_CONFLICT_DETAIL_LEVEL,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_CONFLICT_RESOLUTION_STRATEGY,
+        &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchDescribeMergeConflictsInput");
+impl BatchDescribeMergeConflictsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDESCRIBEMERGECONFLICTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDescribeMergeConflictsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.destination_commit_specifier {
+            ser.write_string(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_DESTINATION_COMMIT_SPECIFIER, val)?;
+        }
+        if let Some(ref val) = self.source_commit_specifier {
+            ser.write_string(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_SOURCE_COMMIT_SPECIFIER, val)?;
+        }
+        if let Some(ref val) = self.merge_option {
+            ser.write_string(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MERGE_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_merge_hunks {
+            ser.write_integer(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MAX_MERGE_HUNKS, *val)?;
+        }
+        if let Some(ref val) = self.max_conflict_files {
+            ser.write_integer(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_MAX_CONFLICT_FILES, *val)?;
+        }
+        if let Some(ref val) = self.file_paths {
+            ser.write_list(
+                &BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_FILE_PATHS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.conflict_detail_level {
+            ser.write_string(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_CONFLICT_DETAIL_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.conflict_resolution_strategy {
+            ser.write_string(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_CONFLICT_RESOLUTION_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&BATCHDESCRIBEMERGECONFLICTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDESCRIBEMERGECONFLICTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_commit_specifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_commit_specifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.merge_option = Some(crate::types::MergeOptionTypeEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_merge_hunks = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_conflict_files = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_paths = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conflict_detail_level = Some(crate::types::ConflictDetailLevelTypeEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.conflict_resolution_strategy = Some(crate::types::ConflictResolutionStrategyTypeEnum::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDescribeMergeConflictsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.destination_commit_specifier = builder.destination_commit_specifier.or(Some(String::new()));
+        builder.source_commit_specifier = builder.source_commit_specifier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchDescribeMergeConflictsInput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeMergeConflictsInput`](crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsInput).
     pub fn builder() -> crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder {

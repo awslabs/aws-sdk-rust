@@ -58,6 +58,289 @@ impl UpdateThemeForStackInput {
         self.attributes_to_delete.as_deref().unwrap_or_default()
     }
 }
+static UPDATETHEMEFORSTACKINPUT_MEMBER_STACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$StackName",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StackName",
+    0,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ThemeFooterLinks$member",
+        "com.amazonaws.appstream",
+        "ThemeFooterLinks",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$FooterLinks",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FooterLinks",
+    1,
+)
+.with_list_member(&UPDATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS_MEMBER);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_TITLE_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$TitleText",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TitleText",
+    2,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_THEME_STYLING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$ThemeStyling",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ThemeStyling",
+    3,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_ORGANIZATION_LOGO_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$OrganizationLogoS3Location",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OrganizationLogoS3Location",
+    4,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_FAVICON_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$FaviconS3Location",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FaviconS3Location",
+    5,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$State",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    6,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_ATTRIBUTES_TO_DELETE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ThemeAttributes$member",
+        "com.amazonaws.appstream",
+        "ThemeAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATETHEMEFORSTACKINPUT_MEMBER_ATTRIBUTES_TO_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput$AttributesToDelete",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AttributesToDelete",
+    7,
+)
+.with_list_member(&UPDATETHEMEFORSTACKINPUT_MEMBER_ATTRIBUTES_TO_DELETE_MEMBER);
+static UPDATETHEMEFORSTACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateThemeForStackInput",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_STACK_NAME,
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS,
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_TITLE_TEXT,
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_THEME_STYLING,
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_ORGANIZATION_LOGO_S3_LOCATION,
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_FAVICON_S3_LOCATION,
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_STATE,
+        &UPDATETHEMEFORSTACKINPUT_MEMBER_ATTRIBUTES_TO_DELETE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateThemeForStackRequest");
+impl UpdateThemeForStackInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATETHEMEFORSTACKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateThemeForStackInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stack_name {
+            ser.write_string(&UPDATETHEMEFORSTACKINPUT_MEMBER_STACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.footer_links {
+            ser.write_list(
+                &UPDATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ThemeFooterLink::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.title_text {
+            ser.write_string(&UPDATETHEMEFORSTACKINPUT_MEMBER_TITLE_TEXT, val)?;
+        }
+        if let Some(ref val) = self.theme_styling {
+            ser.write_string(&UPDATETHEMEFORSTACKINPUT_MEMBER_THEME_STYLING, val.as_str())?;
+        }
+        if let Some(ref val) = self.organization_logo_s3_location {
+            ser.write_struct(&UPDATETHEMEFORSTACKINPUT_MEMBER_ORGANIZATION_LOGO_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.favicon_s3_location {
+            ser.write_struct(&UPDATETHEMEFORSTACKINPUT_MEMBER_FAVICON_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&UPDATETHEMEFORSTACKINPUT_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.attributes_to_delete {
+            ser.write_list(
+                &UPDATETHEMEFORSTACKINPUT_MEMBER_ATTRIBUTES_TO_DELETE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_theme_for_stack::builders::UpdateThemeForStackInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATETHEMEFORSTACKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.footer_links = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ThemeFooterLink::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.title_text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.theme_styling = Some(crate::types::ThemeStyling::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_logo_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.favicon_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ThemeState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes_to_delete = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ThemeAttribute::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateThemeForStackInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.stack_name = builder.stack_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateThemeForStackInput {
     /// Creates a new builder-style object to manufacture [`UpdateThemeForStackInput`](crate::operation::update_theme_for_stack::UpdateThemeForStackInput).
     pub fn builder() -> crate::operation::update_theme_for_stack::builders::UpdateThemeForStackInputBuilder {

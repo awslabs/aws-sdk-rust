@@ -37,6 +37,169 @@ impl SessionConfiguration {
         self.encryption_configuration.as_ref()
     }
 }
+static SESSIONCONFIGURATION_MEMBER_EXECUTION_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SessionConfiguration$ExecutionRole",
+        "com.amazonaws.athena",
+        "SessionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRole",
+    0,
+);
+static SESSIONCONFIGURATION_MEMBER_WORKING_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SessionConfiguration$WorkingDirectory",
+        "com.amazonaws.athena",
+        "SessionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkingDirectory",
+    1,
+);
+static SESSIONCONFIGURATION_MEMBER_IDLE_TIMEOUT_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SessionConfiguration$IdleTimeoutSeconds",
+        "com.amazonaws.athena",
+        "SessionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "IdleTimeoutSeconds",
+    2,
+);
+static SESSIONCONFIGURATION_MEMBER_SESSION_IDLE_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SessionConfiguration$SessionIdleTimeoutInMinutes",
+        "com.amazonaws.athena",
+        "SessionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SessionIdleTimeoutInMinutes",
+    3,
+);
+static SESSIONCONFIGURATION_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SessionConfiguration$EncryptionConfiguration",
+        "com.amazonaws.athena",
+        "SessionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    4,
+);
+static SESSIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#SessionConfiguration",
+        "com.amazonaws.athena",
+        "SessionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SESSIONCONFIGURATION_MEMBER_EXECUTION_ROLE,
+        &SESSIONCONFIGURATION_MEMBER_WORKING_DIRECTORY,
+        &SESSIONCONFIGURATION_MEMBER_IDLE_TIMEOUT_SECONDS,
+        &SESSIONCONFIGURATION_MEMBER_SESSION_IDLE_TIMEOUT_IN_MINUTES,
+        &SESSIONCONFIGURATION_MEMBER_ENCRYPTION_CONFIGURATION,
+    ],
+);
+impl SessionConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SESSIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SessionConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_role {
+            ser.write_string(&SESSIONCONFIGURATION_MEMBER_EXECUTION_ROLE, val)?;
+        }
+        if let Some(ref val) = self.working_directory {
+            ser.write_string(&SESSIONCONFIGURATION_MEMBER_WORKING_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.idle_timeout_seconds {
+            ser.write_long(&SESSIONCONFIGURATION_MEMBER_IDLE_TIMEOUT_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.session_idle_timeout_in_minutes {
+            ser.write_integer(&SESSIONCONFIGURATION_MEMBER_SESSION_IDLE_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&SESSIONCONFIGURATION_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SessionConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SESSIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.working_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idle_timeout_seconds = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_idle_timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::EncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SessionConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SessionConfiguration {
     /// Creates a new builder-style object to manufacture [`SessionConfiguration`](crate::types::SessionConfiguration).
     pub fn builder() -> crate::types::builders::SessionConfigurationBuilder {

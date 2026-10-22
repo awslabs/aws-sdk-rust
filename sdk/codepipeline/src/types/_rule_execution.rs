@@ -61,6 +61,249 @@ impl RuleExecution {
         self.error_details.as_ref()
     }
 }
+static RULEEXECUTION_MEMBER_RULE_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$ruleExecutionId",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ruleExecutionId",
+    0,
+);
+static RULEEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$status",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    1,
+);
+static RULEEXECUTION_MEMBER_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$summary",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "summary",
+    2,
+);
+static RULEEXECUTION_MEMBER_LAST_STATUS_CHANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$lastStatusChange",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastStatusChange",
+    3,
+);
+static RULEEXECUTION_MEMBER_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$token",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "token",
+    4,
+);
+static RULEEXECUTION_MEMBER_LAST_UPDATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$lastUpdatedBy",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "lastUpdatedBy",
+    5,
+);
+static RULEEXECUTION_MEMBER_EXTERNAL_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$externalExecutionId",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionId",
+    6,
+);
+static RULEEXECUTION_MEMBER_EXTERNAL_EXECUTION_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$externalExecutionUrl",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionUrl",
+    7,
+);
+static RULEEXECUTION_MEMBER_ERROR_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecution$errorDetails",
+        "com.amazonaws.codepipeline",
+        "RuleExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "errorDetails",
+    8,
+);
+static RULEEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#RuleExecution", "com.amazonaws.codepipeline", "RuleExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RULEEXECUTION_MEMBER_RULE_EXECUTION_ID,
+        &RULEEXECUTION_MEMBER_STATUS,
+        &RULEEXECUTION_MEMBER_SUMMARY,
+        &RULEEXECUTION_MEMBER_LAST_STATUS_CHANGE,
+        &RULEEXECUTION_MEMBER_TOKEN,
+        &RULEEXECUTION_MEMBER_LAST_UPDATED_BY,
+        &RULEEXECUTION_MEMBER_EXTERNAL_EXECUTION_ID,
+        &RULEEXECUTION_MEMBER_EXTERNAL_EXECUTION_URL,
+        &RULEEXECUTION_MEMBER_ERROR_DETAILS,
+    ],
+);
+impl RuleExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RULEEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuleExecution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.rule_execution_id {
+            ser.write_string(&RULEEXECUTION_MEMBER_RULE_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&RULEEXECUTION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.summary {
+            ser.write_string(&RULEEXECUTION_MEMBER_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.last_status_change {
+            ser.write_timestamp(&RULEEXECUTION_MEMBER_LAST_STATUS_CHANGE, val)?;
+        }
+        if let Some(ref val) = self.token {
+            ser.write_string(&RULEEXECUTION_MEMBER_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.last_updated_by {
+            ser.write_string(&RULEEXECUTION_MEMBER_LAST_UPDATED_BY, val)?;
+        }
+        if let Some(ref val) = self.external_execution_id {
+            ser.write_string(&RULEEXECUTION_MEMBER_EXTERNAL_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.external_execution_url {
+            ser.write_string(&RULEEXECUTION_MEMBER_EXTERNAL_EXECUTION_URL, val)?;
+        }
+        if let Some(ref val) = self.error_details {
+            ser.write_struct(&RULEEXECUTION_MEMBER_ERROR_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuleExecutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RULEEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::RuleExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status_change = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_details = Some(crate::types::ErrorDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuleExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RuleExecution {
     /// Creates a new builder-style object to manufacture [`RuleExecution`](crate::types::RuleExecution).
     pub fn builder() -> crate::types::builders::RuleExecutionBuilder {

@@ -43,6 +43,186 @@ impl ContextSummary {
         self.last_modified_time.as_ref()
     }
 }
+static CONTEXTSUMMARY_MEMBER_CONTEXT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContextSummary$ContextArn",
+        "com.amazonaws.sagemaker",
+        "ContextSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextArn",
+    0,
+);
+static CONTEXTSUMMARY_MEMBER_CONTEXT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContextSummary$ContextName",
+        "com.amazonaws.sagemaker",
+        "ContextSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextName",
+    1,
+);
+static CONTEXTSUMMARY_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContextSummary$Source",
+        "com.amazonaws.sagemaker",
+        "ContextSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    2,
+);
+static CONTEXTSUMMARY_MEMBER_CONTEXT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContextSummary$ContextType",
+        "com.amazonaws.sagemaker",
+        "ContextSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextType",
+    3,
+);
+static CONTEXTSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContextSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "ContextSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static CONTEXTSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContextSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "ContextSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    5,
+);
+static CONTEXTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ContextSummary", "com.amazonaws.sagemaker", "ContextSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTEXTSUMMARY_MEMBER_CONTEXT_ARN,
+        &CONTEXTSUMMARY_MEMBER_CONTEXT_NAME,
+        &CONTEXTSUMMARY_MEMBER_SOURCE,
+        &CONTEXTSUMMARY_MEMBER_CONTEXT_TYPE,
+        &CONTEXTSUMMARY_MEMBER_CREATION_TIME,
+        &CONTEXTSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl ContextSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTEXTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContextSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.context_arn {
+            ser.write_string(&CONTEXTSUMMARY_MEMBER_CONTEXT_ARN, val)?;
+        }
+        if let Some(ref val) = self.context_name {
+            ser.write_string(&CONTEXTSUMMARY_MEMBER_CONTEXT_NAME, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&CONTEXTSUMMARY_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.context_type {
+            ser.write_string(&CONTEXTSUMMARY_MEMBER_CONTEXT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&CONTEXTSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&CONTEXTSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContextSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTEXTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ContextSource::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContextSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContextSummary {
     /// Creates a new builder-style object to manufacture [`ContextSummary`](crate::types::ContextSummary).
     pub fn builder() -> crate::types::builders::ContextSummaryBuilder {

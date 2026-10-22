@@ -15,6 +15,109 @@ impl AiRecommendationPerformanceTarget {
         self.constraints.as_deref().unwrap_or_default()
     }
 }
+static AIRECOMMENDATIONPERFORMANCETARGET_MEMBER_CONSTRAINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationConstraintList$member",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationConstraintList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIRECOMMENDATIONPERFORMANCETARGET_MEMBER_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationPerformanceTarget$Constraints",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationPerformanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Constraints",
+    0,
+)
+.with_list_member(&AIRECOMMENDATIONPERFORMANCETARGET_MEMBER_CONSTRAINTS_MEMBER);
+static AIRECOMMENDATIONPERFORMANCETARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationPerformanceTarget",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationPerformanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AIRECOMMENDATIONPERFORMANCETARGET_MEMBER_CONSTRAINTS],
+);
+impl AiRecommendationPerformanceTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIRECOMMENDATIONPERFORMANCETARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiRecommendationPerformanceTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.constraints {
+            ser.write_list(
+                &AIRECOMMENDATIONPERFORMANCETARGET_MEMBER_CONSTRAINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AiRecommendationConstraint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiRecommendationPerformanceTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIRECOMMENDATIONPERFORMANCETARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.constraints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AiRecommendationConstraint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiRecommendationPerformanceTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiRecommendationPerformanceTarget {
     /// Creates a new builder-style object to manufacture [`AiRecommendationPerformanceTarget`](crate::types::AiRecommendationPerformanceTarget).
     pub fn builder() -> crate::types::builders::AiRecommendationPerformanceTargetBuilder {

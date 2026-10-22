@@ -25,6 +25,127 @@ impl LabelCountersForWorkteam {
         self.total
     }
 }
+static LABELCOUNTERSFORWORKTEAM_MEMBER_HUMAN_LABELED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCountersForWorkteam$HumanLabeled",
+        "com.amazonaws.sagemaker",
+        "LabelCountersForWorkteam",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "HumanLabeled",
+    0,
+);
+static LABELCOUNTERSFORWORKTEAM_MEMBER_PENDING_HUMAN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCountersForWorkteam$PendingHuman",
+        "com.amazonaws.sagemaker",
+        "LabelCountersForWorkteam",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "PendingHuman",
+    1,
+);
+static LABELCOUNTERSFORWORKTEAM_MEMBER_TOTAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCountersForWorkteam$Total",
+        "com.amazonaws.sagemaker",
+        "LabelCountersForWorkteam",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Total",
+    2,
+);
+static LABELCOUNTERSFORWORKTEAM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelCountersForWorkteam",
+        "com.amazonaws.sagemaker",
+        "LabelCountersForWorkteam",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LABELCOUNTERSFORWORKTEAM_MEMBER_HUMAN_LABELED,
+        &LABELCOUNTERSFORWORKTEAM_MEMBER_PENDING_HUMAN,
+        &LABELCOUNTERSFORWORKTEAM_MEMBER_TOTAL,
+    ],
+);
+impl LabelCountersForWorkteam {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LABELCOUNTERSFORWORKTEAM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LabelCountersForWorkteam {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.human_labeled {
+            ser.write_integer(&LABELCOUNTERSFORWORKTEAM_MEMBER_HUMAN_LABELED, *val)?;
+        }
+        if let Some(ref val) = self.pending_human {
+            ser.write_integer(&LABELCOUNTERSFORWORKTEAM_MEMBER_PENDING_HUMAN, *val)?;
+        }
+        if let Some(ref val) = self.total {
+            ser.write_integer(&LABELCOUNTERSFORWORKTEAM_MEMBER_TOTAL, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LabelCountersForWorkteamBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LABELCOUNTERSFORWORKTEAM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_labeled = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pending_human = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LabelCountersForWorkteam {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LabelCountersForWorkteam {
     /// Creates a new builder-style object to manufacture [`LabelCountersForWorkteam`](crate::types::LabelCountersForWorkteam).
     pub fn builder() -> crate::types::builders::LabelCountersForWorkteamBuilder {

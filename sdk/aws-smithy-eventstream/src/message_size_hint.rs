@@ -76,6 +76,7 @@ mod tests {
     use super::*;
     use crate::frame::write_message_to;
     use aws_smithy_types::event_stream::{Header, HeaderValue, Message};
+    use aws_smithy_types::DateTime;
     use bytes::Bytes;
 
     #[test]
@@ -107,7 +108,12 @@ mod tests {
                 .add_header(Header::new(
                     "bytes-val",
                     HeaderValue::ByteArray(Bytes::from(b"binary data".to_vec())),
-                )),
+                ))
+                .add_header(Header::new(
+                    "timestamp-val",
+                    HeaderValue::Timestamp(DateTime::from_secs(5_000_000)),
+                ))
+                .add_header(Header::new("uuid-val", HeaderValue::Uuid(u128::MAX))),
             // Empty payload
             Message::new(Bytes::new()),
             // Large payload (1KB)

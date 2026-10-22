@@ -41,6 +41,107 @@ impl Ec2TagFilter {
         self.r#type.as_ref()
     }
 }
+static EC2TAGFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#EC2TagFilter$Key", "com.amazonaws.codedeploy", "EC2TagFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Key",
+    0,
+);
+static EC2TAGFILTER_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#EC2TagFilter$Value", "com.amazonaws.codedeploy", "EC2TagFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    1,
+);
+static EC2TAGFILTER_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#EC2TagFilter$Type", "com.amazonaws.codedeploy", "EC2TagFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static EC2TAGFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#EC2TagFilter", "com.amazonaws.codedeploy", "EC2TagFilter"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EC2TAGFILTER_MEMBER_KEY, &EC2TAGFILTER_MEMBER_VALUE, &EC2TAGFILTER_MEMBER_TYPE],
+);
+impl Ec2TagFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EC2TAGFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Ec2TagFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.key {
+            ser.write_string(&EC2TAGFILTER_MEMBER_KEY, val)?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_string(&EC2TAGFILTER_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&EC2TAGFILTER_MEMBER_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::Ec2TagFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EC2TAGFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::Ec2TagFilterType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Ec2TagFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Ec2TagFilter {
     /// Creates a new builder-style object to manufacture [`Ec2TagFilter`](crate::types::Ec2TagFilter).
     pub fn builder() -> crate::types::builders::Ec2TagFilterBuilder {

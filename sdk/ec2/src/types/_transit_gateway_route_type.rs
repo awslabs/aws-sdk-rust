@@ -14,6 +14,7 @@
 /// match transitgatewayroutetype {
 ///     TransitGatewayRouteType::Propagated => { /* ... */ },
 ///     TransitGatewayRouteType::Static => { /* ... */ },
+///     TransitGatewayRouteType::System => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum TransitGatewayRouteType {
     Propagated,
     #[allow(missing_docs)] // documentation missing in model
     Static,
+    #[allow(missing_docs)] // documentation missing in model
+    System,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for TransitGatewayRouteType {
         match s {
             "propagated" => TransitGatewayRouteType::Propagated,
             "static" => TransitGatewayRouteType::Static,
+            "system" => TransitGatewayRouteType::System,
             other => TransitGatewayRouteType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl TransitGatewayRouteType {
         match self {
             TransitGatewayRouteType::Propagated => "propagated",
             TransitGatewayRouteType::Static => "static",
+            TransitGatewayRouteType::System => "system",
             TransitGatewayRouteType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["propagated", "static"]
+        &["propagated", "static", "system"]
     }
 }
 impl ::std::convert::AsRef<str> for TransitGatewayRouteType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for TransitGatewayRouteType {
         match self {
             TransitGatewayRouteType::Propagated => write!(f, "propagated"),
             TransitGatewayRouteType::Static => write!(f, "static"),
+            TransitGatewayRouteType::System => write!(f, "system"),
             TransitGatewayRouteType::Unknown(value) => write!(f, "{value}"),
         }
     }

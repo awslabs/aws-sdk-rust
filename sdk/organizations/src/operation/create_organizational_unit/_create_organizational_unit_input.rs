@@ -44,6 +44,153 @@ impl CreateOrganizationalUnitInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEORGANIZATIONALUNITINPUT_MEMBER_PARENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateOrganizationalUnitInput$ParentId",
+        "com.amazonaws.organizations.synthetic",
+        "CreateOrganizationalUnitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParentId",
+    0,
+);
+static CREATEORGANIZATIONALUNITINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateOrganizationalUnitInput$Name",
+        "com.amazonaws.organizations.synthetic",
+        "CreateOrganizationalUnitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static CREATEORGANIZATIONALUNITINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Tags$member", "com.amazonaws.organizations", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEORGANIZATIONALUNITINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateOrganizationalUnitInput$Tags",
+        "com.amazonaws.organizations.synthetic",
+        "CreateOrganizationalUnitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    2,
+)
+.with_list_member(&CREATEORGANIZATIONALUNITINPUT_MEMBER_TAGS_MEMBER);
+static CREATEORGANIZATIONALUNITINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#CreateOrganizationalUnitInput",
+        "com.amazonaws.organizations.synthetic",
+        "CreateOrganizationalUnitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEORGANIZATIONALUNITINPUT_MEMBER_PARENT_ID,
+        &CREATEORGANIZATIONALUNITINPUT_MEMBER_NAME,
+        &CREATEORGANIZATIONALUNITINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateOrganizationalUnitRequest");
+impl CreateOrganizationalUnitInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEORGANIZATIONALUNITINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateOrganizationalUnitInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.parent_id {
+            ser.write_string(&CREATEORGANIZATIONALUNITINPUT_MEMBER_PARENT_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEORGANIZATIONALUNITINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEORGANIZATIONALUNITINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEORGANIZATIONALUNITINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateOrganizationalUnitInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.parent_id = builder.parent_id.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateOrganizationalUnitInput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationalUnitInput`](crate::operation::create_organizational_unit::CreateOrganizationalUnitInput).
     pub fn builder() -> crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder {

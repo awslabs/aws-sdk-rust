@@ -251,6 +251,627 @@ impl NfsFileShareInfo {
         self.audit_destination_arn.as_deref()
     }
 }
+static NFSFILESHAREINFO_MEMBER_NFS_FILE_SHARE_DEFAULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$NFSFileShareDefaults",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NFSFileShareDefaults",
+    0,
+);
+static NFSFILESHAREINFO_MEMBER_FILE_SHARE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$FileShareARN",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareARN",
+    1,
+);
+static NFSFILESHAREINFO_MEMBER_FILE_SHARE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$FileShareId",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareId",
+    2,
+);
+static NFSFILESHAREINFO_MEMBER_FILE_SHARE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$FileShareStatus",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareStatus",
+    3,
+);
+static NFSFILESHAREINFO_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$GatewayARN",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    4,
+);
+static NFSFILESHAREINFO_MEMBER_ENCRYPTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$EncryptionType",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EncryptionType",
+    5,
+);
+static NFSFILESHAREINFO_MEMBER_KMS_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$KMSEncrypted",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "KMSEncrypted",
+    6,
+);
+static NFSFILESHAREINFO_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$KMSKey",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    7,
+);
+static NFSFILESHAREINFO_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$Path",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Path",
+    8,
+);
+static NFSFILESHAREINFO_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$Role",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    9,
+);
+static NFSFILESHAREINFO_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$LocationARN",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationARN",
+    10,
+);
+static NFSFILESHAREINFO_MEMBER_DEFAULT_STORAGE_CLASS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$DefaultStorageClass",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultStorageClass",
+    11,
+);
+static NFSFILESHAREINFO_MEMBER_OBJECT_ACL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$ObjectACL",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ObjectACL",
+    12,
+);
+static NFSFILESHAREINFO_MEMBER_CLIENT_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#FileShareClientList$member",
+        "com.amazonaws.storagegateway",
+        "FileShareClientList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static NFSFILESHAREINFO_MEMBER_CLIENT_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$ClientList",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ClientList",
+    13,
+)
+.with_list_member(&NFSFILESHAREINFO_MEMBER_CLIENT_LIST_MEMBER);
+static NFSFILESHAREINFO_MEMBER_SQUASH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$Squash",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Squash",
+    14,
+);
+static NFSFILESHAREINFO_MEMBER_READ_ONLY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$ReadOnly",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ReadOnly",
+    15,
+);
+static NFSFILESHAREINFO_MEMBER_GUESS_MIME_TYPE_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$GuessMIMETypeEnabled",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "GuessMIMETypeEnabled",
+    16,
+);
+static NFSFILESHAREINFO_MEMBER_REQUESTER_PAYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$RequesterPays",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RequesterPays",
+    17,
+);
+static NFSFILESHAREINFO_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static NFSFILESHAREINFO_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$Tags",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    18,
+)
+.with_list_member(&NFSFILESHAREINFO_MEMBER_TAGS_MEMBER);
+static NFSFILESHAREINFO_MEMBER_FILE_SHARE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$FileShareName",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareName",
+    19,
+);
+static NFSFILESHAREINFO_MEMBER_CACHE_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$CacheAttributes",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CacheAttributes",
+    20,
+);
+static NFSFILESHAREINFO_MEMBER_NOTIFICATION_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$NotificationPolicy",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NotificationPolicy",
+    21,
+);
+static NFSFILESHAREINFO_MEMBER_VPC_ENDPOINT_DNS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$VPCEndpointDNSName",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VPCEndpointDNSName",
+    22,
+);
+static NFSFILESHAREINFO_MEMBER_BUCKET_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$BucketRegion",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BucketRegion",
+    23,
+);
+static NFSFILESHAREINFO_MEMBER_AUDIT_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo$AuditDestinationARN",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuditDestinationARN",
+    24,
+);
+static NFSFILESHAREINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#NFSFileShareInfo",
+        "com.amazonaws.storagegateway",
+        "NFSFileShareInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NFSFILESHAREINFO_MEMBER_NFS_FILE_SHARE_DEFAULTS,
+        &NFSFILESHAREINFO_MEMBER_FILE_SHARE_ARN,
+        &NFSFILESHAREINFO_MEMBER_FILE_SHARE_ID,
+        &NFSFILESHAREINFO_MEMBER_FILE_SHARE_STATUS,
+        &NFSFILESHAREINFO_MEMBER_GATEWAY_ARN,
+        &NFSFILESHAREINFO_MEMBER_ENCRYPTION_TYPE,
+        &NFSFILESHAREINFO_MEMBER_KMS_ENCRYPTED,
+        &NFSFILESHAREINFO_MEMBER_KMS_KEY,
+        &NFSFILESHAREINFO_MEMBER_PATH,
+        &NFSFILESHAREINFO_MEMBER_ROLE,
+        &NFSFILESHAREINFO_MEMBER_LOCATION_ARN,
+        &NFSFILESHAREINFO_MEMBER_DEFAULT_STORAGE_CLASS,
+        &NFSFILESHAREINFO_MEMBER_OBJECT_ACL,
+        &NFSFILESHAREINFO_MEMBER_CLIENT_LIST,
+        &NFSFILESHAREINFO_MEMBER_SQUASH,
+        &NFSFILESHAREINFO_MEMBER_READ_ONLY,
+        &NFSFILESHAREINFO_MEMBER_GUESS_MIME_TYPE_ENABLED,
+        &NFSFILESHAREINFO_MEMBER_REQUESTER_PAYS,
+        &NFSFILESHAREINFO_MEMBER_TAGS,
+        &NFSFILESHAREINFO_MEMBER_FILE_SHARE_NAME,
+        &NFSFILESHAREINFO_MEMBER_CACHE_ATTRIBUTES,
+        &NFSFILESHAREINFO_MEMBER_NOTIFICATION_POLICY,
+        &NFSFILESHAREINFO_MEMBER_VPC_ENDPOINT_DNS_NAME,
+        &NFSFILESHAREINFO_MEMBER_BUCKET_REGION,
+        &NFSFILESHAREINFO_MEMBER_AUDIT_DESTINATION_ARN,
+    ],
+);
+impl NfsFileShareInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NFSFILESHAREINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NfsFileShareInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.nfs_file_share_defaults {
+            ser.write_struct(&NFSFILESHAREINFO_MEMBER_NFS_FILE_SHARE_DEFAULTS, val)?;
+        }
+        if let Some(ref val) = self.file_share_arn {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_FILE_SHARE_ARN, val)?;
+        }
+        if let Some(ref val) = self.file_share_id {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_FILE_SHARE_ID, val)?;
+        }
+        if let Some(ref val) = self.file_share_status {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_FILE_SHARE_STATUS, val)?;
+        }
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.encryption_type {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_ENCRYPTION_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.kms_encrypted;
+            ser.write_boolean(&NFSFILESHAREINFO_MEMBER_KMS_ENCRYPTED, *val)?;
+        }
+        if let Some(ref val) = self.kms_key {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_KMS_KEY, val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.default_storage_class {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_DEFAULT_STORAGE_CLASS, val)?;
+        }
+        if let Some(ref val) = self.object_acl {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_OBJECT_ACL, val.as_str())?;
+        }
+        if let Some(ref val) = self.client_list {
+            ser.write_list(
+                &NFSFILESHAREINFO_MEMBER_CLIENT_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.squash {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_SQUASH, val)?;
+        }
+        if let Some(ref val) = self.read_only {
+            ser.write_boolean(&NFSFILESHAREINFO_MEMBER_READ_ONLY, *val)?;
+        }
+        if let Some(ref val) = self.guess_mime_type_enabled {
+            ser.write_boolean(&NFSFILESHAREINFO_MEMBER_GUESS_MIME_TYPE_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.requester_pays {
+            ser.write_boolean(&NFSFILESHAREINFO_MEMBER_REQUESTER_PAYS, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &NFSFILESHAREINFO_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.file_share_name {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_FILE_SHARE_NAME, val)?;
+        }
+        if let Some(ref val) = self.cache_attributes {
+            ser.write_struct(&NFSFILESHAREINFO_MEMBER_CACHE_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.notification_policy {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_NOTIFICATION_POLICY, val)?;
+        }
+        if let Some(ref val) = self.vpc_endpoint_dns_name {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_VPC_ENDPOINT_DNS_NAME, val)?;
+        }
+        if let Some(ref val) = self.bucket_region {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_BUCKET_REGION, val)?;
+        }
+        if let Some(ref val) = self.audit_destination_arn {
+            ser.write_string(&NFSFILESHAREINFO_MEMBER_AUDIT_DESTINATION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NfsFileShareInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NFSFILESHAREINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nfs_file_share_defaults = Some(crate::types::NfsFileShareDefaults::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_type = Some(crate::types::EncryptionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    self.kms_encrypted = Some(deser.read_boolean(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_storage_class = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.object_acl = Some(crate::types::ObjectAcl::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.squash = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.read_only = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.guess_mime_type_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requester_pays = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_attributes = Some(crate::types::CacheAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_endpoint_dns_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.audit_destination_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NfsFileShareInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NfsFileShareInfo {
     /// Creates a new builder-style object to manufacture [`NfsFileShareInfo`](crate::types::NfsFileShareInfo).
     pub fn builder() -> crate::types::builders::NfsFileShareInfoBuilder {

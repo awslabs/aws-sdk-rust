@@ -24,6 +24,130 @@ impl ListMonitoringAlertsInput {
         self.max_results
     }
 }
+static LISTMONITORINGALERTSINPUT_MEMBER_MONITORING_SCHEDULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListMonitoringAlertsInput$MonitoringScheduleName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListMonitoringAlertsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringScheduleName",
+    0,
+);
+static LISTMONITORINGALERTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListMonitoringAlertsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListMonitoringAlertsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTMONITORINGALERTSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListMonitoringAlertsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListMonitoringAlertsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTMONITORINGALERTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListMonitoringAlertsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListMonitoringAlertsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTMONITORINGALERTSINPUT_MEMBER_MONITORING_SCHEDULE_NAME,
+        &LISTMONITORINGALERTSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTMONITORINGALERTSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListMonitoringAlertsRequest");
+impl ListMonitoringAlertsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTMONITORINGALERTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListMonitoringAlertsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.monitoring_schedule_name {
+            ser.write_string(&LISTMONITORINGALERTSINPUT_MEMBER_MONITORING_SCHEDULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTMONITORINGALERTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTMONITORINGALERTSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTMONITORINGALERTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_schedule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListMonitoringAlertsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.monitoring_schedule_name = builder.monitoring_schedule_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListMonitoringAlertsInput {
     /// Creates a new builder-style object to manufacture [`ListMonitoringAlertsInput`](crate::operation::list_monitoring_alerts::ListMonitoringAlertsInput).
     pub fn builder() -> crate::operation::list_monitoring_alerts::builders::ListMonitoringAlertsInputBuilder {

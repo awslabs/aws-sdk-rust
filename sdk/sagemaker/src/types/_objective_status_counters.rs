@@ -25,6 +25,127 @@ impl ObjectiveStatusCounters {
         self.failed
     }
 }
+static OBJECTIVESTATUSCOUNTERS_MEMBER_SUCCEEDED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ObjectiveStatusCounters$Succeeded",
+        "com.amazonaws.sagemaker",
+        "ObjectiveStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Succeeded",
+    0,
+);
+static OBJECTIVESTATUSCOUNTERS_MEMBER_PENDING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ObjectiveStatusCounters$Pending",
+        "com.amazonaws.sagemaker",
+        "ObjectiveStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Pending",
+    1,
+);
+static OBJECTIVESTATUSCOUNTERS_MEMBER_FAILED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ObjectiveStatusCounters$Failed",
+        "com.amazonaws.sagemaker",
+        "ObjectiveStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Failed",
+    2,
+);
+static OBJECTIVESTATUSCOUNTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ObjectiveStatusCounters",
+        "com.amazonaws.sagemaker",
+        "ObjectiveStatusCounters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OBJECTIVESTATUSCOUNTERS_MEMBER_SUCCEEDED,
+        &OBJECTIVESTATUSCOUNTERS_MEMBER_PENDING,
+        &OBJECTIVESTATUSCOUNTERS_MEMBER_FAILED,
+    ],
+);
+impl ObjectiveStatusCounters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OBJECTIVESTATUSCOUNTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ObjectiveStatusCounters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.succeeded {
+            ser.write_integer(&OBJECTIVESTATUSCOUNTERS_MEMBER_SUCCEEDED, *val)?;
+        }
+        if let Some(ref val) = self.pending {
+            ser.write_integer(&OBJECTIVESTATUSCOUNTERS_MEMBER_PENDING, *val)?;
+        }
+        if let Some(ref val) = self.failed {
+            ser.write_integer(&OBJECTIVESTATUSCOUNTERS_MEMBER_FAILED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ObjectiveStatusCountersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OBJECTIVESTATUSCOUNTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.succeeded = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pending = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failed = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ObjectiveStatusCounters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ObjectiveStatusCounters {
     /// Creates a new builder-style object to manufacture [`ObjectiveStatusCounters`](crate::types::ObjectiveStatusCounters).
     pub fn builder() -> crate::types::builders::ObjectiveStatusCountersBuilder {

@@ -18,6 +18,112 @@ impl DeletePendingAggregationRequestInput {
         self.requester_aws_region.as_deref()
     }
 }
+static DELETEPENDINGAGGREGATIONREQUESTINPUT_MEMBER_REQUESTER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#DeletePendingAggregationRequestInput$RequesterAccountId",
+            "com.amazonaws.configservice.synthetic",
+            "DeletePendingAggregationRequestInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RequesterAccountId",
+        0,
+    );
+static DELETEPENDINGAGGREGATIONREQUESTINPUT_MEMBER_REQUESTER_AWS_REGION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#DeletePendingAggregationRequestInput$RequesterAwsRegion",
+            "com.amazonaws.configservice.synthetic",
+            "DeletePendingAggregationRequestInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RequesterAwsRegion",
+        1,
+    );
+static DELETEPENDINGAGGREGATIONREQUESTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DeletePendingAggregationRequestInput",
+        "com.amazonaws.configservice.synthetic",
+        "DeletePendingAggregationRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEPENDINGAGGREGATIONREQUESTINPUT_MEMBER_REQUESTER_ACCOUNT_ID,
+        &DELETEPENDINGAGGREGATIONREQUESTINPUT_MEMBER_REQUESTER_AWS_REGION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeletePendingAggregationRequestRequest");
+impl DeletePendingAggregationRequestInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEPENDINGAGGREGATIONREQUESTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeletePendingAggregationRequestInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.requester_account_id {
+            ser.write_string(&DELETEPENDINGAGGREGATIONREQUESTINPUT_MEMBER_REQUESTER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.requester_aws_region {
+            ser.write_string(&DELETEPENDINGAGGREGATIONREQUESTINPUT_MEMBER_REQUESTER_AWS_REGION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEPENDINGAGGREGATIONREQUESTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requester_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requester_aws_region = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeletePendingAggregationRequestInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.requester_account_id = builder.requester_account_id.or(Some(String::new()));
+        builder.requester_aws_region = builder.requester_aws_region.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeletePendingAggregationRequestInput {
     /// Creates a new builder-style object to manufacture [`DeletePendingAggregationRequestInput`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput).
     pub fn builder() -> crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder {

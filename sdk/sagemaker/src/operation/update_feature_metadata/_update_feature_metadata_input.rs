@@ -40,6 +40,218 @@ impl UpdateFeatureMetadataInput {
         self.parameter_removals.as_deref().unwrap_or_default()
     }
 }
+static UPDATEFEATUREMETADATAINPUT_MEMBER_FEATURE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureMetadataInput$FeatureGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupName",
+    0,
+);
+static UPDATEFEATUREMETADATAINPUT_MEMBER_FEATURE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureMetadataInput$FeatureName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureName",
+    1,
+);
+static UPDATEFEATUREMETADATAINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureMetadataInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_ADDITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureParameterAdditions$member",
+        "com.amazonaws.sagemaker",
+        "FeatureParameterAdditions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_ADDITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureMetadataInput$ParameterAdditions",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ParameterAdditions",
+    3,
+)
+.with_list_member(&UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_ADDITIONS_MEMBER);
+static UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_REMOVALS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FeatureParameterRemovals$member",
+        "com.amazonaws.sagemaker",
+        "FeatureParameterRemovals",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_REMOVALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureMetadataInput$ParameterRemovals",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ParameterRemovals",
+    4,
+)
+.with_list_member(&UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_REMOVALS_MEMBER);
+static UPDATEFEATUREMETADATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateFeatureMetadataInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateFeatureMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEFEATUREMETADATAINPUT_MEMBER_FEATURE_GROUP_NAME,
+        &UPDATEFEATUREMETADATAINPUT_MEMBER_FEATURE_NAME,
+        &UPDATEFEATUREMETADATAINPUT_MEMBER_DESCRIPTION,
+        &UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_ADDITIONS,
+        &UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_REMOVALS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateFeatureMetadataRequest");
+impl UpdateFeatureMetadataInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEFEATUREMETADATAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateFeatureMetadataInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.feature_group_name {
+            ser.write_string(&UPDATEFEATUREMETADATAINPUT_MEMBER_FEATURE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.feature_name {
+            ser.write_string(&UPDATEFEATUREMETADATAINPUT_MEMBER_FEATURE_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEFEATUREMETADATAINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.parameter_additions {
+            ser.write_list(
+                &UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_ADDITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FeatureParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parameter_removals {
+            ser.write_list(
+                &UPDATEFEATUREMETADATAINPUT_MEMBER_PARAMETER_REMOVALS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEFEATUREMETADATAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameter_additions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FeatureParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameter_removals = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateFeatureMetadataInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.feature_group_name = builder.feature_group_name.or(Some(String::new()));
+        builder.feature_name = builder.feature_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateFeatureMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureMetadataInput`](crate::operation::update_feature_metadata::UpdateFeatureMetadataInput).
     pub fn builder() -> crate::operation::update_feature_metadata::builders::UpdateFeatureMetadataInputBuilder {

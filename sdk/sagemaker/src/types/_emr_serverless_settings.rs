@@ -19,6 +19,103 @@ impl EmrServerlessSettings {
         self.status.as_ref()
     }
 }
+static EMRSERVERLESSSETTINGS_MEMBER_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EmrServerlessSettings$ExecutionRoleArn",
+        "com.amazonaws.sagemaker",
+        "EmrServerlessSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionRoleArn",
+    0,
+);
+static EMRSERVERLESSSETTINGS_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EmrServerlessSettings$Status",
+        "com.amazonaws.sagemaker",
+        "EmrServerlessSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static EMRSERVERLESSSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EmrServerlessSettings",
+        "com.amazonaws.sagemaker",
+        "EmrServerlessSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EMRSERVERLESSSETTINGS_MEMBER_EXECUTION_ROLE_ARN, &EMRSERVERLESSSETTINGS_MEMBER_STATUS],
+);
+impl EmrServerlessSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EMRSERVERLESSSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EmrServerlessSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_role_arn {
+            ser.write_string(&EMRSERVERLESSSETTINGS_MEMBER_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&EMRSERVERLESSSETTINGS_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EmrServerlessSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EMRSERVERLESSSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::FeatureStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EmrServerlessSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EmrServerlessSettings {
     /// Creates a new builder-style object to manufacture [`EmrServerlessSettings`](crate::types::EmrServerlessSettings).
     pub fn builder() -> crate::types::builders::EmrServerlessSettingsBuilder {

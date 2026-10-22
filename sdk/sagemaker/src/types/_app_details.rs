@@ -59,6 +59,200 @@ impl AppDetails {
         self.resource_spec.as_ref()
     }
 }
+static APPDETAILS_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails$DomainId", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    0,
+);
+static APPDETAILS_MEMBER_USER_PROFILE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AppDetails$UserProfileName",
+        "com.amazonaws.sagemaker",
+        "AppDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserProfileName",
+    1,
+);
+static APPDETAILS_MEMBER_SPACE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails$SpaceName", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpaceName",
+    2,
+);
+static APPDETAILS_MEMBER_APP_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails$AppType", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppType",
+    3,
+);
+static APPDETAILS_MEMBER_APP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails$AppName", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppName",
+    4,
+);
+static APPDETAILS_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails$Status", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    5,
+);
+static APPDETAILS_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails$CreationTime", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static APPDETAILS_MEMBER_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails$ResourceSpec", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceSpec",
+    7,
+);
+static APPDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AppDetails", "com.amazonaws.sagemaker", "AppDetails"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &APPDETAILS_MEMBER_DOMAIN_ID,
+        &APPDETAILS_MEMBER_USER_PROFILE_NAME,
+        &APPDETAILS_MEMBER_SPACE_NAME,
+        &APPDETAILS_MEMBER_APP_TYPE,
+        &APPDETAILS_MEMBER_APP_NAME,
+        &APPDETAILS_MEMBER_STATUS,
+        &APPDETAILS_MEMBER_CREATION_TIME,
+        &APPDETAILS_MEMBER_RESOURCE_SPEC,
+    ],
+);
+impl AppDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AppDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&APPDETAILS_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.user_profile_name {
+            ser.write_string(&APPDETAILS_MEMBER_USER_PROFILE_NAME, val)?;
+        }
+        if let Some(ref val) = self.space_name {
+            ser.write_string(&APPDETAILS_MEMBER_SPACE_NAME, val)?;
+        }
+        if let Some(ref val) = self.app_type {
+            ser.write_string(&APPDETAILS_MEMBER_APP_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.app_name {
+            ser.write_string(&APPDETAILS_MEMBER_APP_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&APPDETAILS_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&APPDETAILS_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.resource_spec {
+            ser.write_struct(&APPDETAILS_MEMBER_RESOURCE_SPEC, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AppDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_profile_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_type = Some(crate::types::AppType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AppStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AppDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AppDetails {
     /// Creates a new builder-style object to manufacture [`AppDetails`](crate::types::AppDetails).
     pub fn builder() -> crate::types::builders::AppDetailsBuilder {

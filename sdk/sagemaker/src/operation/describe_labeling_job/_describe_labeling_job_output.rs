@@ -161,6 +161,466 @@ impl DescribeLabelingJobOutput {
         self.labeling_job_output.as_ref()
     }
 }
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelingJobStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelingJobStatus",
+    0,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_COUNTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelCounters",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LabelCounters",
+    1,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    2,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    4,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_JOB_REFERENCE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$JobReferenceCode",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobReferenceCode",
+    5,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelingJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelingJobName",
+    6,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelingJobArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelingJobArn",
+    7,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_ATTRIBUTE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelAttributeName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelAttributeName",
+    8,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_INPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$InputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputConfig",
+    9,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    10,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    11,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_CATEGORY_CONFIG_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelCategoryConfigS3Uri",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelCategoryConfigS3Uri",
+    12,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_STOPPING_CONDITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$StoppingConditions",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingConditions",
+    13,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_ALGORITHMS_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelingJobAlgorithmsConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeLabelingJobOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "LabelingJobAlgorithmsConfig",
+        14,
+    );
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_HUMAN_TASK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$HumanTaskConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HumanTaskConfig",
+    15,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    16,
+)
+.with_list_member(&DESCRIBELABELINGJOBOUTPUT_MEMBER_TAGS_MEMBER);
+static DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput$LabelingJobOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LabelingJobOutput",
+    17,
+);
+static DESCRIBELABELINGJOBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLabelingJobOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLabelingJobOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_STATUS,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_COUNTERS,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_JOB_REFERENCE_CODE,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_NAME,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_ARN,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_ATTRIBUTE_NAME,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_INPUT_CONFIG,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_OUTPUT_CONFIG,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_CATEGORY_CONFIG_S3_URI,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_STOPPING_CONDITIONS,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_ALGORITHMS_CONFIG,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_HUMAN_TASK_CONFIG,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_TAGS,
+        &DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_OUTPUT,
+    ],
+)
+.with_original_name("DescribeLabelingJobResponse");
+impl DescribeLabelingJobOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELABELINGJOBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLabelingJobOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.labeling_job_status {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.label_counters {
+            ser.write_struct(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_COUNTERS, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBELABELINGJOBOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.job_reference_code {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_JOB_REFERENCE_CODE, val)?;
+        }
+        if let Some(ref val) = self.labeling_job_name {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.labeling_job_arn {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.label_attribute_name {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_ATTRIBUTE_NAME, val)?;
+        }
+        if let Some(ref val) = self.input_config {
+            ser.write_struct(&DESCRIBELABELINGJOBOUTPUT_MEMBER_INPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&DESCRIBELABELINGJOBOUTPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.label_category_config_s3_uri {
+            ser.write_string(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABEL_CATEGORY_CONFIG_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.stopping_conditions {
+            ser.write_struct(&DESCRIBELABELINGJOBOUTPUT_MEMBER_STOPPING_CONDITIONS, val)?;
+        }
+        if let Some(ref val) = self.labeling_job_algorithms_config {
+            ser.write_struct(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_ALGORITHMS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.human_task_config {
+            ser.write_struct(&DESCRIBELABELINGJOBOUTPUT_MEMBER_HUMAN_TASK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBELABELINGJOBOUTPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.labeling_job_output {
+            ser.write_struct(&DESCRIBELABELINGJOBOUTPUT_MEMBER_LABELING_JOB_OUTPUT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_labeling_job::builders::DescribeLabelingJobOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELABELINGJOBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_status = Some(crate::types::LabelingJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_counters = Some(crate::types::LabelCounters::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_reference_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_attribute_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_config = Some(crate::types::LabelingJobInputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::LabelingJobOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_category_config_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_conditions = Some(crate::types::LabelingJobStoppingConditions::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_algorithms_config = Some(crate::types::LabelingJobAlgorithmsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_task_config = Some(crate::types::HumanTaskConfig::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_output = Some(crate::types::LabelingJobOutput::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLabelingJobOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLabelingJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

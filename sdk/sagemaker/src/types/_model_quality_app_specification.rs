@@ -53,6 +53,285 @@ impl ModelQualityAppSpecification {
         self.environment.as_ref()
     }
 }
+static MODELQUALITYAPPSPECIFICATION_MEMBER_IMAGE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityAppSpecification$ImageUri",
+        "com.amazonaws.sagemaker",
+        "ModelQualityAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageUri",
+    0,
+);
+static MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ContainerEntrypoint$member",
+            "com.amazonaws.sagemaker",
+            "ContainerEntrypoint",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityAppSpecification$ContainerEntrypoint",
+        "com.amazonaws.sagemaker",
+        "ModelQualityAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerEntrypoint",
+    1,
+)
+.with_list_member(&MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT_MEMBER);
+static MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringContainerArguments$member",
+        "com.amazonaws.sagemaker",
+        "MonitoringContainerArguments",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityAppSpecification$ContainerArguments",
+        "com.amazonaws.sagemaker",
+        "ModelQualityAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerArguments",
+    2,
+)
+.with_list_member(&MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS_MEMBER);
+static MODELQUALITYAPPSPECIFICATION_MEMBER_RECORD_PREPROCESSOR_SOURCE_URI: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ModelQualityAppSpecification$RecordPreprocessorSourceUri",
+            "com.amazonaws.sagemaker",
+            "ModelQualityAppSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RecordPreprocessorSourceUri",
+        3,
+    );
+static MODELQUALITYAPPSPECIFICATION_MEMBER_POST_ANALYTICS_PROCESSOR_SOURCE_URI: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ModelQualityAppSpecification$PostAnalyticsProcessorSourceUri",
+            "com.amazonaws.sagemaker",
+            "ModelQualityAppSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PostAnalyticsProcessorSourceUri",
+        4,
+    );
+static MODELQUALITYAPPSPECIFICATION_MEMBER_PROBLEM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityAppSpecification$ProblemType",
+        "com.amazonaws.sagemaker",
+        "ModelQualityAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProblemType",
+    5,
+);
+static MODELQUALITYAPPSPECIFICATION_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringEnvironmentMap$key",
+        "com.amazonaws.sagemaker",
+        "MonitoringEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static MODELQUALITYAPPSPECIFICATION_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringEnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "MonitoringEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static MODELQUALITYAPPSPECIFICATION_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityAppSpecification$Environment",
+        "com.amazonaws.sagemaker",
+        "ModelQualityAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    6,
+)
+.with_map_members(
+    &MODELQUALITYAPPSPECIFICATION_MEMBER_ENVIRONMENT_KEY,
+    &MODELQUALITYAPPSPECIFICATION_MEMBER_ENVIRONMENT_VALUE,
+);
+static MODELQUALITYAPPSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelQualityAppSpecification",
+        "com.amazonaws.sagemaker",
+        "ModelQualityAppSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELQUALITYAPPSPECIFICATION_MEMBER_IMAGE_URI,
+        &MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+        &MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+        &MODELQUALITYAPPSPECIFICATION_MEMBER_RECORD_PREPROCESSOR_SOURCE_URI,
+        &MODELQUALITYAPPSPECIFICATION_MEMBER_POST_ANALYTICS_PROCESSOR_SOURCE_URI,
+        &MODELQUALITYAPPSPECIFICATION_MEMBER_PROBLEM_TYPE,
+        &MODELQUALITYAPPSPECIFICATION_MEMBER_ENVIRONMENT,
+    ],
+);
+impl ModelQualityAppSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELQUALITYAPPSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelQualityAppSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_uri {
+            ser.write_string(&MODELQUALITYAPPSPECIFICATION_MEMBER_IMAGE_URI, val)?;
+        }
+        if let Some(ref val) = self.container_entrypoint {
+            ser.write_list(
+                &MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ENTRYPOINT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.container_arguments {
+            ser.write_list(
+                &MODELQUALITYAPPSPECIFICATION_MEMBER_CONTAINER_ARGUMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.record_preprocessor_source_uri {
+            ser.write_string(&MODELQUALITYAPPSPECIFICATION_MEMBER_RECORD_PREPROCESSOR_SOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.post_analytics_processor_source_uri {
+            ser.write_string(&MODELQUALITYAPPSPECIFICATION_MEMBER_POST_ANALYTICS_PROCESSOR_SOURCE_URI, val)?;
+        }
+        if let Some(ref val) = self.problem_type {
+            ser.write_string(&MODELQUALITYAPPSPECIFICATION_MEMBER_PROBLEM_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &MODELQUALITYAPPSPECIFICATION_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelQualityAppSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELQUALITYAPPSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_entrypoint = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_arguments = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_preprocessor_source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.post_analytics_processor_source_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.problem_type = Some(crate::types::MonitoringProblemType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelQualityAppSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelQualityAppSpecification {
     /// Creates a new builder-style object to manufacture [`ModelQualityAppSpecification`](crate::types::ModelQualityAppSpecification).
     pub fn builder() -> crate::types::builders::ModelQualityAppSpecificationBuilder {

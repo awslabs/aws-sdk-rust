@@ -38,6 +38,198 @@ impl DescribeImagesInput {
         self.max_results
     }
 }
+static DESCRIBEIMAGESINPUT_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeImagesInput$registryId",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeImagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static DESCRIBEIMAGESINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeImagesInput$repositoryName",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeImagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static DESCRIBEIMAGESINPUT_MEMBER_IMAGE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ImageIdentifierList$member",
+        "com.amazonaws.ecrpublic",
+        "ImageIdentifierList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEIMAGESINPUT_MEMBER_IMAGE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeImagesInput$imageIds",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeImagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "imageIds",
+    2,
+)
+.with_list_member(&DESCRIBEIMAGESINPUT_MEMBER_IMAGE_IDS_MEMBER);
+static DESCRIBEIMAGESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeImagesInput$nextToken",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeImagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    3,
+);
+static DESCRIBEIMAGESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeImagesInput$maxResults",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeImagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    4,
+);
+static DESCRIBEIMAGESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeImagesInput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeImagesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEIMAGESINPUT_MEMBER_REGISTRY_ID,
+        &DESCRIBEIMAGESINPUT_MEMBER_REPOSITORY_NAME,
+        &DESCRIBEIMAGESINPUT_MEMBER_IMAGE_IDS,
+        &DESCRIBEIMAGESINPUT_MEMBER_NEXT_TOKEN,
+        &DESCRIBEIMAGESINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeImagesRequest");
+impl DescribeImagesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEIMAGESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeImagesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&DESCRIBEIMAGESINPUT_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&DESCRIBEIMAGESINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_ids {
+            ser.write_list(
+                &DESCRIBEIMAGESINPUT_MEMBER_IMAGE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ImageIdentifier::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEIMAGESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&DESCRIBEIMAGESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_images::builders::DescribeImagesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEIMAGESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_ids = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ImageIdentifier::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeImagesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeImagesInput {
     /// Creates a new builder-style object to manufacture [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
     pub fn builder() -> crate::operation::describe_images::builders::DescribeImagesInputBuilder {

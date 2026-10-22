@@ -38,6 +38,123 @@ impl ErrorsListItem {
         self.error_message.as_deref()
     }
 }
+static ERRORSLISTITEM_MEMBER_PAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ErrorsListItem$Page",
+        "com.amazonaws.comprehend",
+        "ErrorsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Page",
+    0,
+);
+static ERRORSLISTITEM_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ErrorsListItem$ErrorCode",
+        "com.amazonaws.comprehend",
+        "ErrorsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    1,
+);
+static ERRORSLISTITEM_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ErrorsListItem$ErrorMessage",
+        "com.amazonaws.comprehend",
+        "ErrorsListItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    2,
+);
+static ERRORSLISTITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#ErrorsListItem", "com.amazonaws.comprehend", "ErrorsListItem"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ERRORSLISTITEM_MEMBER_PAGE,
+        &ERRORSLISTITEM_MEMBER_ERROR_CODE,
+        &ERRORSLISTITEM_MEMBER_ERROR_MESSAGE,
+    ],
+);
+impl ErrorsListItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ERRORSLISTITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ErrorsListItem {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.page {
+            ser.write_integer(&ERRORSLISTITEM_MEMBER_PAGE, *val)?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&ERRORSLISTITEM_MEMBER_ERROR_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&ERRORSLISTITEM_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ErrorsListItemBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ERRORSLISTITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(crate::types::PageBasedErrorCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ErrorsListItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ErrorsListItem {
     /// Creates a new builder-style object to manufacture [`ErrorsListItem`](crate::types::ErrorsListItem).
     pub fn builder() -> crate::types::builders::ErrorsListItemBuilder {

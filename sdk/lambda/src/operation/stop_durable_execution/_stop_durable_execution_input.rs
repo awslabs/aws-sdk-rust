@@ -5,7 +5,7 @@
 pub struct StopDurableExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the durable execution.</p>
     pub durable_execution_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub error: ::std::option::Option<crate::types::ErrorObject>,
 }
 impl StopDurableExecutionInput {
@@ -13,7 +13,7 @@ impl StopDurableExecutionInput {
     pub fn durable_execution_arn(&self) -> ::std::option::Option<&str> {
         self.durable_execution_arn.as_deref()
     }
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorObject> {
         self.error.as_ref()
     }
@@ -48,17 +48,17 @@ impl StopDurableExecutionInputBuilder {
     pub fn get_durable_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.durable_execution_arn
     }
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(mut self, input: crate::types::ErrorObject) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorObject>) -> Self {
         self.error = input;
         self
     }
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorObject> {
         &self.error
     }

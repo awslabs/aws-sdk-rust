@@ -73,6 +73,296 @@ impl DescribeAlgorithmOutput {
         self.certify_for_marketplace
     }
 }
+static DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$AlgorithmName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AlgorithmName",
+    0,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$AlgorithmArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AlgorithmArn",
+    1,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$AlgorithmDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AlgorithmDescription",
+    2,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_TRAINING_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$TrainingSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrainingSpecification",
+    4,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_INFERENCE_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$InferenceSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InferenceSpecification",
+    5,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_VALIDATION_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$ValidationSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ValidationSpecification",
+    6,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$AlgorithmStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AlgorithmStatus",
+    7,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_STATUS_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$AlgorithmStatusDetails",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlgorithmStatusDetails",
+    8,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_PRODUCT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$ProductId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductId",
+    9,
+);
+static DESCRIBEALGORITHMOUTPUT_MEMBER_CERTIFY_FOR_MARKETPLACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput$CertifyForMarketplace",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "CertifyForMarketplace",
+    10,
+);
+static DESCRIBEALGORITHMOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAlgorithmOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAlgorithmOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_NAME,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_ARN,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_DESCRIPTION,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_TRAINING_SPECIFICATION,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_INFERENCE_SPECIFICATION,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_VALIDATION_SPECIFICATION,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_STATUS,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_STATUS_DETAILS,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_PRODUCT_ID,
+        &DESCRIBEALGORITHMOUTPUT_MEMBER_CERTIFY_FOR_MARKETPLACE,
+    ],
+)
+.with_original_name("DescribeAlgorithmOutput");
+impl DescribeAlgorithmOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEALGORITHMOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAlgorithmOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.algorithm_name {
+            ser.write_string(&DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_NAME, val)?;
+        }
+        if let Some(ref val) = self.algorithm_arn {
+            ser.write_string(&DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_ARN, val)?;
+        }
+        if let Some(ref val) = self.algorithm_description {
+            ser.write_string(&DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEALGORITHMOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_specification {
+            ser.write_struct(&DESCRIBEALGORITHMOUTPUT_MEMBER_TRAINING_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.inference_specification {
+            ser.write_struct(&DESCRIBEALGORITHMOUTPUT_MEMBER_INFERENCE_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.validation_specification {
+            ser.write_struct(&DESCRIBEALGORITHMOUTPUT_MEMBER_VALIDATION_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.algorithm_status {
+            ser.write_string(&DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.algorithm_status_details {
+            ser.write_struct(&DESCRIBEALGORITHMOUTPUT_MEMBER_ALGORITHM_STATUS_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.product_id {
+            ser.write_string(&DESCRIBEALGORITHMOUTPUT_MEMBER_PRODUCT_ID, val)?;
+        }
+        if let Some(ref val) = self.certify_for_marketplace {
+            ser.write_boolean(&DESCRIBEALGORITHMOUTPUT_MEMBER_CERTIFY_FOR_MARKETPLACE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_algorithm::builders::DescribeAlgorithmOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEALGORITHMOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_specification = Some(crate::types::TrainingSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_specification = Some(crate::types::InferenceSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_specification = Some(crate::types::AlgorithmValidationSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_status = Some(crate::types::AlgorithmStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_status_details = Some(crate::types::AlgorithmStatusDetails::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certify_for_marketplace = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAlgorithmOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeAlgorithmOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -70,6 +70,242 @@ impl EntityRecognizerInputDataConfig {
         self.augmented_manifests.as_deref().unwrap_or_default()
     }
 }
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_DATA_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerInputDataConfig$DataFormat",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataFormat",
+    0,
+);
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityTypesList$member",
+        "com.amazonaws.comprehend",
+        "EntityTypesList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerInputDataConfig$EntityTypes",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EntityTypes",
+    1,
+)
+.with_list_member(&ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_TYPES_MEMBER);
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_DOCUMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerInputDataConfig$Documents",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Documents",
+    2,
+);
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ANNOTATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerInputDataConfig$Annotations",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Annotations",
+    3,
+);
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerInputDataConfig$EntityList",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EntityList",
+    4,
+);
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#EntityRecognizerAugmentedManifestsList$member",
+            "com.amazonaws.comprehend",
+            "EntityRecognizerAugmentedManifestsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerInputDataConfig$AugmentedManifests",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AugmentedManifests",
+    5,
+)
+.with_list_member(&ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS_MEMBER);
+static ENTITYRECOGNIZERINPUTDATACONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerInputDataConfig",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerInputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_DATA_FORMAT,
+        &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_TYPES,
+        &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_DOCUMENTS,
+        &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ANNOTATIONS,
+        &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_LIST,
+        &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS,
+    ],
+);
+impl EntityRecognizerInputDataConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITYRECOGNIZERINPUTDATACONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntityRecognizerInputDataConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.data_format {
+            ser.write_string(&ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_DATA_FORMAT, val.as_str())?;
+        }
+        {
+            let val = &self.entity_types;
+
+            ser.write_list(
+                &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EntityTypesListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.documents {
+            ser.write_struct(&ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_DOCUMENTS, val)?;
+        }
+        if let Some(ref val) = self.annotations {
+            ser.write_struct(&ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ANNOTATIONS, val)?;
+        }
+        if let Some(ref val) = self.entity_list {
+            ser.write_struct(&ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_ENTITY_LIST, val)?;
+        }
+        if let Some(ref val) = self.augmented_manifests {
+            ser.write_list(
+                &ENTITYRECOGNIZERINPUTDATACONFIG_MEMBER_AUGMENTED_MANIFESTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AugmentedManifestsListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntityRecognizerInputDataConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITYRECOGNIZERINPUTDATACONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_format = Some(crate::types::EntityRecognizerDataFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    self.entity_types = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::EntityTypesListItem::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.documents = Some(crate::types::EntityRecognizerDocuments::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.annotations = Some(crate::types::EntityRecognizerAnnotations::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_list = Some(crate::types::EntityRecognizerEntityList::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.augmented_manifests = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AugmentedManifestsListItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntityRecognizerInputDataConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.entity_types = builder.entity_types.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EntityRecognizerInputDataConfig {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerInputDataConfig`](crate::types::EntityRecognizerInputDataConfig).
     pub fn builder() -> crate::types::builders::EntityRecognizerInputDataConfigBuilder {

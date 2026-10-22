@@ -8,6 +8,83 @@ pub struct BlobIdDoesNotExistException {
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
+static BLOBIDDOESNOTEXISTEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#BlobIdDoesNotExistException$message",
+        "com.amazonaws.codecommit",
+        "BlobIdDoesNotExistException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    0,
+);
+static BLOBIDDOESNOTEXISTEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#BlobIdDoesNotExistException",
+        "com.amazonaws.codecommit",
+        "BlobIdDoesNotExistException",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BLOBIDDOESNOTEXISTEXCEPTION_MEMBER_MESSAGE],
+);
+impl BlobIdDoesNotExistException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BLOBIDDOESNOTEXISTEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BlobIdDoesNotExistException {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.message {
+            ser.write_string(&BLOBIDDOESNOTEXISTEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::BlobIdDoesNotExistExceptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BLOBIDDOESNOTEXISTEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BlobIdDoesNotExistException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BlobIdDoesNotExistException {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

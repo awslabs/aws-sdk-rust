@@ -26,6 +26,118 @@ impl EntitlementData {
         &self.unit
     }
 }
+static ENTITLEMENTDATA_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementData$Name",
+        "com.amazonaws.licensemanager",
+        "EntitlementData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static ENTITLEMENTDATA_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementData$Value",
+        "com.amazonaws.licensemanager",
+        "EntitlementData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    1,
+);
+static ENTITLEMENTDATA_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementData$Unit",
+        "com.amazonaws.licensemanager",
+        "EntitlementData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Unit",
+    2,
+);
+static ENTITLEMENTDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementData",
+        "com.amazonaws.licensemanager",
+        "EntitlementData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ENTITLEMENTDATA_MEMBER_NAME, &ENTITLEMENTDATA_MEMBER_VALUE, &ENTITLEMENTDATA_MEMBER_UNIT],
+);
+impl EntitlementData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITLEMENTDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntitlementData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&ENTITLEMENTDATA_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_string(&ENTITLEMENTDATA_MEMBER_VALUE, val)?;
+        }
+        {
+            let val = &self.unit;
+            ser.write_string(&ENTITLEMENTDATA_MEMBER_UNIT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntitlementDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITLEMENTDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.unit = Some(crate::types::EntitlementDataUnit::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntitlementData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EntitlementData {
     /// Creates a new builder-style object to manufacture [`EntitlementData`](crate::types::EntitlementData).
     pub fn builder() -> crate::types::builders::EntitlementDataBuilder {

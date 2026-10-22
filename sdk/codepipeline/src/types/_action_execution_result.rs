@@ -37,6 +37,169 @@ impl ActionExecutionResult {
         self.log_stream_arn.as_deref()
     }
 }
+static ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionResult$externalExecutionId",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionId",
+    0,
+);
+static ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionResult$externalExecutionSummary",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionSummary",
+    1,
+);
+static ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionResult$externalExecutionUrl",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionUrl",
+    2,
+);
+static ACTIONEXECUTIONRESULT_MEMBER_ERROR_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionResult$errorDetails",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "errorDetails",
+    3,
+);
+static ACTIONEXECUTIONRESULT_MEMBER_LOG_STREAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionResult$logStreamARN",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "logStreamARN",
+    4,
+);
+static ACTIONEXECUTIONRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionResult",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_ID,
+        &ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_SUMMARY,
+        &ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_URL,
+        &ACTIONEXECUTIONRESULT_MEMBER_ERROR_DETAILS,
+        &ACTIONEXECUTIONRESULT_MEMBER_LOG_STREAM_ARN,
+    ],
+);
+impl ActionExecutionResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONEXECUTIONRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionExecutionResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.external_execution_id {
+            ser.write_string(&ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.external_execution_summary {
+            ser.write_string(&ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.external_execution_url {
+            ser.write_string(&ACTIONEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_URL, val)?;
+        }
+        if let Some(ref val) = self.error_details {
+            ser.write_struct(&ACTIONEXECUTIONRESULT_MEMBER_ERROR_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.log_stream_arn {
+            ser.write_string(&ACTIONEXECUTIONRESULT_MEMBER_LOG_STREAM_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionExecutionResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONEXECUTIONRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_details = Some(crate::types::ErrorDetails::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_stream_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionExecutionResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActionExecutionResult {
     /// Creates a new builder-style object to manufacture [`ActionExecutionResult`](crate::types::ActionExecutionResult).
     pub fn builder() -> crate::types::builders::ActionExecutionResultBuilder {

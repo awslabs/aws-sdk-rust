@@ -80,3 +80,116 @@ impl OptimizationConfig {
         matches!(self, Self::Unknown)
     }
 }
+static OPTIMIZATIONCONFIG_MEMBER_MODELQUANTIZATIONCONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationConfig$ModelQuantizationConfig",
+        "com.amazonaws.sagemaker",
+        "OptimizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelQuantizationConfig",
+    0,
+);
+static OPTIMIZATIONCONFIG_MEMBER_MODELCOMPILATIONCONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationConfig$ModelCompilationConfig",
+        "com.amazonaws.sagemaker",
+        "OptimizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelCompilationConfig",
+    1,
+);
+static OPTIMIZATIONCONFIG_MEMBER_MODELSHARDINGCONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationConfig$ModelShardingConfig",
+        "com.amazonaws.sagemaker",
+        "OptimizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelShardingConfig",
+    2,
+);
+static OPTIMIZATIONCONFIG_MEMBER_MODELSPECULATIVEDECODINGCONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationConfig$ModelSpeculativeDecodingConfig",
+        "com.amazonaws.sagemaker",
+        "OptimizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelSpeculativeDecodingConfig",
+    3,
+);
+static OPTIMIZATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationConfig",
+        "com.amazonaws.sagemaker",
+        "OptimizationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &OPTIMIZATIONCONFIG_MEMBER_MODELQUANTIZATIONCONFIG,
+        &OPTIMIZATIONCONFIG_MEMBER_MODELCOMPILATIONCONFIG,
+        &OPTIMIZATIONCONFIG_MEMBER_MODELSHARDINGCONFIG,
+        &OPTIMIZATIONCONFIG_MEMBER_MODELSPECULATIVEDECODINGCONFIG,
+    ],
+);
+impl OptimizationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPTIMIZATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OptimizationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::ModelQuantizationConfig(val) => {
+                ser.write_struct(&OPTIMIZATIONCONFIG_MEMBER_MODELQUANTIZATIONCONFIG, val)?;
+            }
+            Self::ModelCompilationConfig(val) => {
+                ser.write_struct(&OPTIMIZATIONCONFIG_MEMBER_MODELCOMPILATIONCONFIG, val)?;
+            }
+            Self::ModelShardingConfig(val) => {
+                ser.write_struct(&OPTIMIZATIONCONFIG_MEMBER_MODELSHARDINGCONFIG, val)?;
+            }
+            Self::ModelSpeculativeDecodingConfig(val) => {
+                ser.write_struct(&OPTIMIZATIONCONFIG_MEMBER_MODELSPECULATIVEDECODINGCONFIG, val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl OptimizationConfig {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&OPTIMIZATIONCONFIG_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::ModelQuantizationConfig(crate::types::ModelQuantizationConfig::deserialize(deser)?),
+                Some(1) => Self::ModelCompilationConfig(crate::types::ModelCompilationConfig::deserialize(deser)?),
+                Some(2) => Self::ModelShardingConfig(crate::types::ModelShardingConfig::deserialize(deser)?),
+                Some(3) => Self::ModelSpeculativeDecodingConfig(crate::types::ModelSpeculativeDecodingConfig::deserialize(deser)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

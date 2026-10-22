@@ -61,6 +61,155 @@ impl ::std::fmt::Debug for UpdateChapCredentialsInput {
         formatter.finish()
     }
 }
+static UPDATECHAPCREDENTIALSINPUT_MEMBER_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateChapCredentialsInput$TargetARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateChapCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetARN",
+    0,
+);
+static UPDATECHAPCREDENTIALSINPUT_MEMBER_SECRET_TO_AUTHENTICATE_INITIATOR: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#UpdateChapCredentialsInput$SecretToAuthenticateInitiator",
+            "com.amazonaws.storagegateway.synthetic",
+            "UpdateChapCredentialsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SecretToAuthenticateInitiator",
+        1,
+    );
+static UPDATECHAPCREDENTIALSINPUT_MEMBER_INITIATOR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateChapCredentialsInput$InitiatorName",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateChapCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InitiatorName",
+    2,
+);
+static UPDATECHAPCREDENTIALSINPUT_MEMBER_SECRET_TO_AUTHENTICATE_TARGET: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#UpdateChapCredentialsInput$SecretToAuthenticateTarget",
+            "com.amazonaws.storagegateway.synthetic",
+            "UpdateChapCredentialsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SecretToAuthenticateTarget",
+        3,
+    );
+static UPDATECHAPCREDENTIALSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateChapCredentialsInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateChapCredentialsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECHAPCREDENTIALSINPUT_MEMBER_TARGET_ARN,
+        &UPDATECHAPCREDENTIALSINPUT_MEMBER_SECRET_TO_AUTHENTICATE_INITIATOR,
+        &UPDATECHAPCREDENTIALSINPUT_MEMBER_INITIATOR_NAME,
+        &UPDATECHAPCREDENTIALSINPUT_MEMBER_SECRET_TO_AUTHENTICATE_TARGET,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateChapCredentialsInput");
+impl UpdateChapCredentialsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECHAPCREDENTIALSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateChapCredentialsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target_arn {
+            ser.write_string(&UPDATECHAPCREDENTIALSINPUT_MEMBER_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.secret_to_authenticate_initiator {
+            ser.write_string(&UPDATECHAPCREDENTIALSINPUT_MEMBER_SECRET_TO_AUTHENTICATE_INITIATOR, val)?;
+        }
+        if let Some(ref val) = self.initiator_name {
+            ser.write_string(&UPDATECHAPCREDENTIALSINPUT_MEMBER_INITIATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.secret_to_authenticate_target {
+            ser.write_string(&UPDATECHAPCREDENTIALSINPUT_MEMBER_SECRET_TO_AUTHENTICATE_TARGET, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_chap_credentials::builders::UpdateChapCredentialsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECHAPCREDENTIALSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_to_authenticate_initiator = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.initiator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_to_authenticate_target = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateChapCredentialsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.target_arn = builder.target_arn.or(Some(String::new()));
+        builder.secret_to_authenticate_initiator = builder.secret_to_authenticate_initiator.or(Some(String::new()));
+        builder.initiator_name = builder.initiator_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateChapCredentialsInput {
     /// Creates a new builder-style object to manufacture [`UpdateChapCredentialsInput`](crate::operation::update_chap_credentials::UpdateChapCredentialsInput).
     pub fn builder() -> crate::operation::update_chap_credentials::builders::UpdateChapCredentialsInputBuilder {

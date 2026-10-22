@@ -30,6 +30,148 @@ impl InvalidInputException {
         self.tip.as_deref()
     }
 }
+static INVALIDINPUTEXCEPTION_MEMBER_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InvalidInputException$code",
+        "com.amazonaws.lightsail",
+        "InvalidInputException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "code",
+    0,
+);
+static INVALIDINPUTEXCEPTION_MEMBER_DOCS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InvalidInputException$docs",
+        "com.amazonaws.lightsail",
+        "InvalidInputException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "docs",
+    1,
+);
+static INVALIDINPUTEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InvalidInputException$message",
+        "com.amazonaws.lightsail",
+        "InvalidInputException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    2,
+);
+static INVALIDINPUTEXCEPTION_MEMBER_TIP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InvalidInputException$tip",
+        "com.amazonaws.lightsail",
+        "InvalidInputException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tip",
+    3,
+);
+static INVALIDINPUTEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InvalidInputException",
+        "com.amazonaws.lightsail",
+        "InvalidInputException",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INVALIDINPUTEXCEPTION_MEMBER_CODE,
+        &INVALIDINPUTEXCEPTION_MEMBER_DOCS,
+        &INVALIDINPUTEXCEPTION_MEMBER_MESSAGE,
+        &INVALIDINPUTEXCEPTION_MEMBER_TIP,
+    ],
+);
+impl InvalidInputException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVALIDINPUTEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InvalidInputException {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.code {
+            ser.write_string(&INVALIDINPUTEXCEPTION_MEMBER_CODE, val)?;
+        }
+        if let Some(ref val) = self.docs {
+            ser.write_string(&INVALIDINPUTEXCEPTION_MEMBER_DOCS, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&INVALIDINPUTEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.tip {
+            ser.write_string(&INVALIDINPUTEXCEPTION_MEMBER_TIP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::error::builders::InvalidInputExceptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INVALIDINPUTEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.docs = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tip = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InvalidInputException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InvalidInputException {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

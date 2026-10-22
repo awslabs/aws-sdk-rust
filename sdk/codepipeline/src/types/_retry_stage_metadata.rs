@@ -25,6 +25,127 @@ impl RetryStageMetadata {
         self.latest_retry_trigger.as_ref()
     }
 }
+static RETRYSTAGEMETADATA_MEMBER_AUTO_STAGE_RETRY_ATTEMPT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RetryStageMetadata$autoStageRetryAttempt",
+        "com.amazonaws.codepipeline",
+        "RetryStageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "autoStageRetryAttempt",
+    0,
+);
+static RETRYSTAGEMETADATA_MEMBER_MANUAL_STAGE_RETRY_ATTEMPT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RetryStageMetadata$manualStageRetryAttempt",
+        "com.amazonaws.codepipeline",
+        "RetryStageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "manualStageRetryAttempt",
+    1,
+);
+static RETRYSTAGEMETADATA_MEMBER_LATEST_RETRY_TRIGGER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RetryStageMetadata$latestRetryTrigger",
+        "com.amazonaws.codepipeline",
+        "RetryStageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "latestRetryTrigger",
+    2,
+);
+static RETRYSTAGEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RetryStageMetadata",
+        "com.amazonaws.codepipeline",
+        "RetryStageMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RETRYSTAGEMETADATA_MEMBER_AUTO_STAGE_RETRY_ATTEMPT,
+        &RETRYSTAGEMETADATA_MEMBER_MANUAL_STAGE_RETRY_ATTEMPT,
+        &RETRYSTAGEMETADATA_MEMBER_LATEST_RETRY_TRIGGER,
+    ],
+);
+impl RetryStageMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RETRYSTAGEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RetryStageMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_stage_retry_attempt {
+            ser.write_integer(&RETRYSTAGEMETADATA_MEMBER_AUTO_STAGE_RETRY_ATTEMPT, *val)?;
+        }
+        if let Some(ref val) = self.manual_stage_retry_attempt {
+            ser.write_integer(&RETRYSTAGEMETADATA_MEMBER_MANUAL_STAGE_RETRY_ATTEMPT, *val)?;
+        }
+        if let Some(ref val) = self.latest_retry_trigger {
+            ser.write_string(&RETRYSTAGEMETADATA_MEMBER_LATEST_RETRY_TRIGGER, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RetryStageMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RETRYSTAGEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_stage_retry_attempt = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manual_stage_retry_attempt = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_retry_trigger = Some(crate::types::RetryTrigger::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RetryStageMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RetryStageMetadata {
     /// Creates a new builder-style object to manufacture [`RetryStageMetadata`](crate::types::RetryStageMetadata).
     pub fn builder() -> crate::types::builders::RetryStageMetadataBuilder {

@@ -20,6 +20,136 @@ impl StartRemediationExecutionInput {
         self.resource_keys.as_deref().unwrap_or_default()
     }
 }
+static STARTREMEDIATIONEXECUTIONINPUT_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartRemediationExecutionInput$ConfigRuleName",
+        "com.amazonaws.configservice.synthetic",
+        "StartRemediationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleName",
+    0,
+);
+static STARTREMEDIATIONEXECUTIONINPUT_MEMBER_RESOURCE_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceKeys$member",
+        "com.amazonaws.configservice",
+        "ResourceKeys",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTREMEDIATIONEXECUTIONINPUT_MEMBER_RESOURCE_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartRemediationExecutionInput$ResourceKeys",
+        "com.amazonaws.configservice.synthetic",
+        "StartRemediationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResourceKeys",
+    1,
+)
+.with_list_member(&STARTREMEDIATIONEXECUTIONINPUT_MEMBER_RESOURCE_KEYS_MEMBER);
+static STARTREMEDIATIONEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#StartRemediationExecutionInput",
+        "com.amazonaws.configservice.synthetic",
+        "StartRemediationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTREMEDIATIONEXECUTIONINPUT_MEMBER_CONFIG_RULE_NAME,
+        &STARTREMEDIATIONEXECUTIONINPUT_MEMBER_RESOURCE_KEYS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartRemediationExecutionRequest");
+impl StartRemediationExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTREMEDIATIONEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartRemediationExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.config_rule_name {
+            ser.write_string(&STARTREMEDIATIONEXECUTIONINPUT_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_keys {
+            ser.write_list(
+                &STARTREMEDIATIONEXECUTIONINPUT_MEMBER_RESOURCE_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceKey::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_remediation_execution::builders::StartRemediationExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTREMEDIATIONEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceKey::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartRemediationExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.config_rule_name = builder.config_rule_name.or(Some(String::new()));
+        builder.resource_keys = builder.resource_keys.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartRemediationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartRemediationExecutionInput`](crate::operation::start_remediation_execution::StartRemediationExecutionInput).
     pub fn builder() -> crate::operation::start_remediation_execution::builders::StartRemediationExecutionInputBuilder {

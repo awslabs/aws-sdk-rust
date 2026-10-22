@@ -37,6 +37,169 @@ impl RemediationExecutionStep {
         self.stop_time.as_ref()
     }
 }
+static REMEDIATIONEXECUTIONSTEP_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStep$Name",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStep",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static REMEDIATIONEXECUTIONSTEP_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStep$State",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStep",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    1,
+);
+static REMEDIATIONEXECUTIONSTEP_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStep$ErrorMessage",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStep",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    2,
+);
+static REMEDIATIONEXECUTIONSTEP_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStep$StartTime",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    3,
+);
+static REMEDIATIONEXECUTIONSTEP_MEMBER_STOP_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStep$StopTime",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StopTime",
+    4,
+);
+static REMEDIATIONEXECUTIONSTEP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExecutionStep",
+        "com.amazonaws.configservice",
+        "RemediationExecutionStep",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REMEDIATIONEXECUTIONSTEP_MEMBER_NAME,
+        &REMEDIATIONEXECUTIONSTEP_MEMBER_STATE,
+        &REMEDIATIONEXECUTIONSTEP_MEMBER_ERROR_MESSAGE,
+        &REMEDIATIONEXECUTIONSTEP_MEMBER_START_TIME,
+        &REMEDIATIONEXECUTIONSTEP_MEMBER_STOP_TIME,
+    ],
+);
+impl RemediationExecutionStep {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMEDIATIONEXECUTIONSTEP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemediationExecutionStep {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&REMEDIATIONEXECUTIONSTEP_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&REMEDIATIONEXECUTIONSTEP_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&REMEDIATIONEXECUTIONSTEP_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&REMEDIATIONEXECUTIONSTEP_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.stop_time {
+            ser.write_timestamp(&REMEDIATIONEXECUTIONSTEP_MEMBER_STOP_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RemediationExecutionStepBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REMEDIATIONEXECUTIONSTEP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::RemediationExecutionStepState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stop_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RemediationExecutionStep {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RemediationExecutionStep {
     /// Creates a new builder-style object to manufacture [`RemediationExecutionStep`](crate::types::RemediationExecutionStep).
     pub fn builder() -> crate::types::builders::RemediationExecutionStepBuilder {

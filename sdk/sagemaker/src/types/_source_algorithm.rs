@@ -35,6 +35,144 @@ impl SourceAlgorithm {
         self.algorithm_name.as_deref()
     }
 }
+static SOURCEALGORITHM_MEMBER_MODEL_DATA_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SourceAlgorithm$ModelDataUrl",
+        "com.amazonaws.sagemaker",
+        "SourceAlgorithm",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelDataUrl",
+    0,
+);
+static SOURCEALGORITHM_MEMBER_MODEL_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SourceAlgorithm$ModelDataSource",
+        "com.amazonaws.sagemaker",
+        "SourceAlgorithm",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDataSource",
+    1,
+);
+static SOURCEALGORITHM_MEMBER_MODEL_DATA_E_TAG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SourceAlgorithm$ModelDataETag",
+        "com.amazonaws.sagemaker",
+        "SourceAlgorithm",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelDataETag",
+    2,
+);
+static SOURCEALGORITHM_MEMBER_ALGORITHM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SourceAlgorithm$AlgorithmName",
+        "com.amazonaws.sagemaker",
+        "SourceAlgorithm",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AlgorithmName",
+    3,
+);
+static SOURCEALGORITHM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SourceAlgorithm", "com.amazonaws.sagemaker", "SourceAlgorithm"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SOURCEALGORITHM_MEMBER_MODEL_DATA_URL,
+        &SOURCEALGORITHM_MEMBER_MODEL_DATA_SOURCE,
+        &SOURCEALGORITHM_MEMBER_MODEL_DATA_E_TAG,
+        &SOURCEALGORITHM_MEMBER_ALGORITHM_NAME,
+    ],
+);
+impl SourceAlgorithm {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SOURCEALGORITHM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SourceAlgorithm {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_data_url {
+            ser.write_string(&SOURCEALGORITHM_MEMBER_MODEL_DATA_URL, val)?;
+        }
+        if let Some(ref val) = self.model_data_source {
+            ser.write_struct(&SOURCEALGORITHM_MEMBER_MODEL_DATA_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.model_data_e_tag {
+            ser.write_string(&SOURCEALGORITHM_MEMBER_MODEL_DATA_E_TAG, val)?;
+        }
+        if let Some(ref val) = self.algorithm_name {
+            ser.write_string(&SOURCEALGORITHM_MEMBER_ALGORITHM_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SourceAlgorithmBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SOURCEALGORITHM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_data_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_data_source = Some(crate::types::ModelDataSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_data_e_tag = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SourceAlgorithm {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SourceAlgorithm {
     /// Creates a new builder-style object to manufacture [`SourceAlgorithm`](crate::types::SourceAlgorithm).
     pub fn builder() -> crate::types::builders::SourceAlgorithmBuilder {

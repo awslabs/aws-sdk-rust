@@ -63,6 +63,312 @@ impl MonitoringJobDefinition {
         self.role_arn.as_deref()
     }
 }
+static MONITORINGJOBDEFINITION_MEMBER_BASELINE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$BaselineConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BaselineConfig",
+    0,
+);
+static MONITORINGJOBDEFINITION_MEMBER_MONITORING_INPUTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringInputs$member",
+        "com.amazonaws.sagemaker",
+        "MonitoringInputs",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MONITORINGJOBDEFINITION_MEMBER_MONITORING_INPUTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$MonitoringInputs",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MonitoringInputs",
+    1,
+)
+.with_list_member(&MONITORINGJOBDEFINITION_MEMBER_MONITORING_INPUTS_MEMBER);
+static MONITORINGJOBDEFINITION_MEMBER_MONITORING_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$MonitoringOutputConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MonitoringOutputConfig",
+    2,
+);
+static MONITORINGJOBDEFINITION_MEMBER_MONITORING_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$MonitoringResources",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MonitoringResources",
+    3,
+);
+static MONITORINGJOBDEFINITION_MEMBER_MONITORING_APP_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$MonitoringAppSpecification",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MonitoringAppSpecification",
+    4,
+);
+static MONITORINGJOBDEFINITION_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$StoppingCondition",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    5,
+);
+static MONITORINGJOBDEFINITION_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringEnvironmentMap$key",
+        "com.amazonaws.sagemaker",
+        "MonitoringEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static MONITORINGJOBDEFINITION_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringEnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "MonitoringEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static MONITORINGJOBDEFINITION_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$Environment",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    6,
+)
+.with_map_members(
+    &MONITORINGJOBDEFINITION_MEMBER_ENVIRONMENT_KEY,
+    &MONITORINGJOBDEFINITION_MEMBER_ENVIRONMENT_VALUE,
+);
+static MONITORINGJOBDEFINITION_MEMBER_NETWORK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$NetworkConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkConfig",
+    7,
+);
+static MONITORINGJOBDEFINITION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition$RoleArn",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    8,
+);
+static MONITORINGJOBDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringJobDefinition",
+        "com.amazonaws.sagemaker",
+        "MonitoringJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGJOBDEFINITION_MEMBER_BASELINE_CONFIG,
+        &MONITORINGJOBDEFINITION_MEMBER_MONITORING_INPUTS,
+        &MONITORINGJOBDEFINITION_MEMBER_MONITORING_OUTPUT_CONFIG,
+        &MONITORINGJOBDEFINITION_MEMBER_MONITORING_RESOURCES,
+        &MONITORINGJOBDEFINITION_MEMBER_MONITORING_APP_SPECIFICATION,
+        &MONITORINGJOBDEFINITION_MEMBER_STOPPING_CONDITION,
+        &MONITORINGJOBDEFINITION_MEMBER_ENVIRONMENT,
+        &MONITORINGJOBDEFINITION_MEMBER_NETWORK_CONFIG,
+        &MONITORINGJOBDEFINITION_MEMBER_ROLE_ARN,
+    ],
+);
+impl MonitoringJobDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGJOBDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringJobDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.baseline_config {
+            ser.write_struct(&MONITORINGJOBDEFINITION_MEMBER_BASELINE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.monitoring_inputs {
+            ser.write_list(
+                &MONITORINGJOBDEFINITION_MEMBER_MONITORING_INPUTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MonitoringInput::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.monitoring_output_config {
+            ser.write_struct(&MONITORINGJOBDEFINITION_MEMBER_MONITORING_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.monitoring_resources {
+            ser.write_struct(&MONITORINGJOBDEFINITION_MEMBER_MONITORING_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.monitoring_app_specification {
+            ser.write_struct(&MONITORINGJOBDEFINITION_MEMBER_MONITORING_APP_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&MONITORINGJOBDEFINITION_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &MONITORINGJOBDEFINITION_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.network_config {
+            ser.write_struct(&MONITORINGJOBDEFINITION_MEMBER_NETWORK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&MONITORINGJOBDEFINITION_MEMBER_ROLE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringJobDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGJOBDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.baseline_config = Some(crate::types::MonitoringBaselineConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_inputs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MonitoringInput::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_output_config = Some(crate::types::MonitoringOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_resources = Some(crate::types::MonitoringResources::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_app_specification = Some(crate::types::MonitoringAppSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::MonitoringStoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_config = Some(crate::types::NetworkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringJobDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringJobDefinition {
     /// Creates a new builder-style object to manufacture [`MonitoringJobDefinition`](crate::types::MonitoringJobDefinition).
     pub fn builder() -> crate::types::builders::MonitoringJobDefinitionBuilder {

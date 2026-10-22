@@ -41,6 +41,148 @@ impl ::std::fmt::Debug for Credentials {
         formatter.finish()
     }
 }
+static CREDENTIALS_MEMBER_ACCESS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#Credentials$AccessKeyId",
+        "com.amazonaws.cognitoidentity",
+        "Credentials",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessKeyId",
+    0,
+);
+static CREDENTIALS_MEMBER_SECRET_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#Credentials$SecretKey",
+        "com.amazonaws.cognitoidentity",
+        "Credentials",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretKey",
+    1,
+);
+static CREDENTIALS_MEMBER_SESSION_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#Credentials$SessionToken",
+        "com.amazonaws.cognitoidentity",
+        "Credentials",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionToken",
+    2,
+);
+static CREDENTIALS_MEMBER_EXPIRATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#Credentials$Expiration",
+        "com.amazonaws.cognitoidentity",
+        "Credentials",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Expiration",
+    3,
+);
+static CREDENTIALS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#Credentials",
+        "com.amazonaws.cognitoidentity",
+        "Credentials",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREDENTIALS_MEMBER_ACCESS_KEY_ID,
+        &CREDENTIALS_MEMBER_SECRET_KEY,
+        &CREDENTIALS_MEMBER_SESSION_TOKEN,
+        &CREDENTIALS_MEMBER_EXPIRATION,
+    ],
+);
+impl Credentials {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREDENTIALS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Credentials {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.access_key_id {
+            ser.write_string(&CREDENTIALS_MEMBER_ACCESS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.secret_key {
+            ser.write_string(&CREDENTIALS_MEMBER_SECRET_KEY, val)?;
+        }
+        if let Some(ref val) = self.session_token {
+            ser.write_string(&CREDENTIALS_MEMBER_SESSION_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.expiration {
+            ser.write_timestamp(&CREDENTIALS_MEMBER_EXPIRATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CredentialsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREDENTIALS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Credentials {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Credentials {
     /// Creates a new builder-style object to manufacture [`Credentials`](crate::types::Credentials).
     pub fn builder() -> crate::types::builders::CredentialsBuilder {

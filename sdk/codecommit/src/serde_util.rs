@@ -405,33 +405,3 @@ pub(crate) fn update_pull_request_title_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn batch_describe_merge_conflicts_error_correct_errors(
-    mut builder: crate::types::builders::BatchDescribeMergeConflictsErrorBuilder,
-) -> crate::types::builders::BatchDescribeMergeConflictsErrorBuilder {
-    if builder.file_path.is_none() {
-        builder.file_path = Some(Default::default())
-    }
-    if builder.exception_name.is_none() {
-        builder.exception_name = Some(Default::default())
-    }
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn repository_trigger_correct_errors(
-    mut builder: crate::types::builders::RepositoryTriggerBuilder,
-) -> crate::types::builders::RepositoryTriggerBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.destination_arn.is_none() {
-        builder.destination_arn = Some(Default::default())
-    }
-    if builder.events.is_none() {
-        builder.events = Some(Default::default())
-    }
-    builder
-}

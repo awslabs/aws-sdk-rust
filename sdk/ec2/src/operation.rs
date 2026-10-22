@@ -1846,6 +1846,9 @@ pub mod get_spot_placement_scores;
 /// Types for the `GetSubnetCidrReservations` operation.
 pub mod get_subnet_cidr_reservations;
 
+/// Types for the `GetTransitGatewayAttachmentNatConfiguration` operation.
+pub mod get_transit_gateway_attachment_nat_configuration;
+
 /// Types for the `GetTransitGatewayAttachmentPropagations` operation.
 pub mod get_transit_gateway_attachment_propagations;
 
@@ -2088,6 +2091,9 @@ pub mod modify_traffic_mirror_session;
 
 /// Types for the `ModifyTransitGateway` operation.
 pub mod modify_transit_gateway;
+
+/// Types for the `ModifyTransitGatewayAttachmentNatConfiguration` operation.
+pub mod modify_transit_gateway_attachment_nat_configuration;
 
 /// Types for the `ModifyTransitGatewayMeteringPolicy` operation.
 pub mod modify_transit_gateway_metering_policy;

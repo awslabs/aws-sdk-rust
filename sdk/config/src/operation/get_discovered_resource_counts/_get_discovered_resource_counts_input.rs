@@ -32,6 +32,148 @@ impl GetDiscoveredResourceCountsInput {
         self.next_token.as_deref()
     }
 }
+static GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_RESOURCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceTypes$member",
+        "com.amazonaws.configservice",
+        "ResourceTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_RESOURCE_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetDiscoveredResourceCountsInput$resourceTypes",
+        "com.amazonaws.configservice.synthetic",
+        "GetDiscoveredResourceCountsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "resourceTypes",
+    0,
+)
+.with_list_member(&GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_RESOURCE_TYPES_MEMBER);
+static GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetDiscoveredResourceCountsInput$limit",
+        "com.amazonaws.configservice.synthetic",
+        "GetDiscoveredResourceCountsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "limit",
+    1,
+);
+static GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetDiscoveredResourceCountsInput$nextToken",
+        "com.amazonaws.configservice.synthetic",
+        "GetDiscoveredResourceCountsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    2,
+);
+static GETDISCOVEREDRESOURCECOUNTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetDiscoveredResourceCountsInput",
+        "com.amazonaws.configservice.synthetic",
+        "GetDiscoveredResourceCountsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_RESOURCE_TYPES,
+        &GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_LIMIT,
+        &GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetDiscoveredResourceCountsRequest");
+impl GetDiscoveredResourceCountsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDISCOVEREDRESOURCECOUNTSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDiscoveredResourceCountsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_types {
+            ser.write_list(
+                &GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_RESOURCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETDISCOVEREDRESOURCECOUNTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDISCOVEREDRESOURCECOUNTSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDiscoveredResourceCountsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetDiscoveredResourceCountsInput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredResourceCountsInput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput).
     pub fn builder() -> crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder {

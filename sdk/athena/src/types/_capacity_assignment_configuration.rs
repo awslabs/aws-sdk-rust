@@ -21,6 +21,134 @@ impl CapacityAssignmentConfiguration {
         self.capacity_assignments.as_deref().unwrap_or_default()
     }
 }
+static CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_RESERVATION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#CapacityAssignmentConfiguration$CapacityReservationName",
+            "com.amazonaws.athena",
+            "CapacityAssignmentConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CapacityReservationName",
+        0,
+    );
+static CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_ASSIGNMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#CapacityAssignmentsList$member",
+            "com.amazonaws.athena",
+            "CapacityAssignmentsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_ASSIGNMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityAssignmentConfiguration$CapacityAssignments",
+        "com.amazonaws.athena",
+        "CapacityAssignmentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CapacityAssignments",
+    1,
+)
+.with_list_member(&CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_ASSIGNMENTS_MEMBER);
+static CAPACITYASSIGNMENTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CapacityAssignmentConfiguration",
+        "com.amazonaws.athena",
+        "CapacityAssignmentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_RESERVATION_NAME,
+        &CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_ASSIGNMENTS,
+    ],
+);
+impl CapacityAssignmentConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CAPACITYASSIGNMENTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CapacityAssignmentConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capacity_reservation_name {
+            ser.write_string(&CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_RESERVATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.capacity_assignments {
+            ser.write_list(
+                &CAPACITYASSIGNMENTCONFIGURATION_MEMBER_CAPACITY_ASSIGNMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CapacityAssignment::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CapacityAssignmentConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CAPACITYASSIGNMENTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_assignments = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CapacityAssignment::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CapacityAssignmentConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CapacityAssignmentConfiguration {
     /// Creates a new builder-style object to manufacture [`CapacityAssignmentConfiguration`](crate::types::CapacityAssignmentConfiguration).
     pub fn builder() -> crate::types::builders::CapacityAssignmentConfigurationBuilder {

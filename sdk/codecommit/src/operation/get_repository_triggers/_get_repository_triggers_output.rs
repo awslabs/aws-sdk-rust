@@ -22,6 +22,133 @@ impl GetRepositoryTriggersOutput {
         self.triggers.as_deref().unwrap_or_default()
     }
 }
+static GETREPOSITORYTRIGGERSOUTPUT_MEMBER_CONFIGURATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetRepositoryTriggersOutput$configurationId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetRepositoryTriggersOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "configurationId",
+    0,
+);
+static GETREPOSITORYTRIGGERSOUTPUT_MEMBER_TRIGGERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryTriggersList$member",
+        "com.amazonaws.codecommit",
+        "RepositoryTriggersList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETREPOSITORYTRIGGERSOUTPUT_MEMBER_TRIGGERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetRepositoryTriggersOutput$triggers",
+        "com.amazonaws.codecommit.synthetic",
+        "GetRepositoryTriggersOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "triggers",
+    1,
+)
+.with_list_member(&GETREPOSITORYTRIGGERSOUTPUT_MEMBER_TRIGGERS_MEMBER);
+static GETREPOSITORYTRIGGERSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetRepositoryTriggersOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetRepositoryTriggersOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETREPOSITORYTRIGGERSOUTPUT_MEMBER_CONFIGURATION_ID,
+        &GETREPOSITORYTRIGGERSOUTPUT_MEMBER_TRIGGERS,
+    ],
+)
+.with_original_name("GetRepositoryTriggersOutput");
+impl GetRepositoryTriggersOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETREPOSITORYTRIGGERSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRepositoryTriggersOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.configuration_id {
+            ser.write_string(&GETREPOSITORYTRIGGERSOUTPUT_MEMBER_CONFIGURATION_ID, val)?;
+        }
+        if let Some(ref val) = self.triggers {
+            ser.write_list(
+                &GETREPOSITORYTRIGGERSOUTPUT_MEMBER_TRIGGERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RepositoryTrigger::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_repository_triggers::builders::GetRepositoryTriggersOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETREPOSITORYTRIGGERSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.triggers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RepositoryTrigger::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRepositoryTriggersOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetRepositoryTriggersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

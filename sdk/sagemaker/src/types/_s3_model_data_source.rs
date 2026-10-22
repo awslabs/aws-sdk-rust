@@ -115,6 +115,232 @@ impl S3ModelDataSource {
         self.manifest_etag.as_deref()
     }
 }
+static S3MODELDATASOURCE_MEMBER_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$S3Uri",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3Uri",
+    0,
+);
+static S3MODELDATASOURCE_MEMBER_S3_DATA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$S3DataType",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3DataType",
+    1,
+);
+static S3MODELDATASOURCE_MEMBER_COMPRESSION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$CompressionType",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompressionType",
+    2,
+);
+static S3MODELDATASOURCE_MEMBER_MODEL_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$ModelAccessConfig",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelAccessConfig",
+    3,
+);
+static S3MODELDATASOURCE_MEMBER_HUB_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$HubAccessConfig",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HubAccessConfig",
+    4,
+);
+static S3MODELDATASOURCE_MEMBER_MANIFEST_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$ManifestS3Uri",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManifestS3Uri",
+    5,
+);
+static S3MODELDATASOURCE_MEMBER_E_TAG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$ETag",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ETag",
+    6,
+);
+static S3MODELDATASOURCE_MEMBER_MANIFEST_ETAG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource$ManifestEtag",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManifestEtag",
+    7,
+);
+static S3MODELDATASOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#S3ModelDataSource",
+        "com.amazonaws.sagemaker",
+        "S3ModelDataSource",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &S3MODELDATASOURCE_MEMBER_S3_URI,
+        &S3MODELDATASOURCE_MEMBER_S3_DATA_TYPE,
+        &S3MODELDATASOURCE_MEMBER_COMPRESSION_TYPE,
+        &S3MODELDATASOURCE_MEMBER_MODEL_ACCESS_CONFIG,
+        &S3MODELDATASOURCE_MEMBER_HUB_ACCESS_CONFIG,
+        &S3MODELDATASOURCE_MEMBER_MANIFEST_S3_URI,
+        &S3MODELDATASOURCE_MEMBER_E_TAG,
+        &S3MODELDATASOURCE_MEMBER_MANIFEST_ETAG,
+    ],
+);
+impl S3ModelDataSource {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3MODELDATASOURCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3ModelDataSource {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_uri {
+            ser.write_string(&S3MODELDATASOURCE_MEMBER_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.s3_data_type {
+            ser.write_string(&S3MODELDATASOURCE_MEMBER_S3_DATA_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.compression_type {
+            ser.write_string(&S3MODELDATASOURCE_MEMBER_COMPRESSION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_access_config {
+            ser.write_struct(&S3MODELDATASOURCE_MEMBER_MODEL_ACCESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.hub_access_config {
+            ser.write_struct(&S3MODELDATASOURCE_MEMBER_HUB_ACCESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.manifest_s3_uri {
+            ser.write_string(&S3MODELDATASOURCE_MEMBER_MANIFEST_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.e_tag {
+            ser.write_string(&S3MODELDATASOURCE_MEMBER_E_TAG, val)?;
+        }
+        if let Some(ref val) = self.manifest_etag {
+            ser.write_string(&S3MODELDATASOURCE_MEMBER_MANIFEST_ETAG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3ModelDataSourceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3MODELDATASOURCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_data_type = Some(crate::types::S3ModelDataType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compression_type = Some(crate::types::ModelCompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_access_config = Some(crate::types::ModelAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_access_config = Some(crate::types::InferenceHubAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manifest_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.e_tag = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.manifest_etag = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3ModelDataSource {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl S3ModelDataSource {
     /// Creates a new builder-style object to manufacture [`S3ModelDataSource`](crate::types::S3ModelDataSource).
     pub fn builder() -> crate::types::builders::S3ModelDataSourceBuilder {

@@ -53,6 +53,196 @@ impl UpdateSnapshotScheduleInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_VOLUME_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSnapshotScheduleInput$VolumeARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSnapshotScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeARN",
+    0,
+);
+static UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_START_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSnapshotScheduleInput$StartAt",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSnapshotScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "StartAt",
+    1,
+);
+static UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_RECURRENCE_IN_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSnapshotScheduleInput$RecurrenceInHours",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSnapshotScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RecurrenceInHours",
+    2,
+);
+static UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSnapshotScheduleInput$Description",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSnapshotScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSnapshotScheduleInput$Tags",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSnapshotScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_TAGS_MEMBER);
+static UPDATESNAPSHOTSCHEDULEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateSnapshotScheduleInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateSnapshotScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_VOLUME_ARN,
+        &UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_START_AT,
+        &UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_RECURRENCE_IN_HOURS,
+        &UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_DESCRIPTION,
+        &UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateSnapshotScheduleInput");
+impl UpdateSnapshotScheduleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESNAPSHOTSCHEDULEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateSnapshotScheduleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_arn {
+            ser.write_string(&UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_VOLUME_ARN, val)?;
+        }
+        if let Some(ref val) = self.start_at {
+            ser.write_integer(&UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_START_AT, *val)?;
+        }
+        if let Some(ref val) = self.recurrence_in_hours {
+            ser.write_integer(&UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_RECURRENCE_IN_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &UPDATESNAPSHOTSCHEDULEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATESNAPSHOTSCHEDULEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_at = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recurrence_in_hours = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateSnapshotScheduleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.volume_arn = builder.volume_arn.or(Some(String::new()));
+        builder.start_at = builder.start_at.or(Some(0i32));
+        builder.recurrence_in_hours = builder.recurrence_in_hours.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateSnapshotScheduleInput {
     /// Creates a new builder-style object to manufacture [`UpdateSnapshotScheduleInput`](crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleInput).
     pub fn builder() -> crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleInputBuilder {

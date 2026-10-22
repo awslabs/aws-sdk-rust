@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "evaluationDimensionName" => {
+                            builder = builder.set_evaluation_dimension_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "statistics" => {
                             builder = builder.set_statistics(crate::protocol_serde::shape_evaluator_statistics::de_evaluator_statistics(
                                 tokens,

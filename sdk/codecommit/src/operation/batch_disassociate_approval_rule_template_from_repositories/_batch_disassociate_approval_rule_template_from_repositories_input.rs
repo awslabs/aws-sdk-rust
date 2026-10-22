@@ -24,6 +24,126 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
         self.repository_names.as_deref().unwrap_or_default()
     }
 }
+static BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchDisassociateApprovalRuleTemplateFromRepositoriesInput$approvalRuleTemplateName",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchDisassociateApprovalRuleTemplateFromRepositoriesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "approvalRuleTemplateName",
+        0,
+    );
+static BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#RepositoryNameList$member",
+            "com.amazonaws.codecommit",
+            "RepositoryNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchDisassociateApprovalRuleTemplateFromRepositoriesInput$repositoryNames",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchDisassociateApprovalRuleTemplateFromRepositoriesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "repositoryNames",
+        1,
+    )
+    .with_list_member(&BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES_MEMBER);
+static BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_struct(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchDisassociateApprovalRuleTemplateFromRepositoriesInput",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchDisassociateApprovalRuleTemplateFromRepositoriesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        &[
+            &BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAME,
+            &BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES,
+        ],
+    )
+    .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+    .with_original_name("BatchDisassociateApprovalRuleTemplateFromRepositoriesInput");
+impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.approval_rule_template_name {
+            ser.write_string(
+                &BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAME,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.repository_names {
+            ser.write_list(
+                &BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder {
+                #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding, clippy::diverging_sub_expression)]
+                pub(crate) fn deserialize_members(
+                    &mut self,
+                    deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+                ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+                    deserializer.read_struct(&BATCHDISASSOCIATEAPPROVALRULETEMPLATEFROMREPOSITORIESINPUT_SCHEMA, &mut |member, deser| {
+                        match member.member_index() {
+                            Some(0) => {
+                                    if deser.is_null() { deser.read_null()?; } else {
+                                        self.approval_rule_template_name = Some(deser.read_string(member)?);
+                                    }
+                                }
+Some(1) => {
+                                    if deser.is_null() { deser.read_null()?; } else {
+                                        self.repository_names = Some(deser.read_string_list(member)?);
+                                    }
+                                }
+                            _ => {}
+                        }
+                        Ok(())
+                    })
+                }
+            }
+
+impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.approval_rule_template_name = builder.approval_rule_template_name.or(Some(String::new()));
+        builder.repository_names = builder.repository_names.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateApprovalRuleTemplateFromRepositoriesInput`](crate::operation::batch_disassociate_approval_rule_template_from_repositories::BatchDisassociateApprovalRuleTemplateFromRepositoriesInput).
     pub fn builder() -> crate::operation::batch_disassociate_approval_rule_template_from_repositories::builders::BatchDisassociateApprovalRuleTemplateFromRepositoriesInputBuilder{

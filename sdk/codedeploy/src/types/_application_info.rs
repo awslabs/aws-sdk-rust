@@ -43,6 +43,183 @@ impl ApplicationInfo {
         self.compute_platform.as_ref()
     }
 }
+static APPLICATIONINFO_MEMBER_APPLICATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ApplicationInfo$applicationId",
+        "com.amazonaws.codedeploy",
+        "ApplicationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applicationId",
+    0,
+);
+static APPLICATIONINFO_MEMBER_APPLICATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ApplicationInfo$applicationName",
+        "com.amazonaws.codedeploy",
+        "ApplicationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applicationName",
+    1,
+);
+static APPLICATIONINFO_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ApplicationInfo$createTime",
+        "com.amazonaws.codedeploy",
+        "ApplicationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createTime",
+    2,
+);
+static APPLICATIONINFO_MEMBER_LINKED_TO_GIT_HUB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ApplicationInfo$linkedToGitHub",
+        "com.amazonaws.codedeploy",
+        "ApplicationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "linkedToGitHub",
+    3,
+);
+static APPLICATIONINFO_MEMBER_GIT_HUB_ACCOUNT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ApplicationInfo$gitHubAccountName",
+        "com.amazonaws.codedeploy",
+        "ApplicationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "gitHubAccountName",
+    4,
+);
+static APPLICATIONINFO_MEMBER_COMPUTE_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ApplicationInfo$computePlatform",
+        "com.amazonaws.codedeploy",
+        "ApplicationInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "computePlatform",
+    5,
+);
+static APPLICATIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ApplicationInfo", "com.amazonaws.codedeploy", "ApplicationInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &APPLICATIONINFO_MEMBER_APPLICATION_ID,
+        &APPLICATIONINFO_MEMBER_APPLICATION_NAME,
+        &APPLICATIONINFO_MEMBER_CREATE_TIME,
+        &APPLICATIONINFO_MEMBER_LINKED_TO_GIT_HUB,
+        &APPLICATIONINFO_MEMBER_GIT_HUB_ACCOUNT_NAME,
+        &APPLICATIONINFO_MEMBER_COMPUTE_PLATFORM,
+    ],
+);
+impl ApplicationInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPLICATIONINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ApplicationInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.application_id {
+            ser.write_string(&APPLICATIONINFO_MEMBER_APPLICATION_ID, val)?;
+        }
+        if let Some(ref val) = self.application_name {
+            ser.write_string(&APPLICATIONINFO_MEMBER_APPLICATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_timestamp(&APPLICATIONINFO_MEMBER_CREATE_TIME, val)?;
+        }
+        {
+            let val = &self.linked_to_git_hub;
+            ser.write_boolean(&APPLICATIONINFO_MEMBER_LINKED_TO_GIT_HUB, *val)?;
+        }
+        if let Some(ref val) = self.git_hub_account_name {
+            ser.write_string(&APPLICATIONINFO_MEMBER_GIT_HUB_ACCOUNT_NAME, val)?;
+        }
+        if let Some(ref val) = self.compute_platform {
+            ser.write_string(&APPLICATIONINFO_MEMBER_COMPUTE_PLATFORM, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ApplicationInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPLICATIONINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.linked_to_git_hub = Some(deser.read_boolean(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_hub_account_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_platform = Some(crate::types::ComputePlatform::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ApplicationInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ApplicationInfo {
     /// Creates a new builder-style object to manufacture [`ApplicationInfo`](crate::types::ApplicationInfo).
     pub fn builder() -> crate::types::builders::ApplicationInfoBuilder {

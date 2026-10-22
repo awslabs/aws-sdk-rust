@@ -84,6 +84,477 @@ impl UpdateTrialComponentInput {
         self.output_artifacts_to_remove.as_deref().unwrap_or_default()
     }
 }
+static UPDATETRIALCOMPONENTINPUT_MEMBER_TRIAL_COMPONENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$TrialComponentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrialComponentName",
+    0,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$DisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    1,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Status",
+    2,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$StartTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    3,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$EndTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    4,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentParameters$key",
+        "com.amazonaws.sagemaker",
+        "TrialComponentParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentParameters$value",
+        "com.amazonaws.sagemaker",
+        "TrialComponentParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "value",
+    1,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$Parameters",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    5,
+)
+.with_map_members(
+    &UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_KEY,
+    &UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_VALUE,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_TO_REMOVE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ListTrialComponentKey256$member",
+        "com.amazonaws.sagemaker",
+        "ListTrialComponentKey256",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_TO_REMOVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$ParametersToRemove",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ParametersToRemove",
+    6,
+)
+.with_list_member(&UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_TO_REMOVE_MEMBER);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentArtifacts$key",
+        "com.amazonaws.sagemaker",
+        "TrialComponentArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentArtifacts$value",
+        "com.amazonaws.sagemaker",
+        "TrialComponentArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$InputArtifacts",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "InputArtifacts",
+    7,
+)
+.with_map_members(
+    &UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_KEY,
+    &UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_VALUE,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_TO_REMOVE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ListTrialComponentKey256$member",
+            "com.amazonaws.sagemaker",
+            "ListTrialComponentKey256",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_TO_REMOVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$InputArtifactsToRemove",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InputArtifactsToRemove",
+    8,
+)
+.with_list_member(&UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_TO_REMOVE_MEMBER);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentArtifacts$key",
+        "com.amazonaws.sagemaker",
+        "TrialComponentArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentArtifacts$value",
+        "com.amazonaws.sagemaker",
+        "TrialComponentArtifacts",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$OutputArtifacts",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "OutputArtifacts",
+    9,
+)
+.with_map_members(
+    &UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_KEY,
+    &UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_VALUE,
+);
+static UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_TO_REMOVE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ListTrialComponentKey256$member",
+            "com.amazonaws.sagemaker",
+            "ListTrialComponentKey256",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_TO_REMOVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput$OutputArtifactsToRemove",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OutputArtifactsToRemove",
+    10,
+)
+.with_list_member(&UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_TO_REMOVE_MEMBER);
+static UPDATETRIALCOMPONENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateTrialComponentInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateTrialComponentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_TRIAL_COMPONENT_NAME,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_DISPLAY_NAME,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_STATUS,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_START_TIME,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_END_TIME,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_TO_REMOVE,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_TO_REMOVE,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS,
+        &UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_TO_REMOVE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateTrialComponentRequest");
+impl UpdateTrialComponentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATETRIALCOMPONENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateTrialComponentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.trial_component_name {
+            ser.write_string(&UPDATETRIALCOMPONENTINPUT_MEMBER_TRIAL_COMPONENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&UPDATETRIALCOMPONENTINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_struct(&UPDATETRIALCOMPONENTINPUT_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&UPDATETRIALCOMPONENTINPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&UPDATETRIALCOMPONENTINPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::TrialComponentParameterValue::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parameters_to_remove {
+            ser.write_list(
+                &UPDATETRIALCOMPONENTINPUT_MEMBER_PARAMETERS_TO_REMOVE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_artifacts {
+            ser.write_map(
+                &UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::TrialComponentArtifact::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_artifacts_to_remove {
+            ser.write_list(
+                &UPDATETRIALCOMPONENTINPUT_MEMBER_INPUT_ARTIFACTS_TO_REMOVE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_artifacts {
+            ser.write_map(
+                &UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::TrialComponentArtifact::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_artifacts_to_remove {
+            ser.write_list(
+                &UPDATETRIALCOMPONENTINPUT_MEMBER_OUTPUT_ARTIFACTS_TO_REMOVE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATETRIALCOMPONENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trial_component_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TrialComponentStatus::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::TrialComponentParameterValue::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters_to_remove = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifacts = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::TrialComponentArtifact::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifacts_to_remove = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_artifacts = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::TrialComponentArtifact::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_artifacts_to_remove = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateTrialComponentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.trial_component_name = builder.trial_component_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateTrialComponentInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrialComponentInput`](crate::operation::update_trial_component::UpdateTrialComponentInput).
     pub fn builder() -> crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder {

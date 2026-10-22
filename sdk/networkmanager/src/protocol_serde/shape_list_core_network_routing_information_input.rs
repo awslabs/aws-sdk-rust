@@ -24,8 +24,8 @@ pub fn ser_list_core_network_routing_information_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_8) = &input.local_preference_matches {
-        let mut array_9 = object.key("LocalPreferenceMatches").start_array();
+    if let Some(var_8) = &input.exact_prefix_matches {
+        let mut array_9 = object.key("ExactPrefixMatches").start_array();
         for item_10 in var_8 {
             {
                 array_9.value().string(item_10.as_str());
@@ -33,8 +33,8 @@ pub fn ser_list_core_network_routing_information_input_input(
         }
         array_9.finish();
     }
-    if let Some(var_11) = &input.med_matches {
-        let mut array_12 = object.key("MedMatches").start_array();
+    if let Some(var_11) = &input.local_preference_matches {
+        let mut array_12 = object.key("LocalPreferenceMatches").start_array();
         for item_13 in var_11 {
             {
                 array_12.value().string(item_13.as_str());
@@ -42,24 +42,60 @@ pub fn ser_list_core_network_routing_information_input_input(
         }
         array_12.finish();
     }
-    if let Some(var_14) = &input.next_hop_filters {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("NextHopFilters").start_object();
-        for (key_16, value_17) in var_14 {
+    if let Some(var_14) = &input.longest_prefix_matches {
+        let mut array_15 = object.key("LongestPrefixMatches").start_array();
+        for item_16 in var_14 {
             {
-                let mut array_18 = object_15.key(key_16.as_str()).start_array();
-                for item_19 in value_17 {
-                    {
-                        array_18.value().string(item_19.as_str());
-                    }
-                }
-                array_18.finish();
+                array_15.value().string(item_16.as_str());
             }
         }
-        object_15.finish();
+        array_15.finish();
     }
-    if let Some(var_20) = &input.segment_name {
-        object.key("SegmentName").string(var_20.as_str());
+    if let Some(var_17) = &input.med_matches {
+        let mut array_18 = object.key("MedMatches").start_array();
+        for item_19 in var_17 {
+            {
+                array_18.value().string(item_19.as_str());
+            }
+        }
+        array_18.finish();
+    }
+    if let Some(var_20) = &input.next_hop_filters {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("NextHopFilters").start_object();
+        for (key_22, value_23) in var_20 {
+            {
+                let mut array_24 = object_21.key(key_22.as_str()).start_array();
+                for item_25 in value_23 {
+                    {
+                        array_24.value().string(item_25.as_str());
+                    }
+                }
+                array_24.finish();
+            }
+        }
+        object_21.finish();
+    }
+    if let Some(var_26) = &input.segment_name {
+        object.key("SegmentName").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.subnet_of_matches {
+        let mut array_28 = object.key("SubnetOfMatches").start_array();
+        for item_29 in var_27 {
+            {
+                array_28.value().string(item_29.as_str());
+            }
+        }
+        array_28.finish();
+    }
+    if let Some(var_30) = &input.supernet_of_matches {
+        let mut array_31 = object.key("SupernetOfMatches").start_array();
+        for item_32 in var_30 {
+            {
+                array_31.value().string(item_32.as_str());
+            }
+        }
+        array_31.finish();
     }
     Ok(())
 }

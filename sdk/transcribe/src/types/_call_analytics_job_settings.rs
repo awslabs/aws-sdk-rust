@@ -83,6 +83,303 @@ impl CallAnalyticsJobSettings {
         self.summarization.as_ref()
     }
 }
+static CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$VocabularyName",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyName",
+    0,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_FILTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$VocabularyFilterName",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterName",
+    1,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_FILTER_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$VocabularyFilterMethod",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterMethod",
+    2,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$LanguageModelName",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageModelName",
+    3,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_CONTENT_REDACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$ContentRedaction",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContentRedaction",
+    4,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_OPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageOptions$member",
+        "com.amazonaws.transcribe",
+        "LanguageOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$LanguageOptions",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LanguageOptions",
+    5,
+)
+.with_list_member(&CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_OPTIONS_MEMBER);
+static CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_ID_SETTINGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageIdSettingsMap$key",
+        "com.amazonaws.transcribe",
+        "LanguageIdSettingsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_ID_SETTINGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageIdSettingsMap$value",
+        "com.amazonaws.transcribe",
+        "LanguageIdSettingsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_ID_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$LanguageIdSettings",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "LanguageIdSettings",
+    6,
+)
+.with_map_members(
+    &CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_ID_SETTINGS_KEY,
+    &CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_ID_SETTINGS_VALUE,
+);
+static CALLANALYTICSJOBSETTINGS_MEMBER_SUMMARIZATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings$Summarization",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Summarization",
+    7,
+);
+static CALLANALYTICSJOBSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CallAnalyticsJobSettings",
+        "com.amazonaws.transcribe",
+        "CallAnalyticsJobSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_NAME,
+        &CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_FILTER_NAME,
+        &CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_FILTER_METHOD,
+        &CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_MODEL_NAME,
+        &CALLANALYTICSJOBSETTINGS_MEMBER_CONTENT_REDACTION,
+        &CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_OPTIONS,
+        &CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_ID_SETTINGS,
+        &CALLANALYTICSJOBSETTINGS_MEMBER_SUMMARIZATION,
+    ],
+);
+impl CallAnalyticsJobSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CALLANALYTICSJOBSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CallAnalyticsJobSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_name {
+            ser.write_string(&CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_NAME, val)?;
+        }
+        if let Some(ref val) = self.vocabulary_filter_name {
+            ser.write_string(&CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_FILTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.vocabulary_filter_method {
+            ser.write_string(&CALLANALYTICSJOBSETTINGS_MEMBER_VOCABULARY_FILTER_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.language_model_name {
+            ser.write_string(&CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.content_redaction {
+            ser.write_struct(&CALLANALYTICSJOBSETTINGS_MEMBER_CONTENT_REDACTION, val)?;
+        }
+        if let Some(ref val) = self.language_options {
+            ser.write_list(
+                &CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.language_id_settings {
+            ser.write_map(
+                &CALLANALYTICSJOBSETTINGS_MEMBER_LANGUAGE_ID_SETTINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key.as_str())?;
+                        ser.write_struct(crate::types::LanguageIdSettings::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.summarization {
+            ser.write_struct(&CALLANALYTICSJOBSETTINGS_MEMBER_SUMMARIZATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CallAnalyticsJobSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CALLANALYTICSJOBSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_method = Some(crate::types::VocabularyFilterMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_redaction = Some(crate::types::ContentRedaction::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_options = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LanguageCode::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_id_settings = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(
+                                    crate::types::LanguageCode::from(key.as_str()),
+                                    crate::types::LanguageIdSettings::deserialize(deser)?,
+                                );
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.summarization = Some(crate::types::Summarization::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CallAnalyticsJobSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CallAnalyticsJobSettings {
     /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSettings`](crate::types::CallAnalyticsJobSettings).
     pub fn builder() -> crate::types::builders::CallAnalyticsJobSettingsBuilder {

@@ -20,6 +20,106 @@ impl ContainerServiceEcrImagePullerRole {
         self.principal_arn.as_deref()
     }
 }
+static CONTAINERSERVICEECRIMAGEPULLERROLE_MEMBER_IS_ACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceECRImagePullerRole$isActive",
+        "com.amazonaws.lightsail",
+        "ContainerServiceECRImagePullerRole",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isActive",
+    0,
+);
+static CONTAINERSERVICEECRIMAGEPULLERROLE_MEMBER_PRINCIPAL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceECRImagePullerRole$principalArn",
+        "com.amazonaws.lightsail",
+        "ContainerServiceECRImagePullerRole",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "principalArn",
+    1,
+);
+static CONTAINERSERVICEECRIMAGEPULLERROLE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceECRImagePullerRole",
+        "com.amazonaws.lightsail",
+        "ContainerServiceECRImagePullerRole",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERSERVICEECRIMAGEPULLERROLE_MEMBER_IS_ACTIVE,
+        &CONTAINERSERVICEECRIMAGEPULLERROLE_MEMBER_PRINCIPAL_ARN,
+    ],
+);
+impl ContainerServiceEcrImagePullerRole {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERSERVICEECRIMAGEPULLERROLE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerServiceEcrImagePullerRole {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.is_active {
+            ser.write_boolean(&CONTAINERSERVICEECRIMAGEPULLERROLE_MEMBER_IS_ACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.principal_arn {
+            ser.write_string(&CONTAINERSERVICEECRIMAGEPULLERROLE_MEMBER_PRINCIPAL_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerServiceEcrImagePullerRoleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERSERVICEECRIMAGEPULLERROLE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_active = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principal_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerServiceEcrImagePullerRole {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerServiceEcrImagePullerRole {
     /// Creates a new builder-style object to manufacture [`ContainerServiceEcrImagePullerRole`](crate::types::ContainerServiceEcrImagePullerRole).
     pub fn builder() -> crate::types::builders::ContainerServiceEcrImagePullerRoleBuilder {

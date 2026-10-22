@@ -7,6 +7,8 @@ pub struct UpdateConnectorInput {
     pub capacity: ::std::option::Option<crate::types::CapacityUpdate>,
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
     pub connector_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub skip_health_validation: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
     pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the connector that you want to update.</p>
@@ -20,6 +22,10 @@ impl UpdateConnectorInput {
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
     pub fn connector_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.connector_configuration.as_ref()
+    }
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub fn skip_health_validation(&self) -> ::std::option::Option<bool> {
+        self.skip_health_validation
     }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
     pub fn connector_arn(&self) -> ::std::option::Option<&str> {
@@ -35,6 +41,7 @@ impl ::std::fmt::Debug for UpdateConnectorInput {
         let mut formatter = f.debug_struct("UpdateConnectorInput");
         formatter.field("capacity", &self.capacity);
         formatter.field("connector_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("skip_health_validation", &self.skip_health_validation);
         formatter.field("connector_arn", &self.connector_arn);
         formatter.field("current_version", &self.current_version);
         formatter.finish()
@@ -53,6 +60,7 @@ impl UpdateConnectorInput {
 pub struct UpdateConnectorInputBuilder {
     pub(crate) capacity: ::std::option::Option<crate::types::CapacityUpdate>,
     pub(crate) connector_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) skip_health_validation: ::std::option::Option<bool>,
     pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
 }
@@ -98,6 +106,20 @@ impl UpdateConnectorInputBuilder {
     pub fn get_connector_configuration(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.connector_configuration
     }
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub fn skip_health_validation(mut self, input: bool) -> Self {
+        self.skip_health_validation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub fn set_skip_health_validation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.skip_health_validation = input;
+        self
+    }
+    /// <p>Specifies whether the update bypasses connector-level and task-level health checks. If <code>true</code>, the update skips the health checks. The update stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK Connect doesn't roll it back. If <code>false</code> or not specified, the health checks run. If they fail, MSK Connect automatically rolls the connector back to its previous configuration, and the update doesn't take effect. To update a connector that is in the <code>PAUSED</code> state, you must set this parameter to <code>true</code>.</p>
+    pub fn get_skip_health_validation(&self) -> &::std::option::Option<bool> {
+        &self.skip_health_validation
+    }
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
     /// This field is required.
     pub fn connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -135,6 +157,7 @@ impl UpdateConnectorInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_connector::UpdateConnectorInput {
             capacity: self.capacity,
             connector_configuration: self.connector_configuration,
+            skip_health_validation: self.skip_health_validation,
             connector_arn: self.connector_arn,
             current_version: self.current_version,
         })
@@ -145,6 +168,7 @@ impl ::std::fmt::Debug for UpdateConnectorInputBuilder {
         let mut formatter = f.debug_struct("UpdateConnectorInputBuilder");
         formatter.field("capacity", &self.capacity);
         formatter.field("connector_configuration", &"*** Sensitive Data Redacted ***");
+        formatter.field("skip_health_validation", &self.skip_health_validation);
         formatter.field("connector_arn", &self.connector_arn);
         formatter.field("current_version", &self.current_version);
         formatter.finish()

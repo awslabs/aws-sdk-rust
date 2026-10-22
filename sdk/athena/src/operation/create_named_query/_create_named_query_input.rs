@@ -46,6 +46,195 @@ impl CreateNamedQueryInput {
         self.work_group.as_deref()
     }
 }
+static CREATENAMEDQUERYINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateNamedQueryInput$Name",
+        "com.amazonaws.athena.synthetic",
+        "CreateNamedQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATENAMEDQUERYINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateNamedQueryInput$Description",
+        "com.amazonaws.athena.synthetic",
+        "CreateNamedQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static CREATENAMEDQUERYINPUT_MEMBER_DATABASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateNamedQueryInput$Database",
+        "com.amazonaws.athena.synthetic",
+        "CreateNamedQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Database",
+    2,
+);
+static CREATENAMEDQUERYINPUT_MEMBER_QUERY_STRING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateNamedQueryInput$QueryString",
+        "com.amazonaws.athena.synthetic",
+        "CreateNamedQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryString",
+    3,
+);
+static CREATENAMEDQUERYINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateNamedQueryInput$ClientRequestToken",
+        "com.amazonaws.athena.synthetic",
+        "CreateNamedQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    4,
+);
+static CREATENAMEDQUERYINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateNamedQueryInput$WorkGroup",
+        "com.amazonaws.athena.synthetic",
+        "CreateNamedQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    5,
+);
+static CREATENAMEDQUERYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#CreateNamedQueryInput",
+        "com.amazonaws.athena.synthetic",
+        "CreateNamedQueryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATENAMEDQUERYINPUT_MEMBER_NAME,
+        &CREATENAMEDQUERYINPUT_MEMBER_DESCRIPTION,
+        &CREATENAMEDQUERYINPUT_MEMBER_DATABASE,
+        &CREATENAMEDQUERYINPUT_MEMBER_QUERY_STRING,
+        &CREATENAMEDQUERYINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATENAMEDQUERYINPUT_MEMBER_WORK_GROUP,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateNamedQueryInput");
+impl CreateNamedQueryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATENAMEDQUERYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateNamedQueryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATENAMEDQUERYINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATENAMEDQUERYINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.database {
+            ser.write_string(&CREATENAMEDQUERYINPUT_MEMBER_DATABASE, val)?;
+        }
+        if let Some(ref val) = self.query_string {
+            ser.write_string(&CREATENAMEDQUERYINPUT_MEMBER_QUERY_STRING, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATENAMEDQUERYINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&CREATENAMEDQUERYINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATENAMEDQUERYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.database = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_string = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateNamedQueryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.database = builder.database.or(Some(String::new()));
+        builder.query_string = builder.query_string.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`CreateNamedQueryInput`](crate::operation::create_named_query::CreateNamedQueryInput).
     pub fn builder() -> crate::operation::create_named_query::builders::CreateNamedQueryInputBuilder {

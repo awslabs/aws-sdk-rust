@@ -60,6 +60,258 @@ impl CreateAppInput {
         self.recovery_mode
     }
 }
+static CREATEAPPINPUT_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$DomainId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    0,
+);
+static CREATEAPPINPUT_MEMBER_USER_PROFILE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$UserProfileName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserProfileName",
+    1,
+);
+static CREATEAPPINPUT_MEMBER_SPACE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$SpaceName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpaceName",
+    2,
+);
+static CREATEAPPINPUT_MEMBER_APP_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$AppType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppType",
+    3,
+);
+static CREATEAPPINPUT_MEMBER_APP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$AppName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppName",
+    4,
+);
+static CREATEAPPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEAPPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEAPPINPUT_MEMBER_TAGS_MEMBER);
+static CREATEAPPINPUT_MEMBER_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$ResourceSpec",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceSpec",
+    6,
+);
+static CREATEAPPINPUT_MEMBER_RECOVERY_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput$RecoveryMode",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RecoveryMode",
+    7,
+);
+static CREATEAPPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAppInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAPPINPUT_MEMBER_DOMAIN_ID,
+        &CREATEAPPINPUT_MEMBER_USER_PROFILE_NAME,
+        &CREATEAPPINPUT_MEMBER_SPACE_NAME,
+        &CREATEAPPINPUT_MEMBER_APP_TYPE,
+        &CREATEAPPINPUT_MEMBER_APP_NAME,
+        &CREATEAPPINPUT_MEMBER_TAGS,
+        &CREATEAPPINPUT_MEMBER_RESOURCE_SPEC,
+        &CREATEAPPINPUT_MEMBER_RECOVERY_MODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAppRequest");
+impl CreateAppInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAPPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAppInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&CREATEAPPINPUT_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.user_profile_name {
+            ser.write_string(&CREATEAPPINPUT_MEMBER_USER_PROFILE_NAME, val)?;
+        }
+        if let Some(ref val) = self.space_name {
+            ser.write_string(&CREATEAPPINPUT_MEMBER_SPACE_NAME, val)?;
+        }
+        if let Some(ref val) = self.app_type {
+            ser.write_string(&CREATEAPPINPUT_MEMBER_APP_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.app_name {
+            ser.write_string(&CREATEAPPINPUT_MEMBER_APP_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEAPPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resource_spec {
+            ser.write_struct(&CREATEAPPINPUT_MEMBER_RESOURCE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.recovery_mode {
+            ser.write_boolean(&CREATEAPPINPUT_MEMBER_RECOVERY_MODE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_app::builders::CreateAppInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAPPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_profile_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.space_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_type = Some(crate::types::AppType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recovery_mode = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAppInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_id = builder.domain_id.or(Some(String::new()));
+        builder.app_name = builder.app_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAppInput {
     /// Creates a new builder-style object to manufacture [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
     pub fn builder() -> crate::operation::create_app::builders::CreateAppInputBuilder {

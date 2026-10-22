@@ -46,6 +46,238 @@ impl PutOrganizationConfigRuleInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutOrganizationConfigRuleInput$OrganizationConfigRuleName",
+            "com.amazonaws.configservice.synthetic",
+            "PutOrganizationConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "OrganizationConfigRuleName",
+        0,
+    );
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_MANAGED_RULE_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutOrganizationConfigRuleInput$OrganizationManagedRuleMetadata",
+            "com.amazonaws.configservice.synthetic",
+            "PutOrganizationConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "OrganizationManagedRuleMetadata",
+        1,
+    );
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CUSTOM_RULE_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutOrganizationConfigRuleInput$OrganizationCustomRuleMetadata",
+            "com.amazonaws.configservice.synthetic",
+            "PutOrganizationConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "OrganizationCustomRuleMetadata",
+        2,
+    );
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_EXCLUDED_ACCOUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ExcludedAccounts$member",
+        "com.amazonaws.configservice",
+        "ExcludedAccounts",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_EXCLUDED_ACCOUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutOrganizationConfigRuleInput$ExcludedAccounts",
+        "com.amazonaws.configservice.synthetic",
+        "PutOrganizationConfigRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExcludedAccounts",
+    3,
+)
+.with_list_member(&PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_EXCLUDED_ACCOUNTS_MEMBER);
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CUSTOM_POLICY_RULE_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutOrganizationConfigRuleInput$OrganizationCustomPolicyRuleMetadata",
+            "com.amazonaws.configservice.synthetic",
+            "PutOrganizationConfigRuleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "OrganizationCustomPolicyRuleMetadata",
+        4,
+    );
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#TagsList$member", "com.amazonaws.configservice", "TagsList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutOrganizationConfigRuleInput$Tags",
+        "com.amazonaws.configservice.synthetic",
+        "PutOrganizationConfigRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_TAGS_MEMBER);
+static PUTORGANIZATIONCONFIGRULEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutOrganizationConfigRuleInput",
+        "com.amazonaws.configservice.synthetic",
+        "PutOrganizationConfigRuleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CONFIG_RULE_NAME,
+        &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_MANAGED_RULE_METADATA,
+        &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CUSTOM_RULE_METADATA,
+        &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_EXCLUDED_ACCOUNTS,
+        &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CUSTOM_POLICY_RULE_METADATA,
+        &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutOrganizationConfigRuleRequest");
+impl PutOrganizationConfigRuleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTORGANIZATIONCONFIGRULEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutOrganizationConfigRuleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.organization_config_rule_name {
+            ser.write_string(&PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CONFIG_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.organization_managed_rule_metadata {
+            ser.write_struct(&PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_MANAGED_RULE_METADATA, val)?;
+        }
+        if let Some(ref val) = self.organization_custom_rule_metadata {
+            ser.write_struct(&PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CUSTOM_RULE_METADATA, val)?;
+        }
+        if let Some(ref val) = self.excluded_accounts {
+            ser.write_list(
+                &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_EXCLUDED_ACCOUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.organization_custom_policy_rule_metadata {
+            ser.write_struct(&PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_ORGANIZATION_CUSTOM_POLICY_RULE_METADATA, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &PUTORGANIZATIONCONFIGRULEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTORGANIZATIONCONFIGRULEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_managed_rule_metadata = Some(crate::types::OrganizationManagedRuleMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_custom_rule_metadata = Some(crate::types::OrganizationCustomRuleMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.excluded_accounts = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_custom_policy_rule_metadata = Some(crate::types::OrganizationCustomPolicyRuleMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutOrganizationConfigRuleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.organization_config_rule_name = builder.organization_config_rule_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutOrganizationConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`PutOrganizationConfigRuleInput`](crate::operation::put_organization_config_rule::PutOrganizationConfigRuleInput).
     pub fn builder() -> crate::operation::put_organization_config_rule::builders::PutOrganizationConfigRuleInputBuilder {

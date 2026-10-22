@@ -20,6 +20,138 @@ impl UpdateBandwidthRateLimitScheduleInput {
         self.bandwidth_rate_limit_intervals.as_deref().unwrap_or_default()
     }
 }
+static UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateBandwidthRateLimitScheduleInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateBandwidthRateLimitScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_BANDWIDTH_RATE_LIMIT_INTERVALS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#BandwidthRateLimitIntervals$member",
+            "com.amazonaws.storagegateway",
+            "BandwidthRateLimitIntervals",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_BANDWIDTH_RATE_LIMIT_INTERVALS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#UpdateBandwidthRateLimitScheduleInput$BandwidthRateLimitIntervals",
+            "com.amazonaws.storagegateway.synthetic",
+            "UpdateBandwidthRateLimitScheduleInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "BandwidthRateLimitIntervals",
+        1,
+    )
+    .with_list_member(&UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_BANDWIDTH_RATE_LIMIT_INTERVALS_MEMBER);
+static UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#UpdateBandwidthRateLimitScheduleInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "UpdateBandwidthRateLimitScheduleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_GATEWAY_ARN,
+        &UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_BANDWIDTH_RATE_LIMIT_INTERVALS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateBandwidthRateLimitScheduleInput");
+impl UpdateBandwidthRateLimitScheduleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateBandwidthRateLimitScheduleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.bandwidth_rate_limit_intervals {
+            ser.write_list(
+                &UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_MEMBER_BANDWIDTH_RATE_LIMIT_INTERVALS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BandwidthRateLimitInterval::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_bandwidth_rate_limit_schedule::builders::UpdateBandwidthRateLimitScheduleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEBANDWIDTHRATELIMITSCHEDULEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bandwidth_rate_limit_intervals = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BandwidthRateLimitInterval::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateBandwidthRateLimitScheduleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.gateway_arn = builder.gateway_arn.or(Some(String::new()));
+        builder.bandwidth_rate_limit_intervals = builder.bandwidth_rate_limit_intervals.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateBandwidthRateLimitScheduleInput {
     /// Creates a new builder-style object to manufacture [`UpdateBandwidthRateLimitScheduleInput`](crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput).
     pub fn builder() -> crate::operation::update_bandwidth_rate_limit_schedule::builders::UpdateBandwidthRateLimitScheduleInputBuilder {

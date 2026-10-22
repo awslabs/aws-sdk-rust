@@ -44,6 +44,190 @@ impl ContainerServicePower {
         self.is_active
     }
 }
+static CONTAINERSERVICEPOWER_MEMBER_POWER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePower$powerId",
+        "com.amazonaws.lightsail",
+        "ContainerServicePower",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "powerId",
+    0,
+);
+static CONTAINERSERVICEPOWER_MEMBER_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePower$price",
+        "com.amazonaws.lightsail",
+        "ContainerServicePower",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "price",
+    1,
+);
+static CONTAINERSERVICEPOWER_MEMBER_CPU_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePower$cpuCount",
+        "com.amazonaws.lightsail",
+        "ContainerServicePower",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "cpuCount",
+    2,
+);
+static CONTAINERSERVICEPOWER_MEMBER_RAM_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePower$ramSizeInGb",
+        "com.amazonaws.lightsail",
+        "ContainerServicePower",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "ramSizeInGb",
+    3,
+);
+static CONTAINERSERVICEPOWER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePower$name",
+        "com.amazonaws.lightsail",
+        "ContainerServicePower",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    4,
+);
+static CONTAINERSERVICEPOWER_MEMBER_IS_ACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePower$isActive",
+        "com.amazonaws.lightsail",
+        "ContainerServicePower",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isActive",
+    5,
+);
+static CONTAINERSERVICEPOWER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePower",
+        "com.amazonaws.lightsail",
+        "ContainerServicePower",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERSERVICEPOWER_MEMBER_POWER_ID,
+        &CONTAINERSERVICEPOWER_MEMBER_PRICE,
+        &CONTAINERSERVICEPOWER_MEMBER_CPU_COUNT,
+        &CONTAINERSERVICEPOWER_MEMBER_RAM_SIZE_IN_GB,
+        &CONTAINERSERVICEPOWER_MEMBER_NAME,
+        &CONTAINERSERVICEPOWER_MEMBER_IS_ACTIVE,
+    ],
+);
+impl ContainerServicePower {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERSERVICEPOWER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerServicePower {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.power_id {
+            ser.write_string(&CONTAINERSERVICEPOWER_MEMBER_POWER_ID, val)?;
+        }
+        if let Some(ref val) = self.price {
+            ser.write_float(&CONTAINERSERVICEPOWER_MEMBER_PRICE, *val)?;
+        }
+        if let Some(ref val) = self.cpu_count {
+            ser.write_float(&CONTAINERSERVICEPOWER_MEMBER_CPU_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.ram_size_in_gb {
+            ser.write_float(&CONTAINERSERVICEPOWER_MEMBER_RAM_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CONTAINERSERVICEPOWER_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.is_active {
+            ser.write_boolean(&CONTAINERSERVICEPOWER_MEMBER_IS_ACTIVE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerServicePowerBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERSERVICEPOWER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.power_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.price = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cpu_count = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ram_size_in_gb = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_active = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerServicePower {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerServicePower {
     /// Creates a new builder-style object to manufacture [`ContainerServicePower`](crate::types::ContainerServicePower).
     pub fn builder() -> crate::types::builders::ContainerServicePowerBuilder {

@@ -106,6 +106,281 @@ impl GetResourceMetricsInput {
         self.period_alignment.as_ref()
     }
 }
+static GETRESOURCEMETRICSINPUT_MEMBER_SERVICE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$ServiceType",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceType",
+    0,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$Identifier",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Identifier",
+    1,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_METRIC_QUERIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#MetricQueryList$member", "com.amazonaws.pi", "MetricQueryList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_METRIC_QUERIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$MetricQueries",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MetricQueries",
+    2,
+)
+.with_list_member(&GETRESOURCEMETRICSINPUT_MEMBER_METRIC_QUERIES_MEMBER);
+static GETRESOURCEMETRICSINPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$StartTime",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    3,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$EndTime",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    4,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_PERIOD_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$PeriodInSeconds",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "PeriodInSeconds",
+    5,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$MaxResults",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    6,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$NextToken",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    7,
+);
+static GETRESOURCEMETRICSINPUT_MEMBER_PERIOD_ALIGNMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput$PeriodAlignment",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PeriodAlignment",
+    8,
+);
+static GETRESOURCEMETRICSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetResourceMetricsInput",
+        "com.amazonaws.pi.synthetic",
+        "GetResourceMetricsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRESOURCEMETRICSINPUT_MEMBER_SERVICE_TYPE,
+        &GETRESOURCEMETRICSINPUT_MEMBER_IDENTIFIER,
+        &GETRESOURCEMETRICSINPUT_MEMBER_METRIC_QUERIES,
+        &GETRESOURCEMETRICSINPUT_MEMBER_START_TIME,
+        &GETRESOURCEMETRICSINPUT_MEMBER_END_TIME,
+        &GETRESOURCEMETRICSINPUT_MEMBER_PERIOD_IN_SECONDS,
+        &GETRESOURCEMETRICSINPUT_MEMBER_MAX_RESULTS,
+        &GETRESOURCEMETRICSINPUT_MEMBER_NEXT_TOKEN,
+        &GETRESOURCEMETRICSINPUT_MEMBER_PERIOD_ALIGNMENT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetResourceMetricsRequest");
+impl GetResourceMetricsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRESOURCEMETRICSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetResourceMetricsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_type {
+            ser.write_string(&GETRESOURCEMETRICSINPUT_MEMBER_SERVICE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&GETRESOURCEMETRICSINPUT_MEMBER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.metric_queries {
+            ser.write_list(
+                &GETRESOURCEMETRICSINPUT_MEMBER_METRIC_QUERIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MetricQuery::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&GETRESOURCEMETRICSINPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&GETRESOURCEMETRICSINPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.period_in_seconds {
+            ser.write_integer(&GETRESOURCEMETRICSINPUT_MEMBER_PERIOD_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&GETRESOURCEMETRICSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETRESOURCEMETRICSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.period_alignment {
+            ser.write_string(&GETRESOURCEMETRICSINPUT_MEMBER_PERIOD_ALIGNMENT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRESOURCEMETRICSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_type = Some(crate::types::ServiceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_queries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricQuery::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.period_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.period_alignment = Some(crate::types::PeriodAlignment::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetResourceMetricsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identifier = builder.identifier.or(Some(String::new()));
+        builder.metric_queries = builder.metric_queries.or(Some(Vec::new()));
+        builder.start_time = builder.start_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.end_time = builder.end_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetResourceMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetricsInput`](crate::operation::get_resource_metrics::GetResourceMetricsInput).
     pub fn builder() -> crate::operation::get_resource_metrics::builders::GetResourceMetricsInputBuilder {

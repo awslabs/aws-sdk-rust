@@ -9,6 +9,12 @@ pub use crate::types::_feed_status::FeedStatus;
 
 pub use crate::types::_feed_association::FeedAssociation;
 
+pub use crate::types::_schedule_action_start_configuration::ScheduleActionStartConfiguration;
+
+pub use crate::types::_schedule_action_status::ScheduleActionStatus;
+
+pub use crate::types::_schedule_action_error::ScheduleActionError;
+
 pub use crate::types::_competitor::Competitor;
 
 pub use crate::types::_search_filter::SearchFilter;
@@ -25,11 +31,25 @@ pub use crate::types::_get_output::GetOutput;
 
 pub use crate::types::_update_output::UpdateOutput;
 
+pub use crate::types::_fixed_mode_schedule_action_start_settings::FixedModeScheduleActionStartSettings;
+
+pub use crate::types::_schedule_action_operation::ScheduleActionOperation;
+
+pub use crate::types::_schedule_action_error_code::ScheduleActionErrorCode;
+
+pub use crate::types::_schedule_action::ScheduleAction;
+
 pub use crate::types::_filter_name::FilterName;
 
 pub use crate::types::_output_config::OutputConfig;
 
 pub use crate::types::_output_status::OutputStatus;
+
+pub use crate::types::_update_output_status::UpdateOutputStatus;
+
+pub use crate::types::_update_clipping_data_source_configuration::UpdateClippingDataSourceConfiguration;
+
+pub use crate::types::_remove_clipping_data_source_configuration::RemoveClippingDataSourceConfiguration;
 
 pub use crate::types::_cropping_config::CroppingConfig;
 
@@ -85,6 +105,8 @@ mod _feed_summary;
 
 mod _filter_name;
 
+mod _fixed_mode_schedule_action_start_settings;
+
 mod _fixture_summary;
 
 mod _get_output;
@@ -94,6 +116,20 @@ mod _output_config;
 mod _output_status;
 
 mod _profanity_filter_mode;
+
+mod _remove_clipping_data_source_configuration;
+
+mod _schedule_action;
+
+mod _schedule_action_error;
+
+mod _schedule_action_error_code;
+
+mod _schedule_action_operation;
+
+mod _schedule_action_start_configuration;
+
+mod _schedule_action_status;
 
 mod _search_filter;
 
@@ -105,7 +141,11 @@ mod _template_group;
 
 mod _transcription_language;
 
+mod _update_clipping_data_source_configuration;
+
 mod _update_output;
+
+mod _update_output_status;
 
 /// Builders
 pub mod builders;

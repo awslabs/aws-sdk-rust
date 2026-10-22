@@ -50,6 +50,238 @@ impl CreateAiBenchmarkJobInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_AI_BENCHMARK_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput$AIBenchmarkJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AIBenchmarkJobName",
+    0,
+);
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_BENCHMARK_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput$BenchmarkTarget",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "BenchmarkTarget",
+    1,
+);
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    2,
+);
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_AI_WORKLOAD_CONFIG_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput$AIWorkloadConfigIdentifier",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AIWorkloadConfigIdentifier",
+    3,
+);
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    4,
+);
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_NETWORK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput$NetworkConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkConfig",
+    5,
+);
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEAIBENCHMARKJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATEAIBENCHMARKJOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATEAIBENCHMARKJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIBenchmarkJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIBenchmarkJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAIBENCHMARKJOBINPUT_MEMBER_AI_BENCHMARK_JOB_NAME,
+        &CREATEAIBENCHMARKJOBINPUT_MEMBER_BENCHMARK_TARGET,
+        &CREATEAIBENCHMARKJOBINPUT_MEMBER_OUTPUT_CONFIG,
+        &CREATEAIBENCHMARKJOBINPUT_MEMBER_AI_WORKLOAD_CONFIG_IDENTIFIER,
+        &CREATEAIBENCHMARKJOBINPUT_MEMBER_ROLE_ARN,
+        &CREATEAIBENCHMARKJOBINPUT_MEMBER_NETWORK_CONFIG,
+        &CREATEAIBENCHMARKJOBINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAIBenchmarkJobRequest");
+impl CreateAiBenchmarkJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAIBENCHMARKJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAiBenchmarkJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ai_benchmark_job_name {
+            ser.write_string(&CREATEAIBENCHMARKJOBINPUT_MEMBER_AI_BENCHMARK_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.benchmark_target {
+            ser.write_struct(&CREATEAIBENCHMARKJOBINPUT_MEMBER_BENCHMARK_TARGET, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&CREATEAIBENCHMARKJOBINPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.ai_workload_config_identifier {
+            ser.write_string(&CREATEAIBENCHMARKJOBINPUT_MEMBER_AI_WORKLOAD_CONFIG_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEAIBENCHMARKJOBINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.network_config {
+            ser.write_struct(&CREATEAIBENCHMARKJOBINPUT_MEMBER_NETWORK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEAIBENCHMARKJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_ai_benchmark_job::builders::CreateAiBenchmarkJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAIBENCHMARKJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_benchmark_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.benchmark_target = Some(crate::types::AiBenchmarkTarget::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::AiBenchmarkOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_workload_config_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_config = Some(crate::types::AiBenchmarkNetworkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAiBenchmarkJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.ai_benchmark_job_name = builder.ai_benchmark_job_name.or(Some(String::new()));
+        builder.ai_workload_config_identifier = builder.ai_workload_config_identifier.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAiBenchmarkJobInput {
     /// Creates a new builder-style object to manufacture [`CreateAiBenchmarkJobInput`](crate::operation::create_ai_benchmark_job::CreateAiBenchmarkJobInput).
     pub fn builder() -> crate::operation::create_ai_benchmark_job::builders::CreateAiBenchmarkJobInputBuilder {

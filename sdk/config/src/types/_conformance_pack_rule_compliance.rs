@@ -27,6 +27,146 @@ impl ConformancePackRuleCompliance {
         self.controls.as_deref().unwrap_or_default()
     }
 }
+static CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackRuleCompliance$ConfigRuleName",
+        "com.amazonaws.configservice",
+        "ConformancePackRuleCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleName",
+    0,
+);
+static CONFORMANCEPACKRULECOMPLIANCE_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackRuleCompliance$ComplianceType",
+        "com.amazonaws.configservice",
+        "ConformancePackRuleCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    1,
+);
+static CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONTROLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ControlsList$member",
+        "com.amazonaws.configservice",
+        "ControlsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONTROLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackRuleCompliance$Controls",
+        "com.amazonaws.configservice",
+        "ConformancePackRuleCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Controls",
+    2,
+)
+.with_list_member(&CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONTROLS_MEMBER);
+static CONFORMANCEPACKRULECOMPLIANCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackRuleCompliance",
+        "com.amazonaws.configservice",
+        "ConformancePackRuleCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONFIG_RULE_NAME,
+        &CONFORMANCEPACKRULECOMPLIANCE_MEMBER_COMPLIANCE_TYPE,
+        &CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONTROLS,
+    ],
+);
+impl ConformancePackRuleCompliance {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFORMANCEPACKRULECOMPLIANCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConformancePackRuleCompliance {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.config_rule_name {
+            ser.write_string(&CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.compliance_type {
+            ser.write_string(&CONFORMANCEPACKRULECOMPLIANCE_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.controls {
+            ser.write_list(
+                &CONFORMANCEPACKRULECOMPLIANCE_MEMBER_CONTROLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConformancePackRuleComplianceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFORMANCEPACKRULECOMPLIANCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_type = Some(crate::types::ConformancePackComplianceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.controls = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConformancePackRuleCompliance {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConformancePackRuleCompliance {
     /// Creates a new builder-style object to manufacture [`ConformancePackRuleCompliance`](crate::types::ConformancePackRuleCompliance).
     pub fn builder() -> crate::types::builders::ConformancePackRuleComplianceBuilder {

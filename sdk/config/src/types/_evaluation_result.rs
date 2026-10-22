@@ -45,6 +45,190 @@ impl EvaluationResult {
         self.result_token.as_deref()
     }
 }
+static EVALUATIONRESULT_MEMBER_EVALUATION_RESULT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResult$EvaluationResultIdentifier",
+        "com.amazonaws.configservice",
+        "EvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EvaluationResultIdentifier",
+    0,
+);
+static EVALUATIONRESULT_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResult$ComplianceType",
+        "com.amazonaws.configservice",
+        "EvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    1,
+);
+static EVALUATIONRESULT_MEMBER_RESULT_RECORDED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResult$ResultRecordedTime",
+        "com.amazonaws.configservice",
+        "EvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ResultRecordedTime",
+    2,
+);
+static EVALUATIONRESULT_MEMBER_CONFIG_RULE_INVOKED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResult$ConfigRuleInvokedTime",
+        "com.amazonaws.configservice",
+        "EvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ConfigRuleInvokedTime",
+    3,
+);
+static EVALUATIONRESULT_MEMBER_ANNOTATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResult$Annotation",
+        "com.amazonaws.configservice",
+        "EvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Annotation",
+    4,
+);
+static EVALUATIONRESULT_MEMBER_RESULT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResult$ResultToken",
+        "com.amazonaws.configservice",
+        "EvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResultToken",
+    5,
+);
+static EVALUATIONRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#EvaluationResult",
+        "com.amazonaws.configservice",
+        "EvaluationResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EVALUATIONRESULT_MEMBER_EVALUATION_RESULT_IDENTIFIER,
+        &EVALUATIONRESULT_MEMBER_COMPLIANCE_TYPE,
+        &EVALUATIONRESULT_MEMBER_RESULT_RECORDED_TIME,
+        &EVALUATIONRESULT_MEMBER_CONFIG_RULE_INVOKED_TIME,
+        &EVALUATIONRESULT_MEMBER_ANNOTATION,
+        &EVALUATIONRESULT_MEMBER_RESULT_TOKEN,
+    ],
+);
+impl EvaluationResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EVALUATIONRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EvaluationResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.evaluation_result_identifier {
+            ser.write_struct(&EVALUATIONRESULT_MEMBER_EVALUATION_RESULT_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.compliance_type {
+            ser.write_string(&EVALUATIONRESULT_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.result_recorded_time {
+            ser.write_timestamp(&EVALUATIONRESULT_MEMBER_RESULT_RECORDED_TIME, val)?;
+        }
+        if let Some(ref val) = self.config_rule_invoked_time {
+            ser.write_timestamp(&EVALUATIONRESULT_MEMBER_CONFIG_RULE_INVOKED_TIME, val)?;
+        }
+        if let Some(ref val) = self.annotation {
+            ser.write_string(&EVALUATIONRESULT_MEMBER_ANNOTATION, val)?;
+        }
+        if let Some(ref val) = self.result_token {
+            ser.write_string(&EVALUATIONRESULT_MEMBER_RESULT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EvaluationResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EVALUATIONRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_result_identifier = Some(crate::types::EvaluationResultIdentifier::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_type = Some(crate::types::ComplianceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_recorded_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_invoked_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.annotation = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EvaluationResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EvaluationResult {
     /// Creates a new builder-style object to manufacture [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn builder() -> crate::types::builders::EvaluationResultBuilder {

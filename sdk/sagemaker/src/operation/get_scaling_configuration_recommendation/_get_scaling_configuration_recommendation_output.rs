@@ -49,6 +49,221 @@ impl GetScalingConfigurationRecommendationOutput {
         self.dynamic_scaling_configuration.as_ref()
     }
 }
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_INFERENCE_RECOMMENDATIONS_JOB_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput$InferenceRecommendationsJobName",
+            "com.amazonaws.sagemaker.synthetic",
+            "GetScalingConfigurationRecommendationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "InferenceRecommendationsJobName",
+        0,
+    );
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_RECOMMENDATION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput$RecommendationId",
+            "com.amazonaws.sagemaker.synthetic",
+            "GetScalingConfigurationRecommendationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RecommendationId",
+        1,
+    );
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput$EndpointName",
+            "com.amazonaws.sagemaker.synthetic",
+            "GetScalingConfigurationRecommendationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EndpointName",
+        2,
+    );
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_TARGET_CPU_UTILIZATION_PER_CORE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput$TargetCpuUtilizationPerCore",
+            "com.amazonaws.sagemaker.synthetic",
+            "GetScalingConfigurationRecommendationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "TargetCpuUtilizationPerCore",
+        3,
+    );
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_SCALING_POLICY_OBJECTIVE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput$ScalingPolicyObjective",
+            "com.amazonaws.sagemaker.synthetic",
+            "GetScalingConfigurationRecommendationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ScalingPolicyObjective",
+        4,
+    );
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_METRIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput$Metric",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetScalingConfigurationRecommendationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Metric",
+    5,
+);
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_DYNAMIC_SCALING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput$DynamicScalingConfiguration",
+            "com.amazonaws.sagemaker.synthetic",
+            "GetScalingConfigurationRecommendationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DynamicScalingConfiguration",
+        6,
+    );
+static GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetScalingConfigurationRecommendationOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetScalingConfigurationRecommendationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_INFERENCE_RECOMMENDATIONS_JOB_NAME,
+        &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_RECOMMENDATION_ID,
+        &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_ENDPOINT_NAME,
+        &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_TARGET_CPU_UTILIZATION_PER_CORE,
+        &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_SCALING_POLICY_OBJECTIVE,
+        &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_METRIC,
+        &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_DYNAMIC_SCALING_CONFIGURATION,
+    ],
+)
+.with_original_name("GetScalingConfigurationRecommendationResponse");
+impl GetScalingConfigurationRecommendationOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetScalingConfigurationRecommendationOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.inference_recommendations_job_name {
+            ser.write_string(
+                &GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_INFERENCE_RECOMMENDATIONS_JOB_NAME,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.recommendation_id {
+            ser.write_string(&GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_RECOMMENDATION_ID, val)?;
+        }
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.target_cpu_utilization_per_core {
+            ser.write_integer(&GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_TARGET_CPU_UTILIZATION_PER_CORE, *val)?;
+        }
+        if let Some(ref val) = self.scaling_policy_objective {
+            ser.write_struct(&GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_SCALING_POLICY_OBJECTIVE, val)?;
+        }
+        if let Some(ref val) = self.metric {
+            ser.write_struct(&GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_METRIC, val)?;
+        }
+        if let Some(ref val) = self.dynamic_scaling_configuration {
+            ser.write_struct(&GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_MEMBER_DYNAMIC_SCALING_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_scaling_configuration_recommendation::builders::GetScalingConfigurationRecommendationOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETSCALINGCONFIGURATIONRECOMMENDATIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_recommendations_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recommendation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_cpu_utilization_per_core = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scaling_policy_objective = Some(crate::types::ScalingPolicyObjective::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric = Some(crate::types::ScalingPolicyMetric::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dynamic_scaling_configuration = Some(crate::types::DynamicScalingConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetScalingConfigurationRecommendationOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetScalingConfigurationRecommendationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

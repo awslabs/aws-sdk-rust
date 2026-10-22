@@ -44,6 +44,198 @@ impl UpdateWorkteamInput {
         self.worker_access_configuration.as_ref()
     }
 }
+static UPDATEWORKTEAMINPUT_MEMBER_WORKTEAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateWorkteamInput$WorkteamName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkteamName",
+    0,
+);
+static UPDATEWORKTEAMINPUT_MEMBER_MEMBER_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MemberDefinitions$member",
+        "com.amazonaws.sagemaker",
+        "MemberDefinitions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEWORKTEAMINPUT_MEMBER_MEMBER_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateWorkteamInput$MemberDefinitions",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MemberDefinitions",
+    1,
+)
+.with_list_member(&UPDATEWORKTEAMINPUT_MEMBER_MEMBER_DEFINITIONS_MEMBER);
+static UPDATEWORKTEAMINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateWorkteamInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEWORKTEAMINPUT_MEMBER_NOTIFICATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateWorkteamInput$NotificationConfiguration",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NotificationConfiguration",
+    3,
+);
+static UPDATEWORKTEAMINPUT_MEMBER_WORKER_ACCESS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateWorkteamInput$WorkerAccessConfiguration",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkerAccessConfiguration",
+    4,
+);
+static UPDATEWORKTEAMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateWorkteamInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateWorkteamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEWORKTEAMINPUT_MEMBER_WORKTEAM_NAME,
+        &UPDATEWORKTEAMINPUT_MEMBER_MEMBER_DEFINITIONS,
+        &UPDATEWORKTEAMINPUT_MEMBER_DESCRIPTION,
+        &UPDATEWORKTEAMINPUT_MEMBER_NOTIFICATION_CONFIGURATION,
+        &UPDATEWORKTEAMINPUT_MEMBER_WORKER_ACCESS_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateWorkteamRequest");
+impl UpdateWorkteamInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEWORKTEAMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateWorkteamInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workteam_name {
+            ser.write_string(&UPDATEWORKTEAMINPUT_MEMBER_WORKTEAM_NAME, val)?;
+        }
+        if let Some(ref val) = self.member_definitions {
+            ser.write_list(
+                &UPDATEWORKTEAMINPUT_MEMBER_MEMBER_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MemberDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEWORKTEAMINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.notification_configuration {
+            ser.write_struct(&UPDATEWORKTEAMINPUT_MEMBER_NOTIFICATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.worker_access_configuration {
+            ser.write_struct(&UPDATEWORKTEAMINPUT_MEMBER_WORKER_ACCESS_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_workteam::builders::UpdateWorkteamInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEWORKTEAMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workteam_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.member_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MemberDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_configuration = Some(crate::types::NotificationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.worker_access_configuration = Some(crate::types::WorkerAccessConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateWorkteamInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workteam_name = builder.workteam_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateWorkteamInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkteamInput`](crate::operation::update_workteam::UpdateWorkteamInput).
     pub fn builder() -> crate::operation::update_workteam::builders::UpdateWorkteamInputBuilder {

@@ -20,6 +20,129 @@ impl UpdateDevicesInput {
         self.devices.as_deref().unwrap_or_default()
     }
 }
+static UPDATEDEVICESINPUT_MEMBER_DEVICE_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateDevicesInput$DeviceFleetName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateDevicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetName",
+    0,
+);
+static UPDATEDEVICESINPUT_MEMBER_DEVICES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Devices$member", "com.amazonaws.sagemaker", "Devices"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEDEVICESINPUT_MEMBER_DEVICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateDevicesInput$Devices",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateDevicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Devices",
+    1,
+)
+.with_list_member(&UPDATEDEVICESINPUT_MEMBER_DEVICES_MEMBER);
+static UPDATEDEVICESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateDevicesInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateDevicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEDEVICESINPUT_MEMBER_DEVICE_FLEET_NAME, &UPDATEDEVICESINPUT_MEMBER_DEVICES],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDevicesRequest");
+impl UpdateDevicesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDEVICESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDevicesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_fleet_name {
+            ser.write_string(&UPDATEDEVICESINPUT_MEMBER_DEVICE_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.devices {
+            ser.write_list(
+                &UPDATEDEVICESINPUT_MEMBER_DEVICES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Device::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_devices::builders::UpdateDevicesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDEVICESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.devices = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Device::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDevicesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.device_fleet_name = builder.device_fleet_name.or(Some(String::new()));
+        builder.devices = builder.devices.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateDevicesInput {
     /// Creates a new builder-style object to manufacture [`UpdateDevicesInput`](crate::operation::update_devices::UpdateDevicesInput).
     pub fn builder() -> crate::operation::update_devices::builders::UpdateDevicesInputBuilder {

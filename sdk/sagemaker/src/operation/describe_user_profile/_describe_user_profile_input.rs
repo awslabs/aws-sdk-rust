@@ -18,6 +18,110 @@ impl DescribeUserProfileInput {
         self.user_profile_name.as_deref()
     }
 }
+static DESCRIBEUSERPROFILEINPUT_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileInput$DomainId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    0,
+);
+static DESCRIBEUSERPROFILEINPUT_MEMBER_USER_PROFILE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileInput$UserProfileName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserProfileName",
+    1,
+);
+static DESCRIBEUSERPROFILEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeUserProfileInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeUserProfileInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEUSERPROFILEINPUT_MEMBER_DOMAIN_ID,
+        &DESCRIBEUSERPROFILEINPUT_MEMBER_USER_PROFILE_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeUserProfileRequest");
+impl DescribeUserProfileInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEUSERPROFILEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeUserProfileInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&DESCRIBEUSERPROFILEINPUT_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.user_profile_name {
+            ser.write_string(&DESCRIBEUSERPROFILEINPUT_MEMBER_USER_PROFILE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEUSERPROFILEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_profile_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeUserProfileInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_id = builder.domain_id.or(Some(String::new()));
+        builder.user_profile_name = builder.user_profile_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeUserProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
     pub fn builder() -> crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {

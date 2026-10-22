@@ -44,6 +44,224 @@ impl CreateLoadBalancerTlsCertificateInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_LOAD_BALANCER_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateLoadBalancerTlsCertificateInput$loadBalancerName",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateLoadBalancerTlsCertificateInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "loadBalancerName",
+        0,
+    );
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateLoadBalancerTlsCertificateInput$certificateName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateLoadBalancerTlsCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateName",
+    1,
+);
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateLoadBalancerTlsCertificateInput$certificateDomainName",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateLoadBalancerTlsCertificateInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "certificateDomainName",
+        2,
+    );
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_ALTERNATIVE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#DomainNameList$member",
+            "com.amazonaws.lightsail",
+            "DomainNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_ALTERNATIVE_NAMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#CreateLoadBalancerTlsCertificateInput$certificateAlternativeNames",
+            "com.amazonaws.lightsail.synthetic",
+            "CreateLoadBalancerTlsCertificateInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "certificateAlternativeNames",
+        3,
+    )
+    .with_list_member(&CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_ALTERNATIVE_NAMES_MEMBER);
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateLoadBalancerTlsCertificateInput$tags",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateLoadBalancerTlsCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    4,
+)
+.with_list_member(&CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_TAGS_MEMBER);
+static CREATELOADBALANCERTLSCERTIFICATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateLoadBalancerTlsCertificateInput",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateLoadBalancerTlsCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_LOAD_BALANCER_NAME,
+        &CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_NAME,
+        &CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_DOMAIN_NAME,
+        &CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_ALTERNATIVE_NAMES,
+        &CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/CreateLoadBalancerTlsCertificate",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLoadBalancerTlsCertificateRequest");
+impl CreateLoadBalancerTlsCertificateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELOADBALANCERTLSCERTIFICATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLoadBalancerTlsCertificateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.load_balancer_name {
+            ser.write_string(&CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_LOAD_BALANCER_NAME, val)?;
+        }
+        if let Some(ref val) = self.certificate_name {
+            ser.write_string(&CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.certificate_domain_name {
+            ser.write_string(&CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.certificate_alternative_names {
+            ser.write_list(
+                &CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_CERTIFICATE_ALTERNATIVE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELOADBALANCERTLSCERTIFICATEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELOADBALANCERTLSCERTIFICATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_alternative_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLoadBalancerTlsCertificateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.load_balancer_name = builder.load_balancer_name.or(Some(String::new()));
+        builder.certificate_name = builder.certificate_name.or(Some(String::new()));
+        builder.certificate_domain_name = builder.certificate_domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLoadBalancerTlsCertificateInput {
     /// Creates a new builder-style object to manufacture [`CreateLoadBalancerTlsCertificateInput`](crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificateInput).
     pub fn builder() -> crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder {

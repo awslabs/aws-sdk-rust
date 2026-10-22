@@ -174,6 +174,408 @@ impl ::std::fmt::Debug for TransferDomainInput {
         formatter.finish()
     }
 }
+static TRANSFERDOMAININPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static TRANSFERDOMAININPUT_MEMBER_IDN_LANG_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$IdnLangCode",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdnLangCode",
+    1,
+);
+static TRANSFERDOMAININPUT_MEMBER_DURATION_IN_YEARS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$DurationInYears",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DurationInYears",
+    2,
+);
+static TRANSFERDOMAININPUT_MEMBER_NAMESERVERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#NameserverList$member",
+        "com.amazonaws.route53domains",
+        "NameserverList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRANSFERDOMAININPUT_MEMBER_NAMESERVERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$Nameservers",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Nameservers",
+    3,
+)
+.with_list_member(&TRANSFERDOMAININPUT_MEMBER_NAMESERVERS_MEMBER);
+static TRANSFERDOMAININPUT_MEMBER_AUTH_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$AuthCode",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthCode",
+    4,
+);
+static TRANSFERDOMAININPUT_MEMBER_AUTO_RENEW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$AutoRenew",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AutoRenew",
+    5,
+);
+static TRANSFERDOMAININPUT_MEMBER_ADMIN_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$AdminContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdminContact",
+    6,
+);
+static TRANSFERDOMAININPUT_MEMBER_REGISTRANT_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$RegistrantContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RegistrantContact",
+    7,
+);
+static TRANSFERDOMAININPUT_MEMBER_TECH_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$TechContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TechContact",
+    8,
+);
+static TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_ADMIN_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$PrivacyProtectAdminContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectAdminContact",
+    9,
+);
+static TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_REGISTRANT_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$PrivacyProtectRegistrantContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectRegistrantContact",
+    10,
+);
+static TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_TECH_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$PrivacyProtectTechContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectTechContact",
+    11,
+);
+static TRANSFERDOMAININPUT_MEMBER_BILLING_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$BillingContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BillingContact",
+    12,
+);
+static TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_BILLING_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$PrivacyProtectBillingContact",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "PrivacyProtectBillingContact",
+    13,
+);
+static TRANSFERDOMAININPUT_MEMBER_CONSENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput$Consent",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Consent",
+    14,
+);
+static TRANSFERDOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#TransferDomainInput",
+        "com.amazonaws.route53domains.synthetic",
+        "TransferDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSFERDOMAININPUT_MEMBER_DOMAIN_NAME,
+        &TRANSFERDOMAININPUT_MEMBER_IDN_LANG_CODE,
+        &TRANSFERDOMAININPUT_MEMBER_DURATION_IN_YEARS,
+        &TRANSFERDOMAININPUT_MEMBER_NAMESERVERS,
+        &TRANSFERDOMAININPUT_MEMBER_AUTH_CODE,
+        &TRANSFERDOMAININPUT_MEMBER_AUTO_RENEW,
+        &TRANSFERDOMAININPUT_MEMBER_ADMIN_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_REGISTRANT_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_TECH_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_ADMIN_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_REGISTRANT_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_TECH_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_BILLING_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_BILLING_CONTACT,
+        &TRANSFERDOMAININPUT_MEMBER_CONSENT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("TransferDomainRequest");
+impl TransferDomainInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSFERDOMAININPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TransferDomainInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&TRANSFERDOMAININPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.idn_lang_code {
+            ser.write_string(&TRANSFERDOMAININPUT_MEMBER_IDN_LANG_CODE, val)?;
+        }
+        if let Some(ref val) = self.duration_in_years {
+            ser.write_integer(&TRANSFERDOMAININPUT_MEMBER_DURATION_IN_YEARS, *val)?;
+        }
+        if let Some(ref val) = self.nameservers {
+            ser.write_list(
+                &TRANSFERDOMAININPUT_MEMBER_NAMESERVERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Nameserver::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.auth_code {
+            ser.write_string(&TRANSFERDOMAININPUT_MEMBER_AUTH_CODE, val)?;
+        }
+        if let Some(ref val) = self.auto_renew {
+            ser.write_boolean(&TRANSFERDOMAININPUT_MEMBER_AUTO_RENEW, *val)?;
+        }
+        if let Some(ref val) = self.admin_contact {
+            ser.write_struct(&TRANSFERDOMAININPUT_MEMBER_ADMIN_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.registrant_contact {
+            ser.write_struct(&TRANSFERDOMAININPUT_MEMBER_REGISTRANT_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.tech_contact {
+            ser.write_struct(&TRANSFERDOMAININPUT_MEMBER_TECH_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_admin_contact {
+            ser.write_boolean(&TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_ADMIN_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_registrant_contact {
+            ser.write_boolean(&TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_REGISTRANT_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_tech_contact {
+            ser.write_boolean(&TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_TECH_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.billing_contact {
+            ser.write_struct(&TRANSFERDOMAININPUT_MEMBER_BILLING_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.privacy_protect_billing_contact {
+            ser.write_boolean(&TRANSFERDOMAININPUT_MEMBER_PRIVACY_PROTECT_BILLING_CONTACT, *val)?;
+        }
+        if let Some(ref val) = self.consent {
+            ser.write_struct(&TRANSFERDOMAININPUT_MEMBER_CONSENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::transfer_domain::builders::TransferDomainInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSFERDOMAININPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idn_lang_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_in_years = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nameservers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Nameserver::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auth_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_renew = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrant_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tech_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_admin_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_registrant_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_tech_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billing_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.privacy_protect_billing_contact = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.consent = Some(crate::types::Consent::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TransferDomainInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TransferDomainInput {
     /// Creates a new builder-style object to manufacture [`TransferDomainInput`](crate::operation::transfer_domain::TransferDomainInput).
     pub fn builder() -> crate::operation::transfer_domain::builders::TransferDomainInputBuilder {

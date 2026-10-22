@@ -51,6 +51,234 @@ impl CategoryProperties {
         self.input_type.as_ref()
     }
 }
+static CATEGORYPROPERTIES_MEMBER_CATEGORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CategoryProperties$CategoryName",
+        "com.amazonaws.transcribe",
+        "CategoryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CategoryName",
+    0,
+);
+static CATEGORYPROPERTIES_MEMBER_RULES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#RuleList$member", "com.amazonaws.transcribe", "RuleList"),
+    ::aws_smithy_schema::ShapeType::Union,
+    "member",
+    0,
+);
+static CATEGORYPROPERTIES_MEMBER_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CategoryProperties$Rules",
+        "com.amazonaws.transcribe",
+        "CategoryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Rules",
+    1,
+)
+.with_list_member(&CATEGORYPROPERTIES_MEMBER_RULES_MEMBER);
+static CATEGORYPROPERTIES_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CategoryProperties$CreateTime",
+        "com.amazonaws.transcribe",
+        "CategoryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateTime",
+    2,
+);
+static CATEGORYPROPERTIES_MEMBER_LAST_UPDATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CategoryProperties$LastUpdateTime",
+        "com.amazonaws.transcribe",
+        "CategoryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdateTime",
+    3,
+);
+static CATEGORYPROPERTIES_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#TagList$member", "com.amazonaws.transcribe", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CATEGORYPROPERTIES_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CategoryProperties$Tags",
+        "com.amazonaws.transcribe",
+        "CategoryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CATEGORYPROPERTIES_MEMBER_TAGS_MEMBER);
+static CATEGORYPROPERTIES_MEMBER_INPUT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CategoryProperties$InputType",
+        "com.amazonaws.transcribe",
+        "CategoryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InputType",
+    5,
+);
+static CATEGORYPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#CategoryProperties",
+        "com.amazonaws.transcribe",
+        "CategoryProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CATEGORYPROPERTIES_MEMBER_CATEGORY_NAME,
+        &CATEGORYPROPERTIES_MEMBER_RULES,
+        &CATEGORYPROPERTIES_MEMBER_CREATE_TIME,
+        &CATEGORYPROPERTIES_MEMBER_LAST_UPDATE_TIME,
+        &CATEGORYPROPERTIES_MEMBER_TAGS,
+        &CATEGORYPROPERTIES_MEMBER_INPUT_TYPE,
+    ],
+);
+impl CategoryProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CATEGORYPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CategoryProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.category_name {
+            ser.write_string(&CATEGORYPROPERTIES_MEMBER_CATEGORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.rules {
+            ser.write_list(
+                &CATEGORYPROPERTIES_MEMBER_RULES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Rule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_timestamp(&CATEGORYPROPERTIES_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_update_time {
+            ser.write_timestamp(&CATEGORYPROPERTIES_MEMBER_LAST_UPDATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CATEGORYPROPERTIES_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_type {
+            ser.write_string(&CATEGORYPROPERTIES_MEMBER_INPUT_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CategoryPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CATEGORYPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.category_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rules = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Rule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_type = Some(crate::types::InputType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CategoryProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CategoryProperties {
     /// Creates a new builder-style object to manufacture [`CategoryProperties`](crate::types::CategoryProperties).
     pub fn builder() -> crate::types::builders::CategoryPropertiesBuilder {

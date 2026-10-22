@@ -163,6 +163,442 @@ impl ::std::fmt::Debug for EntityRecognizerProperties {
         formatter.finish()
     }
 }
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_ENTITY_RECOGNIZER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$EntityRecognizerArn",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EntityRecognizerArn",
+    0,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$LanguageCode",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$Status",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$Message",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    3,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_SUBMIT_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$SubmitTime",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SubmitTime",
+    4,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$EndTime",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    5,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_TRAINING_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$TrainingStartTime",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TrainingStartTime",
+    6,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_TRAINING_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$TrainingEndTime",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TrainingEndTime",
+    7,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$InputDataConfig",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    8,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_RECOGNIZER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$RecognizerMetadata",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RecognizerMetadata",
+    9,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$DataAccessRoleArn",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    10,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$VolumeKmsKeyId",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    11,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$VpcConfig",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    12,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_MODEL_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$ModelKmsKeyId",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelKmsKeyId",
+    13,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$VersionName",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    14,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_SOURCE_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$SourceModelArn",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceModelArn",
+    15,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_FLYWHEEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$FlywheelArn",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelArn",
+    16,
+);
+static ENTITYRECOGNIZERPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties$OutputDataConfig",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    17,
+);
+static ENTITYRECOGNIZERPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityRecognizerProperties",
+        "com.amazonaws.comprehend",
+        "EntityRecognizerProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_ENTITY_RECOGNIZER_ARN,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_LANGUAGE_CODE,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_STATUS,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_MESSAGE,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_SUBMIT_TIME,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_END_TIME,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_TRAINING_START_TIME,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_TRAINING_END_TIME,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_INPUT_DATA_CONFIG,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_RECOGNIZER_METADATA,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_VOLUME_KMS_KEY_ID,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_VPC_CONFIG,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_MODEL_KMS_KEY_ID,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_VERSION_NAME,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_SOURCE_MODEL_ARN,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_FLYWHEEL_ARN,
+        &ENTITYRECOGNIZERPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG,
+    ],
+);
+impl EntityRecognizerProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITYRECOGNIZERPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntityRecognizerProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.entity_recognizer_arn {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_ENTITY_RECOGNIZER_ARN, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.submit_time {
+            ser.write_timestamp(&ENTITYRECOGNIZERPROPERTIES_MEMBER_SUBMIT_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&ENTITYRECOGNIZERPROPERTIES_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_start_time {
+            ser.write_timestamp(&ENTITYRECOGNIZERPROPERTIES_MEMBER_TRAINING_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_end_time {
+            ser.write_timestamp(&ENTITYRECOGNIZERPROPERTIES_MEMBER_TRAINING_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&ENTITYRECOGNIZERPROPERTIES_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.recognizer_metadata {
+            ser.write_struct(&ENTITYRECOGNIZERPROPERTIES_MEMBER_RECOGNIZER_METADATA, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&ENTITYRECOGNIZERPROPERTIES_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_kms_key_id {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_MODEL_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_model_arn {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_SOURCE_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.flywheel_arn {
+            ser.write_string(&ENTITYRECOGNIZERPROPERTIES_MEMBER_FLYWHEEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&ENTITYRECOGNIZERPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntityRecognizerPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITYRECOGNIZERPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_recognizer_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ModelStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submit_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::EntityRecognizerInputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recognizer_metadata = Some(crate::types::EntityRecognizerMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::EntityRecognizerOutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntityRecognizerProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EntityRecognizerProperties {
     /// Creates a new builder-style object to manufacture [`EntityRecognizerProperties`](crate::types::EntityRecognizerProperties).
     pub fn builder() -> crate::types::builders::EntityRecognizerPropertiesBuilder {

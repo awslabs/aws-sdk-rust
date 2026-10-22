@@ -63,6 +63,271 @@ impl DeviceSummary {
         self.agent_version.as_deref()
     }
 }
+static DEVICESUMMARY_MEMBER_DEVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$DeviceName",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceName",
+    0,
+);
+static DEVICESUMMARY_MEMBER_DEVICE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$DeviceArn",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceArn",
+    1,
+);
+static DEVICESUMMARY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$Description",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static DEVICESUMMARY_MEMBER_DEVICE_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$DeviceFleetName",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetName",
+    3,
+);
+static DEVICESUMMARY_MEMBER_IOT_THING_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$IotThingName",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IotThingName",
+    4,
+);
+static DEVICESUMMARY_MEMBER_REGISTRATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$RegistrationTime",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RegistrationTime",
+    5,
+);
+static DEVICESUMMARY_MEMBER_LATEST_HEARTBEAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$LatestHeartbeat",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LatestHeartbeat",
+    6,
+);
+static DEVICESUMMARY_MEMBER_MODELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelSummaries$member",
+        "com.amazonaws.sagemaker",
+        "EdgeModelSummaries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEVICESUMMARY_MEMBER_MODELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DeviceSummary$Models", "com.amazonaws.sagemaker", "DeviceSummary"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Models",
+    7,
+)
+.with_list_member(&DEVICESUMMARY_MEMBER_MODELS_MEMBER);
+static DEVICESUMMARY_MEMBER_AGENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeviceSummary$AgentVersion",
+        "com.amazonaws.sagemaker",
+        "DeviceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AgentVersion",
+    8,
+);
+static DEVICESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DeviceSummary", "com.amazonaws.sagemaker", "DeviceSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEVICESUMMARY_MEMBER_DEVICE_NAME,
+        &DEVICESUMMARY_MEMBER_DEVICE_ARN,
+        &DEVICESUMMARY_MEMBER_DESCRIPTION,
+        &DEVICESUMMARY_MEMBER_DEVICE_FLEET_NAME,
+        &DEVICESUMMARY_MEMBER_IOT_THING_NAME,
+        &DEVICESUMMARY_MEMBER_REGISTRATION_TIME,
+        &DEVICESUMMARY_MEMBER_LATEST_HEARTBEAT,
+        &DEVICESUMMARY_MEMBER_MODELS,
+        &DEVICESUMMARY_MEMBER_AGENT_VERSION,
+    ],
+);
+impl DeviceSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEVICESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeviceSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_name {
+            ser.write_string(&DEVICESUMMARY_MEMBER_DEVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.device_arn {
+            ser.write_string(&DEVICESUMMARY_MEMBER_DEVICE_ARN, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DEVICESUMMARY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.device_fleet_name {
+            ser.write_string(&DEVICESUMMARY_MEMBER_DEVICE_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.iot_thing_name {
+            ser.write_string(&DEVICESUMMARY_MEMBER_IOT_THING_NAME, val)?;
+        }
+        if let Some(ref val) = self.registration_time {
+            ser.write_timestamp(&DEVICESUMMARY_MEMBER_REGISTRATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.latest_heartbeat {
+            ser.write_timestamp(&DEVICESUMMARY_MEMBER_LATEST_HEARTBEAT, val)?;
+        }
+        if let Some(ref val) = self.models {
+            ser.write_list(
+                &DEVICESUMMARY_MEMBER_MODELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EdgeModelSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.agent_version {
+            ser.write_string(&DEVICESUMMARY_MEMBER_AGENT_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeviceSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEVICESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iot_thing_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registration_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_heartbeat = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.models = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EdgeModelSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeviceSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeviceSummary {
     /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn builder() -> crate::types::builders::DeviceSummaryBuilder {

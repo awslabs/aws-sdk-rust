@@ -25,6 +25,127 @@ impl ResourceEvaluation {
         self.evaluation_start_timestamp.as_ref()
     }
 }
+static RESOURCEEVALUATION_MEMBER_RESOURCE_EVALUATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceEvaluation$ResourceEvaluationId",
+        "com.amazonaws.configservice",
+        "ResourceEvaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceEvaluationId",
+    0,
+);
+static RESOURCEEVALUATION_MEMBER_EVALUATION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceEvaluation$EvaluationMode",
+        "com.amazonaws.configservice",
+        "ResourceEvaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EvaluationMode",
+    1,
+);
+static RESOURCEEVALUATION_MEMBER_EVALUATION_START_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceEvaluation$EvaluationStartTimestamp",
+        "com.amazonaws.configservice",
+        "ResourceEvaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EvaluationStartTimestamp",
+    2,
+);
+static RESOURCEEVALUATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceEvaluation",
+        "com.amazonaws.configservice",
+        "ResourceEvaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEEVALUATION_MEMBER_RESOURCE_EVALUATION_ID,
+        &RESOURCEEVALUATION_MEMBER_EVALUATION_MODE,
+        &RESOURCEEVALUATION_MEMBER_EVALUATION_START_TIMESTAMP,
+    ],
+);
+impl ResourceEvaluation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEEVALUATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceEvaluation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_evaluation_id {
+            ser.write_string(&RESOURCEEVALUATION_MEMBER_RESOURCE_EVALUATION_ID, val)?;
+        }
+        if let Some(ref val) = self.evaluation_mode {
+            ser.write_string(&RESOURCEEVALUATION_MEMBER_EVALUATION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.evaluation_start_timestamp {
+            ser.write_timestamp(&RESOURCEEVALUATION_MEMBER_EVALUATION_START_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceEvaluationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCEEVALUATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_evaluation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_mode = Some(crate::types::EvaluationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_start_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceEvaluation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResourceEvaluation {
     /// Creates a new builder-style object to manufacture [`ResourceEvaluation`](crate::types::ResourceEvaluation).
     pub fn builder() -> crate::types::builders::ResourceEvaluationBuilder {

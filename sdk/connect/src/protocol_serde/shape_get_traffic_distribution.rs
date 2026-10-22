@@ -157,6 +157,12 @@ pub(crate) fn de_get_traffic_distribution(
                             .transpose()?,
                     );
                 }
+                "LastFailoverTime" => {
+                    builder = builder.set_last_failover_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "SignInConfig" => {
                     builder = builder.set_sign_in_config(crate::protocol_serde::shape_sign_in_config::de_sign_in_config(tokens, _value, depth + 1)?);
                 }

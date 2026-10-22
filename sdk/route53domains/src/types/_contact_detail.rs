@@ -133,6 +133,385 @@ impl ::std::fmt::Debug for ContactDetail {
         formatter.finish()
     }
 }
+static CONTACTDETAIL_MEMBER_FIRST_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$FirstName",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirstName",
+    0,
+);
+static CONTACTDETAIL_MEMBER_LAST_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$LastName",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastName",
+    1,
+);
+static CONTACTDETAIL_MEMBER_CONTACT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$ContactType",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContactType",
+    2,
+);
+static CONTACTDETAIL_MEMBER_ORGANIZATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$OrganizationName",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OrganizationName",
+    3,
+);
+static CONTACTDETAIL_MEMBER_ADDRESS_LINE1: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$AddressLine1",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AddressLine1",
+    4,
+);
+static CONTACTDETAIL_MEMBER_ADDRESS_LINE2: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$AddressLine2",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AddressLine2",
+    5,
+);
+static CONTACTDETAIL_MEMBER_CITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$City",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "City",
+    6,
+);
+static CONTACTDETAIL_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$State",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    7,
+);
+static CONTACTDETAIL_MEMBER_COUNTRY_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$CountryCode",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CountryCode",
+    8,
+);
+static CONTACTDETAIL_MEMBER_ZIP_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$ZipCode",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ZipCode",
+    9,
+);
+static CONTACTDETAIL_MEMBER_PHONE_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$PhoneNumber",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PhoneNumber",
+    10,
+);
+static CONTACTDETAIL_MEMBER_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$Email",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Email",
+    11,
+);
+static CONTACTDETAIL_MEMBER_FAX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$Fax",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Fax",
+    12,
+);
+static CONTACTDETAIL_MEMBER_EXTRA_PARAMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ExtraParamList$member",
+        "com.amazonaws.route53domains",
+        "ExtraParamList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTACTDETAIL_MEMBER_EXTRA_PARAMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail$ExtraParams",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExtraParams",
+    13,
+)
+.with_list_member(&CONTACTDETAIL_MEMBER_EXTRA_PARAMS_MEMBER);
+static CONTACTDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#ContactDetail",
+        "com.amazonaws.route53domains",
+        "ContactDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTACTDETAIL_MEMBER_FIRST_NAME,
+        &CONTACTDETAIL_MEMBER_LAST_NAME,
+        &CONTACTDETAIL_MEMBER_CONTACT_TYPE,
+        &CONTACTDETAIL_MEMBER_ORGANIZATION_NAME,
+        &CONTACTDETAIL_MEMBER_ADDRESS_LINE1,
+        &CONTACTDETAIL_MEMBER_ADDRESS_LINE2,
+        &CONTACTDETAIL_MEMBER_CITY,
+        &CONTACTDETAIL_MEMBER_STATE,
+        &CONTACTDETAIL_MEMBER_COUNTRY_CODE,
+        &CONTACTDETAIL_MEMBER_ZIP_CODE,
+        &CONTACTDETAIL_MEMBER_PHONE_NUMBER,
+        &CONTACTDETAIL_MEMBER_EMAIL,
+        &CONTACTDETAIL_MEMBER_FAX,
+        &CONTACTDETAIL_MEMBER_EXTRA_PARAMS,
+    ],
+)
+.with_sensitive();
+impl ContactDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTACTDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContactDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.first_name {
+            ser.write_string(&CONTACTDETAIL_MEMBER_FIRST_NAME, val)?;
+        }
+        if let Some(ref val) = self.last_name {
+            ser.write_string(&CONTACTDETAIL_MEMBER_LAST_NAME, val)?;
+        }
+        if let Some(ref val) = self.contact_type {
+            ser.write_string(&CONTACTDETAIL_MEMBER_CONTACT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.organization_name {
+            ser.write_string(&CONTACTDETAIL_MEMBER_ORGANIZATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.address_line1 {
+            ser.write_string(&CONTACTDETAIL_MEMBER_ADDRESS_LINE1, val)?;
+        }
+        if let Some(ref val) = self.address_line2 {
+            ser.write_string(&CONTACTDETAIL_MEMBER_ADDRESS_LINE2, val)?;
+        }
+        if let Some(ref val) = self.city {
+            ser.write_string(&CONTACTDETAIL_MEMBER_CITY, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&CONTACTDETAIL_MEMBER_STATE, val)?;
+        }
+        if let Some(ref val) = self.country_code {
+            ser.write_string(&CONTACTDETAIL_MEMBER_COUNTRY_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.zip_code {
+            ser.write_string(&CONTACTDETAIL_MEMBER_ZIP_CODE, val)?;
+        }
+        if let Some(ref val) = self.phone_number {
+            ser.write_string(&CONTACTDETAIL_MEMBER_PHONE_NUMBER, val)?;
+        }
+        if let Some(ref val) = self.email {
+            ser.write_string(&CONTACTDETAIL_MEMBER_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.fax {
+            ser.write_string(&CONTACTDETAIL_MEMBER_FAX, val)?;
+        }
+        if let Some(ref val) = self.extra_params {
+            ser.write_list(
+                &CONTACTDETAIL_MEMBER_EXTRA_PARAMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ExtraParam::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContactDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTACTDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.first_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact_type = Some(crate::types::ContactType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.address_line1 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.address_line2 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.city = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.country_code = Some(crate::types::CountryCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.zip_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.phone_number = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fax = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.extra_params = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ExtraParam::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContactDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContactDetail {
     /// Creates a new builder-style object to manufacture [`ContactDetail`](crate::types::ContactDetail).
     pub fn builder() -> crate::types::builders::ContactDetailBuilder {

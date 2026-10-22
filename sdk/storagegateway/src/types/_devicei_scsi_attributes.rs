@@ -31,6 +31,142 @@ impl DeviceiScsiAttributes {
         self.chap_enabled
     }
 }
+static DEVICEISCSIATTRIBUTES_MEMBER_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#DeviceiSCSIAttributes$TargetARN",
+        "com.amazonaws.storagegateway",
+        "DeviceiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetARN",
+    0,
+);
+static DEVICEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#DeviceiSCSIAttributes$NetworkInterfaceId",
+        "com.amazonaws.storagegateway",
+        "DeviceiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NetworkInterfaceId",
+    1,
+);
+static DEVICEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#DeviceiSCSIAttributes$NetworkInterfacePort",
+        "com.amazonaws.storagegateway",
+        "DeviceiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "NetworkInterfacePort",
+    2,
+);
+static DEVICEISCSIATTRIBUTES_MEMBER_CHAP_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#DeviceiSCSIAttributes$ChapEnabled",
+        "com.amazonaws.storagegateway",
+        "DeviceiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ChapEnabled",
+    3,
+);
+static DEVICEISCSIATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#DeviceiSCSIAttributes",
+        "com.amazonaws.storagegateway",
+        "DeviceiSCSIAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEVICEISCSIATTRIBUTES_MEMBER_TARGET_ARN,
+        &DEVICEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_ID,
+        &DEVICEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_PORT,
+        &DEVICEISCSIATTRIBUTES_MEMBER_CHAP_ENABLED,
+    ],
+);
+impl DeviceiScsiAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEVICEISCSIATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeviceiScsiAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target_arn {
+            ser.write_string(&DEVICEISCSIATTRIBUTES_MEMBER_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.network_interface_id {
+            ser.write_string(&DEVICEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_ID, val)?;
+        }
+        {
+            let val = &self.network_interface_port;
+            ser.write_integer(&DEVICEISCSIATTRIBUTES_MEMBER_NETWORK_INTERFACE_PORT, *val)?;
+        }
+        {
+            let val = &self.chap_enabled;
+            ser.write_boolean(&DEVICEISCSIATTRIBUTES_MEMBER_CHAP_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeviceiScsiAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEVICEISCSIATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.network_interface_port = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.chap_enabled = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeviceiScsiAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeviceiScsiAttributes {
     /// Creates a new builder-style object to manufacture [`DeviceiScsiAttributes`](crate::types::DeviceiScsiAttributes).
     pub fn builder() -> crate::types::builders::DeviceiScsiAttributesBuilder {

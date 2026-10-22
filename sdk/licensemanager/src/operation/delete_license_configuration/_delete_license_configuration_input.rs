@@ -12,6 +12,87 @@ impl DeleteLicenseConfigurationInput {
         self.license_configuration_arn.as_deref()
     }
 }
+static DELETELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_CONFIGURATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#DeleteLicenseConfigurationInput$LicenseConfigurationArn",
+            "com.amazonaws.licensemanager.synthetic",
+            "DeleteLicenseConfigurationInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "LicenseConfigurationArn",
+        0,
+    );
+static DELETELICENSECONFIGURATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteLicenseConfigurationInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteLicenseConfigurationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_CONFIGURATION_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteLicenseConfigurationRequest");
+impl DeleteLicenseConfigurationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETELICENSECONFIGURATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteLicenseConfigurationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_configuration_arn {
+            ser.write_string(&DELETELICENSECONFIGURATIONINPUT_MEMBER_LICENSE_CONFIGURATION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETELICENSECONFIGURATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_configuration_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteLicenseConfigurationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.license_configuration_arn = builder.license_configuration_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteLicenseConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseConfigurationInput`](crate::operation::delete_license_configuration::DeleteLicenseConfigurationInput).
     pub fn builder() -> crate::operation::delete_license_configuration::builders::DeleteLicenseConfigurationInputBuilder {

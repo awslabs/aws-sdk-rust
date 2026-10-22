@@ -21,6 +21,138 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
         self.errors.deref()
     }
 }
+static BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ASSOCIATED_REPOSITORY_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#RepositoryNameList$member",
+            "com.amazonaws.codecommit",
+            "RepositoryNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ASSOCIATED_REPOSITORY_NAMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchAssociateApprovalRuleTemplateWithRepositoriesOutput$associatedRepositoryNames",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchAssociateApprovalRuleTemplateWithRepositoriesOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "associatedRepositoryNames",
+        0,
+    )
+    .with_list_member(&BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ASSOCIATED_REPOSITORY_NAMES_MEMBER);
+static BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList$member",
+            "com.amazonaws.codecommit",
+            "BatchAssociateApprovalRuleTemplateWithRepositoriesErrorsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ERRORS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchAssociateApprovalRuleTemplateWithRepositoriesOutput$errors",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchAssociateApprovalRuleTemplateWithRepositoriesOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "errors",
+        1,
+    )
+    .with_list_member(&BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ERRORS_MEMBER);
+static BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_struct(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#BatchAssociateApprovalRuleTemplateWithRepositoriesOutput",
+            "com.amazonaws.codecommit.synthetic",
+            "BatchAssociateApprovalRuleTemplateWithRepositoriesOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        &[
+            &BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ASSOCIATED_REPOSITORY_NAMES,
+            &BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ERRORS,
+        ],
+    )
+    .with_original_name("BatchAssociateApprovalRuleTemplateWithRepositoriesOutput");
+impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.associated_repository_names;
+
+            ser.write_list(
+                &BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ASSOCIATED_REPOSITORY_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.errors;
+
+            ser.write_list(
+                &BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_MEMBER_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_associate_approval_rule_template_with_repositories::builders::BatchAssociateApprovalRuleTemplateWithRepositoriesOutputBuilder {
+                #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding, clippy::diverging_sub_expression)]
+                pub(crate) fn deserialize_members(
+                    &mut self,
+                    deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+                ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+                    deserializer.read_struct(&BATCHASSOCIATEAPPROVALRULETEMPLATEWITHREPOSITORIESOUTPUT_SCHEMA, &mut |member, deser| {
+                        match member.member_index() {
+                            Some(0) => { self.associated_repository_names = Some(deser.read_string_list(member)?); }
+Some(1) => { self.errors = Some({ let mut container = Vec::new(); deser.read_list(member, &mut |deser| { container.push(crate::types::BatchAssociateApprovalRuleTemplateWithRepositoriesError::deserialize(deser)?); Ok(()) })?; container }); }
+                            _ => {}
+                        }
+                        Ok(())
+                    })
+                }
+            }
+
+impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.associated_repository_names = builder.associated_repository_names.or(Some(Vec::new()));
+        builder.errors = builder.errors.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

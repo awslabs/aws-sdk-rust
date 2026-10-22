@@ -39,6 +39,191 @@ impl CertificateSummary {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CERTIFICATESUMMARY_MEMBER_CERTIFICATE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CertificateSummary$certificateArn",
+        "com.amazonaws.lightsail",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateArn",
+    0,
+);
+static CERTIFICATESUMMARY_MEMBER_CERTIFICATE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CertificateSummary$certificateName",
+        "com.amazonaws.lightsail",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "certificateName",
+    1,
+);
+static CERTIFICATESUMMARY_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CertificateSummary$domainName",
+        "com.amazonaws.lightsail",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "domainName",
+    2,
+);
+static CERTIFICATESUMMARY_MEMBER_CERTIFICATE_DETAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CertificateSummary$certificateDetail",
+        "com.amazonaws.lightsail",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "certificateDetail",
+    3,
+);
+static CERTIFICATESUMMARY_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CERTIFICATESUMMARY_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CertificateSummary$tags",
+        "com.amazonaws.lightsail",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    4,
+)
+.with_list_member(&CERTIFICATESUMMARY_MEMBER_TAGS_MEMBER);
+static CERTIFICATESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#CertificateSummary",
+        "com.amazonaws.lightsail",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CERTIFICATESUMMARY_MEMBER_CERTIFICATE_ARN,
+        &CERTIFICATESUMMARY_MEMBER_CERTIFICATE_NAME,
+        &CERTIFICATESUMMARY_MEMBER_DOMAIN_NAME,
+        &CERTIFICATESUMMARY_MEMBER_CERTIFICATE_DETAIL,
+        &CERTIFICATESUMMARY_MEMBER_TAGS,
+    ],
+);
+impl CertificateSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CERTIFICATESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CertificateSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.certificate_arn {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_CERTIFICATE_ARN, val)?;
+        }
+        if let Some(ref val) = self.certificate_name {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_CERTIFICATE_NAME, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.certificate_detail {
+            ser.write_struct(&CERTIFICATESUMMARY_MEMBER_CERTIFICATE_DETAIL, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CERTIFICATESUMMARY_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CertificateSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CERTIFICATESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_detail = Some(crate::types::Certificate::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CertificateSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CertificateSummary {
     /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn builder() -> crate::types::builders::CertificateSummaryBuilder {

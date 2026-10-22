@@ -171,6 +171,8 @@ mod create_dictionary;
 
 mod create_feed;
 
+mod create_schedule_action;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -204,6 +206,8 @@ mod delete_feed;
 
 mod delete_feed_policy;
 
+mod delete_schedule_action;
+
 mod disassociate_feed;
 
 mod export_dictionary_entries;
@@ -219,6 +223,8 @@ mod get_fixture;
 mod list_dictionaries;
 
 mod list_feeds;
+
+mod list_schedule_actions;
 
 mod list_tags_for_resource;
 

@@ -49,6 +49,211 @@ impl MonitoringAlertSummary {
         self.actions.as_ref()
     }
 }
+static MONITORINGALERTSUMMARY_MEMBER_MONITORING_ALERT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary$MonitoringAlertName",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringAlertName",
+    0,
+);
+static MONITORINGALERTSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    1,
+);
+static MONITORINGALERTSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    2,
+);
+static MONITORINGALERTSUMMARY_MEMBER_ALERT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary$AlertStatus",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AlertStatus",
+    3,
+);
+static MONITORINGALERTSUMMARY_MEMBER_DATAPOINTS_TO_ALERT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary$DatapointsToAlert",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DatapointsToAlert",
+    4,
+);
+static MONITORINGALERTSUMMARY_MEMBER_EVALUATION_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary$EvaluationPeriod",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EvaluationPeriod",
+    5,
+);
+static MONITORINGALERTSUMMARY_MEMBER_ACTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary$Actions",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Actions",
+    6,
+);
+static MONITORINGALERTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringAlertSummary",
+        "com.amazonaws.sagemaker",
+        "MonitoringAlertSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGALERTSUMMARY_MEMBER_MONITORING_ALERT_NAME,
+        &MONITORINGALERTSUMMARY_MEMBER_CREATION_TIME,
+        &MONITORINGALERTSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+        &MONITORINGALERTSUMMARY_MEMBER_ALERT_STATUS,
+        &MONITORINGALERTSUMMARY_MEMBER_DATAPOINTS_TO_ALERT,
+        &MONITORINGALERTSUMMARY_MEMBER_EVALUATION_PERIOD,
+        &MONITORINGALERTSUMMARY_MEMBER_ACTIONS,
+    ],
+);
+impl MonitoringAlertSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGALERTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringAlertSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.monitoring_alert_name {
+            ser.write_string(&MONITORINGALERTSUMMARY_MEMBER_MONITORING_ALERT_NAME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MONITORINGALERTSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&MONITORINGALERTSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.alert_status {
+            ser.write_string(&MONITORINGALERTSUMMARY_MEMBER_ALERT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.datapoints_to_alert {
+            ser.write_integer(&MONITORINGALERTSUMMARY_MEMBER_DATAPOINTS_TO_ALERT, *val)?;
+        }
+        if let Some(ref val) = self.evaluation_period {
+            ser.write_integer(&MONITORINGALERTSUMMARY_MEMBER_EVALUATION_PERIOD, *val)?;
+        }
+        if let Some(ref val) = self.actions {
+            ser.write_struct(&MONITORINGALERTSUMMARY_MEMBER_ACTIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringAlertSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGALERTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_alert_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alert_status = Some(crate::types::MonitoringAlertStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.datapoints_to_alert = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_period = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.actions = Some(crate::types::MonitoringAlertActions::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringAlertSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringAlertSummary {
     /// Creates a new builder-style object to manufacture [`MonitoringAlertSummary`](crate::types::MonitoringAlertSummary).
     pub fn builder() -> crate::types::builders::MonitoringAlertSummaryBuilder {

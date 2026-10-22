@@ -87,6 +87,211 @@ impl HostKeyAttributes {
         self.not_valid_after.as_ref()
     }
 }
+static HOSTKEYATTRIBUTES_MEMBER_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes$algorithm",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "algorithm",
+    0,
+);
+static HOSTKEYATTRIBUTES_MEMBER_PUBLIC_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes$publicKey",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "publicKey",
+    1,
+);
+static HOSTKEYATTRIBUTES_MEMBER_WITNESSED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes$witnessedAt",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "witnessedAt",
+    2,
+);
+static HOSTKEYATTRIBUTES_MEMBER_FINGERPRINT_SHA1: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes$fingerprintSHA1",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fingerprintSHA1",
+    3,
+);
+static HOSTKEYATTRIBUTES_MEMBER_FINGERPRINT_SHA256: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes$fingerprintSHA256",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fingerprintSHA256",
+    4,
+);
+static HOSTKEYATTRIBUTES_MEMBER_NOT_VALID_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes$notValidBefore",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "notValidBefore",
+    5,
+);
+static HOSTKEYATTRIBUTES_MEMBER_NOT_VALID_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes$notValidAfter",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "notValidAfter",
+    6,
+);
+static HOSTKEYATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#HostKeyAttributes",
+        "com.amazonaws.lightsail",
+        "HostKeyAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HOSTKEYATTRIBUTES_MEMBER_ALGORITHM,
+        &HOSTKEYATTRIBUTES_MEMBER_PUBLIC_KEY,
+        &HOSTKEYATTRIBUTES_MEMBER_WITNESSED_AT,
+        &HOSTKEYATTRIBUTES_MEMBER_FINGERPRINT_SHA1,
+        &HOSTKEYATTRIBUTES_MEMBER_FINGERPRINT_SHA256,
+        &HOSTKEYATTRIBUTES_MEMBER_NOT_VALID_BEFORE,
+        &HOSTKEYATTRIBUTES_MEMBER_NOT_VALID_AFTER,
+    ],
+);
+impl HostKeyAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HOSTKEYATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HostKeyAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.algorithm {
+            ser.write_string(&HOSTKEYATTRIBUTES_MEMBER_ALGORITHM, val)?;
+        }
+        if let Some(ref val) = self.public_key {
+            ser.write_string(&HOSTKEYATTRIBUTES_MEMBER_PUBLIC_KEY, val)?;
+        }
+        if let Some(ref val) = self.witnessed_at {
+            ser.write_timestamp(&HOSTKEYATTRIBUTES_MEMBER_WITNESSED_AT, val)?;
+        }
+        if let Some(ref val) = self.fingerprint_sha1 {
+            ser.write_string(&HOSTKEYATTRIBUTES_MEMBER_FINGERPRINT_SHA1, val)?;
+        }
+        if let Some(ref val) = self.fingerprint_sha256 {
+            ser.write_string(&HOSTKEYATTRIBUTES_MEMBER_FINGERPRINT_SHA256, val)?;
+        }
+        if let Some(ref val) = self.not_valid_before {
+            ser.write_timestamp(&HOSTKEYATTRIBUTES_MEMBER_NOT_VALID_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.not_valid_after {
+            ser.write_timestamp(&HOSTKEYATTRIBUTES_MEMBER_NOT_VALID_AFTER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HostKeyAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HOSTKEYATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.algorithm = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.witnessed_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fingerprint_sha1 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fingerprint_sha256 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_valid_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.not_valid_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HostKeyAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HostKeyAttributes {
     /// Creates a new builder-style object to manufacture [`HostKeyAttributes`](crate::types::HostKeyAttributes).
     pub fn builder() -> crate::types::builders::HostKeyAttributesBuilder {

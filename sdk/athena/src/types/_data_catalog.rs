@@ -176,6 +176,196 @@ impl DataCatalog {
         self.error.as_deref()
     }
 }
+static DATACATALOG_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog$Name", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static DATACATALOG_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog$Description", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static DATACATALOG_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog$Type", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static DATACATALOG_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$key", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static DATACATALOG_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ParametersMap$value", "com.amazonaws.athena", "ParametersMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static DATACATALOG_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog$Parameters", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    3,
+)
+.with_map_members(&DATACATALOG_MEMBER_PARAMETERS_KEY, &DATACATALOG_MEMBER_PARAMETERS_VALUE);
+static DATACATALOG_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog$Status", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static DATACATALOG_MEMBER_CONNECTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog$ConnectionType", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConnectionType",
+    5,
+);
+static DATACATALOG_MEMBER_ERROR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog$Error", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Error",
+    6,
+);
+static DATACATALOG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#DataCatalog", "com.amazonaws.athena", "DataCatalog"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DATACATALOG_MEMBER_NAME,
+        &DATACATALOG_MEMBER_DESCRIPTION,
+        &DATACATALOG_MEMBER_TYPE,
+        &DATACATALOG_MEMBER_PARAMETERS,
+        &DATACATALOG_MEMBER_STATUS,
+        &DATACATALOG_MEMBER_CONNECTION_TYPE,
+        &DATACATALOG_MEMBER_ERROR,
+    ],
+);
+impl DataCatalog {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATACATALOG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DataCatalog {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&DATACATALOG_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DATACATALOG_MEMBER_DESCRIPTION, val)?;
+        }
+        {
+            let val = &self.r#type;
+            ser.write_string(&DATACATALOG_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &DATACATALOG_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DATACATALOG_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.connection_type {
+            ser.write_string(&DATACATALOG_MEMBER_CONNECTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.error {
+            ser.write_string(&DATACATALOG_MEMBER_ERROR, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DataCatalogBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATACATALOG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.r#type = Some(crate::types::DataCatalogType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::DataCatalogStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connection_type = Some(crate::types::ConnectionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DataCatalog {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DataCatalog {
     /// Creates a new builder-style object to manufacture [`DataCatalog`](crate::types::DataCatalog).
     pub fn builder() -> crate::types::builders::DataCatalogBuilder {

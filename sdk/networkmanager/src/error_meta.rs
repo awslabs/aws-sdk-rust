@@ -2341,6 +2341,53 @@ impl From<crate::operation::get_vpc_attachment::GetVpcAttachmentError> for Error
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError> for Error {
+    fn from(err: crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_attachment_nat_configurations::ListAttachmentNatConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_attachment_routing_policy_associations::ListAttachmentRoutingPolicyAssociationsError,
             R,
         >,
@@ -3102,6 +3149,59 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError> for Error {
+    fn from(err: crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError) -> Self {
+        match err {
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_attachment_nat_configuration::UpdateAttachmentNatConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

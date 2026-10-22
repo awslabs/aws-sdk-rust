@@ -13,6 +13,84 @@ impl DiscoverInstancesRevisionOutput {
         self.instances_revision
     }
 }
+static DISCOVERINSTANCESREVISIONOUTPUT_MEMBER_INSTANCES_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesRevisionOutput$InstancesRevision",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesRevisionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "InstancesRevision",
+    0,
+);
+static DISCOVERINSTANCESREVISIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#DiscoverInstancesRevisionOutput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "DiscoverInstancesRevisionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DISCOVERINSTANCESREVISIONOUTPUT_MEMBER_INSTANCES_REVISION],
+)
+.with_original_name("DiscoverInstancesRevisionResponse");
+impl DiscoverInstancesRevisionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISCOVERINSTANCESREVISIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DiscoverInstancesRevisionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instances_revision {
+            ser.write_long(&DISCOVERINSTANCESREVISIONOUTPUT_MEMBER_INSTANCES_REVISION, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::discover_instances_revision::builders::DiscoverInstancesRevisionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISCOVERINSTANCESREVISIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instances_revision = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DiscoverInstancesRevisionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DiscoverInstancesRevisionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -83,6 +83,91 @@ impl UiConfig {
         self.human_task_ui_arn.as_deref()
     }
 }
+static UICONFIG_MEMBER_UI_TEMPLATE_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#UiConfig$UiTemplateS3Uri", "com.amazonaws.sagemaker", "UiConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "UiTemplateS3Uri",
+    0,
+);
+static UICONFIG_MEMBER_HUMAN_TASK_UI_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#UiConfig$HumanTaskUiArn", "com.amazonaws.sagemaker", "UiConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "HumanTaskUiArn",
+    1,
+);
+static UICONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#UiConfig", "com.amazonaws.sagemaker", "UiConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UICONFIG_MEMBER_UI_TEMPLATE_S3_URI, &UICONFIG_MEMBER_HUMAN_TASK_UI_ARN],
+);
+impl UiConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UICONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UiConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ui_template_s3_uri {
+            ser.write_string(&UICONFIG_MEMBER_UI_TEMPLATE_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.human_task_ui_arn {
+            ser.write_string(&UICONFIG_MEMBER_HUMAN_TASK_UI_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UiConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UICONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ui_template_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_task_ui_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UiConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UiConfig {
     /// Creates a new builder-style object to manufacture [`UiConfig`](crate::types::UiConfig).
     pub fn builder() -> crate::types::builders::UiConfigBuilder {

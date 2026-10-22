@@ -33,6 +33,152 @@ impl RenewDomainInput {
         self.consent.as_ref()
     }
 }
+static RENEWDOMAININPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RenewDomainInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "RenewDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static RENEWDOMAININPUT_MEMBER_DURATION_IN_YEARS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RenewDomainInput$DurationInYears",
+        "com.amazonaws.route53domains.synthetic",
+        "RenewDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DurationInYears",
+    1,
+);
+static RENEWDOMAININPUT_MEMBER_CURRENT_EXPIRY_YEAR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RenewDomainInput$CurrentExpiryYear",
+        "com.amazonaws.route53domains.synthetic",
+        "RenewDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CurrentExpiryYear",
+    2,
+);
+static RENEWDOMAININPUT_MEMBER_CONSENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RenewDomainInput$Consent",
+        "com.amazonaws.route53domains.synthetic",
+        "RenewDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Consent",
+    3,
+);
+static RENEWDOMAININPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#RenewDomainInput",
+        "com.amazonaws.route53domains.synthetic",
+        "RenewDomainInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RENEWDOMAININPUT_MEMBER_DOMAIN_NAME,
+        &RENEWDOMAININPUT_MEMBER_DURATION_IN_YEARS,
+        &RENEWDOMAININPUT_MEMBER_CURRENT_EXPIRY_YEAR,
+        &RENEWDOMAININPUT_MEMBER_CONSENT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RenewDomainRequest");
+impl RenewDomainInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RENEWDOMAININPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RenewDomainInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&RENEWDOMAININPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.duration_in_years {
+            ser.write_integer(&RENEWDOMAININPUT_MEMBER_DURATION_IN_YEARS, *val)?;
+        }
+        if let Some(ref val) = self.current_expiry_year {
+            ser.write_integer(&RENEWDOMAININPUT_MEMBER_CURRENT_EXPIRY_YEAR, *val)?;
+        }
+        if let Some(ref val) = self.consent {
+            ser.write_struct(&RENEWDOMAININPUT_MEMBER_CONSENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::renew_domain::builders::RenewDomainInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RENEWDOMAININPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_in_years = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_expiry_year = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.consent = Some(crate::types::Consent::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RenewDomainInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.current_expiry_year = builder.current_expiry_year.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RenewDomainInput {
     /// Creates a new builder-style object to manufacture [`RenewDomainInput`](crate::operation::renew_domain::RenewDomainInput).
     pub fn builder() -> crate::operation::renew_domain::builders::RenewDomainInputBuilder {

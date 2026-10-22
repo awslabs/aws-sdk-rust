@@ -31,6 +31,148 @@ impl DriftCheckBaselines {
         self.model_data_quality.as_ref()
     }
 }
+static DRIFTCHECKBASELINES_MEMBER_BIAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DriftCheckBaselines$Bias",
+        "com.amazonaws.sagemaker",
+        "DriftCheckBaselines",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Bias",
+    0,
+);
+static DRIFTCHECKBASELINES_MEMBER_EXPLAINABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DriftCheckBaselines$Explainability",
+        "com.amazonaws.sagemaker",
+        "DriftCheckBaselines",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Explainability",
+    1,
+);
+static DRIFTCHECKBASELINES_MEMBER_MODEL_QUALITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DriftCheckBaselines$ModelQuality",
+        "com.amazonaws.sagemaker",
+        "DriftCheckBaselines",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelQuality",
+    2,
+);
+static DRIFTCHECKBASELINES_MEMBER_MODEL_DATA_QUALITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DriftCheckBaselines$ModelDataQuality",
+        "com.amazonaws.sagemaker",
+        "DriftCheckBaselines",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelDataQuality",
+    3,
+);
+static DRIFTCHECKBASELINES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DriftCheckBaselines",
+        "com.amazonaws.sagemaker",
+        "DriftCheckBaselines",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DRIFTCHECKBASELINES_MEMBER_BIAS,
+        &DRIFTCHECKBASELINES_MEMBER_EXPLAINABILITY,
+        &DRIFTCHECKBASELINES_MEMBER_MODEL_QUALITY,
+        &DRIFTCHECKBASELINES_MEMBER_MODEL_DATA_QUALITY,
+    ],
+);
+impl DriftCheckBaselines {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DRIFTCHECKBASELINES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DriftCheckBaselines {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bias {
+            ser.write_struct(&DRIFTCHECKBASELINES_MEMBER_BIAS, val)?;
+        }
+        if let Some(ref val) = self.explainability {
+            ser.write_struct(&DRIFTCHECKBASELINES_MEMBER_EXPLAINABILITY, val)?;
+        }
+        if let Some(ref val) = self.model_quality {
+            ser.write_struct(&DRIFTCHECKBASELINES_MEMBER_MODEL_QUALITY, val)?;
+        }
+        if let Some(ref val) = self.model_data_quality {
+            ser.write_struct(&DRIFTCHECKBASELINES_MEMBER_MODEL_DATA_QUALITY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DriftCheckBaselinesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DRIFTCHECKBASELINES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bias = Some(crate::types::DriftCheckBias::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.explainability = Some(crate::types::DriftCheckExplainability::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_quality = Some(crate::types::DriftCheckModelQuality::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_data_quality = Some(crate::types::DriftCheckModelDataQuality::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DriftCheckBaselines {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DriftCheckBaselines {
     /// Creates a new builder-style object to manufacture [`DriftCheckBaselines`](crate::types::DriftCheckBaselines).
     pub fn builder() -> crate::types::builders::DriftCheckBaselinesBuilder {

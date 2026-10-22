@@ -30,6 +30,153 @@ impl UpdatePipelineExecutionInput {
         self.parallelism_configuration.as_ref()
     }
 }
+static UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdatePipelineExecutionInput$PipelineExecutionArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdatePipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineExecutionArn",
+    0,
+);
+static UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdatePipelineExecutionInput$PipelineExecutionDescription",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdatePipelineExecutionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionDescription",
+        1,
+    );
+static UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdatePipelineExecutionInput$PipelineExecutionDisplayName",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdatePipelineExecutionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionDisplayName",
+        2,
+    );
+static UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PARALLELISM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdatePipelineExecutionInput$ParallelismConfiguration",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdatePipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParallelismConfiguration",
+    3,
+);
+static UPDATEPIPELINEEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdatePipelineExecutionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdatePipelineExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_ARN,
+        &UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION,
+        &UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME,
+        &UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PARALLELISM_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdatePipelineExecutionRequest");
+impl UpdatePipelineExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPIPELINEEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePipelineExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_execution_arn {
+            ser.write_string(&UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_ARN, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_description {
+            ser.write_string(&UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_display_name {
+            ser.write_string(&UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.parallelism_configuration {
+            ser.write_struct(&UPDATEPIPELINEEXECUTIONINPUT_MEMBER_PARALLELISM_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPIPELINEEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallelism_configuration = Some(crate::types::ParallelismConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdatePipelineExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_execution_arn = builder.pipeline_execution_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdatePipelineExecutionInput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineExecutionInput`](crate::operation::update_pipeline_execution::UpdatePipelineExecutionInput).
     pub fn builder() -> crate::operation::update_pipeline_execution::builders::UpdatePipelineExecutionInputBuilder {

@@ -83,6 +83,313 @@ impl Trial {
         self.trial_component_summaries.as_deref().unwrap_or_default()
     }
 }
+static TRIAL_MEMBER_TRIAL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$TrialName", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrialName",
+    0,
+);
+static TRIAL_MEMBER_TRIAL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$TrialArn", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrialArn",
+    1,
+);
+static TRIAL_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$DisplayName", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static TRIAL_MEMBER_EXPERIMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$ExperimentName", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExperimentName",
+    3,
+);
+static TRIAL_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$Source", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    4,
+);
+static TRIAL_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$CreationTime", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static TRIAL_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$CreatedBy", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    6,
+);
+static TRIAL_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$LastModifiedTime", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static TRIAL_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$LastModifiedBy", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    8,
+);
+static TRIAL_MEMBER_METADATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$MetadataProperties", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MetadataProperties",
+    9,
+);
+static TRIAL_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRIAL_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial$Tags", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    10,
+)
+.with_list_member(&TRIAL_MEMBER_TAGS_MEMBER);
+static TRIAL_MEMBER_TRIAL_COMPONENT_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrialComponentSimpleSummaries$member",
+        "com.amazonaws.sagemaker",
+        "TrialComponentSimpleSummaries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRIAL_MEMBER_TRIAL_COMPONENT_SUMMARIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#Trial$TrialComponentSummaries",
+        "com.amazonaws.sagemaker",
+        "Trial",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TrialComponentSummaries",
+    11,
+)
+.with_list_member(&TRIAL_MEMBER_TRIAL_COMPONENT_SUMMARIES_MEMBER);
+static TRIAL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Trial", "com.amazonaws.sagemaker", "Trial"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRIAL_MEMBER_TRIAL_NAME,
+        &TRIAL_MEMBER_TRIAL_ARN,
+        &TRIAL_MEMBER_DISPLAY_NAME,
+        &TRIAL_MEMBER_EXPERIMENT_NAME,
+        &TRIAL_MEMBER_SOURCE,
+        &TRIAL_MEMBER_CREATION_TIME,
+        &TRIAL_MEMBER_CREATED_BY,
+        &TRIAL_MEMBER_LAST_MODIFIED_TIME,
+        &TRIAL_MEMBER_LAST_MODIFIED_BY,
+        &TRIAL_MEMBER_METADATA_PROPERTIES,
+        &TRIAL_MEMBER_TAGS,
+        &TRIAL_MEMBER_TRIAL_COMPONENT_SUMMARIES,
+    ],
+);
+impl Trial {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRIAL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Trial {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.trial_name {
+            ser.write_string(&TRIAL_MEMBER_TRIAL_NAME, val)?;
+        }
+        if let Some(ref val) = self.trial_arn {
+            ser.write_string(&TRIAL_MEMBER_TRIAL_ARN, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&TRIAL_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.experiment_name {
+            ser.write_string(&TRIAL_MEMBER_EXPERIMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&TRIAL_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&TRIAL_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&TRIAL_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&TRIAL_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&TRIAL_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        if let Some(ref val) = self.metadata_properties {
+            ser.write_struct(&TRIAL_MEMBER_METADATA_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&TRIAL_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.trial_component_summaries {
+            ser.write_list(
+                &TRIAL_MEMBER_TRIAL_COMPONENT_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TrialComponentSimpleSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrialBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRIAL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trial_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trial_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::TrialSource::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata_properties = Some(crate::types::MetadataProperties::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trial_component_summaries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TrialComponentSimpleSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Trial {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Trial {
     /// Creates a new builder-style object to manufacture [`Trial`](crate::types::Trial).
     pub fn builder() -> crate::types::builders::TrialBuilder {

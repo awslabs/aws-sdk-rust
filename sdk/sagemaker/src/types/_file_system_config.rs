@@ -25,6 +25,123 @@ impl FileSystemConfig {
         self.default_gid
     }
 }
+static FILESYSTEMCONFIG_MEMBER_MOUNT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemConfig$MountPath",
+        "com.amazonaws.sagemaker",
+        "FileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MountPath",
+    0,
+);
+static FILESYSTEMCONFIG_MEMBER_DEFAULT_UID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemConfig$DefaultUid",
+        "com.amazonaws.sagemaker",
+        "FileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DefaultUid",
+    1,
+);
+static FILESYSTEMCONFIG_MEMBER_DEFAULT_GID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FileSystemConfig$DefaultGid",
+        "com.amazonaws.sagemaker",
+        "FileSystemConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DefaultGid",
+    2,
+);
+static FILESYSTEMCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#FileSystemConfig", "com.amazonaws.sagemaker", "FileSystemConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILESYSTEMCONFIG_MEMBER_MOUNT_PATH,
+        &FILESYSTEMCONFIG_MEMBER_DEFAULT_UID,
+        &FILESYSTEMCONFIG_MEMBER_DEFAULT_GID,
+    ],
+);
+impl FileSystemConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILESYSTEMCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileSystemConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.mount_path {
+            ser.write_string(&FILESYSTEMCONFIG_MEMBER_MOUNT_PATH, val)?;
+        }
+        if let Some(ref val) = self.default_uid {
+            ser.write_integer(&FILESYSTEMCONFIG_MEMBER_DEFAULT_UID, *val)?;
+        }
+        if let Some(ref val) = self.default_gid {
+            ser.write_integer(&FILESYSTEMCONFIG_MEMBER_DEFAULT_GID, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileSystemConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILESYSTEMCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_uid = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_gid = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileSystemConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileSystemConfig {
     /// Creates a new builder-style object to manufacture [`FileSystemConfig`](crate::types::FileSystemConfig).
     pub fn builder() -> crate::types::builders::FileSystemConfigBuilder {

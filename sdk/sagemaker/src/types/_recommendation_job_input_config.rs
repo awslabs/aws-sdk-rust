@@ -105,6 +105,323 @@ impl RecommendationJobInputConfig {
         self.vpc_config.as_ref()
     }
 }
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_MODEL_PACKAGE_VERSION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$ModelPackageVersionArn",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageVersionArn",
+    0,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$ModelName",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    1,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_JOB_DURATION_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$JobDurationInSeconds",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "JobDurationInSeconds",
+    2,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_TRAFFIC_PATTERN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$TrafficPattern",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrafficPattern",
+    3,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_RESOURCE_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$ResourceLimit",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceLimit",
+    4,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#EndpointInputConfigurations$member",
+            "com.amazonaws.sagemaker",
+            "EndpointInputConfigurations",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINT_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$EndpointConfigurations",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EndpointConfigurations",
+    5,
+)
+.with_list_member(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINT_CONFIGURATIONS_MEMBER);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$VolumeKmsKeyId",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    6,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_CONTAINER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$ContainerConfig",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContainerConfig",
+    7,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Endpoints$member", "com.amazonaws.sagemaker", "Endpoints"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$Endpoints",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Endpoints",
+    8,
+)
+.with_list_member(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINTS_MEMBER);
+static RECOMMENDATIONJOBINPUTCONFIG_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig$VpcConfig",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    9,
+);
+static RECOMMENDATIONJOBINPUTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RecommendationJobInputConfig",
+        "com.amazonaws.sagemaker",
+        "RecommendationJobInputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_MODEL_PACKAGE_VERSION_ARN,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_MODEL_NAME,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_JOB_DURATION_IN_SECONDS,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_TRAFFIC_PATTERN,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_RESOURCE_LIMIT,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINT_CONFIGURATIONS,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_VOLUME_KMS_KEY_ID,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_CONTAINER_CONFIG,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINTS,
+        &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_VPC_CONFIG,
+    ],
+);
+impl RecommendationJobInputConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RECOMMENDATIONJOBINPUTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RecommendationJobInputConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_package_version_arn {
+            ser.write_string(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_MODEL_PACKAGE_VERSION_ARN, val)?;
+        }
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_duration_in_seconds {
+            ser.write_integer(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_JOB_DURATION_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.traffic_pattern {
+            ser.write_struct(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_TRAFFIC_PATTERN, val)?;
+        }
+        if let Some(ref val) = self.resource_limit {
+            ser.write_struct(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_RESOURCE_LIMIT, val)?;
+        }
+        if let Some(ref val) = self.endpoint_configurations {
+            ser.write_list(
+                &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINT_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EndpointInputConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.container_config {
+            ser.write_struct(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_CONTAINER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.endpoints {
+            ser.write_list(
+                &RECOMMENDATIONJOBINPUTCONFIG_MEMBER_ENDPOINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EndpointInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&RECOMMENDATIONJOBINPUTCONFIG_MEMBER_VPC_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RecommendationJobInputConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RECOMMENDATIONJOBINPUTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_version_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_duration_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.traffic_pattern = Some(crate::types::TrafficPattern::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_limit = Some(crate::types::RecommendationJobResourceLimit::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EndpointInputConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_config = Some(crate::types::RecommendationJobContainerConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EndpointInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::RecommendationJobVpcConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RecommendationJobInputConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RecommendationJobInputConfig {
     /// Creates a new builder-style object to manufacture [`RecommendationJobInputConfig`](crate::types::RecommendationJobInputConfig).
     pub fn builder() -> crate::types::builders::RecommendationJobInputConfigBuilder {

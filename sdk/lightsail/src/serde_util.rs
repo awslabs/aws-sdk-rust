@@ -7,34 +7,3 @@ pub(crate) fn get_profile_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn partner_info_correct_errors(mut builder: crate::types::builders::PartnerInfoBuilder) -> crate::types::builders::PartnerInfoBuilder {
-    if builder.enrolled_at.is_none() {
-        builder.enrolled_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.status.is_none() {
-        builder.status = "no value was set".parse::<crate::types::PartnerStatus>().ok()
-    }
-    builder
-}
-
-pub(crate) fn bucket_access_log_config_correct_errors(
-    mut builder: crate::types::builders::BucketAccessLogConfigBuilder,
-) -> crate::types::builders::BucketAccessLogConfigBuilder {
-    if builder.enabled.is_none() {
-        builder.enabled = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn bucket_cors_rule_correct_errors(
-    mut builder: crate::types::builders::BucketCorsRuleBuilder,
-) -> crate::types::builders::BucketCorsRuleBuilder {
-    if builder.allowed_methods.is_none() {
-        builder.allowed_methods = Some(Default::default())
-    }
-    if builder.allowed_origins.is_none() {
-        builder.allowed_origins = Some(Default::default())
-    }
-    builder
-}

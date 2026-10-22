@@ -53,6 +53,241 @@ impl TokenData {
         self.status.as_deref()
     }
 }
+static TOKENDATA_MEMBER_TOKEN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#TokenData$TokenId",
+        "com.amazonaws.licensemanager",
+        "TokenData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TokenId",
+    0,
+);
+static TOKENDATA_MEMBER_TOKEN_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#TokenData$TokenType",
+        "com.amazonaws.licensemanager",
+        "TokenData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TokenType",
+    1,
+);
+static TOKENDATA_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#TokenData$LicenseArn",
+        "com.amazonaws.licensemanager",
+        "TokenData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    2,
+);
+static TOKENDATA_MEMBER_EXPIRATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#TokenData$ExpirationTime",
+        "com.amazonaws.licensemanager",
+        "TokenData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExpirationTime",
+    3,
+);
+static TOKENDATA_MEMBER_TOKEN_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MaxSize3StringList$member",
+        "com.amazonaws.licensemanager",
+        "MaxSize3StringList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static TOKENDATA_MEMBER_TOKEN_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#TokenData$TokenProperties",
+        "com.amazonaws.licensemanager",
+        "TokenData",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TokenProperties",
+    4,
+)
+.with_list_member(&TOKENDATA_MEMBER_TOKEN_PROPERTIES_MEMBER);
+static TOKENDATA_MEMBER_ROLE_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#ArnList$member", "com.amazonaws.licensemanager", "ArnList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static TOKENDATA_MEMBER_ROLE_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#TokenData$RoleArns",
+        "com.amazonaws.licensemanager",
+        "TokenData",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RoleArns",
+    5,
+)
+.with_list_member(&TOKENDATA_MEMBER_ROLE_ARNS_MEMBER);
+static TOKENDATA_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#TokenData$Status",
+        "com.amazonaws.licensemanager",
+        "TokenData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static TOKENDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#TokenData", "com.amazonaws.licensemanager", "TokenData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TOKENDATA_MEMBER_TOKEN_ID,
+        &TOKENDATA_MEMBER_TOKEN_TYPE,
+        &TOKENDATA_MEMBER_LICENSE_ARN,
+        &TOKENDATA_MEMBER_EXPIRATION_TIME,
+        &TOKENDATA_MEMBER_TOKEN_PROPERTIES,
+        &TOKENDATA_MEMBER_ROLE_ARNS,
+        &TOKENDATA_MEMBER_STATUS,
+    ],
+);
+impl TokenData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TOKENDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TokenData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.token_id {
+            ser.write_string(&TOKENDATA_MEMBER_TOKEN_ID, val)?;
+        }
+        if let Some(ref val) = self.token_type {
+            ser.write_string(&TOKENDATA_MEMBER_TOKEN_TYPE, val)?;
+        }
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&TOKENDATA_MEMBER_LICENSE_ARN, val)?;
+        }
+        if let Some(ref val) = self.expiration_time {
+            ser.write_string(&TOKENDATA_MEMBER_EXPIRATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.token_properties {
+            ser.write_list(
+                &TOKENDATA_MEMBER_TOKEN_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.role_arns {
+            ser.write_list(
+                &TOKENDATA_MEMBER_ROLE_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&TOKENDATA_MEMBER_STATUS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TokenDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TOKENDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.token_properties = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TokenData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TokenData {
     /// Creates a new builder-style object to manufacture [`TokenData`](crate::types::TokenData).
     pub fn builder() -> crate::types::builders::TokenDataBuilder {

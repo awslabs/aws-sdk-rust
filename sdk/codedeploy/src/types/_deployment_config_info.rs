@@ -49,6 +49,211 @@ impl DeploymentConfigInfo {
         self.zonal_config.as_ref()
     }
 }
+static DEPLOYMENTCONFIGINFO_MEMBER_DEPLOYMENT_CONFIG_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo$deploymentConfigId",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentConfigId",
+    0,
+);
+static DEPLOYMENTCONFIGINFO_MEMBER_DEPLOYMENT_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo$deploymentConfigName",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentConfigName",
+    1,
+);
+static DEPLOYMENTCONFIGINFO_MEMBER_MINIMUM_HEALTHY_HOSTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo$minimumHealthyHosts",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "minimumHealthyHosts",
+    2,
+);
+static DEPLOYMENTCONFIGINFO_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo$createTime",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createTime",
+    3,
+);
+static DEPLOYMENTCONFIGINFO_MEMBER_COMPUTE_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo$computePlatform",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "computePlatform",
+    4,
+);
+static DEPLOYMENTCONFIGINFO_MEMBER_TRAFFIC_ROUTING_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo$trafficRoutingConfig",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "trafficRoutingConfig",
+    5,
+);
+static DEPLOYMENTCONFIGINFO_MEMBER_ZONAL_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo$zonalConfig",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "zonalConfig",
+    6,
+);
+static DEPLOYMENTCONFIGINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#DeploymentConfigInfo",
+        "com.amazonaws.codedeploy",
+        "DeploymentConfigInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYMENTCONFIGINFO_MEMBER_DEPLOYMENT_CONFIG_ID,
+        &DEPLOYMENTCONFIGINFO_MEMBER_DEPLOYMENT_CONFIG_NAME,
+        &DEPLOYMENTCONFIGINFO_MEMBER_MINIMUM_HEALTHY_HOSTS,
+        &DEPLOYMENTCONFIGINFO_MEMBER_CREATE_TIME,
+        &DEPLOYMENTCONFIGINFO_MEMBER_COMPUTE_PLATFORM,
+        &DEPLOYMENTCONFIGINFO_MEMBER_TRAFFIC_ROUTING_CONFIG,
+        &DEPLOYMENTCONFIGINFO_MEMBER_ZONAL_CONFIG,
+    ],
+);
+impl DeploymentConfigInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYMENTCONFIGINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeploymentConfigInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_config_id {
+            ser.write_string(&DEPLOYMENTCONFIGINFO_MEMBER_DEPLOYMENT_CONFIG_ID, val)?;
+        }
+        if let Some(ref val) = self.deployment_config_name {
+            ser.write_string(&DEPLOYMENTCONFIGINFO_MEMBER_DEPLOYMENT_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.minimum_healthy_hosts {
+            ser.write_struct(&DEPLOYMENTCONFIGINFO_MEMBER_MINIMUM_HEALTHY_HOSTS, val)?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_timestamp(&DEPLOYMENTCONFIGINFO_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.compute_platform {
+            ser.write_string(&DEPLOYMENTCONFIGINFO_MEMBER_COMPUTE_PLATFORM, val.as_str())?;
+        }
+        if let Some(ref val) = self.traffic_routing_config {
+            ser.write_struct(&DEPLOYMENTCONFIGINFO_MEMBER_TRAFFIC_ROUTING_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.zonal_config {
+            ser.write_struct(&DEPLOYMENTCONFIGINFO_MEMBER_ZONAL_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeploymentConfigInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYMENTCONFIGINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.minimum_healthy_hosts = Some(crate::types::MinimumHealthyHosts::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_platform = Some(crate::types::ComputePlatform::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.traffic_routing_config = Some(crate::types::TrafficRoutingConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.zonal_config = Some(crate::types::ZonalConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeploymentConfigInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeploymentConfigInfo {
     /// Creates a new builder-style object to manufacture [`DeploymentConfigInfo`](crate::types::DeploymentConfigInfo).
     pub fn builder() -> crate::types::builders::DeploymentConfigInfoBuilder {

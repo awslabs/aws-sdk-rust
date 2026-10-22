@@ -20,6 +20,134 @@ impl ListConformancePackComplianceScoresOutput {
         self.conformance_pack_compliance_scores.deref()
     }
 }
+static LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresOutput$NextToken",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_CONFORMANCE_PACK_COMPLIANCE_SCORES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConformancePackComplianceScores$member",
+            "com.amazonaws.configservice",
+            "ConformancePackComplianceScores",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_CONFORMANCE_PACK_COMPLIANCE_SCORES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresOutput$ConformancePackComplianceScores",
+            "com.amazonaws.configservice.synthetic",
+            "ListConformancePackComplianceScoresOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ConformancePackComplianceScores",
+        1,
+    )
+    .with_list_member(&LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_CONFORMANCE_PACK_COMPLIANCE_SCORES_MEMBER);
+static LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#ListConformancePackComplianceScoresOutput",
+        "com.amazonaws.configservice.synthetic",
+        "ListConformancePackComplianceScoresOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_CONFORMANCE_PACK_COMPLIANCE_SCORES,
+    ],
+)
+.with_original_name("ListConformancePackComplianceScoresResponse");
+impl ListConformancePackComplianceScoresOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListConformancePackComplianceScoresOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        {
+            let val = &self.conformance_pack_compliance_scores;
+
+            ser.write_list(
+                &LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_MEMBER_CONFORMANCE_PACK_COMPLIANCE_SCORES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ConformancePackComplianceScore::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_conformance_pack_compliance_scores::builders::ListConformancePackComplianceScoresOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTCONFORMANCEPACKCOMPLIANCESCORESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.conformance_pack_compliance_scores = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::ConformancePackComplianceScore::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListConformancePackComplianceScoresOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.conformance_pack_compliance_scores = builder.conformance_pack_compliance_scores.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for ListConformancePackComplianceScoresOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

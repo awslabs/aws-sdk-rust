@@ -18,6 +18,111 @@ impl AssociateAppBlockBuilderAppBlockInput {
         self.app_block_builder_name.as_deref()
     }
 }
+static ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_MEMBER_APP_BLOCK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#AssociateAppBlockBuilderAppBlockInput$AppBlockArn",
+        "com.amazonaws.appstream.synthetic",
+        "AssociateAppBlockBuilderAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppBlockArn",
+    0,
+);
+static ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_MEMBER_APP_BLOCK_BUILDER_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.appstream.synthetic#AssociateAppBlockBuilderAppBlockInput$AppBlockBuilderName",
+            "com.amazonaws.appstream.synthetic",
+            "AssociateAppBlockBuilderAppBlockInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AppBlockBuilderName",
+        1,
+    );
+static ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#AssociateAppBlockBuilderAppBlockInput",
+        "com.amazonaws.appstream.synthetic",
+        "AssociateAppBlockBuilderAppBlockInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_MEMBER_APP_BLOCK_ARN,
+        &ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_MEMBER_APP_BLOCK_BUILDER_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AssociateAppBlockBuilderAppBlockRequest");
+impl AssociateAppBlockBuilderAppBlockInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociateAppBlockBuilderAppBlockInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.app_block_arn {
+            ser.write_string(&ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_MEMBER_APP_BLOCK_ARN, val)?;
+        }
+        if let Some(ref val) = self.app_block_builder_name {
+            ser.write_string(&ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_MEMBER_APP_BLOCK_BUILDER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATEAPPBLOCKBUILDERAPPBLOCKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_block_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_block_builder_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociateAppBlockBuilderAppBlockInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.app_block_arn = builder.app_block_arn.or(Some(String::new()));
+        builder.app_block_builder_name = builder.app_block_builder_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssociateAppBlockBuilderAppBlockInput {
     /// Creates a new builder-style object to manufacture [`AssociateAppBlockBuilderAppBlockInput`](crate::operation::associate_app_block_builder_app_block::AssociateAppBlockBuilderAppBlockInput).
     pub fn builder() -> crate::operation::associate_app_block_builder_app_block::builders::AssociateAppBlockBuilderAppBlockInputBuilder {

@@ -55,6 +55,204 @@ impl JobSummary {
         self.end_time.as_ref()
     }
 }
+static JOBSUMMARY_MEMBER_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#JobSummary$JobArn", "com.amazonaws.sagemaker", "JobSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobArn",
+    0,
+);
+static JOBSUMMARY_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#JobSummary$JobName", "com.amazonaws.sagemaker", "JobSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    1,
+);
+static JOBSUMMARY_MEMBER_JOB_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#JobSummary$JobCategory", "com.amazonaws.sagemaker", "JobSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobCategory",
+    2,
+);
+static JOBSUMMARY_MEMBER_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#JobSummary$JobStatus", "com.amazonaws.sagemaker", "JobSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobStatus",
+    3,
+);
+static JOBSUMMARY_MEMBER_JOB_SECONDARY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JobSummary$JobSecondaryStatus",
+        "com.amazonaws.sagemaker",
+        "JobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobSecondaryStatus",
+    4,
+);
+static JOBSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#JobSummary$CreationTime", "com.amazonaws.sagemaker", "JobSummary"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static JOBSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JobSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "JobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    6,
+);
+static JOBSUMMARY_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#JobSummary$EndTime", "com.amazonaws.sagemaker", "JobSummary"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    7,
+);
+static JOBSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#JobSummary", "com.amazonaws.sagemaker", "JobSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &JOBSUMMARY_MEMBER_JOB_ARN,
+        &JOBSUMMARY_MEMBER_JOB_NAME,
+        &JOBSUMMARY_MEMBER_JOB_CATEGORY,
+        &JOBSUMMARY_MEMBER_JOB_STATUS,
+        &JOBSUMMARY_MEMBER_JOB_SECONDARY_STATUS,
+        &JOBSUMMARY_MEMBER_CREATION_TIME,
+        &JOBSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+        &JOBSUMMARY_MEMBER_END_TIME,
+    ],
+);
+impl JobSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &JOBSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for JobSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_arn {
+            ser.write_string(&JOBSUMMARY_MEMBER_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&JOBSUMMARY_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_category {
+            ser.write_string(&JOBSUMMARY_MEMBER_JOB_CATEGORY, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_status {
+            ser.write_string(&JOBSUMMARY_MEMBER_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_secondary_status {
+            ser.write_string(&JOBSUMMARY_MEMBER_JOB_SECONDARY_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&JOBSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&JOBSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&JOBSUMMARY_MEMBER_END_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::JobSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&JOBSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_category = Some(crate::types::JobCategory::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_status = Some(crate::types::JobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_secondary_status = Some(crate::types::JobSecondaryStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl JobSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl JobSummary {
     /// Creates a new builder-style object to manufacture [`JobSummary`](crate::types::JobSummary).
     pub fn builder() -> crate::types::builders::JobSummaryBuilder {

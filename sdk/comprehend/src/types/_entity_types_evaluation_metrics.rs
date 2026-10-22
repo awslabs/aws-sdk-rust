@@ -25,6 +25,127 @@ impl EntityTypesEvaluationMetrics {
         self.f1_score
     }
 }
+static ENTITYTYPESEVALUATIONMETRICS_MEMBER_PRECISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityTypesEvaluationMetrics$Precision",
+        "com.amazonaws.comprehend",
+        "EntityTypesEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Precision",
+    0,
+);
+static ENTITYTYPESEVALUATIONMETRICS_MEMBER_RECALL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityTypesEvaluationMetrics$Recall",
+        "com.amazonaws.comprehend",
+        "EntityTypesEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Recall",
+    1,
+);
+static ENTITYTYPESEVALUATIONMETRICS_MEMBER_F1_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityTypesEvaluationMetrics$F1Score",
+        "com.amazonaws.comprehend",
+        "EntityTypesEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "F1Score",
+    2,
+);
+static ENTITYTYPESEVALUATIONMETRICS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EntityTypesEvaluationMetrics",
+        "com.amazonaws.comprehend",
+        "EntityTypesEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITYTYPESEVALUATIONMETRICS_MEMBER_PRECISION,
+        &ENTITYTYPESEVALUATIONMETRICS_MEMBER_RECALL,
+        &ENTITYTYPESEVALUATIONMETRICS_MEMBER_F1_SCORE,
+    ],
+);
+impl EntityTypesEvaluationMetrics {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITYTYPESEVALUATIONMETRICS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntityTypesEvaluationMetrics {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.precision {
+            ser.write_double(&ENTITYTYPESEVALUATIONMETRICS_MEMBER_PRECISION, *val)?;
+        }
+        if let Some(ref val) = self.recall {
+            ser.write_double(&ENTITYTYPESEVALUATIONMETRICS_MEMBER_RECALL, *val)?;
+        }
+        if let Some(ref val) = self.f1_score {
+            ser.write_double(&ENTITYTYPESEVALUATIONMETRICS_MEMBER_F1_SCORE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntityTypesEvaluationMetricsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITYTYPESEVALUATIONMETRICS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.precision = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recall = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.f1_score = Some(deser.read_double(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntityTypesEvaluationMetrics {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EntityTypesEvaluationMetrics {
     /// Creates a new builder-style object to manufacture [`EntityTypesEvaluationMetrics`](crate::types::EntityTypesEvaluationMetrics).
     pub fn builder() -> crate::types::builders::EntityTypesEvaluationMetricsBuilder {

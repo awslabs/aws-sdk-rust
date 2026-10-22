@@ -89,6 +89,387 @@ impl ReportGenerator {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static REPORTGENERATOR_MEMBER_REPORT_GENERATOR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$ReportGeneratorName",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReportGeneratorName",
+    0,
+);
+static REPORTGENERATOR_MEMBER_REPORT_TYPE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportTypeList$member",
+        "com.amazonaws.licensemanager",
+        "ReportTypeList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REPORTGENERATOR_MEMBER_REPORT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$ReportType",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ReportType",
+    1,
+)
+.with_list_member(&REPORTGENERATOR_MEMBER_REPORT_TYPE_MEMBER);
+static REPORTGENERATOR_MEMBER_REPORT_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$ReportContext",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ReportContext",
+    2,
+);
+static REPORTGENERATOR_MEMBER_REPORT_FREQUENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$ReportFrequency",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ReportFrequency",
+    3,
+);
+static REPORTGENERATOR_MEMBER_LICENSE_MANAGER_REPORT_GENERATOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$LicenseManagerReportGeneratorArn",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseManagerReportGeneratorArn",
+    4,
+);
+static REPORTGENERATOR_MEMBER_LAST_RUN_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$LastRunStatus",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastRunStatus",
+    5,
+);
+static REPORTGENERATOR_MEMBER_LAST_RUN_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$LastRunFailureReason",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastRunFailureReason",
+    6,
+);
+static REPORTGENERATOR_MEMBER_LAST_REPORT_GENERATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$LastReportGenerationTime",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastReportGenerationTime",
+    7,
+);
+static REPORTGENERATOR_MEMBER_REPORT_CREATOR_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$ReportCreatorAccount",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReportCreatorAccount",
+    8,
+);
+static REPORTGENERATOR_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$Description",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    9,
+);
+static REPORTGENERATOR_MEMBER_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$S3Location",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Location",
+    10,
+);
+static REPORTGENERATOR_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$CreateTime",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreateTime",
+    11,
+);
+static REPORTGENERATOR_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#TagList$member", "com.amazonaws.licensemanager", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REPORTGENERATOR_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator$Tags",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    12,
+)
+.with_list_member(&REPORTGENERATOR_MEMBER_TAGS_MEMBER);
+static REPORTGENERATOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ReportGenerator",
+        "com.amazonaws.licensemanager",
+        "ReportGenerator",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPORTGENERATOR_MEMBER_REPORT_GENERATOR_NAME,
+        &REPORTGENERATOR_MEMBER_REPORT_TYPE,
+        &REPORTGENERATOR_MEMBER_REPORT_CONTEXT,
+        &REPORTGENERATOR_MEMBER_REPORT_FREQUENCY,
+        &REPORTGENERATOR_MEMBER_LICENSE_MANAGER_REPORT_GENERATOR_ARN,
+        &REPORTGENERATOR_MEMBER_LAST_RUN_STATUS,
+        &REPORTGENERATOR_MEMBER_LAST_RUN_FAILURE_REASON,
+        &REPORTGENERATOR_MEMBER_LAST_REPORT_GENERATION_TIME,
+        &REPORTGENERATOR_MEMBER_REPORT_CREATOR_ACCOUNT,
+        &REPORTGENERATOR_MEMBER_DESCRIPTION,
+        &REPORTGENERATOR_MEMBER_S3_LOCATION,
+        &REPORTGENERATOR_MEMBER_CREATE_TIME,
+        &REPORTGENERATOR_MEMBER_TAGS,
+    ],
+);
+impl ReportGenerator {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPORTGENERATOR_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ReportGenerator {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.report_generator_name {
+            ser.write_string(&REPORTGENERATOR_MEMBER_REPORT_GENERATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.report_type {
+            ser.write_list(
+                &REPORTGENERATOR_MEMBER_REPORT_TYPE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.report_context {
+            ser.write_struct(&REPORTGENERATOR_MEMBER_REPORT_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.report_frequency {
+            ser.write_struct(&REPORTGENERATOR_MEMBER_REPORT_FREQUENCY, val)?;
+        }
+        if let Some(ref val) = self.license_manager_report_generator_arn {
+            ser.write_string(&REPORTGENERATOR_MEMBER_LICENSE_MANAGER_REPORT_GENERATOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.last_run_status {
+            ser.write_string(&REPORTGENERATOR_MEMBER_LAST_RUN_STATUS, val)?;
+        }
+        if let Some(ref val) = self.last_run_failure_reason {
+            ser.write_string(&REPORTGENERATOR_MEMBER_LAST_RUN_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.last_report_generation_time {
+            ser.write_string(&REPORTGENERATOR_MEMBER_LAST_REPORT_GENERATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.report_creator_account {
+            ser.write_string(&REPORTGENERATOR_MEMBER_REPORT_CREATOR_ACCOUNT, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&REPORTGENERATOR_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.s3_location {
+            ser.write_struct(&REPORTGENERATOR_MEMBER_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_string(&REPORTGENERATOR_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &REPORTGENERATOR_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ReportGeneratorBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPORTGENERATOR_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_generator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_type = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ReportType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_context = Some(crate::types::ReportContext::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_frequency = Some(crate::types::ReportFrequency::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_manager_report_generator_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_run_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_run_failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_report_generation_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_creator_account = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ReportGenerator {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ReportGenerator {
     /// Creates a new builder-style object to manufacture [`ReportGenerator`](crate::types::ReportGenerator).
     pub fn builder() -> crate::types::builders::ReportGeneratorBuilder {

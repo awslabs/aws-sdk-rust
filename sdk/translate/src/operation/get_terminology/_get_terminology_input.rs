@@ -22,6 +22,106 @@ impl GetTerminologyInput {
         self.terminology_data_format.as_ref()
     }
 }
+static GETTERMINOLOGYINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#GetTerminologyInput$Name",
+        "com.amazonaws.translate.synthetic",
+        "GetTerminologyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static GETTERMINOLOGYINPUT_MEMBER_TERMINOLOGY_DATA_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#GetTerminologyInput$TerminologyDataFormat",
+        "com.amazonaws.translate.synthetic",
+        "GetTerminologyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TerminologyDataFormat",
+    1,
+);
+static GETTERMINOLOGYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#GetTerminologyInput",
+        "com.amazonaws.translate.synthetic",
+        "GetTerminologyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETTERMINOLOGYINPUT_MEMBER_NAME, &GETTERMINOLOGYINPUT_MEMBER_TERMINOLOGY_DATA_FORMAT],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetTerminologyRequest");
+impl GetTerminologyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETTERMINOLOGYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetTerminologyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&GETTERMINOLOGYINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.terminology_data_format {
+            ser.write_string(&GETTERMINOLOGYINPUT_MEMBER_TERMINOLOGY_DATA_FORMAT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_terminology::builders::GetTerminologyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETTERMINOLOGYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terminology_data_format = Some(crate::types::TerminologyDataFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetTerminologyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetTerminologyInput {
     /// Creates a new builder-style object to manufacture [`GetTerminologyInput`](crate::operation::get_terminology::GetTerminologyInput).
     pub fn builder() -> crate::operation::get_terminology::builders::GetTerminologyInputBuilder {

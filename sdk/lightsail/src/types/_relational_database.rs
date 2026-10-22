@@ -171,6 +171,658 @@ impl RelationalDatabase {
         self.ca_certificate_identifier.as_deref()
     }
 }
+static RELATIONALDATABASE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$name",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static RELATIONALDATABASE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$arn",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static RELATIONALDATABASE_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$supportCode",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    2,
+);
+static RELATIONALDATABASE_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$createdAt",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static RELATIONALDATABASE_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$location",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    4,
+);
+static RELATIONALDATABASE_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$resourceType",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static RELATIONALDATABASE_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RELATIONALDATABASE_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$tags",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    6,
+)
+.with_list_member(&RELATIONALDATABASE_MEMBER_TAGS_MEMBER);
+static RELATIONALDATABASE_MEMBER_RELATIONAL_DATABASE_BLUEPRINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$relationalDatabaseBlueprintId",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "relationalDatabaseBlueprintId",
+    7,
+);
+static RELATIONALDATABASE_MEMBER_RELATIONAL_DATABASE_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$relationalDatabaseBundleId",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "relationalDatabaseBundleId",
+    8,
+);
+static RELATIONALDATABASE_MEMBER_MASTER_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$masterDatabaseName",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "masterDatabaseName",
+    9,
+);
+static RELATIONALDATABASE_MEMBER_HARDWARE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$hardware",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "hardware",
+    10,
+);
+static RELATIONALDATABASE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$state",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "state",
+    11,
+);
+static RELATIONALDATABASE_MEMBER_SECONDARY_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$secondaryAvailabilityZone",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "secondaryAvailabilityZone",
+    12,
+);
+static RELATIONALDATABASE_MEMBER_BACKUP_RETENTION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$backupRetentionEnabled",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "backupRetentionEnabled",
+    13,
+);
+static RELATIONALDATABASE_MEMBER_PENDING_MODIFIED_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$pendingModifiedValues",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "pendingModifiedValues",
+    14,
+);
+static RELATIONALDATABASE_MEMBER_ENGINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$engine",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "engine",
+    15,
+);
+static RELATIONALDATABASE_MEMBER_ENGINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$engineVersion",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "engineVersion",
+    16,
+);
+static RELATIONALDATABASE_MEMBER_LATEST_RESTORABLE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$latestRestorableTime",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "latestRestorableTime",
+    17,
+);
+static RELATIONALDATABASE_MEMBER_MASTER_USERNAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$masterUsername",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "masterUsername",
+    18,
+);
+static RELATIONALDATABASE_MEMBER_PARAMETER_APPLY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$parameterApplyStatus",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "parameterApplyStatus",
+    19,
+);
+static RELATIONALDATABASE_MEMBER_PREFERRED_BACKUP_WINDOW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$preferredBackupWindow",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "preferredBackupWindow",
+    20,
+);
+static RELATIONALDATABASE_MEMBER_PREFERRED_MAINTENANCE_WINDOW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$preferredMaintenanceWindow",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "preferredMaintenanceWindow",
+    21,
+);
+static RELATIONALDATABASE_MEMBER_PUBLICLY_ACCESSIBLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$publiclyAccessible",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "publiclyAccessible",
+    22,
+);
+static RELATIONALDATABASE_MEMBER_MASTER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$masterEndpoint",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "masterEndpoint",
+    23,
+);
+static RELATIONALDATABASE_MEMBER_PENDING_MAINTENANCE_ACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#PendingMaintenanceActionList$member",
+        "com.amazonaws.lightsail",
+        "PendingMaintenanceActionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RELATIONALDATABASE_MEMBER_PENDING_MAINTENANCE_ACTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$pendingMaintenanceActions",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "pendingMaintenanceActions",
+    24,
+)
+.with_list_member(&RELATIONALDATABASE_MEMBER_PENDING_MAINTENANCE_ACTIONS_MEMBER);
+static RELATIONALDATABASE_MEMBER_CA_CERTIFICATE_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase$caCertificateIdentifier",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "caCertificateIdentifier",
+    25,
+);
+static RELATIONALDATABASE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabase",
+        "com.amazonaws.lightsail",
+        "RelationalDatabase",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RELATIONALDATABASE_MEMBER_NAME,
+        &RELATIONALDATABASE_MEMBER_ARN,
+        &RELATIONALDATABASE_MEMBER_SUPPORT_CODE,
+        &RELATIONALDATABASE_MEMBER_CREATED_AT,
+        &RELATIONALDATABASE_MEMBER_LOCATION,
+        &RELATIONALDATABASE_MEMBER_RESOURCE_TYPE,
+        &RELATIONALDATABASE_MEMBER_TAGS,
+        &RELATIONALDATABASE_MEMBER_RELATIONAL_DATABASE_BLUEPRINT_ID,
+        &RELATIONALDATABASE_MEMBER_RELATIONAL_DATABASE_BUNDLE_ID,
+        &RELATIONALDATABASE_MEMBER_MASTER_DATABASE_NAME,
+        &RELATIONALDATABASE_MEMBER_HARDWARE,
+        &RELATIONALDATABASE_MEMBER_STATE,
+        &RELATIONALDATABASE_MEMBER_SECONDARY_AVAILABILITY_ZONE,
+        &RELATIONALDATABASE_MEMBER_BACKUP_RETENTION_ENABLED,
+        &RELATIONALDATABASE_MEMBER_PENDING_MODIFIED_VALUES,
+        &RELATIONALDATABASE_MEMBER_ENGINE,
+        &RELATIONALDATABASE_MEMBER_ENGINE_VERSION,
+        &RELATIONALDATABASE_MEMBER_LATEST_RESTORABLE_TIME,
+        &RELATIONALDATABASE_MEMBER_MASTER_USERNAME,
+        &RELATIONALDATABASE_MEMBER_PARAMETER_APPLY_STATUS,
+        &RELATIONALDATABASE_MEMBER_PREFERRED_BACKUP_WINDOW,
+        &RELATIONALDATABASE_MEMBER_PREFERRED_MAINTENANCE_WINDOW,
+        &RELATIONALDATABASE_MEMBER_PUBLICLY_ACCESSIBLE,
+        &RELATIONALDATABASE_MEMBER_MASTER_ENDPOINT,
+        &RELATIONALDATABASE_MEMBER_PENDING_MAINTENANCE_ACTIONS,
+        &RELATIONALDATABASE_MEMBER_CA_CERTIFICATE_IDENTIFIER,
+    ],
+);
+impl RelationalDatabase {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RELATIONALDATABASE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RelationalDatabase {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&RELATIONALDATABASE_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&RELATIONALDATABASE_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &RELATIONALDATABASE_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.relational_database_blueprint_id {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_RELATIONAL_DATABASE_BLUEPRINT_ID, val)?;
+        }
+        if let Some(ref val) = self.relational_database_bundle_id {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_RELATIONAL_DATABASE_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.master_database_name {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_MASTER_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.hardware {
+            ser.write_struct(&RELATIONALDATABASE_MEMBER_HARDWARE, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_STATE, val)?;
+        }
+        if let Some(ref val) = self.secondary_availability_zone {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_SECONDARY_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.backup_retention_enabled {
+            ser.write_boolean(&RELATIONALDATABASE_MEMBER_BACKUP_RETENTION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.pending_modified_values {
+            ser.write_struct(&RELATIONALDATABASE_MEMBER_PENDING_MODIFIED_VALUES, val)?;
+        }
+        if let Some(ref val) = self.engine {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_ENGINE, val)?;
+        }
+        if let Some(ref val) = self.engine_version {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_ENGINE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.latest_restorable_time {
+            ser.write_timestamp(&RELATIONALDATABASE_MEMBER_LATEST_RESTORABLE_TIME, val)?;
+        }
+        if let Some(ref val) = self.master_username {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_MASTER_USERNAME, val)?;
+        }
+        if let Some(ref val) = self.parameter_apply_status {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_PARAMETER_APPLY_STATUS, val)?;
+        }
+        if let Some(ref val) = self.preferred_backup_window {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_PREFERRED_BACKUP_WINDOW, val)?;
+        }
+        if let Some(ref val) = self.preferred_maintenance_window {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_PREFERRED_MAINTENANCE_WINDOW, val)?;
+        }
+        if let Some(ref val) = self.publicly_accessible {
+            ser.write_boolean(&RELATIONALDATABASE_MEMBER_PUBLICLY_ACCESSIBLE, *val)?;
+        }
+        if let Some(ref val) = self.master_endpoint {
+            ser.write_struct(&RELATIONALDATABASE_MEMBER_MASTER_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.pending_maintenance_actions {
+            ser.write_list(
+                &RELATIONALDATABASE_MEMBER_PENDING_MAINTENANCE_ACTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PendingMaintenanceAction::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ca_certificate_identifier {
+            ser.write_string(&RELATIONALDATABASE_MEMBER_CA_CERTIFICATE_IDENTIFIER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RelationalDatabaseBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RELATIONALDATABASE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_blueprint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hardware = Some(crate::types::RelationalDatabaseHardware::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.backup_retention_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pending_modified_values = Some(crate::types::PendingModifiedRelationalDatabaseValues::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_restorable_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_username = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameter_apply_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_backup_window = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preferred_maintenance_window = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.publicly_accessible = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.master_endpoint = Some(crate::types::RelationalDatabaseEndpoint::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pending_maintenance_actions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PendingMaintenanceAction::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ca_certificate_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RelationalDatabase {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RelationalDatabase {
     /// Creates a new builder-style object to manufacture [`RelationalDatabase`](crate::types::RelationalDatabase).
     pub fn builder() -> crate::types::builders::RelationalDatabaseBuilder {

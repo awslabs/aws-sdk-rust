@@ -38,6 +38,191 @@ impl UpdateImageInput {
         self.role_arn.as_deref()
     }
 }
+static UPDATEIMAGEINPUT_MEMBER_DELETE_PROPERTIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ImageDeletePropertyList$member",
+        "com.amazonaws.sagemaker",
+        "ImageDeletePropertyList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEIMAGEINPUT_MEMBER_DELETE_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageInput$DeleteProperties",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DeleteProperties",
+    0,
+)
+.with_list_member(&UPDATEIMAGEINPUT_MEMBER_DELETE_PROPERTIES_MEMBER);
+static UPDATEIMAGEINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static UPDATEIMAGEINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageInput$DisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static UPDATEIMAGEINPUT_MEMBER_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageInput$ImageName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageName",
+    3,
+);
+static UPDATEIMAGEINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    4,
+);
+static UPDATEIMAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateImageInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEIMAGEINPUT_MEMBER_DELETE_PROPERTIES,
+        &UPDATEIMAGEINPUT_MEMBER_DESCRIPTION,
+        &UPDATEIMAGEINPUT_MEMBER_DISPLAY_NAME,
+        &UPDATEIMAGEINPUT_MEMBER_IMAGE_NAME,
+        &UPDATEIMAGEINPUT_MEMBER_ROLE_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateImageRequest");
+impl UpdateImageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEIMAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateImageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.delete_properties {
+            ser.write_list(
+                &UPDATEIMAGEINPUT_MEMBER_DELETE_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEIMAGEINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&UPDATEIMAGEINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_name {
+            ser.write_string(&UPDATEIMAGEINPUT_MEMBER_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&UPDATEIMAGEINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_image::builders::UpdateImageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEIMAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_properties = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateImageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.image_name = builder.image_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateImageInput {
     /// Creates a new builder-style object to manufacture [`UpdateImageInput`](crate::operation::update_image::UpdateImageInput).
     pub fn builder() -> crate::operation::update_image::builders::UpdateImageInputBuilder {

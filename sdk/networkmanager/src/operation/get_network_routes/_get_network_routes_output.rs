@@ -7,12 +7,16 @@ pub struct GetNetworkRoutesOutput {
     pub route_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Describes a core network segment edge.</p>
     pub core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
+    /// <p>Describes the network function group route table that the routes are from. This field is present only when you specify <code>CoreNetworkNetworkFunctionGroup</code> in <code>RouteTableIdentifier</code>.</p>
+    pub core_network_network_function_group: ::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier>,
     /// <p>The route table type.</p>
     pub route_table_type: ::std::option::Option<crate::types::RouteTableType>,
     /// <p>The route table creation time.</p>
     pub route_table_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The network routes.</p>
     pub network_routes: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRoute>>,
+    /// <p>The token for the next page of results.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetNetworkRoutesOutput {
@@ -23,6 +27,10 @@ impl GetNetworkRoutesOutput {
     /// <p>Describes a core network segment edge.</p>
     pub fn core_network_segment_edge(&self) -> ::std::option::Option<&crate::types::CoreNetworkSegmentEdgeIdentifier> {
         self.core_network_segment_edge.as_ref()
+    }
+    /// <p>Describes the network function group route table that the routes are from. This field is present only when you specify <code>CoreNetworkNetworkFunctionGroup</code> in <code>RouteTableIdentifier</code>.</p>
+    pub fn core_network_network_function_group(&self) -> ::std::option::Option<&crate::types::CoreNetworkNetworkFunctionGroupIdentifier> {
+        self.core_network_network_function_group.as_ref()
     }
     /// <p>The route table type.</p>
     pub fn route_table_type(&self) -> ::std::option::Option<&crate::types::RouteTableType> {
@@ -37,6 +45,10 @@ impl GetNetworkRoutesOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_routes.is_none()`.
     pub fn network_routes(&self) -> &[crate::types::NetworkRoute] {
         self.network_routes.as_deref().unwrap_or_default()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetNetworkRoutesOutput {
@@ -57,9 +69,11 @@ impl GetNetworkRoutesOutput {
 pub struct GetNetworkRoutesOutputBuilder {
     pub(crate) route_table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) core_network_segment_edge: ::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
+    pub(crate) core_network_network_function_group: ::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier>,
     pub(crate) route_table_type: ::std::option::Option<crate::types::RouteTableType>,
     pub(crate) route_table_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) network_routes: ::std::option::Option<::std::vec::Vec<crate::types::NetworkRoute>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetNetworkRoutesOutputBuilder {
@@ -90,6 +104,23 @@ impl GetNetworkRoutesOutputBuilder {
     /// <p>Describes a core network segment edge.</p>
     pub fn get_core_network_segment_edge(&self) -> &::std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier> {
         &self.core_network_segment_edge
+    }
+    /// <p>Describes the network function group route table that the routes are from. This field is present only when you specify <code>CoreNetworkNetworkFunctionGroup</code> in <code>RouteTableIdentifier</code>.</p>
+    pub fn core_network_network_function_group(mut self, input: crate::types::CoreNetworkNetworkFunctionGroupIdentifier) -> Self {
+        self.core_network_network_function_group = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the network function group route table that the routes are from. This field is present only when you specify <code>CoreNetworkNetworkFunctionGroup</code> in <code>RouteTableIdentifier</code>.</p>
+    pub fn set_core_network_network_function_group(
+        mut self,
+        input: ::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier>,
+    ) -> Self {
+        self.core_network_network_function_group = input;
+        self
+    }
+    /// <p>Describes the network function group route table that the routes are from. This field is present only when you specify <code>CoreNetworkNetworkFunctionGroup</code> in <code>RouteTableIdentifier</code>.</p>
+    pub fn get_core_network_network_function_group(&self) -> &::std::option::Option<crate::types::CoreNetworkNetworkFunctionGroupIdentifier> {
+        &self.core_network_network_function_group
     }
     /// <p>The route table type.</p>
     pub fn route_table_type(mut self, input: crate::types::RouteTableType) -> Self {
@@ -139,6 +170,20 @@ impl GetNetworkRoutesOutputBuilder {
     pub fn get_network_routes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkRoute>> {
         &self.network_routes
     }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -153,9 +198,11 @@ impl GetNetworkRoutesOutputBuilder {
         crate::operation::get_network_routes::GetNetworkRoutesOutput {
             route_table_arn: self.route_table_arn,
             core_network_segment_edge: self.core_network_segment_edge,
+            core_network_network_function_group: self.core_network_network_function_group,
             route_table_type: self.route_table_type,
             route_table_timestamp: self.route_table_timestamp,
             network_routes: self.network_routes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }

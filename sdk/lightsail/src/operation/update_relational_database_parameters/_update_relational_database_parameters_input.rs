@@ -20,6 +20,143 @@ impl UpdateRelationalDatabaseParametersInput {
         self.parameters.as_deref().unwrap_or_default()
     }
 }
+static UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_RELATIONAL_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseParametersInput$relationalDatabaseName",
+            "com.amazonaws.lightsail.synthetic",
+            "UpdateRelationalDatabaseParametersInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "relationalDatabaseName",
+        0,
+    );
+static UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#RelationalDatabaseParameterList$member",
+            "com.amazonaws.lightsail",
+            "RelationalDatabaseParameterList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseParametersInput$parameters",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseParametersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "parameters",
+    1,
+)
+.with_list_member(&UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_PARAMETERS_MEMBER);
+static UPDATERELATIONALDATABASEPARAMETERSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateRelationalDatabaseParametersInput",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateRelationalDatabaseParametersInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_RELATIONAL_DATABASE_NAME,
+        &UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_PARAMETERS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/UpdateRelationalDatabaseParameters",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateRelationalDatabaseParametersRequest");
+impl UpdateRelationalDatabaseParametersInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATERELATIONALDATABASEPARAMETERSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateRelationalDatabaseParametersInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_database_name {
+            ser.write_string(&UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_RELATIONAL_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_list(
+                &UPDATERELATIONALDATABASEPARAMETERSINPUT_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RelationalDatabaseParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATERELATIONALDATABASEPARAMETERSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RelationalDatabaseParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateRelationalDatabaseParametersInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.relational_database_name = builder.relational_database_name.or(Some(String::new()));
+        builder.parameters = builder.parameters.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateRelationalDatabaseParametersInput {
     /// Creates a new builder-style object to manufacture [`UpdateRelationalDatabaseParametersInput`](crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersInput).
     pub fn builder() -> crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder {

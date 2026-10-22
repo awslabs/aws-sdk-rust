@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "evaluationDimensionName" => {
+                            builder = builder.set_evaluation_dimension_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "explanation" => {
                             builder = builder.set_explanation(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

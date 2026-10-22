@@ -27,6 +27,144 @@ impl DescribeTapeArchivesInput {
         self.limit
     }
 }
+static DESCRIBETAPEARCHIVESINPUT_MEMBER_TAPE_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#TapeARNs$member", "com.amazonaws.storagegateway", "TapeARNs"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBETAPEARCHIVESINPUT_MEMBER_TAPE_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeTapeArchivesInput$TapeARNs",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeTapeArchivesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TapeARNs",
+    0,
+)
+.with_list_member(&DESCRIBETAPEARCHIVESINPUT_MEMBER_TAPE_ARNS_MEMBER);
+static DESCRIBETAPEARCHIVESINPUT_MEMBER_MARKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeTapeArchivesInput$Marker",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeTapeArchivesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Marker",
+    1,
+);
+static DESCRIBETAPEARCHIVESINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeTapeArchivesInput$Limit",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeTapeArchivesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    2,
+);
+static DESCRIBETAPEARCHIVESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeTapeArchivesInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeTapeArchivesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBETAPEARCHIVESINPUT_MEMBER_TAPE_ARNS,
+        &DESCRIBETAPEARCHIVESINPUT_MEMBER_MARKER,
+        &DESCRIBETAPEARCHIVESINPUT_MEMBER_LIMIT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeTapeArchivesInput");
+impl DescribeTapeArchivesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBETAPEARCHIVESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeTapeArchivesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tape_arns {
+            ser.write_list(
+                &DESCRIBETAPEARCHIVESINPUT_MEMBER_TAPE_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.marker {
+            ser.write_string(&DESCRIBETAPEARCHIVESINPUT_MEMBER_MARKER, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&DESCRIBETAPEARCHIVESINPUT_MEMBER_LIMIT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBETAPEARCHIVESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marker = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeTapeArchivesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeTapeArchivesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
     pub fn builder() -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {

@@ -31,6 +31,194 @@ impl ContainerConfig {
         self.container_environment_variables.as_ref()
     }
 }
+static CONTAINERCONFIG_MEMBER_CONTAINER_ARGUMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomImageContainerArguments$member",
+        "com.amazonaws.sagemaker",
+        "CustomImageContainerArguments",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERCONFIG_MEMBER_CONTAINER_ARGUMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerConfig$ContainerArguments",
+        "com.amazonaws.sagemaker",
+        "ContainerConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerArguments",
+    0,
+)
+.with_list_member(&CONTAINERCONFIG_MEMBER_CONTAINER_ARGUMENTS_MEMBER);
+static CONTAINERCONFIG_MEMBER_CONTAINER_ENTRYPOINT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomImageContainerEntrypoint$member",
+        "com.amazonaws.sagemaker",
+        "CustomImageContainerEntrypoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERCONFIG_MEMBER_CONTAINER_ENTRYPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerConfig$ContainerEntrypoint",
+        "com.amazonaws.sagemaker",
+        "ContainerConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ContainerEntrypoint",
+    1,
+)
+.with_list_member(&CONTAINERCONFIG_MEMBER_CONTAINER_ENTRYPOINT_MEMBER);
+static CONTAINERCONFIG_MEMBER_CONTAINER_ENVIRONMENT_VARIABLES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomImageContainerEnvironmentVariables$key",
+        "com.amazonaws.sagemaker",
+        "CustomImageContainerEnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONTAINERCONFIG_MEMBER_CONTAINER_ENVIRONMENT_VARIABLES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CustomImageContainerEnvironmentVariables$value",
+        "com.amazonaws.sagemaker",
+        "CustomImageContainerEnvironmentVariables",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CONTAINERCONFIG_MEMBER_CONTAINER_ENVIRONMENT_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ContainerConfig$ContainerEnvironmentVariables",
+        "com.amazonaws.sagemaker",
+        "ContainerConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ContainerEnvironmentVariables",
+    2,
+)
+.with_map_members(
+    &CONTAINERCONFIG_MEMBER_CONTAINER_ENVIRONMENT_VARIABLES_KEY,
+    &CONTAINERCONFIG_MEMBER_CONTAINER_ENVIRONMENT_VARIABLES_VALUE,
+);
+static CONTAINERCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#ContainerConfig", "com.amazonaws.sagemaker", "ContainerConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERCONFIG_MEMBER_CONTAINER_ARGUMENTS,
+        &CONTAINERCONFIG_MEMBER_CONTAINER_ENTRYPOINT,
+        &CONTAINERCONFIG_MEMBER_CONTAINER_ENVIRONMENT_VARIABLES,
+    ],
+);
+impl ContainerConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_arguments {
+            ser.write_list(
+                &CONTAINERCONFIG_MEMBER_CONTAINER_ARGUMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.container_entrypoint {
+            ser.write_list(
+                &CONTAINERCONFIG_MEMBER_CONTAINER_ENTRYPOINT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.container_environment_variables {
+            ser.write_map(
+                &CONTAINERCONFIG_MEMBER_CONTAINER_ENVIRONMENT_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_arguments = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_entrypoint = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_environment_variables = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerConfig {
     /// Creates a new builder-style object to manufacture [`ContainerConfig`](crate::types::ContainerConfig).
     pub fn builder() -> crate::types::builders::ContainerConfigBuilder {

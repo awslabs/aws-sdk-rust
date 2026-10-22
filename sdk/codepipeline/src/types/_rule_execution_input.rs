@@ -45,6 +45,282 @@ impl RuleExecutionInput {
         self.input_artifacts.as_deref().unwrap_or_default()
     }
 }
+static RULEEXECUTIONINPUT_MEMBER_RULE_TYPE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionInput$ruleTypeId",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ruleTypeId",
+    0,
+);
+static RULEEXECUTIONINPUT_MEMBER_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleConfigurationMap$key",
+        "com.amazonaws.codepipeline",
+        "RuleConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static RULEEXECUTIONINPUT_MEMBER_CONFIGURATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleConfigurationMap$value",
+        "com.amazonaws.codepipeline",
+        "RuleConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static RULEEXECUTIONINPUT_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionInput$configuration",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "configuration",
+    1,
+)
+.with_map_members(
+    &RULEEXECUTIONINPUT_MEMBER_CONFIGURATION_KEY,
+    &RULEEXECUTIONINPUT_MEMBER_CONFIGURATION_VALUE,
+);
+static RULEEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedRuleConfigurationMap$key",
+        "com.amazonaws.codepipeline",
+        "ResolvedRuleConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static RULEEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedRuleConfigurationMap$value",
+        "com.amazonaws.codepipeline",
+        "ResolvedRuleConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static RULEEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionInput$resolvedConfiguration",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "resolvedConfiguration",
+    2,
+)
+.with_map_members(
+    &RULEEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_KEY,
+    &RULEEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_VALUE,
+);
+static RULEEXECUTIONINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionInput$roleArn",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "roleArn",
+    3,
+);
+static RULEEXECUTIONINPUT_MEMBER_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionInput$region",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "region",
+    4,
+);
+static RULEEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactDetailList$member",
+        "com.amazonaws.codepipeline",
+        "ArtifactDetailList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RULEEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionInput$inputArtifacts",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "inputArtifacts",
+    5,
+)
+.with_list_member(&RULEEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS_MEMBER);
+static RULEEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionInput",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RULEEXECUTIONINPUT_MEMBER_RULE_TYPE_ID,
+        &RULEEXECUTIONINPUT_MEMBER_CONFIGURATION,
+        &RULEEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION,
+        &RULEEXECUTIONINPUT_MEMBER_ROLE_ARN,
+        &RULEEXECUTIONINPUT_MEMBER_REGION,
+        &RULEEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS,
+    ],
+);
+impl RuleExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RULEEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuleExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.rule_type_id {
+            ser.write_struct(&RULEEXECUTIONINPUT_MEMBER_RULE_TYPE_ID, val)?;
+        }
+        if let Some(ref val) = self.configuration {
+            ser.write_map(
+                &RULEEXECUTIONINPUT_MEMBER_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resolved_configuration {
+            ser.write_map(
+                &RULEEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&RULEEXECUTIONINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.region {
+            ser.write_string(&RULEEXECUTIONINPUT_MEMBER_REGION, val)?;
+        }
+        if let Some(ref val) = self.input_artifacts {
+            ser.write_list(
+                &RULEEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ArtifactDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuleExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RULEEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule_type_id = Some(crate::types::RuleTypeId::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolved_configuration = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ArtifactDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuleExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RuleExecutionInput {
     /// Creates a new builder-style object to manufacture [`RuleExecutionInput`](crate::types::RuleExecutionInput).
     pub fn builder() -> crate::types::builders::RuleExecutionInputBuilder {

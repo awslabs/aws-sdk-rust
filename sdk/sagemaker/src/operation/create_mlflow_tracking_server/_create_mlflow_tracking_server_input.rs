@@ -70,6 +70,305 @@ impl CreateMlflowTrackingServerInput {
         self.s3_bucket_owner_verification
     }
 }
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$TrackingServerName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrackingServerName",
+    0,
+);
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_ARTIFACT_STORE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$ArtifactStoreUri",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactStoreUri",
+    1,
+);
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$TrackingServerSize",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrackingServerSize",
+    2,
+);
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_MLFLOW_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$MlflowVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MlflowVersion",
+    3,
+);
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    4,
+);
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_AUTOMATIC_MODEL_REGISTRATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$AutomaticModelRegistration",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateMlflowTrackingServerInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "AutomaticModelRegistration",
+        5,
+    );
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_WEEKLY_MAINTENANCE_WINDOW_START: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$WeeklyMaintenanceWindowStart",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateMlflowTrackingServerInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WeeklyMaintenanceWindowStart",
+        6,
+    );
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TAGS_MEMBER);
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_S3_BUCKET_OWNER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$S3BucketOwnerAccountId",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateMlflowTrackingServerInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "S3BucketOwnerAccountId",
+        8,
+    );
+static CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_S3_BUCKET_OWNER_VERIFICATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput$S3BucketOwnerVerification",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateMlflowTrackingServerInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "S3BucketOwnerVerification",
+        9,
+    );
+static CREATEMLFLOWTRACKINGSERVERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowTrackingServerInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowTrackingServerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_NAME,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_ARTIFACT_STORE_URI,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_SIZE,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_MLFLOW_VERSION,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_ROLE_ARN,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_AUTOMATIC_MODEL_REGISTRATION,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_WEEKLY_MAINTENANCE_WINDOW_START,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TAGS,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_S3_BUCKET_OWNER_ACCOUNT_ID,
+        &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_S3_BUCKET_OWNER_VERIFICATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateMlflowTrackingServerRequest");
+impl CreateMlflowTrackingServerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMLFLOWTRACKINGSERVERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateMlflowTrackingServerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tracking_server_name {
+            ser.write_string(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_NAME, val)?;
+        }
+        if let Some(ref val) = self.artifact_store_uri {
+            ser.write_string(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_ARTIFACT_STORE_URI, val)?;
+        }
+        if let Some(ref val) = self.tracking_server_size {
+            ser.write_string(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TRACKING_SERVER_SIZE, val.as_str())?;
+        }
+        if let Some(ref val) = self.mlflow_version {
+            ser.write_string(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_MLFLOW_VERSION, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.automatic_model_registration {
+            ser.write_boolean(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_AUTOMATIC_MODEL_REGISTRATION, *val)?;
+        }
+        if let Some(ref val) = self.weekly_maintenance_window_start {
+            ser.write_string(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_WEEKLY_MAINTENANCE_WINDOW_START, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_bucket_owner_account_id {
+            ser.write_string(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_S3_BUCKET_OWNER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.s3_bucket_owner_verification {
+            ser.write_boolean(&CREATEMLFLOWTRACKINGSERVERINPUT_MEMBER_S3_BUCKET_OWNER_VERIFICATION, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_mlflow_tracking_server::builders::CreateMlflowTrackingServerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMLFLOWTRACKINGSERVERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tracking_server_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_store_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tracking_server_size = Some(crate::types::TrackingServerSize::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mlflow_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.automatic_model_registration = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.weekly_maintenance_window_start = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_owner_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_owner_verification = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateMlflowTrackingServerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tracking_server_name = builder.tracking_server_name.or(Some(String::new()));
+        builder.artifact_store_uri = builder.artifact_store_uri.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateMlflowTrackingServerInput {
     /// Creates a new builder-style object to manufacture [`CreateMlflowTrackingServerInput`](crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerInput).
     pub fn builder() -> crate::operation::create_mlflow_tracking_server::builders::CreateMlflowTrackingServerInputBuilder {

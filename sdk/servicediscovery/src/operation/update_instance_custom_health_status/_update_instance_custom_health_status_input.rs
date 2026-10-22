@@ -24,6 +24,131 @@ impl UpdateInstanceCustomHealthStatusInput {
         self.status.as_ref()
     }
 }
+static UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_SERVICE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateInstanceCustomHealthStatusInput$ServiceId",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateInstanceCustomHealthStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceId",
+    0,
+);
+static UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateInstanceCustomHealthStatusInput$InstanceId",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateInstanceCustomHealthStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    1,
+);
+static UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateInstanceCustomHealthStatusInput$Status",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateInstanceCustomHealthStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateInstanceCustomHealthStatusInput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateInstanceCustomHealthStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_SERVICE_ID,
+        &UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_INSTANCE_ID,
+        &UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_STATUS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateInstanceCustomHealthStatusRequest");
+impl UpdateInstanceCustomHealthStatusInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateInstanceCustomHealthStatusInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_id {
+            ser.write_string(&UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_SERVICE_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEINSTANCECUSTOMHEALTHSTATUSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::CustomHealthStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateInstanceCustomHealthStatusInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_id = builder.service_id.or(Some(String::new()));
+        builder.instance_id = builder.instance_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateInstanceCustomHealthStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceCustomHealthStatusInput`](crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusInput).
     pub fn builder() -> crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusInputBuilder {

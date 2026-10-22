@@ -51,6 +51,233 @@ impl InstanceTarget {
         self.instance_label.as_ref()
     }
 }
+static INSTANCETARGET_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceTarget$deploymentId",
+        "com.amazonaws.codedeploy",
+        "InstanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static INSTANCETARGET_MEMBER_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceTarget$targetId",
+        "com.amazonaws.codedeploy",
+        "InstanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetId",
+    1,
+);
+static INSTANCETARGET_MEMBER_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceTarget$targetArn",
+        "com.amazonaws.codedeploy",
+        "InstanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetArn",
+    2,
+);
+static INSTANCETARGET_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceTarget$status",
+        "com.amazonaws.codedeploy",
+        "InstanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    3,
+);
+static INSTANCETARGET_MEMBER_LAST_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceTarget$lastUpdatedAt",
+        "com.amazonaws.codedeploy",
+        "InstanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastUpdatedAt",
+    4,
+);
+static INSTANCETARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LifecycleEventList$member",
+        "com.amazonaws.codedeploy",
+        "LifecycleEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCETARGET_MEMBER_LIFECYCLE_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceTarget$lifecycleEvents",
+        "com.amazonaws.codedeploy",
+        "InstanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "lifecycleEvents",
+    5,
+)
+.with_list_member(&INSTANCETARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER);
+static INSTANCETARGET_MEMBER_INSTANCE_LABEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceTarget$instanceLabel",
+        "com.amazonaws.codedeploy",
+        "InstanceTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceLabel",
+    6,
+);
+static INSTANCETARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#InstanceTarget", "com.amazonaws.codedeploy", "InstanceTarget"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCETARGET_MEMBER_DEPLOYMENT_ID,
+        &INSTANCETARGET_MEMBER_TARGET_ID,
+        &INSTANCETARGET_MEMBER_TARGET_ARN,
+        &INSTANCETARGET_MEMBER_STATUS,
+        &INSTANCETARGET_MEMBER_LAST_UPDATED_AT,
+        &INSTANCETARGET_MEMBER_LIFECYCLE_EVENTS,
+        &INSTANCETARGET_MEMBER_INSTANCE_LABEL,
+    ],
+);
+impl InstanceTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCETARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&INSTANCETARGET_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.target_id {
+            ser.write_string(&INSTANCETARGET_MEMBER_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.target_arn {
+            ser.write_string(&INSTANCETARGET_MEMBER_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&INSTANCETARGET_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_updated_at {
+            ser.write_timestamp(&INSTANCETARGET_MEMBER_LAST_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_events {
+            ser.write_list(
+                &INSTANCETARGET_MEMBER_LIFECYCLE_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LifecycleEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_label {
+            ser.write_string(&INSTANCETARGET_MEMBER_INSTANCE_LABEL, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCETARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TargetStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LifecycleEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_label = Some(crate::types::TargetLabel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceTarget {
     /// Creates a new builder-style object to manufacture [`InstanceTarget`](crate::types::InstanceTarget).
     pub fn builder() -> crate::types::builders::InstanceTargetBuilder {

@@ -44,6 +44,245 @@ impl CreateArtifactInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEARTIFACTINPUT_MEMBER_ARTIFACT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateArtifactInput$ArtifactName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactName",
+    0,
+);
+static CREATEARTIFACTINPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateArtifactInput$Source",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    1,
+);
+static CREATEARTIFACTINPUT_MEMBER_ARTIFACT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateArtifactInput$ArtifactType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactType",
+    2,
+);
+static CREATEARTIFACTINPUT_MEMBER_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ArtifactProperties$key",
+        "com.amazonaws.sagemaker",
+        "ArtifactProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEARTIFACTINPUT_MEMBER_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ArtifactProperties$value",
+        "com.amazonaws.sagemaker",
+        "ArtifactProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEARTIFACTINPUT_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateArtifactInput$Properties",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Properties",
+    3,
+)
+.with_map_members(&CREATEARTIFACTINPUT_MEMBER_PROPERTIES_KEY, &CREATEARTIFACTINPUT_MEMBER_PROPERTIES_VALUE);
+static CREATEARTIFACTINPUT_MEMBER_METADATA_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateArtifactInput$MetadataProperties",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MetadataProperties",
+    4,
+);
+static CREATEARTIFACTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEARTIFACTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateArtifactInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATEARTIFACTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEARTIFACTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateArtifactInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEARTIFACTINPUT_MEMBER_ARTIFACT_NAME,
+        &CREATEARTIFACTINPUT_MEMBER_SOURCE,
+        &CREATEARTIFACTINPUT_MEMBER_ARTIFACT_TYPE,
+        &CREATEARTIFACTINPUT_MEMBER_PROPERTIES,
+        &CREATEARTIFACTINPUT_MEMBER_METADATA_PROPERTIES,
+        &CREATEARTIFACTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateArtifactRequest");
+impl CreateArtifactInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEARTIFACTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateArtifactInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.artifact_name {
+            ser.write_string(&CREATEARTIFACTINPUT_MEMBER_ARTIFACT_NAME, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&CREATEARTIFACTINPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.artifact_type {
+            ser.write_string(&CREATEARTIFACTINPUT_MEMBER_ARTIFACT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_map(
+                &CREATEARTIFACTINPUT_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.metadata_properties {
+            ser.write_struct(&CREATEARTIFACTINPUT_MEMBER_METADATA_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEARTIFACTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_artifact::builders::CreateArtifactInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEARTIFACTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ArtifactSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata_properties = Some(crate::types::MetadataProperties::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateArtifactInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.artifact_type = builder.artifact_type.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateArtifactInput {
     /// Creates a new builder-style object to manufacture [`CreateArtifactInput`](crate::operation::create_artifact::CreateArtifactInput).
     pub fn builder() -> crate::operation::create_artifact::builders::CreateArtifactInputBuilder {

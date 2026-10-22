@@ -30,6 +30,153 @@ impl UpdateClusterSchedulerConfigInput {
         self.description.as_deref()
     }
 }
+static UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#UpdateClusterSchedulerConfigInput$ClusterSchedulerConfigId",
+            "com.amazonaws.sagemaker.synthetic",
+            "UpdateClusterSchedulerConfigInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ClusterSchedulerConfigId",
+        0,
+    );
+static UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_TARGET_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSchedulerConfigInput$TargetVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSchedulerConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TargetVersion",
+    1,
+);
+static UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_SCHEDULER_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSchedulerConfigInput$SchedulerConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSchedulerConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SchedulerConfig",
+    2,
+);
+static UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSchedulerConfigInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSchedulerConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static UPDATECLUSTERSCHEDULERCONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateClusterSchedulerConfigInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateClusterSchedulerConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ID,
+        &UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_TARGET_VERSION,
+        &UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_SCHEDULER_CONFIG,
+        &UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_DESCRIPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateClusterSchedulerConfigRequest");
+impl UpdateClusterSchedulerConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECLUSTERSCHEDULERCONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateClusterSchedulerConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_scheduler_config_id {
+            ser.write_string(&UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_CLUSTER_SCHEDULER_CONFIG_ID, val)?;
+        }
+        if let Some(ref val) = self.target_version {
+            ser.write_integer(&UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_TARGET_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.scheduler_config {
+            ser.write_struct(&UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_SCHEDULER_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATECLUSTERSCHEDULERCONFIGINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_cluster_scheduler_config::builders::UpdateClusterSchedulerConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECLUSTERSCHEDULERCONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_scheduler_config_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scheduler_config = Some(crate::types::SchedulerConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateClusterSchedulerConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_scheduler_config_id = builder.cluster_scheduler_config_id.or(Some(String::new()));
+        builder.target_version = builder.target_version.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateClusterSchedulerConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterSchedulerConfigInput`](crate::operation::update_cluster_scheduler_config::UpdateClusterSchedulerConfigInput).
     pub fn builder() -> crate::operation::update_cluster_scheduler_config::builders::UpdateClusterSchedulerConfigInputBuilder {

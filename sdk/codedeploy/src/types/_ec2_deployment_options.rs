@@ -25,6 +25,113 @@ impl Ec2DeploymentOptions {
         self.auto_scaling_group_processes_to_suspend.as_deref().unwrap_or_default()
     }
 }
+static EC2DEPLOYMENTOPTIONS_MEMBER_AUTO_SCALING_GROUP_PROCESSES_TO_SUSPEND_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#AutoScalingGroupProcessesToSuspendList$member",
+            "com.amazonaws.codedeploy",
+            "AutoScalingGroupProcessesToSuspendList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static EC2DEPLOYMENTOPTIONS_MEMBER_AUTO_SCALING_GROUP_PROCESSES_TO_SUSPEND: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#EC2DeploymentOptions$autoScalingGroupProcessesToSuspend",
+            "com.amazonaws.codedeploy",
+            "EC2DeploymentOptions",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "autoScalingGroupProcessesToSuspend",
+        0,
+    )
+    .with_list_member(&EC2DEPLOYMENTOPTIONS_MEMBER_AUTO_SCALING_GROUP_PROCESSES_TO_SUSPEND_MEMBER);
+static EC2DEPLOYMENTOPTIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#EC2DeploymentOptions",
+        "com.amazonaws.codedeploy",
+        "EC2DeploymentOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EC2DEPLOYMENTOPTIONS_MEMBER_AUTO_SCALING_GROUP_PROCESSES_TO_SUSPEND],
+);
+impl Ec2DeploymentOptions {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EC2DEPLOYMENTOPTIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Ec2DeploymentOptions {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_scaling_group_processes_to_suspend {
+            ser.write_list(
+                &EC2DEPLOYMENTOPTIONS_MEMBER_AUTO_SCALING_GROUP_PROCESSES_TO_SUSPEND,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::Ec2DeploymentOptionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EC2DEPLOYMENTOPTIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_scaling_group_processes_to_suspend = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AutoScalingGroupProcess::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Ec2DeploymentOptions {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Ec2DeploymentOptions {
     /// Creates a new builder-style object to manufacture [`Ec2DeploymentOptions`](crate::types::Ec2DeploymentOptions).
     pub fn builder() -> crate::types::builders::Ec2DeploymentOptionsBuilder {

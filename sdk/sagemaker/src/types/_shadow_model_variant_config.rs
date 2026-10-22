@@ -19,6 +19,106 @@ impl ShadowModelVariantConfig {
         self.sampling_percentage
     }
 }
+static SHADOWMODELVARIANTCONFIG_MEMBER_SHADOW_MODEL_VARIANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ShadowModelVariantConfig$ShadowModelVariantName",
+        "com.amazonaws.sagemaker",
+        "ShadowModelVariantConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ShadowModelVariantName",
+    0,
+);
+static SHADOWMODELVARIANTCONFIG_MEMBER_SAMPLING_PERCENTAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ShadowModelVariantConfig$SamplingPercentage",
+        "com.amazonaws.sagemaker",
+        "ShadowModelVariantConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SamplingPercentage",
+    1,
+);
+static SHADOWMODELVARIANTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ShadowModelVariantConfig",
+        "com.amazonaws.sagemaker",
+        "ShadowModelVariantConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SHADOWMODELVARIANTCONFIG_MEMBER_SHADOW_MODEL_VARIANT_NAME,
+        &SHADOWMODELVARIANTCONFIG_MEMBER_SAMPLING_PERCENTAGE,
+    ],
+);
+impl ShadowModelVariantConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SHADOWMODELVARIANTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ShadowModelVariantConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.shadow_model_variant_name {
+            ser.write_string(&SHADOWMODELVARIANTCONFIG_MEMBER_SHADOW_MODEL_VARIANT_NAME, val)?;
+        }
+        if let Some(ref val) = self.sampling_percentage {
+            ser.write_integer(&SHADOWMODELVARIANTCONFIG_MEMBER_SAMPLING_PERCENTAGE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ShadowModelVariantConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SHADOWMODELVARIANTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shadow_model_variant_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sampling_percentage = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ShadowModelVariantConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ShadowModelVariantConfig {
     /// Creates a new builder-style object to manufacture [`ShadowModelVariantConfig`](crate::types::ShadowModelVariantConfig).
     pub fn builder() -> crate::types::builders::ShadowModelVariantConfigBuilder {

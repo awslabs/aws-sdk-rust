@@ -21,6 +21,125 @@ impl AppliedTerminology {
         self.terms.as_deref().unwrap_or_default()
     }
 }
+static APPLIEDTERMINOLOGY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#AppliedTerminology$Name",
+        "com.amazonaws.translate",
+        "AppliedTerminology",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static APPLIEDTERMINOLOGY_MEMBER_TERMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.translate#TermList$member", "com.amazonaws.translate", "TermList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static APPLIEDTERMINOLOGY_MEMBER_TERMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#AppliedTerminology$Terms",
+        "com.amazonaws.translate",
+        "AppliedTerminology",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Terms",
+    1,
+)
+.with_list_member(&APPLIEDTERMINOLOGY_MEMBER_TERMS_MEMBER);
+static APPLIEDTERMINOLOGY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#AppliedTerminology",
+        "com.amazonaws.translate",
+        "AppliedTerminology",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&APPLIEDTERMINOLOGY_MEMBER_NAME, &APPLIEDTERMINOLOGY_MEMBER_TERMS],
+);
+impl AppliedTerminology {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &APPLIEDTERMINOLOGY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AppliedTerminology {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&APPLIEDTERMINOLOGY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.terms {
+            ser.write_list(
+                &APPLIEDTERMINOLOGY_MEMBER_TERMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Term::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AppliedTerminologyBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&APPLIEDTERMINOLOGY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Term::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AppliedTerminology {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AppliedTerminology {
     /// Creates a new builder-style object to manufacture [`AppliedTerminology`](crate::types::AppliedTerminology).
     pub fn builder() -> crate::types::builders::AppliedTerminologyBuilder {

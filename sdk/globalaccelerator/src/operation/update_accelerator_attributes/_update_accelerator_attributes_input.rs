@@ -36,6 +36,151 @@ impl UpdateAcceleratorAttributesInput {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
+static UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_ACCELERATOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateAcceleratorAttributesInput$AcceleratorArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateAcceleratorAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcceleratorArn",
+    0,
+);
+static UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateAcceleratorAttributesInput$FlowLogsEnabled",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateAcceleratorAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "FlowLogsEnabled",
+    1,
+);
+static UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_S3_BUCKET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateAcceleratorAttributesInput$FlowLogsS3Bucket",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateAcceleratorAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlowLogsS3Bucket",
+    2,
+);
+static UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_S3_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateAcceleratorAttributesInput$FlowLogsS3Prefix",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateAcceleratorAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlowLogsS3Prefix",
+    3,
+);
+static UPDATEACCELERATORATTRIBUTESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#UpdateAcceleratorAttributesInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "UpdateAcceleratorAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_ACCELERATOR_ARN,
+        &UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_ENABLED,
+        &UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_S3_BUCKET,
+        &UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_S3_PREFIX,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateAcceleratorAttributesRequest");
+impl UpdateAcceleratorAttributesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEACCELERATORATTRIBUTESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateAcceleratorAttributesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.accelerator_arn {
+            ser.write_string(&UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_ACCELERATOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.flow_logs_enabled {
+            ser.write_boolean(&UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.flow_logs_s3_bucket {
+            ser.write_string(&UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_S3_BUCKET, val)?;
+        }
+        if let Some(ref val) = self.flow_logs_s3_prefix {
+            ser.write_string(&UPDATEACCELERATORATTRIBUTESINPUT_MEMBER_FLOW_LOGS_S3_PREFIX, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEACCELERATORATTRIBUTESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flow_logs_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flow_logs_s3_bucket = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flow_logs_s3_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateAcceleratorAttributesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.accelerator_arn = builder.accelerator_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateAcceleratorAttributesInput {
     /// Creates a new builder-style object to manufacture [`UpdateAcceleratorAttributesInput`](crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesInput).
     pub fn builder() -> crate::operation::update_accelerator_attributes::builders::UpdateAcceleratorAttributesInputBuilder {

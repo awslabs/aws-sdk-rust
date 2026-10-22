@@ -27,6 +27,106 @@ impl WebhookAuthConfiguration {
         self.secret_token.as_deref()
     }
 }
+static WEBHOOKAUTHCONFIGURATION_MEMBER_ALLOWED_IP_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookAuthConfiguration$AllowedIPRange",
+        "com.amazonaws.codepipeline",
+        "WebhookAuthConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AllowedIPRange",
+    0,
+);
+static WEBHOOKAUTHCONFIGURATION_MEMBER_SECRET_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookAuthConfiguration$SecretToken",
+        "com.amazonaws.codepipeline",
+        "WebhookAuthConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecretToken",
+    1,
+);
+static WEBHOOKAUTHCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#WebhookAuthConfiguration",
+        "com.amazonaws.codepipeline",
+        "WebhookAuthConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &WEBHOOKAUTHCONFIGURATION_MEMBER_ALLOWED_IP_RANGE,
+        &WEBHOOKAUTHCONFIGURATION_MEMBER_SECRET_TOKEN,
+    ],
+);
+impl WebhookAuthConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &WEBHOOKAUTHCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for WebhookAuthConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.allowed_ip_range {
+            ser.write_string(&WEBHOOKAUTHCONFIGURATION_MEMBER_ALLOWED_IP_RANGE, val)?;
+        }
+        if let Some(ref val) = self.secret_token {
+            ser.write_string(&WEBHOOKAUTHCONFIGURATION_MEMBER_SECRET_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::WebhookAuthConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&WEBHOOKAUTHCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_ip_range = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secret_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl WebhookAuthConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl WebhookAuthConfiguration {
     /// Creates a new builder-style object to manufacture [`WebhookAuthConfiguration`](crate::types::WebhookAuthConfiguration).
     pub fn builder() -> crate::types::builders::WebhookAuthConfigurationBuilder {

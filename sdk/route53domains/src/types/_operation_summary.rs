@@ -81,6 +81,232 @@ impl OperationSummary {
         self.last_updated_date.as_ref()
     }
 }
+static OPERATIONSUMMARY_MEMBER_OPERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$OperationId",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperationId",
+    0,
+);
+static OPERATIONSUMMARY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$Status",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static OPERATIONSUMMARY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$Type",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static OPERATIONSUMMARY_MEMBER_SUBMITTED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$SubmittedDate",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SubmittedDate",
+    3,
+);
+static OPERATIONSUMMARY_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$DomainName",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    4,
+);
+static OPERATIONSUMMARY_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$Message",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    5,
+);
+static OPERATIONSUMMARY_MEMBER_STATUS_FLAG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$StatusFlag",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusFlag",
+    6,
+);
+static OPERATIONSUMMARY_MEMBER_LAST_UPDATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary$LastUpdatedDate",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedDate",
+    7,
+);
+static OPERATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#OperationSummary",
+        "com.amazonaws.route53domains",
+        "OperationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPERATIONSUMMARY_MEMBER_OPERATION_ID,
+        &OPERATIONSUMMARY_MEMBER_STATUS,
+        &OPERATIONSUMMARY_MEMBER_TYPE,
+        &OPERATIONSUMMARY_MEMBER_SUBMITTED_DATE,
+        &OPERATIONSUMMARY_MEMBER_DOMAIN_NAME,
+        &OPERATIONSUMMARY_MEMBER_MESSAGE,
+        &OPERATIONSUMMARY_MEMBER_STATUS_FLAG,
+        &OPERATIONSUMMARY_MEMBER_LAST_UPDATED_DATE,
+    ],
+);
+impl OperationSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPERATIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OperationSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.operation_id {
+            ser.write_string(&OPERATIONSUMMARY_MEMBER_OPERATION_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&OPERATIONSUMMARY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&OPERATIONSUMMARY_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.submitted_date {
+            ser.write_timestamp(&OPERATIONSUMMARY_MEMBER_SUBMITTED_DATE, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&OPERATIONSUMMARY_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&OPERATIONSUMMARY_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.status_flag {
+            ser.write_string(&OPERATIONSUMMARY_MEMBER_STATUS_FLAG, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_updated_date {
+            ser.write_timestamp(&OPERATIONSUMMARY_MEMBER_LAST_UPDATED_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OperationSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPERATIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::OperationStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::OperationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submitted_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_flag = Some(crate::types::StatusFlag::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OperationSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OperationSummary {
     /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::types::OperationSummary).
     pub fn builder() -> crate::types::builders::OperationSummaryBuilder {

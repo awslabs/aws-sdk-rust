@@ -46,6 +46,170 @@ impl ResolveCustomerOutput {
         self.metadata.as_ref()
     }
 }
+static RESOLVECUSTOMEROUTPUT_MEMBER_CUSTOMER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#ResolveCustomerOutput$CustomerIdentifier",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "ResolveCustomerOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerIdentifier",
+    0,
+);
+static RESOLVECUSTOMEROUTPUT_MEMBER_PRODUCT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#ResolveCustomerOutput$ProductCode",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "ResolveCustomerOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductCode",
+    1,
+);
+static RESOLVECUSTOMEROUTPUT_MEMBER_CUSTOMER_AWS_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#ResolveCustomerOutput$CustomerAWSAccountId",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "ResolveCustomerOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerAWSAccountId",
+    2,
+);
+static RESOLVECUSTOMEROUTPUT_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#ResolveCustomerOutput$LicenseArn",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "ResolveCustomerOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    3,
+);
+static RESOLVECUSTOMEROUTPUT_MEMBER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#ResolveCustomerOutput$Metadata",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "ResolveCustomerOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Metadata",
+    4,
+);
+static RESOLVECUSTOMEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#ResolveCustomerOutput",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "ResolveCustomerOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOLVECUSTOMEROUTPUT_MEMBER_CUSTOMER_IDENTIFIER,
+        &RESOLVECUSTOMEROUTPUT_MEMBER_PRODUCT_CODE,
+        &RESOLVECUSTOMEROUTPUT_MEMBER_CUSTOMER_AWS_ACCOUNT_ID,
+        &RESOLVECUSTOMEROUTPUT_MEMBER_LICENSE_ARN,
+        &RESOLVECUSTOMEROUTPUT_MEMBER_METADATA,
+    ],
+)
+.with_original_name("ResolveCustomerResult");
+impl ResolveCustomerOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOLVECUSTOMEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResolveCustomerOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.customer_identifier {
+            ser.write_string(&RESOLVECUSTOMEROUTPUT_MEMBER_CUSTOMER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.product_code {
+            ser.write_string(&RESOLVECUSTOMEROUTPUT_MEMBER_PRODUCT_CODE, val)?;
+        }
+        if let Some(ref val) = self.customer_aws_account_id {
+            ser.write_string(&RESOLVECUSTOMEROUTPUT_MEMBER_CUSTOMER_AWS_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&RESOLVECUSTOMEROUTPUT_MEMBER_LICENSE_ARN, val)?;
+        }
+        if let Some(ref val) = self.metadata {
+            ser.write_struct(&RESOLVECUSTOMEROUTPUT_MEMBER_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::resolve_customer::builders::ResolveCustomerOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOLVECUSTOMEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_aws_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata = Some(crate::types::Metadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResolveCustomerOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ResolveCustomerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

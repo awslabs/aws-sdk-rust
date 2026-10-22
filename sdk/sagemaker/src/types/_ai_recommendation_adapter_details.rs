@@ -23,6 +23,159 @@ impl AiRecommendationAdapterDetails {
         self.s3_uris.as_deref().unwrap_or_default()
     }
 }
+static AIRECOMMENDATIONADAPTERDETAILS_MEMBER_MODEL_PACKAGE_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AIAdapterModelPackageEntryList$member",
+            "com.amazonaws.sagemaker",
+            "AIAdapterModelPackageEntryList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static AIRECOMMENDATIONADAPTERDETAILS_MEMBER_MODEL_PACKAGE_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationAdapterDetails$ModelPackageArns",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationAdapterDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ModelPackageArns",
+    0,
+)
+.with_list_member(&AIRECOMMENDATIONADAPTERDETAILS_MEMBER_MODEL_PACKAGE_ARNS_MEMBER);
+static AIRECOMMENDATIONADAPTERDETAILS_MEMBER_S3_URIS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIAdapterS3EntryList$member",
+        "com.amazonaws.sagemaker",
+        "AIAdapterS3EntryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AIRECOMMENDATIONADAPTERDETAILS_MEMBER_S3_URIS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationAdapterDetails$S3Uris",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationAdapterDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "S3Uris",
+    1,
+)
+.with_list_member(&AIRECOMMENDATIONADAPTERDETAILS_MEMBER_S3_URIS_MEMBER);
+static AIRECOMMENDATIONADAPTERDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIRecommendationAdapterDetails",
+        "com.amazonaws.sagemaker",
+        "AIRecommendationAdapterDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AIRECOMMENDATIONADAPTERDETAILS_MEMBER_MODEL_PACKAGE_ARNS,
+        &AIRECOMMENDATIONADAPTERDETAILS_MEMBER_S3_URIS,
+    ],
+);
+impl AiRecommendationAdapterDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AIRECOMMENDATIONADAPTERDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiRecommendationAdapterDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_package_arns {
+            ser.write_list(
+                &AIRECOMMENDATIONADAPTERDETAILS_MEMBER_MODEL_PACKAGE_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AiAdapterModelPackageEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_uris {
+            ser.write_list(
+                &AIRECOMMENDATIONADAPTERDETAILS_MEMBER_S3_URIS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AiAdapterS3Entry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiRecommendationAdapterDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AIRECOMMENDATIONADAPTERDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_arns = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AiAdapterModelPackageEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_uris = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AiAdapterS3Entry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiRecommendationAdapterDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiRecommendationAdapterDetails {
     /// Creates a new builder-style object to manufacture [`AiRecommendationAdapterDetails`](crate::types::AiRecommendationAdapterDetails).
     pub fn builder() -> crate::types::builders::AiRecommendationAdapterDetailsBuilder {

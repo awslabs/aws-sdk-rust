@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`arn(Option<String>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::arn): <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
     ///   - [`sign_in_config(Option<SignInConfig>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::sign_in_config): <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).</p>
     ///   - [`agent_config(Option<AgentConfig>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::agent_config): <p>The distribution of agents between the instance and its replica(s).</p>
+    ///   - [`last_failover_time(Option<DateTime>)`](crate::operation::get_traffic_distribution::GetTrafficDistributionOutput::last_failover_time): <p>The timestamp of the most recent failover for the traffic distribution group. This value is updated each time <code>UpdateTrafficDistribution</code> is called to change the traffic distribution.</p>
     /// - On failure, responds with [`SdkError<GetTrafficDistributionError>`](crate::operation::get_traffic_distribution::GetTrafficDistributionError)
     pub fn get_traffic_distribution(&self) -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder {
         crate::operation::get_traffic_distribution::builders::GetTrafficDistributionFluentBuilder::new(self.handle.clone())

@@ -13,6 +13,83 @@ impl RuntimeValidationConfig {
         self.intended_instance_type.as_deref()
     }
 }
+static RUNTIMEVALIDATIONCONFIG_MEMBER_INTENDED_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#RuntimeValidationConfig$IntendedInstanceType",
+        "com.amazonaws.appstream",
+        "RuntimeValidationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IntendedInstanceType",
+    0,
+);
+static RUNTIMEVALIDATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#RuntimeValidationConfig",
+        "com.amazonaws.appstream",
+        "RuntimeValidationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RUNTIMEVALIDATIONCONFIG_MEMBER_INTENDED_INSTANCE_TYPE],
+);
+impl RuntimeValidationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RUNTIMEVALIDATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuntimeValidationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.intended_instance_type {
+            ser.write_string(&RUNTIMEVALIDATIONCONFIG_MEMBER_INTENDED_INSTANCE_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuntimeValidationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RUNTIMEVALIDATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.intended_instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuntimeValidationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RuntimeValidationConfig {
     /// Creates a new builder-style object to manufacture [`RuntimeValidationConfig`](crate::types::RuntimeValidationConfig).
     pub fn builder() -> crate::types::builders::RuntimeValidationConfigBuilder {

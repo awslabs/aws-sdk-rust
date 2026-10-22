@@ -20,6 +20,104 @@ impl ModelPackageConfig {
         self.source_model_package_arn.as_deref()
     }
 }
+static MODELPACKAGECONFIG_MEMBER_MODEL_PACKAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageConfig$ModelPackageGroupArn",
+        "com.amazonaws.sagemaker",
+        "ModelPackageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupArn",
+    0,
+);
+static MODELPACKAGECONFIG_MEMBER_SOURCE_MODEL_PACKAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageConfig$SourceModelPackageArn",
+        "com.amazonaws.sagemaker",
+        "ModelPackageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceModelPackageArn",
+    1,
+);
+static MODELPACKAGECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageConfig",
+        "com.amazonaws.sagemaker",
+        "ModelPackageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELPACKAGECONFIG_MEMBER_MODEL_PACKAGE_GROUP_ARN,
+        &MODELPACKAGECONFIG_MEMBER_SOURCE_MODEL_PACKAGE_ARN,
+    ],
+);
+impl ModelPackageConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELPACKAGECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelPackageConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.model_package_group_arn;
+            ser.write_string(&MODELPACKAGECONFIG_MEMBER_MODEL_PACKAGE_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.source_model_package_arn {
+            ser.write_string(&MODELPACKAGECONFIG_MEMBER_SOURCE_MODEL_PACKAGE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelPackageConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELPACKAGECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.model_package_group_arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_model_package_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelPackageConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.model_package_group_arn = builder.model_package_group_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ModelPackageConfig {
     /// Creates a new builder-style object to manufacture [`ModelPackageConfig`](crate::types::ModelPackageConfig).
     pub fn builder() -> crate::types::builders::ModelPackageConfigBuilder {

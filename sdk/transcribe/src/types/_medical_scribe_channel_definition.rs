@@ -19,6 +19,101 @@ impl MedicalScribeChannelDefinition {
         &self.participant_role
     }
 }
+static MEDICALSCRIBECHANNELDEFINITION_MEMBER_CHANNEL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeChannelDefinition$ChannelId",
+        "com.amazonaws.transcribe",
+        "MedicalScribeChannelDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ChannelId",
+    0,
+);
+static MEDICALSCRIBECHANNELDEFINITION_MEMBER_PARTICIPANT_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeChannelDefinition$ParticipantRole",
+        "com.amazonaws.transcribe",
+        "MedicalScribeChannelDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParticipantRole",
+    1,
+);
+static MEDICALSCRIBECHANNELDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#MedicalScribeChannelDefinition",
+        "com.amazonaws.transcribe",
+        "MedicalScribeChannelDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MEDICALSCRIBECHANNELDEFINITION_MEMBER_CHANNEL_ID,
+        &MEDICALSCRIBECHANNELDEFINITION_MEMBER_PARTICIPANT_ROLE,
+    ],
+);
+impl MedicalScribeChannelDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MEDICALSCRIBECHANNELDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MedicalScribeChannelDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.channel_id;
+            ser.write_integer(&MEDICALSCRIBECHANNELDEFINITION_MEMBER_CHANNEL_ID, *val)?;
+        }
+        {
+            let val = &self.participant_role;
+            ser.write_string(&MEDICALSCRIBECHANNELDEFINITION_MEMBER_PARTICIPANT_ROLE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MedicalScribeChannelDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MEDICALSCRIBECHANNELDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.channel_id = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    self.participant_role = Some(crate::types::MedicalScribeParticipantRole::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MedicalScribeChannelDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.channel_id = builder.channel_id.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MedicalScribeChannelDefinition {
     /// Creates a new builder-style object to manufacture [`MedicalScribeChannelDefinition`](crate::types::MedicalScribeChannelDefinition).
     pub fn builder() -> crate::types::builders::MedicalScribeChannelDefinitionBuilder {

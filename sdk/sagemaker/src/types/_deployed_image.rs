@@ -26,6 +26,123 @@ impl DeployedImage {
         self.resolution_time.as_ref()
     }
 }
+static DEPLOYEDIMAGE_MEMBER_SPECIFIED_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeployedImage$SpecifiedImage",
+        "com.amazonaws.sagemaker",
+        "DeployedImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SpecifiedImage",
+    0,
+);
+static DEPLOYEDIMAGE_MEMBER_RESOLVED_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeployedImage$ResolvedImage",
+        "com.amazonaws.sagemaker",
+        "DeployedImage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResolvedImage",
+    1,
+);
+static DEPLOYEDIMAGE_MEMBER_RESOLUTION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DeployedImage$ResolutionTime",
+        "com.amazonaws.sagemaker",
+        "DeployedImage",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ResolutionTime",
+    2,
+);
+static DEPLOYEDIMAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DeployedImage", "com.amazonaws.sagemaker", "DeployedImage"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYEDIMAGE_MEMBER_SPECIFIED_IMAGE,
+        &DEPLOYEDIMAGE_MEMBER_RESOLVED_IMAGE,
+        &DEPLOYEDIMAGE_MEMBER_RESOLUTION_TIME,
+    ],
+);
+impl DeployedImage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYEDIMAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeployedImage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.specified_image {
+            ser.write_string(&DEPLOYEDIMAGE_MEMBER_SPECIFIED_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.resolved_image {
+            ser.write_string(&DEPLOYEDIMAGE_MEMBER_RESOLVED_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.resolution_time {
+            ser.write_timestamp(&DEPLOYEDIMAGE_MEMBER_RESOLUTION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeployedImageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYEDIMAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.specified_image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolved_image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolution_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeployedImage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeployedImage {
     /// Creates a new builder-style object to manufacture [`DeployedImage`](crate::types::DeployedImage).
     pub fn builder() -> crate::types::builders::DeployedImageBuilder {

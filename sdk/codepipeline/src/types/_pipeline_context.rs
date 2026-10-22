@@ -39,6 +39,169 @@ impl PipelineContext {
         self.pipeline_execution_id.as_deref()
     }
 }
+static PIPELINECONTEXT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineContext$pipelineName",
+        "com.amazonaws.codepipeline",
+        "PipelineContext",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineName",
+    0,
+);
+static PIPELINECONTEXT_MEMBER_STAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineContext$stage",
+        "com.amazonaws.codepipeline",
+        "PipelineContext",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "stage",
+    1,
+);
+static PIPELINECONTEXT_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineContext$action",
+        "com.amazonaws.codepipeline",
+        "PipelineContext",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "action",
+    2,
+);
+static PIPELINECONTEXT_MEMBER_PIPELINE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineContext$pipelineArn",
+        "com.amazonaws.codepipeline",
+        "PipelineContext",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineArn",
+    3,
+);
+static PIPELINECONTEXT_MEMBER_PIPELINE_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineContext$pipelineExecutionId",
+        "com.amazonaws.codepipeline",
+        "PipelineContext",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineExecutionId",
+    4,
+);
+static PIPELINECONTEXT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineContext",
+        "com.amazonaws.codepipeline",
+        "PipelineContext",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINECONTEXT_MEMBER_PIPELINE_NAME,
+        &PIPELINECONTEXT_MEMBER_STAGE,
+        &PIPELINECONTEXT_MEMBER_ACTION,
+        &PIPELINECONTEXT_MEMBER_PIPELINE_ARN,
+        &PIPELINECONTEXT_MEMBER_PIPELINE_EXECUTION_ID,
+    ],
+);
+impl PipelineContext {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINECONTEXT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineContext {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&PIPELINECONTEXT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.stage {
+            ser.write_struct(&PIPELINECONTEXT_MEMBER_STAGE, val)?;
+        }
+        if let Some(ref val) = self.action {
+            ser.write_struct(&PIPELINECONTEXT_MEMBER_ACTION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_arn {
+            ser.write_string(&PIPELINECONTEXT_MEMBER_PIPELINE_ARN, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_id {
+            ser.write_string(&PIPELINECONTEXT_MEMBER_PIPELINE_EXECUTION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineContextBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINECONTEXT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage = Some(crate::types::StageContext::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(crate::types::ActionContext::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineContext {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PipelineContext {
     /// Creates a new builder-style object to manufacture [`PipelineContext`](crate::types::PipelineContext).
     pub fn builder() -> crate::types::builders::PipelineContextBuilder {

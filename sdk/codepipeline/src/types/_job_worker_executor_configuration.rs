@@ -23,6 +23,146 @@ impl JobWorkerExecutorConfiguration {
         self.polling_service_principals.as_deref().unwrap_or_default()
     }
 }
+static JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_ACCOUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PollingAccountList$member",
+        "com.amazonaws.codepipeline",
+        "PollingAccountList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_ACCOUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobWorkerExecutorConfiguration$pollingAccounts",
+        "com.amazonaws.codepipeline",
+        "JobWorkerExecutorConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "pollingAccounts",
+    0,
+)
+.with_list_member(&JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_ACCOUNTS_MEMBER);
+static JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_SERVICE_PRINCIPALS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codepipeline#PollingServicePrincipalList$member",
+            "com.amazonaws.codepipeline",
+            "PollingServicePrincipalList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_SERVICE_PRINCIPALS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codepipeline#JobWorkerExecutorConfiguration$pollingServicePrincipals",
+            "com.amazonaws.codepipeline",
+            "JobWorkerExecutorConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "pollingServicePrincipals",
+        1,
+    )
+    .with_list_member(&JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_SERVICE_PRINCIPALS_MEMBER);
+static JOBWORKEREXECUTORCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobWorkerExecutorConfiguration",
+        "com.amazonaws.codepipeline",
+        "JobWorkerExecutorConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_ACCOUNTS,
+        &JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_SERVICE_PRINCIPALS,
+    ],
+);
+impl JobWorkerExecutorConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &JOBWORKEREXECUTORCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for JobWorkerExecutorConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.polling_accounts {
+            ser.write_list(
+                &JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_ACCOUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.polling_service_principals {
+            ser.write_list(
+                &JOBWORKEREXECUTORCONFIGURATION_MEMBER_POLLING_SERVICE_PRINCIPALS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::JobWorkerExecutorConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&JOBWORKEREXECUTORCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.polling_accounts = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.polling_service_principals = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl JobWorkerExecutorConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl JobWorkerExecutorConfiguration {
     /// Creates a new builder-style object to manufacture [`JobWorkerExecutorConfiguration`](crate::types::JobWorkerExecutorConfiguration).
     pub fn builder() -> crate::types::builders::JobWorkerExecutorConfigurationBuilder {

@@ -12,6 +12,85 @@ impl RegisterWebhookWithThirdPartyInput {
         self.webhook_name.as_deref()
     }
 }
+static REGISTERWEBHOOKWITHTHIRDPARTYINPUT_MEMBER_WEBHOOK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#RegisterWebhookWithThirdPartyInput$webhookName",
+        "com.amazonaws.codepipeline.synthetic",
+        "RegisterWebhookWithThirdPartyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "webhookName",
+    0,
+);
+static REGISTERWEBHOOKWITHTHIRDPARTYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#RegisterWebhookWithThirdPartyInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "RegisterWebhookWithThirdPartyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&REGISTERWEBHOOKWITHTHIRDPARTYINPUT_MEMBER_WEBHOOK_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterWebhookWithThirdPartyInput");
+impl RegisterWebhookWithThirdPartyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERWEBHOOKWITHTHIRDPARTYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterWebhookWithThirdPartyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.webhook_name {
+            ser.write_string(&REGISTERWEBHOOKWITHTHIRDPARTYINPUT_MEMBER_WEBHOOK_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERWEBHOOKWITHTHIRDPARTYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.webhook_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterWebhookWithThirdPartyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterWebhookWithThirdPartyInput {
     /// Creates a new builder-style object to manufacture [`RegisterWebhookWithThirdPartyInput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput).
     pub fn builder() -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder {

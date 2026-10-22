@@ -25,6 +25,127 @@ impl ExecutionDetails {
         self.percent_complete
     }
 }
+static EXECUTIONDETAILS_MEMBER_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ExecutionDetails$summary",
+        "com.amazonaws.codepipeline",
+        "ExecutionDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "summary",
+    0,
+);
+static EXECUTIONDETAILS_MEMBER_EXTERNAL_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ExecutionDetails$externalExecutionId",
+        "com.amazonaws.codepipeline",
+        "ExecutionDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionId",
+    1,
+);
+static EXECUTIONDETAILS_MEMBER_PERCENT_COMPLETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ExecutionDetails$percentComplete",
+        "com.amazonaws.codepipeline",
+        "ExecutionDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "percentComplete",
+    2,
+);
+static EXECUTIONDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ExecutionDetails",
+        "com.amazonaws.codepipeline",
+        "ExecutionDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EXECUTIONDETAILS_MEMBER_SUMMARY,
+        &EXECUTIONDETAILS_MEMBER_EXTERNAL_EXECUTION_ID,
+        &EXECUTIONDETAILS_MEMBER_PERCENT_COMPLETE,
+    ],
+);
+impl ExecutionDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EXECUTIONDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ExecutionDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.summary {
+            ser.write_string(&EXECUTIONDETAILS_MEMBER_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.external_execution_id {
+            ser.write_string(&EXECUTIONDETAILS_MEMBER_EXTERNAL_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.percent_complete {
+            ser.write_integer(&EXECUTIONDETAILS_MEMBER_PERCENT_COMPLETE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ExecutionDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EXECUTIONDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.percent_complete = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ExecutionDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ExecutionDetails {
     /// Creates a new builder-style object to manufacture [`ExecutionDetails`](crate::types::ExecutionDetails).
     pub fn builder() -> crate::types::builders::ExecutionDetailsBuilder {

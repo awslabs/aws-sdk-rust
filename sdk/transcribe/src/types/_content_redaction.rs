@@ -31,6 +31,149 @@ impl ContentRedaction {
         self.pii_entity_types.as_deref().unwrap_or_default()
     }
 }
+static CONTENTREDACTION_MEMBER_REDACTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#ContentRedaction$RedactionType",
+        "com.amazonaws.transcribe",
+        "ContentRedaction",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RedactionType",
+    0,
+);
+static CONTENTREDACTION_MEMBER_REDACTION_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#ContentRedaction$RedactionOutput",
+        "com.amazonaws.transcribe",
+        "ContentRedaction",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RedactionOutput",
+    1,
+);
+static CONTENTREDACTION_MEMBER_PII_ENTITY_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#PiiEntityTypes$member",
+        "com.amazonaws.transcribe",
+        "PiiEntityTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTENTREDACTION_MEMBER_PII_ENTITY_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#ContentRedaction$PiiEntityTypes",
+        "com.amazonaws.transcribe",
+        "ContentRedaction",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PiiEntityTypes",
+    2,
+)
+.with_list_member(&CONTENTREDACTION_MEMBER_PII_ENTITY_TYPES_MEMBER);
+static CONTENTREDACTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#ContentRedaction",
+        "com.amazonaws.transcribe",
+        "ContentRedaction",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTENTREDACTION_MEMBER_REDACTION_TYPE,
+        &CONTENTREDACTION_MEMBER_REDACTION_OUTPUT,
+        &CONTENTREDACTION_MEMBER_PII_ENTITY_TYPES,
+    ],
+);
+impl ContentRedaction {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTENTREDACTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContentRedaction {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.redaction_type;
+            ser.write_string(&CONTENTREDACTION_MEMBER_REDACTION_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.redaction_output;
+            ser.write_string(&CONTENTREDACTION_MEMBER_REDACTION_OUTPUT, val.as_str())?;
+        }
+        if let Some(ref val) = self.pii_entity_types {
+            ser.write_list(
+                &CONTENTREDACTION_MEMBER_PII_ENTITY_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContentRedactionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTENTREDACTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.redaction_type = Some(crate::types::RedactionType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.redaction_output = Some(crate::types::RedactionOutput::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pii_entity_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PiiEntityType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContentRedaction {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ContentRedaction {
     /// Creates a new builder-style object to manufacture [`ContentRedaction`](crate::types::ContentRedaction).
     pub fn builder() -> crate::types::builders::ContentRedactionBuilder {

@@ -124,6 +124,253 @@ impl ConfigurationRecorder {
         self.scope_configuration.as_ref()
     }
 }
+static CONFIGURATIONRECORDER_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$arn",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static CONFIGURATIONRECORDER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$name",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static CONFIGURATIONRECORDER_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$roleARN",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "roleARN",
+    2,
+);
+static CONFIGURATIONRECORDER_MEMBER_RECORDING_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$recordingGroup",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "recordingGroup",
+    3,
+);
+static CONFIGURATIONRECORDER_MEMBER_RECORDING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$recordingMode",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "recordingMode",
+    4,
+);
+static CONFIGURATIONRECORDER_MEMBER_RECORDING_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$recordingScope",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "recordingScope",
+    5,
+);
+static CONFIGURATIONRECORDER_MEMBER_SERVICE_PRINCIPAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$servicePrincipal",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "servicePrincipal",
+    6,
+);
+static CONFIGURATIONRECORDER_MEMBER_CONNECTOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$connectorArn",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "connectorArn",
+    7,
+);
+static CONFIGURATIONRECORDER_MEMBER_SCOPE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder$scopeConfiguration",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "scopeConfiguration",
+    8,
+);
+static CONFIGURATIONRECORDER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConfigurationRecorder",
+        "com.amazonaws.configservice",
+        "ConfigurationRecorder",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFIGURATIONRECORDER_MEMBER_ARN,
+        &CONFIGURATIONRECORDER_MEMBER_NAME,
+        &CONFIGURATIONRECORDER_MEMBER_ROLE_ARN,
+        &CONFIGURATIONRECORDER_MEMBER_RECORDING_GROUP,
+        &CONFIGURATIONRECORDER_MEMBER_RECORDING_MODE,
+        &CONFIGURATIONRECORDER_MEMBER_RECORDING_SCOPE,
+        &CONFIGURATIONRECORDER_MEMBER_SERVICE_PRINCIPAL,
+        &CONFIGURATIONRECORDER_MEMBER_CONNECTOR_ARN,
+        &CONFIGURATIONRECORDER_MEMBER_SCOPE_CONFIGURATION,
+    ],
+);
+impl ConfigurationRecorder {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFIGURATIONRECORDER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConfigurationRecorder {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CONFIGURATIONRECORDER_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&CONFIGURATIONRECORDER_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CONFIGURATIONRECORDER_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.recording_group {
+            ser.write_struct(&CONFIGURATIONRECORDER_MEMBER_RECORDING_GROUP, val)?;
+        }
+        if let Some(ref val) = self.recording_mode {
+            ser.write_struct(&CONFIGURATIONRECORDER_MEMBER_RECORDING_MODE, val)?;
+        }
+        if let Some(ref val) = self.recording_scope {
+            ser.write_string(&CONFIGURATIONRECORDER_MEMBER_RECORDING_SCOPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.service_principal {
+            ser.write_string(&CONFIGURATIONRECORDER_MEMBER_SERVICE_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.connector_arn {
+            ser.write_string(&CONFIGURATIONRECORDER_MEMBER_CONNECTOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.scope_configuration {
+            ser.write_struct(&CONFIGURATIONRECORDER_MEMBER_SCOPE_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConfigurationRecorderBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFIGURATIONRECORDER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recording_group = Some(crate::types::RecordingGroup::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recording_mode = Some(crate::types::RecordingMode::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recording_scope = Some(crate::types::RecordingScope::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connector_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope_configuration = Some(crate::types::ScopeConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConfigurationRecorder {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConfigurationRecorder {
     /// Creates a new builder-style object to manufacture [`ConfigurationRecorder`](crate::types::ConfigurationRecorder).
     pub fn builder() -> crate::types::builders::ConfigurationRecorderBuilder {

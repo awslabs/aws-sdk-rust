@@ -57,6 +57,257 @@ impl GetServiceSettingsOutput {
         self.service_status.as_ref()
     }
 }
+static GETSERVICESETTINGSOUTPUT_MEMBER_S3_BUCKET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$S3BucketArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetServiceSettingsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketArn",
+    0,
+);
+static GETSERVICESETTINGSOUTPUT_MEMBER_SNS_TOPIC_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$SnsTopicArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetServiceSettingsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnsTopicArn",
+    1,
+);
+static GETSERVICESETTINGSOUTPUT_MEMBER_ORGANIZATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$OrganizationConfiguration",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetServiceSettingsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OrganizationConfiguration",
+    2,
+);
+static GETSERVICESETTINGSOUTPUT_MEMBER_ENABLE_CROSS_ACCOUNTS_DISCOVERY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$EnableCrossAccountsDiscovery",
+            "com.amazonaws.licensemanager.synthetic",
+            "GetServiceSettingsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableCrossAccountsDiscovery",
+        3,
+    );
+static GETSERVICESETTINGSOUTPUT_MEMBER_LICENSE_MANAGER_RESOURCE_SHARE_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$LicenseManagerResourceShareArn",
+            "com.amazonaws.licensemanager.synthetic",
+            "GetServiceSettingsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "LicenseManagerResourceShareArn",
+        4,
+    );
+static GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_HOME_REGION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$CrossRegionDiscoveryHomeRegion",
+            "com.amazonaws.licensemanager.synthetic",
+            "GetServiceSettingsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CrossRegionDiscoveryHomeRegion",
+        5,
+    );
+static GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_SOURCE_REGIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#StringList$member",
+            "com.amazonaws.licensemanager",
+            "StringList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_SOURCE_REGIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$CrossRegionDiscoverySourceRegions",
+            "com.amazonaws.licensemanager.synthetic",
+            "GetServiceSettingsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CrossRegionDiscoverySourceRegions",
+        6,
+    )
+    .with_list_member(&GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_SOURCE_REGIONS_MEMBER);
+static GETSERVICESETTINGSOUTPUT_MEMBER_SERVICE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput$ServiceStatus",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetServiceSettingsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ServiceStatus",
+    7,
+);
+static GETSERVICESETTINGSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetServiceSettingsOutput",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetServiceSettingsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETSERVICESETTINGSOUTPUT_MEMBER_S3_BUCKET_ARN,
+        &GETSERVICESETTINGSOUTPUT_MEMBER_SNS_TOPIC_ARN,
+        &GETSERVICESETTINGSOUTPUT_MEMBER_ORGANIZATION_CONFIGURATION,
+        &GETSERVICESETTINGSOUTPUT_MEMBER_ENABLE_CROSS_ACCOUNTS_DISCOVERY,
+        &GETSERVICESETTINGSOUTPUT_MEMBER_LICENSE_MANAGER_RESOURCE_SHARE_ARN,
+        &GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_HOME_REGION,
+        &GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_SOURCE_REGIONS,
+        &GETSERVICESETTINGSOUTPUT_MEMBER_SERVICE_STATUS,
+    ],
+)
+.with_original_name("GetServiceSettingsResponse");
+impl GetServiceSettingsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETSERVICESETTINGSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetServiceSettingsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_bucket_arn {
+            ser.write_string(&GETSERVICESETTINGSOUTPUT_MEMBER_S3_BUCKET_ARN, val)?;
+        }
+        if let Some(ref val) = self.sns_topic_arn {
+            ser.write_string(&GETSERVICESETTINGSOUTPUT_MEMBER_SNS_TOPIC_ARN, val)?;
+        }
+        if let Some(ref val) = self.organization_configuration {
+            ser.write_struct(&GETSERVICESETTINGSOUTPUT_MEMBER_ORGANIZATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.enable_cross_accounts_discovery {
+            ser.write_boolean(&GETSERVICESETTINGSOUTPUT_MEMBER_ENABLE_CROSS_ACCOUNTS_DISCOVERY, *val)?;
+        }
+        if let Some(ref val) = self.license_manager_resource_share_arn {
+            ser.write_string(&GETSERVICESETTINGSOUTPUT_MEMBER_LICENSE_MANAGER_RESOURCE_SHARE_ARN, val)?;
+        }
+        if let Some(ref val) = self.cross_region_discovery_home_region {
+            ser.write_string(&GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_HOME_REGION, val)?;
+        }
+        if let Some(ref val) = self.cross_region_discovery_source_regions {
+            ser.write_list(
+                &GETSERVICESETTINGSOUTPUT_MEMBER_CROSS_REGION_DISCOVERY_SOURCE_REGIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_status {
+            ser.write_struct(&GETSERVICESETTINGSOUTPUT_MEMBER_SERVICE_STATUS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETSERVICESETTINGSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sns_topic_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_configuration = Some(crate::types::OrganizationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_cross_accounts_discovery = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_manager_resource_share_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_region_discovery_home_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_region_discovery_source_regions = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_status = Some(crate::types::ServiceStatus::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetServiceSettingsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetServiceSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

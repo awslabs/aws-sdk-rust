@@ -62,6 +62,278 @@ impl UpdateHubContentInput {
         self.support_status.as_ref()
     }
 }
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    0,
+);
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubContentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentName",
+    1,
+);
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubContentType",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentType",
+    2,
+);
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubContentVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentVersion",
+    3,
+);
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubContentDisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentDisplayName",
+    4,
+);
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubContentDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentDescription",
+    5,
+);
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_MARKDOWN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubContentMarkdown",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentMarkdown",
+    6,
+);
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HubContentSearchKeywordList$member",
+            "com.amazonaws.sagemaker",
+            "HubContentSearchKeywordList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$HubContentSearchKeywords",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HubContentSearchKeywords",
+    7,
+)
+.with_list_member(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS_MEMBER);
+static UPDATEHUBCONTENTINPUT_MEMBER_SUPPORT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput$SupportStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SupportStatus",
+    8,
+);
+static UPDATEHUBCONTENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateHubContentInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateHubContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_NAME,
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_NAME,
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_TYPE,
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_VERSION,
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_DISPLAY_NAME,
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_DESCRIPTION,
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_MARKDOWN,
+        &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS,
+        &UPDATEHUBCONTENTINPUT_MEMBER_SUPPORT_STATUS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateHubContentRequest");
+impl UpdateHubContentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEHUBCONTENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateHubContentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_name {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_type {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.hub_content_version {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.hub_content_display_name {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_description {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.hub_content_markdown {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_MARKDOWN, val)?;
+        }
+        if let Some(ref val) = self.hub_content_search_keywords {
+            ser.write_list(
+                &UPDATEHUBCONTENTINPUT_MEMBER_HUB_CONTENT_SEARCH_KEYWORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.support_status {
+            ser.write_string(&UPDATEHUBCONTENTINPUT_MEMBER_SUPPORT_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_hub_content::builders::UpdateHubContentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEHUBCONTENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_type = Some(crate::types::HubContentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_markdown = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_search_keywords = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_status = Some(crate::types::HubContentSupportStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateHubContentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hub_name = builder.hub_name.or(Some(String::new()));
+        builder.hub_content_name = builder.hub_content_name.or(Some(String::new()));
+        builder.hub_content_version = builder.hub_content_version.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateHubContentInput {
     /// Creates a new builder-style object to manufacture [`UpdateHubContentInput`](crate::operation::update_hub_content::UpdateHubContentInput).
     pub fn builder() -> crate::operation::update_hub_content::builders::UpdateHubContentInputBuilder {

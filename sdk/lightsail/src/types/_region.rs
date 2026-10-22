@@ -47,6 +47,218 @@ impl Region {
         self.relational_database_availability_zones.as_deref().unwrap_or_default()
     }
 }
+static REGION_MEMBER_CONTINENT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Region$continentCode", "com.amazonaws.lightsail", "Region"),
+    ::aws_smithy_schema::ShapeType::String,
+    "continentCode",
+    0,
+);
+static REGION_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Region$description", "com.amazonaws.lightsail", "Region"),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    1,
+);
+static REGION_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Region$displayName", "com.amazonaws.lightsail", "Region"),
+    ::aws_smithy_schema::ShapeType::String,
+    "displayName",
+    2,
+);
+static REGION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Region$name", "com.amazonaws.lightsail", "Region"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    3,
+);
+static REGION_MEMBER_AVAILABILITY_ZONES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AvailabilityZoneList$member",
+        "com.amazonaws.lightsail",
+        "AvailabilityZoneList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REGION_MEMBER_AVAILABILITY_ZONES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Region$availabilityZones", "com.amazonaws.lightsail", "Region"),
+    ::aws_smithy_schema::ShapeType::List,
+    "availabilityZones",
+    4,
+)
+.with_list_member(&REGION_MEMBER_AVAILABILITY_ZONES_MEMBER);
+static REGION_MEMBER_RELATIONAL_DATABASE_AVAILABILITY_ZONES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AvailabilityZoneList$member",
+        "com.amazonaws.lightsail",
+        "AvailabilityZoneList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static REGION_MEMBER_RELATIONAL_DATABASE_AVAILABILITY_ZONES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#Region$relationalDatabaseAvailabilityZones",
+        "com.amazonaws.lightsail",
+        "Region",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "relationalDatabaseAvailabilityZones",
+    5,
+)
+.with_list_member(&REGION_MEMBER_RELATIONAL_DATABASE_AVAILABILITY_ZONES_MEMBER);
+static REGION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Region", "com.amazonaws.lightsail", "Region"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGION_MEMBER_CONTINENT_CODE,
+        &REGION_MEMBER_DESCRIPTION,
+        &REGION_MEMBER_DISPLAY_NAME,
+        &REGION_MEMBER_NAME,
+        &REGION_MEMBER_AVAILABILITY_ZONES,
+        &REGION_MEMBER_RELATIONAL_DATABASE_AVAILABILITY_ZONES,
+    ],
+);
+impl Region {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Region {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.continent_code {
+            ser.write_string(&REGION_MEMBER_CONTINENT_CODE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&REGION_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&REGION_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&REGION_MEMBER_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.availability_zones {
+            ser.write_list(
+                &REGION_MEMBER_AVAILABILITY_ZONES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AvailabilityZone::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.relational_database_availability_zones {
+            ser.write_list(
+                &REGION_MEMBER_RELATIONAL_DATABASE_AVAILABILITY_ZONES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AvailabilityZone::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RegionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.continent_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(crate::types::RegionName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zones = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AvailabilityZone::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_availability_zones = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AvailabilityZone::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Region {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Region {
     /// Creates a new builder-style object to manufacture [`Region`](crate::types::Region).
     pub fn builder() -> crate::types::builders::RegionBuilder {

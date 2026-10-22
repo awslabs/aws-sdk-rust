@@ -25,6 +25,129 @@ impl ListFileSharesInput {
         self.marker.as_deref()
     }
 }
+static LISTFILESHARESINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListFileSharesInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListFileSharesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static LISTFILESHARESINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListFileSharesInput$Limit",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListFileSharesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    1,
+);
+static LISTFILESHARESINPUT_MEMBER_MARKER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListFileSharesInput$Marker",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListFileSharesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Marker",
+    2,
+);
+static LISTFILESHARESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#ListFileSharesInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "ListFileSharesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTFILESHARESINPUT_MEMBER_GATEWAY_ARN,
+        &LISTFILESHARESINPUT_MEMBER_LIMIT,
+        &LISTFILESHARESINPUT_MEMBER_MARKER,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListFileSharesInput");
+impl ListFileSharesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTFILESHARESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListFileSharesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&LISTFILESHARESINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&LISTFILESHARESINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.marker {
+            ser.write_string(&LISTFILESHARESINPUT_MEMBER_MARKER, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_file_shares::builders::ListFileSharesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTFILESHARESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marker = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListFileSharesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListFileSharesInput {
     /// Creates a new builder-style object to manufacture [`ListFileSharesInput`](crate::operation::list_file_shares::ListFileSharesInput).
     pub fn builder() -> crate::operation::list_file_shares::builders::ListFileSharesInputBuilder {

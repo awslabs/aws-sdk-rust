@@ -67,6 +67,253 @@ impl TaskExecutionResultDetail {
         self.error_detail.as_deref()
     }
 }
+static TASKEXECUTIONRESULTDETAIL_MEMBER_PREPARE_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$PrepareDuration",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "PrepareDuration",
+    0,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_PREPARE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$PrepareStatus",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PrepareStatus",
+    1,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_TOTAL_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$TotalDuration",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TotalDuration",
+    2,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_TRANSFER_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$TransferDuration",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TransferDuration",
+    3,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_TRANSFER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$TransferStatus",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TransferStatus",
+    4,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_VERIFY_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$VerifyDuration",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VerifyDuration",
+    5,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_VERIFY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$VerifyStatus",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VerifyStatus",
+    6,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$ErrorCode",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    7,
+);
+static TASKEXECUTIONRESULTDETAIL_MEMBER_ERROR_DETAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail$ErrorDetail",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorDetail",
+    8,
+);
+static TASKEXECUTIONRESULTDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionResultDetail",
+        "com.amazonaws.datasync",
+        "TaskExecutionResultDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_PREPARE_DURATION,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_PREPARE_STATUS,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_TOTAL_DURATION,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_TRANSFER_DURATION,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_TRANSFER_STATUS,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_VERIFY_DURATION,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_VERIFY_STATUS,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_ERROR_CODE,
+        &TASKEXECUTIONRESULTDETAIL_MEMBER_ERROR_DETAIL,
+    ],
+);
+impl TaskExecutionResultDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKEXECUTIONRESULTDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskExecutionResultDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.prepare_duration {
+            ser.write_long(&TASKEXECUTIONRESULTDETAIL_MEMBER_PREPARE_DURATION, *val)?;
+        }
+        if let Some(ref val) = self.prepare_status {
+            ser.write_string(&TASKEXECUTIONRESULTDETAIL_MEMBER_PREPARE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.total_duration {
+            ser.write_long(&TASKEXECUTIONRESULTDETAIL_MEMBER_TOTAL_DURATION, *val)?;
+        }
+        if let Some(ref val) = self.transfer_duration {
+            ser.write_long(&TASKEXECUTIONRESULTDETAIL_MEMBER_TRANSFER_DURATION, *val)?;
+        }
+        if let Some(ref val) = self.transfer_status {
+            ser.write_string(&TASKEXECUTIONRESULTDETAIL_MEMBER_TRANSFER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.verify_duration {
+            ser.write_long(&TASKEXECUTIONRESULTDETAIL_MEMBER_VERIFY_DURATION, *val)?;
+        }
+        if let Some(ref val) = self.verify_status {
+            ser.write_string(&TASKEXECUTIONRESULTDETAIL_MEMBER_VERIFY_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&TASKEXECUTIONRESULTDETAIL_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_detail {
+            ser.write_string(&TASKEXECUTIONRESULTDETAIL_MEMBER_ERROR_DETAIL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskExecutionResultDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKEXECUTIONRESULTDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prepare_duration = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prepare_status = Some(crate::types::PhaseStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_duration = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transfer_duration = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transfer_status = Some(crate::types::PhaseStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.verify_duration = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.verify_status = Some(crate::types::PhaseStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_detail = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskExecutionResultDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TaskExecutionResultDetail {
     /// Creates a new builder-style object to manufacture [`TaskExecutionResultDetail`](crate::types::TaskExecutionResultDetail).
     pub fn builder() -> crate::types::builders::TaskExecutionResultDetailBuilder {

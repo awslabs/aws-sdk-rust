@@ -43,6 +43,190 @@ impl ArtifactRevision {
         self.revision_url.as_deref()
     }
 }
+static ARTIFACTREVISION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevision$name",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static ARTIFACTREVISION_MEMBER_REVISION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevision$revisionId",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionId",
+    1,
+);
+static ARTIFACTREVISION_MEMBER_REVISION_CHANGE_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevision$revisionChangeIdentifier",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionChangeIdentifier",
+    2,
+);
+static ARTIFACTREVISION_MEMBER_REVISION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevision$revisionSummary",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionSummary",
+    3,
+);
+static ARTIFACTREVISION_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevision$created",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "created",
+    4,
+);
+static ARTIFACTREVISION_MEMBER_REVISION_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevision$revisionUrl",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionUrl",
+    5,
+);
+static ARTIFACTREVISION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactRevision",
+        "com.amazonaws.codepipeline",
+        "ArtifactRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ARTIFACTREVISION_MEMBER_NAME,
+        &ARTIFACTREVISION_MEMBER_REVISION_ID,
+        &ARTIFACTREVISION_MEMBER_REVISION_CHANGE_IDENTIFIER,
+        &ARTIFACTREVISION_MEMBER_REVISION_SUMMARY,
+        &ARTIFACTREVISION_MEMBER_CREATED,
+        &ARTIFACTREVISION_MEMBER_REVISION_URL,
+    ],
+);
+impl ArtifactRevision {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ARTIFACTREVISION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ArtifactRevision {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&ARTIFACTREVISION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.revision_id {
+            ser.write_string(&ARTIFACTREVISION_MEMBER_REVISION_ID, val)?;
+        }
+        if let Some(ref val) = self.revision_change_identifier {
+            ser.write_string(&ARTIFACTREVISION_MEMBER_REVISION_CHANGE_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.revision_summary {
+            ser.write_string(&ARTIFACTREVISION_MEMBER_REVISION_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&ARTIFACTREVISION_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.revision_url {
+            ser.write_string(&ARTIFACTREVISION_MEMBER_REVISION_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ArtifactRevisionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ARTIFACTREVISION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_change_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ArtifactRevision {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ArtifactRevision {
     /// Creates a new builder-style object to manufacture [`ArtifactRevision`](crate::types::ArtifactRevision).
     pub fn builder() -> crate::types::builders::ArtifactRevisionBuilder {

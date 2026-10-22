@@ -32,6 +32,178 @@ impl PutRemediationExceptionsInput {
         self.expiration_time.as_ref()
     }
 }
+static PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutRemediationExceptionsInput$ConfigRuleName",
+        "com.amazonaws.configservice.synthetic",
+        "PutRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigRuleName",
+    0,
+);
+static PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#RemediationExceptionResourceKeys$member",
+        "com.amazonaws.configservice",
+        "RemediationExceptionResourceKeys",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutRemediationExceptionsInput$ResourceKeys",
+        "com.amazonaws.configservice.synthetic",
+        "PutRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResourceKeys",
+    1,
+)
+.with_list_member(&PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS_MEMBER);
+static PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutRemediationExceptionsInput$Message",
+        "com.amazonaws.configservice.synthetic",
+        "PutRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_EXPIRATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutRemediationExceptionsInput$ExpirationTime",
+        "com.amazonaws.configservice.synthetic",
+        "PutRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpirationTime",
+    3,
+);
+static PUTREMEDIATIONEXCEPTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutRemediationExceptionsInput",
+        "com.amazonaws.configservice.synthetic",
+        "PutRemediationExceptionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_CONFIG_RULE_NAME,
+        &PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS,
+        &PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_MESSAGE,
+        &PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_EXPIRATION_TIME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutRemediationExceptionsRequest");
+impl PutRemediationExceptionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTREMEDIATIONEXCEPTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRemediationExceptionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.config_rule_name {
+            ser.write_string(&PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_CONFIG_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_keys {
+            ser.write_list(
+                &PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_RESOURCE_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RemediationExceptionResourceKey::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.expiration_time {
+            ser.write_timestamp(&PUTREMEDIATIONEXCEPTIONSINPUT_MEMBER_EXPIRATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_remediation_exceptions::builders::PutRemediationExceptionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTREMEDIATIONEXCEPTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RemediationExceptionResourceKey::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRemediationExceptionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.config_rule_name = builder.config_rule_name.or(Some(String::new()));
+        builder.resource_keys = builder.resource_keys.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutRemediationExceptionsInput {
     /// Creates a new builder-style object to manufacture [`PutRemediationExceptionsInput`](crate::operation::put_remediation_exceptions::PutRemediationExceptionsInput).
     pub fn builder() -> crate::operation::put_remediation_exceptions::builders::PutRemediationExceptionsInputBuilder {

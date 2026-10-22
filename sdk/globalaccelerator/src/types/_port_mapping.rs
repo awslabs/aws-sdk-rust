@@ -45,6 +45,220 @@ impl PortMapping {
         self.destination_traffic_state.as_ref()
     }
 }
+static PORTMAPPING_MEMBER_ACCELERATOR_PORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortMapping$AcceleratorPort",
+        "com.amazonaws.globalaccelerator",
+        "PortMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AcceleratorPort",
+    0,
+);
+static PORTMAPPING_MEMBER_ENDPOINT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortMapping$EndpointGroupArn",
+        "com.amazonaws.globalaccelerator",
+        "PortMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupArn",
+    1,
+);
+static PORTMAPPING_MEMBER_ENDPOINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortMapping$EndpointId",
+        "com.amazonaws.globalaccelerator",
+        "PortMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointId",
+    2,
+);
+static PORTMAPPING_MEMBER_DESTINATION_SOCKET_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortMapping$DestinationSocketAddress",
+        "com.amazonaws.globalaccelerator",
+        "PortMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DestinationSocketAddress",
+    3,
+);
+static PORTMAPPING_MEMBER_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#CustomRoutingProtocols$member",
+        "com.amazonaws.globalaccelerator",
+        "CustomRoutingProtocols",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PORTMAPPING_MEMBER_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortMapping$Protocols",
+        "com.amazonaws.globalaccelerator",
+        "PortMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Protocols",
+    4,
+)
+.with_list_member(&PORTMAPPING_MEMBER_PROTOCOLS_MEMBER);
+static PORTMAPPING_MEMBER_DESTINATION_TRAFFIC_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortMapping$DestinationTrafficState",
+        "com.amazonaws.globalaccelerator",
+        "PortMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationTrafficState",
+    5,
+);
+static PORTMAPPING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortMapping",
+        "com.amazonaws.globalaccelerator",
+        "PortMapping",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PORTMAPPING_MEMBER_ACCELERATOR_PORT,
+        &PORTMAPPING_MEMBER_ENDPOINT_GROUP_ARN,
+        &PORTMAPPING_MEMBER_ENDPOINT_ID,
+        &PORTMAPPING_MEMBER_DESTINATION_SOCKET_ADDRESS,
+        &PORTMAPPING_MEMBER_PROTOCOLS,
+        &PORTMAPPING_MEMBER_DESTINATION_TRAFFIC_STATE,
+    ],
+);
+impl PortMapping {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PORTMAPPING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PortMapping {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.accelerator_port {
+            ser.write_integer(&PORTMAPPING_MEMBER_ACCELERATOR_PORT, *val)?;
+        }
+        if let Some(ref val) = self.endpoint_group_arn {
+            ser.write_string(&PORTMAPPING_MEMBER_ENDPOINT_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_id {
+            ser.write_string(&PORTMAPPING_MEMBER_ENDPOINT_ID, val)?;
+        }
+        if let Some(ref val) = self.destination_socket_address {
+            ser.write_struct(&PORTMAPPING_MEMBER_DESTINATION_SOCKET_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.protocols {
+            ser.write_list(
+                &PORTMAPPING_MEMBER_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.destination_traffic_state {
+            ser.write_string(&PORTMAPPING_MEMBER_DESTINATION_TRAFFIC_STATE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PortMappingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PORTMAPPING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_port = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_socket_address = Some(crate::types::SocketAddress::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomRoutingProtocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_traffic_state = Some(crate::types::CustomRoutingDestinationTrafficState::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PortMapping {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PortMapping {
     /// Creates a new builder-style object to manufacture [`PortMapping`](crate::types::PortMapping).
     pub fn builder() -> crate::types::builders::PortMappingBuilder {

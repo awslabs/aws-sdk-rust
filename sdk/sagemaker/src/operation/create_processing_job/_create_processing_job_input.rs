@@ -100,6 +100,380 @@ impl CreateProcessingJobInput {
         self.experiment_config.as_ref()
     }
 }
+static CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_INPUTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingInputs$member",
+        "com.amazonaws.sagemaker",
+        "ProcessingInputs",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_INPUTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$ProcessingInputs",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ProcessingInputs",
+    0,
+)
+.with_list_member(&CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_INPUTS_MEMBER);
+static CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$ProcessingOutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProcessingOutputConfig",
+    1,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$ProcessingJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProcessingJobName",
+    2,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$ProcessingResources",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ProcessingResources",
+    3,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$StoppingCondition",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    4,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_APP_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$AppSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AppSpecification",
+    5,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingEnvironmentMap$key",
+        "com.amazonaws.sagemaker",
+        "ProcessingEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProcessingEnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "ProcessingEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$Environment",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    6,
+)
+.with_map_members(
+    &CREATEPROCESSINGJOBINPUT_MEMBER_ENVIRONMENT_KEY,
+    &CREATEPROCESSINGJOBINPUT_MEMBER_ENVIRONMENT_VALUE,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_NETWORK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$NetworkConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkConfig",
+    7,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    8,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPROCESSINGJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATEPROCESSINGJOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATEPROCESSINGJOBINPUT_MEMBER_EXPERIMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput$ExperimentConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExperimentConfig",
+    10,
+);
+static CREATEPROCESSINGJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateProcessingJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateProcessingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_INPUTS,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_OUTPUT_CONFIG,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_JOB_NAME,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_RESOURCES,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_STOPPING_CONDITION,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_APP_SPECIFICATION,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_ENVIRONMENT,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_NETWORK_CONFIG,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_ROLE_ARN,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_TAGS,
+        &CREATEPROCESSINGJOBINPUT_MEMBER_EXPERIMENT_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateProcessingJobRequest");
+impl CreateProcessingJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPROCESSINGJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateProcessingJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.processing_inputs {
+            ser.write_list(
+                &CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_INPUTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ProcessingInput::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.processing_output_config {
+            ser.write_struct(&CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.processing_job_name {
+            ser.write_string(&CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.processing_resources {
+            ser.write_struct(&CREATEPROCESSINGJOBINPUT_MEMBER_PROCESSING_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&CREATEPROCESSINGJOBINPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.app_specification {
+            ser.write_struct(&CREATEPROCESSINGJOBINPUT_MEMBER_APP_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &CREATEPROCESSINGJOBINPUT_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.network_config {
+            ser.write_struct(&CREATEPROCESSINGJOBINPUT_MEMBER_NETWORK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEPROCESSINGJOBINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEPROCESSINGJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.experiment_config {
+            ser.write_struct(&CREATEPROCESSINGJOBINPUT_MEMBER_EXPERIMENT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_processing_job::builders::CreateProcessingJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPROCESSINGJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_inputs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ProcessingInput::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_output_config = Some(crate::types::ProcessingOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processing_resources = Some(crate::types::ProcessingResources::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::ProcessingStoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_specification = Some(crate::types::AppSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_config = Some(crate::types::NetworkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment_config = Some(crate::types::ExperimentConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateProcessingJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.processing_job_name = builder.processing_job_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateProcessingJobInput {
     /// Creates a new builder-style object to manufacture [`CreateProcessingJobInput`](crate::operation::create_processing_job::CreateProcessingJobInput).
     pub fn builder() -> crate::operation::create_processing_job::builders::CreateProcessingJobInputBuilder {

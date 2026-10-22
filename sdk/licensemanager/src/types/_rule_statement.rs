@@ -25,6 +25,127 @@ impl RuleStatement {
         self.instance_rule_statement.as_ref()
     }
 }
+static RULESTATEMENT_MEMBER_LICENSE_CONFIGURATION_RULE_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#RuleStatement$LicenseConfigurationRuleStatement",
+        "com.amazonaws.licensemanager",
+        "RuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LicenseConfigurationRuleStatement",
+    0,
+);
+static RULESTATEMENT_MEMBER_LICENSE_RULE_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#RuleStatement$LicenseRuleStatement",
+        "com.amazonaws.licensemanager",
+        "RuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LicenseRuleStatement",
+    1,
+);
+static RULESTATEMENT_MEMBER_INSTANCE_RULE_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#RuleStatement$InstanceRuleStatement",
+        "com.amazonaws.licensemanager",
+        "RuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InstanceRuleStatement",
+    2,
+);
+static RULESTATEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#RuleStatement",
+        "com.amazonaws.licensemanager",
+        "RuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RULESTATEMENT_MEMBER_LICENSE_CONFIGURATION_RULE_STATEMENT,
+        &RULESTATEMENT_MEMBER_LICENSE_RULE_STATEMENT,
+        &RULESTATEMENT_MEMBER_INSTANCE_RULE_STATEMENT,
+    ],
+);
+impl RuleStatement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RULESTATEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuleStatement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_configuration_rule_statement {
+            ser.write_struct(&RULESTATEMENT_MEMBER_LICENSE_CONFIGURATION_RULE_STATEMENT, val)?;
+        }
+        if let Some(ref val) = self.license_rule_statement {
+            ser.write_struct(&RULESTATEMENT_MEMBER_LICENSE_RULE_STATEMENT, val)?;
+        }
+        if let Some(ref val) = self.instance_rule_statement {
+            ser.write_struct(&RULESTATEMENT_MEMBER_INSTANCE_RULE_STATEMENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuleStatementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RULESTATEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_configuration_rule_statement = Some(crate::types::LicenseConfigurationRuleStatement::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_rule_statement = Some(crate::types::LicenseRuleStatement::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_rule_statement = Some(crate::types::InstanceRuleStatement::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuleStatement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RuleStatement {
     /// Creates a new builder-style object to manufacture [`RuleStatement`](crate::types::RuleStatement).
     pub fn builder() -> crate::types::builders::RuleStatementBuilder {

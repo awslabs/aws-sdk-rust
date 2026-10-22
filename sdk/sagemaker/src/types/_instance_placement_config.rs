@@ -21,6 +21,132 @@ impl InstancePlacementConfig {
         self.placement_specifications.as_deref().unwrap_or_default()
     }
 }
+static INSTANCEPLACEMENTCONFIG_MEMBER_ENABLE_MULTIPLE_JOBS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstancePlacementConfig$EnableMultipleJobs",
+        "com.amazonaws.sagemaker",
+        "InstancePlacementConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableMultipleJobs",
+    0,
+);
+static INSTANCEPLACEMENTCONFIG_MEMBER_PLACEMENT_SPECIFICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PlacementSpecifications$member",
+        "com.amazonaws.sagemaker",
+        "PlacementSpecifications",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCEPLACEMENTCONFIG_MEMBER_PLACEMENT_SPECIFICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstancePlacementConfig$PlacementSpecifications",
+        "com.amazonaws.sagemaker",
+        "InstancePlacementConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PlacementSpecifications",
+    1,
+)
+.with_list_member(&INSTANCEPLACEMENTCONFIG_MEMBER_PLACEMENT_SPECIFICATIONS_MEMBER);
+static INSTANCEPLACEMENTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InstancePlacementConfig",
+        "com.amazonaws.sagemaker",
+        "InstancePlacementConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEPLACEMENTCONFIG_MEMBER_ENABLE_MULTIPLE_JOBS,
+        &INSTANCEPLACEMENTCONFIG_MEMBER_PLACEMENT_SPECIFICATIONS,
+    ],
+);
+impl InstancePlacementConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEPLACEMENTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstancePlacementConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enable_multiple_jobs {
+            ser.write_boolean(&INSTANCEPLACEMENTCONFIG_MEMBER_ENABLE_MULTIPLE_JOBS, *val)?;
+        }
+        if let Some(ref val) = self.placement_specifications {
+            ser.write_list(
+                &INSTANCEPLACEMENTCONFIG_MEMBER_PLACEMENT_SPECIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PlacementSpecification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstancePlacementConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCEPLACEMENTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_multiple_jobs = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.placement_specifications = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlacementSpecification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstancePlacementConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstancePlacementConfig {
     /// Creates a new builder-style object to manufacture [`InstancePlacementConfig`](crate::types::InstancePlacementConfig).
     pub fn builder() -> crate::types::builders::InstancePlacementConfigBuilder {

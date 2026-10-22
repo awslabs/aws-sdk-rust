@@ -135,6 +135,316 @@ impl ServiceSummary {
         self.created_by_account.as_deref()
     }
 }
+static SERVICESUMMARY_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$Id",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static SERVICESUMMARY_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$Arn",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static SERVICESUMMARY_MEMBER_RESOURCE_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$ResourceOwner",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceOwner",
+    2,
+);
+static SERVICESUMMARY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$Name",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static SERVICESUMMARY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$Type",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    4,
+);
+static SERVICESUMMARY_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$Description",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    5,
+);
+static SERVICESUMMARY_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$InstanceCount",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    6,
+);
+static SERVICESUMMARY_MEMBER_DNS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$DnsConfig",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DnsConfig",
+    7,
+);
+static SERVICESUMMARY_MEMBER_HEALTH_CHECK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$HealthCheckConfig",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HealthCheckConfig",
+    8,
+);
+static SERVICESUMMARY_MEMBER_HEALTH_CHECK_CUSTOM_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$HealthCheckCustomConfig",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HealthCheckCustomConfig",
+    9,
+);
+static SERVICESUMMARY_MEMBER_CREATE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$CreateDate",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateDate",
+    10,
+);
+static SERVICESUMMARY_MEMBER_CREATED_BY_ACCOUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary$CreatedByAccount",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CreatedByAccount",
+    11,
+);
+static SERVICESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#ServiceSummary",
+        "com.amazonaws.servicediscovery",
+        "ServiceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SERVICESUMMARY_MEMBER_ID,
+        &SERVICESUMMARY_MEMBER_ARN,
+        &SERVICESUMMARY_MEMBER_RESOURCE_OWNER,
+        &SERVICESUMMARY_MEMBER_NAME,
+        &SERVICESUMMARY_MEMBER_TYPE,
+        &SERVICESUMMARY_MEMBER_DESCRIPTION,
+        &SERVICESUMMARY_MEMBER_INSTANCE_COUNT,
+        &SERVICESUMMARY_MEMBER_DNS_CONFIG,
+        &SERVICESUMMARY_MEMBER_HEALTH_CHECK_CONFIG,
+        &SERVICESUMMARY_MEMBER_HEALTH_CHECK_CUSTOM_CONFIG,
+        &SERVICESUMMARY_MEMBER_CREATE_DATE,
+        &SERVICESUMMARY_MEMBER_CREATED_BY_ACCOUNT,
+    ],
+);
+impl ServiceSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SERVICESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ServiceSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&SERVICESUMMARY_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&SERVICESUMMARY_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.resource_owner {
+            ser.write_string(&SERVICESUMMARY_MEMBER_RESOURCE_OWNER, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&SERVICESUMMARY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&SERVICESUMMARY_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&SERVICESUMMARY_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&SERVICESUMMARY_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.dns_config {
+            ser.write_struct(&SERVICESUMMARY_MEMBER_DNS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.health_check_config {
+            ser.write_struct(&SERVICESUMMARY_MEMBER_HEALTH_CHECK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.health_check_custom_config {
+            ser.write_struct(&SERVICESUMMARY_MEMBER_HEALTH_CHECK_CUSTOM_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.create_date {
+            ser.write_timestamp(&SERVICESUMMARY_MEMBER_CREATE_DATE, val)?;
+        }
+        if let Some(ref val) = self.created_by_account {
+            ser.write_string(&SERVICESUMMARY_MEMBER_CREATED_BY_ACCOUNT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ServiceSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SERVICESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ServiceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_config = Some(crate::types::DnsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_config = Some(crate::types::HealthCheckConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_check_custom_config = Some(crate::types::HealthCheckCustomConfig::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by_account = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ServiceSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ServiceSummary {
     /// Creates a new builder-style object to manufacture [`ServiceSummary`](crate::types::ServiceSummary).
     pub fn builder() -> crate::types::builders::ServiceSummaryBuilder {

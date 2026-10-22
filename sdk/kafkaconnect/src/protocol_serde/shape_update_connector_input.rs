@@ -19,5 +19,8 @@ pub fn ser_update_connector_input_input(
         }
         object_4.finish();
     }
+    if let Some(var_7) = &input.skip_health_validation {
+        object.key("skipHealthValidation").boolean(*var_7);
+    }
     Ok(())
 }

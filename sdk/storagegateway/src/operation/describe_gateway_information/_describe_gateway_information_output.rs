@@ -156,6 +156,610 @@ impl DescribeGatewayInformationOutput {
         self.software_version.as_deref()
     }
 }
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayId",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayId",
+    1,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayName",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayName",
+    2,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_TIMEZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayTimezone",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayTimezone",
+    3,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayState",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayState",
+    4,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NETWORK_INTERFACES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#GatewayNetworkInterfaces$member",
+            "com.amazonaws.storagegateway",
+            "GatewayNetworkInterfaces",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NETWORK_INTERFACES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayNetworkInterfaces",
+            "com.amazonaws.storagegateway.synthetic",
+            "DescribeGatewayInformationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "GatewayNetworkInterfaces",
+        5,
+    )
+    .with_list_member(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NETWORK_INTERFACES_MEMBER);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayType",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayType",
+    6,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_NEXT_UPDATE_AVAILABILITY_DATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$NextUpdateAvailabilityDate",
+            "com.amazonaws.storagegateway.synthetic",
+            "DescribeGatewayInformationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NextUpdateAvailabilityDate",
+        7,
+    );
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_LAST_SOFTWARE_UPDATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$LastSoftwareUpdate",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastSoftwareUpdate",
+    8,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_EC2_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$Ec2InstanceId",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ec2InstanceId",
+    9,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_EC2_INSTANCE_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$Ec2InstanceRegion",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Ec2InstanceRegion",
+    10,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$Tags",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    11,
+)
+.with_list_member(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_TAGS_MEMBER);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_VPC_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$VPCEndpoint",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VPCEndpoint",
+    12,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_CLOUD_WATCH_LOG_GROUP_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$CloudWatchLogGroupARN",
+            "com.amazonaws.storagegateway.synthetic",
+            "DescribeGatewayInformationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CloudWatchLogGroupARN",
+        13,
+    );
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_HOST_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$HostEnvironment",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostEnvironment",
+    14,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$EndpointType",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointType",
+    15,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SOFTWARE_UPDATES_END_DATE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$SoftwareUpdatesEndDate",
+            "com.amazonaws.storagegateway.synthetic",
+            "DescribeGatewayInformationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SoftwareUpdatesEndDate",
+        16,
+    );
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_DEPRECATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$DeprecationDate",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeprecationDate",
+    17,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_CAPACITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$GatewayCapacity",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayCapacity",
+    18,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SUPPORTED_GATEWAY_CAPACITIES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway#SupportedGatewayCapacities$member",
+            "com.amazonaws.storagegateway",
+            "SupportedGatewayCapacities",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SUPPORTED_GATEWAY_CAPACITIES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$SupportedGatewayCapacities",
+            "com.amazonaws.storagegateway.synthetic",
+            "DescribeGatewayInformationOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "SupportedGatewayCapacities",
+        19,
+    )
+    .with_list_member(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SUPPORTED_GATEWAY_CAPACITIES_MEMBER);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_HOST_ENVIRONMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$HostEnvironmentId",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostEnvironmentId",
+    20,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SOFTWARE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput$SoftwareVersion",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SoftwareVersion",
+    21,
+);
+static DESCRIBEGATEWAYINFORMATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#DescribeGatewayInformationOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "DescribeGatewayInformationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_ARN,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_ID,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NAME,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_TIMEZONE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_STATE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NETWORK_INTERFACES,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_TYPE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_NEXT_UPDATE_AVAILABILITY_DATE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_LAST_SOFTWARE_UPDATE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_EC2_INSTANCE_ID,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_EC2_INSTANCE_REGION,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_TAGS,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_VPC_ENDPOINT,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_CLOUD_WATCH_LOG_GROUP_ARN,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_HOST_ENVIRONMENT,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_ENDPOINT_TYPE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SOFTWARE_UPDATES_END_DATE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_DEPRECATION_DATE,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_CAPACITY,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SUPPORTED_GATEWAY_CAPACITIES,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_HOST_ENVIRONMENT_ID,
+        &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SOFTWARE_VERSION,
+    ],
+)
+.with_original_name("DescribeGatewayInformationOutput");
+impl DescribeGatewayInformationOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEGATEWAYINFORMATIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeGatewayInformationOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.gateway_id {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_ID, val)?;
+        }
+        if let Some(ref val) = self.gateway_name {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.gateway_timezone {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_TIMEZONE, val)?;
+        }
+        if let Some(ref val) = self.gateway_state {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_STATE, val)?;
+        }
+        if let Some(ref val) = self.gateway_network_interfaces {
+            ser.write_list(
+                &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_NETWORK_INTERFACES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::NetworkInterface::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.gateway_type {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_TYPE, val)?;
+        }
+        if let Some(ref val) = self.next_update_availability_date {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_NEXT_UPDATE_AVAILABILITY_DATE, val)?;
+        }
+        if let Some(ref val) = self.last_software_update {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_LAST_SOFTWARE_UPDATE, val)?;
+        }
+        if let Some(ref val) = self.ec2_instance_id {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_EC2_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.ec2_instance_region {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_EC2_INSTANCE_REGION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vpc_endpoint {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_VPC_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_log_group_arn {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_CLOUD_WATCH_LOG_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.host_environment {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_HOST_ENVIRONMENT, val.as_str())?;
+        }
+        if let Some(ref val) = self.endpoint_type {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_ENDPOINT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.software_updates_end_date {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SOFTWARE_UPDATES_END_DATE, val)?;
+        }
+        if let Some(ref val) = self.deprecation_date {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_DEPRECATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.gateway_capacity {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_GATEWAY_CAPACITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.supported_gateway_capacities {
+            ser.write_list(
+                &DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SUPPORTED_GATEWAY_CAPACITIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.host_environment_id {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_HOST_ENVIRONMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.software_version {
+            ser.write_string(&DESCRIBEGATEWAYINFORMATIONOUTPUT_MEMBER_SOFTWARE_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_gateway_information::builders::DescribeGatewayInformationOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEGATEWAYINFORMATIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_timezone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_network_interfaces = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::NetworkInterface::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_update_availability_date = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_software_update = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_instance_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_endpoint = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_watch_log_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_environment = Some(crate::types::HostEnvironment::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.software_updates_end_date = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deprecation_date = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_capacity = Some(crate::types::GatewayCapacity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_gateway_capacities = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::GatewayCapacity::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_environment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.software_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeGatewayInformationOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeGatewayInformationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

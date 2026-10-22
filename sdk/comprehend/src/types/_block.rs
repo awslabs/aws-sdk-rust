@@ -58,6 +58,188 @@ impl Block {
         self.relationships.as_deref().unwrap_or_default()
     }
 }
+static BLOCK_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Block$Id", "com.amazonaws.comprehend", "Block"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static BLOCK_MEMBER_BLOCK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Block$BlockType", "com.amazonaws.comprehend", "Block"),
+    ::aws_smithy_schema::ShapeType::String,
+    "BlockType",
+    1,
+);
+static BLOCK_MEMBER_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Block$Text", "com.amazonaws.comprehend", "Block"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Text",
+    2,
+);
+static BLOCK_MEMBER_PAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Block$Page", "com.amazonaws.comprehend", "Block"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Page",
+    3,
+);
+static BLOCK_MEMBER_GEOMETRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Block$Geometry", "com.amazonaws.comprehend", "Block"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Geometry",
+    4,
+);
+static BLOCK_MEMBER_RELATIONSHIPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfRelationships$member",
+        "com.amazonaws.comprehend",
+        "ListOfRelationships",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BLOCK_MEMBER_RELATIONSHIPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Block$Relationships", "com.amazonaws.comprehend", "Block"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Relationships",
+    5,
+)
+.with_list_member(&BLOCK_MEMBER_RELATIONSHIPS_MEMBER);
+static BLOCK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Block", "com.amazonaws.comprehend", "Block"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BLOCK_MEMBER_ID,
+        &BLOCK_MEMBER_BLOCK_TYPE,
+        &BLOCK_MEMBER_TEXT,
+        &BLOCK_MEMBER_PAGE,
+        &BLOCK_MEMBER_GEOMETRY,
+        &BLOCK_MEMBER_RELATIONSHIPS,
+    ],
+);
+impl Block {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BLOCK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Block {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&BLOCK_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.block_type {
+            ser.write_string(&BLOCK_MEMBER_BLOCK_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.text {
+            ser.write_string(&BLOCK_MEMBER_TEXT, val)?;
+        }
+        if let Some(ref val) = self.page {
+            ser.write_integer(&BLOCK_MEMBER_PAGE, *val)?;
+        }
+        if let Some(ref val) = self.geometry {
+            ser.write_struct(&BLOCK_MEMBER_GEOMETRY, val)?;
+        }
+        if let Some(ref val) = self.relationships {
+            ser.write_list(
+                &BLOCK_MEMBER_RELATIONSHIPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RelationshipsListItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BlockBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BLOCK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_type = Some(crate::types::BlockType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.geometry = Some(crate::types::Geometry::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relationships = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RelationshipsListItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Block {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Block {
     /// Creates a new builder-style object to manufacture [`Block`](crate::types::Block).
     pub fn builder() -> crate::types::builders::BlockBuilder {

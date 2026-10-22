@@ -403,6 +403,580 @@ impl Fleet {
         self.disable_imdsv1
     }
 }
+static FLEET_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$Arn", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static FLEET_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$Name", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static FLEET_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$DisplayName", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static FLEET_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$Description", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static FLEET_MEMBER_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$ImageName", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageName",
+    4,
+);
+static FLEET_MEMBER_IMAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$ImageArn", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageArn",
+    5,
+);
+static FLEET_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$InstanceType", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    6,
+);
+static FLEET_MEMBER_FLEET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$FleetType", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FleetType",
+    7,
+);
+static FLEET_MEMBER_COMPUTE_CAPACITY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$ComputeCapacityStatus", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComputeCapacityStatus",
+    8,
+);
+static FLEET_MEMBER_MAX_USER_DURATION_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Fleet$MaxUserDurationInSeconds",
+        "com.amazonaws.appstream",
+        "Fleet",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxUserDurationInSeconds",
+    9,
+);
+static FLEET_MEMBER_DISCONNECT_TIMEOUT_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Fleet$DisconnectTimeoutInSeconds",
+        "com.amazonaws.appstream",
+        "Fleet",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DisconnectTimeoutInSeconds",
+    10,
+);
+static FLEET_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$State", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    11,
+);
+static FLEET_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$VpcConfig", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    12,
+);
+static FLEET_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$CreatedTime", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    13,
+);
+static FLEET_MEMBER_FLEET_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#FleetErrors$member", "com.amazonaws.appstream", "FleetErrors"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static FLEET_MEMBER_FLEET_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$FleetErrors", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::List,
+    "FleetErrors",
+    14,
+)
+.with_list_member(&FLEET_MEMBER_FLEET_ERRORS_MEMBER);
+static FLEET_MEMBER_ENABLE_DEFAULT_INTERNET_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Fleet$EnableDefaultInternetAccess",
+        "com.amazonaws.appstream",
+        "Fleet",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "EnableDefaultInternetAccess",
+    15,
+);
+static FLEET_MEMBER_DOMAIN_JOIN_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$DomainJoinInfo", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DomainJoinInfo",
+    16,
+);
+static FLEET_MEMBER_IDLE_DISCONNECT_TIMEOUT_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Fleet$IdleDisconnectTimeoutInSeconds",
+        "com.amazonaws.appstream",
+        "Fleet",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "IdleDisconnectTimeoutInSeconds",
+    17,
+);
+static FLEET_MEMBER_IAM_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$IamRoleArn", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "IamRoleArn",
+    18,
+);
+static FLEET_MEMBER_STREAM_VIEW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$StreamView", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamView",
+    19,
+);
+static FLEET_MEMBER_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$Platform", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Platform",
+    20,
+);
+static FLEET_MEMBER_MAX_CONCURRENT_SESSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$MaxConcurrentSessions", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxConcurrentSessions",
+    21,
+);
+static FLEET_MEMBER_USB_DEVICE_FILTER_STRINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UsbDeviceFilterStrings$member",
+        "com.amazonaws.appstream",
+        "UsbDeviceFilterStrings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FLEET_MEMBER_USB_DEVICE_FILTER_STRINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$UsbDeviceFilterStrings", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::List,
+    "UsbDeviceFilterStrings",
+    22,
+)
+.with_list_member(&FLEET_MEMBER_USB_DEVICE_FILTER_STRINGS_MEMBER);
+static FLEET_MEMBER_SESSION_SCRIPT_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Fleet$SessionScriptS3Location",
+        "com.amazonaws.appstream",
+        "Fleet",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SessionScriptS3Location",
+    23,
+);
+static FLEET_MEMBER_MAX_SESSIONS_PER_INSTANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$MaxSessionsPerInstance", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxSessionsPerInstance",
+    24,
+);
+static FLEET_MEMBER_ROOT_VOLUME_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$RootVolumeConfig", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RootVolumeConfig",
+    25,
+);
+static FLEET_MEMBER_DISABLE_IMDSV1: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet$DisableIMDSV1", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DisableIMDSV1",
+    26,
+);
+static FLEET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Fleet", "com.amazonaws.appstream", "Fleet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FLEET_MEMBER_ARN,
+        &FLEET_MEMBER_NAME,
+        &FLEET_MEMBER_DISPLAY_NAME,
+        &FLEET_MEMBER_DESCRIPTION,
+        &FLEET_MEMBER_IMAGE_NAME,
+        &FLEET_MEMBER_IMAGE_ARN,
+        &FLEET_MEMBER_INSTANCE_TYPE,
+        &FLEET_MEMBER_FLEET_TYPE,
+        &FLEET_MEMBER_COMPUTE_CAPACITY_STATUS,
+        &FLEET_MEMBER_MAX_USER_DURATION_IN_SECONDS,
+        &FLEET_MEMBER_DISCONNECT_TIMEOUT_IN_SECONDS,
+        &FLEET_MEMBER_STATE,
+        &FLEET_MEMBER_VPC_CONFIG,
+        &FLEET_MEMBER_CREATED_TIME,
+        &FLEET_MEMBER_FLEET_ERRORS,
+        &FLEET_MEMBER_ENABLE_DEFAULT_INTERNET_ACCESS,
+        &FLEET_MEMBER_DOMAIN_JOIN_INFO,
+        &FLEET_MEMBER_IDLE_DISCONNECT_TIMEOUT_IN_SECONDS,
+        &FLEET_MEMBER_IAM_ROLE_ARN,
+        &FLEET_MEMBER_STREAM_VIEW,
+        &FLEET_MEMBER_PLATFORM,
+        &FLEET_MEMBER_MAX_CONCURRENT_SESSIONS,
+        &FLEET_MEMBER_USB_DEVICE_FILTER_STRINGS,
+        &FLEET_MEMBER_SESSION_SCRIPT_S3_LOCATION,
+        &FLEET_MEMBER_MAX_SESSIONS_PER_INSTANCE,
+        &FLEET_MEMBER_ROOT_VOLUME_CONFIG,
+        &FLEET_MEMBER_DISABLE_IMDSV1,
+    ],
+);
+impl Fleet {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FLEET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Fleet {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&FLEET_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&FLEET_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&FLEET_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&FLEET_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.image_name {
+            ser.write_string(&FLEET_MEMBER_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_arn {
+            ser.write_string(&FLEET_MEMBER_IMAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&FLEET_MEMBER_INSTANCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.fleet_type {
+            ser.write_string(&FLEET_MEMBER_FLEET_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.compute_capacity_status {
+            ser.write_struct(&FLEET_MEMBER_COMPUTE_CAPACITY_STATUS, val)?;
+        }
+        if let Some(ref val) = self.max_user_duration_in_seconds {
+            ser.write_integer(&FLEET_MEMBER_MAX_USER_DURATION_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.disconnect_timeout_in_seconds {
+            ser.write_integer(&FLEET_MEMBER_DISCONNECT_TIMEOUT_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&FLEET_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&FLEET_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&FLEET_MEMBER_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.fleet_errors {
+            ser.write_list(
+                &FLEET_MEMBER_FLEET_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::FleetError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.enable_default_internet_access {
+            ser.write_boolean(&FLEET_MEMBER_ENABLE_DEFAULT_INTERNET_ACCESS, *val)?;
+        }
+        if let Some(ref val) = self.domain_join_info {
+            ser.write_struct(&FLEET_MEMBER_DOMAIN_JOIN_INFO, val)?;
+        }
+        if let Some(ref val) = self.idle_disconnect_timeout_in_seconds {
+            ser.write_integer(&FLEET_MEMBER_IDLE_DISCONNECT_TIMEOUT_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.iam_role_arn {
+            ser.write_string(&FLEET_MEMBER_IAM_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.stream_view {
+            ser.write_string(&FLEET_MEMBER_STREAM_VIEW, val.as_str())?;
+        }
+        if let Some(ref val) = self.platform {
+            ser.write_string(&FLEET_MEMBER_PLATFORM, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_concurrent_sessions {
+            ser.write_integer(&FLEET_MEMBER_MAX_CONCURRENT_SESSIONS, *val)?;
+        }
+        if let Some(ref val) = self.usb_device_filter_strings {
+            ser.write_list(
+                &FLEET_MEMBER_USB_DEVICE_FILTER_STRINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.session_script_s3_location {
+            ser.write_struct(&FLEET_MEMBER_SESSION_SCRIPT_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.max_sessions_per_instance {
+            ser.write_integer(&FLEET_MEMBER_MAX_SESSIONS_PER_INSTANCE, *val)?;
+        }
+        if let Some(ref val) = self.root_volume_config {
+            ser.write_struct(&FLEET_MEMBER_ROOT_VOLUME_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.disable_imdsv1 {
+            ser.write_boolean(&FLEET_MEMBER_DISABLE_IMDSV1, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FleetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FLEET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet_type = Some(crate::types::FleetType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_capacity_status = Some(crate::types::ComputeCapacityStatus::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_user_duration_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disconnect_timeout_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::FleetState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fleet_errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::FleetError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_default_internet_access = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_join_info = Some(crate::types::DomainJoinInfo::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idle_disconnect_timeout_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iam_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stream_view = Some(crate::types::StreamView::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform = Some(crate::types::PlatformType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_concurrent_sessions = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usb_device_filter_strings = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.session_script_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_sessions_per_instance = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_volume_config = Some(crate::types::VolumeConfig::deserialize(deser)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disable_imdsv1 = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Fleet {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Fleet {
     /// Creates a new builder-style object to manufacture [`Fleet`](crate::types::Fleet).
     pub fn builder() -> crate::types::builders::FleetBuilder {

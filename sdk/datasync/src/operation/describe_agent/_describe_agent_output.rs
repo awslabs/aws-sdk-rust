@@ -68,6 +68,233 @@ impl DescribeAgentOutput {
         self.platform.as_ref()
     }
 }
+static DESCRIBEAGENTOUTPUT_MEMBER_AGENT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$AgentArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AgentArn",
+    0,
+);
+static DESCRIBEAGENTOUTPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$Name",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static DESCRIBEAGENTOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$Status",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static DESCRIBEAGENTOUTPUT_MEMBER_LAST_CONNECTION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$LastConnectionTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastConnectionTime",
+    3,
+);
+static DESCRIBEAGENTOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$CreationTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static DESCRIBEAGENTOUTPUT_MEMBER_ENDPOINT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$EndpointType",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointType",
+    5,
+);
+static DESCRIBEAGENTOUTPUT_MEMBER_PRIVATE_LINK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$PrivateLinkConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PrivateLinkConfig",
+    6,
+);
+static DESCRIBEAGENTOUTPUT_MEMBER_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput$Platform",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Platform",
+    7,
+);
+static DESCRIBEAGENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeAgentOutput",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeAgentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEAGENTOUTPUT_MEMBER_AGENT_ARN,
+        &DESCRIBEAGENTOUTPUT_MEMBER_NAME,
+        &DESCRIBEAGENTOUTPUT_MEMBER_STATUS,
+        &DESCRIBEAGENTOUTPUT_MEMBER_LAST_CONNECTION_TIME,
+        &DESCRIBEAGENTOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEAGENTOUTPUT_MEMBER_ENDPOINT_TYPE,
+        &DESCRIBEAGENTOUTPUT_MEMBER_PRIVATE_LINK_CONFIG,
+        &DESCRIBEAGENTOUTPUT_MEMBER_PLATFORM,
+    ],
+)
+.with_original_name("DescribeAgentResponse");
+impl DescribeAgentOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAGENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAgentOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.agent_arn {
+            ser.write_string(&DESCRIBEAGENTOUTPUT_MEMBER_AGENT_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&DESCRIBEAGENTOUTPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBEAGENTOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_connection_time {
+            ser.write_timestamp(&DESCRIBEAGENTOUTPUT_MEMBER_LAST_CONNECTION_TIME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEAGENTOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.endpoint_type {
+            ser.write_string(&DESCRIBEAGENTOUTPUT_MEMBER_ENDPOINT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.private_link_config {
+            ser.write_struct(&DESCRIBEAGENTOUTPUT_MEMBER_PRIVATE_LINK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.platform {
+            ser.write_struct(&DESCRIBEAGENTOUTPUT_MEMBER_PLATFORM, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_agent::builders::DescribeAgentOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAGENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AgentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_connection_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_type = Some(crate::types::EndpointType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.private_link_config = Some(crate::types::PrivateLinkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform = Some(crate::types::Platform::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAgentOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeAgentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

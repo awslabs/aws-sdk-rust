@@ -72,6 +72,356 @@ impl CreateCommitInput {
         self.set_file_modes.as_deref().unwrap_or_default()
     }
 }
+static CREATECOMMITINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static CREATECOMMITINPUT_MEMBER_BRANCH_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$branchName",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "branchName",
+    1,
+);
+static CREATECOMMITINPUT_MEMBER_PARENT_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$parentCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "parentCommitId",
+    2,
+);
+static CREATECOMMITINPUT_MEMBER_AUTHOR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$authorName",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "authorName",
+    3,
+);
+static CREATECOMMITINPUT_MEMBER_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$email",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "email",
+    4,
+);
+static CREATECOMMITINPUT_MEMBER_COMMIT_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$commitMessage",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "commitMessage",
+    5,
+);
+static CREATECOMMITINPUT_MEMBER_KEEP_EMPTY_FOLDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$keepEmptyFolders",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "keepEmptyFolders",
+    6,
+);
+static CREATECOMMITINPUT_MEMBER_PUT_FILES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PutFileEntries$member",
+        "com.amazonaws.codecommit",
+        "PutFileEntries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECOMMITINPUT_MEMBER_PUT_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$putFiles",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "putFiles",
+    7,
+)
+.with_list_member(&CREATECOMMITINPUT_MEMBER_PUT_FILES_MEMBER);
+static CREATECOMMITINPUT_MEMBER_DELETE_FILES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#DeleteFileEntries$member",
+        "com.amazonaws.codecommit",
+        "DeleteFileEntries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECOMMITINPUT_MEMBER_DELETE_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$deleteFiles",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "deleteFiles",
+    8,
+)
+.with_list_member(&CREATECOMMITINPUT_MEMBER_DELETE_FILES_MEMBER);
+static CREATECOMMITINPUT_MEMBER_SET_FILE_MODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#SetFileModeEntries$member",
+        "com.amazonaws.codecommit",
+        "SetFileModeEntries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECOMMITINPUT_MEMBER_SET_FILE_MODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput$setFileModes",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "setFileModes",
+    9,
+)
+.with_list_member(&CREATECOMMITINPUT_MEMBER_SET_FILE_MODES_MEMBER);
+static CREATECOMMITINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreateCommitInput",
+        "com.amazonaws.codecommit.synthetic",
+        "CreateCommitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECOMMITINPUT_MEMBER_REPOSITORY_NAME,
+        &CREATECOMMITINPUT_MEMBER_BRANCH_NAME,
+        &CREATECOMMITINPUT_MEMBER_PARENT_COMMIT_ID,
+        &CREATECOMMITINPUT_MEMBER_AUTHOR_NAME,
+        &CREATECOMMITINPUT_MEMBER_EMAIL,
+        &CREATECOMMITINPUT_MEMBER_COMMIT_MESSAGE,
+        &CREATECOMMITINPUT_MEMBER_KEEP_EMPTY_FOLDERS,
+        &CREATECOMMITINPUT_MEMBER_PUT_FILES,
+        &CREATECOMMITINPUT_MEMBER_DELETE_FILES,
+        &CREATECOMMITINPUT_MEMBER_SET_FILE_MODES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCommitInput");
+impl CreateCommitInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECOMMITINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCommitInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&CREATECOMMITINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.branch_name {
+            ser.write_string(&CREATECOMMITINPUT_MEMBER_BRANCH_NAME, val)?;
+        }
+        if let Some(ref val) = self.parent_commit_id {
+            ser.write_string(&CREATECOMMITINPUT_MEMBER_PARENT_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.author_name {
+            ser.write_string(&CREATECOMMITINPUT_MEMBER_AUTHOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.email {
+            ser.write_string(&CREATECOMMITINPUT_MEMBER_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.commit_message {
+            ser.write_string(&CREATECOMMITINPUT_MEMBER_COMMIT_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.keep_empty_folders {
+            ser.write_boolean(&CREATECOMMITINPUT_MEMBER_KEEP_EMPTY_FOLDERS, *val)?;
+        }
+        if let Some(ref val) = self.put_files {
+            ser.write_list(
+                &CREATECOMMITINPUT_MEMBER_PUT_FILES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PutFileEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.delete_files {
+            ser.write_list(
+                &CREATECOMMITINPUT_MEMBER_DELETE_FILES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DeleteFileEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.set_file_modes {
+            ser.write_list(
+                &CREATECOMMITINPUT_MEMBER_SET_FILE_MODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::SetFileModeEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_commit::builders::CreateCommitInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECOMMITINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branch_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parent_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.author_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commit_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.keep_empty_folders = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.put_files = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PutFileEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_files = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeleteFileEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.set_file_modes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SetFileModeEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCommitInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.branch_name = builder.branch_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCommitInput {
     /// Creates a new builder-style object to manufacture [`CreateCommitInput`](crate::operation::create_commit::CreateCommitInput).
     pub fn builder() -> crate::operation::create_commit::builders::CreateCommitInputBuilder {

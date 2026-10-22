@@ -71,6 +71,322 @@ impl StageState {
         self.retry_stage_metadata.as_ref()
     }
 }
+static STAGESTATE_MEMBER_STAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$stageName",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "stageName",
+    0,
+);
+static STAGESTATE_MEMBER_INBOUND_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$inboundExecution",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "inboundExecution",
+    1,
+);
+static STAGESTATE_MEMBER_INBOUND_EXECUTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageExecutionList$member",
+        "com.amazonaws.codepipeline",
+        "StageExecutionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STAGESTATE_MEMBER_INBOUND_EXECUTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$inboundExecutions",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "inboundExecutions",
+    2,
+)
+.with_list_member(&STAGESTATE_MEMBER_INBOUND_EXECUTIONS_MEMBER);
+static STAGESTATE_MEMBER_INBOUND_TRANSITION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$inboundTransitionState",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "inboundTransitionState",
+    3,
+);
+static STAGESTATE_MEMBER_ACTION_STATES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionStateList$member",
+        "com.amazonaws.codepipeline",
+        "ActionStateList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STAGESTATE_MEMBER_ACTION_STATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$actionStates",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "actionStates",
+    4,
+)
+.with_list_member(&STAGESTATE_MEMBER_ACTION_STATES_MEMBER);
+static STAGESTATE_MEMBER_LATEST_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$latestExecution",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "latestExecution",
+    5,
+);
+static STAGESTATE_MEMBER_BEFORE_ENTRY_CONDITION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$beforeEntryConditionState",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "beforeEntryConditionState",
+    6,
+);
+static STAGESTATE_MEMBER_ON_SUCCESS_CONDITION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$onSuccessConditionState",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "onSuccessConditionState",
+    7,
+);
+static STAGESTATE_MEMBER_ON_FAILURE_CONDITION_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$onFailureConditionState",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "onFailureConditionState",
+    8,
+);
+static STAGESTATE_MEMBER_RETRY_STAGE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageState$retryStageMetadata",
+        "com.amazonaws.codepipeline",
+        "StageState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "retryStageMetadata",
+    9,
+);
+static STAGESTATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#StageState", "com.amazonaws.codepipeline", "StageState"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STAGESTATE_MEMBER_STAGE_NAME,
+        &STAGESTATE_MEMBER_INBOUND_EXECUTION,
+        &STAGESTATE_MEMBER_INBOUND_EXECUTIONS,
+        &STAGESTATE_MEMBER_INBOUND_TRANSITION_STATE,
+        &STAGESTATE_MEMBER_ACTION_STATES,
+        &STAGESTATE_MEMBER_LATEST_EXECUTION,
+        &STAGESTATE_MEMBER_BEFORE_ENTRY_CONDITION_STATE,
+        &STAGESTATE_MEMBER_ON_SUCCESS_CONDITION_STATE,
+        &STAGESTATE_MEMBER_ON_FAILURE_CONDITION_STATE,
+        &STAGESTATE_MEMBER_RETRY_STAGE_METADATA,
+    ],
+);
+impl StageState {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STAGESTATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StageState {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stage_name {
+            ser.write_string(&STAGESTATE_MEMBER_STAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.inbound_execution {
+            ser.write_struct(&STAGESTATE_MEMBER_INBOUND_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.inbound_executions {
+            ser.write_list(
+                &STAGESTATE_MEMBER_INBOUND_EXECUTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::StageExecution::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.inbound_transition_state {
+            ser.write_struct(&STAGESTATE_MEMBER_INBOUND_TRANSITION_STATE, val)?;
+        }
+        if let Some(ref val) = self.action_states {
+            ser.write_list(
+                &STAGESTATE_MEMBER_ACTION_STATES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ActionState::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.latest_execution {
+            ser.write_struct(&STAGESTATE_MEMBER_LATEST_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.before_entry_condition_state {
+            ser.write_struct(&STAGESTATE_MEMBER_BEFORE_ENTRY_CONDITION_STATE, val)?;
+        }
+        if let Some(ref val) = self.on_success_condition_state {
+            ser.write_struct(&STAGESTATE_MEMBER_ON_SUCCESS_CONDITION_STATE, val)?;
+        }
+        if let Some(ref val) = self.on_failure_condition_state {
+            ser.write_struct(&STAGESTATE_MEMBER_ON_FAILURE_CONDITION_STATE, val)?;
+        }
+        if let Some(ref val) = self.retry_stage_metadata {
+            ser.write_struct(&STAGESTATE_MEMBER_RETRY_STAGE_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StageStateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STAGESTATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inbound_execution = Some(crate::types::StageExecution::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inbound_executions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::StageExecution::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inbound_transition_state = Some(crate::types::TransitionState::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_states = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ActionState::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_execution = Some(crate::types::StageExecution::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.before_entry_condition_state = Some(crate::types::StageConditionState::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_success_condition_state = Some(crate::types::StageConditionState::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_failure_condition_state = Some(crate::types::StageConditionState::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry_stage_metadata = Some(crate::types::RetryStageMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StageState {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl StageState {
     /// Creates a new builder-style object to manufacture [`StageState`](crate::types::StageState).
     pub fn builder() -> crate::types::builders::StageStateBuilder {

@@ -78,6 +78,303 @@ impl CreateCachediScsiVolumeInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    0,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_VOLUME_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$VolumeSizeInBytes",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSizeInBytes",
+    1,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$SnapshotId",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    2,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TARGET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$TargetName",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetName",
+    3,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_SOURCE_VOLUME_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$SourceVolumeARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceVolumeARN",
+    4,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_NETWORK_INTERFACE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$NetworkInterfaceId",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NetworkInterfaceId",
+    5,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$ClientToken",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    6,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_KMS_ENCRYPTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$KMSEncrypted",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "KMSEncrypted",
+    7,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$KMSKey",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    8,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput$Tags",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TAGS_MEMBER);
+static CREATECACHEDISCSIVOLUMEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateCachediSCSIVolumeInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateCachediSCSIVolumeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_GATEWAY_ARN,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_VOLUME_SIZE_IN_BYTES,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_SNAPSHOT_ID,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TARGET_NAME,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_SOURCE_VOLUME_ARN,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_NETWORK_INTERFACE_ID,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_KMS_ENCRYPTED,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_KMS_KEY,
+        &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCachediSCSIVolumeInput");
+impl CreateCachediScsiVolumeInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECACHEDISCSIVOLUMEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCachediScsiVolumeInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.volume_size_in_bytes {
+            ser.write_long(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_VOLUME_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.target_name {
+            ser.write_string(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TARGET_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_volume_arn {
+            ser.write_string(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_SOURCE_VOLUME_ARN, val)?;
+        }
+        if let Some(ref val) = self.network_interface_id {
+            ser.write_string(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_NETWORK_INTERFACE_ID, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.kms_encrypted {
+            ser.write_boolean(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_KMS_ENCRYPTED, *val)?;
+        }
+        if let Some(ref val) = self.kms_key {
+            ser.write_string(&CREATECACHEDISCSIVOLUMEINPUT_MEMBER_KMS_KEY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECACHEDISCSIVOLUMEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECACHEDISCSIVOLUMEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_size_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_volume_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_interface_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_encrypted = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCachediScsiVolumeInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.gateway_arn = builder.gateway_arn.or(Some(String::new()));
+        builder.volume_size_in_bytes = builder.volume_size_in_bytes.or(Some(0i64));
+        builder.target_name = builder.target_name.or(Some(String::new()));
+        builder.network_interface_id = builder.network_interface_id.or(Some(String::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCachediScsiVolumeInput {
     /// Creates a new builder-style object to manufacture [`CreateCachediScsiVolumeInput`](crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeInput).
     pub fn builder() -> crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeInputBuilder {

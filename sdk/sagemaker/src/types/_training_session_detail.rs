@@ -105,6 +105,422 @@ impl TrainingSessionDetail {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$TrainingSessionArn",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingSessionArn",
+    0,
+);
+static TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$TrainingSessionName",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingSessionName",
+    1,
+);
+static TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$TrainingSessionStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingSessionStatus",
+    2,
+);
+static TRAININGSESSIONDETAIL_MEMBER_MODEL_PACKAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$ModelPackageGroupArn",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupArn",
+    3,
+);
+static TRAININGSESSIONDETAIL_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$CreationTime",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static TRAININGSESSIONDETAIL_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    5,
+);
+static TRAININGSESSIONDETAIL_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$EndTime",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    6,
+);
+static TRAININGSESSIONDETAIL_MEMBER_ERROR_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$ErrorDetails",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorDetails",
+    7,
+);
+static TRAININGSESSIONDETAIL_MEMBER_LAST_RECEIVED_SEQUENCE_NUMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$LastReceivedSequenceNumber",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "LastReceivedSequenceNumber",
+    8,
+);
+static TRAININGSESSIONDETAIL_MEMBER_BILLABLE_TOKEN_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$BillableTokenUsage",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BillableTokenUsage",
+    9,
+);
+static TRAININGSESSIONDETAIL_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$VpcConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    10,
+);
+static TRAININGSESSIONDETAIL_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$RoleArn",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    11,
+);
+static TRAININGSESSIONDETAIL_MEMBER_LORA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$LoraConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LoraConfig",
+    12,
+);
+static TRAININGSESSIONDETAIL_MEMBER_MODEL_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$ModelConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelConfig",
+    13,
+);
+static TRAININGSESSIONDETAIL_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$OutputConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    14,
+);
+static TRAININGSESSIONDETAIL_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGSESSIONDETAIL_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail$Tags",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    15,
+)
+.with_list_member(&TRAININGSESSIONDETAIL_MEMBER_TAGS_MEMBER);
+static TRAININGSESSIONDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSessionDetail",
+        "com.amazonaws.sagemaker",
+        "TrainingSessionDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_ARN,
+        &TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_NAME,
+        &TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_STATUS,
+        &TRAININGSESSIONDETAIL_MEMBER_MODEL_PACKAGE_GROUP_ARN,
+        &TRAININGSESSIONDETAIL_MEMBER_CREATION_TIME,
+        &TRAININGSESSIONDETAIL_MEMBER_LAST_MODIFIED_TIME,
+        &TRAININGSESSIONDETAIL_MEMBER_END_TIME,
+        &TRAININGSESSIONDETAIL_MEMBER_ERROR_DETAILS,
+        &TRAININGSESSIONDETAIL_MEMBER_LAST_RECEIVED_SEQUENCE_NUMBER,
+        &TRAININGSESSIONDETAIL_MEMBER_BILLABLE_TOKEN_USAGE,
+        &TRAININGSESSIONDETAIL_MEMBER_VPC_CONFIG,
+        &TRAININGSESSIONDETAIL_MEMBER_ROLE_ARN,
+        &TRAININGSESSIONDETAIL_MEMBER_LORA_CONFIG,
+        &TRAININGSESSIONDETAIL_MEMBER_MODEL_CONFIG,
+        &TRAININGSESSIONDETAIL_MEMBER_OUTPUT_CONFIG,
+        &TRAININGSESSIONDETAIL_MEMBER_TAGS,
+    ],
+);
+impl TrainingSessionDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGSESSIONDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingSessionDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_session_arn {
+            ser.write_string(&TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_ARN, val)?;
+        }
+        if let Some(ref val) = self.training_session_name {
+            ser.write_string(&TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.training_session_status {
+            ser.write_string(&TRAININGSESSIONDETAIL_MEMBER_TRAINING_SESSION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_package_group_arn {
+            ser.write_string(&TRAININGSESSIONDETAIL_MEMBER_MODEL_PACKAGE_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&TRAININGSESSIONDETAIL_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&TRAININGSESSIONDETAIL_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&TRAININGSESSIONDETAIL_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.error_details {
+            ser.write_string(&TRAININGSESSIONDETAIL_MEMBER_ERROR_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.last_received_sequence_number {
+            ser.write_integer(&TRAININGSESSIONDETAIL_MEMBER_LAST_RECEIVED_SEQUENCE_NUMBER, *val)?;
+        }
+        if let Some(ref val) = self.billable_token_usage {
+            ser.write_struct(&TRAININGSESSIONDETAIL_MEMBER_BILLABLE_TOKEN_USAGE, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&TRAININGSESSIONDETAIL_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&TRAININGSESSIONDETAIL_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.lora_config {
+            ser.write_struct(&TRAININGSESSIONDETAIL_MEMBER_LORA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_config {
+            ser.write_struct(&TRAININGSESSIONDETAIL_MEMBER_MODEL_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&TRAININGSESSIONDETAIL_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &TRAININGSESSIONDETAIL_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingSessionDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGSESSIONDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_session_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_session_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_session_status = Some(crate::types::TrainingSessionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_details = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_received_sequence_number = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billable_token_usage = Some(crate::types::BillableTokenUsage::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lora_config = Some(crate::types::LoraConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_config = Some(crate::types::TrainingSessionModelConfig::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::TrainingSessionOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingSessionDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingSessionDetail {
     /// Creates a new builder-style object to manufacture [`TrainingSessionDetail`](crate::types::TrainingSessionDetail).
     pub fn builder() -> crate::types::builders::TrainingSessionDetailBuilder {

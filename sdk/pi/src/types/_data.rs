@@ -13,6 +13,75 @@ impl Data {
         self.performance_insights_metric.as_ref()
     }
 }
+static DATA_MEMBER_PERFORMANCE_INSIGHTS_METRIC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Data$PerformanceInsightsMetric", "com.amazonaws.pi", "Data"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PerformanceInsightsMetric",
+    0,
+);
+static DATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#Data", "com.amazonaws.pi", "Data"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DATA_MEMBER_PERFORMANCE_INSIGHTS_METRIC],
+);
+impl Data {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Data {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.performance_insights_metric {
+            ser.write_struct(&DATA_MEMBER_PERFORMANCE_INSIGHTS_METRIC, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.performance_insights_metric = Some(crate::types::PerformanceInsightsMetric::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Data {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Data {
     /// Creates a new builder-style object to manufacture [`Data`](crate::types::Data).
     pub fn builder() -> crate::types::builders::DataBuilder {

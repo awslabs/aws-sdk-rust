@@ -21,6 +21,110 @@ impl ResultSet {
         self.result_set_metadata.as_ref()
     }
 }
+static RESULTSET_MEMBER_ROWS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#RowList$member", "com.amazonaws.athena", "RowList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RESULTSET_MEMBER_ROWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ResultSet$Rows", "com.amazonaws.athena", "ResultSet"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Rows",
+    0,
+)
+.with_list_member(&RESULTSET_MEMBER_ROWS_MEMBER);
+static RESULTSET_MEMBER_RESULT_SET_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ResultSet$ResultSetMetadata", "com.amazonaws.athena", "ResultSet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResultSetMetadata",
+    1,
+);
+static RESULTSET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#ResultSet", "com.amazonaws.athena", "ResultSet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RESULTSET_MEMBER_ROWS, &RESULTSET_MEMBER_RESULT_SET_METADATA],
+);
+impl ResultSet {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESULTSET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResultSet {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.rows {
+            ser.write_list(&RESULTSET_MEMBER_ROWS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Row::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.result_set_metadata {
+            ser.write_struct(&RESULTSET_MEMBER_RESULT_SET_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResultSetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESULTSET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rows = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Row::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.result_set_metadata = Some(crate::types::ResultSetMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResultSet {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResultSet {
     /// Creates a new builder-style object to manufacture [`ResultSet`](crate::types::ResultSet).
     pub fn builder() -> crate::types::builders::ResultSetBuilder {

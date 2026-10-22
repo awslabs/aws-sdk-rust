@@ -19,6 +19,102 @@ impl EndpointNetworkConfiguration {
         self.ip_addresses.as_deref().unwrap_or_default()
     }
 }
+static ENDPOINTNETWORKCONFIGURATION_MEMBER_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#IpAddressList$member",
+        "com.amazonaws.storagegateway",
+        "IpAddressList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ENDPOINTNETWORKCONFIGURATION_MEMBER_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#EndpointNetworkConfiguration$IpAddresses",
+        "com.amazonaws.storagegateway",
+        "EndpointNetworkConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "IpAddresses",
+    0,
+)
+.with_list_member(&ENDPOINTNETWORKCONFIGURATION_MEMBER_IP_ADDRESSES_MEMBER);
+static ENDPOINTNETWORKCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#EndpointNetworkConfiguration",
+        "com.amazonaws.storagegateway",
+        "EndpointNetworkConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ENDPOINTNETWORKCONFIGURATION_MEMBER_IP_ADDRESSES],
+);
+impl EndpointNetworkConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENDPOINTNETWORKCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EndpointNetworkConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ip_addresses {
+            ser.write_list(
+                &ENDPOINTNETWORKCONFIGURATION_MEMBER_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EndpointNetworkConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENDPOINTNETWORKCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EndpointNetworkConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EndpointNetworkConfiguration {
     /// Creates a new builder-style object to manufacture [`EndpointNetworkConfiguration`](crate::types::EndpointNetworkConfiguration).
     pub fn builder() -> crate::types::builders::EndpointNetworkConfigurationBuilder {

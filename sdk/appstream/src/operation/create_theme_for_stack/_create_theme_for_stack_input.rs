@@ -44,6 +44,220 @@ impl CreateThemeForStackInput {
         self.favicon_s3_location.as_ref()
     }
 }
+static CREATETHEMEFORSTACKINPUT_MEMBER_STACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateThemeForStackInput$StackName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StackName",
+    0,
+);
+static CREATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ThemeFooterLinks$member",
+        "com.amazonaws.appstream",
+        "ThemeFooterLinks",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateThemeForStackInput$FooterLinks",
+        "com.amazonaws.appstream.synthetic",
+        "CreateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "FooterLinks",
+    1,
+)
+.with_list_member(&CREATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS_MEMBER);
+static CREATETHEMEFORSTACKINPUT_MEMBER_TITLE_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateThemeForStackInput$TitleText",
+        "com.amazonaws.appstream.synthetic",
+        "CreateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TitleText",
+    2,
+);
+static CREATETHEMEFORSTACKINPUT_MEMBER_THEME_STYLING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateThemeForStackInput$ThemeStyling",
+        "com.amazonaws.appstream.synthetic",
+        "CreateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ThemeStyling",
+    3,
+);
+static CREATETHEMEFORSTACKINPUT_MEMBER_ORGANIZATION_LOGO_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateThemeForStackInput$OrganizationLogoS3Location",
+        "com.amazonaws.appstream.synthetic",
+        "CreateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OrganizationLogoS3Location",
+    4,
+);
+static CREATETHEMEFORSTACKINPUT_MEMBER_FAVICON_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateThemeForStackInput$FaviconS3Location",
+        "com.amazonaws.appstream.synthetic",
+        "CreateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FaviconS3Location",
+    5,
+);
+static CREATETHEMEFORSTACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateThemeForStackInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateThemeForStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATETHEMEFORSTACKINPUT_MEMBER_STACK_NAME,
+        &CREATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS,
+        &CREATETHEMEFORSTACKINPUT_MEMBER_TITLE_TEXT,
+        &CREATETHEMEFORSTACKINPUT_MEMBER_THEME_STYLING,
+        &CREATETHEMEFORSTACKINPUT_MEMBER_ORGANIZATION_LOGO_S3_LOCATION,
+        &CREATETHEMEFORSTACKINPUT_MEMBER_FAVICON_S3_LOCATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateThemeForStackRequest");
+impl CreateThemeForStackInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATETHEMEFORSTACKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateThemeForStackInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.stack_name {
+            ser.write_string(&CREATETHEMEFORSTACKINPUT_MEMBER_STACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.footer_links {
+            ser.write_list(
+                &CREATETHEMEFORSTACKINPUT_MEMBER_FOOTER_LINKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ThemeFooterLink::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.title_text {
+            ser.write_string(&CREATETHEMEFORSTACKINPUT_MEMBER_TITLE_TEXT, val)?;
+        }
+        if let Some(ref val) = self.theme_styling {
+            ser.write_string(&CREATETHEMEFORSTACKINPUT_MEMBER_THEME_STYLING, val.as_str())?;
+        }
+        if let Some(ref val) = self.organization_logo_s3_location {
+            ser.write_struct(&CREATETHEMEFORSTACKINPUT_MEMBER_ORGANIZATION_LOGO_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.favicon_s3_location {
+            ser.write_struct(&CREATETHEMEFORSTACKINPUT_MEMBER_FAVICON_S3_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_theme_for_stack::builders::CreateThemeForStackInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATETHEMEFORSTACKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.footer_links = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ThemeFooterLink::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.title_text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.theme_styling = Some(crate::types::ThemeStyling::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_logo_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.favicon_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateThemeForStackInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.stack_name = builder.stack_name.or(Some(String::new()));
+        builder.title_text = builder.title_text.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateThemeForStackInput {
     /// Creates a new builder-style object to manufacture [`CreateThemeForStackInput`](crate::operation::create_theme_for_stack::CreateThemeForStackInput).
     pub fn builder() -> crate::operation::create_theme_for_stack::builders::CreateThemeForStackInputBuilder {

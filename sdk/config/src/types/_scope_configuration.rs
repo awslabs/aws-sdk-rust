@@ -36,6 +36,182 @@ impl ScopeConfiguration {
         self.included_regions.as_deref().unwrap_or_default()
     }
 }
+static SCOPECONFIGURATION_MEMBER_SCOPE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ScopeConfiguration$scopeType",
+        "com.amazonaws.configservice",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "scopeType",
+    0,
+);
+static SCOPECONFIGURATION_MEMBER_SCOPE_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ScopeValues$member",
+        "com.amazonaws.configservice",
+        "ScopeValues",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SCOPECONFIGURATION_MEMBER_SCOPE_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ScopeConfiguration$scopeValues",
+        "com.amazonaws.configservice",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "scopeValues",
+    1,
+)
+.with_list_member(&SCOPECONFIGURATION_MEMBER_SCOPE_VALUES_MEMBER);
+static SCOPECONFIGURATION_MEMBER_ALL_REGIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ScopeConfiguration$allRegions",
+        "com.amazonaws.configservice",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "allRegions",
+    2,
+);
+static SCOPECONFIGURATION_MEMBER_INCLUDED_REGIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#IncludedRegions$member",
+        "com.amazonaws.configservice",
+        "IncludedRegions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SCOPECONFIGURATION_MEMBER_INCLUDED_REGIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ScopeConfiguration$includedRegions",
+        "com.amazonaws.configservice",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "includedRegions",
+    3,
+)
+.with_list_member(&SCOPECONFIGURATION_MEMBER_INCLUDED_REGIONS_MEMBER);
+static SCOPECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ScopeConfiguration",
+        "com.amazonaws.configservice",
+        "ScopeConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCOPECONFIGURATION_MEMBER_SCOPE_TYPE,
+        &SCOPECONFIGURATION_MEMBER_SCOPE_VALUES,
+        &SCOPECONFIGURATION_MEMBER_ALL_REGIONS,
+        &SCOPECONFIGURATION_MEMBER_INCLUDED_REGIONS,
+    ],
+);
+impl ScopeConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCOPECONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ScopeConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.scope_type;
+            ser.write_string(&SCOPECONFIGURATION_MEMBER_SCOPE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.scope_values {
+            ser.write_list(
+                &SCOPECONFIGURATION_MEMBER_SCOPE_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.all_regions;
+            ser.write_boolean(&SCOPECONFIGURATION_MEMBER_ALL_REGIONS, *val)?;
+        }
+        if let Some(ref val) = self.included_regions {
+            ser.write_list(
+                &SCOPECONFIGURATION_MEMBER_INCLUDED_REGIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ScopeConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCOPECONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.scope_type = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope_values = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    self.all_regions = Some(deser.read_boolean(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.included_regions = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ScopeConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.scope_type = builder.scope_type.or(Some(String::new()));
+        builder.all_regions = builder.all_regions.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ScopeConfiguration {
     /// Creates a new builder-style object to manufacture [`ScopeConfiguration`](crate::types::ScopeConfiguration).
     pub fn builder() -> crate::types::builders::ScopeConfigurationBuilder {

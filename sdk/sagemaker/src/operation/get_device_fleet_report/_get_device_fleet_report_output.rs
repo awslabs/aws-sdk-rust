@@ -59,6 +59,281 @@ impl GetDeviceFleetReportOutput {
         self.model_stats.as_deref().unwrap_or_default()
     }
 }
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_FLEET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$DeviceFleetArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetArn",
+    0,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$DeviceFleetName",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetName",
+    1,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    2,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_REPORT_GENERATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$ReportGenerated",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ReportGenerated",
+    4,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_STATS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$DeviceStats",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeviceStats",
+    5,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_AGENT_VERSIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AgentVersions$member", "com.amazonaws.sagemaker", "AgentVersions"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_AGENT_VERSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$AgentVersions",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AgentVersions",
+    6,
+)
+.with_list_member(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_AGENT_VERSIONS_MEMBER);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_MODEL_STATS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelStats$member",
+        "com.amazonaws.sagemaker",
+        "EdgeModelStats",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETDEVICEFLEETREPORTOUTPUT_MEMBER_MODEL_STATS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput$ModelStats",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ModelStats",
+    7,
+)
+.with_list_member(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_MODEL_STATS_MEMBER);
+static GETDEVICEFLEETREPORTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetDeviceFleetReportOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetDeviceFleetReportOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_FLEET_ARN,
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_FLEET_NAME,
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_OUTPUT_CONFIG,
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_DESCRIPTION,
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_REPORT_GENERATED,
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_STATS,
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_AGENT_VERSIONS,
+        &GETDEVICEFLEETREPORTOUTPUT_MEMBER_MODEL_STATS,
+    ],
+)
+.with_original_name("GetDeviceFleetReportResponse");
+impl GetDeviceFleetReportOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDEVICEFLEETREPORTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDeviceFleetReportOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_fleet_arn {
+            ser.write_string(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_FLEET_ARN, val)?;
+        }
+        if let Some(ref val) = self.device_fleet_name {
+            ser.write_string(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.report_generated {
+            ser.write_timestamp(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_REPORT_GENERATED, val)?;
+        }
+        if let Some(ref val) = self.device_stats {
+            ser.write_struct(&GETDEVICEFLEETREPORTOUTPUT_MEMBER_DEVICE_STATS, val)?;
+        }
+        if let Some(ref val) = self.agent_versions {
+            ser.write_list(
+                &GETDEVICEFLEETREPORTOUTPUT_MEMBER_AGENT_VERSIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AgentVersion::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.model_stats {
+            ser.write_list(
+                &GETDEVICEFLEETREPORTOUTPUT_MEMBER_MODEL_STATS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EdgeModelStat::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDEVICEFLEETREPORTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::EdgeOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_generated = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_stats = Some(crate::types::DeviceStats::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_versions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AgentVersion::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_stats = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EdgeModelStat::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDeviceFleetReportOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetDeviceFleetReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

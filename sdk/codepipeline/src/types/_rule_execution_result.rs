@@ -31,6 +31,148 @@ impl RuleExecutionResult {
         self.error_details.as_ref()
     }
 }
+static RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionResult$externalExecutionId",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionId",
+    0,
+);
+static RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionResult$externalExecutionSummary",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionSummary",
+    1,
+);
+static RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionResult$externalExecutionUrl",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "externalExecutionUrl",
+    2,
+);
+static RULEEXECUTIONRESULT_MEMBER_ERROR_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionResult$errorDetails",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "errorDetails",
+    3,
+);
+static RULEEXECUTIONRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleExecutionResult",
+        "com.amazonaws.codepipeline",
+        "RuleExecutionResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_ID,
+        &RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_SUMMARY,
+        &RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_URL,
+        &RULEEXECUTIONRESULT_MEMBER_ERROR_DETAILS,
+    ],
+);
+impl RuleExecutionResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RULEEXECUTIONRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuleExecutionResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.external_execution_id {
+            ser.write_string(&RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.external_execution_summary {
+            ser.write_string(&RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.external_execution_url {
+            ser.write_string(&RULEEXECUTIONRESULT_MEMBER_EXTERNAL_EXECUTION_URL, val)?;
+        }
+        if let Some(ref val) = self.error_details {
+            ser.write_struct(&RULEEXECUTIONRESULT_MEMBER_ERROR_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuleExecutionResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RULEEXECUTIONRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.external_execution_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_details = Some(crate::types::ErrorDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuleExecutionResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RuleExecutionResult {
     /// Creates a new builder-style object to manufacture [`RuleExecutionResult`](crate::types::RuleExecutionResult).
     pub fn builder() -> crate::types::builders::RuleExecutionResultBuilder {

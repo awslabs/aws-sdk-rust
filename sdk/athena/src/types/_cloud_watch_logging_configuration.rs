@@ -31,6 +31,205 @@ impl CloudWatchLoggingConfiguration {
         self.log_types.as_ref()
     }
 }
+static CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CloudWatchLoggingConfiguration$Enabled",
+        "com.amazonaws.athena",
+        "CloudWatchLoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    0,
+);
+static CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CloudWatchLoggingConfiguration$LogGroup",
+        "com.amazonaws.athena",
+        "CloudWatchLoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogGroup",
+    1,
+);
+static CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_STREAM_NAME_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CloudWatchLoggingConfiguration$LogStreamNamePrefix",
+        "com.amazonaws.athena",
+        "CloudWatchLoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogStreamNamePrefix",
+    2,
+);
+static CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#LogTypeValuesList$member",
+        "com.amazonaws.athena",
+        "LogTypeValuesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#LogTypesMap$key", "com.amazonaws.athena", "LogTypesMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#LogTypesMap$value", "com.amazonaws.athena", "LogTypesMap"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_VALUE_MEMBER);
+static CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CloudWatchLoggingConfiguration$LogTypes",
+        "com.amazonaws.athena",
+        "CloudWatchLoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "LogTypes",
+    3,
+)
+.with_map_members(
+    &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_KEY,
+    &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_VALUE,
+);
+static CLOUDWATCHLOGGINGCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CloudWatchLoggingConfiguration",
+        "com.amazonaws.athena",
+        "CloudWatchLoggingConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_ENABLED,
+        &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_GROUP,
+        &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_STREAM_NAME_PREFIX,
+        &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES,
+    ],
+);
+impl CloudWatchLoggingConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLOUDWATCHLOGGINGCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CloudWatchLoggingConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.enabled;
+            ser.write_boolean(&CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.log_group {
+            ser.write_string(&CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_GROUP, val)?;
+        }
+        if let Some(ref val) = self.log_stream_name_prefix {
+            ser.write_string(&CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_STREAM_NAME_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.log_types {
+            ser.write_map(
+                &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CloudWatchLoggingConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLOUDWATCHLOGGINGCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.enabled = Some(deser.read_boolean(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_stream_name_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_types = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&CLOUDWATCHLOGGINGCONFIGURATION_MEMBER_LOG_TYPES_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CloudWatchLoggingConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.enabled = builder.enabled.or(Some(false));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CloudWatchLoggingConfiguration {
     /// Creates a new builder-style object to manufacture [`CloudWatchLoggingConfiguration`](crate::types::CloudWatchLoggingConfiguration).
     pub fn builder() -> crate::types::builders::CloudWatchLoggingConfigurationBuilder {

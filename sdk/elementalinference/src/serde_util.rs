@@ -119,6 +119,24 @@ pub(crate) fn create_feed_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_schedule_action_output_output_correct_errors(
+    mut builder: crate::operation::create_schedule_action::builders::CreateScheduleActionOutputBuilder,
+) -> crate::operation::create_schedule_action::builders::CreateScheduleActionOutputBuilder {
+    if builder.action_name.is_none() {
+        builder.action_name = Some(Default::default())
+    }
+    if builder.start_configuration.is_none() {
+        builder.start_configuration = Some(crate::types::ScheduleActionStartConfiguration::Unknown)
+    }
+    if builder.operations.is_none() {
+        builder.operations = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ScheduleActionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_dictionary_output_output_correct_errors(
     mut builder: crate::operation::delete_dictionary::builders::DeleteDictionaryOutputBuilder,
 ) -> crate::operation::delete_dictionary::builders::DeleteDictionaryOutputBuilder {
@@ -145,6 +163,15 @@ pub(crate) fn delete_feed_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::FeedStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_schedule_action_output_output_correct_errors(
+    mut builder: crate::operation::delete_schedule_action::builders::DeleteScheduleActionOutputBuilder,
+) -> crate::operation::delete_schedule_action::builders::DeleteScheduleActionOutputBuilder {
+    if builder.action_name.is_none() {
+        builder.action_name = Some(Default::default())
     }
     builder
 }
@@ -269,6 +296,15 @@ pub(crate) fn list_feeds_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_schedule_actions_output_output_correct_errors(
+    mut builder: crate::operation::list_schedule_actions::builders::ListScheduleActionsOutputBuilder,
+) -> crate::operation::list_schedule_actions::builders::ListScheduleActionsOutputBuilder {
+    if builder.schedule_actions.is_none() {
+        builder.schedule_actions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn search_fixtures_output_output_correct_errors(
     mut builder: crate::operation::search_fixtures::builders::SearchFixturesOutputBuilder,
 ) -> crate::operation::search_fixtures::builders::SearchFixturesOutputBuilder {
@@ -332,6 +368,18 @@ pub(crate) fn feed_association_correct_errors(
     builder
 }
 
+pub(crate) fn schedule_action_error_correct_errors(
+    mut builder: crate::types::builders::ScheduleActionErrorBuilder,
+) -> crate::types::builders::ScheduleActionErrorBuilder {
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::ScheduleActionErrorCode>().ok()
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dictionary_summary_correct_errors(
     mut builder: crate::types::builders::DictionarySummaryBuilder,
 ) -> crate::types::builders::DictionarySummaryBuilder {
@@ -369,6 +417,15 @@ pub(crate) fn feed_summary_correct_errors(mut builder: crate::types::builders::F
     builder
 }
 
+pub(crate) fn fixed_mode_schedule_action_start_settings_correct_errors(
+    mut builder: crate::types::builders::FixedModeScheduleActionStartSettingsBuilder,
+) -> crate::types::builders::FixedModeScheduleActionStartSettingsBuilder {
+    if builder.scheduled_at.is_none() {
+        builder.scheduled_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn fixture_summary_correct_errors(
     mut builder: crate::types::builders::FixtureSummaryBuilder,
 ) -> crate::types::builders::FixtureSummaryBuilder {
@@ -400,6 +457,69 @@ pub(crate) fn get_output_correct_errors(mut builder: crate::types::builders::Get
     builder
 }
 
+pub(crate) fn schedule_action_correct_errors(
+    mut builder: crate::types::builders::ScheduleActionBuilder,
+) -> crate::types::builders::ScheduleActionBuilder {
+    if builder.action_name.is_none() {
+        builder.action_name = Some(Default::default())
+    }
+    if builder.start_configuration.is_none() {
+        builder.start_configuration = Some(crate::types::ScheduleActionStartConfiguration::Unknown)
+    }
+    if builder.operations.is_none() {
+        builder.operations = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ScheduleActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn remove_clipping_data_source_configuration_correct_errors(
+    mut builder: crate::types::builders::RemoveClippingDataSourceConfigurationBuilder,
+) -> crate::types::builders::RemoveClippingDataSourceConfigurationBuilder {
+    if builder.output_name.is_none() {
+        builder.output_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_clipping_data_source_configuration_correct_errors(
+    mut builder: crate::types::builders::UpdateClippingDataSourceConfigurationBuilder,
+) -> crate::types::builders::UpdateClippingDataSourceConfigurationBuilder {
+    if builder.output_name.is_none() {
+        builder.output_name = Some(Default::default())
+    }
+    if builder.data_source_configuration.is_none() {
+        builder.data_source_configuration = {
+            let builder = crate::types::builders::DataSourceConfigurationBuilder::default();
+            crate::serde_util::data_source_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_output_status_correct_errors(
+    mut builder: crate::types::builders::UpdateOutputStatusBuilder,
+) -> crate::types::builders::UpdateOutputStatusBuilder {
+    if builder.output_name.is_none() {
+        builder.output_name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::OutputStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn data_source_configuration_correct_errors(
+    mut builder: crate::types::builders::DataSourceConfigurationBuilder,
+) -> crate::types::builders::DataSourceConfigurationBuilder {
+    if builder.fixture_id.is_none() {
+        builder.fixture_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn subtitling_config_correct_errors(
     mut builder: crate::types::builders::SubtitlingConfigBuilder,
 ) -> crate::types::builders::SubtitlingConfigBuilder {
@@ -415,15 +535,6 @@ pub(crate) fn aspect_ratio_correct_errors(mut builder: crate::types::builders::A
     }
     if builder.height.is_none() {
         builder.height = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn data_source_configuration_correct_errors(
-    mut builder: crate::types::builders::DataSourceConfigurationBuilder,
-) -> crate::types::builders::DataSourceConfigurationBuilder {
-    if builder.fixture_id.is_none() {
-        builder.fixture_id = Some(Default::default())
     }
     builder
 }

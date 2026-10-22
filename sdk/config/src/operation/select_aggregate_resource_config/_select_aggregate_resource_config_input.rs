@@ -36,6 +36,174 @@ impl SelectAggregateResourceConfigInput {
         self.next_token.as_deref()
     }
 }
+static SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_EXPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigInput$Expression",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Expression",
+    0,
+);
+static SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigInput$ConfigurationAggregatorName",
+            "com.amazonaws.configservice.synthetic",
+            "SelectAggregateResourceConfigInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConfigurationAggregatorName",
+        1,
+    );
+static SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigInput$Limit",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Limit",
+    2,
+);
+static SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigInput$MaxResults",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    3,
+);
+static SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigInput$NextToken",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static SELECTAGGREGATERESOURCECONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#SelectAggregateResourceConfigInput",
+        "com.amazonaws.configservice.synthetic",
+        "SelectAggregateResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_EXPRESSION,
+        &SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME,
+        &SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_LIMIT,
+        &SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_MAX_RESULTS,
+        &SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SelectAggregateResourceConfigRequest");
+impl SelectAggregateResourceConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SELECTAGGREGATERESOURCECONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SelectAggregateResourceConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.expression {
+            ser.write_string(&SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_EXPRESSION, val)?;
+        }
+        if let Some(ref val) = self.configuration_aggregator_name {
+            ser.write_string(&SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.limit {
+            ser.write_integer(&SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&SELECTAGGREGATERESOURCECONFIGINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SELECTAGGREGATERESOURCECONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expression = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_aggregator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SelectAggregateResourceConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.expression = builder.expression.or(Some(String::new()));
+        builder.configuration_aggregator_name = builder.configuration_aggregator_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SelectAggregateResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`SelectAggregateResourceConfigInput`](crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigInput).
     pub fn builder() -> crate::operation::select_aggregate_resource_config::builders::SelectAggregateResourceConfigInputBuilder {

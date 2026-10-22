@@ -44,6 +44,200 @@ impl CreateListenerInput {
         self.idempotency_token.as_deref()
     }
 }
+static CREATELISTENERINPUT_MEMBER_ACCELERATOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateListenerInput$AcceleratorArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateListenerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcceleratorArn",
+    0,
+);
+static CREATELISTENERINPUT_MEMBER_PORT_RANGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#PortRanges$member",
+        "com.amazonaws.globalaccelerator",
+        "PortRanges",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELISTENERINPUT_MEMBER_PORT_RANGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateListenerInput$PortRanges",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateListenerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PortRanges",
+    1,
+)
+.with_list_member(&CREATELISTENERINPUT_MEMBER_PORT_RANGES_MEMBER);
+static CREATELISTENERINPUT_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateListenerInput$Protocol",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateListenerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Protocol",
+    2,
+);
+static CREATELISTENERINPUT_MEMBER_CLIENT_AFFINITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateListenerInput$ClientAffinity",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateListenerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientAffinity",
+    3,
+);
+static CREATELISTENERINPUT_MEMBER_IDEMPOTENCY_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateListenerInput$IdempotencyToken",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateListenerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdempotencyToken",
+    4,
+);
+static CREATELISTENERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#CreateListenerInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "CreateListenerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELISTENERINPUT_MEMBER_ACCELERATOR_ARN,
+        &CREATELISTENERINPUT_MEMBER_PORT_RANGES,
+        &CREATELISTENERINPUT_MEMBER_PROTOCOL,
+        &CREATELISTENERINPUT_MEMBER_CLIENT_AFFINITY,
+        &CREATELISTENERINPUT_MEMBER_IDEMPOTENCY_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateListenerRequest");
+impl CreateListenerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELISTENERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateListenerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.accelerator_arn {
+            ser.write_string(&CREATELISTENERINPUT_MEMBER_ACCELERATOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.port_ranges {
+            ser.write_list(
+                &CREATELISTENERINPUT_MEMBER_PORT_RANGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PortRange::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_string(&CREATELISTENERINPUT_MEMBER_PROTOCOL, val.as_str())?;
+        }
+        if let Some(ref val) = self.client_affinity {
+            ser.write_string(&CREATELISTENERINPUT_MEMBER_CLIENT_AFFINITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.idempotency_token {
+            ser.write_string(&CREATELISTENERINPUT_MEMBER_IDEMPOTENCY_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_listener::builders::CreateListenerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELISTENERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.port_ranges = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PortRange::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::Protocol::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_affinity = Some(crate::types::ClientAffinity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idempotency_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateListenerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.accelerator_arn = builder.accelerator_arn.or(Some(String::new()));
+        builder.port_ranges = builder.port_ranges.or(Some(Vec::new()));
+        builder.idempotency_token = builder.idempotency_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateListenerInput {
     /// Creates a new builder-style object to manufacture [`CreateListenerInput`](crate::operation::create_listener::CreateListenerInput).
     pub fn builder() -> crate::operation::create_listener::builders::CreateListenerInputBuilder {

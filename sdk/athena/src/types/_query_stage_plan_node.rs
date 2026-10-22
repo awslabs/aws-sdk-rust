@@ -35,6 +35,185 @@ impl QueryStagePlanNode {
         self.remote_sources.as_deref().unwrap_or_default()
     }
 }
+static QUERYSTAGEPLANNODE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryStagePlanNode$Name",
+        "com.amazonaws.athena",
+        "QueryStagePlanNode",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static QUERYSTAGEPLANNODE_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryStagePlanNode$Identifier",
+        "com.amazonaws.athena",
+        "QueryStagePlanNode",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Identifier",
+    1,
+);
+static QUERYSTAGEPLANNODE_MEMBER_CHILDREN_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryStagePlanNodes$member",
+        "com.amazonaws.athena",
+        "QueryStagePlanNodes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static QUERYSTAGEPLANNODE_MEMBER_CHILDREN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryStagePlanNode$Children",
+        "com.amazonaws.athena",
+        "QueryStagePlanNode",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Children",
+    2,
+)
+.with_list_member(&QUERYSTAGEPLANNODE_MEMBER_CHILDREN_MEMBER);
+static QUERYSTAGEPLANNODE_MEMBER_REMOTE_SOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#StringList$member", "com.amazonaws.athena", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static QUERYSTAGEPLANNODE_MEMBER_REMOTE_SOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#QueryStagePlanNode$RemoteSources",
+        "com.amazonaws.athena",
+        "QueryStagePlanNode",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RemoteSources",
+    3,
+)
+.with_list_member(&QUERYSTAGEPLANNODE_MEMBER_REMOTE_SOURCES_MEMBER);
+static QUERYSTAGEPLANNODE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#QueryStagePlanNode", "com.amazonaws.athena", "QueryStagePlanNode"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYSTAGEPLANNODE_MEMBER_NAME,
+        &QUERYSTAGEPLANNODE_MEMBER_IDENTIFIER,
+        &QUERYSTAGEPLANNODE_MEMBER_CHILDREN,
+        &QUERYSTAGEPLANNODE_MEMBER_REMOTE_SOURCES,
+    ],
+);
+impl QueryStagePlanNode {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYSTAGEPLANNODE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryStagePlanNode {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&QUERYSTAGEPLANNODE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&QUERYSTAGEPLANNODE_MEMBER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.children {
+            ser.write_list(
+                &QUERYSTAGEPLANNODE_MEMBER_CHILDREN,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::QueryStagePlanNode::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.remote_sources {
+            ser.write_list(
+                &QUERYSTAGEPLANNODE_MEMBER_REMOTE_SOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::QueryStagePlanNodeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYSTAGEPLANNODE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.children = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::QueryStagePlanNode::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remote_sources = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryStagePlanNode {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl QueryStagePlanNode {
     /// Creates a new builder-style object to manufacture [`QueryStagePlanNode`](crate::types::QueryStagePlanNode).
     pub fn builder() -> crate::types::builders::QueryStagePlanNodeBuilder {

@@ -113,6 +113,300 @@ impl ::std::fmt::Debug for CreateLocationFsxWindowsInput {
         formatter.finish()
     }
 }
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    0,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_FSX_FILESYSTEM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$FsxFilesystemArn",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FsxFilesystemArn",
+    1,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.datasync#Ec2SecurityGroupArnList$member",
+            "com.amazonaws.datasync",
+            "Ec2SecurityGroupArnList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SECURITY_GROUP_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$SecurityGroupArns",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupArns",
+    2,
+)
+.with_list_member(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#InputTagList$member", "com.amazonaws.datasync", "InputTagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$Tags",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    3,
+)
+.with_list_member(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_TAGS_MEMBER);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$User",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "User",
+    4,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$Domain",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    5,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$Password",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    6,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$CmkSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    7,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput$CustomSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    8,
+);
+static CREATELOCATIONFSXWINDOWSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxWindowsInput",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxWindowsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SUBDIRECTORY,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_FSX_FILESYSTEM_ARN,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SECURITY_GROUP_ARNS,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_TAGS,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_USER,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_DOMAIN,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_PASSWORD,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_CMK_SECRET_CONFIG,
+        &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_CUSTOM_SECRET_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLocationFsxWindowsRequest");
+impl CreateLocationFsxWindowsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELOCATIONFSXWINDOWSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLocationFsxWindowsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.fsx_filesystem_arn {
+            ser.write_string(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_FSX_FILESYSTEM_ARN, val)?;
+        }
+        if let Some(ref val) = self.security_group_arns {
+            ser.write_list(
+                &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_SECURITY_GROUP_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELOCATIONFSXWINDOWSINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TagListEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.user {
+            ser.write_string(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&CREATELOCATIONFSXWINDOWSINPUT_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELOCATIONFSXWINDOWSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fsx_filesystem_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TagListEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLocationFsxWindowsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.fsx_filesystem_arn = builder.fsx_filesystem_arn.or(Some(String::new()));
+        builder.security_group_arns = builder.security_group_arns.or(Some(Vec::new()));
+        builder.user = builder.user.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLocationFsxWindowsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxWindowsInput`](crate::operation::create_location_fsx_windows::CreateLocationFsxWindowsInput).
     pub fn builder() -> crate::operation::create_location_fsx_windows::builders::CreateLocationFsxWindowsInputBuilder {

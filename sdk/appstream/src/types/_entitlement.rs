@@ -51,6 +51,221 @@ impl Entitlement {
         self.last_modified_time.as_ref()
     }
 }
+static ENTITLEMENT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Entitlement$Name", "com.amazonaws.appstream", "Entitlement"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static ENTITLEMENT_MEMBER_STACK_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Entitlement$StackName", "com.amazonaws.appstream", "Entitlement"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StackName",
+    1,
+);
+static ENTITLEMENT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Entitlement$Description",
+        "com.amazonaws.appstream",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static ENTITLEMENT_MEMBER_APP_VISIBILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Entitlement$AppVisibility",
+        "com.amazonaws.appstream",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppVisibility",
+    3,
+);
+static ENTITLEMENT_MEMBER_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#EntitlementAttributeList$member",
+        "com.amazonaws.appstream",
+        "EntitlementAttributeList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ENTITLEMENT_MEMBER_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Entitlement$Attributes", "com.amazonaws.appstream", "Entitlement"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Attributes",
+    4,
+)
+.with_list_member(&ENTITLEMENT_MEMBER_ATTRIBUTES_MEMBER);
+static ENTITLEMENT_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Entitlement$CreatedTime",
+        "com.amazonaws.appstream",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    5,
+);
+static ENTITLEMENT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Entitlement$LastModifiedTime",
+        "com.amazonaws.appstream",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    6,
+);
+static ENTITLEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Entitlement", "com.amazonaws.appstream", "Entitlement"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITLEMENT_MEMBER_NAME,
+        &ENTITLEMENT_MEMBER_STACK_NAME,
+        &ENTITLEMENT_MEMBER_DESCRIPTION,
+        &ENTITLEMENT_MEMBER_APP_VISIBILITY,
+        &ENTITLEMENT_MEMBER_ATTRIBUTES,
+        &ENTITLEMENT_MEMBER_CREATED_TIME,
+        &ENTITLEMENT_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl Entitlement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITLEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Entitlement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&ENTITLEMENT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.stack_name {
+            ser.write_string(&ENTITLEMENT_MEMBER_STACK_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&ENTITLEMENT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.app_visibility {
+            ser.write_string(&ENTITLEMENT_MEMBER_APP_VISIBILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.attributes {
+            ser.write_list(
+                &ENTITLEMENT_MEMBER_ATTRIBUTES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EntitlementAttribute::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&ENTITLEMENT_MEMBER_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&ENTITLEMENT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntitlementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITLEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_visibility = Some(crate::types::AppVisibility::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EntitlementAttribute::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Entitlement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Entitlement {
     /// Creates a new builder-style object to manufacture [`Entitlement`](crate::types::Entitlement).
     pub fn builder() -> crate::types::builders::EntitlementBuilder {

@@ -1075,6 +1075,8 @@ pub(crate) mod shape_managed_resource_details;
 
 pub(crate) mod shape_managed_vpc_resource;
 
+pub(crate) mod shape_match_models;
+
 pub(crate) mod shape_match_paths;
 
 pub(crate) mod shape_match_principals;
@@ -1279,6 +1281,8 @@ pub(crate) mod shape_log_group_name_prefix_list;
 
 pub(crate) mod shape_log_group_names_list;
 
+pub(crate) mod shape_match_model_entry;
+
 pub(crate) mod shape_match_principal_entry;
 
 pub(crate) mod shape_mcp_lambda_target_configuration;
@@ -1395,6 +1399,12 @@ pub(crate) mod shape_enabled_connectors;
 
 pub(crate) mod shape_episodic_override_configuration_input;
 
+pub(crate) mod shape_evaluation_dimension;
+
+pub(crate) mod shape_evaluation_dimensions;
+
+pub(crate) mod shape_fallback;
+
 pub(crate) mod shape_finding;
 
 pub(crate) mod shape_harness_agent_core_memory_retrieval_configs;
@@ -1430,6 +1440,8 @@ pub(crate) mod shape_inference_operation_configurations;
 pub(crate) mod shape_interceptor_payload_exclusion_selector;
 
 pub(crate) mod shape_launch_parameters;
+
+pub(crate) mod shape_match_model_entries;
 
 pub(crate) mod shape_match_path_patterns;
 
@@ -1507,6 +1519,8 @@ pub(crate) mod shape_api_gateway_tool_overrides;
 
 pub(crate) mod shape_capacity_reservation_specification;
 
+pub(crate) mod shape_circuit_breaker_configuration;
+
 pub(crate) mod shape_claim_match_value_type;
 
 pub(crate) mod shape_composite_identifier_list;
@@ -1523,6 +1537,8 @@ pub(crate) mod shape_custom_extraction_configuration_input;
 
 pub(crate) mod shape_custom_reflection_configuration_input;
 
+pub(crate) mod shape_dimension_rating_scale;
+
 pub(crate) mod shape_ephemeral_block_device_mapping;
 
 pub(crate) mod shape_ephemeral_block_device_mapping_list;
@@ -1536,6 +1552,10 @@ pub(crate) mod shape_episodic_override_reflection_configuration_input;
 pub(crate) mod shape_extraction_config;
 
 pub(crate) mod shape_extraction_configuration;
+
+pub(crate) mod shape_fallback_target;
+
+pub(crate) mod shape_fallback_triggers;
 
 pub(crate) mod shape_harness_aws_skill_paths;
 
@@ -1643,6 +1663,8 @@ pub(crate) mod shape_non_empty_string_list;
 
 pub(crate) mod shape_schema_definition;
 
+pub(crate) mod shape_target_fallbacks;
+
 pub(crate) mod shape_time_based_trigger_input;
 
 pub(crate) mod shape_token_based_trigger_input;
@@ -1656,6 +1678,10 @@ pub(crate) mod shape_episodic_consolidation_override;
 pub(crate) mod shape_episodic_extraction_override;
 
 pub(crate) mod shape_episodic_reflection_override;
+
+pub(crate) mod shape_error_status_code_patterns;
+
+pub(crate) mod shape_fallback_errors;
 
 pub(crate) mod shape_match_value_string_list;
 

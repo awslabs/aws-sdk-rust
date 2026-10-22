@@ -49,6 +49,211 @@ impl Entitlement {
         self.license_arn.as_deref()
     }
 }
+static ENTITLEMENT_MEMBER_PRODUCT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement$ProductCode",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductCode",
+    0,
+);
+static ENTITLEMENT_MEMBER_DIMENSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement$Dimension",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Dimension",
+    1,
+);
+static ENTITLEMENT_MEMBER_CUSTOMER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement$CustomerIdentifier",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerIdentifier",
+    2,
+);
+static ENTITLEMENT_MEMBER_CUSTOMER_AWS_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement$CustomerAWSAccountId",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CustomerAWSAccountId",
+    3,
+);
+static ENTITLEMENT_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement$Value",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Value",
+    4,
+);
+static ENTITLEMENT_MEMBER_EXPIRATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement$ExpirationDate",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpirationDate",
+    5,
+);
+static ENTITLEMENT_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement$LicenseArn",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    6,
+);
+static ENTITLEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplaceentitlementservice#Entitlement",
+        "com.amazonaws.marketplaceentitlementservice",
+        "Entitlement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITLEMENT_MEMBER_PRODUCT_CODE,
+        &ENTITLEMENT_MEMBER_DIMENSION,
+        &ENTITLEMENT_MEMBER_CUSTOMER_IDENTIFIER,
+        &ENTITLEMENT_MEMBER_CUSTOMER_AWS_ACCOUNT_ID,
+        &ENTITLEMENT_MEMBER_VALUE,
+        &ENTITLEMENT_MEMBER_EXPIRATION_DATE,
+        &ENTITLEMENT_MEMBER_LICENSE_ARN,
+    ],
+);
+impl Entitlement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITLEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Entitlement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.product_code {
+            ser.write_string(&ENTITLEMENT_MEMBER_PRODUCT_CODE, val)?;
+        }
+        if let Some(ref val) = self.dimension {
+            ser.write_string(&ENTITLEMENT_MEMBER_DIMENSION, val)?;
+        }
+        if let Some(ref val) = self.customer_identifier {
+            ser.write_string(&ENTITLEMENT_MEMBER_CUSTOMER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.customer_aws_account_id {
+            ser.write_string(&ENTITLEMENT_MEMBER_CUSTOMER_AWS_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_struct(&ENTITLEMENT_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.expiration_date {
+            ser.write_timestamp(&ENTITLEMENT_MEMBER_EXPIRATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&ENTITLEMENT_MEMBER_LICENSE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntitlementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITLEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dimension = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.customer_aws_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(crate::types::EntitlementValue::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Entitlement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Entitlement {
     /// Creates a new builder-style object to manufacture [`Entitlement`](crate::types::Entitlement).
     pub fn builder() -> crate::types::builders::EntitlementBuilder {

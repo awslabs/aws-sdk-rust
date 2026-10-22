@@ -31,6 +31,148 @@ impl FinalAutoMlJobObjectiveMetric {
         self.standard_metric_name.as_ref()
     }
 }
+static FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FinalAutoMLJobObjectiveMetric$Type",
+        "com.amazonaws.sagemaker",
+        "FinalAutoMLJobObjectiveMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_METRIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FinalAutoMLJobObjectiveMetric$MetricName",
+        "com.amazonaws.sagemaker",
+        "FinalAutoMLJobObjectiveMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MetricName",
+    1,
+);
+static FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FinalAutoMLJobObjectiveMetric$Value",
+        "com.amazonaws.sagemaker",
+        "FinalAutoMLJobObjectiveMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Value",
+    2,
+);
+static FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_STANDARD_METRIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FinalAutoMLJobObjectiveMetric$StandardMetricName",
+        "com.amazonaws.sagemaker",
+        "FinalAutoMLJobObjectiveMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StandardMetricName",
+    3,
+);
+static FINALAUTOMLJOBOBJECTIVEMETRIC_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FinalAutoMLJobObjectiveMetric",
+        "com.amazonaws.sagemaker",
+        "FinalAutoMLJobObjectiveMetric",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_TYPE,
+        &FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_METRIC_NAME,
+        &FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_VALUE,
+        &FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_STANDARD_METRIC_NAME,
+    ],
+);
+impl FinalAutoMlJobObjectiveMetric {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FINALAUTOMLJOBOBJECTIVEMETRIC_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FinalAutoMlJobObjectiveMetric {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.metric_name {
+            ser.write_string(&FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_METRIC_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_float(&FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.standard_metric_name {
+            ser.write_string(&FINALAUTOMLJOBOBJECTIVEMETRIC_MEMBER_STANDARD_METRIC_NAME, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FinalAutoMlJobObjectiveMetricBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FINALAUTOMLJOBOBJECTIVEMETRIC_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::AutoMlJobObjectiveType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_name = Some(crate::types::AutoMlMetricEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.standard_metric_name = Some(crate::types::AutoMlMetricEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FinalAutoMlJobObjectiveMetric {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FinalAutoMlJobObjectiveMetric {
     /// Creates a new builder-style object to manufacture [`FinalAutoMlJobObjectiveMetric`](crate::types::FinalAutoMlJobObjectiveMetric).
     pub fn builder() -> crate::types::builders::FinalAutoMlJobObjectiveMetricBuilder {

@@ -20,6 +20,139 @@ impl BatchGetAggregateResourceConfigInput {
         self.resource_identifiers.as_deref().unwrap_or_default()
     }
 }
+static BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#BatchGetAggregateResourceConfigInput$ConfigurationAggregatorName",
+            "com.amazonaws.configservice.synthetic",
+            "BatchGetAggregateResourceConfigInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConfigurationAggregatorName",
+        0,
+    );
+static BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_RESOURCE_IDENTIFIERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ResourceIdentifiersList$member",
+            "com.amazonaws.configservice",
+            "ResourceIdentifiersList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_RESOURCE_IDENTIFIERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#BatchGetAggregateResourceConfigInput$ResourceIdentifiers",
+            "com.amazonaws.configservice.synthetic",
+            "BatchGetAggregateResourceConfigInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "ResourceIdentifiers",
+        1,
+    )
+    .with_list_member(&BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_RESOURCE_IDENTIFIERS_MEMBER);
+static BATCHGETAGGREGATERESOURCECONFIGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#BatchGetAggregateResourceConfigInput",
+        "com.amazonaws.configservice.synthetic",
+        "BatchGetAggregateResourceConfigInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME,
+        &BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_RESOURCE_IDENTIFIERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchGetAggregateResourceConfigRequest");
+impl BatchGetAggregateResourceConfigInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETAGGREGATERESOURCECONFIGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetAggregateResourceConfigInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.configuration_aggregator_name {
+            ser.write_string(&BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_CONFIGURATION_AGGREGATOR_NAME, val)?;
+        }
+        if let Some(ref val) = self.resource_identifiers {
+            ser.write_list(
+                &BATCHGETAGGREGATERESOURCECONFIGINPUT_MEMBER_RESOURCE_IDENTIFIERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AggregateResourceIdentifier::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETAGGREGATERESOURCECONFIGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration_aggregator_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_identifiers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AggregateResourceIdentifier::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetAggregateResourceConfigInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.configuration_aggregator_name = builder.configuration_aggregator_name.or(Some(String::new()));
+        builder.resource_identifiers = builder.resource_identifiers.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchGetAggregateResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`BatchGetAggregateResourceConfigInput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput).
     pub fn builder() -> crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder {

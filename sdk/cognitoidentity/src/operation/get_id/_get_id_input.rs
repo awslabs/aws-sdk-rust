@@ -59,6 +59,157 @@ impl GetIdInput {
         self.logins.as_ref()
     }
 }
+static GETIDINPUT_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdInput$AccountId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountId",
+    0,
+);
+static GETIDINPUT_MEMBER_IDENTITY_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdInput$IdentityPoolId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityPoolId",
+    1,
+);
+static GETIDINPUT_MEMBER_LOGINS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsMap$key",
+        "com.amazonaws.cognitoidentity",
+        "LoginsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETIDINPUT_MEMBER_LOGINS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#LoginsMap$value",
+        "com.amazonaws.cognitoidentity",
+        "LoginsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static GETIDINPUT_MEMBER_LOGINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdInput$Logins",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Logins",
+    2,
+)
+.with_map_members(&GETIDINPUT_MEMBER_LOGINS_KEY, &GETIDINPUT_MEMBER_LOGINS_VALUE);
+static GETIDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdInput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETIDINPUT_MEMBER_ACCOUNT_ID,
+        &GETIDINPUT_MEMBER_IDENTITY_POOL_ID,
+        &GETIDINPUT_MEMBER_LOGINS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetIdInput");
+impl GetIdInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETIDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetIdInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&GETIDINPUT_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.identity_pool_id {
+            ser.write_string(&GETIDINPUT_MEMBER_IDENTITY_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.logins {
+            ser.write_map(&GETIDINPUT_MEMBER_LOGINS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for (key, value) in val {
+                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                    ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_id::builders::GetIdInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETIDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.logins = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetIdInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identity_pool_id = builder.identity_pool_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetIdInput {
     /// Creates a new builder-style object to manufacture [`GetIdInput`](crate::operation::get_id::GetIdInput).
     pub fn builder() -> crate::operation::get_id::builders::GetIdInputBuilder {

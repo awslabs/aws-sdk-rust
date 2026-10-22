@@ -69,6 +69,294 @@ impl DescribeHubOutput {
         self.last_modified_time.as_ref()
     }
 }
+static DESCRIBEHUBOUTPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    0,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_HUB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$HubArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubArn",
+    1,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_HUB_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$HubDisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubDisplayName",
+    2,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_HUB_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$HubDescription",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubDescription",
+    3,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_HUB_SEARCH_KEYWORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubSearchKeywordList$member",
+        "com.amazonaws.sagemaker",
+        "HubSearchKeywordList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_HUB_SEARCH_KEYWORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$HubSearchKeywords",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "HubSearchKeywords",
+    4,
+)
+.with_list_member(&DESCRIBEHUBOUTPUT_MEMBER_HUB_SEARCH_KEYWORDS_MEMBER);
+static DESCRIBEHUBOUTPUT_MEMBER_S3_STORAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$S3StorageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3StorageConfig",
+    5,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_HUB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$HubStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubStatus",
+    6,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    7,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    8,
+);
+static DESCRIBEHUBOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    9,
+);
+static DESCRIBEHUBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEHUBOUTPUT_MEMBER_HUB_NAME,
+        &DESCRIBEHUBOUTPUT_MEMBER_HUB_ARN,
+        &DESCRIBEHUBOUTPUT_MEMBER_HUB_DISPLAY_NAME,
+        &DESCRIBEHUBOUTPUT_MEMBER_HUB_DESCRIPTION,
+        &DESCRIBEHUBOUTPUT_MEMBER_HUB_SEARCH_KEYWORDS,
+        &DESCRIBEHUBOUTPUT_MEMBER_S3_STORAGE_CONFIG,
+        &DESCRIBEHUBOUTPUT_MEMBER_HUB_STATUS,
+        &DESCRIBEHUBOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEHUBOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEHUBOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+    ],
+)
+.with_original_name("DescribeHubResponse");
+impl DescribeHubOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEHUBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeHubOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&DESCRIBEHUBOUTPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_arn {
+            ser.write_string(&DESCRIBEHUBOUTPUT_MEMBER_HUB_ARN, val)?;
+        }
+        if let Some(ref val) = self.hub_display_name {
+            ser.write_string(&DESCRIBEHUBOUTPUT_MEMBER_HUB_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_description {
+            ser.write_string(&DESCRIBEHUBOUTPUT_MEMBER_HUB_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.hub_search_keywords {
+            ser.write_list(
+                &DESCRIBEHUBOUTPUT_MEMBER_HUB_SEARCH_KEYWORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.s3_storage_config {
+            ser.write_struct(&DESCRIBEHUBOUTPUT_MEMBER_S3_STORAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.hub_status {
+            ser.write_string(&DESCRIBEHUBOUTPUT_MEMBER_HUB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEHUBOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEHUBOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEHUBOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_hub::builders::DescribeHubOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEHUBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_search_keywords = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_storage_config = Some(crate::types::HubS3StorageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_status = Some(crate::types::HubStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeHubOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeHubOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

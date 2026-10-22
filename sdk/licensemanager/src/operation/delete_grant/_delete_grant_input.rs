@@ -24,6 +24,131 @@ impl DeleteGrantInput {
         self.version.as_deref()
     }
 }
+static DELETEGRANTINPUT_MEMBER_GRANT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteGrantInput$GrantArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantArn",
+    0,
+);
+static DELETEGRANTINPUT_MEMBER_STATUS_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteGrantInput$StatusReason",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusReason",
+    1,
+);
+static DELETEGRANTINPUT_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteGrantInput$Version",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Version",
+    2,
+);
+static DELETEGRANTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteGrantInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETEGRANTINPUT_MEMBER_GRANT_ARN,
+        &DELETEGRANTINPUT_MEMBER_STATUS_REASON,
+        &DELETEGRANTINPUT_MEMBER_VERSION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteGrantRequest");
+impl DeleteGrantInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEGRANTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteGrantInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.grant_arn {
+            ser.write_string(&DELETEGRANTINPUT_MEMBER_GRANT_ARN, val)?;
+        }
+        if let Some(ref val) = self.status_reason {
+            ser.write_string(&DELETEGRANTINPUT_MEMBER_STATUS_REASON, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_string(&DELETEGRANTINPUT_MEMBER_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_grant::builders::DeleteGrantInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEGRANTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grant_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteGrantInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.grant_arn = builder.grant_arn.or(Some(String::new()));
+        builder.version = builder.version.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteGrantInput {
     /// Creates a new builder-style object to manufacture [`DeleteGrantInput`](crate::operation::delete_grant::DeleteGrantInput).
     pub fn builder() -> crate::operation::delete_grant::builders::DeleteGrantInputBuilder {

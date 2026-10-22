@@ -19,6 +19,110 @@ impl UpdateDefaultBranchInput {
         self.default_branch_name.as_deref()
     }
 }
+static UPDATEDEFAULTBRANCHINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateDefaultBranchInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateDefaultBranchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static UPDATEDEFAULTBRANCHINPUT_MEMBER_DEFAULT_BRANCH_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateDefaultBranchInput$defaultBranchName",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateDefaultBranchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "defaultBranchName",
+    1,
+);
+static UPDATEDEFAULTBRANCHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdateDefaultBranchInput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdateDefaultBranchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDEFAULTBRANCHINPUT_MEMBER_REPOSITORY_NAME,
+        &UPDATEDEFAULTBRANCHINPUT_MEMBER_DEFAULT_BRANCH_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDefaultBranchInput");
+impl UpdateDefaultBranchInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDEFAULTBRANCHINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDefaultBranchInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&UPDATEDEFAULTBRANCHINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.default_branch_name {
+            ser.write_string(&UPDATEDEFAULTBRANCHINPUT_MEMBER_DEFAULT_BRANCH_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDEFAULTBRANCHINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_branch_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDefaultBranchInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.default_branch_name = builder.default_branch_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateDefaultBranchInput {
     /// Creates a new builder-style object to manufacture [`UpdateDefaultBranchInput`](crate::operation::update_default_branch::UpdateDefaultBranchInput).
     pub fn builder() -> crate::operation::update_default_branch::builders::UpdateDefaultBranchInputBuilder {

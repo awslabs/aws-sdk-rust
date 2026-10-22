@@ -13,6 +13,79 @@ impl CodeRepository {
         self.repository_url.as_deref()
     }
 }
+static CODEREPOSITORY_MEMBER_REPOSITORY_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeRepository$RepositoryUrl",
+        "com.amazonaws.sagemaker",
+        "CodeRepository",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RepositoryUrl",
+    0,
+);
+static CODEREPOSITORY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#CodeRepository", "com.amazonaws.sagemaker", "CodeRepository"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CODEREPOSITORY_MEMBER_REPOSITORY_URL],
+);
+impl CodeRepository {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CODEREPOSITORY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CodeRepository {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_url {
+            ser.write_string(&CODEREPOSITORY_MEMBER_REPOSITORY_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CodeRepositoryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CODEREPOSITORY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CodeRepository {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CodeRepository {
     /// Creates a new builder-style object to manufacture [`CodeRepository`](crate::types::CodeRepository).
     pub fn builder() -> crate::types::builders::CodeRepositoryBuilder {

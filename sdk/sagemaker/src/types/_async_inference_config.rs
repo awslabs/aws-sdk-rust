@@ -19,6 +19,103 @@ impl AsyncInferenceConfig {
         self.output_config.as_ref()
     }
 }
+static ASYNCINFERENCECONFIG_MEMBER_CLIENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AsyncInferenceConfig$ClientConfig",
+        "com.amazonaws.sagemaker",
+        "AsyncInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ClientConfig",
+    0,
+);
+static ASYNCINFERENCECONFIG_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AsyncInferenceConfig$OutputConfig",
+        "com.amazonaws.sagemaker",
+        "AsyncInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    1,
+);
+static ASYNCINFERENCECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AsyncInferenceConfig",
+        "com.amazonaws.sagemaker",
+        "AsyncInferenceConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ASYNCINFERENCECONFIG_MEMBER_CLIENT_CONFIG, &ASYNCINFERENCECONFIG_MEMBER_OUTPUT_CONFIG],
+);
+impl AsyncInferenceConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASYNCINFERENCECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AsyncInferenceConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_config {
+            ser.write_struct(&ASYNCINFERENCECONFIG_MEMBER_CLIENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&ASYNCINFERENCECONFIG_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AsyncInferenceConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASYNCINFERENCECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_config = Some(crate::types::AsyncInferenceClientConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::AsyncInferenceOutputConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AsyncInferenceConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AsyncInferenceConfig {
     /// Creates a new builder-style object to manufacture [`AsyncInferenceConfig`](crate::types::AsyncInferenceConfig).
     pub fn builder() -> crate::types::builders::AsyncInferenceConfigBuilder {

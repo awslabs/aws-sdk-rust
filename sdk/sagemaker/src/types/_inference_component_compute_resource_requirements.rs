@@ -31,6 +31,155 @@ impl InferenceComponentComputeResourceRequirements {
         self.max_memory_required_in_mb
     }
 }
+static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_CPU_CORES_REQUIRED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentComputeResourceRequirements$NumberOfCpuCoresRequired",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentComputeResourceRequirements",
+        ),
+        ::aws_smithy_schema::ShapeType::Float,
+        "NumberOfCpuCoresRequired",
+        0,
+    );
+static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_ACCELERATOR_DEVICES_REQUIRED: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentComputeResourceRequirements$NumberOfAcceleratorDevicesRequired",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentComputeResourceRequirements",
+        ),
+        ::aws_smithy_schema::ShapeType::Float,
+        "NumberOfAcceleratorDevicesRequired",
+        1,
+    );
+static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MIN_MEMORY_REQUIRED_IN_MB: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentComputeResourceRequirements$MinMemoryRequiredInMb",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentComputeResourceRequirements",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MinMemoryRequiredInMb",
+        2,
+    );
+static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MAX_MEMORY_REQUIRED_IN_MB: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#InferenceComponentComputeResourceRequirements$MaxMemoryRequiredInMb",
+            "com.amazonaws.sagemaker",
+            "InferenceComponentComputeResourceRequirements",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MaxMemoryRequiredInMb",
+        3,
+    );
+static INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceComponentComputeResourceRequirements",
+        "com.amazonaws.sagemaker",
+        "InferenceComponentComputeResourceRequirements",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_CPU_CORES_REQUIRED,
+        &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_ACCELERATOR_DEVICES_REQUIRED,
+        &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MIN_MEMORY_REQUIRED_IN_MB,
+        &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MAX_MEMORY_REQUIRED_IN_MB,
+    ],
+);
+impl InferenceComponentComputeResourceRequirements {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InferenceComponentComputeResourceRequirements {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.number_of_cpu_cores_required {
+            ser.write_float(&INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_CPU_CORES_REQUIRED, *val)?;
+        }
+        if let Some(ref val) = self.number_of_accelerator_devices_required {
+            ser.write_float(
+                &INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_NUMBER_OF_ACCELERATOR_DEVICES_REQUIRED,
+                *val,
+            )?;
+        }
+        if let Some(ref val) = self.min_memory_required_in_mb {
+            ser.write_integer(&INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MIN_MEMORY_REQUIRED_IN_MB, *val)?;
+        }
+        if let Some(ref val) = self.max_memory_required_in_mb {
+            ser.write_integer(&INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_MEMBER_MAX_MEMORY_REQUIRED_IN_MB, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InferenceComponentComputeResourceRequirementsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INFERENCECOMPONENTCOMPUTERESOURCEREQUIREMENTS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.number_of_cpu_cores_required = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.number_of_accelerator_devices_required = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_memory_required_in_mb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_memory_required_in_mb = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InferenceComponentComputeResourceRequirements {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InferenceComponentComputeResourceRequirements {
     /// Creates a new builder-style object to manufacture [`InferenceComponentComputeResourceRequirements`](crate::types::InferenceComponentComputeResourceRequirements).
     pub fn builder() -> crate::types::builders::InferenceComponentComputeResourceRequirementsBuilder {

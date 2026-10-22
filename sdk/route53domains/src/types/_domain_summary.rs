@@ -31,6 +31,148 @@ impl DomainSummary {
         self.expiry.as_ref()
     }
 }
+static DOMAINSUMMARY_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSummary$DomainName",
+        "com.amazonaws.route53domains",
+        "DomainSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static DOMAINSUMMARY_MEMBER_AUTO_RENEW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSummary$AutoRenew",
+        "com.amazonaws.route53domains",
+        "DomainSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AutoRenew",
+    1,
+);
+static DOMAINSUMMARY_MEMBER_TRANSFER_LOCK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSummary$TransferLock",
+        "com.amazonaws.route53domains",
+        "DomainSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "TransferLock",
+    2,
+);
+static DOMAINSUMMARY_MEMBER_EXPIRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSummary$Expiry",
+        "com.amazonaws.route53domains",
+        "DomainSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "Expiry",
+    3,
+);
+static DOMAINSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSummary",
+        "com.amazonaws.route53domains",
+        "DomainSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINSUMMARY_MEMBER_DOMAIN_NAME,
+        &DOMAINSUMMARY_MEMBER_AUTO_RENEW,
+        &DOMAINSUMMARY_MEMBER_TRANSFER_LOCK,
+        &DOMAINSUMMARY_MEMBER_EXPIRY,
+    ],
+);
+impl DomainSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&DOMAINSUMMARY_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.auto_renew {
+            ser.write_boolean(&DOMAINSUMMARY_MEMBER_AUTO_RENEW, *val)?;
+        }
+        if let Some(ref val) = self.transfer_lock {
+            ser.write_boolean(&DOMAINSUMMARY_MEMBER_TRANSFER_LOCK, *val)?;
+        }
+        if let Some(ref val) = self.expiry {
+            ser.write_timestamp(&DOMAINSUMMARY_MEMBER_EXPIRY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_renew = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transfer_lock = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiry = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DomainSummary {
     /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::types::DomainSummary).
     pub fn builder() -> crate::types::builders::DomainSummaryBuilder {

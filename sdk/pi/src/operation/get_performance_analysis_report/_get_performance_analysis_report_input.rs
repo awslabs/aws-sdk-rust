@@ -38,6 +38,173 @@ impl GetPerformanceAnalysisReportInput {
         self.accept_language.as_ref()
     }
 }
+static GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_SERVICE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetPerformanceAnalysisReportInput$ServiceType",
+        "com.amazonaws.pi.synthetic",
+        "GetPerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceType",
+    0,
+);
+static GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetPerformanceAnalysisReportInput$Identifier",
+        "com.amazonaws.pi.synthetic",
+        "GetPerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Identifier",
+    1,
+);
+static GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_ANALYSIS_REPORT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetPerformanceAnalysisReportInput$AnalysisReportId",
+        "com.amazonaws.pi.synthetic",
+        "GetPerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AnalysisReportId",
+    2,
+);
+static GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_TEXT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetPerformanceAnalysisReportInput$TextFormat",
+        "com.amazonaws.pi.synthetic",
+        "GetPerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TextFormat",
+    3,
+);
+static GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_ACCEPT_LANGUAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetPerformanceAnalysisReportInput$AcceptLanguage",
+        "com.amazonaws.pi.synthetic",
+        "GetPerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AcceptLanguage",
+    4,
+);
+static GETPERFORMANCEANALYSISREPORTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#GetPerformanceAnalysisReportInput",
+        "com.amazonaws.pi.synthetic",
+        "GetPerformanceAnalysisReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_SERVICE_TYPE,
+        &GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_IDENTIFIER,
+        &GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_ANALYSIS_REPORT_ID,
+        &GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_TEXT_FORMAT,
+        &GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_ACCEPT_LANGUAGE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetPerformanceAnalysisReportRequest");
+impl GetPerformanceAnalysisReportInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETPERFORMANCEANALYSISREPORTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetPerformanceAnalysisReportInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_type {
+            ser.write_string(&GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_SERVICE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.analysis_report_id {
+            ser.write_string(&GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_ANALYSIS_REPORT_ID, val)?;
+        }
+        if let Some(ref val) = self.text_format {
+            ser.write_string(&GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_TEXT_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.accept_language {
+            ser.write_string(&GETPERFORMANCEANALYSISREPORTINPUT_MEMBER_ACCEPT_LANGUAGE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_performance_analysis_report::builders::GetPerformanceAnalysisReportInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETPERFORMANCEANALYSISREPORTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_type = Some(crate::types::ServiceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.analysis_report_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text_format = Some(crate::types::TextFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accept_language = Some(crate::types::AcceptLanguage::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetPerformanceAnalysisReportInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.identifier = builder.identifier.or(Some(String::new()));
+        builder.analysis_report_id = builder.analysis_report_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetPerformanceAnalysisReportInput {
     /// Creates a new builder-style object to manufacture [`GetPerformanceAnalysisReportInput`](crate::operation::get_performance_analysis_report::GetPerformanceAnalysisReportInput).
     pub fn builder() -> crate::operation::get_performance_analysis_report::builders::GetPerformanceAnalysisReportInputBuilder {

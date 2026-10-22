@@ -12,6 +12,87 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         self.accelerator_arn.as_deref()
     }
 }
+static DESCRIBECUSTOMROUTINGACCELERATORATTRIBUTESINPUT_MEMBER_ACCELERATOR_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.globalaccelerator.synthetic#DescribeCustomRoutingAcceleratorAttributesInput$AcceleratorArn",
+            "com.amazonaws.globalaccelerator.synthetic",
+            "DescribeCustomRoutingAcceleratorAttributesInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AcceleratorArn",
+        0,
+    );
+static DESCRIBECUSTOMROUTINGACCELERATORATTRIBUTESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#DescribeCustomRoutingAcceleratorAttributesInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "DescribeCustomRoutingAcceleratorAttributesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBECUSTOMROUTINGACCELERATORATTRIBUTESINPUT_MEMBER_ACCELERATOR_ARN],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeCustomRoutingAcceleratorAttributesRequest");
+impl DescribeCustomRoutingAcceleratorAttributesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECUSTOMROUTINGACCELERATORATTRIBUTESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeCustomRoutingAcceleratorAttributesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.accelerator_arn {
+            ser.write_string(&DESCRIBECUSTOMROUTINGACCELERATORATTRIBUTESINPUT_MEMBER_ACCELERATOR_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECUSTOMROUTINGACCELERATORATTRIBUTESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accelerator_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeCustomRoutingAcceleratorAttributesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.accelerator_arn = builder.accelerator_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeCustomRoutingAcceleratorAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput).
     pub fn builder(

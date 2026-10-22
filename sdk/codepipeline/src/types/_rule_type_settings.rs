@@ -31,6 +31,148 @@ impl RuleTypeSettings {
         self.revision_url_template.as_deref()
     }
 }
+static RULETYPESETTINGS_MEMBER_THIRD_PARTY_CONFIGURATION_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleTypeSettings$thirdPartyConfigurationUrl",
+        "com.amazonaws.codepipeline",
+        "RuleTypeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "thirdPartyConfigurationUrl",
+    0,
+);
+static RULETYPESETTINGS_MEMBER_ENTITY_URL_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleTypeSettings$entityUrlTemplate",
+        "com.amazonaws.codepipeline",
+        "RuleTypeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "entityUrlTemplate",
+    1,
+);
+static RULETYPESETTINGS_MEMBER_EXECUTION_URL_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleTypeSettings$executionUrlTemplate",
+        "com.amazonaws.codepipeline",
+        "RuleTypeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionUrlTemplate",
+    2,
+);
+static RULETYPESETTINGS_MEMBER_REVISION_URL_TEMPLATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleTypeSettings$revisionUrlTemplate",
+        "com.amazonaws.codepipeline",
+        "RuleTypeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionUrlTemplate",
+    3,
+);
+static RULETYPESETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleTypeSettings",
+        "com.amazonaws.codepipeline",
+        "RuleTypeSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RULETYPESETTINGS_MEMBER_THIRD_PARTY_CONFIGURATION_URL,
+        &RULETYPESETTINGS_MEMBER_ENTITY_URL_TEMPLATE,
+        &RULETYPESETTINGS_MEMBER_EXECUTION_URL_TEMPLATE,
+        &RULETYPESETTINGS_MEMBER_REVISION_URL_TEMPLATE,
+    ],
+);
+impl RuleTypeSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RULETYPESETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuleTypeSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.third_party_configuration_url {
+            ser.write_string(&RULETYPESETTINGS_MEMBER_THIRD_PARTY_CONFIGURATION_URL, val)?;
+        }
+        if let Some(ref val) = self.entity_url_template {
+            ser.write_string(&RULETYPESETTINGS_MEMBER_ENTITY_URL_TEMPLATE, val)?;
+        }
+        if let Some(ref val) = self.execution_url_template {
+            ser.write_string(&RULETYPESETTINGS_MEMBER_EXECUTION_URL_TEMPLATE, val)?;
+        }
+        if let Some(ref val) = self.revision_url_template {
+            ser.write_string(&RULETYPESETTINGS_MEMBER_REVISION_URL_TEMPLATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuleTypeSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RULETYPESETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.third_party_configuration_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_url_template = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_url_template = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_url_template = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuleTypeSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RuleTypeSettings {
     /// Creates a new builder-style object to manufacture [`RuleTypeSettings`](crate::types::RuleTypeSettings).
     pub fn builder() -> crate::types::builders::RuleTypeSettingsBuilder {

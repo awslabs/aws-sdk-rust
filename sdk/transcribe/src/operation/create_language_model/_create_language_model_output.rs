@@ -37,6 +37,170 @@ impl CreateLanguageModelOutput {
         self.model_status.as_ref()
     }
 }
+static CREATELANGUAGEMODELOUTPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateLanguageModelOutput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    0,
+);
+static CREATELANGUAGEMODELOUTPUT_MEMBER_BASE_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateLanguageModelOutput$BaseModelName",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaseModelName",
+    1,
+);
+static CREATELANGUAGEMODELOUTPUT_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateLanguageModelOutput$ModelName",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    2,
+);
+static CREATELANGUAGEMODELOUTPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateLanguageModelOutput$InputDataConfig",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    3,
+);
+static CREATELANGUAGEMODELOUTPUT_MEMBER_MODEL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateLanguageModelOutput$ModelStatus",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelStatus",
+    4,
+);
+static CREATELANGUAGEMODELOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateLanguageModelOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateLanguageModelOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELANGUAGEMODELOUTPUT_MEMBER_LANGUAGE_CODE,
+        &CREATELANGUAGEMODELOUTPUT_MEMBER_BASE_MODEL_NAME,
+        &CREATELANGUAGEMODELOUTPUT_MEMBER_MODEL_NAME,
+        &CREATELANGUAGEMODELOUTPUT_MEMBER_INPUT_DATA_CONFIG,
+        &CREATELANGUAGEMODELOUTPUT_MEMBER_MODEL_STATUS,
+    ],
+)
+.with_original_name("CreateLanguageModelResponse");
+impl CreateLanguageModelOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELANGUAGEMODELOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLanguageModelOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&CREATELANGUAGEMODELOUTPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.base_model_name {
+            ser.write_string(&CREATELANGUAGEMODELOUTPUT_MEMBER_BASE_MODEL_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&CREATELANGUAGEMODELOUTPUT_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&CREATELANGUAGEMODELOUTPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_status {
+            ser.write_string(&CREATELANGUAGEMODELOUTPUT_MEMBER_MODEL_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_language_model::builders::CreateLanguageModelOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELANGUAGEMODELOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::ClmLanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_model_name = Some(crate::types::BaseModelName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_status = Some(crate::types::ModelStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLanguageModelOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateLanguageModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

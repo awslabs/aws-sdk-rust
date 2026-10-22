@@ -31,6 +31,149 @@ impl SchedulerConfig {
         self.idle_resource_sharing.as_ref()
     }
 }
+static SCHEDULERCONFIG_MEMBER_PRIORITY_CLASSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PriorityClassList$member",
+        "com.amazonaws.sagemaker",
+        "PriorityClassList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SCHEDULERCONFIG_MEMBER_PRIORITY_CLASSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SchedulerConfig$PriorityClasses",
+        "com.amazonaws.sagemaker",
+        "SchedulerConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PriorityClasses",
+    0,
+)
+.with_list_member(&SCHEDULERCONFIG_MEMBER_PRIORITY_CLASSES_MEMBER);
+static SCHEDULERCONFIG_MEMBER_FAIR_SHARE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SchedulerConfig$FairShare",
+        "com.amazonaws.sagemaker",
+        "SchedulerConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FairShare",
+    1,
+);
+static SCHEDULERCONFIG_MEMBER_IDLE_RESOURCE_SHARING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SchedulerConfig$IdleResourceSharing",
+        "com.amazonaws.sagemaker",
+        "SchedulerConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdleResourceSharing",
+    2,
+);
+static SCHEDULERCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SchedulerConfig", "com.amazonaws.sagemaker", "SchedulerConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SCHEDULERCONFIG_MEMBER_PRIORITY_CLASSES,
+        &SCHEDULERCONFIG_MEMBER_FAIR_SHARE,
+        &SCHEDULERCONFIG_MEMBER_IDLE_RESOURCE_SHARING,
+    ],
+);
+impl SchedulerConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SCHEDULERCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SchedulerConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.priority_classes {
+            ser.write_list(
+                &SCHEDULERCONFIG_MEMBER_PRIORITY_CLASSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PriorityClass::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.fair_share {
+            ser.write_string(&SCHEDULERCONFIG_MEMBER_FAIR_SHARE, val.as_str())?;
+        }
+        if let Some(ref val) = self.idle_resource_sharing {
+            ser.write_string(&SCHEDULERCONFIG_MEMBER_IDLE_RESOURCE_SHARING, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SchedulerConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SCHEDULERCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.priority_classes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PriorityClass::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fair_share = Some(crate::types::FairShare::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idle_resource_sharing = Some(crate::types::IdleResourceSharing::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SchedulerConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SchedulerConfig {
     /// Creates a new builder-style object to manufacture [`SchedulerConfig`](crate::types::SchedulerConfig).
     pub fn builder() -> crate::types::builders::SchedulerConfigBuilder {

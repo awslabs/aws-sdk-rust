@@ -32,6 +32,148 @@ impl DeliveryChannelStatus {
         self.config_stream_delivery_info.as_ref()
     }
 }
+static DELIVERYCHANNELSTATUS_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannelStatus$name",
+        "com.amazonaws.configservice",
+        "DeliveryChannelStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static DELIVERYCHANNELSTATUS_MEMBER_CONFIG_SNAPSHOT_DELIVERY_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannelStatus$configSnapshotDeliveryInfo",
+        "com.amazonaws.configservice",
+        "DeliveryChannelStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "configSnapshotDeliveryInfo",
+    1,
+);
+static DELIVERYCHANNELSTATUS_MEMBER_CONFIG_HISTORY_DELIVERY_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannelStatus$configHistoryDeliveryInfo",
+        "com.amazonaws.configservice",
+        "DeliveryChannelStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "configHistoryDeliveryInfo",
+    2,
+);
+static DELIVERYCHANNELSTATUS_MEMBER_CONFIG_STREAM_DELIVERY_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannelStatus$configStreamDeliveryInfo",
+        "com.amazonaws.configservice",
+        "DeliveryChannelStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "configStreamDeliveryInfo",
+    3,
+);
+static DELIVERYCHANNELSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DeliveryChannelStatus",
+        "com.amazonaws.configservice",
+        "DeliveryChannelStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELIVERYCHANNELSTATUS_MEMBER_NAME,
+        &DELIVERYCHANNELSTATUS_MEMBER_CONFIG_SNAPSHOT_DELIVERY_INFO,
+        &DELIVERYCHANNELSTATUS_MEMBER_CONFIG_HISTORY_DELIVERY_INFO,
+        &DELIVERYCHANNELSTATUS_MEMBER_CONFIG_STREAM_DELIVERY_INFO,
+    ],
+);
+impl DeliveryChannelStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELIVERYCHANNELSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeliveryChannelStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DELIVERYCHANNELSTATUS_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.config_snapshot_delivery_info {
+            ser.write_struct(&DELIVERYCHANNELSTATUS_MEMBER_CONFIG_SNAPSHOT_DELIVERY_INFO, val)?;
+        }
+        if let Some(ref val) = self.config_history_delivery_info {
+            ser.write_struct(&DELIVERYCHANNELSTATUS_MEMBER_CONFIG_HISTORY_DELIVERY_INFO, val)?;
+        }
+        if let Some(ref val) = self.config_stream_delivery_info {
+            ser.write_struct(&DELIVERYCHANNELSTATUS_MEMBER_CONFIG_STREAM_DELIVERY_INFO, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeliveryChannelStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELIVERYCHANNELSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_snapshot_delivery_info = Some(crate::types::ConfigExportDeliveryInfo::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_history_delivery_info = Some(crate::types::ConfigExportDeliveryInfo::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_stream_delivery_info = Some(crate::types::ConfigStreamDeliveryInfo::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeliveryChannelStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeliveryChannelStatus {
     /// Creates a new builder-style object to manufacture [`DeliveryChannelStatus`](crate::types::DeliveryChannelStatus).
     pub fn builder() -> crate::types::builders::DeliveryChannelStatusBuilder {

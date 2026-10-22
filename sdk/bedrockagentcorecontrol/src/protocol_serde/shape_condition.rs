@@ -16,6 +16,12 @@ pub fn ser_condition(
             crate::protocol_serde::shape_match_paths::ser_match_paths(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::Condition::MatchModels(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_9.key("matchModels").start_object();
+            crate::protocol_serde::shape_match_models::ser_match_models(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::Condition::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Condition")),
     }
     Ok(())
@@ -66,6 +72,11 @@ where
                         "matchPaths" => Some(crate::types::Condition::MatchPaths(
                             crate::protocol_serde::shape_match_paths::de_match_paths(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'matchPaths' cannot be null")
+                            })?,
+                        )),
+                        "matchModels" => Some(crate::types::Condition::MatchModels(
+                            crate::protocol_serde::shape_match_models::de_match_models(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'matchModels' cannot be null")
                             })?,
                         )),
                         _ => {

@@ -21,6 +21,131 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
         self.next_token.as_deref()
     }
 }
+static LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#ApprovalRuleTemplateNameList$member",
+            "com.amazonaws.codecommit",
+            "ApprovalRuleTemplateNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#ListAssociatedApprovalRuleTemplatesForRepositoryOutput$approvalRuleTemplateNames",
+            "com.amazonaws.codecommit.synthetic",
+            "ListAssociatedApprovalRuleTemplatesForRepositoryOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "approvalRuleTemplateNames",
+        0,
+    )
+    .with_list_member(&LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAMES_MEMBER);
+static LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#ListAssociatedApprovalRuleTemplatesForRepositoryOutput$nextToken",
+            "com.amazonaws.codecommit.synthetic",
+            "ListAssociatedApprovalRuleTemplatesForRepositoryOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "nextToken",
+        1,
+    );
+static LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#ListAssociatedApprovalRuleTemplatesForRepositoryOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "ListAssociatedApprovalRuleTemplatesForRepositoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAMES,
+        &LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListAssociatedApprovalRuleTemplatesForRepositoryOutput");
+impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.approval_rule_template_names {
+            ser.write_list(
+                &LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_APPROVAL_RULE_TEMPLATE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl
+    crate::operation::list_associated_approval_rule_templates_for_repository::builders::ListAssociatedApprovalRuleTemplatesForRepositoryOutputBuilder
+{
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTASSOCIATEDAPPROVALRULETEMPLATESFORREPOSITORYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_template_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

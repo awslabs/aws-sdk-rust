@@ -13,6 +13,86 @@ impl DeliverConfigSnapshotInput {
         self.delivery_channel_name.as_deref()
     }
 }
+static DELIVERCONFIGSNAPSHOTINPUT_MEMBER_DELIVERY_CHANNEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DeliverConfigSnapshotInput$deliveryChannelName",
+        "com.amazonaws.configservice.synthetic",
+        "DeliverConfigSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deliveryChannelName",
+    0,
+);
+static DELIVERCONFIGSNAPSHOTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DeliverConfigSnapshotInput",
+        "com.amazonaws.configservice.synthetic",
+        "DeliverConfigSnapshotInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELIVERCONFIGSNAPSHOTINPUT_MEMBER_DELIVERY_CHANNEL_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeliverConfigSnapshotRequest");
+impl DeliverConfigSnapshotInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELIVERCONFIGSNAPSHOTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeliverConfigSnapshotInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.delivery_channel_name {
+            ser.write_string(&DELIVERCONFIGSNAPSHOTINPUT_MEMBER_DELIVERY_CHANNEL_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELIVERCONFIGSNAPSHOTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delivery_channel_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeliverConfigSnapshotInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.delivery_channel_name = builder.delivery_channel_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeliverConfigSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeliverConfigSnapshotInput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput).
     pub fn builder() -> crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder {

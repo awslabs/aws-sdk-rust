@@ -24,6 +24,104 @@ impl EndpointIdentifier {
         self.client_ip_preservation_enabled
     }
 }
+static ENDPOINTIDENTIFIER_MEMBER_ENDPOINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointIdentifier$EndpointId",
+        "com.amazonaws.globalaccelerator",
+        "EndpointIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointId",
+    0,
+);
+static ENDPOINTIDENTIFIER_MEMBER_CLIENT_IP_PRESERVATION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointIdentifier$ClientIPPreservationEnabled",
+        "com.amazonaws.globalaccelerator",
+        "EndpointIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ClientIPPreservationEnabled",
+    1,
+);
+static ENDPOINTIDENTIFIER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointIdentifier",
+        "com.amazonaws.globalaccelerator",
+        "EndpointIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENDPOINTIDENTIFIER_MEMBER_ENDPOINT_ID,
+        &ENDPOINTIDENTIFIER_MEMBER_CLIENT_IP_PRESERVATION_ENABLED,
+    ],
+);
+impl EndpointIdentifier {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENDPOINTIDENTIFIER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EndpointIdentifier {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.endpoint_id;
+            ser.write_string(&ENDPOINTIDENTIFIER_MEMBER_ENDPOINT_ID, val)?;
+        }
+        if let Some(ref val) = self.client_ip_preservation_enabled {
+            ser.write_boolean(&ENDPOINTIDENTIFIER_MEMBER_CLIENT_IP_PRESERVATION_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EndpointIdentifierBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENDPOINTIDENTIFIER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.endpoint_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_ip_preservation_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EndpointIdentifier {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_id = builder.endpoint_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EndpointIdentifier {
     /// Creates a new builder-style object to manufacture [`EndpointIdentifier`](crate::types::EndpointIdentifier).
     pub fn builder() -> crate::types::builders::EndpointIdentifierBuilder {

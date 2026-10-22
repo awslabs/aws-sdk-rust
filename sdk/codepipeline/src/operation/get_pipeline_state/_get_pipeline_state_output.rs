@@ -44,6 +44,196 @@ impl GetPipelineStateOutput {
         self.updated.as_ref()
     }
 }
+static GETPIPELINESTATEOUTPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineStateOutput$pipelineName",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineName",
+    0,
+);
+static GETPIPELINESTATEOUTPUT_MEMBER_PIPELINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineStateOutput$pipelineVersion",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "pipelineVersion",
+    1,
+);
+static GETPIPELINESTATEOUTPUT_MEMBER_STAGE_STATES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#StageStateList$member",
+        "com.amazonaws.codepipeline",
+        "StageStateList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETPIPELINESTATEOUTPUT_MEMBER_STAGE_STATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineStateOutput$stageStates",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "stageStates",
+    2,
+)
+.with_list_member(&GETPIPELINESTATEOUTPUT_MEMBER_STAGE_STATES_MEMBER);
+static GETPIPELINESTATEOUTPUT_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineStateOutput$created",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "created",
+    3,
+);
+static GETPIPELINESTATEOUTPUT_MEMBER_UPDATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineStateOutput$updated",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updated",
+    4,
+);
+static GETPIPELINESTATEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#GetPipelineStateOutput",
+        "com.amazonaws.codepipeline.synthetic",
+        "GetPipelineStateOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETPIPELINESTATEOUTPUT_MEMBER_PIPELINE_NAME,
+        &GETPIPELINESTATEOUTPUT_MEMBER_PIPELINE_VERSION,
+        &GETPIPELINESTATEOUTPUT_MEMBER_STAGE_STATES,
+        &GETPIPELINESTATEOUTPUT_MEMBER_CREATED,
+        &GETPIPELINESTATEOUTPUT_MEMBER_UPDATED,
+    ],
+)
+.with_original_name("GetPipelineStateOutput");
+impl GetPipelineStateOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETPIPELINESTATEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetPipelineStateOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&GETPIPELINESTATEOUTPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_version {
+            ser.write_integer(&GETPIPELINESTATEOUTPUT_MEMBER_PIPELINE_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.stage_states {
+            ser.write_list(
+                &GETPIPELINESTATEOUTPUT_MEMBER_STAGE_STATES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::StageState::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&GETPIPELINESTATEOUTPUT_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.updated {
+            ser.write_timestamp(&GETPIPELINESTATEOUTPUT_MEMBER_UPDATED, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_pipeline_state::builders::GetPipelineStateOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETPIPELINESTATEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stage_states = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::StageState::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetPipelineStateOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetPipelineStateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

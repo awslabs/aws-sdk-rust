@@ -13,6 +13,8 @@ pub struct GetTrafficDistributionOutput {
     pub sign_in_config: ::std::option::Option<crate::types::SignInConfig>,
     /// <p>The distribution of agents between the instance and its replica(s).</p>
     pub agent_config: ::std::option::Option<crate::types::AgentConfig>,
+    /// <p>The timestamp of the most recent failover for the traffic distribution group. This value is updated each time <code>UpdateTrafficDistribution</code> is called to change the traffic distribution.</p>
+    pub last_failover_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetTrafficDistributionOutput {
@@ -36,6 +38,10 @@ impl GetTrafficDistributionOutput {
     pub fn agent_config(&self) -> ::std::option::Option<&crate::types::AgentConfig> {
         self.agent_config.as_ref()
     }
+    /// <p>The timestamp of the most recent failover for the traffic distribution group. This value is updated each time <code>UpdateTrafficDistribution</code> is called to change the traffic distribution.</p>
+    pub fn last_failover_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_failover_time.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetTrafficDistributionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -58,6 +64,7 @@ pub struct GetTrafficDistributionOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) sign_in_config: ::std::option::Option<crate::types::SignInConfig>,
     pub(crate) agent_config: ::std::option::Option<crate::types::AgentConfig>,
+    pub(crate) last_failover_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetTrafficDistributionOutputBuilder {
@@ -131,6 +138,20 @@ impl GetTrafficDistributionOutputBuilder {
     pub fn get_agent_config(&self) -> &::std::option::Option<crate::types::AgentConfig> {
         &self.agent_config
     }
+    /// <p>The timestamp of the most recent failover for the traffic distribution group. This value is updated each time <code>UpdateTrafficDistribution</code> is called to change the traffic distribution.</p>
+    pub fn last_failover_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_failover_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp of the most recent failover for the traffic distribution group. This value is updated each time <code>UpdateTrafficDistribution</code> is called to change the traffic distribution.</p>
+    pub fn set_last_failover_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_failover_time = input;
+        self
+    }
+    /// <p>The timestamp of the most recent failover for the traffic distribution group. This value is updated each time <code>UpdateTrafficDistribution</code> is called to change the traffic distribution.</p>
+    pub fn get_last_failover_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_failover_time
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -148,6 +169,7 @@ impl GetTrafficDistributionOutputBuilder {
             arn: self.arn,
             sign_in_config: self.sign_in_config,
             agent_config: self.agent_config,
+            last_failover_time: self.last_failover_time,
             _request_id: self._request_id,
         }
     }

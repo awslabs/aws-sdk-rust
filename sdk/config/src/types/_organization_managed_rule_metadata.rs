@@ -62,6 +62,251 @@ impl OrganizationManagedRuleMetadata {
         self.tag_value_scope.as_deref()
     }
 }
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata$Description",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    0,
+);
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RULE_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata$RuleIdentifier",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RuleIdentifier",
+    1,
+);
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_INPUT_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata$InputParameters",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InputParameters",
+    2,
+);
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_MAXIMUM_EXECUTION_FREQUENCY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationManagedRuleMetadata$MaximumExecutionFrequency",
+            "com.amazonaws.configservice",
+            "OrganizationManagedRuleMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "MaximumExecutionFrequency",
+        3,
+    );
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_TYPES_SCOPE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ResourceTypesScope$member",
+            "com.amazonaws.configservice",
+            "ResourceTypesScope",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_TYPES_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata$ResourceTypesScope",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResourceTypesScope",
+    4,
+)
+.with_list_member(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_TYPES_SCOPE_MEMBER);
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_ID_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata$ResourceIdScope",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceIdScope",
+    5,
+);
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_TAG_KEY_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata$TagKeyScope",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TagKeyScope",
+    6,
+);
+static ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_TAG_VALUE_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata$TagValueScope",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TagValueScope",
+    7,
+);
+static ORGANIZATIONMANAGEDRULEMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationManagedRuleMetadata",
+        "com.amazonaws.configservice",
+        "OrganizationManagedRuleMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_DESCRIPTION,
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RULE_IDENTIFIER,
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_INPUT_PARAMETERS,
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_MAXIMUM_EXECUTION_FREQUENCY,
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_TYPES_SCOPE,
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_ID_SCOPE,
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_TAG_KEY_SCOPE,
+        &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_TAG_VALUE_SCOPE,
+    ],
+);
+impl OrganizationManagedRuleMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ORGANIZATIONMANAGEDRULEMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OrganizationManagedRuleMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_DESCRIPTION, val)?;
+        }
+        {
+            let val = &self.rule_identifier;
+            ser.write_string(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RULE_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.input_parameters {
+            ser.write_string(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_INPUT_PARAMETERS, val)?;
+        }
+        if let Some(ref val) = self.maximum_execution_frequency {
+            ser.write_string(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_MAXIMUM_EXECUTION_FREQUENCY, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_types_scope {
+            ser.write_list(
+                &ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_TYPES_SCOPE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resource_id_scope {
+            ser.write_string(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_RESOURCE_ID_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.tag_key_scope {
+            ser.write_string(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_TAG_KEY_SCOPE, val)?;
+        }
+        if let Some(ref val) = self.tag_value_scope {
+            ser.write_string(&ORGANIZATIONMANAGEDRULEMETADATA_MEMBER_TAG_VALUE_SCOPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OrganizationManagedRuleMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ORGANIZATIONMANAGEDRULEMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.rule_identifier = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_parameters = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.maximum_execution_frequency = Some(crate::types::MaximumExecutionFrequency::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_types_scope = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id_scope = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_key_scope = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_value_scope = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OrganizationManagedRuleMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.rule_identifier = builder.rule_identifier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl OrganizationManagedRuleMetadata {
     /// Creates a new builder-style object to manufacture [`OrganizationManagedRuleMetadata`](crate::types::OrganizationManagedRuleMetadata).
     pub fn builder() -> crate::types::builders::OrganizationManagedRuleMetadataBuilder {

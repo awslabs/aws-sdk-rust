@@ -12,10 +12,13 @@
 /// ```text
 /// # let peeringerrorcode = unimplemented!();
 /// match peeringerrorcode {
+///     PeeringErrorCode::CreationFailed => { /* ... */ },
+///     PeeringErrorCode::DeletionFailed => { /* ... */ },
 ///     PeeringErrorCode::EdgeLocationPeerDuplicate => { /* ... */ },
 ///     PeeringErrorCode::InternalError => { /* ... */ },
 ///     PeeringErrorCode::InvalidTransitGatewayState => { /* ... */ },
 ///     PeeringErrorCode::MissingRequiredPermissions => { /* ... */ },
+///     PeeringErrorCode::TransitGatewayEncryptionNotSupported => { /* ... */ },
 ///     PeeringErrorCode::TransitGatewayNotFound => { /* ... */ },
 ///     PeeringErrorCode::TransitGatewayPeersLimitExceeded => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -47,6 +50,10 @@
 )]
 pub enum PeeringErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeletionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     EdgeLocationPeerDuplicate,
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
@@ -54,6 +61,8 @@ pub enum PeeringErrorCode {
     InvalidTransitGatewayState,
     #[allow(missing_docs)] // documentation missing in model
     MissingRequiredPermissions,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGatewayEncryptionNotSupported,
     #[allow(missing_docs)] // documentation missing in model
     TransitGatewayNotFound,
     #[allow(missing_docs)] // documentation missing in model
@@ -65,10 +74,13 @@ pub enum PeeringErrorCode {
 impl ::std::convert::From<&str> for PeeringErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "CREATION_FAILED" => PeeringErrorCode::CreationFailed,
+            "DELETION_FAILED" => PeeringErrorCode::DeletionFailed,
             "EDGE_LOCATION_PEER_DUPLICATE" => PeeringErrorCode::EdgeLocationPeerDuplicate,
             "INTERNAL_ERROR" => PeeringErrorCode::InternalError,
             "INVALID_TRANSIT_GATEWAY_STATE" => PeeringErrorCode::InvalidTransitGatewayState,
             "MISSING_PERMISSIONS" => PeeringErrorCode::MissingRequiredPermissions,
+            "TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED" => PeeringErrorCode::TransitGatewayEncryptionNotSupported,
             "TRANSIT_GATEWAY_NOT_FOUND" => PeeringErrorCode::TransitGatewayNotFound,
             "TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED" => PeeringErrorCode::TransitGatewayPeersLimitExceeded,
             other => PeeringErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -86,10 +98,13 @@ impl PeeringErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PeeringErrorCode::CreationFailed => "CREATION_FAILED",
+            PeeringErrorCode::DeletionFailed => "DELETION_FAILED",
             PeeringErrorCode::EdgeLocationPeerDuplicate => "EDGE_LOCATION_PEER_DUPLICATE",
             PeeringErrorCode::InternalError => "INTERNAL_ERROR",
             PeeringErrorCode::InvalidTransitGatewayState => "INVALID_TRANSIT_GATEWAY_STATE",
             PeeringErrorCode::MissingRequiredPermissions => "MISSING_PERMISSIONS",
+            PeeringErrorCode::TransitGatewayEncryptionNotSupported => "TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED",
             PeeringErrorCode::TransitGatewayNotFound => "TRANSIT_GATEWAY_NOT_FOUND",
             PeeringErrorCode::TransitGatewayPeersLimitExceeded => "TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED",
             PeeringErrorCode::Unknown(value) => value.as_str(),
@@ -98,10 +113,13 @@ impl PeeringErrorCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CREATION_FAILED",
+            "DELETION_FAILED",
             "EDGE_LOCATION_PEER_DUPLICATE",
             "INTERNAL_ERROR",
             "INVALID_TRANSIT_GATEWAY_STATE",
             "MISSING_PERMISSIONS",
+            "TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED",
             "TRANSIT_GATEWAY_NOT_FOUND",
             "TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED",
         ]
@@ -127,10 +145,13 @@ impl PeeringErrorCode {
 impl ::std::fmt::Display for PeeringErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PeeringErrorCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            PeeringErrorCode::DeletionFailed => write!(f, "DELETION_FAILED"),
             PeeringErrorCode::EdgeLocationPeerDuplicate => write!(f, "EDGE_LOCATION_PEER_DUPLICATE"),
             PeeringErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
             PeeringErrorCode::InvalidTransitGatewayState => write!(f, "INVALID_TRANSIT_GATEWAY_STATE"),
             PeeringErrorCode::MissingRequiredPermissions => write!(f, "MISSING_PERMISSIONS"),
+            PeeringErrorCode::TransitGatewayEncryptionNotSupported => write!(f, "TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED"),
             PeeringErrorCode::TransitGatewayNotFound => write!(f, "TRANSIT_GATEWAY_NOT_FOUND"),
             PeeringErrorCode::TransitGatewayPeersLimitExceeded => write!(f, "TRANSIT_GATEWAY_PEERS_LIMIT_EXCEEDED"),
             PeeringErrorCode::Unknown(value) => write!(f, "{value}"),

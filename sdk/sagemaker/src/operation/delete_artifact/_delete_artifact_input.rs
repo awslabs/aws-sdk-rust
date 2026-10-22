@@ -18,6 +18,105 @@ impl DeleteArtifactInput {
         self.source.as_ref()
     }
 }
+static DELETEARTIFACTINPUT_MEMBER_ARTIFACT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteArtifactInput$ArtifactArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactArn",
+    0,
+);
+static DELETEARTIFACTINPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteArtifactInput$Source",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    1,
+);
+static DELETEARTIFACTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeleteArtifactInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeleteArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEARTIFACTINPUT_MEMBER_ARTIFACT_ARN, &DELETEARTIFACTINPUT_MEMBER_SOURCE],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteArtifactRequest");
+impl DeleteArtifactInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEARTIFACTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteArtifactInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.artifact_arn {
+            ser.write_string(&DELETEARTIFACTINPUT_MEMBER_ARTIFACT_ARN, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&DELETEARTIFACTINPUT_MEMBER_SOURCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_artifact::builders::DeleteArtifactInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEARTIFACTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ArtifactSource::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteArtifactInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteArtifactInput {
     /// Creates a new builder-style object to manufacture [`DeleteArtifactInput`](crate::operation::delete_artifact::DeleteArtifactInput).
     pub fn builder() -> crate::operation::delete_artifact::builders::DeleteArtifactInputBuilder {

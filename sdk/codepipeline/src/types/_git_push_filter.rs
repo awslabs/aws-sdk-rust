@@ -25,6 +25,123 @@ impl GitPushFilter {
         self.file_paths.as_ref()
     }
 }
+static GITPUSHFILTER_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitPushFilter$tags",
+        "com.amazonaws.codepipeline",
+        "GitPushFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "tags",
+    0,
+);
+static GITPUSHFILTER_MEMBER_BRANCHES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitPushFilter$branches",
+        "com.amazonaws.codepipeline",
+        "GitPushFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "branches",
+    1,
+);
+static GITPUSHFILTER_MEMBER_FILE_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#GitPushFilter$filePaths",
+        "com.amazonaws.codepipeline",
+        "GitPushFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "filePaths",
+    2,
+);
+static GITPUSHFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#GitPushFilter", "com.amazonaws.codepipeline", "GitPushFilter"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GITPUSHFILTER_MEMBER_TAGS,
+        &GITPUSHFILTER_MEMBER_BRANCHES,
+        &GITPUSHFILTER_MEMBER_FILE_PATHS,
+    ],
+);
+impl GitPushFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GITPUSHFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GitPushFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tags {
+            ser.write_struct(&GITPUSHFILTER_MEMBER_TAGS, val)?;
+        }
+        if let Some(ref val) = self.branches {
+            ser.write_struct(&GITPUSHFILTER_MEMBER_BRANCHES, val)?;
+        }
+        if let Some(ref val) = self.file_paths {
+            ser.write_struct(&GITPUSHFILTER_MEMBER_FILE_PATHS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::GitPushFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GITPUSHFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some(crate::types::GitTagFilterCriteria::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.branches = Some(crate::types::GitBranchFilterCriteria::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_paths = Some(crate::types::GitFilePathFilterCriteria::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GitPushFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl GitPushFilter {
     /// Creates a new builder-style object to manufacture [`GitPushFilter`](crate::types::GitPushFilter).
     pub fn builder() -> crate::types::builders::GitPushFilterBuilder {

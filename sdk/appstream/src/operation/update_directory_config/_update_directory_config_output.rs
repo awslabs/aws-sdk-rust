@@ -13,6 +13,84 @@ impl UpdateDirectoryConfigOutput {
         self.directory_config.as_ref()
     }
 }
+static UPDATEDIRECTORYCONFIGOUTPUT_MEMBER_DIRECTORY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateDirectoryConfigOutput$DirectoryConfig",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateDirectoryConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DirectoryConfig",
+    0,
+);
+static UPDATEDIRECTORYCONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateDirectoryConfigOutput",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateDirectoryConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEDIRECTORYCONFIGOUTPUT_MEMBER_DIRECTORY_CONFIG],
+)
+.with_original_name("UpdateDirectoryConfigResult");
+impl UpdateDirectoryConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDIRECTORYCONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDirectoryConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.directory_config {
+            ser.write_struct(&UPDATEDIRECTORYCONFIGOUTPUT_MEMBER_DIRECTORY_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_directory_config::builders::UpdateDirectoryConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEDIRECTORYCONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.directory_config = Some(crate::types::DirectoryConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateDirectoryConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdateDirectoryConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

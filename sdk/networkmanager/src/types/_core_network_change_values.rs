@@ -28,7 +28,7 @@ pub struct CoreNetworkChangeValues {
     pub dns_support: bool,
     /// <p>Indicates whether security group referencing is enabled for the core network.</p>
     pub security_group_referencing_support: bool,
-    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    /// <p>The routing policy direction (inbound/outbound) in the core network change values.</p>
     pub routing_policy_direction: ::std::option::Option<crate::types::RoutingPolicyDirection>,
     /// <p>The routing policy configuration in the core network change values.</p>
     pub routing_policy: ::std::option::Option<::std::string::String>,
@@ -96,7 +96,7 @@ impl CoreNetworkChangeValues {
     pub fn security_group_referencing_support(&self) -> bool {
         self.security_group_referencing_support
     }
-    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    /// <p>The routing policy direction (inbound/outbound) in the core network change values.</p>
     pub fn routing_policy_direction(&self) -> ::std::option::Option<&crate::types::RoutingPolicyDirection> {
         self.routing_policy_direction.as_ref()
     }
@@ -343,17 +343,17 @@ impl CoreNetworkChangeValuesBuilder {
     pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<bool> {
         &self.security_group_referencing_support
     }
-    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    /// <p>The routing policy direction (inbound/outbound) in the core network change values.</p>
     pub fn routing_policy_direction(mut self, input: crate::types::RoutingPolicyDirection) -> Self {
         self.routing_policy_direction = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    /// <p>The routing policy direction (inbound/outbound) in the core network change values.</p>
     pub fn set_routing_policy_direction(mut self, input: ::std::option::Option<crate::types::RoutingPolicyDirection>) -> Self {
         self.routing_policy_direction = input;
         self
     }
-    /// <p>The routing policy direction (inbound/outbound) in a core network change event.</p>
+    /// <p>The routing policy direction (inbound/outbound) in the core network change values.</p>
     pub fn get_routing_policy_direction(&self) -> &::std::option::Option<crate::types::RoutingPolicyDirection> {
         &self.routing_policy_direction
     }

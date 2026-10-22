@@ -51,6 +51,244 @@ impl TransformJobDefinition {
         self.transform_resources.as_ref()
     }
 }
+static TRANSFORMJOBDEFINITION_MEMBER_MAX_CONCURRENT_TRANSFORMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition$MaxConcurrentTransforms",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxConcurrentTransforms",
+    0,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_MAX_PAYLOAD_IN_MB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition$MaxPayloadInMB",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxPayloadInMB",
+    1,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_BATCH_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition$BatchStrategy",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BatchStrategy",
+    2,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_ENVIRONMENT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformEnvironmentMap$key",
+        "com.amazonaws.sagemaker",
+        "TransformEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_ENVIRONMENT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformEnvironmentMap$value",
+        "com.amazonaws.sagemaker",
+        "TransformEnvironmentMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_ENVIRONMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition$Environment",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Environment",
+    3,
+)
+.with_map_members(
+    &TRANSFORMJOBDEFINITION_MEMBER_ENVIRONMENT_KEY,
+    &TRANSFORMJOBDEFINITION_MEMBER_ENVIRONMENT_VALUE,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_INPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition$TransformInput",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransformInput",
+    4,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition$TransformOutput",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransformOutput",
+    5,
+);
+static TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition$TransformResources",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransformResources",
+    6,
+);
+static TRANSFORMJOBDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TransformJobDefinition",
+        "com.amazonaws.sagemaker",
+        "TransformJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSFORMJOBDEFINITION_MEMBER_MAX_CONCURRENT_TRANSFORMS,
+        &TRANSFORMJOBDEFINITION_MEMBER_MAX_PAYLOAD_IN_MB,
+        &TRANSFORMJOBDEFINITION_MEMBER_BATCH_STRATEGY,
+        &TRANSFORMJOBDEFINITION_MEMBER_ENVIRONMENT,
+        &TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_INPUT,
+        &TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_OUTPUT,
+        &TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_RESOURCES,
+    ],
+);
+impl TransformJobDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSFORMJOBDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TransformJobDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.max_concurrent_transforms {
+            ser.write_integer(&TRANSFORMJOBDEFINITION_MEMBER_MAX_CONCURRENT_TRANSFORMS, *val)?;
+        }
+        if let Some(ref val) = self.max_payload_in_mb {
+            ser.write_integer(&TRANSFORMJOBDEFINITION_MEMBER_MAX_PAYLOAD_IN_MB, *val)?;
+        }
+        if let Some(ref val) = self.batch_strategy {
+            ser.write_string(&TRANSFORMJOBDEFINITION_MEMBER_BATCH_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.environment {
+            ser.write_map(
+                &TRANSFORMJOBDEFINITION_MEMBER_ENVIRONMENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.transform_input {
+            ser.write_struct(&TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_INPUT, val)?;
+        }
+        if let Some(ref val) = self.transform_output {
+            ser.write_struct(&TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_OUTPUT, val)?;
+        }
+        if let Some(ref val) = self.transform_resources {
+            ser.write_struct(&TRANSFORMJOBDEFINITION_MEMBER_TRANSFORM_RESOURCES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TransformJobDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSFORMJOBDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_concurrent_transforms = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_payload_in_mb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.batch_strategy = Some(crate::types::BatchStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_input = Some(crate::types::TransformInput::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_output = Some(crate::types::TransformOutput::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transform_resources = Some(crate::types::TransformResources::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TransformJobDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TransformJobDefinition {
     /// Creates a new builder-style object to manufacture [`TransformJobDefinition`](crate::types::TransformJobDefinition).
     pub fn builder() -> crate::types::builders::TransformJobDefinitionBuilder {

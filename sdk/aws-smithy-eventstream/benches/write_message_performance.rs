@@ -239,7 +239,9 @@ fn write_header_value_to_optimized(
             crc.update(&val.to_be_bytes());
         }
         ByteArray(val) => {
-            if val.len() > u16::MAX as usize {
+            // Keep in step with `MAX_HEADER_VALUE_LEN` in frame.rs: the length is prefixed with
+            // 2 bytes, but the protocol bound is `i16::MAX`, not `u16::MAX`.
+            if val.len() > i16::MAX as usize {
                 return Err("Byte array too long".into());
             }
             buffer.put_u8(TYPE_BYTE_ARRAY);
@@ -251,7 +253,7 @@ fn write_header_value_to_optimized(
         }
         String(val) => {
             let bytes = val.as_bytes();
-            if bytes.len() > u16::MAX as usize {
+            if bytes.len() > i16::MAX as usize {
                 return Err("String too long".into());
             }
             buffer.put_u8(TYPE_STRING);

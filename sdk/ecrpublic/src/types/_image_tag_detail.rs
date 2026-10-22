@@ -25,6 +25,123 @@ impl ImageTagDetail {
         self.image_detail.as_ref()
     }
 }
+static IMAGETAGDETAIL_MEMBER_IMAGE_TAG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ImageTagDetail$imageTag",
+        "com.amazonaws.ecrpublic",
+        "ImageTagDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageTag",
+    0,
+);
+static IMAGETAGDETAIL_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ImageTagDetail$createdAt",
+        "com.amazonaws.ecrpublic",
+        "ImageTagDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    1,
+);
+static IMAGETAGDETAIL_MEMBER_IMAGE_DETAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ImageTagDetail$imageDetail",
+        "com.amazonaws.ecrpublic",
+        "ImageTagDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "imageDetail",
+    2,
+);
+static IMAGETAGDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#ImageTagDetail", "com.amazonaws.ecrpublic", "ImageTagDetail"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMAGETAGDETAIL_MEMBER_IMAGE_TAG,
+        &IMAGETAGDETAIL_MEMBER_CREATED_AT,
+        &IMAGETAGDETAIL_MEMBER_IMAGE_DETAIL,
+    ],
+);
+impl ImageTagDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMAGETAGDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ImageTagDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_tag {
+            ser.write_string(&IMAGETAGDETAIL_MEMBER_IMAGE_TAG, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&IMAGETAGDETAIL_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.image_detail {
+            ser.write_struct(&IMAGETAGDETAIL_MEMBER_IMAGE_DETAIL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ImageTagDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMAGETAGDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_tag = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_detail = Some(crate::types::ReferencedImageDetail::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ImageTagDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ImageTagDetail {
     /// Creates a new builder-style object to manufacture [`ImageTagDetail`](crate::types::ImageTagDetail).
     pub fn builder() -> crate::types::builders::ImageTagDetailBuilder {

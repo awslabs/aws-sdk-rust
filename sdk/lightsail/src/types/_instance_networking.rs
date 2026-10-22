@@ -21,6 +21,129 @@ impl InstanceNetworking {
         self.ports.as_deref().unwrap_or_default()
     }
 }
+static INSTANCENETWORKING_MEMBER_MONTHLY_TRANSFER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceNetworking$monthlyTransfer",
+        "com.amazonaws.lightsail",
+        "InstanceNetworking",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "monthlyTransfer",
+    0,
+);
+static INSTANCENETWORKING_MEMBER_PORTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstancePortInfoList$member",
+        "com.amazonaws.lightsail",
+        "InstancePortInfoList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCENETWORKING_MEMBER_PORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceNetworking$ports",
+        "com.amazonaws.lightsail",
+        "InstanceNetworking",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ports",
+    1,
+)
+.with_list_member(&INSTANCENETWORKING_MEMBER_PORTS_MEMBER);
+static INSTANCENETWORKING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceNetworking",
+        "com.amazonaws.lightsail",
+        "InstanceNetworking",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INSTANCENETWORKING_MEMBER_MONTHLY_TRANSFER, &INSTANCENETWORKING_MEMBER_PORTS],
+);
+impl InstanceNetworking {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCENETWORKING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceNetworking {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.monthly_transfer {
+            ser.write_struct(&INSTANCENETWORKING_MEMBER_MONTHLY_TRANSFER, val)?;
+        }
+        if let Some(ref val) = self.ports {
+            ser.write_list(
+                &INSTANCENETWORKING_MEMBER_PORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InstancePortInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceNetworkingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCENETWORKING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monthly_transfer = Some(crate::types::MonthlyTransfer::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ports = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstancePortInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceNetworking {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceNetworking {
     /// Creates a new builder-style object to manufacture [`InstanceNetworking`](crate::types::InstanceNetworking).
     pub fn builder() -> crate::types::builders::InstanceNetworkingBuilder {

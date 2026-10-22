@@ -45,6 +45,216 @@ impl DeployActionExecutionTarget {
         self.events.as_deref().unwrap_or_default()
     }
 }
+static DEPLOYACTIONEXECUTIONTARGET_MEMBER_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployActionExecutionTarget$targetId",
+        "com.amazonaws.codepipeline",
+        "DeployActionExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetId",
+    0,
+);
+static DEPLOYACTIONEXECUTIONTARGET_MEMBER_TARGET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployActionExecutionTarget$targetType",
+        "com.amazonaws.codepipeline",
+        "DeployActionExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetType",
+    1,
+);
+static DEPLOYACTIONEXECUTIONTARGET_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployActionExecutionTarget$status",
+        "com.amazonaws.codepipeline",
+        "DeployActionExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    2,
+);
+static DEPLOYACTIONEXECUTIONTARGET_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployActionExecutionTarget$startTime",
+        "com.amazonaws.codepipeline",
+        "DeployActionExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    3,
+);
+static DEPLOYACTIONEXECUTIONTARGET_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployActionExecutionTarget$endTime",
+        "com.amazonaws.codepipeline",
+        "DeployActionExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    4,
+);
+static DEPLOYACTIONEXECUTIONTARGET_MEMBER_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployTargetEventList$member",
+        "com.amazonaws.codepipeline",
+        "DeployTargetEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DEPLOYACTIONEXECUTIONTARGET_MEMBER_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployActionExecutionTarget$events",
+        "com.amazonaws.codepipeline",
+        "DeployActionExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "events",
+    5,
+)
+.with_list_member(&DEPLOYACTIONEXECUTIONTARGET_MEMBER_EVENTS_MEMBER);
+static DEPLOYACTIONEXECUTIONTARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#DeployActionExecutionTarget",
+        "com.amazonaws.codepipeline",
+        "DeployActionExecutionTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEPLOYACTIONEXECUTIONTARGET_MEMBER_TARGET_ID,
+        &DEPLOYACTIONEXECUTIONTARGET_MEMBER_TARGET_TYPE,
+        &DEPLOYACTIONEXECUTIONTARGET_MEMBER_STATUS,
+        &DEPLOYACTIONEXECUTIONTARGET_MEMBER_START_TIME,
+        &DEPLOYACTIONEXECUTIONTARGET_MEMBER_END_TIME,
+        &DEPLOYACTIONEXECUTIONTARGET_MEMBER_EVENTS,
+    ],
+);
+impl DeployActionExecutionTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEPLOYACTIONEXECUTIONTARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeployActionExecutionTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target_id {
+            ser.write_string(&DEPLOYACTIONEXECUTIONTARGET_MEMBER_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.target_type {
+            ser.write_string(&DEPLOYACTIONEXECUTIONTARGET_MEMBER_TARGET_TYPE, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DEPLOYACTIONEXECUTIONTARGET_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&DEPLOYACTIONEXECUTIONTARGET_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&DEPLOYACTIONEXECUTIONTARGET_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.events {
+            ser.write_list(
+                &DEPLOYACTIONEXECUTIONTARGET_MEMBER_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DeployTargetEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DeployActionExecutionTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEPLOYACTIONEXECUTIONTARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DeployTargetEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeployActionExecutionTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DeployActionExecutionTarget {
     /// Creates a new builder-style object to manufacture [`DeployActionExecutionTarget`](crate::types::DeployActionExecutionTarget).
     pub fn builder() -> crate::types::builders::DeployActionExecutionTargetBuilder {

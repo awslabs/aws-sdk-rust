@@ -185,6 +185,553 @@ impl Image {
         self.image_software_metadata.as_ref()
     }
 }
+static IMAGE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$Name", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static IMAGE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$Arn", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static IMAGE_MEMBER_BASE_IMAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$BaseImageArn", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaseImageArn",
+    2,
+);
+static IMAGE_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$DisplayName", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    3,
+);
+static IMAGE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$State", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    4,
+);
+static IMAGE_MEMBER_VISIBILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$Visibility", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Visibility",
+    5,
+);
+static IMAGE_MEMBER_IMAGE_BUILDER_SUPPORTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$ImageBuilderSupported", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ImageBuilderSupported",
+    6,
+);
+static IMAGE_MEMBER_IMAGE_BUILDER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$ImageBuilderName", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageBuilderName",
+    7,
+);
+static IMAGE_MEMBER_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$Platform", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Platform",
+    8,
+);
+static IMAGE_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$Description", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    9,
+);
+static IMAGE_MEMBER_STATE_CHANGE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$StateChangeReason", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StateChangeReason",
+    10,
+);
+static IMAGE_MEMBER_APPLICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Applications$member", "com.amazonaws.appstream", "Applications"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static IMAGE_MEMBER_APPLICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$Applications", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Applications",
+    11,
+)
+.with_list_member(&IMAGE_MEMBER_APPLICATIONS_MEMBER);
+static IMAGE_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$CreatedTime", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    12,
+);
+static IMAGE_MEMBER_PUBLIC_BASE_IMAGE_RELEASED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Image$PublicBaseImageReleasedDate",
+        "com.amazonaws.appstream",
+        "Image",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "PublicBaseImageReleasedDate",
+    13,
+);
+static IMAGE_MEMBER_APPSTREAM_AGENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$AppstreamAgentVersion", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppstreamAgentVersion",
+    14,
+);
+static IMAGE_MEMBER_IMAGE_PERMISSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$ImagePermissions", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ImagePermissions",
+    15,
+);
+static IMAGE_MEMBER_IMAGE_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ResourceErrors$member",
+        "com.amazonaws.appstream",
+        "ResourceErrors",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static IMAGE_MEMBER_IMAGE_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$ImageErrors", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::List,
+    "ImageErrors",
+    16,
+)
+.with_list_member(&IMAGE_MEMBER_IMAGE_ERRORS_MEMBER);
+static IMAGE_MEMBER_LATEST_APPSTREAM_AGENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Image$LatestAppstreamAgentVersion",
+        "com.amazonaws.appstream",
+        "Image",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LatestAppstreamAgentVersion",
+    17,
+);
+static IMAGE_MEMBER_SUPPORTED_INSTANCE_FAMILIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#StringList$member", "com.amazonaws.appstream", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static IMAGE_MEMBER_SUPPORTED_INSTANCE_FAMILIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Image$SupportedInstanceFamilies",
+        "com.amazonaws.appstream",
+        "Image",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SupportedInstanceFamilies",
+    18,
+)
+.with_list_member(&IMAGE_MEMBER_SUPPORTED_INSTANCE_FAMILIES_MEMBER);
+static IMAGE_MEMBER_DYNAMIC_APP_PROVIDERS_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Image$DynamicAppProvidersEnabled",
+        "com.amazonaws.appstream",
+        "Image",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DynamicAppProvidersEnabled",
+    19,
+);
+static IMAGE_MEMBER_IMAGE_SHARED_WITH_OTHERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$ImageSharedWithOthers", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageSharedWithOthers",
+    20,
+);
+static IMAGE_MEMBER_MANAGED_SOFTWARE_INCLUDED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Image$ManagedSoftwareIncluded",
+        "com.amazonaws.appstream",
+        "Image",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ManagedSoftwareIncluded",
+    21,
+);
+static IMAGE_MEMBER_IMAGE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$ImageType", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageType",
+    22,
+);
+static IMAGE_MEMBER_IMAGE_SOFTWARE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image$ImageSoftwareMetadata", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ImageSoftwareMetadata",
+    23,
+);
+static IMAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Image", "com.amazonaws.appstream", "Image"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMAGE_MEMBER_NAME,
+        &IMAGE_MEMBER_ARN,
+        &IMAGE_MEMBER_BASE_IMAGE_ARN,
+        &IMAGE_MEMBER_DISPLAY_NAME,
+        &IMAGE_MEMBER_STATE,
+        &IMAGE_MEMBER_VISIBILITY,
+        &IMAGE_MEMBER_IMAGE_BUILDER_SUPPORTED,
+        &IMAGE_MEMBER_IMAGE_BUILDER_NAME,
+        &IMAGE_MEMBER_PLATFORM,
+        &IMAGE_MEMBER_DESCRIPTION,
+        &IMAGE_MEMBER_STATE_CHANGE_REASON,
+        &IMAGE_MEMBER_APPLICATIONS,
+        &IMAGE_MEMBER_CREATED_TIME,
+        &IMAGE_MEMBER_PUBLIC_BASE_IMAGE_RELEASED_DATE,
+        &IMAGE_MEMBER_APPSTREAM_AGENT_VERSION,
+        &IMAGE_MEMBER_IMAGE_PERMISSIONS,
+        &IMAGE_MEMBER_IMAGE_ERRORS,
+        &IMAGE_MEMBER_LATEST_APPSTREAM_AGENT_VERSION,
+        &IMAGE_MEMBER_SUPPORTED_INSTANCE_FAMILIES,
+        &IMAGE_MEMBER_DYNAMIC_APP_PROVIDERS_ENABLED,
+        &IMAGE_MEMBER_IMAGE_SHARED_WITH_OTHERS,
+        &IMAGE_MEMBER_MANAGED_SOFTWARE_INCLUDED,
+        &IMAGE_MEMBER_IMAGE_TYPE,
+        &IMAGE_MEMBER_IMAGE_SOFTWARE_METADATA,
+    ],
+);
+impl Image {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Image {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&IMAGE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&IMAGE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.base_image_arn {
+            ser.write_string(&IMAGE_MEMBER_BASE_IMAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&IMAGE_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&IMAGE_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.visibility {
+            ser.write_string(&IMAGE_MEMBER_VISIBILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.image_builder_supported {
+            ser.write_boolean(&IMAGE_MEMBER_IMAGE_BUILDER_SUPPORTED, *val)?;
+        }
+        if let Some(ref val) = self.image_builder_name {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_BUILDER_NAME, val)?;
+        }
+        if let Some(ref val) = self.platform {
+            ser.write_string(&IMAGE_MEMBER_PLATFORM, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&IMAGE_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.state_change_reason {
+            ser.write_struct(&IMAGE_MEMBER_STATE_CHANGE_REASON, val)?;
+        }
+        if let Some(ref val) = self.applications {
+            ser.write_list(
+                &IMAGE_MEMBER_APPLICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Application::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&IMAGE_MEMBER_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.public_base_image_released_date {
+            ser.write_timestamp(&IMAGE_MEMBER_PUBLIC_BASE_IMAGE_RELEASED_DATE, val)?;
+        }
+        if let Some(ref val) = self.appstream_agent_version {
+            ser.write_string(&IMAGE_MEMBER_APPSTREAM_AGENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.image_permissions {
+            ser.write_struct(&IMAGE_MEMBER_IMAGE_PERMISSIONS, val)?;
+        }
+        if let Some(ref val) = self.image_errors {
+            ser.write_list(
+                &IMAGE_MEMBER_IMAGE_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.latest_appstream_agent_version {
+            ser.write_string(&IMAGE_MEMBER_LATEST_APPSTREAM_AGENT_VERSION, val.as_str())?;
+        }
+        if let Some(ref val) = self.supported_instance_families {
+            ser.write_list(
+                &IMAGE_MEMBER_SUPPORTED_INSTANCE_FAMILIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.dynamic_app_providers_enabled {
+            ser.write_string(&IMAGE_MEMBER_DYNAMIC_APP_PROVIDERS_ENABLED, val.as_str())?;
+        }
+        if let Some(ref val) = self.image_shared_with_others {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_SHARED_WITH_OTHERS, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_software_included {
+            ser.write_boolean(&IMAGE_MEMBER_MANAGED_SOFTWARE_INCLUDED, *val)?;
+        }
+        if let Some(ref val) = self.image_type {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.image_software_metadata {
+            ser.write_struct(&IMAGE_MEMBER_IMAGE_SOFTWARE_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ImageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_image_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ImageState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.visibility = Some(crate::types::VisibilityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_builder_supported = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_builder_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform = Some(crate::types::PlatformType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_change_reason = Some(crate::types::ImageStateChangeReason::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.applications = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Application::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_base_image_released_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.appstream_agent_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_permissions = Some(crate::types::ImagePermissions::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_appstream_agent_version =
+                            Some(crate::types::LatestAppstreamAgentVersion::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_instance_families = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dynamic_app_providers_enabled =
+                            Some(crate::types::DynamicAppProvidersEnabled::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_shared_with_others = Some(crate::types::ImageSharedWithOthers::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_software_included = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_type = Some(crate::types::ImageType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_software_metadata = Some(crate::types::ImageSoftwareMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Image {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
     pub fn builder() -> crate::types::builders::ImageBuilder {

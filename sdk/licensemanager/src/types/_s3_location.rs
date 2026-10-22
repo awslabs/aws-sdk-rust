@@ -19,6 +19,99 @@ impl S3Location {
         self.key_prefix.as_deref()
     }
 }
+static S3LOCATION_MEMBER_BUCKET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#S3Location$bucket",
+        "com.amazonaws.licensemanager",
+        "S3Location",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucket",
+    0,
+);
+static S3LOCATION_MEMBER_KEY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#S3Location$keyPrefix",
+        "com.amazonaws.licensemanager",
+        "S3Location",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "keyPrefix",
+    1,
+);
+static S3LOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#S3Location", "com.amazonaws.licensemanager", "S3Location"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&S3LOCATION_MEMBER_BUCKET, &S3LOCATION_MEMBER_KEY_PREFIX],
+);
+impl S3Location {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3LOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3Location {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bucket {
+            ser.write_string(&S3LOCATION_MEMBER_BUCKET, val)?;
+        }
+        if let Some(ref val) = self.key_prefix {
+            ser.write_string(&S3LOCATION_MEMBER_KEY_PREFIX, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::S3LocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&S3LOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl S3Location {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::types::S3Location).
     pub fn builder() -> crate::types::builders::S3LocationBuilder {

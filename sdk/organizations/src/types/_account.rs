@@ -92,6 +92,233 @@ impl ::std::fmt::Debug for Account {
         formatter.finish()
     }
 }
+static ACCOUNT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account$Id", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static ACCOUNT_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account$Arn", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static ACCOUNT_MEMBER_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account$Email", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Email",
+    2,
+);
+static ACCOUNT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account$Name", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static ACCOUNT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account$Status", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static ACCOUNT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account$State", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    5,
+);
+static ACCOUNT_MEMBER_PATHS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Paths$member", "com.amazonaws.organizations", "Paths"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ACCOUNT_MEMBER_PATHS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account$Paths", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Paths",
+    6,
+)
+.with_list_member(&ACCOUNT_MEMBER_PATHS_MEMBER);
+static ACCOUNT_MEMBER_JOINED_METHOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Account$JoinedMethod",
+        "com.amazonaws.organizations",
+        "Account",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JoinedMethod",
+    7,
+);
+static ACCOUNT_MEMBER_JOINED_TIMESTAMP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations#Account$JoinedTimestamp",
+        "com.amazonaws.organizations",
+        "Account",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "JoinedTimestamp",
+    8,
+);
+static ACCOUNT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.organizations#Account", "com.amazonaws.organizations", "Account"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACCOUNT_MEMBER_ID,
+        &ACCOUNT_MEMBER_ARN,
+        &ACCOUNT_MEMBER_EMAIL,
+        &ACCOUNT_MEMBER_NAME,
+        &ACCOUNT_MEMBER_STATUS,
+        &ACCOUNT_MEMBER_STATE,
+        &ACCOUNT_MEMBER_PATHS,
+        &ACCOUNT_MEMBER_JOINED_METHOD,
+        &ACCOUNT_MEMBER_JOINED_TIMESTAMP,
+    ],
+);
+impl Account {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACCOUNT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Account {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&ACCOUNT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&ACCOUNT_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.email {
+            ser.write_string(&ACCOUNT_MEMBER_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&ACCOUNT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ACCOUNT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&ACCOUNT_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.paths {
+            ser.write_list(&ACCOUNT_MEMBER_PATHS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.joined_method {
+            ser.write_string(&ACCOUNT_MEMBER_JOINED_METHOD, val.as_str())?;
+        }
+        if let Some(ref val) = self.joined_timestamp {
+            ser.write_timestamp(&ACCOUNT_MEMBER_JOINED_TIMESTAMP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AccountBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACCOUNT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AccountStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::AccountState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.paths = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.joined_method = Some(crate::types::AccountJoinedMethod::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.joined_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Account {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Account {
     /// Creates a new builder-style object to manufacture [`Account`](crate::types::Account).
     pub fn builder() -> crate::types::builders::AccountBuilder {

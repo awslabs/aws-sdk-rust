@@ -196,6 +196,9 @@ pub mod get_transit_gateway_route_table_attachment;
 /// Types for the `GetVpcAttachment` operation.
 pub mod get_vpc_attachment;
 
+/// Types for the `ListAttachmentNatConfigurations` operation.
+pub mod list_attachment_nat_configurations;
+
 /// Types for the `ListAttachmentRoutingPolicyAssociations` operation.
 pub mod list_attachment_routing_policy_associations;
 
@@ -258,6 +261,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAttachmentNatConfiguration` operation.
+pub mod update_attachment_nat_configuration;
 
 /// Types for the `UpdateConnection` operation.
 pub mod update_connection;

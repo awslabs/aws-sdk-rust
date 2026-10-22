@@ -5,7 +5,7 @@
 pub struct SendDurableExecutionCallbackSuccessInput {
     /// <p>The unique identifier for the callback operation.</p>
     pub callback_id: ::std::option::Option<::std::string::String>,
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub result: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl SendDurableExecutionCallbackSuccessInput {
@@ -13,7 +13,7 @@ impl SendDurableExecutionCallbackSuccessInput {
     pub fn callback_id(&self) -> ::std::option::Option<&str> {
         self.callback_id.as_deref()
     }
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub fn result(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.result.as_ref()
     }
@@ -56,17 +56,17 @@ impl SendDurableExecutionCallbackSuccessInputBuilder {
     pub fn get_callback_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.callback_id
     }
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub fn result(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.result = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub fn set_result(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.result = input;
         self
     }
-    /// <p>The result data from the successful callback operation. Maximum size is 256 KB.</p>
+    /// <p>The result data from the successful callback operation. Maximum size is 1 MB.</p>
     pub fn get_result(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.result
     }

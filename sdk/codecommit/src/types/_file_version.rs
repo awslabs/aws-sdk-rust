@@ -33,6 +33,151 @@ impl FileVersion {
         self.revision_children.as_deref().unwrap_or_default()
     }
 }
+static FILEVERSION_MEMBER_COMMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileVersion$commit", "com.amazonaws.codecommit", "FileVersion"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "commit",
+    0,
+);
+static FILEVERSION_MEMBER_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileVersion$blobId", "com.amazonaws.codecommit", "FileVersion"),
+    ::aws_smithy_schema::ShapeType::String,
+    "blobId",
+    1,
+);
+static FILEVERSION_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileVersion$path", "com.amazonaws.codecommit", "FileVersion"),
+    ::aws_smithy_schema::ShapeType::String,
+    "path",
+    2,
+);
+static FILEVERSION_MEMBER_REVISION_CHILDREN_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RevisionChildren$member",
+        "com.amazonaws.codecommit",
+        "RevisionChildren",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static FILEVERSION_MEMBER_REVISION_CHILDREN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#FileVersion$revisionChildren",
+        "com.amazonaws.codecommit",
+        "FileVersion",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "revisionChildren",
+    3,
+)
+.with_list_member(&FILEVERSION_MEMBER_REVISION_CHILDREN_MEMBER);
+static FILEVERSION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#FileVersion", "com.amazonaws.codecommit", "FileVersion"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FILEVERSION_MEMBER_COMMIT,
+        &FILEVERSION_MEMBER_BLOB_ID,
+        &FILEVERSION_MEMBER_PATH,
+        &FILEVERSION_MEMBER_REVISION_CHILDREN,
+    ],
+);
+impl FileVersion {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FILEVERSION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FileVersion {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.commit {
+            ser.write_struct(&FILEVERSION_MEMBER_COMMIT, val)?;
+        }
+        if let Some(ref val) = self.blob_id {
+            ser.write_string(&FILEVERSION_MEMBER_BLOB_ID, val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&FILEVERSION_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.revision_children {
+            ser.write_list(
+                &FILEVERSION_MEMBER_REVISION_CHILDREN,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FileVersionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FILEVERSION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commit = Some(crate::types::Commit::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blob_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_children = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FileVersion {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FileVersion {
     /// Creates a new builder-style object to manufacture [`FileVersion`](crate::types::FileVersion).
     pub fn builder() -> crate::types::builders::FileVersionBuilder {

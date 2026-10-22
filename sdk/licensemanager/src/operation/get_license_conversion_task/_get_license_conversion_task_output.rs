@@ -61,6 +61,256 @@ impl GetLicenseConversionTaskOutput {
         self.end_time.as_ref()
     }
 }
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_LICENSE_CONVERSION_TASK_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$LicenseConversionTaskId",
+            "com.amazonaws.licensemanager.synthetic",
+            "GetLicenseConversionTaskOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "LicenseConversionTaskId",
+        0,
+    );
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$ResourceArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceArn",
+    1,
+);
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_SOURCE_LICENSE_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$SourceLicenseContext",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SourceLicenseContext",
+    2,
+);
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_DESTINATION_LICENSE_CONTEXT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$DestinationLicenseContext",
+            "com.amazonaws.licensemanager.synthetic",
+            "GetLicenseConversionTaskOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DestinationLicenseContext",
+        3,
+    );
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$StatusMessage",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    4,
+);
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$Status",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    5,
+);
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$StartTime",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    6,
+);
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_LICENSE_CONVERSION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$LicenseConversionTime",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LicenseConversionTime",
+    7,
+);
+static GETLICENSECONVERSIONTASKOUTPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput$EndTime",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    8,
+);
+static GETLICENSECONVERSIONTASKOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#GetLicenseConversionTaskOutput",
+        "com.amazonaws.licensemanager.synthetic",
+        "GetLicenseConversionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_LICENSE_CONVERSION_TASK_ID,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_RESOURCE_ARN,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_SOURCE_LICENSE_CONTEXT,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_DESTINATION_LICENSE_CONTEXT,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_STATUS_MESSAGE,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_STATUS,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_START_TIME,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_LICENSE_CONVERSION_TIME,
+        &GETLICENSECONVERSIONTASKOUTPUT_MEMBER_END_TIME,
+    ],
+)
+.with_original_name("GetLicenseConversionTaskResponse");
+impl GetLicenseConversionTaskOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETLICENSECONVERSIONTASKOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetLicenseConversionTaskOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_conversion_task_id {
+            ser.write_string(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_LICENSE_CONVERSION_TASK_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.source_license_context {
+            ser.write_struct(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_SOURCE_LICENSE_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.destination_license_context {
+            ser.write_struct(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_DESTINATION_LICENSE_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.license_conversion_time {
+            ser.write_timestamp(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_LICENSE_CONVERSION_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&GETLICENSECONVERSIONTASKOUTPUT_MEMBER_END_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_license_conversion_task::builders::GetLicenseConversionTaskOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETLICENSECONVERSIONTASKOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_conversion_task_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_license_context = Some(crate::types::LicenseConversionContext::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_license_context = Some(crate::types::LicenseConversionContext::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::LicenseConversionTaskStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_conversion_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetLicenseConversionTaskOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetLicenseConversionTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

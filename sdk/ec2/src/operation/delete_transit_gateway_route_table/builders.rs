@@ -22,7 +22,7 @@ impl crate::operation::delete_transit_gateway_route_table::builders::DeleteTrans
 }
 /// Fluent builder constructing a request to `DeleteTransitGatewayRouteTable`.
 ///
-/// <p>Deletes the specified transit gateway route table. If there are any route tables associated with the transit gateway route table, you must first run <code>DisassociateRouteTable</code> before you can delete the transit gateway route table. This removes any route tables associated with the transit gateway route table.</p>
+/// <p>Deletes the specified transit gateway route table. Before you can delete a transit gateway route table, you must disassociate all attachments from it by using <code>DisassociateTransitGatewayRouteTable</code> and wait for the disassociations to complete. You can't delete a transit gateway route table that is the default association route table or default propagation route table for the transit gateway. To change the default route tables, use <code>ModifyTransitGateway</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTransitGatewayRouteTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

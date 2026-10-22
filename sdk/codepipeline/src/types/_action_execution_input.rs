@@ -51,6 +51,303 @@ impl ActionExecutionInput {
         self.namespace.as_deref()
     }
 }
+static ACTIONEXECUTIONINPUT_MEMBER_ACTION_TYPE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput$actionTypeId",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "actionTypeId",
+    0,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionConfigurationMap$key",
+        "com.amazonaws.codepipeline",
+        "ActionConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_CONFIGURATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionConfigurationMap$value",
+        "com.amazonaws.codepipeline",
+        "ActionConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput$configuration",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "configuration",
+    1,
+)
+.with_map_members(
+    &ACTIONEXECUTIONINPUT_MEMBER_CONFIGURATION_KEY,
+    &ACTIONEXECUTIONINPUT_MEMBER_CONFIGURATION_VALUE,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedActionConfigurationMap$key",
+        "com.amazonaws.codepipeline",
+        "ResolvedActionConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ResolvedActionConfigurationMap$value",
+        "com.amazonaws.codepipeline",
+        "ResolvedActionConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput$resolvedConfiguration",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "resolvedConfiguration",
+    2,
+)
+.with_map_members(
+    &ACTIONEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_KEY,
+    &ACTIONEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION_VALUE,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput$roleArn",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "roleArn",
+    3,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput$region",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "region",
+    4,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactDetailList$member",
+        "com.amazonaws.codepipeline",
+        "ArtifactDetailList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACTIONEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput$inputArtifacts",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "inputArtifacts",
+    5,
+)
+.with_list_member(&ACTIONEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS_MEMBER);
+static ACTIONEXECUTIONINPUT_MEMBER_NAMESPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput$namespace",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "namespace",
+    6,
+);
+static ACTIONEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionInput",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONEXECUTIONINPUT_MEMBER_ACTION_TYPE_ID,
+        &ACTIONEXECUTIONINPUT_MEMBER_CONFIGURATION,
+        &ACTIONEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION,
+        &ACTIONEXECUTIONINPUT_MEMBER_ROLE_ARN,
+        &ACTIONEXECUTIONINPUT_MEMBER_REGION,
+        &ACTIONEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS,
+        &ACTIONEXECUTIONINPUT_MEMBER_NAMESPACE,
+    ],
+);
+impl ActionExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionExecutionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action_type_id {
+            ser.write_struct(&ACTIONEXECUTIONINPUT_MEMBER_ACTION_TYPE_ID, val)?;
+        }
+        if let Some(ref val) = self.configuration {
+            ser.write_map(
+                &ACTIONEXECUTIONINPUT_MEMBER_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resolved_configuration {
+            ser.write_map(
+                &ACTIONEXECUTIONINPUT_MEMBER_RESOLVED_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&ACTIONEXECUTIONINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.region {
+            ser.write_string(&ACTIONEXECUTIONINPUT_MEMBER_REGION, val)?;
+        }
+        if let Some(ref val) = self.input_artifacts {
+            ser.write_list(
+                &ACTIONEXECUTIONINPUT_MEMBER_INPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ArtifactDetail::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.namespace {
+            ser.write_string(&ACTIONEXECUTIONINPUT_MEMBER_NAMESPACE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionExecutionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_type_id = Some(crate::types::ActionTypeId::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resolved_configuration = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ArtifactDetail::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActionExecutionInput {
     /// Creates a new builder-style object to manufacture [`ActionExecutionInput`](crate::types::ActionExecutionInput).
     pub fn builder() -> crate::types::builders::ActionExecutionInputBuilder {

@@ -62,6 +62,157 @@ impl UpdatePullRequestApprovalRuleContentInput {
         self.new_rule_content.as_deref()
     }
 }
+static UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_PULL_REQUEST_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdatePullRequestApprovalRuleContentInput$pullRequestId",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdatePullRequestApprovalRuleContentInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "pullRequestId",
+        0,
+    );
+static UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_APPROVAL_RULE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdatePullRequestApprovalRuleContentInput$approvalRuleName",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdatePullRequestApprovalRuleContentInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "approvalRuleName",
+        1,
+    );
+static UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_EXISTING_RULE_CONTENT_SHA256: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdatePullRequestApprovalRuleContentInput$existingRuleContentSha256",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdatePullRequestApprovalRuleContentInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "existingRuleContentSha256",
+        2,
+    );
+static UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_NEW_RULE_CONTENT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit.synthetic#UpdatePullRequestApprovalRuleContentInput$newRuleContent",
+            "com.amazonaws.codecommit.synthetic",
+            "UpdatePullRequestApprovalRuleContentInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "newRuleContent",
+        3,
+    );
+static UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#UpdatePullRequestApprovalRuleContentInput",
+        "com.amazonaws.codecommit.synthetic",
+        "UpdatePullRequestApprovalRuleContentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_PULL_REQUEST_ID,
+        &UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_APPROVAL_RULE_NAME,
+        &UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_EXISTING_RULE_CONTENT_SHA256,
+        &UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_NEW_RULE_CONTENT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdatePullRequestApprovalRuleContentInput");
+impl UpdatePullRequestApprovalRuleContentInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePullRequestApprovalRuleContentInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pull_request_id {
+            ser.write_string(&UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_PULL_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.approval_rule_name {
+            ser.write_string(&UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_APPROVAL_RULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.existing_rule_content_sha256 {
+            ser.write_string(&UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_EXISTING_RULE_CONTENT_SHA256, val)?;
+        }
+        if let Some(ref val) = self.new_rule_content {
+            ser.write_string(&UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_MEMBER_NEW_RULE_CONTENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEPULLREQUESTAPPROVALRULECONTENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.approval_rule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.existing_rule_content_sha256 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.new_rule_content = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdatePullRequestApprovalRuleContentInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pull_request_id = builder.pull_request_id.or(Some(String::new()));
+        builder.approval_rule_name = builder.approval_rule_name.or(Some(String::new()));
+        builder.new_rule_content = builder.new_rule_content.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdatePullRequestApprovalRuleContentInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestApprovalRuleContentInput`](crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentInput).
     pub fn builder() -> crate::operation::update_pull_request_approval_rule_content::builders::UpdatePullRequestApprovalRuleContentInputBuilder {

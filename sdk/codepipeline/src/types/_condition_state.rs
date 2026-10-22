@@ -21,6 +21,129 @@ impl ConditionState {
         self.rule_states.as_deref().unwrap_or_default()
     }
 }
+static CONDITIONSTATE_MEMBER_LATEST_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionState$latestExecution",
+        "com.amazonaws.codepipeline",
+        "ConditionState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "latestExecution",
+    0,
+);
+static CONDITIONSTATE_MEMBER_RULE_STATES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleStateList$member",
+        "com.amazonaws.codepipeline",
+        "RuleStateList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONDITIONSTATE_MEMBER_RULE_STATES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionState$ruleStates",
+        "com.amazonaws.codepipeline",
+        "ConditionState",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ruleStates",
+    1,
+)
+.with_list_member(&CONDITIONSTATE_MEMBER_RULE_STATES_MEMBER);
+static CONDITIONSTATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionState",
+        "com.amazonaws.codepipeline",
+        "ConditionState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CONDITIONSTATE_MEMBER_LATEST_EXECUTION, &CONDITIONSTATE_MEMBER_RULE_STATES],
+);
+impl ConditionState {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONDITIONSTATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConditionState {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.latest_execution {
+            ser.write_struct(&CONDITIONSTATE_MEMBER_LATEST_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.rule_states {
+            ser.write_list(
+                &CONDITIONSTATE_MEMBER_RULE_STATES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RuleState::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConditionStateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONDITIONSTATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_execution = Some(crate::types::ConditionExecution::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule_states = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RuleState::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConditionState {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConditionState {
     /// Creates a new builder-style object to manufacture [`ConditionState`](crate::types::ConditionState).
     pub fn builder() -> crate::types::builders::ConditionStateBuilder {

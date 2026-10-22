@@ -33,6 +33,170 @@ impl BlockReference {
         self.child_blocks.as_deref().unwrap_or_default()
     }
 }
+static BLOCKREFERENCE_MEMBER_BLOCK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BlockReference$BlockId",
+        "com.amazonaws.comprehend",
+        "BlockReference",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BlockId",
+    0,
+);
+static BLOCKREFERENCE_MEMBER_BEGIN_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BlockReference$BeginOffset",
+        "com.amazonaws.comprehend",
+        "BlockReference",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BeginOffset",
+    1,
+);
+static BLOCKREFERENCE_MEMBER_END_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BlockReference$EndOffset",
+        "com.amazonaws.comprehend",
+        "BlockReference",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EndOffset",
+    2,
+);
+static BLOCKREFERENCE_MEMBER_CHILD_BLOCKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfChildBlocks$member",
+        "com.amazonaws.comprehend",
+        "ListOfChildBlocks",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BLOCKREFERENCE_MEMBER_CHILD_BLOCKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BlockReference$ChildBlocks",
+        "com.amazonaws.comprehend",
+        "BlockReference",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ChildBlocks",
+    3,
+)
+.with_list_member(&BLOCKREFERENCE_MEMBER_CHILD_BLOCKS_MEMBER);
+static BLOCKREFERENCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#BlockReference", "com.amazonaws.comprehend", "BlockReference"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BLOCKREFERENCE_MEMBER_BLOCK_ID,
+        &BLOCKREFERENCE_MEMBER_BEGIN_OFFSET,
+        &BLOCKREFERENCE_MEMBER_END_OFFSET,
+        &BLOCKREFERENCE_MEMBER_CHILD_BLOCKS,
+    ],
+);
+impl BlockReference {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BLOCKREFERENCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BlockReference {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.block_id {
+            ser.write_string(&BLOCKREFERENCE_MEMBER_BLOCK_ID, val)?;
+        }
+        if let Some(ref val) = self.begin_offset {
+            ser.write_integer(&BLOCKREFERENCE_MEMBER_BEGIN_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.end_offset {
+            ser.write_integer(&BLOCKREFERENCE_MEMBER_END_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.child_blocks {
+            ser.write_list(
+                &BLOCKREFERENCE_MEMBER_CHILD_BLOCKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChildBlock::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BlockReferenceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BLOCKREFERENCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.begin_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.child_blocks = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ChildBlock::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BlockReference {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BlockReference {
     /// Creates a new builder-style object to manufacture [`BlockReference`](crate::types::BlockReference).
     pub fn builder() -> crate::types::builders::BlockReferenceBuilder {

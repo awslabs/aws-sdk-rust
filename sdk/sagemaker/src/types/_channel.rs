@@ -57,6 +57,179 @@ impl Channel {
         self.shuffle_config.as_ref()
     }
 }
+static CHANNEL_MEMBER_CHANNEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel$ChannelName", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelName",
+    0,
+);
+static CHANNEL_MEMBER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel$DataSource", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataSource",
+    1,
+);
+static CHANNEL_MEMBER_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel$ContentType", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentType",
+    2,
+);
+static CHANNEL_MEMBER_COMPRESSION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel$CompressionType", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompressionType",
+    3,
+);
+static CHANNEL_MEMBER_RECORD_WRAPPER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel$RecordWrapperType", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "RecordWrapperType",
+    4,
+);
+static CHANNEL_MEMBER_INPUT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel$InputMode", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "InputMode",
+    5,
+);
+static CHANNEL_MEMBER_SHUFFLE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel$ShuffleConfig", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ShuffleConfig",
+    6,
+);
+static CHANNEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Channel", "com.amazonaws.sagemaker", "Channel"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHANNEL_MEMBER_CHANNEL_NAME,
+        &CHANNEL_MEMBER_DATA_SOURCE,
+        &CHANNEL_MEMBER_CONTENT_TYPE,
+        &CHANNEL_MEMBER_COMPRESSION_TYPE,
+        &CHANNEL_MEMBER_RECORD_WRAPPER_TYPE,
+        &CHANNEL_MEMBER_INPUT_MODE,
+        &CHANNEL_MEMBER_SHUFFLE_CONFIG,
+    ],
+);
+impl Channel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHANNEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Channel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.channel_name {
+            ser.write_string(&CHANNEL_MEMBER_CHANNEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.data_source {
+            ser.write_struct(&CHANNEL_MEMBER_DATA_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.content_type {
+            ser.write_string(&CHANNEL_MEMBER_CONTENT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.compression_type {
+            ser.write_string(&CHANNEL_MEMBER_COMPRESSION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.record_wrapper_type {
+            ser.write_string(&CHANNEL_MEMBER_RECORD_WRAPPER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.input_mode {
+            ser.write_string(&CHANNEL_MEMBER_INPUT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.shuffle_config {
+            ser.write_struct(&CHANNEL_MEMBER_SHUFFLE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ChannelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHANNEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_source = Some(crate::types::DataSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compression_type = Some(crate::types::CompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.record_wrapper_type = Some(crate::types::RecordWrapper::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_mode = Some(crate::types::TrainingInputMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.shuffle_config = Some(crate::types::ShuffleConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Channel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Channel {
     /// Creates a new builder-style object to manufacture [`Channel`](crate::types::Channel).
     pub fn builder() -> crate::types::builders::ChannelBuilder {

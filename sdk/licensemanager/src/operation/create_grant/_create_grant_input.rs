@@ -78,6 +78,288 @@ impl CreateGrantInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEGRANTINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$ClientToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    0,
+);
+static CREATEGRANTINPUT_MEMBER_GRANT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$GrantName",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GrantName",
+    1,
+);
+static CREATEGRANTINPUT_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$LicenseArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    2,
+);
+static CREATEGRANTINPUT_MEMBER_PRINCIPALS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#PrincipalArnList$member",
+        "com.amazonaws.licensemanager",
+        "PrincipalArnList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEGRANTINPUT_MEMBER_PRINCIPALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$Principals",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Principals",
+    3,
+)
+.with_list_member(&CREATEGRANTINPUT_MEMBER_PRINCIPALS_MEMBER);
+static CREATEGRANTINPUT_MEMBER_HOME_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$HomeRegion",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeRegion",
+    4,
+);
+static CREATEGRANTINPUT_MEMBER_ALLOWED_OPERATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#AllowedOperationList$member",
+        "com.amazonaws.licensemanager",
+        "AllowedOperationList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEGRANTINPUT_MEMBER_ALLOWED_OPERATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$AllowedOperations",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AllowedOperations",
+    5,
+)
+.with_list_member(&CREATEGRANTINPUT_MEMBER_ALLOWED_OPERATIONS_MEMBER);
+static CREATEGRANTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#TagList$member", "com.amazonaws.licensemanager", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEGRANTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput$Tags",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    6,
+)
+.with_list_member(&CREATEGRANTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEGRANTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateGrantInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateGrantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEGRANTINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATEGRANTINPUT_MEMBER_GRANT_NAME,
+        &CREATEGRANTINPUT_MEMBER_LICENSE_ARN,
+        &CREATEGRANTINPUT_MEMBER_PRINCIPALS,
+        &CREATEGRANTINPUT_MEMBER_HOME_REGION,
+        &CREATEGRANTINPUT_MEMBER_ALLOWED_OPERATIONS,
+        &CREATEGRANTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateGrantRequest");
+impl CreateGrantInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEGRANTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateGrantInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATEGRANTINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.grant_name {
+            ser.write_string(&CREATEGRANTINPUT_MEMBER_GRANT_NAME, val)?;
+        }
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&CREATEGRANTINPUT_MEMBER_LICENSE_ARN, val)?;
+        }
+        if let Some(ref val) = self.principals {
+            ser.write_list(
+                &CREATEGRANTINPUT_MEMBER_PRINCIPALS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.home_region {
+            ser.write_string(&CREATEGRANTINPUT_MEMBER_HOME_REGION, val)?;
+        }
+        if let Some(ref val) = self.allowed_operations {
+            ser.write_list(
+                &CREATEGRANTINPUT_MEMBER_ALLOWED_OPERATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEGRANTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_grant::builders::CreateGrantInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEGRANTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.grant_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principals = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allowed_operations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AllowedOperation::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateGrantInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.grant_name = builder.grant_name.or(Some(String::new()));
+        builder.license_arn = builder.license_arn.or(Some(String::new()));
+        builder.principals = builder.principals.or(Some(Vec::new()));
+        builder.home_region = builder.home_region.or(Some(String::new()));
+        builder.allowed_operations = builder.allowed_operations.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateGrantInput {
     /// Creates a new builder-style object to manufacture [`CreateGrantInput`](crate::operation::create_grant::CreateGrantInput).
     pub fn builder() -> crate::operation::create_grant::builders::CreateGrantInputBuilder {

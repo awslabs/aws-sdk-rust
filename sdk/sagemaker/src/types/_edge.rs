@@ -25,6 +25,107 @@ impl Edge {
         self.association_type.as_ref()
     }
 }
+static EDGE_MEMBER_SOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Edge$SourceArn", "com.amazonaws.sagemaker", "Edge"),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceArn",
+    0,
+);
+static EDGE_MEMBER_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Edge$DestinationArn", "com.amazonaws.sagemaker", "Edge"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DestinationArn",
+    1,
+);
+static EDGE_MEMBER_ASSOCIATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Edge$AssociationType", "com.amazonaws.sagemaker", "Edge"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationType",
+    2,
+);
+static EDGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Edge", "com.amazonaws.sagemaker", "Edge"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EDGE_MEMBER_SOURCE_ARN, &EDGE_MEMBER_DESTINATION_ARN, &EDGE_MEMBER_ASSOCIATION_TYPE],
+);
+impl Edge {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EDGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Edge {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_arn {
+            ser.write_string(&EDGE_MEMBER_SOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.destination_arn {
+            ser.write_string(&EDGE_MEMBER_DESTINATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.association_type {
+            ser.write_string(&EDGE_MEMBER_ASSOCIATION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EdgeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EDGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.association_type = Some(crate::types::AssociationEdgeType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Edge {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Edge {
     /// Creates a new builder-style object to manufacture [`Edge`](crate::types::Edge).
     pub fn builder() -> crate::types::builders::EdgeBuilder {

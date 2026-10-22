@@ -50,6 +50,193 @@ impl UpdateVocabularyFilterInput {
         self.encryption_configuration.as_ref()
     }
 }
+static UPDATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyFilterInput$VocabularyFilterName",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterName",
+    0,
+)
+.with_http_label();
+static UPDATEVOCABULARYFILTERINPUT_MEMBER_WORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#Words$member", "com.amazonaws.transcribe", "Words"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEVOCABULARYFILTERINPUT_MEMBER_WORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyFilterInput$Words",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Words",
+    1,
+)
+.with_list_member(&UPDATEVOCABULARYFILTERINPUT_MEMBER_WORDS_MEMBER);
+static UPDATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_FILE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyFilterInput$VocabularyFilterFileUri",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterFileUri",
+    2,
+);
+static UPDATEVOCABULARYFILTERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyFilterInput$DataAccessRoleArn",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    3,
+);
+static UPDATEVOCABULARYFILTERINPUT_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyFilterInput$EncryptionConfiguration",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    4,
+);
+static UPDATEVOCABULARYFILTERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#UpdateVocabularyFilterInput",
+        "com.amazonaws.transcribe.synthetic",
+        "UpdateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_NAME,
+        &UPDATEVOCABULARYFILTERINPUT_MEMBER_WORDS,
+        &UPDATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_FILE_URI,
+        &UPDATEVOCABULARYFILTERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &UPDATEVOCABULARYFILTERINPUT_MEMBER_ENCRYPTION_CONFIGURATION,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PUT",
+    "/vocabularyFilters/{VocabularyFilterName}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateVocabularyFilterRequest");
+impl UpdateVocabularyFilterInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEVOCABULARYFILTERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateVocabularyFilterInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_filter_name {
+            ser.write_string(&UPDATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.words {
+            ser.write_list(
+                &UPDATEVOCABULARYFILTERINPUT_MEMBER_WORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vocabulary_filter_file_uri {
+            ser.write_string(&UPDATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_FILE_URI, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&UPDATEVOCABULARYFILTERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&UPDATEVOCABULARYFILTERINPUT_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_vocabulary_filter::builders::UpdateVocabularyFilterInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEVOCABULARYFILTERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.words = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_file_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::EncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateVocabularyFilterInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.vocabulary_filter_name = builder.vocabulary_filter_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateVocabularyFilterInput {
     /// Creates a new builder-style object to manufacture [`UpdateVocabularyFilterInput`](crate::operation::update_vocabulary_filter::UpdateVocabularyFilterInput).
     pub fn builder() -> crate::operation::update_vocabulary_filter::builders::UpdateVocabularyFilterInputBuilder {

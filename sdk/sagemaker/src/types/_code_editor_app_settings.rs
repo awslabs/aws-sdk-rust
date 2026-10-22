@@ -46,6 +46,210 @@ impl CodeEditorAppSettings {
         self.built_in_lifecycle_config_arn.as_deref()
     }
 }
+static CODEEDITORAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeEditorAppSettings$DefaultResourceSpec",
+        "com.amazonaws.sagemaker",
+        "CodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultResourceSpec",
+    0,
+);
+static CODEEDITORAPPSETTINGS_MEMBER_CUSTOM_IMAGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#CustomImages$member", "com.amazonaws.sagemaker", "CustomImages"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CODEEDITORAPPSETTINGS_MEMBER_CUSTOM_IMAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeEditorAppSettings$CustomImages",
+        "com.amazonaws.sagemaker",
+        "CodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CustomImages",
+    1,
+)
+.with_list_member(&CODEEDITORAPPSETTINGS_MEMBER_CUSTOM_IMAGES_MEMBER);
+static CODEEDITORAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LifecycleConfigArns$member",
+        "com.amazonaws.sagemaker",
+        "LifecycleConfigArns",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CODEEDITORAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeEditorAppSettings$LifecycleConfigArns",
+        "com.amazonaws.sagemaker",
+        "CodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LifecycleConfigArns",
+    2,
+)
+.with_list_member(&CODEEDITORAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS_MEMBER);
+static CODEEDITORAPPSETTINGS_MEMBER_APP_LIFECYCLE_MANAGEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeEditorAppSettings$AppLifecycleManagement",
+        "com.amazonaws.sagemaker",
+        "CodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AppLifecycleManagement",
+    3,
+);
+static CODEEDITORAPPSETTINGS_MEMBER_BUILT_IN_LIFECYCLE_CONFIG_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeEditorAppSettings$BuiltInLifecycleConfigArn",
+        "com.amazonaws.sagemaker",
+        "CodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BuiltInLifecycleConfigArn",
+    4,
+);
+static CODEEDITORAPPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CodeEditorAppSettings",
+        "com.amazonaws.sagemaker",
+        "CodeEditorAppSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CODEEDITORAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC,
+        &CODEEDITORAPPSETTINGS_MEMBER_CUSTOM_IMAGES,
+        &CODEEDITORAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS,
+        &CODEEDITORAPPSETTINGS_MEMBER_APP_LIFECYCLE_MANAGEMENT,
+        &CODEEDITORAPPSETTINGS_MEMBER_BUILT_IN_LIFECYCLE_CONFIG_ARN,
+    ],
+);
+impl CodeEditorAppSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CODEEDITORAPPSETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CodeEditorAppSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.default_resource_spec {
+            ser.write_struct(&CODEEDITORAPPSETTINGS_MEMBER_DEFAULT_RESOURCE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.custom_images {
+            ser.write_list(
+                &CODEEDITORAPPSETTINGS_MEMBER_CUSTOM_IMAGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CustomImage::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.lifecycle_config_arns {
+            ser.write_list(
+                &CODEEDITORAPPSETTINGS_MEMBER_LIFECYCLE_CONFIG_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.app_lifecycle_management {
+            ser.write_struct(&CODEEDITORAPPSETTINGS_MEMBER_APP_LIFECYCLE_MANAGEMENT, val)?;
+        }
+        if let Some(ref val) = self.built_in_lifecycle_config_arn {
+            ser.write_string(&CODEEDITORAPPSETTINGS_MEMBER_BUILT_IN_LIFECYCLE_CONFIG_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CodeEditorAppSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CODEEDITORAPPSETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_images = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CustomImage::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_config_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_lifecycle_management = Some(crate::types::AppLifecycleManagement::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.built_in_lifecycle_config_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CodeEditorAppSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CodeEditorAppSettings {
     /// Creates a new builder-style object to manufacture [`CodeEditorAppSettings`](crate::types::CodeEditorAppSettings).
     pub fn builder() -> crate::types::builders::CodeEditorAppSettingsBuilder {

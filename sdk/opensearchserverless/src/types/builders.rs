@@ -37,6 +37,14 @@ pub use crate::types::_create_collection_group_detail::CreateCollectionGroupDeta
 
 pub use crate::types::_update_collection_group_detail::UpdateCollectionGroupDetailBuilder;
 
+pub use crate::types::_ingestion_job_source::IngestionJobSourceBuilder;
+
+pub use crate::types::_ingestion_job_detail::IngestionJobDetailBuilder;
+
+pub use crate::types::_ingestion_stream_source::IngestionStreamSourceBuilder;
+
+pub use crate::types::_ingestion_stream_detail::IngestionStreamDetailBuilder;
+
 pub use crate::types::_saml_config_options::SamlConfigOptionsBuilder;
 
 pub use crate::types::_create_iam_identity_center_config_options::CreateIamIdentityCenterConfigOptionsBuilder;
@@ -83,6 +91,16 @@ pub use crate::types::_collection_summary::CollectionSummaryBuilder;
 
 pub use crate::types::_collection_group_summary::CollectionGroupSummaryBuilder;
 
+pub use crate::types::_ingestion_job_summary::IngestionJobSummaryBuilder;
+
+pub use crate::types::_ingestion_job_s3_source::IngestionJobS3SourceBuilder;
+
+pub use crate::types::_ingestion_statistics::IngestionStatisticsBuilder;
+
+pub use crate::types::_ingestion_stream_summary::IngestionStreamSummaryBuilder;
+
+pub use crate::types::_ingestion_stream_s3_source::IngestionStreamS3SourceBuilder;
+
 pub use crate::types::_lifecycle_policy_summary::LifecyclePolicySummaryBuilder;
 
 pub use crate::types::_security_config_summary::SecurityConfigSummaryBuilder;
@@ -97,4 +115,12 @@ pub use crate::types::_fips_endpoints::FipsEndpointsBuilder;
 
 pub use crate::types::_current_capacity::CurrentCapacityBuilder;
 
+pub use crate::types::_s3_statistics::S3StatisticsBuilder;
+
+pub use crate::types::_ingestion_failure_reason::IngestionFailureReasonBuilder;
+
+pub use crate::types::_ingestion_alert::IngestionAlertBuilder;
+
 pub use crate::types::_capacity_details::CapacityDetailsBuilder;
+
+pub use crate::types::_stream_bucket_config::StreamBucketConfigBuilder;

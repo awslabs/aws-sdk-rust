@@ -14,6 +14,84 @@ impl RemoveTagsFromResourceOutput {
         self.resource_arn.as_deref()
     }
 }
+static REMOVETAGSFROMRESOURCEOUTPUT_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#RemoveTagsFromResourceOutput$ResourceARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "RemoveTagsFromResourceOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceARN",
+    0,
+);
+static REMOVETAGSFROMRESOURCEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#RemoveTagsFromResourceOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "RemoveTagsFromResourceOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&REMOVETAGSFROMRESOURCEOUTPUT_MEMBER_RESOURCE_ARN],
+)
+.with_original_name("RemoveTagsFromResourceOutput");
+impl RemoveTagsFromResourceOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMOVETAGSFROMRESOURCEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemoveTagsFromResourceOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&REMOVETAGSFROMRESOURCEOUTPUT_MEMBER_RESOURCE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REMOVETAGSFROMRESOURCEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RemoveTagsFromResourceOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for RemoveTagsFromResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

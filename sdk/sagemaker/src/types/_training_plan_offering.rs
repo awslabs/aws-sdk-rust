@@ -88,6 +88,307 @@ impl TrainingPlanOffering {
         self.reserved_capacity_offerings.as_deref().unwrap_or_default()
     }
 }
+static TRAININGPLANOFFERING_MEMBER_TRAINING_PLAN_OFFERING_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$TrainingPlanOfferingId",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingPlanOfferingId",
+    0,
+);
+static TRAININGPLANOFFERING_MEMBER_TARGET_RESOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SageMakerResourceNames$member",
+        "com.amazonaws.sagemaker",
+        "SageMakerResourceNames",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static TRAININGPLANOFFERING_MEMBER_TARGET_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$TargetResources",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetResources",
+    1,
+)
+.with_list_member(&TRAININGPLANOFFERING_MEMBER_TARGET_RESOURCES_MEMBER);
+static TRAININGPLANOFFERING_MEMBER_REQUESTED_START_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$RequestedStartTimeAfter",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestedStartTimeAfter",
+    2,
+);
+static TRAININGPLANOFFERING_MEMBER_REQUESTED_END_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$RequestedEndTimeBefore",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestedEndTimeBefore",
+    3,
+);
+static TRAININGPLANOFFERING_MEMBER_DURATION_HOURS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$DurationHours",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationHours",
+    4,
+);
+static TRAININGPLANOFFERING_MEMBER_DURATION_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$DurationMinutes",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DurationMinutes",
+    5,
+);
+static TRAININGPLANOFFERING_MEMBER_UPFRONT_FEE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$UpfrontFee",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UpfrontFee",
+    6,
+);
+static TRAININGPLANOFFERING_MEMBER_CURRENCY_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$CurrencyCode",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CurrencyCode",
+    7,
+);
+static TRAININGPLANOFFERING_MEMBER_RESERVED_CAPACITY_OFFERINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ReservedCapacityOfferings$member",
+        "com.amazonaws.sagemaker",
+        "ReservedCapacityOfferings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGPLANOFFERING_MEMBER_RESERVED_CAPACITY_OFFERINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering$ReservedCapacityOfferings",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ReservedCapacityOfferings",
+    8,
+)
+.with_list_member(&TRAININGPLANOFFERING_MEMBER_RESERVED_CAPACITY_OFFERINGS_MEMBER);
+static TRAININGPLANOFFERING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingPlanOffering",
+        "com.amazonaws.sagemaker",
+        "TrainingPlanOffering",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGPLANOFFERING_MEMBER_TRAINING_PLAN_OFFERING_ID,
+        &TRAININGPLANOFFERING_MEMBER_TARGET_RESOURCES,
+        &TRAININGPLANOFFERING_MEMBER_REQUESTED_START_TIME_AFTER,
+        &TRAININGPLANOFFERING_MEMBER_REQUESTED_END_TIME_BEFORE,
+        &TRAININGPLANOFFERING_MEMBER_DURATION_HOURS,
+        &TRAININGPLANOFFERING_MEMBER_DURATION_MINUTES,
+        &TRAININGPLANOFFERING_MEMBER_UPFRONT_FEE,
+        &TRAININGPLANOFFERING_MEMBER_CURRENCY_CODE,
+        &TRAININGPLANOFFERING_MEMBER_RESERVED_CAPACITY_OFFERINGS,
+    ],
+);
+impl TrainingPlanOffering {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGPLANOFFERING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingPlanOffering {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_plan_offering_id {
+            ser.write_string(&TRAININGPLANOFFERING_MEMBER_TRAINING_PLAN_OFFERING_ID, val)?;
+        }
+        if let Some(ref val) = self.target_resources {
+            ser.write_list(
+                &TRAININGPLANOFFERING_MEMBER_TARGET_RESOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.requested_start_time_after {
+            ser.write_timestamp(&TRAININGPLANOFFERING_MEMBER_REQUESTED_START_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.requested_end_time_before {
+            ser.write_timestamp(&TRAININGPLANOFFERING_MEMBER_REQUESTED_END_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.duration_hours {
+            ser.write_long(&TRAININGPLANOFFERING_MEMBER_DURATION_HOURS, *val)?;
+        }
+        if let Some(ref val) = self.duration_minutes {
+            ser.write_long(&TRAININGPLANOFFERING_MEMBER_DURATION_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.upfront_fee {
+            ser.write_string(&TRAININGPLANOFFERING_MEMBER_UPFRONT_FEE, val)?;
+        }
+        if let Some(ref val) = self.currency_code {
+            ser.write_string(&TRAININGPLANOFFERING_MEMBER_CURRENCY_CODE, val)?;
+        }
+        if let Some(ref val) = self.reserved_capacity_offerings {
+            ser.write_list(
+                &TRAININGPLANOFFERING_MEMBER_RESERVED_CAPACITY_OFFERINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ReservedCapacityOffering::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingPlanOfferingBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGPLANOFFERING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_offering_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_resources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::SageMakerResourceName::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requested_start_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.requested_end_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_hours = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.duration_minutes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.upfront_fee = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.currency_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reserved_capacity_offerings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ReservedCapacityOffering::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingPlanOffering {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingPlanOffering {
     /// Creates a new builder-style object to manufacture [`TrainingPlanOffering`](crate::types::TrainingPlanOffering).
     pub fn builder() -> crate::types::builders::TrainingPlanOfferingBuilder {

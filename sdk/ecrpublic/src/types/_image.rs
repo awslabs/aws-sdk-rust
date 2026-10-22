@@ -37,6 +37,145 @@ impl Image {
         self.image_manifest_media_type.as_deref()
     }
 }
+static IMAGE_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Image$registryId", "com.amazonaws.ecrpublic", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static IMAGE_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Image$repositoryName", "com.amazonaws.ecrpublic", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static IMAGE_MEMBER_IMAGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Image$imageId", "com.amazonaws.ecrpublic", "Image"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "imageId",
+    2,
+);
+static IMAGE_MEMBER_IMAGE_MANIFEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Image$imageManifest", "com.amazonaws.ecrpublic", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageManifest",
+    3,
+);
+static IMAGE_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Image$imageManifestMediaType", "com.amazonaws.ecrpublic", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageManifestMediaType",
+    4,
+);
+static IMAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecrpublic#Image", "com.amazonaws.ecrpublic", "Image"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMAGE_MEMBER_REGISTRY_ID,
+        &IMAGE_MEMBER_REPOSITORY_NAME,
+        &IMAGE_MEMBER_IMAGE_ID,
+        &IMAGE_MEMBER_IMAGE_MANIFEST,
+        &IMAGE_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE,
+    ],
+);
+impl Image {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Image {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&IMAGE_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&IMAGE_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_id {
+            ser.write_struct(&IMAGE_MEMBER_IMAGE_ID, val)?;
+        }
+        if let Some(ref val) = self.image_manifest {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_MANIFEST, val)?;
+        }
+        if let Some(ref val) = self.image_manifest_media_type {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ImageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_id = Some(crate::types::ImageIdentifier::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_manifest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_manifest_media_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Image {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
     pub fn builder() -> crate::types::builders::ImageBuilder {

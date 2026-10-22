@@ -566,6 +566,15 @@ pub(crate) fn list_realtime_contact_analysis_segments_v2_output_output_correct_e
     builder
 }
 
+pub(crate) fn list_replication_findings_output_output_correct_errors(
+    mut builder: crate::operation::list_replication_findings::builders::ListReplicationFindingsOutputBuilder,
+) -> crate::operation::list_replication_findings::builders::ListReplicationFindingsOutputBuilder {
+    if builder.replication_findings_list.is_none() {
+        builder.replication_findings_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_rules_output_output_correct_errors(
     mut builder: crate::operation::list_rules::builders::ListRulesOutputBuilder,
 ) -> crate::operation::list_rules::builders::ListRulesOutputBuilder {
@@ -1101,6 +1110,21 @@ pub(crate) fn alias_configuration_correct_errors(
 ) -> crate::types::builders::AliasConfigurationBuilder {
     if builder.email_address_id.is_none() {
         builder.email_address_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn approximate_drifted_resource_count_correct_errors(
+    mut builder: crate::types::builders::ApproximateDriftedResourceCountBuilder,
+) -> crate::types::builders::ApproximateDriftedResourceCountBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1738,6 +1762,33 @@ pub(crate) fn recurrence_config_correct_errors(
             let builder = crate::types::builders::RecurrencePatternBuilder::default();
             crate::serde_util::recurrence_pattern_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn replication_finding_correct_errors(
+    mut builder: crate::types::builders::ReplicationFindingBuilder,
+) -> crate::types::builders::ReplicationFindingBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_replication_status_correct_errors(
+    mut builder: crate::types::builders::ResourceReplicationStatusBuilder,
+) -> crate::types::builders::ResourceReplicationStatusBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
     }
     builder
 }

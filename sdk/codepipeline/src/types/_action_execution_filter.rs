@@ -23,6 +23,106 @@ impl ActionExecutionFilter {
         self.latest_in_pipeline_execution.as_ref()
     }
 }
+static ACTIONEXECUTIONFILTER_MEMBER_PIPELINE_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionFilter$pipelineExecutionId",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineExecutionId",
+    0,
+);
+static ACTIONEXECUTIONFILTER_MEMBER_LATEST_IN_PIPELINE_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionFilter$latestInPipelineExecution",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "latestInPipelineExecution",
+    1,
+);
+static ACTIONEXECUTIONFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionExecutionFilter",
+        "com.amazonaws.codepipeline",
+        "ActionExecutionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONEXECUTIONFILTER_MEMBER_PIPELINE_EXECUTION_ID,
+        &ACTIONEXECUTIONFILTER_MEMBER_LATEST_IN_PIPELINE_EXECUTION,
+    ],
+);
+impl ActionExecutionFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONEXECUTIONFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionExecutionFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_execution_id {
+            ser.write_string(&ACTIONEXECUTIONFILTER_MEMBER_PIPELINE_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.latest_in_pipeline_execution {
+            ser.write_struct(&ACTIONEXECUTIONFILTER_MEMBER_LATEST_IN_PIPELINE_EXECUTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionExecutionFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONEXECUTIONFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_in_pipeline_execution = Some(crate::types::LatestInPipelineExecutionFilter::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionExecutionFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActionExecutionFilter {
     /// Creates a new builder-style object to manufacture [`ActionExecutionFilter`](crate::types::ActionExecutionFilter).
     pub fn builder() -> crate::types::builders::ActionExecutionFilterBuilder {

@@ -74,6 +74,324 @@ impl CreateAiRecommendationJobInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_AI_RECOMMENDATION_JOB_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$AIRecommendationJobName",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateAIRecommendationJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AIRecommendationJobName",
+        0,
+    );
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_MODEL_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$ModelSource",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "ModelSource",
+    1,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$OutputConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputConfig",
+    2,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_AI_WORKLOAD_CONFIG_IDENTIFIER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$AIWorkloadConfigIdentifier",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateAIRecommendationJobInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AIWorkloadConfigIdentifier",
+        3,
+    );
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_PERFORMANCE_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$PerformanceTarget",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PerformanceTarget",
+    4,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    5,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_INFERENCE_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$InferenceSpecification",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InferenceSpecification",
+    6,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_OPTIMIZE_MODEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$OptimizeModel",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "OptimizeModel",
+    7,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_COMPUTE_SPEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$ComputeSpec",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ComputeSpec",
+    8,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_ADAPTER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$AdapterSource",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "AdapterSource",
+    9,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    10,
+)
+.with_list_member(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATEAIRECOMMENDATIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateAIRecommendationJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateAIRecommendationJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_AI_RECOMMENDATION_JOB_NAME,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_MODEL_SOURCE,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_OUTPUT_CONFIG,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_AI_WORKLOAD_CONFIG_IDENTIFIER,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_PERFORMANCE_TARGET,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_ROLE_ARN,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_INFERENCE_SPECIFICATION,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_OPTIMIZE_MODEL,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_COMPUTE_SPEC,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_ADAPTER_SOURCE,
+        &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAIRecommendationJobRequest");
+impl CreateAiRecommendationJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEAIRECOMMENDATIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAiRecommendationJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ai_recommendation_job_name {
+            ser.write_string(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_AI_RECOMMENDATION_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_source {
+            ser.write_struct(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_MODEL_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.output_config {
+            ser.write_struct(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.ai_workload_config_identifier {
+            ser.write_string(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_AI_WORKLOAD_CONFIG_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.performance_target {
+            ser.write_struct(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_PERFORMANCE_TARGET, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.inference_specification {
+            ser.write_struct(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_INFERENCE_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.optimize_model {
+            ser.write_boolean(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_OPTIMIZE_MODEL, *val)?;
+        }
+        if let Some(ref val) = self.compute_spec {
+            ser.write_struct(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_COMPUTE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.adapter_source {
+            ser.write_struct(&CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_ADAPTER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEAIRECOMMENDATIONJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_ai_recommendation_job::builders::CreateAiRecommendationJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEAIRECOMMENDATIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_recommendation_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_source = Some(crate::types::AiModelSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_config = Some(crate::types::AiRecommendationOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_workload_config_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.performance_target = Some(crate::types::AiRecommendationPerformanceTarget::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_specification = Some(crate::types::AiRecommendationInferenceSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.optimize_model = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compute_spec = Some(crate::types::AiRecommendationComputeSpec::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.adapter_source = Some(crate::types::AiAdapterSource::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateAiRecommendationJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.ai_recommendation_job_name = builder.ai_recommendation_job_name.or(Some(String::new()));
+        builder.ai_workload_config_identifier = builder.ai_workload_config_identifier.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateAiRecommendationJobInput {
     /// Creates a new builder-style object to manufacture [`CreateAiRecommendationJobInput`](crate::operation::create_ai_recommendation_job::CreateAiRecommendationJobInput).
     pub fn builder() -> crate::operation::create_ai_recommendation_job::builders::CreateAiRecommendationJobInputBuilder {

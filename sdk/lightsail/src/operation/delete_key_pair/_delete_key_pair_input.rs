@@ -22,6 +22,111 @@ impl DeleteKeyPairInput {
         self.expected_fingerprint.as_deref()
     }
 }
+static DELETEKEYPAIRINPUT_MEMBER_KEY_PAIR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DeleteKeyPairInput$keyPairName",
+        "com.amazonaws.lightsail.synthetic",
+        "DeleteKeyPairInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "keyPairName",
+    0,
+);
+static DELETEKEYPAIRINPUT_MEMBER_EXPECTED_FINGERPRINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DeleteKeyPairInput$expectedFingerprint",
+        "com.amazonaws.lightsail.synthetic",
+        "DeleteKeyPairInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "expectedFingerprint",
+    1,
+);
+static DELETEKEYPAIRINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DeleteKeyPairInput",
+        "com.amazonaws.lightsail.synthetic",
+        "DeleteKeyPairInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETEKEYPAIRINPUT_MEMBER_KEY_PAIR_NAME, &DELETEKEYPAIRINPUT_MEMBER_EXPECTED_FINGERPRINT],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/DeleteKeyPair",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteKeyPairRequest");
+impl DeleteKeyPairInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETEKEYPAIRINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteKeyPairInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.key_pair_name {
+            ser.write_string(&DELETEKEYPAIRINPUT_MEMBER_KEY_PAIR_NAME, val)?;
+        }
+        if let Some(ref val) = self.expected_fingerprint {
+            ser.write_string(&DELETEKEYPAIRINPUT_MEMBER_EXPECTED_FINGERPRINT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_key_pair::builders::DeleteKeyPairInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETEKEYPAIRINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_pair_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expected_fingerprint = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteKeyPairInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.key_pair_name = builder.key_pair_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteKeyPairInput {
     /// Creates a new builder-style object to manufacture [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
     pub fn builder() -> crate::operation::delete_key_pair::builders::DeleteKeyPairInputBuilder {

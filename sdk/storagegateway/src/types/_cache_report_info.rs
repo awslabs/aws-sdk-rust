@@ -85,6 +85,390 @@ impl CacheReportInfo {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CACHEREPORTINFO_MEMBER_CACHE_REPORT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$CacheReportARN",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CacheReportARN",
+    0,
+);
+static CACHEREPORTINFO_MEMBER_CACHE_REPORT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$CacheReportStatus",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CacheReportStatus",
+    1,
+);
+static CACHEREPORTINFO_MEMBER_REPORT_COMPLETION_PERCENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$ReportCompletionPercent",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ReportCompletionPercent",
+    2,
+);
+static CACHEREPORTINFO_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$EndTime",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    3,
+);
+static CACHEREPORTINFO_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$Role",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    4,
+);
+static CACHEREPORTINFO_MEMBER_FILE_SHARE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$FileShareARN",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareARN",
+    5,
+);
+static CACHEREPORTINFO_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$LocationARN",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationARN",
+    6,
+);
+static CACHEREPORTINFO_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$StartTime",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    7,
+);
+static CACHEREPORTINFO_MEMBER_INCLUSION_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportFilterList$member",
+        "com.amazonaws.storagegateway",
+        "CacheReportFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CACHEREPORTINFO_MEMBER_INCLUSION_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$InclusionFilters",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InclusionFilters",
+    8,
+)
+.with_list_member(&CACHEREPORTINFO_MEMBER_INCLUSION_FILTERS_MEMBER);
+static CACHEREPORTINFO_MEMBER_EXCLUSION_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportFilterList$member",
+        "com.amazonaws.storagegateway",
+        "CacheReportFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CACHEREPORTINFO_MEMBER_EXCLUSION_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$ExclusionFilters",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExclusionFilters",
+    9,
+)
+.with_list_member(&CACHEREPORTINFO_MEMBER_EXCLUSION_FILTERS_MEMBER);
+static CACHEREPORTINFO_MEMBER_REPORT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$ReportName",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReportName",
+    10,
+);
+static CACHEREPORTINFO_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CACHEREPORTINFO_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo$Tags",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    11,
+)
+.with_list_member(&CACHEREPORTINFO_MEMBER_TAGS_MEMBER);
+static CACHEREPORTINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportInfo",
+        "com.amazonaws.storagegateway",
+        "CacheReportInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CACHEREPORTINFO_MEMBER_CACHE_REPORT_ARN,
+        &CACHEREPORTINFO_MEMBER_CACHE_REPORT_STATUS,
+        &CACHEREPORTINFO_MEMBER_REPORT_COMPLETION_PERCENT,
+        &CACHEREPORTINFO_MEMBER_END_TIME,
+        &CACHEREPORTINFO_MEMBER_ROLE,
+        &CACHEREPORTINFO_MEMBER_FILE_SHARE_ARN,
+        &CACHEREPORTINFO_MEMBER_LOCATION_ARN,
+        &CACHEREPORTINFO_MEMBER_START_TIME,
+        &CACHEREPORTINFO_MEMBER_INCLUSION_FILTERS,
+        &CACHEREPORTINFO_MEMBER_EXCLUSION_FILTERS,
+        &CACHEREPORTINFO_MEMBER_REPORT_NAME,
+        &CACHEREPORTINFO_MEMBER_TAGS,
+    ],
+);
+impl CacheReportInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CACHEREPORTINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CacheReportInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cache_report_arn {
+            ser.write_string(&CACHEREPORTINFO_MEMBER_CACHE_REPORT_ARN, val)?;
+        }
+        if let Some(ref val) = self.cache_report_status {
+            ser.write_string(&CACHEREPORTINFO_MEMBER_CACHE_REPORT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.report_completion_percent {
+            ser.write_integer(&CACHEREPORTINFO_MEMBER_REPORT_COMPLETION_PERCENT, *val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&CACHEREPORTINFO_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&CACHEREPORTINFO_MEMBER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.file_share_arn {
+            ser.write_string(&CACHEREPORTINFO_MEMBER_FILE_SHARE_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&CACHEREPORTINFO_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&CACHEREPORTINFO_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.inclusion_filters {
+            ser.write_list(
+                &CACHEREPORTINFO_MEMBER_INCLUSION_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CacheReportFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.exclusion_filters {
+            ser.write_list(
+                &CACHEREPORTINFO_MEMBER_EXCLUSION_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CacheReportFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.report_name {
+            ser.write_string(&CACHEREPORTINFO_MEMBER_REPORT_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CACHEREPORTINFO_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CacheReportInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CACHEREPORTINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_report_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_report_status = Some(crate::types::CacheReportStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_completion_percent = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inclusion_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CacheReportFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exclusion_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CacheReportFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.report_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CacheReportInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CacheReportInfo {
     /// Creates a new builder-style object to manufacture [`CacheReportInfo`](crate::types::CacheReportInfo).
     pub fn builder() -> crate::types::builders::CacheReportInfoBuilder {

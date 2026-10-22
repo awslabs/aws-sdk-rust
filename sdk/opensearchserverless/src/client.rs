@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateAccessPolicy`](crate::operation::create_access_policy) operation has
-/// a [`Client::create_access_policy`], function which returns a builder for that operation.
+/// For example, the [`CancelIngestionJob`](crate::operation::cancel_ingestion_job) operation has
+/// a [`Client::cancel_ingestion_job`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_access_policy()
-///     .r#type("example")
+/// let result = client.cancel_ingestion_job()
+///     .collection_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -146,6 +146,8 @@ mod batch_get_lifecycle_policy;
 
 mod batch_get_vpc_endpoint;
 
+mod cancel_ingestion_job;
+
 mod create_access_policy;
 
 mod create_collection;
@@ -153,6 +155,10 @@ mod create_collection;
 mod create_collection_group;
 
 mod create_index;
+
+mod create_ingestion_job;
+
+mod create_ingestion_stream;
 
 mod create_lifecycle_policy;
 
@@ -197,6 +203,8 @@ mod delete_collection_group;
 
 mod delete_index;
 
+mod delete_ingestion_stream;
+
 mod delete_lifecycle_policy;
 
 mod delete_security_config;
@@ -211,6 +219,10 @@ mod get_account_settings;
 
 mod get_index;
 
+mod get_ingestion_job;
+
+mod get_ingestion_stream;
+
 mod get_policies_stats;
 
 mod get_security_config;
@@ -222,6 +234,10 @@ mod list_access_policies;
 mod list_collection_groups;
 
 mod list_collections;
+
+mod list_ingestion_jobs;
+
+mod list_ingestion_streams;
 
 mod list_lifecycle_policies;
 

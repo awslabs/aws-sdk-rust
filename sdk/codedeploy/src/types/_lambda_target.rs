@@ -51,6 +51,229 @@ impl LambdaTarget {
         self.lambda_function_info.as_ref()
     }
 }
+static LAMBDATARGET_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LambdaTarget$deploymentId",
+        "com.amazonaws.codedeploy",
+        "LambdaTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static LAMBDATARGET_MEMBER_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LambdaTarget$targetId",
+        "com.amazonaws.codedeploy",
+        "LambdaTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetId",
+    1,
+);
+static LAMBDATARGET_MEMBER_TARGET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LambdaTarget$targetArn",
+        "com.amazonaws.codedeploy",
+        "LambdaTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "targetArn",
+    2,
+);
+static LAMBDATARGET_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#LambdaTarget$status", "com.amazonaws.codedeploy", "LambdaTarget"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    3,
+);
+static LAMBDATARGET_MEMBER_LAST_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LambdaTarget$lastUpdatedAt",
+        "com.amazonaws.codedeploy",
+        "LambdaTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastUpdatedAt",
+    4,
+);
+static LAMBDATARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LifecycleEventList$member",
+        "com.amazonaws.codedeploy",
+        "LifecycleEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LAMBDATARGET_MEMBER_LIFECYCLE_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LambdaTarget$lifecycleEvents",
+        "com.amazonaws.codedeploy",
+        "LambdaTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "lifecycleEvents",
+    5,
+)
+.with_list_member(&LAMBDATARGET_MEMBER_LIFECYCLE_EVENTS_MEMBER);
+static LAMBDATARGET_MEMBER_LAMBDA_FUNCTION_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LambdaTarget$lambdaFunctionInfo",
+        "com.amazonaws.codedeploy",
+        "LambdaTarget",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "lambdaFunctionInfo",
+    6,
+);
+static LAMBDATARGET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#LambdaTarget", "com.amazonaws.codedeploy", "LambdaTarget"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LAMBDATARGET_MEMBER_DEPLOYMENT_ID,
+        &LAMBDATARGET_MEMBER_TARGET_ID,
+        &LAMBDATARGET_MEMBER_TARGET_ARN,
+        &LAMBDATARGET_MEMBER_STATUS,
+        &LAMBDATARGET_MEMBER_LAST_UPDATED_AT,
+        &LAMBDATARGET_MEMBER_LIFECYCLE_EVENTS,
+        &LAMBDATARGET_MEMBER_LAMBDA_FUNCTION_INFO,
+    ],
+);
+impl LambdaTarget {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LAMBDATARGET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LambdaTarget {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&LAMBDATARGET_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.target_id {
+            ser.write_string(&LAMBDATARGET_MEMBER_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.target_arn {
+            ser.write_string(&LAMBDATARGET_MEMBER_TARGET_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&LAMBDATARGET_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_updated_at {
+            ser.write_timestamp(&LAMBDATARGET_MEMBER_LAST_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_events {
+            ser.write_list(
+                &LAMBDATARGET_MEMBER_LIFECYCLE_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LifecycleEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.lambda_function_info {
+            ser.write_struct(&LAMBDATARGET_MEMBER_LAMBDA_FUNCTION_INFO, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LambdaTargetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LAMBDATARGET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::TargetStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LifecycleEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lambda_function_info = Some(crate::types::LambdaFunctionInfo::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LambdaTarget {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LambdaTarget {
     /// Creates a new builder-style object to manufacture [`LambdaTarget`](crate::types::LambdaTarget).
     pub fn builder() -> crate::types::builders::LambdaTargetBuilder {

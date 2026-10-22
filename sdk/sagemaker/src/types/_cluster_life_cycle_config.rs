@@ -29,6 +29,127 @@ impl ClusterLifeCycleConfig {
         self.on_init_complete.as_deref()
     }
 }
+static CLUSTERLIFECYCLECONFIG_MEMBER_SOURCE_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterLifeCycleConfig$SourceS3Uri",
+        "com.amazonaws.sagemaker",
+        "ClusterLifeCycleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceS3Uri",
+    0,
+);
+static CLUSTERLIFECYCLECONFIG_MEMBER_ON_CREATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterLifeCycleConfig$OnCreate",
+        "com.amazonaws.sagemaker",
+        "ClusterLifeCycleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OnCreate",
+    1,
+);
+static CLUSTERLIFECYCLECONFIG_MEMBER_ON_INIT_COMPLETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterLifeCycleConfig$OnInitComplete",
+        "com.amazonaws.sagemaker",
+        "ClusterLifeCycleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OnInitComplete",
+    2,
+);
+static CLUSTERLIFECYCLECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterLifeCycleConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterLifeCycleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTERLIFECYCLECONFIG_MEMBER_SOURCE_S3_URI,
+        &CLUSTERLIFECYCLECONFIG_MEMBER_ON_CREATE,
+        &CLUSTERLIFECYCLECONFIG_MEMBER_ON_INIT_COMPLETE,
+    ],
+);
+impl ClusterLifeCycleConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERLIFECYCLECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterLifeCycleConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_s3_uri {
+            ser.write_string(&CLUSTERLIFECYCLECONFIG_MEMBER_SOURCE_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.on_create {
+            ser.write_string(&CLUSTERLIFECYCLECONFIG_MEMBER_ON_CREATE, val)?;
+        }
+        if let Some(ref val) = self.on_init_complete {
+            ser.write_string(&CLUSTERLIFECYCLECONFIG_MEMBER_ON_INIT_COMPLETE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterLifeCycleConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERLIFECYCLECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_create = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_init_complete = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterLifeCycleConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterLifeCycleConfig {
     /// Creates a new builder-style object to manufacture [`ClusterLifeCycleConfig`](crate::types::ClusterLifeCycleConfig).
     pub fn builder() -> crate::types::builders::ClusterLifeCycleConfigBuilder {

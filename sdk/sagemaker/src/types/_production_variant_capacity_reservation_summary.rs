@@ -61,6 +61,227 @@ impl ProductionVariantCapacityReservationSummary {
         self.ec2_capacity_reservations.as_deref().unwrap_or_default()
     }
 }
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_ML_RESERVATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationSummary$MlReservationArn",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "MlReservationArn",
+        0,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_CAPACITY_RESERVATION_PREFERENCE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationSummary$CapacityReservationPreference",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CapacityReservationPreference",
+        1,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_TOTAL_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationSummary$TotalInstanceCount",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "TotalInstanceCount",
+        2,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_AVAILABLE_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationSummary$AvailableInstanceCount",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "AvailableInstanceCount",
+        3,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_USED_BY_CURRENT_ENDPOINT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationSummary$UsedByCurrentEndpoint",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "UsedByCurrentEndpoint",
+        4,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_EC2_CAPACITY_RESERVATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#Ec2CapacityReservationsList$member",
+            "com.amazonaws.sagemaker",
+            "Ec2CapacityReservationsList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_EC2_CAPACITY_RESERVATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationSummary$Ec2CapacityReservations",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "Ec2CapacityReservations",
+        5,
+    )
+    .with_list_member(&PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_EC2_CAPACITY_RESERVATIONS_MEMBER);
+static PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantCapacityReservationSummary",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantCapacityReservationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_ML_RESERVATION_ARN,
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_CAPACITY_RESERVATION_PREFERENCE,
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_TOTAL_INSTANCE_COUNT,
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_AVAILABLE_INSTANCE_COUNT,
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_USED_BY_CURRENT_ENDPOINT,
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_EC2_CAPACITY_RESERVATIONS,
+    ],
+);
+impl ProductionVariantCapacityReservationSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProductionVariantCapacityReservationSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ml_reservation_arn {
+            ser.write_string(&PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_ML_RESERVATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.capacity_reservation_preference {
+            ser.write_string(
+                &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_CAPACITY_RESERVATION_PREFERENCE,
+                val.as_str(),
+            )?;
+        }
+        if let Some(ref val) = self.total_instance_count {
+            ser.write_integer(&PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_TOTAL_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.available_instance_count {
+            ser.write_integer(&PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_AVAILABLE_INSTANCE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.used_by_current_endpoint {
+            ser.write_integer(&PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_USED_BY_CURRENT_ENDPOINT, *val)?;
+        }
+        if let Some(ref val) = self.ec2_capacity_reservations {
+            ser.write_list(
+                &PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_MEMBER_EC2_CAPACITY_RESERVATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Ec2CapacityReservation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProductionVariantCapacityReservationSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRODUCTIONVARIANTCAPACITYRESERVATIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ml_reservation_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation_preference =
+                            Some(crate::types::CapacityReservationPreference::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.total_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.available_instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.used_by_current_endpoint = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_capacity_reservations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Ec2CapacityReservation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProductionVariantCapacityReservationSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProductionVariantCapacityReservationSummary {
     /// Creates a new builder-style object to manufacture [`ProductionVariantCapacityReservationSummary`](crate::types::ProductionVariantCapacityReservationSummary).
     pub fn builder() -> crate::types::builders::ProductionVariantCapacityReservationSummaryBuilder {

@@ -25,6 +25,130 @@ impl PullRequestMergedStateChangedEventMetadata {
         self.merge_metadata.as_ref()
     }
 }
+static PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#PullRequestMergedStateChangedEventMetadata$repositoryName",
+            "com.amazonaws.codecommit",
+            "PullRequestMergedStateChangedEventMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "repositoryName",
+        0,
+    );
+static PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_DESTINATION_REFERENCE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#PullRequestMergedStateChangedEventMetadata$destinationReference",
+            "com.amazonaws.codecommit",
+            "PullRequestMergedStateChangedEventMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "destinationReference",
+        1,
+    );
+static PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_MERGE_METADATA: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codecommit#PullRequestMergedStateChangedEventMetadata$mergeMetadata",
+            "com.amazonaws.codecommit",
+            "PullRequestMergedStateChangedEventMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "mergeMetadata",
+        2,
+    );
+static PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#PullRequestMergedStateChangedEventMetadata",
+        "com.amazonaws.codecommit",
+        "PullRequestMergedStateChangedEventMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_REPOSITORY_NAME,
+        &PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_DESTINATION_REFERENCE,
+        &PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_MERGE_METADATA,
+    ],
+);
+impl PullRequestMergedStateChangedEventMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PullRequestMergedStateChangedEventMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.destination_reference {
+            ser.write_string(&PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_DESTINATION_REFERENCE, val)?;
+        }
+        if let Some(ref val) = self.merge_metadata {
+            ser.write_struct(&PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_MEMBER_MERGE_METADATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PullRequestMergedStateChangedEventMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PULLREQUESTMERGEDSTATECHANGEDEVENTMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_reference = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.merge_metadata = Some(crate::types::MergeMetadata::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PullRequestMergedStateChangedEventMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PullRequestMergedStateChangedEventMetadata {
     /// Creates a new builder-style object to manufacture [`PullRequestMergedStateChangedEventMetadata`](crate::types::PullRequestMergedStateChangedEventMetadata).
     pub fn builder() -> crate::types::builders::PullRequestMergedStateChangedEventMetadataBuilder {

@@ -44,6 +44,246 @@ impl CreateContextInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATECONTEXTINPUT_MEMBER_CONTEXT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateContextInput$ContextName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateContextInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextName",
+    0,
+);
+static CREATECONTEXTINPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateContextInput$Source",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateContextInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    1,
+);
+static CREATECONTEXTINPUT_MEMBER_CONTEXT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateContextInput$ContextType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateContextInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContextType",
+    2,
+);
+static CREATECONTEXTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateContextInput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateContextInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static CREATECONTEXTINPUT_MEMBER_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$key",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATECONTEXTINPUT_MEMBER_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LineageEntityParameters$value",
+        "com.amazonaws.sagemaker",
+        "LineageEntityParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static CREATECONTEXTINPUT_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateContextInput$Properties",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateContextInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Properties",
+    4,
+)
+.with_map_members(&CREATECONTEXTINPUT_MEMBER_PROPERTIES_KEY, &CREATECONTEXTINPUT_MEMBER_PROPERTIES_VALUE);
+static CREATECONTEXTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECONTEXTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateContextInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateContextInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&CREATECONTEXTINPUT_MEMBER_TAGS_MEMBER);
+static CREATECONTEXTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateContextInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateContextInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECONTEXTINPUT_MEMBER_CONTEXT_NAME,
+        &CREATECONTEXTINPUT_MEMBER_SOURCE,
+        &CREATECONTEXTINPUT_MEMBER_CONTEXT_TYPE,
+        &CREATECONTEXTINPUT_MEMBER_DESCRIPTION,
+        &CREATECONTEXTINPUT_MEMBER_PROPERTIES,
+        &CREATECONTEXTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateContextRequest");
+impl CreateContextInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECONTEXTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateContextInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.context_name {
+            ser.write_string(&CREATECONTEXTINPUT_MEMBER_CONTEXT_NAME, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&CREATECONTEXTINPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.context_type {
+            ser.write_string(&CREATECONTEXTINPUT_MEMBER_CONTEXT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATECONTEXTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_map(
+                &CREATECONTEXTINPUT_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECONTEXTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_context::builders::CreateContextInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECONTEXTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ContextSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.context_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateContextInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.context_name = builder.context_name.or(Some(String::new()));
+        builder.context_type = builder.context_type.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateContextInput {
     /// Creates a new builder-style object to manufacture [`CreateContextInput`](crate::operation::create_context::CreateContextInput).
     pub fn builder() -> crate::operation::create_context::builders::CreateContextInputBuilder {

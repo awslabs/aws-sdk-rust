@@ -193,6 +193,640 @@ impl ::std::fmt::Debug for GetDomainDetailOutput {
         formatter.finish()
     }
 }
+static GETDOMAINDETAILOUTPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_NAMESERVERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#NameserverList$member",
+        "com.amazonaws.route53domains",
+        "NameserverList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_NAMESERVERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$Nameservers",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Nameservers",
+    1,
+)
+.with_list_member(&GETDOMAINDETAILOUTPUT_MEMBER_NAMESERVERS_MEMBER);
+static GETDOMAINDETAILOUTPUT_MEMBER_AUTO_RENEW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$AutoRenew",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AutoRenew",
+    2,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_ADMIN_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$AdminContact",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdminContact",
+    3,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_REGISTRANT_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$RegistrantContact",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RegistrantContact",
+    4,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_TECH_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$TechContact",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TechContact",
+    5,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_ADMIN_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$AdminPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "AdminPrivacy",
+    6,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_REGISTRANT_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$RegistrantPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RegistrantPrivacy",
+    7,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_TECH_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$TechPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "TechPrivacy",
+    8,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_REGISTRAR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$RegistrarName",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RegistrarName",
+    9,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_WHO_IS_SERVER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$WhoIsServer",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WhoIsServer",
+    10,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_REGISTRAR_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$RegistrarUrl",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RegistrarUrl",
+    11,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_ABUSE_CONTACT_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$AbuseContactEmail",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AbuseContactEmail",
+    12,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_ABUSE_CONTACT_PHONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$AbuseContactPhone",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AbuseContactPhone",
+    13,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_REGISTRY_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$RegistryDomainId",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RegistryDomainId",
+    14,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$CreationDate",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationDate",
+    15,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_UPDATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$UpdatedDate",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "UpdatedDate",
+    16,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_EXPIRATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$ExpirationDate",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpirationDate",
+    17,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_RESELLER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$Reseller",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Reseller",
+    18,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_DNS_SEC: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$DnsSec",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DnsSec",
+    19,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_STATUS_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainStatusList$member",
+        "com.amazonaws.route53domains",
+        "DomainStatusList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_STATUS_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$StatusList",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "StatusList",
+    20,
+)
+.with_list_member(&GETDOMAINDETAILOUTPUT_MEMBER_STATUS_LIST_MEMBER);
+static GETDOMAINDETAILOUTPUT_MEMBER_DNSSEC_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DnssecKeyList$member",
+        "com.amazonaws.route53domains",
+        "DnssecKeyList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_DNSSEC_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$DnssecKeys",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DnssecKeys",
+    21,
+)
+.with_list_member(&GETDOMAINDETAILOUTPUT_MEMBER_DNSSEC_KEYS_MEMBER);
+static GETDOMAINDETAILOUTPUT_MEMBER_BILLING_CONTACT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$BillingContact",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "BillingContact",
+    22,
+);
+static GETDOMAINDETAILOUTPUT_MEMBER_BILLING_PRIVACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput$BillingPrivacy",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "BillingPrivacy",
+    23,
+);
+static GETDOMAINDETAILOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#GetDomainDetailOutput",
+        "com.amazonaws.route53domains.synthetic",
+        "GetDomainDetailOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETDOMAINDETAILOUTPUT_MEMBER_DOMAIN_NAME,
+        &GETDOMAINDETAILOUTPUT_MEMBER_NAMESERVERS,
+        &GETDOMAINDETAILOUTPUT_MEMBER_AUTO_RENEW,
+        &GETDOMAINDETAILOUTPUT_MEMBER_ADMIN_CONTACT,
+        &GETDOMAINDETAILOUTPUT_MEMBER_REGISTRANT_CONTACT,
+        &GETDOMAINDETAILOUTPUT_MEMBER_TECH_CONTACT,
+        &GETDOMAINDETAILOUTPUT_MEMBER_ADMIN_PRIVACY,
+        &GETDOMAINDETAILOUTPUT_MEMBER_REGISTRANT_PRIVACY,
+        &GETDOMAINDETAILOUTPUT_MEMBER_TECH_PRIVACY,
+        &GETDOMAINDETAILOUTPUT_MEMBER_REGISTRAR_NAME,
+        &GETDOMAINDETAILOUTPUT_MEMBER_WHO_IS_SERVER,
+        &GETDOMAINDETAILOUTPUT_MEMBER_REGISTRAR_URL,
+        &GETDOMAINDETAILOUTPUT_MEMBER_ABUSE_CONTACT_EMAIL,
+        &GETDOMAINDETAILOUTPUT_MEMBER_ABUSE_CONTACT_PHONE,
+        &GETDOMAINDETAILOUTPUT_MEMBER_REGISTRY_DOMAIN_ID,
+        &GETDOMAINDETAILOUTPUT_MEMBER_CREATION_DATE,
+        &GETDOMAINDETAILOUTPUT_MEMBER_UPDATED_DATE,
+        &GETDOMAINDETAILOUTPUT_MEMBER_EXPIRATION_DATE,
+        &GETDOMAINDETAILOUTPUT_MEMBER_RESELLER,
+        &GETDOMAINDETAILOUTPUT_MEMBER_DNS_SEC,
+        &GETDOMAINDETAILOUTPUT_MEMBER_STATUS_LIST,
+        &GETDOMAINDETAILOUTPUT_MEMBER_DNSSEC_KEYS,
+        &GETDOMAINDETAILOUTPUT_MEMBER_BILLING_CONTACT,
+        &GETDOMAINDETAILOUTPUT_MEMBER_BILLING_PRIVACY,
+    ],
+)
+.with_original_name("GetDomainDetailResponse");
+impl GetDomainDetailOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDOMAINDETAILOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDomainDetailOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.nameservers {
+            ser.write_list(
+                &GETDOMAINDETAILOUTPUT_MEMBER_NAMESERVERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Nameserver::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.auto_renew {
+            ser.write_boolean(&GETDOMAINDETAILOUTPUT_MEMBER_AUTO_RENEW, *val)?;
+        }
+        if let Some(ref val) = self.admin_contact {
+            ser.write_struct(&GETDOMAINDETAILOUTPUT_MEMBER_ADMIN_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.registrant_contact {
+            ser.write_struct(&GETDOMAINDETAILOUTPUT_MEMBER_REGISTRANT_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.tech_contact {
+            ser.write_struct(&GETDOMAINDETAILOUTPUT_MEMBER_TECH_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.admin_privacy {
+            ser.write_boolean(&GETDOMAINDETAILOUTPUT_MEMBER_ADMIN_PRIVACY, *val)?;
+        }
+        if let Some(ref val) = self.registrant_privacy {
+            ser.write_boolean(&GETDOMAINDETAILOUTPUT_MEMBER_REGISTRANT_PRIVACY, *val)?;
+        }
+        if let Some(ref val) = self.tech_privacy {
+            ser.write_boolean(&GETDOMAINDETAILOUTPUT_MEMBER_TECH_PRIVACY, *val)?;
+        }
+        if let Some(ref val) = self.registrar_name {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_REGISTRAR_NAME, val)?;
+        }
+        if let Some(ref val) = self.who_is_server {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_WHO_IS_SERVER, val)?;
+        }
+        if let Some(ref val) = self.registrar_url {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_REGISTRAR_URL, val)?;
+        }
+        if let Some(ref val) = self.abuse_contact_email {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_ABUSE_CONTACT_EMAIL, val)?;
+        }
+        if let Some(ref val) = self.abuse_contact_phone {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_ABUSE_CONTACT_PHONE, val)?;
+        }
+        if let Some(ref val) = self.registry_domain_id {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_REGISTRY_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&GETDOMAINDETAILOUTPUT_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.updated_date {
+            ser.write_timestamp(&GETDOMAINDETAILOUTPUT_MEMBER_UPDATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.expiration_date {
+            ser.write_timestamp(&GETDOMAINDETAILOUTPUT_MEMBER_EXPIRATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.reseller {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_RESELLER, val)?;
+        }
+        if let Some(ref val) = self.dns_sec {
+            ser.write_string(&GETDOMAINDETAILOUTPUT_MEMBER_DNS_SEC, val)?;
+        }
+        if let Some(ref val) = self.status_list {
+            ser.write_list(
+                &GETDOMAINDETAILOUTPUT_MEMBER_STATUS_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.dnssec_keys {
+            ser.write_list(
+                &GETDOMAINDETAILOUTPUT_MEMBER_DNSSEC_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DnssecKey::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.billing_contact {
+            ser.write_struct(&GETDOMAINDETAILOUTPUT_MEMBER_BILLING_CONTACT, val)?;
+        }
+        if let Some(ref val) = self.billing_privacy {
+            ser.write_boolean(&GETDOMAINDETAILOUTPUT_MEMBER_BILLING_PRIVACY, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_domain_detail::builders::GetDomainDetailOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDOMAINDETAILOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nameservers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Nameserver::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_renew = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrant_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tech_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrant_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tech_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrar_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.who_is_server = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registrar_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.abuse_contact_email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.abuse_contact_phone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.expiration_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reseller = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_sec = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dnssec_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DnssecKey::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billing_contact = Some(crate::types::ContactDetail::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.billing_privacy = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDomainDetailOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetDomainDetailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

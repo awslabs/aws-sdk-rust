@@ -68,6 +68,304 @@ impl CreateDataQualityJobDefinitionInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$JobDefinitionName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDataQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobDefinitionName",
+    0,
+);
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_BASELINE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$DataQualityBaselineConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateDataQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DataQualityBaselineConfig",
+        1,
+    );
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_APP_SPECIFICATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$DataQualityAppSpecification",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateDataQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DataQualityAppSpecification",
+        2,
+    );
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_JOB_INPUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$DataQualityJobInput",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateDataQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DataQualityJobInput",
+        3,
+    );
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_JOB_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$DataQualityJobOutputConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateDataQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DataQualityJobOutputConfig",
+        4,
+    );
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$JobResources",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDataQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JobResources",
+    5,
+);
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$NetworkConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDataQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkConfig",
+    6,
+);
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDataQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    7,
+);
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$StoppingCondition",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDataQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    8,
+);
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDataQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDATAQUALITYJOBDEFINITIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateDataQualityJobDefinitionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateDataQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_BASELINE_CONFIG,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_APP_SPECIFICATION,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_JOB_INPUT,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_JOB_OUTPUT_CONFIG,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION,
+        &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDataQualityJobDefinitionRequest");
+impl CreateDataQualityJobDefinitionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDATAQUALITYJOBDEFINITIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDataQualityJobDefinitionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_definition_name {
+            ser.write_string(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME, val)?;
+        }
+        if let Some(ref val) = self.data_quality_baseline_config {
+            ser.write_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_BASELINE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.data_quality_app_specification {
+            ser.write_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_APP_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.data_quality_job_input {
+            ser.write_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_JOB_INPUT, val)?;
+        }
+        if let Some(ref val) = self.data_quality_job_output_config {
+            ser.write_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_DATA_QUALITY_JOB_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.job_resources {
+            ser.write_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.network_config {
+            ser.write_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDATAQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_data_quality_job_definition::builders::CreateDataQualityJobDefinitionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDATAQUALITYJOBDEFINITIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_quality_baseline_config = Some(crate::types::DataQualityBaselineConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_quality_app_specification = Some(crate::types::DataQualityAppSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_quality_job_input = Some(crate::types::DataQualityJobInput::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_quality_job_output_config = Some(crate::types::MonitoringOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_resources = Some(crate::types::MonitoringResources::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_config = Some(crate::types::MonitoringNetworkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::MonitoringStoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDataQualityJobDefinitionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_definition_name = builder.job_definition_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDataQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateDataQualityJobDefinitionInput`](crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionInput).
     pub fn builder() -> crate::operation::create_data_quality_job_definition::builders::CreateDataQualityJobDefinitionInputBuilder {

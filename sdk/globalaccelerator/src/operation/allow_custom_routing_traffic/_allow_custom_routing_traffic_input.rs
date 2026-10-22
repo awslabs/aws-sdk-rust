@@ -48,6 +48,213 @@ impl AllowCustomRoutingTrafficInput {
         self.allow_all_traffic_to_endpoint
     }
 }
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ENDPOINT_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AllowCustomRoutingTrafficInput$EndpointGroupArn",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AllowCustomRoutingTrafficInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointGroupArn",
+    0,
+);
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ENDPOINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AllowCustomRoutingTrafficInput$EndpointId",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AllowCustomRoutingTrafficInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointId",
+    1,
+);
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.globalaccelerator#DestinationAddresses$member",
+            "com.amazonaws.globalaccelerator",
+            "DestinationAddresses",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AllowCustomRoutingTrafficInput$DestinationAddresses",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AllowCustomRoutingTrafficInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DestinationAddresses",
+    2,
+)
+.with_list_member(&ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_ADDRESSES_MEMBER);
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_PORTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#DestinationPorts$member",
+        "com.amazonaws.globalaccelerator",
+        "DestinationPorts",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "member",
+    0,
+);
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_PORTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AllowCustomRoutingTrafficInput$DestinationPorts",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AllowCustomRoutingTrafficInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DestinationPorts",
+    3,
+)
+.with_list_member(&ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_PORTS_MEMBER);
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ALLOW_ALL_TRAFFIC_TO_ENDPOINT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.globalaccelerator.synthetic#AllowCustomRoutingTrafficInput$AllowAllTrafficToEndpoint",
+            "com.amazonaws.globalaccelerator.synthetic",
+            "AllowCustomRoutingTrafficInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "AllowAllTrafficToEndpoint",
+        4,
+    );
+static ALLOWCUSTOMROUTINGTRAFFICINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator.synthetic#AllowCustomRoutingTrafficInput",
+        "com.amazonaws.globalaccelerator.synthetic",
+        "AllowCustomRoutingTrafficInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ENDPOINT_GROUP_ARN,
+        &ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ENDPOINT_ID,
+        &ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_ADDRESSES,
+        &ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_PORTS,
+        &ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ALLOW_ALL_TRAFFIC_TO_ENDPOINT,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AllowCustomRoutingTrafficRequest");
+impl AllowCustomRoutingTrafficInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ALLOWCUSTOMROUTINGTRAFFICINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AllowCustomRoutingTrafficInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_group_arn {
+            ser.write_string(&ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ENDPOINT_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.endpoint_id {
+            ser.write_string(&ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ENDPOINT_ID, val)?;
+        }
+        if let Some(ref val) = self.destination_addresses {
+            ser.write_list(
+                &ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.destination_ports {
+            ser.write_list(
+                &ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_DESTINATION_PORTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_integer(&aws_smithy_schema::prelude::INTEGER, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.allow_all_traffic_to_endpoint {
+            ser.write_boolean(&ALLOWCUSTOMROUTINGTRAFFICINPUT_MEMBER_ALLOW_ALL_TRAFFIC_TO_ENDPOINT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ALLOWCUSTOMROUTINGTRAFFICINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_ports = Some(deser.read_integer_list(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.allow_all_traffic_to_endpoint = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AllowCustomRoutingTrafficInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.endpoint_group_arn = builder.endpoint_group_arn.or(Some(String::new()));
+        builder.endpoint_id = builder.endpoint_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AllowCustomRoutingTrafficInput {
     /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficInput`](crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficInput).
     pub fn builder() -> crate::operation::allow_custom_routing_traffic::builders::AllowCustomRoutingTrafficInputBuilder {

@@ -25,6 +25,123 @@ impl MergeHunkDetail {
         self.hunk_content.as_deref()
     }
 }
+static MERGEHUNKDETAIL_MEMBER_START_LINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#MergeHunkDetail$startLine",
+        "com.amazonaws.codecommit",
+        "MergeHunkDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "startLine",
+    0,
+);
+static MERGEHUNKDETAIL_MEMBER_END_LINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#MergeHunkDetail$endLine",
+        "com.amazonaws.codecommit",
+        "MergeHunkDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "endLine",
+    1,
+);
+static MERGEHUNKDETAIL_MEMBER_HUNK_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#MergeHunkDetail$hunkContent",
+        "com.amazonaws.codecommit",
+        "MergeHunkDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "hunkContent",
+    2,
+);
+static MERGEHUNKDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#MergeHunkDetail", "com.amazonaws.codecommit", "MergeHunkDetail"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MERGEHUNKDETAIL_MEMBER_START_LINE,
+        &MERGEHUNKDETAIL_MEMBER_END_LINE,
+        &MERGEHUNKDETAIL_MEMBER_HUNK_CONTENT,
+    ],
+);
+impl MergeHunkDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MERGEHUNKDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MergeHunkDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.start_line {
+            ser.write_integer(&MERGEHUNKDETAIL_MEMBER_START_LINE, *val)?;
+        }
+        if let Some(ref val) = self.end_line {
+            ser.write_integer(&MERGEHUNKDETAIL_MEMBER_END_LINE, *val)?;
+        }
+        if let Some(ref val) = self.hunk_content {
+            ser.write_string(&MERGEHUNKDETAIL_MEMBER_HUNK_CONTENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MergeHunkDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MERGEHUNKDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_line = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_line = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hunk_content = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MergeHunkDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MergeHunkDetail {
     /// Creates a new builder-style object to manufacture [`MergeHunkDetail`](crate::types::MergeHunkDetail).
     pub fn builder() -> crate::types::builders::MergeHunkDetailBuilder {

@@ -30,6 +30,151 @@ impl ListActionExecutionsInput {
         self.next_token.as_deref()
     }
 }
+static LISTACTIONEXECUTIONSINPUT_MEMBER_PIPELINE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#ListActionExecutionsInput$pipelineName",
+        "com.amazonaws.codepipeline.synthetic",
+        "ListActionExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineName",
+    0,
+);
+static LISTACTIONEXECUTIONSINPUT_MEMBER_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#ListActionExecutionsInput$filter",
+        "com.amazonaws.codepipeline.synthetic",
+        "ListActionExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "filter",
+    1,
+);
+static LISTACTIONEXECUTIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#ListActionExecutionsInput$maxResults",
+        "com.amazonaws.codepipeline.synthetic",
+        "ListActionExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    2,
+);
+static LISTACTIONEXECUTIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#ListActionExecutionsInput$nextToken",
+        "com.amazonaws.codepipeline.synthetic",
+        "ListActionExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    3,
+);
+static LISTACTIONEXECUTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#ListActionExecutionsInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "ListActionExecutionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTACTIONEXECUTIONSINPUT_MEMBER_PIPELINE_NAME,
+        &LISTACTIONEXECUTIONSINPUT_MEMBER_FILTER,
+        &LISTACTIONEXECUTIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTACTIONEXECUTIONSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListActionExecutionsInput");
+impl ListActionExecutionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTACTIONEXECUTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListActionExecutionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_name {
+            ser.write_string(&LISTACTIONEXECUTIONSINPUT_MEMBER_PIPELINE_NAME, val)?;
+        }
+        if let Some(ref val) = self.filter {
+            ser.write_struct(&LISTACTIONEXECUTIONSINPUT_MEMBER_FILTER, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTACTIONEXECUTIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTACTIONEXECUTIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTACTIONEXECUTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter = Some(crate::types::ActionExecutionFilter::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListActionExecutionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pipeline_name = builder.pipeline_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListActionExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListActionExecutionsInput`](crate::operation::list_action_executions::ListActionExecutionsInput).
     pub fn builder() -> crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder {

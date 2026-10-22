@@ -19,6 +19,102 @@ impl MetricsEndpoint {
         self.metric_publish_frequency_in_seconds
     }
 }
+static METRICSENDPOINT_MEMBER_METRICS_ENDPOINT_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricsEndpoint$MetricsEndpointPath",
+        "com.amazonaws.sagemaker",
+        "MetricsEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MetricsEndpointPath",
+    0,
+);
+static METRICSENDPOINT_MEMBER_METRIC_PUBLISH_FREQUENCY_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricsEndpoint$MetricPublishFrequencyInSeconds",
+        "com.amazonaws.sagemaker",
+        "MetricsEndpoint",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MetricPublishFrequencyInSeconds",
+    1,
+);
+static METRICSENDPOINT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricsEndpoint", "com.amazonaws.sagemaker", "MetricsEndpoint"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &METRICSENDPOINT_MEMBER_METRICS_ENDPOINT_PATH,
+        &METRICSENDPOINT_MEMBER_METRIC_PUBLISH_FREQUENCY_IN_SECONDS,
+    ],
+);
+impl MetricsEndpoint {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METRICSENDPOINT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MetricsEndpoint {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.metrics_endpoint_path {
+            ser.write_string(&METRICSENDPOINT_MEMBER_METRICS_ENDPOINT_PATH, val)?;
+        }
+        if let Some(ref val) = self.metric_publish_frequency_in_seconds {
+            ser.write_integer(&METRICSENDPOINT_MEMBER_METRIC_PUBLISH_FREQUENCY_IN_SECONDS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MetricsEndpointBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METRICSENDPOINT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metrics_endpoint_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_publish_frequency_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MetricsEndpoint {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MetricsEndpoint {
     /// Creates a new builder-style object to manufacture [`MetricsEndpoint`](crate::types::MetricsEndpoint).
     pub fn builder() -> crate::types::builders::MetricsEndpointBuilder {

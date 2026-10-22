@@ -15,6 +15,151 @@ impl GetContainerApiMetadataOutput {
         self.metadata.as_deref().unwrap_or_default()
     }
 }
+static GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceMetadataEntry$key",
+        "com.amazonaws.lightsail",
+        "ContainerServiceMetadataEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceMetadataEntry$value",
+        "com.amazonaws.lightsail",
+        "ContainerServiceMetadataEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServiceMetadataEntryList$member",
+        "com.amazonaws.lightsail",
+        "ContainerServiceMetadataEntryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(
+    &GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER_KEY,
+    &GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER_VALUE,
+);
+static GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerAPIMetadataOutput$metadata",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerAPIMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "metadata",
+    0,
+)
+.with_list_member(&GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER);
+static GETCONTAINERAPIMETADATAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerAPIMetadataOutput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerAPIMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA],
+)
+.with_original_name("GetContainerAPIMetadataResult");
+impl GetContainerApiMetadataOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCONTAINERAPIMETADATAOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetContainerApiMetadataOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.metadata {
+            ser.write_list(
+                &GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCONTAINERAPIMETADATAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metadata = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&GETCONTAINERAPIMETADATAOUTPUT_MEMBER_METADATA_MEMBER, &mut |key, deser| {
+                                        let value = deser.read_string(&::aws_smithy_schema::prelude::STRING)?;
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetContainerApiMetadataOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetContainerApiMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

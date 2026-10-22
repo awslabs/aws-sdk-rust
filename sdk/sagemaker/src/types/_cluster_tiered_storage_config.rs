@@ -19,6 +19,107 @@ impl ClusterTieredStorageConfig {
         self.instance_memory_allocation_percentage
     }
 }
+static CLUSTERTIEREDSTORAGECONFIG_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterTieredStorageConfig$Mode",
+        "com.amazonaws.sagemaker",
+        "ClusterTieredStorageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    0,
+);
+static CLUSTERTIEREDSTORAGECONFIG_MEMBER_INSTANCE_MEMORY_ALLOCATION_PERCENTAGE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClusterTieredStorageConfig$InstanceMemoryAllocationPercentage",
+            "com.amazonaws.sagemaker",
+            "ClusterTieredStorageConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "InstanceMemoryAllocationPercentage",
+        1,
+    );
+static CLUSTERTIEREDSTORAGECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterTieredStorageConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterTieredStorageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTERTIEREDSTORAGECONFIG_MEMBER_MODE,
+        &CLUSTERTIEREDSTORAGECONFIG_MEMBER_INSTANCE_MEMORY_ALLOCATION_PERCENTAGE,
+    ],
+);
+impl ClusterTieredStorageConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERTIEREDSTORAGECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterTieredStorageConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.mode {
+            ser.write_string(&CLUSTERTIEREDSTORAGECONFIG_MEMBER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.instance_memory_allocation_percentage {
+            ser.write_integer(&CLUSTERTIEREDSTORAGECONFIG_MEMBER_INSTANCE_MEMORY_ALLOCATION_PERCENTAGE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterTieredStorageConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERTIEREDSTORAGECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mode = Some(crate::types::ClusterConfigMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_memory_allocation_percentage = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterTieredStorageConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClusterTieredStorageConfig {
     /// Creates a new builder-style object to manufacture [`ClusterTieredStorageConfig`](crate::types::ClusterTieredStorageConfig).
     pub fn builder() -> crate::types::builders::ClusterTieredStorageConfigBuilder {

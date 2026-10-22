@@ -117,6 +117,431 @@ impl TranscriptionJobSummary {
         self.toxicity_detection.as_deref().unwrap_or_default()
     }
 }
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_TRANSCRIPTION_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$TranscriptionJobName",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TranscriptionJobName",
+    0,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$CreationTime",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    1,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$StartTime",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    2,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_COMPLETION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$CompletionTime",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompletionTime",
+    3,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$LanguageCode",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    4,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_TRANSCRIPTION_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$TranscriptionJobStatus",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TranscriptionJobStatus",
+    5,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$FailureReason",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    6,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_OUTPUT_LOCATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$OutputLocationType",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputLocationType",
+    7,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_CONTENT_REDACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$ContentRedaction",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContentRedaction",
+    8,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_MODEL_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$ModelSettings",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelSettings",
+    9,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFY_LANGUAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$IdentifyLanguage",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IdentifyLanguage",
+    10,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFY_MULTIPLE_LANGUAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$IdentifyMultipleLanguages",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IdentifyMultipleLanguages",
+    11,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFIED_LANGUAGE_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$IdentifiedLanguageScore",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Float,
+    "IdentifiedLanguageScore",
+    12,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageCodeList$member",
+        "com.amazonaws.transcribe",
+        "LanguageCodeList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$LanguageCodes",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LanguageCodes",
+    13,
+)
+.with_list_member(&TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODES_MEMBER);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_TOXICITY_DETECTION_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#ToxicityDetection$member",
+        "com.amazonaws.transcribe",
+        "ToxicityDetection",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRANSCRIPTIONJOBSUMMARY_MEMBER_TOXICITY_DETECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary$ToxicityDetection",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ToxicityDetection",
+    14,
+)
+.with_list_member(&TRANSCRIPTIONJOBSUMMARY_MEMBER_TOXICITY_DETECTION_MEMBER);
+static TRANSCRIPTIONJOBSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#TranscriptionJobSummary",
+        "com.amazonaws.transcribe",
+        "TranscriptionJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_TRANSCRIPTION_JOB_NAME,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_CREATION_TIME,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_START_TIME,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_COMPLETION_TIME,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODE,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_TRANSCRIPTION_JOB_STATUS,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_FAILURE_REASON,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_OUTPUT_LOCATION_TYPE,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_CONTENT_REDACTION,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_MODEL_SETTINGS,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFY_LANGUAGE,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFY_MULTIPLE_LANGUAGES,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFIED_LANGUAGE_SCORE,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODES,
+        &TRANSCRIPTIONJOBSUMMARY_MEMBER_TOXICITY_DETECTION,
+    ],
+);
+impl TranscriptionJobSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSCRIPTIONJOBSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TranscriptionJobSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.transcription_job_name {
+            ser.write_string(&TRANSCRIPTIONJOBSUMMARY_MEMBER_TRANSCRIPTION_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&TRANSCRIPTIONJOBSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&TRANSCRIPTIONJOBSUMMARY_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.completion_time {
+            ser.write_timestamp(&TRANSCRIPTIONJOBSUMMARY_MEMBER_COMPLETION_TIME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.transcription_job_status {
+            ser.write_string(&TRANSCRIPTIONJOBSUMMARY_MEMBER_TRANSCRIPTION_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&TRANSCRIPTIONJOBSUMMARY_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.output_location_type {
+            ser.write_string(&TRANSCRIPTIONJOBSUMMARY_MEMBER_OUTPUT_LOCATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.content_redaction {
+            ser.write_struct(&TRANSCRIPTIONJOBSUMMARY_MEMBER_CONTENT_REDACTION, val)?;
+        }
+        if let Some(ref val) = self.model_settings {
+            ser.write_struct(&TRANSCRIPTIONJOBSUMMARY_MEMBER_MODEL_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.identify_language {
+            ser.write_boolean(&TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFY_LANGUAGE, *val)?;
+        }
+        if let Some(ref val) = self.identify_multiple_languages {
+            ser.write_boolean(&TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFY_MULTIPLE_LANGUAGES, *val)?;
+        }
+        if let Some(ref val) = self.identified_language_score {
+            ser.write_float(&TRANSCRIPTIONJOBSUMMARY_MEMBER_IDENTIFIED_LANGUAGE_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.language_codes {
+            ser.write_list(
+                &TRANSCRIPTIONJOBSUMMARY_MEMBER_LANGUAGE_CODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LanguageCodeItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.toxicity_detection {
+            ser.write_list(
+                &TRANSCRIPTIONJOBSUMMARY_MEMBER_TOXICITY_DETECTION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ToxicityDetectionSettings::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TranscriptionJobSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSCRIPTIONJOBSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transcription_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transcription_job_status = Some(crate::types::TranscriptionJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_location_type = Some(crate::types::OutputLocationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_redaction = Some(crate::types::ContentRedaction::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_settings = Some(crate::types::ModelSettings::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identify_language = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identify_multiple_languages = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identified_language_score = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_codes = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LanguageCodeItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.toxicity_detection = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ToxicityDetectionSettings::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TranscriptionJobSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TranscriptionJobSummary {
     /// Creates a new builder-style object to manufacture [`TranscriptionJobSummary`](crate::types::TranscriptionJobSummary).
     pub fn builder() -> crate::types::builders::TranscriptionJobSummaryBuilder {

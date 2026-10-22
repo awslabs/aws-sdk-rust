@@ -35,6 +35,142 @@ impl VolumeRecoveryPointInfo {
         self.volume_recovery_point_time.as_deref()
     }
 }
+static VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeRecoveryPointInfo$VolumeARN",
+        "com.amazonaws.storagegateway",
+        "VolumeRecoveryPointInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeARN",
+    0,
+);
+static VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeRecoveryPointInfo$VolumeSizeInBytes",
+        "com.amazonaws.storagegateway",
+        "VolumeRecoveryPointInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSizeInBytes",
+    1,
+);
+static VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_USAGE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeRecoveryPointInfo$VolumeUsageInBytes",
+        "com.amazonaws.storagegateway",
+        "VolumeRecoveryPointInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeUsageInBytes",
+    2,
+);
+static VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_RECOVERY_POINT_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeRecoveryPointInfo$VolumeRecoveryPointTime",
+        "com.amazonaws.storagegateway",
+        "VolumeRecoveryPointInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeRecoveryPointTime",
+    3,
+);
+static VOLUMERECOVERYPOINTINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#VolumeRecoveryPointInfo",
+        "com.amazonaws.storagegateway",
+        "VolumeRecoveryPointInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_ARN,
+        &VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_SIZE_IN_BYTES,
+        &VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_USAGE_IN_BYTES,
+        &VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_RECOVERY_POINT_TIME,
+    ],
+);
+impl VolumeRecoveryPointInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &VOLUMERECOVERYPOINTINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for VolumeRecoveryPointInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_arn {
+            ser.write_string(&VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_ARN, val)?;
+        }
+        {
+            let val = &self.volume_size_in_bytes;
+            ser.write_long(&VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_SIZE_IN_BYTES, *val)?;
+        }
+        {
+            let val = &self.volume_usage_in_bytes;
+            ser.write_long(&VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_USAGE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.volume_recovery_point_time {
+            ser.write_string(&VOLUMERECOVERYPOINTINFO_MEMBER_VOLUME_RECOVERY_POINT_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::VolumeRecoveryPointInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&VOLUMERECOVERYPOINTINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.volume_size_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.volume_usage_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_recovery_point_time = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl VolumeRecoveryPointInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl VolumeRecoveryPointInfo {
     /// Creates a new builder-style object to manufacture [`VolumeRecoveryPointInfo`](crate::types::VolumeRecoveryPointInfo).
     pub fn builder() -> crate::types::builders::VolumeRecoveryPointInfoBuilder {

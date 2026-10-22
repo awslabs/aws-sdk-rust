@@ -19,6 +19,106 @@ impl PlacementSpecification {
         self.instance_count
     }
 }
+static PLACEMENTSPECIFICATION_MEMBER_ULTRA_SERVER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PlacementSpecification$UltraServerId",
+        "com.amazonaws.sagemaker",
+        "PlacementSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UltraServerId",
+    0,
+);
+static PLACEMENTSPECIFICATION_MEMBER_INSTANCE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PlacementSpecification$InstanceCount",
+        "com.amazonaws.sagemaker",
+        "PlacementSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstanceCount",
+    1,
+);
+static PLACEMENTSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PlacementSpecification",
+        "com.amazonaws.sagemaker",
+        "PlacementSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PLACEMENTSPECIFICATION_MEMBER_ULTRA_SERVER_ID,
+        &PLACEMENTSPECIFICATION_MEMBER_INSTANCE_COUNT,
+    ],
+);
+impl PlacementSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PLACEMENTSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PlacementSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ultra_server_id {
+            ser.write_string(&PLACEMENTSPECIFICATION_MEMBER_ULTRA_SERVER_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_count {
+            ser.write_integer(&PLACEMENTSPECIFICATION_MEMBER_INSTANCE_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PlacementSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PLACEMENTSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ultra_server_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PlacementSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PlacementSpecification {
     /// Creates a new builder-style object to manufacture [`PlacementSpecification`](crate::types::PlacementSpecification).
     pub fn builder() -> crate::types::builders::PlacementSpecificationBuilder {

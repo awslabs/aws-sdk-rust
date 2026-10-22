@@ -21,6 +21,132 @@ impl BatchDetectKeyPhrasesItemResult {
         self.key_phrases.as_deref().unwrap_or_default()
     }
 }
+static BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_INDEX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BatchDetectKeyPhrasesItemResult$Index",
+        "com.amazonaws.comprehend",
+        "BatchDetectKeyPhrasesItemResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Index",
+    0,
+);
+static BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_KEY_PHRASES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfKeyPhrases$member",
+        "com.amazonaws.comprehend",
+        "ListOfKeyPhrases",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_KEY_PHRASES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BatchDetectKeyPhrasesItemResult$KeyPhrases",
+        "com.amazonaws.comprehend",
+        "BatchDetectKeyPhrasesItemResult",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "KeyPhrases",
+    1,
+)
+.with_list_member(&BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_KEY_PHRASES_MEMBER);
+static BATCHDETECTKEYPHRASESITEMRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#BatchDetectKeyPhrasesItemResult",
+        "com.amazonaws.comprehend",
+        "BatchDetectKeyPhrasesItemResult",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_INDEX,
+        &BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_KEY_PHRASES,
+    ],
+);
+impl BatchDetectKeyPhrasesItemResult {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHDETECTKEYPHRASESITEMRESULT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchDetectKeyPhrasesItemResult {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.index {
+            ser.write_integer(&BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_INDEX, *val)?;
+        }
+        if let Some(ref val) = self.key_phrases {
+            ser.write_list(
+                &BATCHDETECTKEYPHRASESITEMRESULT_MEMBER_KEY_PHRASES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::KeyPhrase::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BatchDetectKeyPhrasesItemResultBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHDETECTKEYPHRASESITEMRESULT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.index = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_phrases = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::KeyPhrase::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchDetectKeyPhrasesItemResult {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BatchDetectKeyPhrasesItemResult {
     /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesItemResult`](crate::types::BatchDetectKeyPhrasesItemResult).
     pub fn builder() -> crate::types::builders::BatchDetectKeyPhrasesItemResultBuilder {

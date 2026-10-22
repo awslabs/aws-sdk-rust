@@ -20,6 +20,112 @@ impl UpdateBucketBundleInput {
         self.bundle_id.as_deref()
     }
 }
+static UPDATEBUCKETBUNDLEINPUT_MEMBER_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketBundleInput$bucketName",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bucketName",
+    0,
+);
+static UPDATEBUCKETBUNDLEINPUT_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketBundleInput$bundleId",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bundleId",
+    1,
+);
+static UPDATEBUCKETBUNDLEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateBucketBundleInput",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateBucketBundleInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UPDATEBUCKETBUNDLEINPUT_MEMBER_BUCKET_NAME, &UPDATEBUCKETBUNDLEINPUT_MEMBER_BUNDLE_ID],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/UpdateBucketBundle",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateBucketBundleRequest");
+impl UpdateBucketBundleInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEBUCKETBUNDLEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateBucketBundleInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bucket_name {
+            ser.write_string(&UPDATEBUCKETBUNDLEINPUT_MEMBER_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&UPDATEBUCKETBUNDLEINPUT_MEMBER_BUNDLE_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_bucket_bundle::builders::UpdateBucketBundleInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEBUCKETBUNDLEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateBucketBundleInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.bucket_name = builder.bucket_name.or(Some(String::new()));
+        builder.bundle_id = builder.bundle_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateBucketBundleInput {
     /// Creates a new builder-style object to manufacture [`UpdateBucketBundleInput`](crate::operation::update_bucket_bundle::UpdateBucketBundleInput).
     pub fn builder() -> crate::operation::update_bucket_bundle::builders::UpdateBucketBundleInputBuilder {

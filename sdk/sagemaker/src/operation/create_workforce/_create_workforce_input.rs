@@ -54,6 +54,236 @@ impl CreateWorkforceInput {
         self.ip_address_type.as_ref()
     }
 }
+static CREATEWORKFORCEINPUT_MEMBER_COGNITO_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput$CognitoConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CognitoConfig",
+    0,
+);
+static CREATEWORKFORCEINPUT_MEMBER_OIDC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput$OidcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OidcConfig",
+    1,
+);
+static CREATEWORKFORCEINPUT_MEMBER_SOURCE_IP_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput$SourceIpConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SourceIpConfig",
+    2,
+);
+static CREATEWORKFORCEINPUT_MEMBER_WORKFORCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput$WorkforceName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkforceName",
+    3,
+);
+static CREATEWORKFORCEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEWORKFORCEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEWORKFORCEINPUT_MEMBER_TAGS_MEMBER);
+static CREATEWORKFORCEINPUT_MEMBER_WORKFORCE_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput$WorkforceVpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WorkforceVpcConfig",
+    5,
+);
+static CREATEWORKFORCEINPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput$IpAddressType",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IpAddressType",
+    6,
+);
+static CREATEWORKFORCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateWorkforceInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateWorkforceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEWORKFORCEINPUT_MEMBER_COGNITO_CONFIG,
+        &CREATEWORKFORCEINPUT_MEMBER_OIDC_CONFIG,
+        &CREATEWORKFORCEINPUT_MEMBER_SOURCE_IP_CONFIG,
+        &CREATEWORKFORCEINPUT_MEMBER_WORKFORCE_NAME,
+        &CREATEWORKFORCEINPUT_MEMBER_TAGS,
+        &CREATEWORKFORCEINPUT_MEMBER_WORKFORCE_VPC_CONFIG,
+        &CREATEWORKFORCEINPUT_MEMBER_IP_ADDRESS_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateWorkforceRequest");
+impl CreateWorkforceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEWORKFORCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateWorkforceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cognito_config {
+            ser.write_struct(&CREATEWORKFORCEINPUT_MEMBER_COGNITO_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.oidc_config {
+            ser.write_struct(&CREATEWORKFORCEINPUT_MEMBER_OIDC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.source_ip_config {
+            ser.write_struct(&CREATEWORKFORCEINPUT_MEMBER_SOURCE_IP_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.workforce_name {
+            ser.write_string(&CREATEWORKFORCEINPUT_MEMBER_WORKFORCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEWORKFORCEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.workforce_vpc_config {
+            ser.write_struct(&CREATEWORKFORCEINPUT_MEMBER_WORKFORCE_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&CREATEWORKFORCEINPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_workforce::builders::CreateWorkforceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEWORKFORCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cognito_config = Some(crate::types::CognitoConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.oidc_config = Some(crate::types::OidcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_ip_config = Some(crate::types::SourceIpConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workforce_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workforce_vpc_config = Some(crate::types::WorkforceVpcConfigRequest::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::WorkforceIpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateWorkforceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.workforce_name = builder.workforce_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateWorkforceInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkforceInput`](crate::operation::create_workforce::CreateWorkforceInput).
     pub fn builder() -> crate::operation::create_workforce::builders::CreateWorkforceInputBuilder {

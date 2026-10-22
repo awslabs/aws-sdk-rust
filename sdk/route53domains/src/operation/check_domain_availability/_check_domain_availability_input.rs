@@ -43,6 +43,109 @@ impl CheckDomainAvailabilityInput {
         self.idn_lang_code.as_deref()
     }
 }
+static CHECKDOMAINAVAILABILITYINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainAvailabilityInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainAvailabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static CHECKDOMAINAVAILABILITYINPUT_MEMBER_IDN_LANG_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainAvailabilityInput$IdnLangCode",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainAvailabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdnLangCode",
+    1,
+);
+static CHECKDOMAINAVAILABILITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainAvailabilityInput",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainAvailabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHECKDOMAINAVAILABILITYINPUT_MEMBER_DOMAIN_NAME,
+        &CHECKDOMAINAVAILABILITYINPUT_MEMBER_IDN_LANG_CODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CheckDomainAvailabilityRequest");
+impl CheckDomainAvailabilityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHECKDOMAINAVAILABILITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CheckDomainAvailabilityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CHECKDOMAINAVAILABILITYINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.idn_lang_code {
+            ser.write_string(&CHECKDOMAINAVAILABILITYINPUT_MEMBER_IDN_LANG_CODE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHECKDOMAINAVAILABILITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idn_lang_code = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CheckDomainAvailabilityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CheckDomainAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`CheckDomainAvailabilityInput`](crate::operation::check_domain_availability::CheckDomainAvailabilityInput).
     pub fn builder() -> crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder {

@@ -40,6 +40,158 @@ impl ConnectorSummary {
         &self.created_time
     }
 }
+static CONNECTORSUMMARY_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary$arn",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    0,
+);
+static CONNECTORSUMMARY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary$name",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static CONNECTORSUMMARY_MEMBER_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary$provider",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "provider",
+    2,
+);
+static CONNECTORSUMMARY_MEMBER_TENANT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary$tenantIdentifier",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "tenantIdentifier",
+    3,
+);
+static CONNECTORSUMMARY_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary$createdTime",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdTime",
+    4,
+);
+static CONNECTORSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONNECTORSUMMARY_MEMBER_ARN,
+        &CONNECTORSUMMARY_MEMBER_NAME,
+        &CONNECTORSUMMARY_MEMBER_PROVIDER,
+        &CONNECTORSUMMARY_MEMBER_TENANT_IDENTIFIER,
+        &CONNECTORSUMMARY_MEMBER_CREATED_TIME,
+    ],
+);
+impl ConnectorSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONNECTORSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConnectorSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.arn;
+            ser.write_string(&CONNECTORSUMMARY_MEMBER_ARN, val)?;
+        }
+        {
+            let val = &self.name;
+            ser.write_string(&CONNECTORSUMMARY_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.provider;
+            ser.write_string(&CONNECTORSUMMARY_MEMBER_PROVIDER, val.as_str())?;
+        }
+        {
+            let val = &self.tenant_identifier;
+            ser.write_string(&CONNECTORSUMMARY_MEMBER_TENANT_IDENTIFIER, val)?;
+        }
+        {
+            let val = &self.created_time;
+            ser.write_timestamp(&CONNECTORSUMMARY_MEMBER_CREATED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConnectorSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONNECTORSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.arn = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.provider = Some(crate::types::Provider::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    self.tenant_identifier = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    self.created_time = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConnectorSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.arn = builder.arn.or(Some(String::new()));
+        builder.name = builder.name.or(Some(String::new()));
+        builder.tenant_identifier = builder.tenant_identifier.or(Some(String::new()));
+        builder.created_time = builder.created_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ConnectorSummary {
     /// Creates a new builder-style object to manufacture [`ConnectorSummary`](crate::types::ConnectorSummary).
     pub fn builder() -> crate::types::builders::ConnectorSummaryBuilder {

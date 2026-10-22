@@ -43,6 +43,169 @@ impl ReferencedImageDetail {
         self.artifact_media_type.as_deref()
     }
 }
+static REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ReferencedImageDetail$imageDigest",
+        "com.amazonaws.ecrpublic",
+        "ReferencedImageDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageDigest",
+    0,
+);
+static REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ReferencedImageDetail$imageSizeInBytes",
+        "com.amazonaws.ecrpublic",
+        "ReferencedImageDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "imageSizeInBytes",
+    1,
+);
+static REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_PUSHED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ReferencedImageDetail$imagePushedAt",
+        "com.amazonaws.ecrpublic",
+        "ReferencedImageDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "imagePushedAt",
+    2,
+);
+static REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ReferencedImageDetail$imageManifestMediaType",
+        "com.amazonaws.ecrpublic",
+        "ReferencedImageDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "imageManifestMediaType",
+    3,
+);
+static REFERENCEDIMAGEDETAIL_MEMBER_ARTIFACT_MEDIA_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ReferencedImageDetail$artifactMediaType",
+        "com.amazonaws.ecrpublic",
+        "ReferencedImageDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "artifactMediaType",
+    4,
+);
+static REFERENCEDIMAGEDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#ReferencedImageDetail",
+        "com.amazonaws.ecrpublic",
+        "ReferencedImageDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_DIGEST,
+        &REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_SIZE_IN_BYTES,
+        &REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_PUSHED_AT,
+        &REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE,
+        &REFERENCEDIMAGEDETAIL_MEMBER_ARTIFACT_MEDIA_TYPE,
+    ],
+);
+impl ReferencedImageDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REFERENCEDIMAGEDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ReferencedImageDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.image_digest {
+            ser.write_string(&REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.image_size_in_bytes {
+            ser.write_long(&REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.image_pushed_at {
+            ser.write_timestamp(&REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_PUSHED_AT, val)?;
+        }
+        if let Some(ref val) = self.image_manifest_media_type {
+            ser.write_string(&REFERENCEDIMAGEDETAIL_MEMBER_IMAGE_MANIFEST_MEDIA_TYPE, val)?;
+        }
+        if let Some(ref val) = self.artifact_media_type {
+            ser.write_string(&REFERENCEDIMAGEDETAIL_MEMBER_ARTIFACT_MEDIA_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ReferencedImageDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REFERENCEDIMAGEDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_size_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_pushed_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_manifest_media_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_media_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ReferencedImageDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ReferencedImageDetail {
     /// Creates a new builder-style object to manufacture [`ReferencedImageDetail`](crate::types::ReferencedImageDetail).
     pub fn builder() -> crate::types::builders::ReferencedImageDetailBuilder {

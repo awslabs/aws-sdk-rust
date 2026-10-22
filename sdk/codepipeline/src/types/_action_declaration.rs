@@ -106,6 +106,481 @@ impl ActionDeclaration {
         self.environment_variables.as_deref().unwrap_or_default()
     }
 }
+static ACTIONDECLARATION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$name",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static ACTIONDECLARATION_MEMBER_ACTION_TYPE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$actionTypeId",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "actionTypeId",
+    1,
+);
+static ACTIONDECLARATION_MEMBER_RUN_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$runOrder",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "runOrder",
+    2,
+);
+static ACTIONDECLARATION_MEMBER_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionConfigurationMap$key",
+        "com.amazonaws.codepipeline",
+        "ActionConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static ACTIONDECLARATION_MEMBER_CONFIGURATION_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionConfigurationMap$value",
+        "com.amazonaws.codepipeline",
+        "ActionConfigurationMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static ACTIONDECLARATION_MEMBER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$configuration",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "configuration",
+    3,
+)
+.with_map_members(&ACTIONDECLARATION_MEMBER_CONFIGURATION_KEY, &ACTIONDECLARATION_MEMBER_CONFIGURATION_VALUE);
+static ACTIONDECLARATION_MEMBER_COMMANDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#CommandList$member",
+        "com.amazonaws.codepipeline",
+        "CommandList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ACTIONDECLARATION_MEMBER_COMMANDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$commands",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "commands",
+    4,
+)
+.with_list_member(&ACTIONDECLARATION_MEMBER_COMMANDS_MEMBER);
+static ACTIONDECLARATION_MEMBER_OUTPUT_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#OutputArtifactList$member",
+        "com.amazonaws.codepipeline",
+        "OutputArtifactList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACTIONDECLARATION_MEMBER_OUTPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$outputArtifacts",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "outputArtifacts",
+    5,
+)
+.with_list_member(&ACTIONDECLARATION_MEMBER_OUTPUT_ARTIFACTS_MEMBER);
+static ACTIONDECLARATION_MEMBER_INPUT_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#InputArtifactList$member",
+        "com.amazonaws.codepipeline",
+        "InputArtifactList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACTIONDECLARATION_MEMBER_INPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$inputArtifacts",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "inputArtifacts",
+    6,
+)
+.with_list_member(&ACTIONDECLARATION_MEMBER_INPUT_ARTIFACTS_MEMBER);
+static ACTIONDECLARATION_MEMBER_OUTPUT_VARIABLES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#OutputVariableList$member",
+        "com.amazonaws.codepipeline",
+        "OutputVariableList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ACTIONDECLARATION_MEMBER_OUTPUT_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$outputVariables",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "outputVariables",
+    7,
+)
+.with_list_member(&ACTIONDECLARATION_MEMBER_OUTPUT_VARIABLES_MEMBER);
+static ACTIONDECLARATION_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$roleArn",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "roleArn",
+    8,
+);
+static ACTIONDECLARATION_MEMBER_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$region",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "region",
+    9,
+);
+static ACTIONDECLARATION_MEMBER_NAMESPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$namespace",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "namespace",
+    10,
+);
+static ACTIONDECLARATION_MEMBER_TIMEOUT_IN_MINUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$timeoutInMinutes",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "timeoutInMinutes",
+    11,
+);
+static ACTIONDECLARATION_MEMBER_ENVIRONMENT_VARIABLES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#EnvironmentVariableList$member",
+        "com.amazonaws.codepipeline",
+        "EnvironmentVariableList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACTIONDECLARATION_MEMBER_ENVIRONMENT_VARIABLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration$environmentVariables",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "environmentVariables",
+    12,
+)
+.with_list_member(&ACTIONDECLARATION_MEMBER_ENVIRONMENT_VARIABLES_MEMBER);
+static ACTIONDECLARATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionDeclaration",
+        "com.amazonaws.codepipeline",
+        "ActionDeclaration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONDECLARATION_MEMBER_NAME,
+        &ACTIONDECLARATION_MEMBER_ACTION_TYPE_ID,
+        &ACTIONDECLARATION_MEMBER_RUN_ORDER,
+        &ACTIONDECLARATION_MEMBER_CONFIGURATION,
+        &ACTIONDECLARATION_MEMBER_COMMANDS,
+        &ACTIONDECLARATION_MEMBER_OUTPUT_ARTIFACTS,
+        &ACTIONDECLARATION_MEMBER_INPUT_ARTIFACTS,
+        &ACTIONDECLARATION_MEMBER_OUTPUT_VARIABLES,
+        &ACTIONDECLARATION_MEMBER_ROLE_ARN,
+        &ACTIONDECLARATION_MEMBER_REGION,
+        &ACTIONDECLARATION_MEMBER_NAMESPACE,
+        &ACTIONDECLARATION_MEMBER_TIMEOUT_IN_MINUTES,
+        &ACTIONDECLARATION_MEMBER_ENVIRONMENT_VARIABLES,
+    ],
+);
+impl ActionDeclaration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONDECLARATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionDeclaration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&ACTIONDECLARATION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.action_type_id {
+            ser.write_struct(&ACTIONDECLARATION_MEMBER_ACTION_TYPE_ID, val)?;
+        }
+        if let Some(ref val) = self.run_order {
+            ser.write_integer(&ACTIONDECLARATION_MEMBER_RUN_ORDER, *val)?;
+        }
+        if let Some(ref val) = self.configuration {
+            ser.write_map(
+                &ACTIONDECLARATION_MEMBER_CONFIGURATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.commands {
+            ser.write_list(
+                &ACTIONDECLARATION_MEMBER_COMMANDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_artifacts {
+            ser.write_list(
+                &ACTIONDECLARATION_MEMBER_OUTPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OutputArtifact::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_artifacts {
+            ser.write_list(
+                &ACTIONDECLARATION_MEMBER_INPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InputArtifact::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_variables {
+            ser.write_list(
+                &ACTIONDECLARATION_MEMBER_OUTPUT_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&ACTIONDECLARATION_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.region {
+            ser.write_string(&ACTIONDECLARATION_MEMBER_REGION, val)?;
+        }
+        if let Some(ref val) = self.namespace {
+            ser.write_string(&ACTIONDECLARATION_MEMBER_NAMESPACE, val)?;
+        }
+        if let Some(ref val) = self.timeout_in_minutes {
+            ser.write_integer(&ACTIONDECLARATION_MEMBER_TIMEOUT_IN_MINUTES, *val)?;
+        }
+        if let Some(ref val) = self.environment_variables {
+            ser.write_list(
+                &ACTIONDECLARATION_MEMBER_ENVIRONMENT_VARIABLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EnvironmentVariable::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionDeclarationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONDECLARATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_type_id = Some(crate::types::ActionTypeId::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.run_order = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.configuration = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commands = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OutputArtifact::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InputArtifact::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_variables = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_in_minutes = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.environment_variables = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EnvironmentVariable::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionDeclaration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ActionDeclaration {
     /// Creates a new builder-style object to manufacture [`ActionDeclaration`](crate::types::ActionDeclaration).
     pub fn builder() -> crate::types::builders::ActionDeclarationBuilder {

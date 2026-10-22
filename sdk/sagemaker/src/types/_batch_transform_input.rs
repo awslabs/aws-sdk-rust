@@ -79,6 +79,317 @@ impl BatchTransformInput {
         self.exclude_features_attribute.as_deref()
     }
 }
+static BATCHTRANSFORMINPUT_MEMBER_DATA_CAPTURED_DESTINATION_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$DataCapturedDestinationS3Uri",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataCapturedDestinationS3Uri",
+    0,
+);
+static BATCHTRANSFORMINPUT_MEMBER_DATASET_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$DatasetFormat",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DatasetFormat",
+    1,
+);
+static BATCHTRANSFORMINPUT_MEMBER_LOCAL_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$LocalPath",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocalPath",
+    2,
+);
+static BATCHTRANSFORMINPUT_MEMBER_S3_INPUT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$S3InputMode",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3InputMode",
+    3,
+);
+static BATCHTRANSFORMINPUT_MEMBER_S3_DATA_DISTRIBUTION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$S3DataDistributionType",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3DataDistributionType",
+    4,
+);
+static BATCHTRANSFORMINPUT_MEMBER_FEATURES_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$FeaturesAttribute",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeaturesAttribute",
+    5,
+);
+static BATCHTRANSFORMINPUT_MEMBER_INFERENCE_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$InferenceAttribute",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InferenceAttribute",
+    6,
+);
+static BATCHTRANSFORMINPUT_MEMBER_PROBABILITY_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$ProbabilityAttribute",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProbabilityAttribute",
+    7,
+);
+static BATCHTRANSFORMINPUT_MEMBER_PROBABILITY_THRESHOLD_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$ProbabilityThresholdAttribute",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "ProbabilityThresholdAttribute",
+    8,
+);
+static BATCHTRANSFORMINPUT_MEMBER_START_TIME_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$StartTimeOffset",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StartTimeOffset",
+    9,
+);
+static BATCHTRANSFORMINPUT_MEMBER_END_TIME_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$EndTimeOffset",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndTimeOffset",
+    10,
+);
+static BATCHTRANSFORMINPUT_MEMBER_EXCLUDE_FEATURES_ATTRIBUTE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput$ExcludeFeaturesAttribute",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExcludeFeaturesAttribute",
+    11,
+);
+static BATCHTRANSFORMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#BatchTransformInput",
+        "com.amazonaws.sagemaker",
+        "BatchTransformInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHTRANSFORMINPUT_MEMBER_DATA_CAPTURED_DESTINATION_S3_URI,
+        &BATCHTRANSFORMINPUT_MEMBER_DATASET_FORMAT,
+        &BATCHTRANSFORMINPUT_MEMBER_LOCAL_PATH,
+        &BATCHTRANSFORMINPUT_MEMBER_S3_INPUT_MODE,
+        &BATCHTRANSFORMINPUT_MEMBER_S3_DATA_DISTRIBUTION_TYPE,
+        &BATCHTRANSFORMINPUT_MEMBER_FEATURES_ATTRIBUTE,
+        &BATCHTRANSFORMINPUT_MEMBER_INFERENCE_ATTRIBUTE,
+        &BATCHTRANSFORMINPUT_MEMBER_PROBABILITY_ATTRIBUTE,
+        &BATCHTRANSFORMINPUT_MEMBER_PROBABILITY_THRESHOLD_ATTRIBUTE,
+        &BATCHTRANSFORMINPUT_MEMBER_START_TIME_OFFSET,
+        &BATCHTRANSFORMINPUT_MEMBER_END_TIME_OFFSET,
+        &BATCHTRANSFORMINPUT_MEMBER_EXCLUDE_FEATURES_ATTRIBUTE,
+    ],
+);
+impl BatchTransformInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHTRANSFORMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchTransformInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.data_captured_destination_s3_uri {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_DATA_CAPTURED_DESTINATION_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.dataset_format {
+            ser.write_struct(&BATCHTRANSFORMINPUT_MEMBER_DATASET_FORMAT, val)?;
+        }
+        if let Some(ref val) = self.local_path {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_LOCAL_PATH, val)?;
+        }
+        if let Some(ref val) = self.s3_input_mode {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_S3_INPUT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.s3_data_distribution_type {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_S3_DATA_DISTRIBUTION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.features_attribute {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_FEATURES_ATTRIBUTE, val)?;
+        }
+        if let Some(ref val) = self.inference_attribute {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_INFERENCE_ATTRIBUTE, val)?;
+        }
+        if let Some(ref val) = self.probability_attribute {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_PROBABILITY_ATTRIBUTE, val)?;
+        }
+        if let Some(ref val) = self.probability_threshold_attribute {
+            ser.write_double(&BATCHTRANSFORMINPUT_MEMBER_PROBABILITY_THRESHOLD_ATTRIBUTE, *val)?;
+        }
+        if let Some(ref val) = self.start_time_offset {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_START_TIME_OFFSET, val)?;
+        }
+        if let Some(ref val) = self.end_time_offset {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_END_TIME_OFFSET, val)?;
+        }
+        if let Some(ref val) = self.exclude_features_attribute {
+            ser.write_string(&BATCHTRANSFORMINPUT_MEMBER_EXCLUDE_FEATURES_ATTRIBUTE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BatchTransformInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHTRANSFORMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_captured_destination_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dataset_format = Some(crate::types::MonitoringDatasetFormat::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.local_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_input_mode = Some(crate::types::ProcessingS3InputMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_data_distribution_type =
+                            Some(crate::types::ProcessingS3DataDistributionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.features_attribute = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inference_attribute = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.probability_attribute = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.probability_threshold_attribute = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time_offset = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time_offset = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exclude_features_attribute = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchTransformInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BatchTransformInput {
     /// Creates a new builder-style object to manufacture [`BatchTransformInput`](crate::types::BatchTransformInput).
     pub fn builder() -> crate::types::builders::BatchTransformInputBuilder {

@@ -715,6 +715,9 @@ pub mod list_quick_connects;
 /// Types for the `ListRealtimeContactAnalysisSegmentsV2` operation.
 pub mod list_realtime_contact_analysis_segments_v2;
 
+/// Types for the `ListReplicationFindings` operation.
+pub mod list_replication_findings;
+
 /// Types for the `ListRoutingProfileManualAssignmentQueues` operation.
 pub mod list_routing_profile_manual_assignment_queues;
 

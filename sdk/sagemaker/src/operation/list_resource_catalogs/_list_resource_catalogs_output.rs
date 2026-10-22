@@ -21,6 +21,133 @@ impl ListResourceCatalogsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTRESOURCECATALOGSOUTPUT_MEMBER_RESOURCE_CATALOGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResourceCatalogList$member",
+        "com.amazonaws.sagemaker",
+        "ResourceCatalogList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTRESOURCECATALOGSOUTPUT_MEMBER_RESOURCE_CATALOGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListResourceCatalogsOutput$ResourceCatalogs",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListResourceCatalogsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResourceCatalogs",
+    0,
+)
+.with_list_member(&LISTRESOURCECATALOGSOUTPUT_MEMBER_RESOURCE_CATALOGS_MEMBER);
+static LISTRESOURCECATALOGSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListResourceCatalogsOutput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListResourceCatalogsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTRESOURCECATALOGSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListResourceCatalogsOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListResourceCatalogsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTRESOURCECATALOGSOUTPUT_MEMBER_RESOURCE_CATALOGS,
+        &LISTRESOURCECATALOGSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListResourceCatalogsResponse");
+impl ListResourceCatalogsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTRESOURCECATALOGSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListResourceCatalogsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_catalogs {
+            ser.write_list(
+                &LISTRESOURCECATALOGSOUTPUT_MEMBER_RESOURCE_CATALOGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceCatalog::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTRESOURCECATALOGSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_resource_catalogs::builders::ListResourceCatalogsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTRESOURCECATALOGSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_catalogs = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceCatalog::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListResourceCatalogsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListResourceCatalogsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

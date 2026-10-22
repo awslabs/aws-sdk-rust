@@ -89,6 +89,281 @@ impl Blueprint {
         self.app_category.as_ref()
     }
 }
+static BLUEPRINT_MEMBER_BLUEPRINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$blueprintId", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "blueprintId",
+    0,
+);
+static BLUEPRINT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$name", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    1,
+);
+static BLUEPRINT_MEMBER_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$group", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "group",
+    2,
+);
+static BLUEPRINT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$type", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "type",
+    3,
+);
+static BLUEPRINT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$description", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    4,
+);
+static BLUEPRINT_MEMBER_IS_ACTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$isActive", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isActive",
+    5,
+);
+static BLUEPRINT_MEMBER_MIN_POWER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$minPower", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "minPower",
+    6,
+);
+static BLUEPRINT_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$version", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "version",
+    7,
+);
+static BLUEPRINT_MEMBER_VERSION_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$versionCode", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "versionCode",
+    8,
+);
+static BLUEPRINT_MEMBER_PRODUCT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$productUrl", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "productUrl",
+    9,
+);
+static BLUEPRINT_MEMBER_LICENSE_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$licenseUrl", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "licenseUrl",
+    10,
+);
+static BLUEPRINT_MEMBER_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$platform", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "platform",
+    11,
+);
+static BLUEPRINT_MEMBER_APP_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint$appCategory", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::String,
+    "appCategory",
+    12,
+);
+static BLUEPRINT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Blueprint", "com.amazonaws.lightsail", "Blueprint"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BLUEPRINT_MEMBER_BLUEPRINT_ID,
+        &BLUEPRINT_MEMBER_NAME,
+        &BLUEPRINT_MEMBER_GROUP,
+        &BLUEPRINT_MEMBER_TYPE,
+        &BLUEPRINT_MEMBER_DESCRIPTION,
+        &BLUEPRINT_MEMBER_IS_ACTIVE,
+        &BLUEPRINT_MEMBER_MIN_POWER,
+        &BLUEPRINT_MEMBER_VERSION,
+        &BLUEPRINT_MEMBER_VERSION_CODE,
+        &BLUEPRINT_MEMBER_PRODUCT_URL,
+        &BLUEPRINT_MEMBER_LICENSE_URL,
+        &BLUEPRINT_MEMBER_PLATFORM,
+        &BLUEPRINT_MEMBER_APP_CATEGORY,
+    ],
+);
+impl Blueprint {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BLUEPRINT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Blueprint {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.blueprint_id {
+            ser.write_string(&BLUEPRINT_MEMBER_BLUEPRINT_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&BLUEPRINT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.group {
+            ser.write_string(&BLUEPRINT_MEMBER_GROUP, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&BLUEPRINT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&BLUEPRINT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.is_active {
+            ser.write_boolean(&BLUEPRINT_MEMBER_IS_ACTIVE, *val)?;
+        }
+        if let Some(ref val) = self.min_power {
+            ser.write_integer(&BLUEPRINT_MEMBER_MIN_POWER, *val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_string(&BLUEPRINT_MEMBER_VERSION, val)?;
+        }
+        if let Some(ref val) = self.version_code {
+            ser.write_string(&BLUEPRINT_MEMBER_VERSION_CODE, val)?;
+        }
+        if let Some(ref val) = self.product_url {
+            ser.write_string(&BLUEPRINT_MEMBER_PRODUCT_URL, val)?;
+        }
+        if let Some(ref val) = self.license_url {
+            ser.write_string(&BLUEPRINT_MEMBER_LICENSE_URL, val)?;
+        }
+        if let Some(ref val) = self.platform {
+            ser.write_string(&BLUEPRINT_MEMBER_PLATFORM, val.as_str())?;
+        }
+        if let Some(ref val) = self.app_category {
+            ser.write_string(&BLUEPRINT_MEMBER_APP_CATEGORY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BlueprintBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BLUEPRINT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blueprint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::BlueprintType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_active = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_power = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform = Some(crate::types::InstancePlatform::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_category = Some(crate::types::AppCategory::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Blueprint {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Blueprint {
     /// Creates a new builder-style object to manufacture [`Blueprint`](crate::types::Blueprint).
     pub fn builder() -> crate::types::builders::BlueprintBuilder {

@@ -33,6 +33,144 @@ impl CurrentRevision {
         self.revision_summary.as_deref()
     }
 }
+static CURRENTREVISION_MEMBER_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#CurrentRevision$revision",
+        "com.amazonaws.codepipeline",
+        "CurrentRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revision",
+    0,
+);
+static CURRENTREVISION_MEMBER_CHANGE_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#CurrentRevision$changeIdentifier",
+        "com.amazonaws.codepipeline",
+        "CurrentRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "changeIdentifier",
+    1,
+);
+static CURRENTREVISION_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#CurrentRevision$created",
+        "com.amazonaws.codepipeline",
+        "CurrentRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "created",
+    2,
+);
+static CURRENTREVISION_MEMBER_REVISION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#CurrentRevision$revisionSummary",
+        "com.amazonaws.codepipeline",
+        "CurrentRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionSummary",
+    3,
+);
+static CURRENTREVISION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#CurrentRevision",
+        "com.amazonaws.codepipeline",
+        "CurrentRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CURRENTREVISION_MEMBER_REVISION,
+        &CURRENTREVISION_MEMBER_CHANGE_IDENTIFIER,
+        &CURRENTREVISION_MEMBER_CREATED,
+        &CURRENTREVISION_MEMBER_REVISION_SUMMARY,
+    ],
+);
+impl CurrentRevision {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CURRENTREVISION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CurrentRevision {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.revision;
+            ser.write_string(&CURRENTREVISION_MEMBER_REVISION, val)?;
+        }
+        {
+            let val = &self.change_identifier;
+            ser.write_string(&CURRENTREVISION_MEMBER_CHANGE_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&CURRENTREVISION_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.revision_summary {
+            ser.write_string(&CURRENTREVISION_MEMBER_REVISION_SUMMARY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CurrentRevisionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CURRENTREVISION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.revision = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.change_identifier = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_summary = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CurrentRevision {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.revision = builder.revision.or(Some(String::new()));
+        builder.change_identifier = builder.change_identifier.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CurrentRevision {
     /// Creates a new builder-style object to manufacture [`CurrentRevision`](crate::types::CurrentRevision).
     pub fn builder() -> crate::types::builders::CurrentRevisionBuilder {

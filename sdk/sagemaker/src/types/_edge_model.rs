@@ -31,6 +31,136 @@ impl EdgeModel {
         self.latest_inference.as_ref()
     }
 }
+static EDGEMODEL_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EdgeModel$ModelName", "com.amazonaws.sagemaker", "EdgeModel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    0,
+);
+static EDGEMODEL_MEMBER_MODEL_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EdgeModel$ModelVersion", "com.amazonaws.sagemaker", "EdgeModel"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelVersion",
+    1,
+);
+static EDGEMODEL_MEMBER_LATEST_SAMPLE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModel$LatestSampleTime",
+        "com.amazonaws.sagemaker",
+        "EdgeModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LatestSampleTime",
+    2,
+);
+static EDGEMODEL_MEMBER_LATEST_INFERENCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModel$LatestInference",
+        "com.amazonaws.sagemaker",
+        "EdgeModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LatestInference",
+    3,
+);
+static EDGEMODEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EdgeModel", "com.amazonaws.sagemaker", "EdgeModel"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EDGEMODEL_MEMBER_MODEL_NAME,
+        &EDGEMODEL_MEMBER_MODEL_VERSION,
+        &EDGEMODEL_MEMBER_LATEST_SAMPLE_TIME,
+        &EDGEMODEL_MEMBER_LATEST_INFERENCE,
+    ],
+);
+impl EdgeModel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EDGEMODEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EdgeModel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&EDGEMODEL_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_version {
+            ser.write_string(&EDGEMODEL_MEMBER_MODEL_VERSION, val)?;
+        }
+        if let Some(ref val) = self.latest_sample_time {
+            ser.write_timestamp(&EDGEMODEL_MEMBER_LATEST_SAMPLE_TIME, val)?;
+        }
+        if let Some(ref val) = self.latest_inference {
+            ser.write_timestamp(&EDGEMODEL_MEMBER_LATEST_INFERENCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EdgeModelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EDGEMODEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_sample_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_inference = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EdgeModel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EdgeModel {
     /// Creates a new builder-style object to manufacture [`EdgeModel`](crate::types::EdgeModel).
     pub fn builder() -> crate::types::builders::EdgeModelBuilder {

@@ -43,6 +43,186 @@ impl DomainPrice {
         self.restoration_price.as_ref()
     }
 }
+static DOMAINPRICE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainPrice$Name",
+        "com.amazonaws.route53domains",
+        "DomainPrice",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static DOMAINPRICE_MEMBER_REGISTRATION_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainPrice$RegistrationPrice",
+        "com.amazonaws.route53domains",
+        "DomainPrice",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RegistrationPrice",
+    1,
+);
+static DOMAINPRICE_MEMBER_TRANSFER_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainPrice$TransferPrice",
+        "com.amazonaws.route53domains",
+        "DomainPrice",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TransferPrice",
+    2,
+);
+static DOMAINPRICE_MEMBER_RENEWAL_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainPrice$RenewalPrice",
+        "com.amazonaws.route53domains",
+        "DomainPrice",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RenewalPrice",
+    3,
+);
+static DOMAINPRICE_MEMBER_CHANGE_OWNERSHIP_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainPrice$ChangeOwnershipPrice",
+        "com.amazonaws.route53domains",
+        "DomainPrice",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ChangeOwnershipPrice",
+    4,
+);
+static DOMAINPRICE_MEMBER_RESTORATION_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainPrice$RestorationPrice",
+        "com.amazonaws.route53domains",
+        "DomainPrice",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RestorationPrice",
+    5,
+);
+static DOMAINPRICE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.route53domains#DomainPrice", "com.amazonaws.route53domains", "DomainPrice"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINPRICE_MEMBER_NAME,
+        &DOMAINPRICE_MEMBER_REGISTRATION_PRICE,
+        &DOMAINPRICE_MEMBER_TRANSFER_PRICE,
+        &DOMAINPRICE_MEMBER_RENEWAL_PRICE,
+        &DOMAINPRICE_MEMBER_CHANGE_OWNERSHIP_PRICE,
+        &DOMAINPRICE_MEMBER_RESTORATION_PRICE,
+    ],
+);
+impl DomainPrice {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINPRICE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainPrice {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DOMAINPRICE_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.registration_price {
+            ser.write_struct(&DOMAINPRICE_MEMBER_REGISTRATION_PRICE, val)?;
+        }
+        if let Some(ref val) = self.transfer_price {
+            ser.write_struct(&DOMAINPRICE_MEMBER_TRANSFER_PRICE, val)?;
+        }
+        if let Some(ref val) = self.renewal_price {
+            ser.write_struct(&DOMAINPRICE_MEMBER_RENEWAL_PRICE, val)?;
+        }
+        if let Some(ref val) = self.change_ownership_price {
+            ser.write_struct(&DOMAINPRICE_MEMBER_CHANGE_OWNERSHIP_PRICE, val)?;
+        }
+        if let Some(ref val) = self.restoration_price {
+            ser.write_struct(&DOMAINPRICE_MEMBER_RESTORATION_PRICE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainPriceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINPRICE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registration_price = Some(crate::types::PriceWithCurrency::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transfer_price = Some(crate::types::PriceWithCurrency::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.renewal_price = Some(crate::types::PriceWithCurrency::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.change_ownership_price = Some(crate::types::PriceWithCurrency::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restoration_price = Some(crate::types::PriceWithCurrency::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainPrice {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DomainPrice {
     /// Creates a new builder-style object to manufacture [`DomainPrice`](crate::types::DomainPrice).
     pub fn builder() -> crate::types::builders::DomainPriceBuilder {

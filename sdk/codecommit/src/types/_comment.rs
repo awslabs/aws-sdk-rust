@@ -69,6 +69,287 @@ impl Comment {
         self.reaction_counts.as_ref()
     }
 }
+static COMMENT_MEMBER_COMMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$commentId", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "commentId",
+    0,
+);
+static COMMENT_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$content", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "content",
+    1,
+);
+static COMMENT_MEMBER_IN_REPLY_TO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$inReplyTo", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "inReplyTo",
+    2,
+);
+static COMMENT_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$creationDate", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "creationDate",
+    3,
+);
+static COMMENT_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$lastModifiedDate", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastModifiedDate",
+    4,
+);
+static COMMENT_MEMBER_AUTHOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$authorArn", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::String,
+    "authorArn",
+    5,
+);
+static COMMENT_MEMBER_DELETED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$deleted", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "deleted",
+    6,
+);
+static COMMENT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#Comment$clientRequestToken",
+        "com.amazonaws.codecommit",
+        "Comment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientRequestToken",
+    7,
+);
+static COMMENT_MEMBER_CALLER_REACTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#CallerReactions$member",
+        "com.amazonaws.codecommit",
+        "CallerReactions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static COMMENT_MEMBER_CALLER_REACTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$callerReactions", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::List,
+    "callerReactions",
+    8,
+)
+.with_list_member(&COMMENT_MEMBER_CALLER_REACTIONS_MEMBER);
+static COMMENT_MEMBER_REACTION_COUNTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReactionCountsMap$key",
+        "com.amazonaws.codecommit",
+        "ReactionCountsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static COMMENT_MEMBER_REACTION_COUNTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReactionCountsMap$value",
+        "com.amazonaws.codecommit",
+        "ReactionCountsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "value",
+    1,
+);
+static COMMENT_MEMBER_REACTION_COUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment$reactionCounts", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "reactionCounts",
+    9,
+)
+.with_map_members(&COMMENT_MEMBER_REACTION_COUNTS_KEY, &COMMENT_MEMBER_REACTION_COUNTS_VALUE);
+static COMMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Comment", "com.amazonaws.codecommit", "Comment"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COMMENT_MEMBER_COMMENT_ID,
+        &COMMENT_MEMBER_CONTENT,
+        &COMMENT_MEMBER_IN_REPLY_TO,
+        &COMMENT_MEMBER_CREATION_DATE,
+        &COMMENT_MEMBER_LAST_MODIFIED_DATE,
+        &COMMENT_MEMBER_AUTHOR_ARN,
+        &COMMENT_MEMBER_DELETED,
+        &COMMENT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &COMMENT_MEMBER_CALLER_REACTIONS,
+        &COMMENT_MEMBER_REACTION_COUNTS,
+    ],
+);
+impl Comment {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Comment {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.comment_id {
+            ser.write_string(&COMMENT_MEMBER_COMMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&COMMENT_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.in_reply_to {
+            ser.write_string(&COMMENT_MEMBER_IN_REPLY_TO, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&COMMENT_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&COMMENT_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.author_arn {
+            ser.write_string(&COMMENT_MEMBER_AUTHOR_ARN, val)?;
+        }
+        {
+            let val = &self.deleted;
+            ser.write_boolean(&COMMENT_MEMBER_DELETED, *val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&COMMENT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.caller_reactions {
+            ser.write_list(
+                &COMMENT_MEMBER_CALLER_REACTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.reaction_counts {
+            ser.write_map(
+                &COMMENT_MEMBER_REACTION_COUNTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_integer(&::aws_smithy_schema::prelude::INTEGER, *value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CommentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.comment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.in_reply_to = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.author_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    self.deleted = Some(deser.read_boolean(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.caller_reactions = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reaction_counts = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, deser.read_integer(&::aws_smithy_schema::prelude::INTEGER)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Comment {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Comment {
     /// Creates a new builder-style object to manufacture [`Comment`](crate::types::Comment).
     pub fn builder() -> crate::types::builders::CommentBuilder {

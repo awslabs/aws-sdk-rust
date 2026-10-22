@@ -67,6 +67,262 @@ impl ConflictMetadata {
         self.merge_operations.as_ref()
     }
 }
+static CONFLICTMETADATA_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$filePath",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "filePath",
+    0,
+);
+static CONFLICTMETADATA_MEMBER_FILE_SIZES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$fileSizes",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "fileSizes",
+    1,
+);
+static CONFLICTMETADATA_MEMBER_FILE_MODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$fileModes",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "fileModes",
+    2,
+);
+static CONFLICTMETADATA_MEMBER_OBJECT_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$objectTypes",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "objectTypes",
+    3,
+);
+static CONFLICTMETADATA_MEMBER_NUMBER_OF_CONFLICTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$numberOfConflicts",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "numberOfConflicts",
+    4,
+);
+static CONFLICTMETADATA_MEMBER_IS_BINARY_FILE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$isBinaryFile",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "isBinaryFile",
+    5,
+);
+static CONFLICTMETADATA_MEMBER_CONTENT_CONFLICT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$contentConflict",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "contentConflict",
+    6,
+);
+static CONFLICTMETADATA_MEMBER_FILE_MODE_CONFLICT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$fileModeConflict",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "fileModeConflict",
+    7,
+);
+static CONFLICTMETADATA_MEMBER_OBJECT_TYPE_CONFLICT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$objectTypeConflict",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "objectTypeConflict",
+    8,
+);
+static CONFLICTMETADATA_MEMBER_MERGE_OPERATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata$mergeOperations",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "mergeOperations",
+    9,
+);
+static CONFLICTMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ConflictMetadata",
+        "com.amazonaws.codecommit",
+        "ConflictMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFLICTMETADATA_MEMBER_FILE_PATH,
+        &CONFLICTMETADATA_MEMBER_FILE_SIZES,
+        &CONFLICTMETADATA_MEMBER_FILE_MODES,
+        &CONFLICTMETADATA_MEMBER_OBJECT_TYPES,
+        &CONFLICTMETADATA_MEMBER_NUMBER_OF_CONFLICTS,
+        &CONFLICTMETADATA_MEMBER_IS_BINARY_FILE,
+        &CONFLICTMETADATA_MEMBER_CONTENT_CONFLICT,
+        &CONFLICTMETADATA_MEMBER_FILE_MODE_CONFLICT,
+        &CONFLICTMETADATA_MEMBER_OBJECT_TYPE_CONFLICT,
+        &CONFLICTMETADATA_MEMBER_MERGE_OPERATIONS,
+    ],
+);
+impl ConflictMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFLICTMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConflictMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_path {
+            ser.write_string(&CONFLICTMETADATA_MEMBER_FILE_PATH, val)?;
+        }
+        if let Some(ref val) = self.file_sizes {
+            ser.write_struct(&CONFLICTMETADATA_MEMBER_FILE_SIZES, val)?;
+        }
+        if let Some(ref val) = self.file_modes {
+            ser.write_struct(&CONFLICTMETADATA_MEMBER_FILE_MODES, val)?;
+        }
+        if let Some(ref val) = self.object_types {
+            ser.write_struct(&CONFLICTMETADATA_MEMBER_OBJECT_TYPES, val)?;
+        }
+        {
+            let val = &self.number_of_conflicts;
+            ser.write_integer(&CONFLICTMETADATA_MEMBER_NUMBER_OF_CONFLICTS, *val)?;
+        }
+        if let Some(ref val) = self.is_binary_file {
+            ser.write_struct(&CONFLICTMETADATA_MEMBER_IS_BINARY_FILE, val)?;
+        }
+        {
+            let val = &self.content_conflict;
+            ser.write_boolean(&CONFLICTMETADATA_MEMBER_CONTENT_CONFLICT, *val)?;
+        }
+        {
+            let val = &self.file_mode_conflict;
+            ser.write_boolean(&CONFLICTMETADATA_MEMBER_FILE_MODE_CONFLICT, *val)?;
+        }
+        {
+            let val = &self.object_type_conflict;
+            ser.write_boolean(&CONFLICTMETADATA_MEMBER_OBJECT_TYPE_CONFLICT, *val)?;
+        }
+        if let Some(ref val) = self.merge_operations {
+            ser.write_struct(&CONFLICTMETADATA_MEMBER_MERGE_OPERATIONS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConflictMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFLICTMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_sizes = Some(crate::types::FileSizes::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_modes = Some(crate::types::FileModes::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.object_types = Some(crate::types::ObjectTypes::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    self.number_of_conflicts = Some(deser.read_integer(member)?);
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_binary_file = Some(crate::types::IsBinaryFile::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    self.content_conflict = Some(deser.read_boolean(member)?);
+                }
+                Some(7) => {
+                    self.file_mode_conflict = Some(deser.read_boolean(member)?);
+                }
+                Some(8) => {
+                    self.object_type_conflict = Some(deser.read_boolean(member)?);
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.merge_operations = Some(crate::types::MergeOperations::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConflictMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConflictMetadata {
     /// Creates a new builder-style object to manufacture [`ConflictMetadata`](crate::types::ConflictMetadata).
     pub fn builder() -> crate::types::builders::ConflictMetadataBuilder {

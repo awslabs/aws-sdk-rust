@@ -60,6 +60,133 @@ impl GetCostEstimateInput {
         self.end_time.as_ref()
     }
 }
+static GETCOSTESTIMATEINPUT_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetCostEstimateInput$resourceName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetCostEstimateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceName",
+    0,
+);
+static GETCOSTESTIMATEINPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetCostEstimateInput$startTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetCostEstimateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    1,
+);
+static GETCOSTESTIMATEINPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetCostEstimateInput$endTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetCostEstimateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    2,
+);
+static GETCOSTESTIMATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetCostEstimateInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetCostEstimateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETCOSTESTIMATEINPUT_MEMBER_RESOURCE_NAME,
+        &GETCOSTESTIMATEINPUT_MEMBER_START_TIME,
+        &GETCOSTESTIMATEINPUT_MEMBER_END_TIME,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/budgettracker/getCostEstimate", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetCostEstimateRequest");
+impl GetCostEstimateInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCOSTESTIMATEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetCostEstimateInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&GETCOSTESTIMATEINPUT_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&GETCOSTESTIMATEINPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&GETCOSTESTIMATEINPUT_MEMBER_END_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_cost_estimate::builders::GetCostEstimateInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCOSTESTIMATEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetCostEstimateInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_name = builder.resource_name.or(Some(String::new()));
+        builder.start_time = builder.start_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.end_time = builder.end_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetCostEstimateInput {
     /// Creates a new builder-style object to manufacture [`GetCostEstimateInput`](crate::operation::get_cost_estimate::GetCostEstimateInput).
     pub fn builder() -> crate::operation::get_cost_estimate::builders::GetCostEstimateInputBuilder {

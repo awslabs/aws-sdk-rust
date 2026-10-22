@@ -84,6 +84,399 @@ impl CreateLicenseInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATELICENSEINPUT_MEMBER_LICENSE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$LicenseName",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseName",
+    0,
+);
+static CREATELICENSEINPUT_MEMBER_PRODUCT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$ProductName",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductName",
+    1,
+);
+static CREATELICENSEINPUT_MEMBER_PRODUCT_SKU: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$ProductSKU",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProductSKU",
+    2,
+);
+static CREATELICENSEINPUT_MEMBER_ISSUER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$Issuer",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Issuer",
+    3,
+);
+static CREATELICENSEINPUT_MEMBER_HOME_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$HomeRegion",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeRegion",
+    4,
+);
+static CREATELICENSEINPUT_MEMBER_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$Validity",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Validity",
+    5,
+);
+static CREATELICENSEINPUT_MEMBER_ENTITLEMENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementList$member",
+        "com.amazonaws.licensemanager",
+        "EntitlementList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELICENSEINPUT_MEMBER_ENTITLEMENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$Entitlements",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Entitlements",
+    6,
+)
+.with_list_member(&CREATELICENSEINPUT_MEMBER_ENTITLEMENTS_MEMBER);
+static CREATELICENSEINPUT_MEMBER_BENEFICIARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$Beneficiary",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Beneficiary",
+    7,
+);
+static CREATELICENSEINPUT_MEMBER_CONSUMPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$ConsumptionConfiguration",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ConsumptionConfiguration",
+    8,
+);
+static CREATELICENSEINPUT_MEMBER_LICENSE_METADATA_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#MetadataList$member",
+        "com.amazonaws.licensemanager",
+        "MetadataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELICENSEINPUT_MEMBER_LICENSE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$LicenseMetadata",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LicenseMetadata",
+    9,
+)
+.with_list_member(&CREATELICENSEINPUT_MEMBER_LICENSE_METADATA_MEMBER);
+static CREATELICENSEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$ClientToken",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    10,
+);
+static CREATELICENSEINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.licensemanager#TagList$member", "com.amazonaws.licensemanager", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELICENSEINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput$Tags",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    11,
+)
+.with_list_member(&CREATELICENSEINPUT_MEMBER_TAGS_MEMBER);
+static CREATELICENSEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#CreateLicenseInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "CreateLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELICENSEINPUT_MEMBER_LICENSE_NAME,
+        &CREATELICENSEINPUT_MEMBER_PRODUCT_NAME,
+        &CREATELICENSEINPUT_MEMBER_PRODUCT_SKU,
+        &CREATELICENSEINPUT_MEMBER_ISSUER,
+        &CREATELICENSEINPUT_MEMBER_HOME_REGION,
+        &CREATELICENSEINPUT_MEMBER_VALIDITY,
+        &CREATELICENSEINPUT_MEMBER_ENTITLEMENTS,
+        &CREATELICENSEINPUT_MEMBER_BENEFICIARY,
+        &CREATELICENSEINPUT_MEMBER_CONSUMPTION_CONFIGURATION,
+        &CREATELICENSEINPUT_MEMBER_LICENSE_METADATA,
+        &CREATELICENSEINPUT_MEMBER_CLIENT_TOKEN,
+        &CREATELICENSEINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLicenseRequest");
+impl CreateLicenseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELICENSEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLicenseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_name {
+            ser.write_string(&CREATELICENSEINPUT_MEMBER_LICENSE_NAME, val)?;
+        }
+        if let Some(ref val) = self.product_name {
+            ser.write_string(&CREATELICENSEINPUT_MEMBER_PRODUCT_NAME, val)?;
+        }
+        if let Some(ref val) = self.product_sku {
+            ser.write_string(&CREATELICENSEINPUT_MEMBER_PRODUCT_SKU, val)?;
+        }
+        if let Some(ref val) = self.issuer {
+            ser.write_struct(&CREATELICENSEINPUT_MEMBER_ISSUER, val)?;
+        }
+        if let Some(ref val) = self.home_region {
+            ser.write_string(&CREATELICENSEINPUT_MEMBER_HOME_REGION, val)?;
+        }
+        if let Some(ref val) = self.validity {
+            ser.write_struct(&CREATELICENSEINPUT_MEMBER_VALIDITY, val)?;
+        }
+        if let Some(ref val) = self.entitlements {
+            ser.write_list(
+                &CREATELICENSEINPUT_MEMBER_ENTITLEMENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Entitlement::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.beneficiary {
+            ser.write_string(&CREATELICENSEINPUT_MEMBER_BENEFICIARY, val)?;
+        }
+        if let Some(ref val) = self.consumption_configuration {
+            ser.write_struct(&CREATELICENSEINPUT_MEMBER_CONSUMPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.license_metadata {
+            ser.write_list(
+                &CREATELICENSEINPUT_MEMBER_LICENSE_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Metadata::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&CREATELICENSEINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELICENSEINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_license::builders::CreateLicenseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELICENSEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.product_sku = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer = Some(crate::types::Issuer::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validity = Some(crate::types::DatetimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entitlements = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Entitlement::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.beneficiary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.consumption_configuration = Some(crate::types::ConsumptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_metadata = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Metadata::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLicenseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.license_name = builder.license_name.or(Some(String::new()));
+        builder.product_name = builder.product_name.or(Some(String::new()));
+        builder.product_sku = builder.product_sku.or(Some(String::new()));
+        builder.home_region = builder.home_region.or(Some(String::new()));
+        builder.entitlements = builder.entitlements.or(Some(Vec::new()));
+        builder.beneficiary = builder.beneficiary.or(Some(String::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLicenseInput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseInput`](crate::operation::create_license::CreateLicenseInput).
     pub fn builder() -> crate::operation::create_license::builders::CreateLicenseInputBuilder {

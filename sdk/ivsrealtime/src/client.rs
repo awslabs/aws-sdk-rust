@@ -225,6 +225,8 @@ mod list_storage_configurations;
 
 mod list_tags_for_resource;
 
+mod revoke_connection_token;
+
 mod start_composition;
 
 mod start_participant_replication;

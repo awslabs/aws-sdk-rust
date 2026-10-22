@@ -59,6 +59,228 @@ impl Disk {
         self.disk_attribute_list.as_deref().unwrap_or_default()
     }
 }
+static DISK_MEMBER_DISK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Disk$DiskId", "com.amazonaws.storagegateway", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DiskId",
+    0,
+);
+static DISK_MEMBER_DISK_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Disk$DiskPath", "com.amazonaws.storagegateway", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DiskPath",
+    1,
+);
+static DISK_MEMBER_DISK_NODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Disk$DiskNode", "com.amazonaws.storagegateway", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DiskNode",
+    2,
+);
+static DISK_MEMBER_DISK_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Disk$DiskStatus", "com.amazonaws.storagegateway", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DiskStatus",
+    3,
+);
+static DISK_MEMBER_DISK_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#Disk$DiskSizeInBytes",
+        "com.amazonaws.storagegateway",
+        "Disk",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "DiskSizeInBytes",
+    4,
+);
+static DISK_MEMBER_DISK_ALLOCATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#Disk$DiskAllocationType",
+        "com.amazonaws.storagegateway",
+        "Disk",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DiskAllocationType",
+    5,
+);
+static DISK_MEMBER_DISK_ALLOCATION_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#Disk$DiskAllocationResource",
+        "com.amazonaws.storagegateway",
+        "Disk",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DiskAllocationResource",
+    6,
+);
+static DISK_MEMBER_DISK_ATTRIBUTE_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#DiskAttributeList$member",
+        "com.amazonaws.storagegateway",
+        "DiskAttributeList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DISK_MEMBER_DISK_ATTRIBUTE_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#Disk$DiskAttributeList",
+        "com.amazonaws.storagegateway",
+        "Disk",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DiskAttributeList",
+    7,
+)
+.with_list_member(&DISK_MEMBER_DISK_ATTRIBUTE_LIST_MEMBER);
+static DISK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Disk", "com.amazonaws.storagegateway", "Disk"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISK_MEMBER_DISK_ID,
+        &DISK_MEMBER_DISK_PATH,
+        &DISK_MEMBER_DISK_NODE,
+        &DISK_MEMBER_DISK_STATUS,
+        &DISK_MEMBER_DISK_SIZE_IN_BYTES,
+        &DISK_MEMBER_DISK_ALLOCATION_TYPE,
+        &DISK_MEMBER_DISK_ALLOCATION_RESOURCE,
+        &DISK_MEMBER_DISK_ATTRIBUTE_LIST,
+    ],
+);
+impl Disk {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Disk {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.disk_id {
+            ser.write_string(&DISK_MEMBER_DISK_ID, val)?;
+        }
+        if let Some(ref val) = self.disk_path {
+            ser.write_string(&DISK_MEMBER_DISK_PATH, val)?;
+        }
+        if let Some(ref val) = self.disk_node {
+            ser.write_string(&DISK_MEMBER_DISK_NODE, val)?;
+        }
+        if let Some(ref val) = self.disk_status {
+            ser.write_string(&DISK_MEMBER_DISK_STATUS, val)?;
+        }
+        {
+            let val = &self.disk_size_in_bytes;
+            ser.write_long(&DISK_MEMBER_DISK_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.disk_allocation_type {
+            ser.write_string(&DISK_MEMBER_DISK_ALLOCATION_TYPE, val)?;
+        }
+        if let Some(ref val) = self.disk_allocation_resource {
+            ser.write_string(&DISK_MEMBER_DISK_ALLOCATION_RESOURCE, val)?;
+        }
+        if let Some(ref val) = self.disk_attribute_list {
+            ser.write_list(
+                &DISK_MEMBER_DISK_ATTRIBUTE_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DiskBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_node = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.disk_size_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_allocation_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_allocation_resource = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disk_attribute_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Disk {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Disk {
     /// Creates a new builder-style object to manufacture [`Disk`](crate::types::Disk).
     pub fn builder() -> crate::types::builders::DiskBuilder {

@@ -77,6 +77,276 @@ impl ::std::fmt::Debug for JobData {
         formatter.finish()
     }
 }
+static JOBDATA_MEMBER_ACTION_TYPE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#JobData$actionTypeId", "com.amazonaws.codepipeline", "JobData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "actionTypeId",
+    0,
+);
+static JOBDATA_MEMBER_ACTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobData$actionConfiguration",
+        "com.amazonaws.codepipeline",
+        "JobData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "actionConfiguration",
+    1,
+);
+static JOBDATA_MEMBER_PIPELINE_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobData$pipelineContext",
+        "com.amazonaws.codepipeline",
+        "JobData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "pipelineContext",
+    2,
+);
+static JOBDATA_MEMBER_INPUT_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactList$member",
+        "com.amazonaws.codepipeline",
+        "ArtifactList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static JOBDATA_MEMBER_INPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobData$inputArtifacts",
+        "com.amazonaws.codepipeline",
+        "JobData",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "inputArtifacts",
+    3,
+)
+.with_list_member(&JOBDATA_MEMBER_INPUT_ARTIFACTS_MEMBER);
+static JOBDATA_MEMBER_OUTPUT_ARTIFACTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ArtifactList$member",
+        "com.amazonaws.codepipeline",
+        "ArtifactList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static JOBDATA_MEMBER_OUTPUT_ARTIFACTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobData$outputArtifacts",
+        "com.amazonaws.codepipeline",
+        "JobData",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "outputArtifacts",
+    4,
+)
+.with_list_member(&JOBDATA_MEMBER_OUTPUT_ARTIFACTS_MEMBER);
+static JOBDATA_MEMBER_ARTIFACT_CREDENTIALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobData$artifactCredentials",
+        "com.amazonaws.codepipeline",
+        "JobData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "artifactCredentials",
+    5,
+);
+static JOBDATA_MEMBER_CONTINUATION_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobData$continuationToken",
+        "com.amazonaws.codepipeline",
+        "JobData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "continuationToken",
+    6,
+);
+static JOBDATA_MEMBER_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#JobData$encryptionKey",
+        "com.amazonaws.codepipeline",
+        "JobData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "encryptionKey",
+    7,
+);
+static JOBDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#JobData", "com.amazonaws.codepipeline", "JobData"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &JOBDATA_MEMBER_ACTION_TYPE_ID,
+        &JOBDATA_MEMBER_ACTION_CONFIGURATION,
+        &JOBDATA_MEMBER_PIPELINE_CONTEXT,
+        &JOBDATA_MEMBER_INPUT_ARTIFACTS,
+        &JOBDATA_MEMBER_OUTPUT_ARTIFACTS,
+        &JOBDATA_MEMBER_ARTIFACT_CREDENTIALS,
+        &JOBDATA_MEMBER_CONTINUATION_TOKEN,
+        &JOBDATA_MEMBER_ENCRYPTION_KEY,
+    ],
+);
+impl JobData {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &JOBDATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for JobData {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action_type_id {
+            ser.write_struct(&JOBDATA_MEMBER_ACTION_TYPE_ID, val)?;
+        }
+        if let Some(ref val) = self.action_configuration {
+            ser.write_struct(&JOBDATA_MEMBER_ACTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_context {
+            ser.write_struct(&JOBDATA_MEMBER_PIPELINE_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.input_artifacts {
+            ser.write_list(
+                &JOBDATA_MEMBER_INPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Artifact::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_artifacts {
+            ser.write_list(
+                &JOBDATA_MEMBER_OUTPUT_ARTIFACTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Artifact::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.artifact_credentials {
+            ser.write_struct(&JOBDATA_MEMBER_ARTIFACT_CREDENTIALS, val)?;
+        }
+        if let Some(ref val) = self.continuation_token {
+            ser.write_string(&JOBDATA_MEMBER_CONTINUATION_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.encryption_key {
+            ser.write_struct(&JOBDATA_MEMBER_ENCRYPTION_KEY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::JobDataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&JOBDATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_type_id = Some(crate::types::ActionTypeId::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_configuration = Some(crate::types::ActionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_context = Some(crate::types::PipelineContext::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Artifact::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_artifacts = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Artifact::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_credentials = Some(crate::types::AwsSessionCredentials::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.continuation_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key = Some(crate::types::EncryptionKey::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl JobData {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl JobData {
     /// Creates a new builder-style object to manufacture [`JobData`](crate::types::JobData).
     pub fn builder() -> crate::types::builders::JobDataBuilder {

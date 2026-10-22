@@ -71,6 +71,208 @@ impl EcsTaskSet {
         self.task_set_label.as_ref()
     }
 }
+static ECSTASKSET_MEMBER_IDENTIFER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTaskSet$identifer", "com.amazonaws.codedeploy", "ECSTaskSet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "identifer",
+    0,
+);
+static ECSTASKSET_MEMBER_DESIRED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTaskSet$desiredCount",
+        "com.amazonaws.codedeploy",
+        "ECSTaskSet",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "desiredCount",
+    1,
+);
+static ECSTASKSET_MEMBER_PENDING_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTaskSet$pendingCount",
+        "com.amazonaws.codedeploy",
+        "ECSTaskSet",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "pendingCount",
+    2,
+);
+static ECSTASKSET_MEMBER_RUNNING_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTaskSet$runningCount",
+        "com.amazonaws.codedeploy",
+        "ECSTaskSet",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "runningCount",
+    3,
+);
+static ECSTASKSET_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTaskSet$status", "com.amazonaws.codedeploy", "ECSTaskSet"),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    4,
+);
+static ECSTASKSET_MEMBER_TRAFFIC_WEIGHT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTaskSet$trafficWeight",
+        "com.amazonaws.codedeploy",
+        "ECSTaskSet",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "trafficWeight",
+    5,
+);
+static ECSTASKSET_MEMBER_TARGET_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTaskSet$targetGroup",
+        "com.amazonaws.codedeploy",
+        "ECSTaskSet",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "targetGroup",
+    6,
+);
+static ECSTASKSET_MEMBER_TASK_SET_LABEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSTaskSet$taskSetLabel",
+        "com.amazonaws.codedeploy",
+        "ECSTaskSet",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "taskSetLabel",
+    7,
+);
+static ECSTASKSET_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#ECSTaskSet", "com.amazonaws.codedeploy", "ECSTaskSet"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ECSTASKSET_MEMBER_IDENTIFER,
+        &ECSTASKSET_MEMBER_DESIRED_COUNT,
+        &ECSTASKSET_MEMBER_PENDING_COUNT,
+        &ECSTASKSET_MEMBER_RUNNING_COUNT,
+        &ECSTASKSET_MEMBER_STATUS,
+        &ECSTASKSET_MEMBER_TRAFFIC_WEIGHT,
+        &ECSTASKSET_MEMBER_TARGET_GROUP,
+        &ECSTASKSET_MEMBER_TASK_SET_LABEL,
+    ],
+);
+impl EcsTaskSet {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ECSTASKSET_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EcsTaskSet {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identifer {
+            ser.write_string(&ECSTASKSET_MEMBER_IDENTIFER, val)?;
+        }
+        {
+            let val = &self.desired_count;
+            ser.write_long(&ECSTASKSET_MEMBER_DESIRED_COUNT, *val)?;
+        }
+        {
+            let val = &self.pending_count;
+            ser.write_long(&ECSTASKSET_MEMBER_PENDING_COUNT, *val)?;
+        }
+        {
+            let val = &self.running_count;
+            ser.write_long(&ECSTASKSET_MEMBER_RUNNING_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ECSTASKSET_MEMBER_STATUS, val)?;
+        }
+        {
+            let val = &self.traffic_weight;
+            ser.write_double(&ECSTASKSET_MEMBER_TRAFFIC_WEIGHT, *val)?;
+        }
+        if let Some(ref val) = self.target_group {
+            ser.write_struct(&ECSTASKSET_MEMBER_TARGET_GROUP, val)?;
+        }
+        if let Some(ref val) = self.task_set_label {
+            ser.write_string(&ECSTASKSET_MEMBER_TASK_SET_LABEL, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EcsTaskSetBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ECSTASKSET_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifer = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    self.desired_count = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    self.pending_count = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    self.running_count = Some(deser.read_long(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.traffic_weight = Some(deser.read_double(member)?);
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_group = Some(crate::types::TargetGroupInfo::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_set_label = Some(crate::types::TargetLabel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EcsTaskSet {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EcsTaskSet {
     /// Creates a new builder-style object to manufacture [`EcsTaskSet`](crate::types::EcsTaskSet).
     pub fn builder() -> crate::types::builders::EcsTaskSetBuilder {

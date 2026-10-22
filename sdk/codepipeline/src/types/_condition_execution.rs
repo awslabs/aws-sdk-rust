@@ -25,6 +25,127 @@ impl ConditionExecution {
         self.last_status_change.as_ref()
     }
 }
+static CONDITIONEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionExecution$status",
+        "com.amazonaws.codepipeline",
+        "ConditionExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    0,
+);
+static CONDITIONEXECUTION_MEMBER_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionExecution$summary",
+        "com.amazonaws.codepipeline",
+        "ConditionExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "summary",
+    1,
+);
+static CONDITIONEXECUTION_MEMBER_LAST_STATUS_CHANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionExecution$lastStatusChange",
+        "com.amazonaws.codepipeline",
+        "ConditionExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastStatusChange",
+    2,
+);
+static CONDITIONEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ConditionExecution",
+        "com.amazonaws.codepipeline",
+        "ConditionExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONDITIONEXECUTION_MEMBER_STATUS,
+        &CONDITIONEXECUTION_MEMBER_SUMMARY,
+        &CONDITIONEXECUTION_MEMBER_LAST_STATUS_CHANGE,
+    ],
+);
+impl ConditionExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONDITIONEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConditionExecution {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_string(&CONDITIONEXECUTION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.summary {
+            ser.write_string(&CONDITIONEXECUTION_MEMBER_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.last_status_change {
+            ser.write_timestamp(&CONDITIONEXECUTION_MEMBER_LAST_STATUS_CHANGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConditionExecutionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONDITIONEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ConditionExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.summary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_status_change = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConditionExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConditionExecution {
     /// Creates a new builder-style object to manufacture [`ConditionExecution`](crate::types::ConditionExecution).
     pub fn builder() -> crate::types::builders::ConditionExecutionBuilder {

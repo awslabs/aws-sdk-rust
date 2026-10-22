@@ -72,6 +72,257 @@ impl CreateVocabularyFilterInput {
         self.encryption_configuration.as_ref()
     }
 }
+static CREATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput$VocabularyFilterName",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterName",
+    0,
+)
+.with_http_label();
+static CREATEVOCABULARYFILTERINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static CREATEVOCABULARYFILTERINPUT_MEMBER_WORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#Words$member", "com.amazonaws.transcribe", "Words"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEVOCABULARYFILTERINPUT_MEMBER_WORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput$Words",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Words",
+    2,
+)
+.with_list_member(&CREATEVOCABULARYFILTERINPUT_MEMBER_WORDS_MEMBER);
+static CREATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_FILE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput$VocabularyFilterFileUri",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterFileUri",
+    3,
+);
+static CREATEVOCABULARYFILTERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#TagList$member", "com.amazonaws.transcribe", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEVOCABULARYFILTERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput$Tags",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATEVOCABULARYFILTERINPUT_MEMBER_TAGS_MEMBER);
+static CREATEVOCABULARYFILTERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput$DataAccessRoleArn",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    5,
+);
+static CREATEVOCABULARYFILTERINPUT_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput$EncryptionConfiguration",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionConfiguration",
+    6,
+);
+static CREATEVOCABULARYFILTERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterInput",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_NAME,
+        &CREATEVOCABULARYFILTERINPUT_MEMBER_LANGUAGE_CODE,
+        &CREATEVOCABULARYFILTERINPUT_MEMBER_WORDS,
+        &CREATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_FILE_URI,
+        &CREATEVOCABULARYFILTERINPUT_MEMBER_TAGS,
+        &CREATEVOCABULARYFILTERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &CREATEVOCABULARYFILTERINPUT_MEMBER_ENCRYPTION_CONFIGURATION,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/vocabularyFilters/{VocabularyFilterName}",
+    Some(201),
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateVocabularyFilterRequest");
+impl CreateVocabularyFilterInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEVOCABULARYFILTERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateVocabularyFilterInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_filter_name {
+            ser.write_string(&CREATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&CREATEVOCABULARYFILTERINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.words {
+            ser.write_list(
+                &CREATEVOCABULARYFILTERINPUT_MEMBER_WORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.vocabulary_filter_file_uri {
+            ser.write_string(&CREATEVOCABULARYFILTERINPUT_MEMBER_VOCABULARY_FILTER_FILE_URI, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEVOCABULARYFILTERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&CREATEVOCABULARYFILTERINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&CREATEVOCABULARYFILTERINPUT_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_vocabulary_filter::builders::CreateVocabularyFilterInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEVOCABULARYFILTERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.words = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_file_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::EncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateVocabularyFilterInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.vocabulary_filter_name = builder.vocabulary_filter_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateVocabularyFilterInput {
     /// Creates a new builder-style object to manufacture [`CreateVocabularyFilterInput`](crate::operation::create_vocabulary_filter::CreateVocabularyFilterInput).
     pub fn builder() -> crate::operation::create_vocabulary_filter::builders::CreateVocabularyFilterInputBuilder {

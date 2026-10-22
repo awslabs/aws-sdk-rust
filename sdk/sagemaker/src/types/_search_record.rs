@@ -129,6 +129,414 @@ impl SearchRecord {
         self.hub_content.as_ref()
     }
 }
+static SEARCHRECORD_MEMBER_TRAINING_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$TrainingJob",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrainingJob",
+    0,
+);
+static SEARCHRECORD_MEMBER_EXPERIMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$Experiment",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Experiment",
+    1,
+);
+static SEARCHRECORD_MEMBER_TRIAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchRecord$Trial", "com.amazonaws.sagemaker", "SearchRecord"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Trial",
+    2,
+);
+static SEARCHRECORD_MEMBER_TRIAL_COMPONENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$TrialComponent",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrialComponent",
+    3,
+);
+static SEARCHRECORD_MEMBER_ENDPOINT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchRecord$Endpoint", "com.amazonaws.sagemaker", "SearchRecord"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Endpoint",
+    4,
+);
+static SEARCHRECORD_MEMBER_MODEL_PACKAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$ModelPackage",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelPackage",
+    5,
+);
+static SEARCHRECORD_MEMBER_MODEL_PACKAGE_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$ModelPackageGroup",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelPackageGroup",
+    6,
+);
+static SEARCHRECORD_MEMBER_PIPELINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchRecord$Pipeline", "com.amazonaws.sagemaker", "SearchRecord"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Pipeline",
+    7,
+);
+static SEARCHRECORD_MEMBER_PIPELINE_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$PipelineExecution",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PipelineExecution",
+    8,
+);
+static SEARCHRECORD_MEMBER_PIPELINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$PipelineVersion",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PipelineVersion",
+    9,
+);
+static SEARCHRECORD_MEMBER_FEATURE_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$FeatureGroup",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FeatureGroup",
+    10,
+);
+static SEARCHRECORD_MEMBER_FEATURE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$FeatureMetadata",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FeatureMetadata",
+    11,
+);
+static SEARCHRECORD_MEMBER_PROJECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchRecord$Project", "com.amazonaws.sagemaker", "SearchRecord"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Project",
+    12,
+);
+static SEARCHRECORD_MEMBER_HYPER_PARAMETER_TUNING_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$HyperParameterTuningJob",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HyperParameterTuningJob",
+    13,
+);
+static SEARCHRECORD_MEMBER_MODEL_CARD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$ModelCard",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelCard",
+    14,
+);
+static SEARCHRECORD_MEMBER_MODEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchRecord$Model", "com.amazonaws.sagemaker", "SearchRecord"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Model",
+    15,
+);
+static SEARCHRECORD_MEMBER_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchRecord$Job", "com.amazonaws.sagemaker", "SearchRecord"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Job",
+    16,
+);
+static SEARCHRECORD_MEMBER_HUB_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#SearchRecord$HubContent",
+        "com.amazonaws.sagemaker",
+        "SearchRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "HubContent",
+    17,
+);
+static SEARCHRECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#SearchRecord", "com.amazonaws.sagemaker", "SearchRecord"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SEARCHRECORD_MEMBER_TRAINING_JOB,
+        &SEARCHRECORD_MEMBER_EXPERIMENT,
+        &SEARCHRECORD_MEMBER_TRIAL,
+        &SEARCHRECORD_MEMBER_TRIAL_COMPONENT,
+        &SEARCHRECORD_MEMBER_ENDPOINT,
+        &SEARCHRECORD_MEMBER_MODEL_PACKAGE,
+        &SEARCHRECORD_MEMBER_MODEL_PACKAGE_GROUP,
+        &SEARCHRECORD_MEMBER_PIPELINE,
+        &SEARCHRECORD_MEMBER_PIPELINE_EXECUTION,
+        &SEARCHRECORD_MEMBER_PIPELINE_VERSION,
+        &SEARCHRECORD_MEMBER_FEATURE_GROUP,
+        &SEARCHRECORD_MEMBER_FEATURE_METADATA,
+        &SEARCHRECORD_MEMBER_PROJECT,
+        &SEARCHRECORD_MEMBER_HYPER_PARAMETER_TUNING_JOB,
+        &SEARCHRECORD_MEMBER_MODEL_CARD,
+        &SEARCHRECORD_MEMBER_MODEL,
+        &SEARCHRECORD_MEMBER_JOB,
+        &SEARCHRECORD_MEMBER_HUB_CONTENT,
+    ],
+);
+impl SearchRecord {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SEARCHRECORD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SearchRecord {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_job {
+            ser.write_struct(&SEARCHRECORD_MEMBER_TRAINING_JOB, val)?;
+        }
+        if let Some(ref val) = self.experiment {
+            ser.write_struct(&SEARCHRECORD_MEMBER_EXPERIMENT, val)?;
+        }
+        if let Some(ref val) = self.trial {
+            ser.write_struct(&SEARCHRECORD_MEMBER_TRIAL, val)?;
+        }
+        if let Some(ref val) = self.trial_component {
+            ser.write_struct(&SEARCHRECORD_MEMBER_TRIAL_COMPONENT, val)?;
+        }
+        if let Some(ref val) = self.endpoint {
+            ser.write_struct(&SEARCHRECORD_MEMBER_ENDPOINT, val)?;
+        }
+        if let Some(ref val) = self.model_package {
+            ser.write_struct(&SEARCHRECORD_MEMBER_MODEL_PACKAGE, val)?;
+        }
+        if let Some(ref val) = self.model_package_group {
+            ser.write_struct(&SEARCHRECORD_MEMBER_MODEL_PACKAGE_GROUP, val)?;
+        }
+        if let Some(ref val) = self.pipeline {
+            ser.write_struct(&SEARCHRECORD_MEMBER_PIPELINE, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution {
+            ser.write_struct(&SEARCHRECORD_MEMBER_PIPELINE_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_version {
+            ser.write_struct(&SEARCHRECORD_MEMBER_PIPELINE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.feature_group {
+            ser.write_struct(&SEARCHRECORD_MEMBER_FEATURE_GROUP, val)?;
+        }
+        if let Some(ref val) = self.feature_metadata {
+            ser.write_struct(&SEARCHRECORD_MEMBER_FEATURE_METADATA, val)?;
+        }
+        if let Some(ref val) = self.project {
+            ser.write_struct(&SEARCHRECORD_MEMBER_PROJECT, val)?;
+        }
+        if let Some(ref val) = self.hyper_parameter_tuning_job {
+            ser.write_struct(&SEARCHRECORD_MEMBER_HYPER_PARAMETER_TUNING_JOB, val)?;
+        }
+        if let Some(ref val) = self.model_card {
+            ser.write_struct(&SEARCHRECORD_MEMBER_MODEL_CARD, val)?;
+        }
+        if let Some(ref val) = self.model {
+            ser.write_struct(&SEARCHRECORD_MEMBER_MODEL, val)?;
+        }
+        if let Some(ref val) = self.job {
+            ser.write_struct(&SEARCHRECORD_MEMBER_JOB, val)?;
+        }
+        if let Some(ref val) = self.hub_content {
+            ser.write_struct(&SEARCHRECORD_MEMBER_HUB_CONTENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SearchRecordBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SEARCHRECORD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job = Some(crate::types::TrainingJob::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.experiment = Some(crate::types::Experiment::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trial = Some(crate::types::Trial::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trial_component = Some(crate::types::TrialComponent::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint = Some(crate::types::Endpoint::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package = Some(crate::types::ModelPackage::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group = Some(crate::types::ModelPackageGroup::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline = Some(crate::types::Pipeline::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution = Some(crate::types::PipelineExecution::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_version = Some(crate::types::PipelineVersion::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group = Some(crate::types::FeatureGroup::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_metadata = Some(crate::types::FeatureMetadata::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project = Some(crate::types::Project::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameter_tuning_job = Some(crate::types::HyperParameterTuningJobSearchEntity::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card = Some(crate::types::ModelCard::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model = Some(crate::types::ModelDashboardModel::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job = Some(crate::types::Job::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content = Some(crate::types::HubContent::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SearchRecord {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl SearchRecord {
     /// Creates a new builder-style object to manufacture [`SearchRecord`](crate::types::SearchRecord).
     pub fn builder() -> crate::types::builders::SearchRecordBuilder {

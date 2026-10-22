@@ -24,6 +24,129 @@ impl ListDocumentClassificationJobsInput {
         self.max_results
     }
 }
+static LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_FILTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ListDocumentClassificationJobsInput$Filter",
+        "com.amazonaws.comprehend.synthetic",
+        "ListDocumentClassificationJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Filter",
+    0,
+);
+static LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ListDocumentClassificationJobsInput$NextToken",
+        "com.amazonaws.comprehend.synthetic",
+        "ListDocumentClassificationJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ListDocumentClassificationJobsInput$MaxResults",
+        "com.amazonaws.comprehend.synthetic",
+        "ListDocumentClassificationJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTDOCUMENTCLASSIFICATIONJOBSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#ListDocumentClassificationJobsInput",
+        "com.amazonaws.comprehend.synthetic",
+        "ListDocumentClassificationJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_FILTER,
+        &LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListDocumentClassificationJobsRequest");
+impl ListDocumentClassificationJobsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTDOCUMENTCLASSIFICATIONJOBSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListDocumentClassificationJobsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.filter {
+            ser.write_struct(&LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_FILTER, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTDOCUMENTCLASSIFICATIONJOBSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTDOCUMENTCLASSIFICATIONJOBSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter = Some(crate::types::DocumentClassificationJobFilter::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListDocumentClassificationJobsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListDocumentClassificationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsInput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput).
     pub fn builder() -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder {

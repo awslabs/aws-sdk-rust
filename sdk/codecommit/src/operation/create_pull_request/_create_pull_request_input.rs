@@ -36,6 +36,174 @@ impl CreatePullRequestInput {
         self.client_request_token.as_deref()
     }
 }
+static CREATEPULLREQUESTINPUT_MEMBER_TITLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreatePullRequestInput$title",
+        "com.amazonaws.codecommit.synthetic",
+        "CreatePullRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "title",
+    0,
+);
+static CREATEPULLREQUESTINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreatePullRequestInput$description",
+        "com.amazonaws.codecommit.synthetic",
+        "CreatePullRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    1,
+);
+static CREATEPULLREQUESTINPUT_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#TargetList$member", "com.amazonaws.codecommit", "TargetList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEPULLREQUESTINPUT_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreatePullRequestInput$targets",
+        "com.amazonaws.codecommit.synthetic",
+        "CreatePullRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "targets",
+    2,
+)
+.with_list_member(&CREATEPULLREQUESTINPUT_MEMBER_TARGETS_MEMBER);
+static CREATEPULLREQUESTINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreatePullRequestInput$clientRequestToken",
+        "com.amazonaws.codecommit.synthetic",
+        "CreatePullRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "clientRequestToken",
+    3,
+);
+static CREATEPULLREQUESTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#CreatePullRequestInput",
+        "com.amazonaws.codecommit.synthetic",
+        "CreatePullRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEPULLREQUESTINPUT_MEMBER_TITLE,
+        &CREATEPULLREQUESTINPUT_MEMBER_DESCRIPTION,
+        &CREATEPULLREQUESTINPUT_MEMBER_TARGETS,
+        &CREATEPULLREQUESTINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreatePullRequestInput");
+impl CreatePullRequestInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEPULLREQUESTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreatePullRequestInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.title {
+            ser.write_string(&CREATEPULLREQUESTINPUT_MEMBER_TITLE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&CREATEPULLREQUESTINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &CREATEPULLREQUESTINPUT_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEPULLREQUESTINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEPULLREQUESTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.title = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreatePullRequestInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.title = builder.title.or(Some(String::new()));
+        builder.targets = builder.targets.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreatePullRequestInput {
     /// Creates a new builder-style object to manufacture [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
     pub fn builder() -> crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {

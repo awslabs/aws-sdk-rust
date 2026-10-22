@@ -24,6 +24,156 @@ impl BatchMeterUsageOutput {
         self.unprocessed_records.as_deref().unwrap_or_default()
     }
 }
+static BATCHMETERUSAGEOUTPUT_MEMBER_RESULTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecordResultList$member",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecordResultList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHMETERUSAGEOUTPUT_MEMBER_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#BatchMeterUsageOutput$Results",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "BatchMeterUsageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Results",
+    0,
+)
+.with_list_member(&BATCHMETERUSAGEOUTPUT_MEMBER_RESULTS_MEMBER);
+static BATCHMETERUSAGEOUTPUT_MEMBER_UNPROCESSED_RECORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecordList$member",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecordList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static BATCHMETERUSAGEOUTPUT_MEMBER_UNPROCESSED_RECORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#BatchMeterUsageOutput$UnprocessedRecords",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "BatchMeterUsageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "UnprocessedRecords",
+    1,
+)
+.with_list_member(&BATCHMETERUSAGEOUTPUT_MEMBER_UNPROCESSED_RECORDS_MEMBER);
+static BATCHMETERUSAGEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#BatchMeterUsageOutput",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "BatchMeterUsageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&BATCHMETERUSAGEOUTPUT_MEMBER_RESULTS, &BATCHMETERUSAGEOUTPUT_MEMBER_UNPROCESSED_RECORDS],
+)
+.with_original_name("BatchMeterUsageResult");
+impl BatchMeterUsageOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHMETERUSAGEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchMeterUsageOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.results {
+            ser.write_list(
+                &BATCHMETERUSAGEOUTPUT_MEMBER_RESULTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UsageRecordResult::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.unprocessed_records {
+            ser.write_list(
+                &BATCHMETERUSAGEOUTPUT_MEMBER_UNPROCESSED_RECORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UsageRecord::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_meter_usage::builders::BatchMeterUsageOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHMETERUSAGEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.results = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UsageRecordResult::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unprocessed_records = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UsageRecord::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchMeterUsageOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchMeterUsageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

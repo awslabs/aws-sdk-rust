@@ -31,6 +31,148 @@ impl InstanceRuleStatement {
         self.script_rule_statement.as_ref()
     }
 }
+static INSTANCERULESTATEMENT_MEMBER_AND_RULE_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#InstanceRuleStatement$AndRuleStatement",
+        "com.amazonaws.licensemanager",
+        "InstanceRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AndRuleStatement",
+    0,
+);
+static INSTANCERULESTATEMENT_MEMBER_OR_RULE_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#InstanceRuleStatement$OrRuleStatement",
+        "com.amazonaws.licensemanager",
+        "InstanceRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OrRuleStatement",
+    1,
+);
+static INSTANCERULESTATEMENT_MEMBER_MATCHING_RULE_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#InstanceRuleStatement$MatchingRuleStatement",
+        "com.amazonaws.licensemanager",
+        "InstanceRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MatchingRuleStatement",
+    2,
+);
+static INSTANCERULESTATEMENT_MEMBER_SCRIPT_RULE_STATEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#InstanceRuleStatement$ScriptRuleStatement",
+        "com.amazonaws.licensemanager",
+        "InstanceRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ScriptRuleStatement",
+    3,
+);
+static INSTANCERULESTATEMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#InstanceRuleStatement",
+        "com.amazonaws.licensemanager",
+        "InstanceRuleStatement",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCERULESTATEMENT_MEMBER_AND_RULE_STATEMENT,
+        &INSTANCERULESTATEMENT_MEMBER_OR_RULE_STATEMENT,
+        &INSTANCERULESTATEMENT_MEMBER_MATCHING_RULE_STATEMENT,
+        &INSTANCERULESTATEMENT_MEMBER_SCRIPT_RULE_STATEMENT,
+    ],
+);
+impl InstanceRuleStatement {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCERULESTATEMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceRuleStatement {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.and_rule_statement {
+            ser.write_struct(&INSTANCERULESTATEMENT_MEMBER_AND_RULE_STATEMENT, val)?;
+        }
+        if let Some(ref val) = self.or_rule_statement {
+            ser.write_struct(&INSTANCERULESTATEMENT_MEMBER_OR_RULE_STATEMENT, val)?;
+        }
+        if let Some(ref val) = self.matching_rule_statement {
+            ser.write_struct(&INSTANCERULESTATEMENT_MEMBER_MATCHING_RULE_STATEMENT, val)?;
+        }
+        if let Some(ref val) = self.script_rule_statement {
+            ser.write_struct(&INSTANCERULESTATEMENT_MEMBER_SCRIPT_RULE_STATEMENT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceRuleStatementBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCERULESTATEMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.and_rule_statement = Some(crate::types::AndRuleStatement::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.or_rule_statement = Some(crate::types::OrRuleStatement::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.matching_rule_statement = Some(crate::types::MatchingRuleStatement::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.script_rule_statement = Some(crate::types::ScriptRuleStatement::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceRuleStatement {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceRuleStatement {
     /// Creates a new builder-style object to manufacture [`InstanceRuleStatement`](crate::types::InstanceRuleStatement).
     pub fn builder() -> crate::types::builders::InstanceRuleStatementBuilder {

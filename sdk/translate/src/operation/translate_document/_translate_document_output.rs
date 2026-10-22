@@ -57,6 +57,192 @@ impl TranslateDocumentOutput {
         self.applied_settings.as_ref()
     }
 }
+static TRANSLATEDOCUMENTOUTPUT_MEMBER_TRANSLATED_DOCUMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#TranslateDocumentOutput$TranslatedDocument",
+        "com.amazonaws.translate.synthetic",
+        "TranslateDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TranslatedDocument",
+    0,
+);
+static TRANSLATEDOCUMENTOUTPUT_MEMBER_SOURCE_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#TranslateDocumentOutput$SourceLanguageCode",
+        "com.amazonaws.translate.synthetic",
+        "TranslateDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceLanguageCode",
+    1,
+);
+static TRANSLATEDOCUMENTOUTPUT_MEMBER_TARGET_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#TranslateDocumentOutput$TargetLanguageCode",
+        "com.amazonaws.translate.synthetic",
+        "TranslateDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetLanguageCode",
+    2,
+);
+static TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_TERMINOLOGIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#AppliedTerminologyList$member",
+        "com.amazonaws.translate",
+        "AppliedTerminologyList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_TERMINOLOGIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#TranslateDocumentOutput$AppliedTerminologies",
+        "com.amazonaws.translate.synthetic",
+        "TranslateDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AppliedTerminologies",
+    3,
+)
+.with_list_member(&TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_TERMINOLOGIES_MEMBER);
+static TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#TranslateDocumentOutput$AppliedSettings",
+        "com.amazonaws.translate.synthetic",
+        "TranslateDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AppliedSettings",
+    4,
+);
+static TRANSLATEDOCUMENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate.synthetic#TranslateDocumentOutput",
+        "com.amazonaws.translate.synthetic",
+        "TranslateDocumentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRANSLATEDOCUMENTOUTPUT_MEMBER_TRANSLATED_DOCUMENT,
+        &TRANSLATEDOCUMENTOUTPUT_MEMBER_SOURCE_LANGUAGE_CODE,
+        &TRANSLATEDOCUMENTOUTPUT_MEMBER_TARGET_LANGUAGE_CODE,
+        &TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_TERMINOLOGIES,
+        &TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_SETTINGS,
+    ],
+)
+.with_original_name("TranslateDocumentResponse");
+impl TranslateDocumentOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRANSLATEDOCUMENTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TranslateDocumentOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.translated_document {
+            ser.write_struct(&TRANSLATEDOCUMENTOUTPUT_MEMBER_TRANSLATED_DOCUMENT, val)?;
+        }
+        {
+            let val = &self.source_language_code;
+            ser.write_string(&TRANSLATEDOCUMENTOUTPUT_MEMBER_SOURCE_LANGUAGE_CODE, val)?;
+        }
+        {
+            let val = &self.target_language_code;
+            ser.write_string(&TRANSLATEDOCUMENTOUTPUT_MEMBER_TARGET_LANGUAGE_CODE, val)?;
+        }
+        if let Some(ref val) = self.applied_terminologies {
+            ser.write_list(
+                &TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_TERMINOLOGIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AppliedTerminology::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.applied_settings {
+            ser.write_struct(&TRANSLATEDOCUMENTOUTPUT_MEMBER_APPLIED_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::translate_document::builders::TranslateDocumentOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRANSLATEDOCUMENTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.translated_document = Some(crate::types::TranslatedDocument::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    self.source_language_code = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.target_language_code = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.applied_terminologies = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AppliedTerminology::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.applied_settings = Some(crate::types::TranslationSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TranslateDocumentOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.source_language_code = builder.source_language_code.or(Some(String::new()));
+        builder.target_language_code = builder.target_language_code.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for TranslateDocumentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

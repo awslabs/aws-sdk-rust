@@ -13,6 +13,84 @@ impl AssignTapePoolOutput {
         self.tape_arn.as_deref()
     }
 }
+static ASSIGNTAPEPOOLOUTPUT_MEMBER_TAPE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssignTapePoolOutput$TapeARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssignTapePoolOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TapeARN",
+    0,
+);
+static ASSIGNTAPEPOOLOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssignTapePoolOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssignTapePoolOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ASSIGNTAPEPOOLOUTPUT_MEMBER_TAPE_ARN],
+)
+.with_original_name("AssignTapePoolOutput");
+impl AssignTapePoolOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSIGNTAPEPOOLOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssignTapePoolOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tape_arn {
+            ser.write_string(&ASSIGNTAPEPOOLOUTPUT_MEMBER_TAPE_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::assign_tape_pool::builders::AssignTapePoolOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSIGNTAPEPOOLOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tape_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssignTapePoolOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for AssignTapePoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

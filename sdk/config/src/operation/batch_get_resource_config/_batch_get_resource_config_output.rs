@@ -23,6 +23,161 @@ impl BatchGetResourceConfigOutput {
         self.unprocessed_resource_keys.as_deref().unwrap_or_default()
     }
 }
+static BATCHGETRESOURCECONFIGOUTPUT_MEMBER_BASE_CONFIGURATION_ITEMS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#BaseConfigurationItems$member",
+            "com.amazonaws.configservice",
+            "BaseConfigurationItems",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static BATCHGETRESOURCECONFIGOUTPUT_MEMBER_BASE_CONFIGURATION_ITEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#BatchGetResourceConfigOutput$baseConfigurationItems",
+        "com.amazonaws.configservice.synthetic",
+        "BatchGetResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "baseConfigurationItems",
+    0,
+)
+.with_list_member(&BATCHGETRESOURCECONFIGOUTPUT_MEMBER_BASE_CONFIGURATION_ITEMS_MEMBER);
+static BATCHGETRESOURCECONFIGOUTPUT_MEMBER_UNPROCESSED_RESOURCE_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ResourceKeys$member",
+            "com.amazonaws.configservice",
+            "ResourceKeys",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static BATCHGETRESOURCECONFIGOUTPUT_MEMBER_UNPROCESSED_RESOURCE_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#BatchGetResourceConfigOutput$unprocessedResourceKeys",
+        "com.amazonaws.configservice.synthetic",
+        "BatchGetResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "unprocessedResourceKeys",
+    1,
+)
+.with_list_member(&BATCHGETRESOURCECONFIGOUTPUT_MEMBER_UNPROCESSED_RESOURCE_KEYS_MEMBER);
+static BATCHGETRESOURCECONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#BatchGetResourceConfigOutput",
+        "com.amazonaws.configservice.synthetic",
+        "BatchGetResourceConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHGETRESOURCECONFIGOUTPUT_MEMBER_BASE_CONFIGURATION_ITEMS,
+        &BATCHGETRESOURCECONFIGOUTPUT_MEMBER_UNPROCESSED_RESOURCE_KEYS,
+    ],
+)
+.with_original_name("BatchGetResourceConfigResponse");
+impl BatchGetResourceConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETRESOURCECONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetResourceConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.base_configuration_items {
+            ser.write_list(
+                &BATCHGETRESOURCECONFIGOUTPUT_MEMBER_BASE_CONFIGURATION_ITEMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BaseConfigurationItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.unprocessed_resource_keys {
+            ser.write_list(
+                &BATCHGETRESOURCECONFIGOUTPUT_MEMBER_UNPROCESSED_RESOURCE_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResourceKey::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_resource_config::builders::BatchGetResourceConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETRESOURCECONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.base_configuration_items = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BaseConfigurationItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unprocessed_resource_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceKey::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetResourceConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for BatchGetResourceConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

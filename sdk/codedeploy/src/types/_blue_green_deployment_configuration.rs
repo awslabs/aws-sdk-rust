@@ -25,6 +25,133 @@ impl BlueGreenDeploymentConfiguration {
         self.green_fleet_provisioning_option.as_ref()
     }
 }
+static BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_TERMINATE_BLUE_INSTANCES_ON_DEPLOYMENT_SUCCESS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#BlueGreenDeploymentConfiguration$terminateBlueInstancesOnDeploymentSuccess",
+            "com.amazonaws.codedeploy",
+            "BlueGreenDeploymentConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "terminateBlueInstancesOnDeploymentSuccess",
+        0,
+    );
+static BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_DEPLOYMENT_READY_OPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#BlueGreenDeploymentConfiguration$deploymentReadyOption",
+            "com.amazonaws.codedeploy",
+            "BlueGreenDeploymentConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "deploymentReadyOption",
+        1,
+    );
+static BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_GREEN_FLEET_PROVISIONING_OPTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#BlueGreenDeploymentConfiguration$greenFleetProvisioningOption",
+            "com.amazonaws.codedeploy",
+            "BlueGreenDeploymentConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "greenFleetProvisioningOption",
+        2,
+    );
+static BLUEGREENDEPLOYMENTCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#BlueGreenDeploymentConfiguration",
+        "com.amazonaws.codedeploy",
+        "BlueGreenDeploymentConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_TERMINATE_BLUE_INSTANCES_ON_DEPLOYMENT_SUCCESS,
+        &BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_DEPLOYMENT_READY_OPTION,
+        &BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_GREEN_FLEET_PROVISIONING_OPTION,
+    ],
+);
+impl BlueGreenDeploymentConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BLUEGREENDEPLOYMENTCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BlueGreenDeploymentConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.terminate_blue_instances_on_deployment_success {
+            ser.write_struct(
+                &BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_TERMINATE_BLUE_INSTANCES_ON_DEPLOYMENT_SUCCESS,
+                val,
+            )?;
+        }
+        if let Some(ref val) = self.deployment_ready_option {
+            ser.write_struct(&BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_DEPLOYMENT_READY_OPTION, val)?;
+        }
+        if let Some(ref val) = self.green_fleet_provisioning_option {
+            ser.write_struct(&BLUEGREENDEPLOYMENTCONFIGURATION_MEMBER_GREEN_FLEET_PROVISIONING_OPTION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BlueGreenDeploymentConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BLUEGREENDEPLOYMENTCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terminate_blue_instances_on_deployment_success = Some(crate::types::BlueInstanceTerminationOption::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_ready_option = Some(crate::types::DeploymentReadyOption::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.green_fleet_provisioning_option = Some(crate::types::GreenFleetProvisioningOption::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BlueGreenDeploymentConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BlueGreenDeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`BlueGreenDeploymentConfiguration`](crate::types::BlueGreenDeploymentConfiguration).
     pub fn builder() -> crate::types::builders::BlueGreenDeploymentConfigurationBuilder {

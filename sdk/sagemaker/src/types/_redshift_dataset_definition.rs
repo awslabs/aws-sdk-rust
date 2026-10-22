@@ -61,6 +61,253 @@ impl RedshiftDatasetDefinition {
         self.output_compression.as_ref()
     }
 }
+static REDSHIFTDATASETDEFINITION_MEMBER_CLUSTER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$ClusterId",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterId",
+    0,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_DATABASE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$Database",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Database",
+    1,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_DB_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$DbUser",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DbUser",
+    2,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_QUERY_STRING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$QueryString",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QueryString",
+    3,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_CLUSTER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$ClusterRoleArn",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterRoleArn",
+    4,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$OutputS3Uri",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputS3Uri",
+    5,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$KmsKeyId",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    6,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$OutputFormat",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputFormat",
+    7,
+);
+static REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_COMPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition$OutputCompression",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputCompression",
+    8,
+);
+static REDSHIFTDATASETDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RedshiftDatasetDefinition",
+        "com.amazonaws.sagemaker",
+        "RedshiftDatasetDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REDSHIFTDATASETDEFINITION_MEMBER_CLUSTER_ID,
+        &REDSHIFTDATASETDEFINITION_MEMBER_DATABASE,
+        &REDSHIFTDATASETDEFINITION_MEMBER_DB_USER,
+        &REDSHIFTDATASETDEFINITION_MEMBER_QUERY_STRING,
+        &REDSHIFTDATASETDEFINITION_MEMBER_CLUSTER_ROLE_ARN,
+        &REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_S3_URI,
+        &REDSHIFTDATASETDEFINITION_MEMBER_KMS_KEY_ID,
+        &REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_FORMAT,
+        &REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_COMPRESSION,
+    ],
+);
+impl RedshiftDatasetDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REDSHIFTDATASETDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RedshiftDatasetDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_id {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_CLUSTER_ID, val)?;
+        }
+        if let Some(ref val) = self.database {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_DATABASE, val)?;
+        }
+        if let Some(ref val) = self.db_user {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_DB_USER, val)?;
+        }
+        if let Some(ref val) = self.query_string {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_QUERY_STRING, val)?;
+        }
+        if let Some(ref val) = self.cluster_role_arn {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_CLUSTER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.output_s3_uri {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.output_format {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.output_compression {
+            ser.write_string(&REDSHIFTDATASETDEFINITION_MEMBER_OUTPUT_COMPRESSION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RedshiftDatasetDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REDSHIFTDATASETDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.database = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.db_user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_string = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_format = Some(crate::types::RedshiftResultFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_compression = Some(crate::types::RedshiftResultCompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RedshiftDatasetDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RedshiftDatasetDefinition {
     /// Creates a new builder-style object to manufacture [`RedshiftDatasetDefinition`](crate::types::RedshiftDatasetDefinition).
     pub fn builder() -> crate::types::builders::RedshiftDatasetDefinitionBuilder {

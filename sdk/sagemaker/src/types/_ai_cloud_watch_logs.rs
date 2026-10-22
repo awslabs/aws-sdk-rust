@@ -19,6 +19,99 @@ impl AiCloudWatchLogs {
         self.log_stream_name.as_deref()
     }
 }
+static AICLOUDWATCHLOGS_MEMBER_LOG_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AICloudWatchLogs$LogGroupArn",
+        "com.amazonaws.sagemaker",
+        "AICloudWatchLogs",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogGroupArn",
+    0,
+);
+static AICLOUDWATCHLOGS_MEMBER_LOG_STREAM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AICloudWatchLogs$LogStreamName",
+        "com.amazonaws.sagemaker",
+        "AICloudWatchLogs",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogStreamName",
+    1,
+);
+static AICLOUDWATCHLOGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AICloudWatchLogs", "com.amazonaws.sagemaker", "AICloudWatchLogs"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&AICLOUDWATCHLOGS_MEMBER_LOG_GROUP_ARN, &AICLOUDWATCHLOGS_MEMBER_LOG_STREAM_NAME],
+);
+impl AiCloudWatchLogs {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AICLOUDWATCHLOGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiCloudWatchLogs {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.log_group_arn {
+            ser.write_string(&AICLOUDWATCHLOGS_MEMBER_LOG_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.log_stream_name {
+            ser.write_string(&AICLOUDWATCHLOGS_MEMBER_LOG_STREAM_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiCloudWatchLogsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AICLOUDWATCHLOGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_stream_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiCloudWatchLogs {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiCloudWatchLogs {
     /// Creates a new builder-style object to manufacture [`AiCloudWatchLogs`](crate::types::AiCloudWatchLogs).
     pub fn builder() -> crate::types::builders::AiCloudWatchLogsBuilder {

@@ -119,6 +119,477 @@ impl Stack {
         self.storage_connector_authentication.as_ref()
     }
 }
+static STACK_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$Arn", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static STACK_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$Name", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static STACK_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$Description", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static STACK_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$DisplayName", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    3,
+);
+static STACK_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$CreatedTime", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    4,
+);
+static STACK_MEMBER_STORAGE_CONNECTORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#StorageConnectorList$member",
+        "com.amazonaws.appstream",
+        "StorageConnectorList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STACK_MEMBER_STORAGE_CONNECTORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$StorageConnectors", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::List,
+    "StorageConnectors",
+    5,
+)
+.with_list_member(&STACK_MEMBER_STORAGE_CONNECTORS_MEMBER);
+static STACK_MEMBER_REDIRECT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$RedirectURL", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::String,
+    "RedirectURL",
+    6,
+);
+static STACK_MEMBER_FEEDBACK_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$FeedbackURL", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeedbackURL",
+    7,
+);
+static STACK_MEMBER_STACK_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#StackErrors$member", "com.amazonaws.appstream", "StackErrors"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STACK_MEMBER_STACK_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$StackErrors", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::List,
+    "StackErrors",
+    8,
+)
+.with_list_member(&STACK_MEMBER_STACK_ERRORS_MEMBER);
+static STACK_MEMBER_USER_SETTINGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#UserSettingList$member",
+        "com.amazonaws.appstream",
+        "UserSettingList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STACK_MEMBER_USER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$UserSettings", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::List,
+    "UserSettings",
+    9,
+)
+.with_list_member(&STACK_MEMBER_USER_SETTINGS_MEMBER);
+static STACK_MEMBER_APPLICATION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$ApplicationSettings", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApplicationSettings",
+    10,
+);
+static STACK_MEMBER_ACCESS_ENDPOINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AccessEndpointList$member",
+        "com.amazonaws.appstream",
+        "AccessEndpointList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STACK_MEMBER_ACCESS_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$AccessEndpoints", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::List,
+    "AccessEndpoints",
+    11,
+)
+.with_list_member(&STACK_MEMBER_ACCESS_ENDPOINTS_MEMBER);
+static STACK_MEMBER_EMBED_HOST_DOMAINS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#EmbedHostDomains$member",
+        "com.amazonaws.appstream",
+        "EmbedHostDomains",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STACK_MEMBER_EMBED_HOST_DOMAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$EmbedHostDomains", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::List,
+    "EmbedHostDomains",
+    12,
+)
+.with_list_member(&STACK_MEMBER_EMBED_HOST_DOMAINS_MEMBER);
+static STACK_MEMBER_STREAMING_EXPERIENCE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Stack$StreamingExperienceSettings",
+        "com.amazonaws.appstream",
+        "Stack",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StreamingExperienceSettings",
+    13,
+);
+static STACK_MEMBER_CONTENT_REDIRECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$ContentRedirection", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContentRedirection",
+    14,
+);
+static STACK_MEMBER_AGENT_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$AgentAccessConfig", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AgentAccessConfig",
+    15,
+);
+static STACK_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#Stack$StorageConnectorAuthentication",
+        "com.amazonaws.appstream",
+        "Stack",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StorageConnectorAuthentication",
+    16,
+);
+static STACK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STACK_MEMBER_ARN,
+        &STACK_MEMBER_NAME,
+        &STACK_MEMBER_DESCRIPTION,
+        &STACK_MEMBER_DISPLAY_NAME,
+        &STACK_MEMBER_CREATED_TIME,
+        &STACK_MEMBER_STORAGE_CONNECTORS,
+        &STACK_MEMBER_REDIRECT_URL,
+        &STACK_MEMBER_FEEDBACK_URL,
+        &STACK_MEMBER_STACK_ERRORS,
+        &STACK_MEMBER_USER_SETTINGS,
+        &STACK_MEMBER_APPLICATION_SETTINGS,
+        &STACK_MEMBER_ACCESS_ENDPOINTS,
+        &STACK_MEMBER_EMBED_HOST_DOMAINS,
+        &STACK_MEMBER_STREAMING_EXPERIENCE_SETTINGS,
+        &STACK_MEMBER_CONTENT_REDIRECTION,
+        &STACK_MEMBER_AGENT_ACCESS_CONFIG,
+        &STACK_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION,
+    ],
+);
+impl Stack {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STACK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Stack {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&STACK_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&STACK_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&STACK_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&STACK_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&STACK_MEMBER_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.storage_connectors {
+            ser.write_list(
+                &STACK_MEMBER_STORAGE_CONNECTORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::StorageConnector::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.redirect_url {
+            ser.write_string(&STACK_MEMBER_REDIRECT_URL, val)?;
+        }
+        if let Some(ref val) = self.feedback_url {
+            ser.write_string(&STACK_MEMBER_FEEDBACK_URL, val)?;
+        }
+        if let Some(ref val) = self.stack_errors {
+            ser.write_list(
+                &STACK_MEMBER_STACK_ERRORS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::StackError::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.user_settings {
+            ser.write_list(
+                &STACK_MEMBER_USER_SETTINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::UserSetting::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.application_settings {
+            ser.write_struct(&STACK_MEMBER_APPLICATION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.access_endpoints {
+            ser.write_list(
+                &STACK_MEMBER_ACCESS_ENDPOINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AccessEndpoint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.embed_host_domains {
+            ser.write_list(
+                &STACK_MEMBER_EMBED_HOST_DOMAINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.streaming_experience_settings {
+            ser.write_struct(&STACK_MEMBER_STREAMING_EXPERIENCE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.content_redirection {
+            ser.write_struct(&STACK_MEMBER_CONTENT_REDIRECTION, val)?;
+        }
+        if let Some(ref val) = self.agent_access_config {
+            ser.write_struct(&STACK_MEMBER_AGENT_ACCESS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.storage_connector_authentication {
+            ser.write_string(&STACK_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StackBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STACK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_connectors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::StorageConnector::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.redirect_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feedback_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_errors = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::StackError::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_settings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::UserSetting::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_settings = Some(crate::types::ApplicationSettingsResponse::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_endpoints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AccessEndpoint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.embed_host_domains = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.streaming_experience_settings = Some(crate::types::StreamingExperienceSettings::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_redirection = Some(crate::types::ContentRedirection::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_access_config = Some(crate::types::AgentAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_connector_authentication =
+                            Some(crate::types::StorageConnectorAuthentication::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Stack {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::types::Stack).
     pub fn builder() -> crate::types::builders::StackBuilder {

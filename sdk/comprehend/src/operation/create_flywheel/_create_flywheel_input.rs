@@ -62,6 +62,280 @@ impl CreateFlywheelInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEFLYWHEELINPUT_MEMBER_FLYWHEEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$FlywheelName",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelName",
+    0,
+);
+static CREATEFLYWHEELINPUT_MEMBER_ACTIVE_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$ActiveModelArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActiveModelArn",
+    1,
+);
+static CREATEFLYWHEELINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    2,
+);
+static CREATEFLYWHEELINPUT_MEMBER_TASK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$TaskConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TaskConfig",
+    3,
+);
+static CREATEFLYWHEELINPUT_MEMBER_MODEL_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$ModelType",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelType",
+    4,
+);
+static CREATEFLYWHEELINPUT_MEMBER_DATA_LAKE_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$DataLakeS3Uri",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataLakeS3Uri",
+    5,
+);
+static CREATEFLYWHEELINPUT_MEMBER_DATA_SECURITY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$DataSecurityConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataSecurityConfig",
+    6,
+);
+static CREATEFLYWHEELINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    7,
+);
+static CREATEFLYWHEELINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEFLYWHEELINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&CREATEFLYWHEELINPUT_MEMBER_TAGS_MEMBER);
+static CREATEFLYWHEELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#CreateFlywheelInput",
+        "com.amazonaws.comprehend.synthetic",
+        "CreateFlywheelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEFLYWHEELINPUT_MEMBER_FLYWHEEL_NAME,
+        &CREATEFLYWHEELINPUT_MEMBER_ACTIVE_MODEL_ARN,
+        &CREATEFLYWHEELINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &CREATEFLYWHEELINPUT_MEMBER_TASK_CONFIG,
+        &CREATEFLYWHEELINPUT_MEMBER_MODEL_TYPE,
+        &CREATEFLYWHEELINPUT_MEMBER_DATA_LAKE_S3_URI,
+        &CREATEFLYWHEELINPUT_MEMBER_DATA_SECURITY_CONFIG,
+        &CREATEFLYWHEELINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &CREATEFLYWHEELINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateFlywheelRequest");
+impl CreateFlywheelInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEFLYWHEELINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateFlywheelInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.flywheel_name {
+            ser.write_string(&CREATEFLYWHEELINPUT_MEMBER_FLYWHEEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.active_model_arn {
+            ser.write_string(&CREATEFLYWHEELINPUT_MEMBER_ACTIVE_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&CREATEFLYWHEELINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.task_config {
+            ser.write_struct(&CREATEFLYWHEELINPUT_MEMBER_TASK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_type {
+            ser.write_string(&CREATEFLYWHEELINPUT_MEMBER_MODEL_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.data_lake_s3_uri {
+            ser.write_string(&CREATEFLYWHEELINPUT_MEMBER_DATA_LAKE_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.data_security_config {
+            ser.write_struct(&CREATEFLYWHEELINPUT_MEMBER_DATA_SECURITY_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&CREATEFLYWHEELINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEFLYWHEELINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_flywheel::builders::CreateFlywheelInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEFLYWHEELINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_config = Some(crate::types::TaskConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_type = Some(crate::types::ModelType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_lake_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_security_config = Some(crate::types::DataSecurityConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateFlywheelInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.flywheel_name = builder.flywheel_name.or(Some(String::new()));
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.data_lake_s3_uri = builder.data_lake_s3_uri.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateFlywheelInput {
     /// Creates a new builder-style object to manufacture [`CreateFlywheelInput`](crate::operation::create_flywheel::CreateFlywheelInput).
     pub fn builder() -> crate::operation::create_flywheel::builders::CreateFlywheelInputBuilder {

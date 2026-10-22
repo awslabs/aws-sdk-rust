@@ -81,6 +81,282 @@ impl ::std::fmt::Debug for AssociateFileSystemInput {
         formatter.finish()
     }
 }
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$UserName",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    0,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_PASSWORD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$Password",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Password",
+    1,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$ClientToken",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    2,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_GATEWAY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$GatewayARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GatewayARN",
+    3,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$LocationARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationARN",
+    4,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$Tags",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&ASSOCIATEFILESYSTEMINPUT_MEMBER_TAGS_MEMBER);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_AUDIT_DESTINATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$AuditDestinationARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuditDestinationARN",
+    6,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_CACHE_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$CacheAttributes",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CacheAttributes",
+    7,
+);
+static ASSOCIATEFILESYSTEMINPUT_MEMBER_ENDPOINT_NETWORK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput$EndpointNetworkConfiguration",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EndpointNetworkConfiguration",
+    8,
+);
+static ASSOCIATEFILESYSTEMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#AssociateFileSystemInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "AssociateFileSystemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_USER_NAME,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_PASSWORD,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_CLIENT_TOKEN,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_GATEWAY_ARN,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_LOCATION_ARN,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_TAGS,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_AUDIT_DESTINATION_ARN,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_CACHE_ATTRIBUTES,
+        &ASSOCIATEFILESYSTEMINPUT_MEMBER_ENDPOINT_NETWORK_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("AssociateFileSystemInput");
+impl AssociateFileSystemInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ASSOCIATEFILESYSTEMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AssociateFileSystemInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&ASSOCIATEFILESYSTEMINPUT_MEMBER_USER_NAME, val)?;
+        }
+        if let Some(ref val) = self.password {
+            ser.write_string(&ASSOCIATEFILESYSTEMINPUT_MEMBER_PASSWORD, val)?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&ASSOCIATEFILESYSTEMINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.gateway_arn {
+            ser.write_string(&ASSOCIATEFILESYSTEMINPUT_MEMBER_GATEWAY_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&ASSOCIATEFILESYSTEMINPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &ASSOCIATEFILESYSTEMINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.audit_destination_arn {
+            ser.write_string(&ASSOCIATEFILESYSTEMINPUT_MEMBER_AUDIT_DESTINATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.cache_attributes {
+            ser.write_struct(&ASSOCIATEFILESYSTEMINPUT_MEMBER_CACHE_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.endpoint_network_configuration {
+            ser.write_struct(&ASSOCIATEFILESYSTEMINPUT_MEMBER_ENDPOINT_NETWORK_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ASSOCIATEFILESYSTEMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gateway_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.audit_destination_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cache_attributes = Some(crate::types::CacheAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_network_configuration = Some(crate::types::EndpointNetworkConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AssociateFileSystemInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_name = builder.user_name.or(Some(String::new()));
+        builder.password = builder.password.or(Some(String::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.gateway_arn = builder.gateway_arn.or(Some(String::new()));
+        builder.location_arn = builder.location_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AssociateFileSystemInput {
     /// Creates a new builder-style object to manufacture [`AssociateFileSystemInput`](crate::operation::associate_file_system::AssociateFileSystemInput).
     pub fn builder() -> crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder {

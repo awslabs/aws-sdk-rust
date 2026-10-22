@@ -43,6 +43,190 @@ impl RelationalDatabaseBlueprint {
         self.is_engine_default
     }
 }
+static RELATIONALDATABASEBLUEPRINT_MEMBER_BLUEPRINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBlueprint$blueprintId",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBlueprint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "blueprintId",
+    0,
+);
+static RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBlueprint$engine",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBlueprint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "engine",
+    1,
+);
+static RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBlueprint$engineVersion",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBlueprint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "engineVersion",
+    2,
+);
+static RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBlueprint$engineDescription",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBlueprint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "engineDescription",
+    3,
+);
+static RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_VERSION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBlueprint$engineVersionDescription",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBlueprint",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "engineVersionDescription",
+    4,
+);
+static RELATIONALDATABASEBLUEPRINT_MEMBER_IS_ENGINE_DEFAULT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBlueprint$isEngineDefault",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBlueprint",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isEngineDefault",
+    5,
+);
+static RELATIONALDATABASEBLUEPRINT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#RelationalDatabaseBlueprint",
+        "com.amazonaws.lightsail",
+        "RelationalDatabaseBlueprint",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RELATIONALDATABASEBLUEPRINT_MEMBER_BLUEPRINT_ID,
+        &RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE,
+        &RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_VERSION,
+        &RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_DESCRIPTION,
+        &RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_VERSION_DESCRIPTION,
+        &RELATIONALDATABASEBLUEPRINT_MEMBER_IS_ENGINE_DEFAULT,
+    ],
+);
+impl RelationalDatabaseBlueprint {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RELATIONALDATABASEBLUEPRINT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RelationalDatabaseBlueprint {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.blueprint_id {
+            ser.write_string(&RELATIONALDATABASEBLUEPRINT_MEMBER_BLUEPRINT_ID, val)?;
+        }
+        if let Some(ref val) = self.engine {
+            ser.write_string(&RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE, val.as_str())?;
+        }
+        if let Some(ref val) = self.engine_version {
+            ser.write_string(&RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_VERSION, val)?;
+        }
+        if let Some(ref val) = self.engine_description {
+            ser.write_string(&RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.engine_version_description {
+            ser.write_string(&RELATIONALDATABASEBLUEPRINT_MEMBER_ENGINE_VERSION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.is_engine_default {
+            ser.write_boolean(&RELATIONALDATABASEBLUEPRINT_MEMBER_IS_ENGINE_DEFAULT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RelationalDatabaseBlueprintBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RELATIONALDATABASEBLUEPRINT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blueprint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine = Some(crate::types::RelationalDatabaseEngine::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.engine_version_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_engine_default = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RelationalDatabaseBlueprint {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RelationalDatabaseBlueprint {
     /// Creates a new builder-style object to manufacture [`RelationalDatabaseBlueprint`](crate::types::RelationalDatabaseBlueprint).
     pub fn builder() -> crate::types::builders::RelationalDatabaseBlueprintBuilder {

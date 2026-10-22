@@ -25,6 +25,127 @@ impl TextClassificationJobConfig {
         self.target_label_column.as_deref()
     }
 }
+static TEXTCLASSIFICATIONJOBCONFIG_MEMBER_COMPLETION_CRITERIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TextClassificationJobConfig$CompletionCriteria",
+        "com.amazonaws.sagemaker",
+        "TextClassificationJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CompletionCriteria",
+    0,
+);
+static TEXTCLASSIFICATIONJOBCONFIG_MEMBER_CONTENT_COLUMN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TextClassificationJobConfig$ContentColumn",
+        "com.amazonaws.sagemaker",
+        "TextClassificationJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentColumn",
+    1,
+);
+static TEXTCLASSIFICATIONJOBCONFIG_MEMBER_TARGET_LABEL_COLUMN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TextClassificationJobConfig$TargetLabelColumn",
+        "com.amazonaws.sagemaker",
+        "TextClassificationJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetLabelColumn",
+    2,
+);
+static TEXTCLASSIFICATIONJOBCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TextClassificationJobConfig",
+        "com.amazonaws.sagemaker",
+        "TextClassificationJobConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TEXTCLASSIFICATIONJOBCONFIG_MEMBER_COMPLETION_CRITERIA,
+        &TEXTCLASSIFICATIONJOBCONFIG_MEMBER_CONTENT_COLUMN,
+        &TEXTCLASSIFICATIONJOBCONFIG_MEMBER_TARGET_LABEL_COLUMN,
+    ],
+);
+impl TextClassificationJobConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TEXTCLASSIFICATIONJOBCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TextClassificationJobConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.completion_criteria {
+            ser.write_struct(&TEXTCLASSIFICATIONJOBCONFIG_MEMBER_COMPLETION_CRITERIA, val)?;
+        }
+        if let Some(ref val) = self.content_column {
+            ser.write_string(&TEXTCLASSIFICATIONJOBCONFIG_MEMBER_CONTENT_COLUMN, val)?;
+        }
+        if let Some(ref val) = self.target_label_column {
+            ser.write_string(&TEXTCLASSIFICATIONJOBCONFIG_MEMBER_TARGET_LABEL_COLUMN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TextClassificationJobConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TEXTCLASSIFICATIONJOBCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_criteria = Some(crate::types::AutoMlJobCompletionCriteria::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_column = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_label_column = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TextClassificationJobConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TextClassificationJobConfig {
     /// Creates a new builder-style object to manufacture [`TextClassificationJobConfig`](crate::types::TextClassificationJobConfig).
     pub fn builder() -> crate::types::builders::TextClassificationJobConfigBuilder {

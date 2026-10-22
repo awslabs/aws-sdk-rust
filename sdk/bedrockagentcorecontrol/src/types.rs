@@ -581,6 +581,8 @@ pub use crate::types::_match_principals::MatchPrincipals;
 
 pub use crate::types::_match_paths::MatchPaths;
 
+pub use crate::types::_match_models::MatchModels;
+
 pub use crate::types::_configuration_bundle_action::ConfigurationBundleAction;
 
 pub use crate::types::_route_to_target_action::RouteToTargetAction;
@@ -829,6 +831,8 @@ pub use crate::types::_numerical_scale_definition::NumericalScaleDefinition;
 
 pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinition;
 
+pub use crate::types::_evaluation_dimension::EvaluationDimension;
+
 pub use crate::types::_inference_configuration::InferenceConfiguration;
 
 pub use crate::types::_reasoning_configuration::ReasoningConfiguration;
@@ -836,6 +840,10 @@ pub use crate::types::_reasoning_configuration::ReasoningConfiguration;
 pub use crate::types::_period::Period;
 
 pub use crate::types::_match_principal_entry::MatchPrincipalEntry;
+
+pub use crate::types::_match_model_entry::MatchModelEntry;
+
+pub use crate::types::_fallback::Fallback;
 
 pub use crate::types::_connector_configuration::ConnectorConfiguration;
 
@@ -911,11 +919,19 @@ pub use crate::types::_capacity_reservation_preference::CapacityReservationPrefe
 
 pub use crate::types::_capacity_reservation_target::CapacityReservationTarget;
 
+pub use crate::types::_dimension_rating_scale::DimensionRatingScale;
+
 pub use crate::types::_interceptor_payload_exclusion_selector::InterceptorPayloadExclusionSelector;
 
 pub use crate::types::_iam_principal::IamPrincipal;
 
+pub use crate::types::_match_operator::MatchOperator;
+
 pub use crate::types::_traffic_split_entry::TrafficSplitEntry;
+
+pub use crate::types::_fallback_triggers::FallbackTriggers;
+
+pub use crate::types::_circuit_breaker_configuration::CircuitBreakerConfiguration;
 
 pub use crate::types::_target_traffic_split_entry::TargetTrafficSplitEntry;
 
@@ -981,6 +997,10 @@ pub use crate::types::_principal_match_operator::PrincipalMatchOperator;
 
 pub use crate::types::_configuration_bundle_reference::ConfigurationBundleReference;
 
+pub use crate::types::_circuit_breaker_mode::CircuitBreakerMode;
+
+pub use crate::types::_fallback_target::FallbackTarget;
+
 pub use crate::types::_schema_definition::SchemaDefinition;
 
 pub use crate::types::_rest_api_method::RestApiMethod;
@@ -1018,6 +1038,8 @@ pub use crate::types::_episodic_reflection_override::EpisodicReflectionOverride;
 pub use crate::types::_trigger_condition::TriggerCondition;
 
 pub use crate::types::_registry_record_o_auth_grant_type::RegistryRecordOAuthGrantType;
+
+pub use crate::types::_fallback_error::FallbackError;
 
 pub use crate::types::_schema_type::SchemaType;
 
@@ -1146,6 +1168,10 @@ mod _certificate;
 mod _certificate_configuration;
 
 mod _certificate_location;
+
+mod _circuit_breaker_configuration;
+
+mod _circuit_breaker_mode;
 
 mod _claim_match_operator_type;
 
@@ -1289,6 +1315,8 @@ mod _descriptor_type;
 
 mod _descriptors;
 
+mod _dimension_rating_scale;
+
 mod _draft_status;
 
 mod _ebs_volume_configuration;
@@ -1329,6 +1357,8 @@ mod _episodic_reflection_configuration_input;
 
 mod _episodic_reflection_override;
 
+mod _evaluation_dimension;
+
 mod _evaluator_config;
 
 mod _evaluator_level;
@@ -1350,6 +1380,14 @@ mod _extraction_config;
 mod _extraction_configuration;
 
 mod _extraction_type;
+
+mod _fallback;
+
+mod _fallback_error;
+
+mod _fallback_target;
+
+mod _fallback_triggers;
 
 mod _filesystem_configuration;
 
@@ -1604,6 +1642,12 @@ mod _llm_extraction_config;
 mod _managed_resource_details;
 
 mod _managed_vpc_resource;
+
+mod _match_model_entry;
+
+mod _match_models;
+
+mod _match_operator;
 
 mod _match_paths;
 

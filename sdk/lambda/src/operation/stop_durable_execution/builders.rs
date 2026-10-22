@@ -122,17 +122,17 @@ impl StopDurableExecutionFluentBuilder {
     pub fn get_durable_execution_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_durable_execution_arn()
     }
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(mut self, input: crate::types::ErrorObject) -> Self {
         self.inner = self.inner.error(input);
         self
     }
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorObject>) -> Self {
         self.inner = self.inner.set_error(input);
         self
     }
-    /// <p>Optional error details explaining why the execution is being stopped.</p>
+    /// <p>Optional error details explaining why the execution is being stopped. The combined size of all error fields is limited to 1 MB.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorObject> {
         self.inner.get_error()
     }

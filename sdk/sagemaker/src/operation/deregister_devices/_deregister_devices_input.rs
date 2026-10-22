@@ -20,6 +20,125 @@ impl DeregisterDevicesInput {
         self.device_names.as_deref().unwrap_or_default()
     }
 }
+static DEREGISTERDEVICESINPUT_MEMBER_DEVICE_FLEET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeregisterDevicesInput$DeviceFleetName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeregisterDevicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeviceFleetName",
+    0,
+);
+static DEREGISTERDEVICESINPUT_MEMBER_DEVICE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#DeviceNames$member", "com.amazonaws.sagemaker", "DeviceNames"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DEREGISTERDEVICESINPUT_MEMBER_DEVICE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeregisterDevicesInput$DeviceNames",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeregisterDevicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DeviceNames",
+    1,
+)
+.with_list_member(&DEREGISTERDEVICESINPUT_MEMBER_DEVICE_NAMES_MEMBER);
+static DEREGISTERDEVICESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DeregisterDevicesInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DeregisterDevicesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEREGISTERDEVICESINPUT_MEMBER_DEVICE_FLEET_NAME,
+        &DEREGISTERDEVICESINPUT_MEMBER_DEVICE_NAMES,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeregisterDevicesRequest");
+impl DeregisterDevicesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEREGISTERDEVICESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeregisterDevicesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.device_fleet_name {
+            ser.write_string(&DEREGISTERDEVICESINPUT_MEMBER_DEVICE_FLEET_NAME, val)?;
+        }
+        if let Some(ref val) = self.device_names {
+            ser.write_list(
+                &DEREGISTERDEVICESINPUT_MEMBER_DEVICE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::deregister_devices::builders::DeregisterDevicesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DEREGISTERDEVICESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_fleet_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.device_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeregisterDevicesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.device_fleet_name = builder.device_fleet_name.or(Some(String::new()));
+        builder.device_names = builder.device_names.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeregisterDevicesInput {
     /// Creates a new builder-style object to manufacture [`DeregisterDevicesInput`](crate::operation::deregister_devices::DeregisterDevicesInput).
     pub fn builder() -> crate::operation::deregister_devices::builders::DeregisterDevicesInputBuilder {

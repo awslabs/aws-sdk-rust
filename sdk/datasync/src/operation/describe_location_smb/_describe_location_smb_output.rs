@@ -90,6 +90,368 @@ impl DescribeLocationSmbOutput {
         self.custom_secret_config.as_ref()
     }
 }
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_LOCATION_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$LocationUri",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationUri",
+    1,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$AgentArns",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AgentArns",
+    2,
+)
+.with_list_member(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_AGENT_ARNS_MEMBER);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_USER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$User",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "User",
+    3,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$Domain",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Domain",
+    4,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_MOUNT_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$MountOptions",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MountOptions",
+    5,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$CreationTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_DNS_IP_ADDRESSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#DnsIpList$member", "com.amazonaws.datasync", "DnsIpList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_DNS_IP_ADDRESSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$DnsIpAddresses",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DnsIpAddresses",
+    7,
+)
+.with_list_member(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_DNS_IP_ADDRESSES_MEMBER);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_KERBEROS_PRINCIPAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$KerberosPrincipal",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KerberosPrincipal",
+    8,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$AuthenticationType",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    9,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_MANAGED_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$ManagedSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ManagedSecretConfig",
+    10,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$CmkSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    11,
+);
+static DESCRIBELOCATIONSMBOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput$CustomSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    12,
+);
+static DESCRIBELOCATIONSMBOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationSmbOutput",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationSmbOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_LOCATION_ARN,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_LOCATION_URI,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_AGENT_ARNS,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_USER,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_DOMAIN,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_MOUNT_OPTIONS,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_DNS_IP_ADDRESSES,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_KERBEROS_PRINCIPAL,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_AUTHENTICATION_TYPE,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_MANAGED_SECRET_CONFIG,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_CMK_SECRET_CONFIG,
+        &DESCRIBELOCATIONSMBOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG,
+    ],
+)
+.with_original_name("DescribeLocationSmbResponse");
+impl DescribeLocationSmbOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELOCATIONSMBOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLocationSmbOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_uri {
+            ser.write_string(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_LOCATION_URI, val)?;
+        }
+        if let Some(ref val) = self.agent_arns {
+            ser.write_list(
+                &DESCRIBELOCATIONSMBOUTPUT_MEMBER_AGENT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.user {
+            ser.write_string(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_USER, val)?;
+        }
+        if let Some(ref val) = self.domain {
+            ser.write_string(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.mount_options {
+            ser.write_struct(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_MOUNT_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.dns_ip_addresses {
+            ser.write_list(
+                &DESCRIBELOCATIONSMBOUTPUT_MEMBER_DNS_IP_ADDRESSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.kerberos_principal {
+            ser.write_string(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_KERBEROS_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.managed_secret_config {
+            ser.write_struct(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_MANAGED_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&DESCRIBELOCATIONSMBOUTPUT_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_location_smb::builders::DescribeLocationSmbOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELOCATIONSMBOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_options = Some(crate::types::SmbMountOptions::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_ip_addresses = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kerberos_principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::SmbAuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_secret_config = Some(crate::types::ManagedSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLocationSmbOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLocationSmbOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

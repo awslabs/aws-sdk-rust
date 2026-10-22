@@ -55,6 +55,172 @@ impl ::std::fmt::Debug for CreateUserInput {
         formatter.finish()
     }
 }
+static CREATEUSERINPUT_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUserInput$UserName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    0,
+);
+static CREATEUSERINPUT_MEMBER_MESSAGE_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUserInput$MessageAction",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MessageAction",
+    1,
+);
+static CREATEUSERINPUT_MEMBER_FIRST_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUserInput$FirstName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirstName",
+    2,
+);
+static CREATEUSERINPUT_MEMBER_LAST_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUserInput$LastName",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastName",
+    3,
+);
+static CREATEUSERINPUT_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUserInput$AuthenticationType",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    4,
+);
+static CREATEUSERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateUserInput",
+        "com.amazonaws.appstream.synthetic",
+        "CreateUserInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEUSERINPUT_MEMBER_USER_NAME,
+        &CREATEUSERINPUT_MEMBER_MESSAGE_ACTION,
+        &CREATEUSERINPUT_MEMBER_FIRST_NAME,
+        &CREATEUSERINPUT_MEMBER_LAST_NAME,
+        &CREATEUSERINPUT_MEMBER_AUTHENTICATION_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateUserRequest");
+impl CreateUserInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEUSERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateUserInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&CREATEUSERINPUT_MEMBER_USER_NAME, val)?;
+        }
+        if let Some(ref val) = self.message_action {
+            ser.write_string(&CREATEUSERINPUT_MEMBER_MESSAGE_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.first_name {
+            ser.write_string(&CREATEUSERINPUT_MEMBER_FIRST_NAME, val)?;
+        }
+        if let Some(ref val) = self.last_name {
+            ser.write_string(&CREATEUSERINPUT_MEMBER_LAST_NAME, val)?;
+        }
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&CREATEUSERINPUT_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_user::builders::CreateUserInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEUSERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message_action = Some(crate::types::MessageAction::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.first_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::AuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateUserInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.user_name = builder.user_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateUserInput {
     /// Creates a new builder-style object to manufacture [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
     pub fn builder() -> crate::operation::create_user::builders::CreateUserInputBuilder {

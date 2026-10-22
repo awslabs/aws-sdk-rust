@@ -27,6 +27,149 @@ impl InstanceSnapshotInfo {
         self.from_disk_info.as_deref().unwrap_or_default()
     }
 }
+static INSTANCESNAPSHOTINFO_MEMBER_FROM_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshotInfo$fromBundleId",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromBundleId",
+    0,
+);
+static INSTANCESNAPSHOTINFO_MEMBER_FROM_BLUEPRINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshotInfo$fromBlueprintId",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fromBlueprintId",
+    1,
+);
+static INSTANCESNAPSHOTINFO_MEMBER_FROM_DISK_INFO_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DiskInfoList$member", "com.amazonaws.lightsail", "DiskInfoList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCESNAPSHOTINFO_MEMBER_FROM_DISK_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshotInfo$fromDiskInfo",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "fromDiskInfo",
+    2,
+)
+.with_list_member(&INSTANCESNAPSHOTINFO_MEMBER_FROM_DISK_INFO_MEMBER);
+static INSTANCESNAPSHOTINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#InstanceSnapshotInfo",
+        "com.amazonaws.lightsail",
+        "InstanceSnapshotInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCESNAPSHOTINFO_MEMBER_FROM_BUNDLE_ID,
+        &INSTANCESNAPSHOTINFO_MEMBER_FROM_BLUEPRINT_ID,
+        &INSTANCESNAPSHOTINFO_MEMBER_FROM_DISK_INFO,
+    ],
+);
+impl InstanceSnapshotInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCESNAPSHOTINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceSnapshotInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.from_bundle_id {
+            ser.write_string(&INSTANCESNAPSHOTINFO_MEMBER_FROM_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.from_blueprint_id {
+            ser.write_string(&INSTANCESNAPSHOTINFO_MEMBER_FROM_BLUEPRINT_ID, val)?;
+        }
+        if let Some(ref val) = self.from_disk_info {
+            ser.write_list(
+                &INSTANCESNAPSHOTINFO_MEMBER_FROM_DISK_INFO,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DiskInfo::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceSnapshotInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCESNAPSHOTINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_blueprint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.from_disk_info = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DiskInfo::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceSnapshotInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceSnapshotInfo {
     /// Creates a new builder-style object to manufacture [`InstanceSnapshotInfo`](crate::types::InstanceSnapshotInfo).
     pub fn builder() -> crate::types::builders::InstanceSnapshotInfoBuilder {

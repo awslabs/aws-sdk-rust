@@ -21,6 +21,127 @@ impl AiCapacityReservationConfig {
         self.ml_reservation_arns.as_deref().unwrap_or_default()
     }
 }
+static AICAPACITYRESERVATIONCONFIG_MEMBER_CAPACITY_RESERVATION_PREFERENCE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#AICapacityReservationConfig$CapacityReservationPreference",
+            "com.amazonaws.sagemaker",
+            "AICapacityReservationConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CapacityReservationPreference",
+        0,
+    );
+static AICAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AIMlReservationArnList$member",
+        "com.amazonaws.sagemaker",
+        "AIMlReservationArnList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static AICAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AICapacityReservationConfig$MlReservationArns",
+        "com.amazonaws.sagemaker",
+        "AICapacityReservationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MlReservationArns",
+    1,
+)
+.with_list_member(&AICAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARNS_MEMBER);
+static AICAPACITYRESERVATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AICapacityReservationConfig",
+        "com.amazonaws.sagemaker",
+        "AICapacityReservationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AICAPACITYRESERVATIONCONFIG_MEMBER_CAPACITY_RESERVATION_PREFERENCE,
+        &AICAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARNS,
+    ],
+);
+impl AiCapacityReservationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AICAPACITYRESERVATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AiCapacityReservationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capacity_reservation_preference {
+            ser.write_string(&AICAPACITYRESERVATIONCONFIG_MEMBER_CAPACITY_RESERVATION_PREFERENCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.ml_reservation_arns {
+            ser.write_list(
+                &AICAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AiCapacityReservationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AICAPACITYRESERVATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation_preference =
+                            Some(crate::types::AiCapacityReservationPreference::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ml_reservation_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AiCapacityReservationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AiCapacityReservationConfig {
     /// Creates a new builder-style object to manufacture [`AiCapacityReservationConfig`](crate::types::AiCapacityReservationConfig).
     pub fn builder() -> crate::types::builders::AiCapacityReservationConfigBuilder {

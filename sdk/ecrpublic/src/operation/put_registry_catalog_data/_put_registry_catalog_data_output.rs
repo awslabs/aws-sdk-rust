@@ -13,6 +13,84 @@ impl PutRegistryCatalogDataOutput {
         self.registry_catalog_data.as_ref()
     }
 }
+static PUTREGISTRYCATALOGDATAOUTPUT_MEMBER_REGISTRY_CATALOG_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutRegistryCatalogDataOutput$registryCatalogData",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutRegistryCatalogDataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "registryCatalogData",
+    0,
+);
+static PUTREGISTRYCATALOGDATAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#PutRegistryCatalogDataOutput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "PutRegistryCatalogDataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUTREGISTRYCATALOGDATAOUTPUT_MEMBER_REGISTRY_CATALOG_DATA],
+)
+.with_original_name("PutRegistryCatalogDataResponse");
+impl PutRegistryCatalogDataOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTREGISTRYCATALOGDATAOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutRegistryCatalogDataOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_catalog_data {
+            ser.write_struct(&PUTREGISTRYCATALOGDATAOUTPUT_MEMBER_REGISTRY_CATALOG_DATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_registry_catalog_data::builders::PutRegistryCatalogDataOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTREGISTRYCATALOGDATAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_catalog_data = Some(crate::types::RegistryCatalogData::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutRegistryCatalogDataOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for PutRegistryCatalogDataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

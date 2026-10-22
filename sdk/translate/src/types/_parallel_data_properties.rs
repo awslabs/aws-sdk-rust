@@ -111,6 +111,440 @@ impl ParallelDataProperties {
         self.latest_update_attempt_at.as_ref()
     }
 }
+static PARALLELDATAPROPERTIES_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$Name",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static PARALLELDATAPROPERTIES_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$Arn",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    1,
+);
+static PARALLELDATAPROPERTIES_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$Description",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static PARALLELDATAPROPERTIES_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$Status",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static PARALLELDATAPROPERTIES_MEMBER_SOURCE_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$SourceLanguageCode",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceLanguageCode",
+    4,
+);
+static PARALLELDATAPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#LanguageCodeStringList$member",
+        "com.amazonaws.translate",
+        "LanguageCodeStringList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PARALLELDATAPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$TargetLanguageCodes",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetLanguageCodes",
+    5,
+)
+.with_list_member(&PARALLELDATAPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES_MEMBER);
+static PARALLELDATAPROPERTIES_MEMBER_PARALLEL_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$ParallelDataConfig",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParallelDataConfig",
+    6,
+);
+static PARALLELDATAPROPERTIES_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$Message",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    7,
+);
+static PARALLELDATAPROPERTIES_MEMBER_IMPORTED_DATA_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$ImportedDataSize",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ImportedDataSize",
+    8,
+);
+static PARALLELDATAPROPERTIES_MEMBER_IMPORTED_RECORD_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$ImportedRecordCount",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ImportedRecordCount",
+    9,
+);
+static PARALLELDATAPROPERTIES_MEMBER_FAILED_RECORD_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$FailedRecordCount",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "FailedRecordCount",
+    10,
+);
+static PARALLELDATAPROPERTIES_MEMBER_SKIPPED_RECORD_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$SkippedRecordCount",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "SkippedRecordCount",
+    11,
+);
+static PARALLELDATAPROPERTIES_MEMBER_ENCRYPTION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$EncryptionKey",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EncryptionKey",
+    12,
+);
+static PARALLELDATAPROPERTIES_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$CreatedAt",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedAt",
+    13,
+);
+static PARALLELDATAPROPERTIES_MEMBER_LAST_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$LastUpdatedAt",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdatedAt",
+    14,
+);
+static PARALLELDATAPROPERTIES_MEMBER_LATEST_UPDATE_ATTEMPT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$LatestUpdateAttemptStatus",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LatestUpdateAttemptStatus",
+    15,
+);
+static PARALLELDATAPROPERTIES_MEMBER_LATEST_UPDATE_ATTEMPT_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties$LatestUpdateAttemptAt",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LatestUpdateAttemptAt",
+    16,
+);
+static PARALLELDATAPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ParallelDataProperties",
+        "com.amazonaws.translate",
+        "ParallelDataProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PARALLELDATAPROPERTIES_MEMBER_NAME,
+        &PARALLELDATAPROPERTIES_MEMBER_ARN,
+        &PARALLELDATAPROPERTIES_MEMBER_DESCRIPTION,
+        &PARALLELDATAPROPERTIES_MEMBER_STATUS,
+        &PARALLELDATAPROPERTIES_MEMBER_SOURCE_LANGUAGE_CODE,
+        &PARALLELDATAPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES,
+        &PARALLELDATAPROPERTIES_MEMBER_PARALLEL_DATA_CONFIG,
+        &PARALLELDATAPROPERTIES_MEMBER_MESSAGE,
+        &PARALLELDATAPROPERTIES_MEMBER_IMPORTED_DATA_SIZE,
+        &PARALLELDATAPROPERTIES_MEMBER_IMPORTED_RECORD_COUNT,
+        &PARALLELDATAPROPERTIES_MEMBER_FAILED_RECORD_COUNT,
+        &PARALLELDATAPROPERTIES_MEMBER_SKIPPED_RECORD_COUNT,
+        &PARALLELDATAPROPERTIES_MEMBER_ENCRYPTION_KEY,
+        &PARALLELDATAPROPERTIES_MEMBER_CREATED_AT,
+        &PARALLELDATAPROPERTIES_MEMBER_LAST_UPDATED_AT,
+        &PARALLELDATAPROPERTIES_MEMBER_LATEST_UPDATE_ATTEMPT_STATUS,
+        &PARALLELDATAPROPERTIES_MEMBER_LATEST_UPDATE_ATTEMPT_AT,
+    ],
+);
+impl ParallelDataProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PARALLELDATAPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ParallelDataProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&PARALLELDATAPROPERTIES_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&PARALLELDATAPROPERTIES_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&PARALLELDATAPROPERTIES_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&PARALLELDATAPROPERTIES_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_language_code {
+            ser.write_string(&PARALLELDATAPROPERTIES_MEMBER_SOURCE_LANGUAGE_CODE, val)?;
+        }
+        if let Some(ref val) = self.target_language_codes {
+            ser.write_list(
+                &PARALLELDATAPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parallel_data_config {
+            ser.write_struct(&PARALLELDATAPROPERTIES_MEMBER_PARALLEL_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&PARALLELDATAPROPERTIES_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.imported_data_size {
+            ser.write_long(&PARALLELDATAPROPERTIES_MEMBER_IMPORTED_DATA_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.imported_record_count {
+            ser.write_long(&PARALLELDATAPROPERTIES_MEMBER_IMPORTED_RECORD_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.failed_record_count {
+            ser.write_long(&PARALLELDATAPROPERTIES_MEMBER_FAILED_RECORD_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.skipped_record_count {
+            ser.write_long(&PARALLELDATAPROPERTIES_MEMBER_SKIPPED_RECORD_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.encryption_key {
+            ser.write_struct(&PARALLELDATAPROPERTIES_MEMBER_ENCRYPTION_KEY, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&PARALLELDATAPROPERTIES_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.last_updated_at {
+            ser.write_timestamp(&PARALLELDATAPROPERTIES_MEMBER_LAST_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.latest_update_attempt_status {
+            ser.write_string(&PARALLELDATAPROPERTIES_MEMBER_LATEST_UPDATE_ATTEMPT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.latest_update_attempt_at {
+            ser.write_timestamp(&PARALLELDATAPROPERTIES_MEMBER_LATEST_UPDATE_ATTEMPT_AT, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ParallelDataPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PARALLELDATAPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::ParallelDataStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_language_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_language_codes = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallel_data_config = Some(crate::types::ParallelDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.imported_data_size = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.imported_record_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failed_record_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.skipped_record_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_key = Some(crate::types::EncryptionKey::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_update_attempt_status = Some(crate::types::ParallelDataStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_update_attempt_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ParallelDataProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ParallelDataProperties {
     /// Creates a new builder-style object to manufacture [`ParallelDataProperties`](crate::types::ParallelDataProperties).
     pub fn builder() -> crate::types::builders::ParallelDataPropertiesBuilder {

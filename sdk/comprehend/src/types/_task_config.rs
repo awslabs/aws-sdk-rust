@@ -25,6 +25,120 @@ impl TaskConfig {
         self.entity_recognition_config.as_ref()
     }
 }
+static TASKCONFIG_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#TaskConfig$LanguageCode",
+        "com.amazonaws.comprehend",
+        "TaskConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    0,
+);
+static TASKCONFIG_MEMBER_DOCUMENT_CLASSIFICATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#TaskConfig$DocumentClassificationConfig",
+        "com.amazonaws.comprehend",
+        "TaskConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DocumentClassificationConfig",
+    1,
+);
+static TASKCONFIG_MEMBER_ENTITY_RECOGNITION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#TaskConfig$EntityRecognitionConfig",
+        "com.amazonaws.comprehend",
+        "TaskConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EntityRecognitionConfig",
+    2,
+);
+static TASKCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TaskConfig", "com.amazonaws.comprehend", "TaskConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TASKCONFIG_MEMBER_LANGUAGE_CODE,
+        &TASKCONFIG_MEMBER_DOCUMENT_CLASSIFICATION_CONFIG,
+        &TASKCONFIG_MEMBER_ENTITY_RECOGNITION_CONFIG,
+    ],
+);
+impl TaskConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.language_code;
+            ser.write_string(&TASKCONFIG_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.document_classification_config {
+            ser.write_struct(&TASKCONFIG_MEMBER_DOCUMENT_CLASSIFICATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.entity_recognition_config {
+            ser.write_struct(&TASKCONFIG_MEMBER_ENTITY_RECOGNITION_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.document_classification_config = Some(crate::types::DocumentClassificationConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_recognition_config = Some(crate::types::EntityRecognitionConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl TaskConfig {
     /// Creates a new builder-style object to manufacture [`TaskConfig`](crate::types::TaskConfig).
     pub fn builder() -> crate::types::builders::TaskConfigBuilder {

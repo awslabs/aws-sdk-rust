@@ -143,6 +143,127 @@ impl DomainSuggestion {
         self.price.as_ref()
     }
 }
+static DOMAINSUGGESTION_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSuggestion$DomainName",
+        "com.amazonaws.route53domains",
+        "DomainSuggestion",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static DOMAINSUGGESTION_MEMBER_AVAILABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSuggestion$Availability",
+        "com.amazonaws.route53domains",
+        "DomainSuggestion",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Availability",
+    1,
+);
+static DOMAINSUGGESTION_MEMBER_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSuggestion$Price",
+        "com.amazonaws.route53domains",
+        "DomainSuggestion",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Price",
+    2,
+);
+static DOMAINSUGGESTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#DomainSuggestion",
+        "com.amazonaws.route53domains",
+        "DomainSuggestion",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOMAINSUGGESTION_MEMBER_DOMAIN_NAME,
+        &DOMAINSUGGESTION_MEMBER_AVAILABILITY,
+        &DOMAINSUGGESTION_MEMBER_PRICE,
+    ],
+);
+impl DomainSuggestion {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOMAINSUGGESTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DomainSuggestion {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&DOMAINSUGGESTION_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.availability {
+            ser.write_string(&DOMAINSUGGESTION_MEMBER_AVAILABILITY, val)?;
+        }
+        if let Some(ref val) = self.price {
+            ser.write_struct(&DOMAINSUGGESTION_MEMBER_PRICE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DomainSuggestionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOMAINSUGGESTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.price = Some(crate::types::PriceWithCurrency::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DomainSuggestion {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DomainSuggestion {
     /// Creates a new builder-style object to manufacture [`DomainSuggestion`](crate::types::DomainSuggestion).
     pub fn builder() -> crate::types::builders::DomainSuggestionBuilder {

@@ -18,6 +18,107 @@ impl DeleteLicenseInput {
         self.source_version.as_deref()
     }
 }
+static DELETELICENSEINPUT_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteLicenseInput$LicenseArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LicenseArn",
+    0,
+);
+static DELETELICENSEINPUT_MEMBER_SOURCE_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteLicenseInput$SourceVersion",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceVersion",
+    1,
+);
+static DELETELICENSEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#DeleteLicenseInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "DeleteLicenseInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DELETELICENSEINPUT_MEMBER_LICENSE_ARN, &DELETELICENSEINPUT_MEMBER_SOURCE_VERSION],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeleteLicenseRequest");
+impl DeleteLicenseInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETELICENSEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteLicenseInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.license_arn {
+            ser.write_string(&DELETELICENSEINPUT_MEMBER_LICENSE_ARN, val)?;
+        }
+        if let Some(ref val) = self.source_version {
+            ser.write_string(&DELETELICENSEINPUT_MEMBER_SOURCE_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::delete_license::builders::DeleteLicenseInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DELETELICENSEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.license_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DeleteLicenseInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.license_arn = builder.license_arn.or(Some(String::new()));
+        builder.source_version = builder.source_version.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DeleteLicenseInput {
     /// Creates a new builder-style object to manufacture [`DeleteLicenseInput`](crate::operation::delete_license::DeleteLicenseInput).
     pub fn builder() -> crate::operation::delete_license::builders::DeleteLicenseInputBuilder {

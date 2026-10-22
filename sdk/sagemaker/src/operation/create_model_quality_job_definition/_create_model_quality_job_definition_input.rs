@@ -68,6 +68,305 @@ impl CreateModelQualityJobDefinitionInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$JobDefinitionName",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "JobDefinitionName",
+        0,
+    );
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_BASELINE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$ModelQualityBaselineConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelQualityBaselineConfig",
+        1,
+    );
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_APP_SPECIFICATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$ModelQualityAppSpecification",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelQualityAppSpecification",
+        2,
+    );
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_JOB_INPUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$ModelQualityJobInput",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelQualityJobInput",
+        3,
+    );
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_JOB_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$ModelQualityJobOutputConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "CreateModelQualityJobDefinitionInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelQualityJobOutputConfig",
+        4,
+    );
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$JobResources",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JobResources",
+    5,
+);
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$NetworkConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkConfig",
+    6,
+);
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    7,
+);
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$StoppingCondition",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    8,
+);
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS_MEMBER);
+static CREATEMODELQUALITYJOBDEFINITIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateModelQualityJobDefinitionInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateModelQualityJobDefinitionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_BASELINE_CONFIG,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_APP_SPECIFICATION,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_JOB_INPUT,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_JOB_OUTPUT_CONFIG,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION,
+        &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateModelQualityJobDefinitionRequest");
+impl CreateModelQualityJobDefinitionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMODELQUALITYJOBDEFINITIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateModelQualityJobDefinitionInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_definition_name {
+            ser.write_string(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_DEFINITION_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_quality_baseline_config {
+            ser.write_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_BASELINE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_quality_app_specification {
+            ser.write_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_APP_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.model_quality_job_input {
+            ser.write_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_JOB_INPUT, val)?;
+        }
+        if let Some(ref val) = self.model_quality_job_output_config {
+            ser.write_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_MODEL_QUALITY_JOB_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.job_resources {
+            ser.write_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_JOB_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.network_config {
+            ser.write_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_NETWORK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEMODELQUALITYJOBDEFINITIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMODELQUALITYJOBDEFINITIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_quality_baseline_config = Some(crate::types::ModelQualityBaselineConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_quality_app_specification = Some(crate::types::ModelQualityAppSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_quality_job_input = Some(crate::types::ModelQualityJobInput::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_quality_job_output_config = Some(crate::types::MonitoringOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_resources = Some(crate::types::MonitoringResources::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_config = Some(crate::types::MonitoringNetworkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::MonitoringStoppingCondition::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateModelQualityJobDefinitionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_definition_name = builder.job_definition_name.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateModelQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateModelQualityJobDefinitionInput`](crate::operation::create_model_quality_job_definition::CreateModelQualityJobDefinitionInput).
     pub fn builder() -> crate::operation::create_model_quality_job_definition::builders::CreateModelQualityJobDefinitionInputBuilder {

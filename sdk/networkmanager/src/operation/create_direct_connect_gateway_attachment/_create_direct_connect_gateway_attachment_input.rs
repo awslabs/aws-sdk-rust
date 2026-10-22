@@ -11,6 +11,12 @@ pub struct CreateDirectConnectGatewayAttachmentInput {
     pub routing_policy_label: ::std::option::Option<::std::string::String>,
     /// <p>One or more core network edge locations that the Direct Connect gateway attachment is associated with.</p>
     pub edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to enable NAT gateway support on the Direct Connect gateway attachment. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub nat_gateway_support: ::std::option::Option<crate::types::NatGatewaySupportValue>,
+    /// <p>Specifies whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. System routes have a route type of <code>SYSTEM</code>. NAT is applied to traffic whether or not this option is enabled. The default is <code>true</code>.</p>
+    pub nat_system_route_support: ::std::option::Option<bool>,
+    /// <p>The NAT rules for the Direct Connect gateway attachment, up to 50 rules.</p>
+    pub nat_gateway_rules: ::std::option::Option<::std::vec::Vec<crate::types::NatRuleRequest>>,
     /// <p>The key value tags to apply to the Direct Connect gateway attachment during creation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>client token</p>
@@ -34,6 +40,20 @@ impl CreateDirectConnectGatewayAttachmentInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.edge_locations.is_none()`.
     pub fn edge_locations(&self) -> &[::std::string::String] {
         self.edge_locations.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether to enable NAT gateway support on the Direct Connect gateway attachment. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub fn nat_gateway_support(&self) -> ::std::option::Option<&crate::types::NatGatewaySupportValue> {
+        self.nat_gateway_support.as_ref()
+    }
+    /// <p>Specifies whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. System routes have a route type of <code>SYSTEM</code>. NAT is applied to traffic whether or not this option is enabled. The default is <code>true</code>.</p>
+    pub fn nat_system_route_support(&self) -> ::std::option::Option<bool> {
+        self.nat_system_route_support
+    }
+    /// <p>The NAT rules for the Direct Connect gateway attachment, up to 50 rules.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_rules.is_none()`.
+    pub fn nat_gateway_rules(&self) -> &[crate::types::NatRuleRequest] {
+        self.nat_gateway_rules.as_deref().unwrap_or_default()
     }
     /// <p>The key value tags to apply to the Direct Connect gateway attachment during creation.</p>
     ///
@@ -61,6 +81,9 @@ pub struct CreateDirectConnectGatewayAttachmentInputBuilder {
     pub(crate) direct_connect_gateway_arn: ::std::option::Option<::std::string::String>,
     pub(crate) routing_policy_label: ::std::option::Option<::std::string::String>,
     pub(crate) edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) nat_gateway_support: ::std::option::Option<crate::types::NatGatewaySupportValue>,
+    pub(crate) nat_system_route_support: ::std::option::Option<bool>,
+    pub(crate) nat_gateway_rules: ::std::option::Option<::std::vec::Vec<crate::types::NatRuleRequest>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -129,6 +152,54 @@ impl CreateDirectConnectGatewayAttachmentInputBuilder {
     pub fn get_edge_locations(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.edge_locations
     }
+    /// <p>Specifies whether to enable NAT gateway support on the Direct Connect gateway attachment. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub fn nat_gateway_support(mut self, input: crate::types::NatGatewaySupportValue) -> Self {
+        self.nat_gateway_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable NAT gateway support on the Direct Connect gateway attachment. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub fn set_nat_gateway_support(mut self, input: ::std::option::Option<crate::types::NatGatewaySupportValue>) -> Self {
+        self.nat_gateway_support = input;
+        self
+    }
+    /// <p>Specifies whether to enable NAT gateway support on the Direct Connect gateway attachment. To enable NAT gateway support, you must also specify at least one NAT rule. If you don't specify a value, NAT gateway support is disabled. Only the core network owner can configure NAT on an attachment.</p>
+    pub fn get_nat_gateway_support(&self) -> &::std::option::Option<crate::types::NatGatewaySupportValue> {
+        &self.nat_gateway_support
+    }
+    /// <p>Specifies whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. System routes have a route type of <code>SYSTEM</code>. NAT is applied to traffic whether or not this option is enabled. The default is <code>true</code>.</p>
+    pub fn nat_system_route_support(mut self, input: bool) -> Self {
+        self.nat_system_route_support = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. System routes have a route type of <code>SYSTEM</code>. NAT is applied to traffic whether or not this option is enabled. The default is <code>true</code>.</p>
+    pub fn set_nat_system_route_support(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.nat_system_route_support = input;
+        self
+    }
+    /// <p>Specifies whether the core network installs system routes for the NAT CIDR blocks of the attachment's NAT rules. System routes have a route type of <code>SYSTEM</code>. NAT is applied to traffic whether or not this option is enabled. The default is <code>true</code>.</p>
+    pub fn get_nat_system_route_support(&self) -> &::std::option::Option<bool> {
+        &self.nat_system_route_support
+    }
+    /// Appends an item to `nat_gateway_rules`.
+    ///
+    /// To override the contents of this collection use [`set_nat_gateway_rules`](Self::set_nat_gateway_rules).
+    ///
+    /// <p>The NAT rules for the Direct Connect gateway attachment, up to 50 rules.</p>
+    pub fn nat_gateway_rules(mut self, input: crate::types::NatRuleRequest) -> Self {
+        let mut v = self.nat_gateway_rules.unwrap_or_default();
+        v.push(input);
+        self.nat_gateway_rules = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The NAT rules for the Direct Connect gateway attachment, up to 50 rules.</p>
+    pub fn set_nat_gateway_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatRuleRequest>>) -> Self {
+        self.nat_gateway_rules = input;
+        self
+    }
+    /// <p>The NAT rules for the Direct Connect gateway attachment, up to 50 rules.</p>
+    pub fn get_nat_gateway_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatRuleRequest>> {
+        &self.nat_gateway_rules
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -176,6 +247,9 @@ impl CreateDirectConnectGatewayAttachmentInputBuilder {
                 direct_connect_gateway_arn: self.direct_connect_gateway_arn,
                 routing_policy_label: self.routing_policy_label,
                 edge_locations: self.edge_locations,
+                nat_gateway_support: self.nat_gateway_support,
+                nat_system_route_support: self.nat_system_route_support,
+                nat_gateway_rules: self.nat_gateway_rules,
                 tags: self.tags,
                 client_token: self.client_token,
             },

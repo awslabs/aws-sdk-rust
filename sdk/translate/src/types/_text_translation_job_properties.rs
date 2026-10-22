@@ -103,6 +103,437 @@ impl TextTranslationJobProperties {
         self.settings.as_ref()
     }
 }
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$JobId",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobId",
+    0,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$JobName",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    1,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$JobStatus",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobStatus",
+    2,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$JobDetails",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JobDetails",
+    3,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SOURCE_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$SourceLanguageCode",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceLanguageCode",
+    4,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.translate#TargetLanguageCodeStringList$member",
+            "com.amazonaws.translate",
+            "TargetLanguageCodeStringList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$TargetLanguageCodes",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetLanguageCodes",
+    5,
+)
+.with_list_member(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES_MEMBER);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TERMINOLOGY_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ResourceNameList$member",
+        "com.amazonaws.translate",
+        "ResourceNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TERMINOLOGY_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$TerminologyNames",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TerminologyNames",
+    6,
+)
+.with_list_member(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TERMINOLOGY_NAMES_MEMBER);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_PARALLEL_DATA_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#ResourceNameList$member",
+        "com.amazonaws.translate",
+        "ResourceNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_PARALLEL_DATA_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$ParallelDataNames",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ParallelDataNames",
+    7,
+)
+.with_list_member(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_PARALLEL_DATA_NAMES_MEMBER);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$Message",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    8,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SUBMITTED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$SubmittedTime",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SubmittedTime",
+    9,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$EndTime",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    10,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$InputDataConfig",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    11,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$OutputDataConfig",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    12,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$DataAccessRoleArn",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    13,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties$Settings",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Settings",
+    14,
+);
+static TEXTTRANSLATIONJOBPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.translate#TextTranslationJobProperties",
+        "com.amazonaws.translate",
+        "TextTranslationJobProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_ID,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_NAME,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_STATUS,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_DETAILS,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SOURCE_LANGUAGE_CODE,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TERMINOLOGY_NAMES,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_PARALLEL_DATA_NAMES,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_MESSAGE,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SUBMITTED_TIME,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_END_TIME,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_INPUT_DATA_CONFIG,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SETTINGS,
+    ],
+);
+impl TextTranslationJobProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TEXTTRANSLATIONJOBPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TextTranslationJobProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_id {
+            ser.write_string(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_ID, val)?;
+        }
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_status {
+            ser.write_string(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.job_details {
+            ser.write_struct(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_JOB_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.source_language_code {
+            ser.write_string(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SOURCE_LANGUAGE_CODE, val)?;
+        }
+        if let Some(ref val) = self.target_language_codes {
+            ser.write_list(
+                &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TARGET_LANGUAGE_CODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.terminology_names {
+            ser.write_list(
+                &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_TERMINOLOGY_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parallel_data_names {
+            ser.write_list(
+                &TEXTTRANSLATIONJOBPROPERTIES_MEMBER_PARALLEL_DATA_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.submitted_time {
+            ser.write_timestamp(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SUBMITTED_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&TEXTTRANSLATIONJOBPROPERTIES_MEMBER_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TextTranslationJobPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TEXTTRANSLATIONJOBPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_status = Some(crate::types::JobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_details = Some(crate::types::JobDetails::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_language_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_language_codes = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.terminology_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parallel_data_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submitted_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::TranslationSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TextTranslationJobProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TextTranslationJobProperties {
     /// Creates a new builder-style object to manufacture [`TextTranslationJobProperties`](crate::types::TextTranslationJobProperties).
     pub fn builder() -> crate::types::builders::TextTranslationJobPropertiesBuilder {

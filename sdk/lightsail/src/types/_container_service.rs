@@ -187,6 +187,548 @@ impl ContainerService {
         self.private_registry_access.as_ref()
     }
 }
+static CONTAINERSERVICE_MEMBER_CONTAINER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$containerServiceName",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerServiceName",
+    0,
+);
+static CONTAINERSERVICE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$arn",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static CONTAINERSERVICE_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$createdAt",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    2,
+);
+static CONTAINERSERVICE_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$location",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    3,
+);
+static CONTAINERSERVICE_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$resourceType",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    4,
+);
+static CONTAINERSERVICE_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CONTAINERSERVICE_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$tags",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    5,
+)
+.with_list_member(&CONTAINERSERVICE_MEMBER_TAGS_MEMBER);
+static CONTAINERSERVICE_MEMBER_POWER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$power",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "power",
+    6,
+);
+static CONTAINERSERVICE_MEMBER_POWER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$powerId",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "powerId",
+    7,
+);
+static CONTAINERSERVICE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$state",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "state",
+    8,
+);
+static CONTAINERSERVICE_MEMBER_STATE_DETAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$stateDetail",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "stateDetail",
+    9,
+);
+static CONTAINERSERVICE_MEMBER_SCALE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$scale",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "scale",
+    10,
+);
+static CONTAINERSERVICE_MEMBER_CURRENT_DEPLOYMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$currentDeployment",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "currentDeployment",
+    11,
+);
+static CONTAINERSERVICE_MEMBER_NEXT_DEPLOYMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$nextDeployment",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "nextDeployment",
+    12,
+);
+static CONTAINERSERVICE_MEMBER_IS_DISABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$isDisabled",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isDisabled",
+    13,
+);
+static CONTAINERSERVICE_MEMBER_PRINCIPAL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$principalArn",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "principalArn",
+    14,
+);
+static CONTAINERSERVICE_MEMBER_PRIVATE_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$privateDomainName",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "privateDomainName",
+    15,
+);
+static CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePublicDomainsList$member",
+        "com.amazonaws.lightsail",
+        "ContainerServicePublicDomainsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePublicDomains$key",
+        "com.amazonaws.lightsail",
+        "ContainerServicePublicDomains",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePublicDomains$value",
+        "com.amazonaws.lightsail",
+        "ContainerServicePublicDomains",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE_MEMBER);
+static CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$publicDomainNames",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "publicDomainNames",
+    16,
+)
+.with_map_members(
+    &CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_KEY,
+    &CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE,
+);
+static CONTAINERSERVICE_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$url",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "url",
+    17,
+);
+static CONTAINERSERVICE_MEMBER_PRIVATE_REGISTRY_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerService$privateRegistryAccess",
+        "com.amazonaws.lightsail",
+        "ContainerService",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "privateRegistryAccess",
+    18,
+);
+static CONTAINERSERVICE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#ContainerService", "com.amazonaws.lightsail", "ContainerService"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONTAINERSERVICE_MEMBER_CONTAINER_SERVICE_NAME,
+        &CONTAINERSERVICE_MEMBER_ARN,
+        &CONTAINERSERVICE_MEMBER_CREATED_AT,
+        &CONTAINERSERVICE_MEMBER_LOCATION,
+        &CONTAINERSERVICE_MEMBER_RESOURCE_TYPE,
+        &CONTAINERSERVICE_MEMBER_TAGS,
+        &CONTAINERSERVICE_MEMBER_POWER,
+        &CONTAINERSERVICE_MEMBER_POWER_ID,
+        &CONTAINERSERVICE_MEMBER_STATE,
+        &CONTAINERSERVICE_MEMBER_STATE_DETAIL,
+        &CONTAINERSERVICE_MEMBER_SCALE,
+        &CONTAINERSERVICE_MEMBER_CURRENT_DEPLOYMENT,
+        &CONTAINERSERVICE_MEMBER_NEXT_DEPLOYMENT,
+        &CONTAINERSERVICE_MEMBER_IS_DISABLED,
+        &CONTAINERSERVICE_MEMBER_PRINCIPAL_ARN,
+        &CONTAINERSERVICE_MEMBER_PRIVATE_DOMAIN_NAME,
+        &CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES,
+        &CONTAINERSERVICE_MEMBER_URL,
+        &CONTAINERSERVICE_MEMBER_PRIVATE_REGISTRY_ACCESS,
+    ],
+);
+impl ContainerService {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONTAINERSERVICE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ContainerService {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_service_name {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_CONTAINER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&CONTAINERSERVICE_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&CONTAINERSERVICE_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CONTAINERSERVICE_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.power {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_POWER, val.as_str())?;
+        }
+        if let Some(ref val) = self.power_id {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_POWER_ID, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state_detail {
+            ser.write_struct(&CONTAINERSERVICE_MEMBER_STATE_DETAIL, val)?;
+        }
+        if let Some(ref val) = self.scale {
+            ser.write_integer(&CONTAINERSERVICE_MEMBER_SCALE, *val)?;
+        }
+        if let Some(ref val) = self.current_deployment {
+            ser.write_struct(&CONTAINERSERVICE_MEMBER_CURRENT_DEPLOYMENT, val)?;
+        }
+        if let Some(ref val) = self.next_deployment {
+            ser.write_struct(&CONTAINERSERVICE_MEMBER_NEXT_DEPLOYMENT, val)?;
+        }
+        if let Some(ref val) = self.is_disabled {
+            ser.write_boolean(&CONTAINERSERVICE_MEMBER_IS_DISABLED, *val)?;
+        }
+        if let Some(ref val) = self.principal_arn {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_PRINCIPAL_ARN, val)?;
+        }
+        if let Some(ref val) = self.private_domain_name {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_PRIVATE_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.public_domain_names {
+            ser.write_map(
+                &CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.url {
+            ser.write_string(&CONTAINERSERVICE_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.private_registry_access {
+            ser.write_struct(&CONTAINERSERVICE_MEMBER_PRIVATE_REGISTRY_ACCESS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ContainerServiceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONTAINERSERVICE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.power = Some(crate::types::ContainerServicePowerName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.power_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::ContainerServiceState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_detail = Some(crate::types::ContainerServiceStateDetail::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scale = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_deployment = Some(crate::types::ContainerServiceDeployment::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_deployment = Some(crate::types::ContainerServiceDeployment::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_disabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.principal_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.private_domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_domain_names = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&CONTAINERSERVICE_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.private_registry_access = Some(crate::types::PrivateRegistryAccess::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ContainerService {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ContainerService {
     /// Creates a new builder-style object to manufacture [`ContainerService`](crate::types::ContainerService).
     pub fn builder() -> crate::types::builders::ContainerServiceBuilder {

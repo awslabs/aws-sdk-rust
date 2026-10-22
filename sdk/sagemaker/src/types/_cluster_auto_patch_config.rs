@@ -37,6 +37,124 @@ impl ClusterAutoPatchConfig {
         self.deployment_config.as_ref()
     }
 }
+static CLUSTERAUTOPATCHCONFIG_MEMBER_PATCHING_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfig$PatchingStrategy",
+        "com.amazonaws.sagemaker",
+        "ClusterAutoPatchConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PatchingStrategy",
+    0,
+);
+static CLUSTERAUTOPATCHCONFIG_MEMBER_PATCH_SCHEDULE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfig$PatchSchedule",
+        "com.amazonaws.sagemaker",
+        "ClusterAutoPatchConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PatchSchedule",
+    1,
+);
+static CLUSTERAUTOPATCHCONFIG_MEMBER_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfig$DeploymentConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterAutoPatchConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeploymentConfig",
+    2,
+);
+static CLUSTERAUTOPATCHCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfig",
+        "com.amazonaws.sagemaker",
+        "ClusterAutoPatchConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLUSTERAUTOPATCHCONFIG_MEMBER_PATCHING_STRATEGY,
+        &CLUSTERAUTOPATCHCONFIG_MEMBER_PATCH_SCHEDULE,
+        &CLUSTERAUTOPATCHCONFIG_MEMBER_DEPLOYMENT_CONFIG,
+    ],
+);
+impl ClusterAutoPatchConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLUSTERAUTOPATCHCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClusterAutoPatchConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.patching_strategy;
+            ser.write_string(&CLUSTERAUTOPATCHCONFIG_MEMBER_PATCHING_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.patch_schedule {
+            ser.write_struct(&CLUSTERAUTOPATCHCONFIG_MEMBER_PATCH_SCHEDULE, val)?;
+        }
+        if let Some(ref val) = self.deployment_config {
+            ser.write_struct(&CLUSTERAUTOPATCHCONFIG_MEMBER_DEPLOYMENT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClusterAutoPatchConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLUSTERAUTOPATCHCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.patching_strategy = Some(crate::types::ClusterPatchingStrategy::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.patch_schedule = Some(crate::types::ClusterPatchSchedule::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config = Some(crate::types::DeploymentConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClusterAutoPatchConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ClusterAutoPatchConfig {
     /// Creates a new builder-style object to manufacture [`ClusterAutoPatchConfig`](crate::types::ClusterAutoPatchConfig).
     pub fn builder() -> crate::types::builders::ClusterAutoPatchConfigBuilder {

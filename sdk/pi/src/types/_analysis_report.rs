@@ -70,6 +70,216 @@ impl AnalysisReport {
         self.insights.as_deref().unwrap_or_default()
     }
 }
+static ANALYSISREPORT_MEMBER_ANALYSIS_REPORT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$AnalysisReportId", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AnalysisReportId",
+    0,
+);
+static ANALYSISREPORT_MEMBER_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$Identifier", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Identifier",
+    1,
+);
+static ANALYSISREPORT_MEMBER_SERVICE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$ServiceType", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceType",
+    2,
+);
+static ANALYSISREPORT_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$CreateTime", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateTime",
+    3,
+);
+static ANALYSISREPORT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$StartTime", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    4,
+);
+static ANALYSISREPORT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$EndTime", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    5,
+);
+static ANALYSISREPORT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$Status", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static ANALYSISREPORT_MEMBER_INSIGHTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#InsightList$member", "com.amazonaws.pi", "InsightList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ANALYSISREPORT_MEMBER_INSIGHTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport$Insights", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Insights",
+    7,
+)
+.with_list_member(&ANALYSISREPORT_MEMBER_INSIGHTS_MEMBER);
+static ANALYSISREPORT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReport", "com.amazonaws.pi", "AnalysisReport"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ANALYSISREPORT_MEMBER_ANALYSIS_REPORT_ID,
+        &ANALYSISREPORT_MEMBER_IDENTIFIER,
+        &ANALYSISREPORT_MEMBER_SERVICE_TYPE,
+        &ANALYSISREPORT_MEMBER_CREATE_TIME,
+        &ANALYSISREPORT_MEMBER_START_TIME,
+        &ANALYSISREPORT_MEMBER_END_TIME,
+        &ANALYSISREPORT_MEMBER_STATUS,
+        &ANALYSISREPORT_MEMBER_INSIGHTS,
+    ],
+);
+impl AnalysisReport {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ANALYSISREPORT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AnalysisReport {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.analysis_report_id;
+            ser.write_string(&ANALYSISREPORT_MEMBER_ANALYSIS_REPORT_ID, val)?;
+        }
+        if let Some(ref val) = self.identifier {
+            ser.write_string(&ANALYSISREPORT_MEMBER_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.service_type {
+            ser.write_string(&ANALYSISREPORT_MEMBER_SERVICE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_timestamp(&ANALYSISREPORT_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&ANALYSISREPORT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&ANALYSISREPORT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ANALYSISREPORT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.insights {
+            ser.write_list(
+                &ANALYSISREPORT_MEMBER_INSIGHTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Insight::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AnalysisReportBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ANALYSISREPORT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.analysis_report_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_type = Some(crate::types::ServiceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AnalysisStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.insights = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Insight::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AnalysisReport {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.analysis_report_id = builder.analysis_report_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AnalysisReport {
     /// Creates a new builder-style object to manufacture [`AnalysisReport`](crate::types::AnalysisReport).
     pub fn builder() -> crate::types::builders::AnalysisReportBuilder {

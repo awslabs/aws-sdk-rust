@@ -32,6 +32,140 @@ impl AggregateConformancePackCompliance {
         self.total_rule_count
     }
 }
+static AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateConformancePackCompliance$ComplianceType",
+        "com.amazonaws.configservice",
+        "AggregateConformancePackCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    0,
+);
+static AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_COMPLIANT_RULE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateConformancePackCompliance$CompliantRuleCount",
+        "com.amazonaws.configservice",
+        "AggregateConformancePackCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CompliantRuleCount",
+    1,
+);
+static AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_NON_COMPLIANT_RULE_COUNT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#AggregateConformancePackCompliance$NonCompliantRuleCount",
+            "com.amazonaws.configservice",
+            "AggregateConformancePackCompliance",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "NonCompliantRuleCount",
+        2,
+    );
+static AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_TOTAL_RULE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateConformancePackCompliance$TotalRuleCount",
+        "com.amazonaws.configservice",
+        "AggregateConformancePackCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalRuleCount",
+    3,
+);
+static AGGREGATECONFORMANCEPACKCOMPLIANCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#AggregateConformancePackCompliance",
+        "com.amazonaws.configservice",
+        "AggregateConformancePackCompliance",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_COMPLIANCE_TYPE,
+        &AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_COMPLIANT_RULE_COUNT,
+        &AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_NON_COMPLIANT_RULE_COUNT,
+        &AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_TOTAL_RULE_COUNT,
+    ],
+);
+impl AggregateConformancePackCompliance {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AGGREGATECONFORMANCEPACKCOMPLIANCE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AggregateConformancePackCompliance {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compliance_type {
+            ser.write_string(&AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        {
+            let val = &self.compliant_rule_count;
+            ser.write_integer(&AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_COMPLIANT_RULE_COUNT, *val)?;
+        }
+        {
+            let val = &self.non_compliant_rule_count;
+            ser.write_integer(&AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_NON_COMPLIANT_RULE_COUNT, *val)?;
+        }
+        {
+            let val = &self.total_rule_count;
+            ser.write_integer(&AGGREGATECONFORMANCEPACKCOMPLIANCE_MEMBER_TOTAL_RULE_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AggregateConformancePackComplianceBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AGGREGATECONFORMANCEPACKCOMPLIANCE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_type = Some(crate::types::ConformancePackComplianceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    self.compliant_rule_count = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    self.non_compliant_rule_count = Some(deser.read_integer(member)?);
+                }
+                Some(3) => {
+                    self.total_rule_count = Some(deser.read_integer(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AggregateConformancePackCompliance {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AggregateConformancePackCompliance {
     /// Creates a new builder-style object to manufacture [`AggregateConformancePackCompliance`](crate::types::AggregateConformancePackCompliance).
     pub fn builder() -> crate::types::builders::AggregateConformancePackComplianceBuilder {

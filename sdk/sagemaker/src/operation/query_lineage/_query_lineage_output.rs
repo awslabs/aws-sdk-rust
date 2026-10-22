@@ -29,6 +29,172 @@ impl QueryLineageOutput {
         self.next_token.as_deref()
     }
 }
+static QUERYLINEAGEOUTPUT_MEMBER_VERTICES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Vertices$member", "com.amazonaws.sagemaker", "Vertices"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static QUERYLINEAGEOUTPUT_MEMBER_VERTICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#QueryLineageOutput$Vertices",
+        "com.amazonaws.sagemaker.synthetic",
+        "QueryLineageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Vertices",
+    0,
+)
+.with_list_member(&QUERYLINEAGEOUTPUT_MEMBER_VERTICES_MEMBER);
+static QUERYLINEAGEOUTPUT_MEMBER_EDGES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Edges$member", "com.amazonaws.sagemaker", "Edges"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static QUERYLINEAGEOUTPUT_MEMBER_EDGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#QueryLineageOutput$Edges",
+        "com.amazonaws.sagemaker.synthetic",
+        "QueryLineageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Edges",
+    1,
+)
+.with_list_member(&QUERYLINEAGEOUTPUT_MEMBER_EDGES_MEMBER);
+static QUERYLINEAGEOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#QueryLineageOutput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "QueryLineageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static QUERYLINEAGEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#QueryLineageOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "QueryLineageOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &QUERYLINEAGEOUTPUT_MEMBER_VERTICES,
+        &QUERYLINEAGEOUTPUT_MEMBER_EDGES,
+        &QUERYLINEAGEOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("QueryLineageResponse");
+impl QueryLineageOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &QUERYLINEAGEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for QueryLineageOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vertices {
+            ser.write_list(
+                &QUERYLINEAGEOUTPUT_MEMBER_VERTICES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Vertex::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.edges {
+            ser.write_list(
+                &QUERYLINEAGEOUTPUT_MEMBER_EDGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Edge::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&QUERYLINEAGEOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::query_lineage::builders::QueryLineageOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&QUERYLINEAGEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vertices = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Vertex::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edges = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Edge::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl QueryLineageOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for QueryLineageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

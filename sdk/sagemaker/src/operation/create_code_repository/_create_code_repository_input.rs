@@ -26,6 +26,152 @@ impl CreateCodeRepositoryInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATECODEREPOSITORYINPUT_MEMBER_CODE_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateCodeRepositoryInput$CodeRepositoryName",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateCodeRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CodeRepositoryName",
+    0,
+);
+static CREATECODEREPOSITORYINPUT_MEMBER_GIT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateCodeRepositoryInput$GitConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateCodeRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GitConfig",
+    1,
+);
+static CREATECODEREPOSITORYINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATECODEREPOSITORYINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateCodeRepositoryInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateCodeRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    2,
+)
+.with_list_member(&CREATECODEREPOSITORYINPUT_MEMBER_TAGS_MEMBER);
+static CREATECODEREPOSITORYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateCodeRepositoryInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateCodeRepositoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATECODEREPOSITORYINPUT_MEMBER_CODE_REPOSITORY_NAME,
+        &CREATECODEREPOSITORYINPUT_MEMBER_GIT_CONFIG,
+        &CREATECODEREPOSITORYINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateCodeRepositoryInput");
+impl CreateCodeRepositoryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATECODEREPOSITORYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateCodeRepositoryInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.code_repository_name {
+            ser.write_string(&CREATECODEREPOSITORYINPUT_MEMBER_CODE_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.git_config {
+            ser.write_struct(&CREATECODEREPOSITORYINPUT_MEMBER_GIT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATECODEREPOSITORYINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATECODEREPOSITORYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.git_config = Some(crate::types::GitConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateCodeRepositoryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.code_repository_name = builder.code_repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateCodeRepositoryInput`](crate::operation::create_code_repository::CreateCodeRepositoryInput).
     pub fn builder() -> crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder {

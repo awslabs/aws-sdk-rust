@@ -32,6 +32,200 @@ impl UpdateArtifactInput {
         self.properties_to_remove.as_deref().unwrap_or_default()
     }
 }
+static UPDATEARTIFACTINPUT_MEMBER_ARTIFACT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateArtifactInput$ArtifactArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactArn",
+    0,
+);
+static UPDATEARTIFACTINPUT_MEMBER_ARTIFACT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateArtifactInput$ArtifactName",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactName",
+    1,
+);
+static UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ArtifactProperties$key",
+        "com.amazonaws.sagemaker",
+        "ArtifactProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ArtifactProperties$value",
+        "com.amazonaws.sagemaker",
+        "ArtifactProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static UPDATEARTIFACTINPUT_MEMBER_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateArtifactInput$Properties",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Properties",
+    2,
+)
+.with_map_members(&UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_KEY, &UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_VALUE);
+static UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_TO_REMOVE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ListLineageEntityParameterKey$member",
+        "com.amazonaws.sagemaker",
+        "ListLineageEntityParameterKey",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_TO_REMOVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateArtifactInput$PropertiesToRemove",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PropertiesToRemove",
+    3,
+)
+.with_list_member(&UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_TO_REMOVE_MEMBER);
+static UPDATEARTIFACTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#UpdateArtifactInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "UpdateArtifactInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEARTIFACTINPUT_MEMBER_ARTIFACT_ARN,
+        &UPDATEARTIFACTINPUT_MEMBER_ARTIFACT_NAME,
+        &UPDATEARTIFACTINPUT_MEMBER_PROPERTIES,
+        &UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_TO_REMOVE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateArtifactRequest");
+impl UpdateArtifactInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEARTIFACTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateArtifactInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.artifact_arn {
+            ser.write_string(&UPDATEARTIFACTINPUT_MEMBER_ARTIFACT_ARN, val)?;
+        }
+        if let Some(ref val) = self.artifact_name {
+            ser.write_string(&UPDATEARTIFACTINPUT_MEMBER_ARTIFACT_NAME, val)?;
+        }
+        if let Some(ref val) = self.properties {
+            ser.write_map(
+                &UPDATEARTIFACTINPUT_MEMBER_PROPERTIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.properties_to_remove {
+            ser.write_list(
+                &UPDATEARTIFACTINPUT_MEMBER_PROPERTIES_TO_REMOVE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_artifact::builders::UpdateArtifactInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEARTIFACTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.properties_to_remove = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateArtifactInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.artifact_arn = builder.artifact_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateArtifactInput {
     /// Creates a new builder-style object to manufacture [`UpdateArtifactInput`](crate::operation::update_artifact::UpdateArtifactInput).
     pub fn builder() -> crate::operation::update_artifact::builders::UpdateArtifactInputBuilder {

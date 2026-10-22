@@ -357,6 +357,337 @@ impl Options {
         self.object_metadata.as_ref()
     }
 }
+static OPTIONS_MEMBER_VERIFY_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$VerifyMode", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "VerifyMode",
+    0,
+);
+static OPTIONS_MEMBER_OVERWRITE_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$OverwriteMode", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "OverwriteMode",
+    1,
+);
+static OPTIONS_MEMBER_ATIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$Atime", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Atime",
+    2,
+);
+static OPTIONS_MEMBER_MTIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$Mtime", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mtime",
+    3,
+);
+static OPTIONS_MEMBER_UID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$Uid", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Uid",
+    4,
+);
+static OPTIONS_MEMBER_GID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$Gid", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Gid",
+    5,
+);
+static OPTIONS_MEMBER_PRESERVE_DELETED_FILES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$PreserveDeletedFiles", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreserveDeletedFiles",
+    6,
+);
+static OPTIONS_MEMBER_PRESERVE_DEVICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$PreserveDevices", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "PreserveDevices",
+    7,
+);
+static OPTIONS_MEMBER_POSIX_PERMISSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$PosixPermissions", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "PosixPermissions",
+    8,
+);
+static OPTIONS_MEMBER_BYTES_PER_SECOND: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$BytesPerSecond", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "BytesPerSecond",
+    9,
+);
+static OPTIONS_MEMBER_TASK_QUEUEING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$TaskQueueing", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskQueueing",
+    10,
+);
+static OPTIONS_MEMBER_LOG_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$LogLevel", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogLevel",
+    11,
+);
+static OPTIONS_MEMBER_TRANSFER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$TransferMode", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TransferMode",
+    12,
+);
+static OPTIONS_MEMBER_SECURITY_DESCRIPTOR_COPY_FLAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#Options$SecurityDescriptorCopyFlags",
+        "com.amazonaws.datasync",
+        "Options",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecurityDescriptorCopyFlags",
+    13,
+);
+static OPTIONS_MEMBER_OBJECT_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$ObjectTags", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ObjectTags",
+    14,
+);
+static OPTIONS_MEMBER_OBJECT_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options$ObjectMetadata", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ObjectMetadata",
+    15,
+);
+static OPTIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#Options", "com.amazonaws.datasync", "Options"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPTIONS_MEMBER_VERIFY_MODE,
+        &OPTIONS_MEMBER_OVERWRITE_MODE,
+        &OPTIONS_MEMBER_ATIME,
+        &OPTIONS_MEMBER_MTIME,
+        &OPTIONS_MEMBER_UID,
+        &OPTIONS_MEMBER_GID,
+        &OPTIONS_MEMBER_PRESERVE_DELETED_FILES,
+        &OPTIONS_MEMBER_PRESERVE_DEVICES,
+        &OPTIONS_MEMBER_POSIX_PERMISSIONS,
+        &OPTIONS_MEMBER_BYTES_PER_SECOND,
+        &OPTIONS_MEMBER_TASK_QUEUEING,
+        &OPTIONS_MEMBER_LOG_LEVEL,
+        &OPTIONS_MEMBER_TRANSFER_MODE,
+        &OPTIONS_MEMBER_SECURITY_DESCRIPTOR_COPY_FLAGS,
+        &OPTIONS_MEMBER_OBJECT_TAGS,
+        &OPTIONS_MEMBER_OBJECT_METADATA,
+    ],
+);
+impl Options {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPTIONS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Options {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.verify_mode {
+            ser.write_string(&OPTIONS_MEMBER_VERIFY_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.overwrite_mode {
+            ser.write_string(&OPTIONS_MEMBER_OVERWRITE_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.atime {
+            ser.write_string(&OPTIONS_MEMBER_ATIME, val.as_str())?;
+        }
+        if let Some(ref val) = self.mtime {
+            ser.write_string(&OPTIONS_MEMBER_MTIME, val.as_str())?;
+        }
+        if let Some(ref val) = self.uid {
+            ser.write_string(&OPTIONS_MEMBER_UID, val.as_str())?;
+        }
+        if let Some(ref val) = self.gid {
+            ser.write_string(&OPTIONS_MEMBER_GID, val.as_str())?;
+        }
+        if let Some(ref val) = self.preserve_deleted_files {
+            ser.write_string(&OPTIONS_MEMBER_PRESERVE_DELETED_FILES, val.as_str())?;
+        }
+        if let Some(ref val) = self.preserve_devices {
+            ser.write_string(&OPTIONS_MEMBER_PRESERVE_DEVICES, val.as_str())?;
+        }
+        if let Some(ref val) = self.posix_permissions {
+            ser.write_string(&OPTIONS_MEMBER_POSIX_PERMISSIONS, val.as_str())?;
+        }
+        if let Some(ref val) = self.bytes_per_second {
+            ser.write_long(&OPTIONS_MEMBER_BYTES_PER_SECOND, *val)?;
+        }
+        if let Some(ref val) = self.task_queueing {
+            ser.write_string(&OPTIONS_MEMBER_TASK_QUEUEING, val.as_str())?;
+        }
+        if let Some(ref val) = self.log_level {
+            ser.write_string(&OPTIONS_MEMBER_LOG_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.transfer_mode {
+            ser.write_string(&OPTIONS_MEMBER_TRANSFER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.security_descriptor_copy_flags {
+            ser.write_string(&OPTIONS_MEMBER_SECURITY_DESCRIPTOR_COPY_FLAGS, val.as_str())?;
+        }
+        if let Some(ref val) = self.object_tags {
+            ser.write_string(&OPTIONS_MEMBER_OBJECT_TAGS, val.as_str())?;
+        }
+        if let Some(ref val) = self.object_metadata {
+            ser.write_string(&OPTIONS_MEMBER_OBJECT_METADATA, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OptionsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPTIONS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.verify_mode = Some(crate::types::VerifyMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.overwrite_mode = Some(crate::types::OverwriteMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.atime = Some(crate::types::Atime::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mtime = Some(crate::types::Mtime::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.uid = Some(crate::types::Uid::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gid = Some(crate::types::Gid::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preserve_deleted_files = Some(crate::types::PreserveDeletedFiles::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preserve_devices = Some(crate::types::PreserveDevices::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.posix_permissions = Some(crate::types::PosixPermissions::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bytes_per_second = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_queueing = Some(crate::types::TaskQueueing::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.log_level = Some(crate::types::LogLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transfer_mode = Some(crate::types::TransferMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_descriptor_copy_flags =
+                            Some(crate::types::SmbSecurityDescriptorCopyFlags::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.object_tags = Some(crate::types::ObjectTags::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.object_metadata = Some(crate::types::ObjectMetadata::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Options {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Options {
     /// Creates a new builder-style object to manufacture [`Options`](crate::types::Options).
     pub fn builder() -> crate::types::builders::OptionsBuilder {

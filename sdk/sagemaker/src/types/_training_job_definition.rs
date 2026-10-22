@@ -65,6 +65,249 @@ impl TrainingJobDefinition {
         self.stopping_condition.as_ref()
     }
 }
+static TRAININGJOBDEFINITION_MEMBER_TRAINING_INPUT_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobDefinition$TrainingInputMode",
+        "com.amazonaws.sagemaker",
+        "TrainingJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingInputMode",
+    0,
+);
+static TRAININGJOBDEFINITION_MEMBER_HYPER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameters$key",
+        "com.amazonaws.sagemaker",
+        "HyperParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static TRAININGJOBDEFINITION_MEMBER_HYPER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameters$value",
+        "com.amazonaws.sagemaker",
+        "HyperParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static TRAININGJOBDEFINITION_MEMBER_HYPER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobDefinition$HyperParameters",
+        "com.amazonaws.sagemaker",
+        "TrainingJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "HyperParameters",
+    1,
+)
+.with_map_members(
+    &TRAININGJOBDEFINITION_MEMBER_HYPER_PARAMETERS_KEY,
+    &TRAININGJOBDEFINITION_MEMBER_HYPER_PARAMETERS_VALUE,
+);
+static TRAININGJOBDEFINITION_MEMBER_INPUT_DATA_CONFIG_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InputDataConfig$member",
+        "com.amazonaws.sagemaker",
+        "InputDataConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGJOBDEFINITION_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobDefinition$InputDataConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InputDataConfig",
+    2,
+)
+.with_list_member(&TRAININGJOBDEFINITION_MEMBER_INPUT_DATA_CONFIG_MEMBER);
+static TRAININGJOBDEFINITION_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobDefinition$OutputDataConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    3,
+);
+static TRAININGJOBDEFINITION_MEMBER_RESOURCE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobDefinition$ResourceConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceConfig",
+    4,
+);
+static TRAININGJOBDEFINITION_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobDefinition$StoppingCondition",
+        "com.amazonaws.sagemaker",
+        "TrainingJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    5,
+);
+static TRAININGJOBDEFINITION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobDefinition",
+        "com.amazonaws.sagemaker",
+        "TrainingJobDefinition",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGJOBDEFINITION_MEMBER_TRAINING_INPUT_MODE,
+        &TRAININGJOBDEFINITION_MEMBER_HYPER_PARAMETERS,
+        &TRAININGJOBDEFINITION_MEMBER_INPUT_DATA_CONFIG,
+        &TRAININGJOBDEFINITION_MEMBER_OUTPUT_DATA_CONFIG,
+        &TRAININGJOBDEFINITION_MEMBER_RESOURCE_CONFIG,
+        &TRAININGJOBDEFINITION_MEMBER_STOPPING_CONDITION,
+    ],
+);
+impl TrainingJobDefinition {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGJOBDEFINITION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingJobDefinition {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_input_mode {
+            ser.write_string(&TRAININGJOBDEFINITION_MEMBER_TRAINING_INPUT_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.hyper_parameters {
+            ser.write_map(
+                &TRAININGJOBDEFINITION_MEMBER_HYPER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.input_data_config {
+            ser.write_list(
+                &TRAININGJOBDEFINITION_MEMBER_INPUT_DATA_CONFIG,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Channel::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&TRAININGJOBDEFINITION_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.resource_config {
+            ser.write_struct(&TRAININGJOBDEFINITION_MEMBER_RESOURCE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&TRAININGJOBDEFINITION_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingJobDefinitionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGJOBDEFINITION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_input_mode = Some(crate::types::TrainingInputMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hyper_parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Channel::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_config = Some(crate::types::ResourceConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::StoppingCondition::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingJobDefinition {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingJobDefinition {
     /// Creates a new builder-style object to manufacture [`TrainingJobDefinition`](crate::types::TrainingJobDefinition).
     pub fn builder() -> crate::types::builders::TrainingJobDefinitionBuilder {

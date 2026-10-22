@@ -43,6 +43,191 @@ impl LabelingJobForWorkteamSummary {
         self.number_of_human_workers_per_data_object
     }
 }
+static LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_LABELING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelingJobForWorkteamSummary$LabelingJobName",
+        "com.amazonaws.sagemaker",
+        "LabelingJobForWorkteamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LabelingJobName",
+    0,
+);
+static LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_JOB_REFERENCE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelingJobForWorkteamSummary$JobReferenceCode",
+        "com.amazonaws.sagemaker",
+        "LabelingJobForWorkteamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobReferenceCode",
+    1,
+);
+static LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_WORK_REQUESTER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelingJobForWorkteamSummary$WorkRequesterAccountId",
+        "com.amazonaws.sagemaker",
+        "LabelingJobForWorkteamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkRequesterAccountId",
+    2,
+);
+static LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelingJobForWorkteamSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "LabelingJobForWorkteamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_LABEL_COUNTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelingJobForWorkteamSummary$LabelCounters",
+        "com.amazonaws.sagemaker",
+        "LabelingJobForWorkteamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LabelCounters",
+    4,
+);
+static LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_NUMBER_OF_HUMAN_WORKERS_PER_DATA_OBJECT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#LabelingJobForWorkteamSummary$NumberOfHumanWorkersPerDataObject",
+            "com.amazonaws.sagemaker",
+            "LabelingJobForWorkteamSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "NumberOfHumanWorkersPerDataObject",
+        5,
+    );
+static LABELINGJOBFORWORKTEAMSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#LabelingJobForWorkteamSummary",
+        "com.amazonaws.sagemaker",
+        "LabelingJobForWorkteamSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_LABELING_JOB_NAME,
+        &LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_JOB_REFERENCE_CODE,
+        &LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_WORK_REQUESTER_ACCOUNT_ID,
+        &LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_CREATION_TIME,
+        &LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_LABEL_COUNTERS,
+        &LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_NUMBER_OF_HUMAN_WORKERS_PER_DATA_OBJECT,
+    ],
+);
+impl LabelingJobForWorkteamSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LABELINGJOBFORWORKTEAMSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LabelingJobForWorkteamSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.labeling_job_name {
+            ser.write_string(&LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_LABELING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.job_reference_code {
+            ser.write_string(&LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_JOB_REFERENCE_CODE, val)?;
+        }
+        if let Some(ref val) = self.work_requester_account_id {
+            ser.write_string(&LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_WORK_REQUESTER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.label_counters {
+            ser.write_struct(&LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_LABEL_COUNTERS, val)?;
+        }
+        if let Some(ref val) = self.number_of_human_workers_per_data_object {
+            ser.write_integer(&LABELINGJOBFORWORKTEAMSUMMARY_MEMBER_NUMBER_OF_HUMAN_WORKERS_PER_DATA_OBJECT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LabelingJobForWorkteamSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LABELINGJOBFORWORKTEAMSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labeling_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_reference_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_requester_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label_counters = Some(crate::types::LabelCountersForWorkteam::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.number_of_human_workers_per_data_object = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LabelingJobForWorkteamSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LabelingJobForWorkteamSummary {
     /// Creates a new builder-style object to manufacture [`LabelingJobForWorkteamSummary`](crate::types::LabelingJobForWorkteamSummary).
     pub fn builder() -> crate::types::builders::LabelingJobForWorkteamSummaryBuilder {

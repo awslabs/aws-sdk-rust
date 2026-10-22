@@ -97,6 +97,196 @@ impl ::std::fmt::Debug for User {
         formatter.finish()
     }
 }
+static USER_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$Arn", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    0,
+);
+static USER_MEMBER_USER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$UserName", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::String,
+    "UserName",
+    1,
+);
+static USER_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$Enabled", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    2,
+);
+static USER_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$Status", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static USER_MEMBER_FIRST_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$FirstName", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirstName",
+    4,
+);
+static USER_MEMBER_LAST_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$LastName", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastName",
+    5,
+);
+static USER_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$CreatedTime", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    6,
+);
+static USER_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User$AuthenticationType", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    7,
+);
+static USER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#User", "com.amazonaws.appstream", "User"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &USER_MEMBER_ARN,
+        &USER_MEMBER_USER_NAME,
+        &USER_MEMBER_ENABLED,
+        &USER_MEMBER_STATUS,
+        &USER_MEMBER_FIRST_NAME,
+        &USER_MEMBER_LAST_NAME,
+        &USER_MEMBER_CREATED_TIME,
+        &USER_MEMBER_AUTHENTICATION_TYPE,
+    ],
+);
+impl User {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for User {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.arn {
+            ser.write_string(&USER_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.user_name {
+            ser.write_string(&USER_MEMBER_USER_NAME, val)?;
+        }
+        if let Some(ref val) = self.enabled {
+            ser.write_boolean(&USER_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&USER_MEMBER_STATUS, val)?;
+        }
+        if let Some(ref val) = self.first_name {
+            ser.write_string(&USER_MEMBER_FIRST_NAME, val)?;
+        }
+        if let Some(ref val) = self.last_name {
+            ser.write_string(&USER_MEMBER_LAST_NAME, val)?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&USER_MEMBER_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&USER_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UserBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.first_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::AuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl User {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::types::User).
     pub fn builder() -> crate::types::builders::UserBuilder {

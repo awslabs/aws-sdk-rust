@@ -52,6 +52,188 @@ impl Entity {
         self.block_references.as_deref().unwrap_or_default()
     }
 }
+static ENTITY_MEMBER_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Entity$Score", "com.amazonaws.comprehend", "Entity"),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Score",
+    0,
+);
+static ENTITY_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Entity$Type", "com.amazonaws.comprehend", "Entity"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    1,
+);
+static ENTITY_MEMBER_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Entity$Text", "com.amazonaws.comprehend", "Entity"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Text",
+    2,
+);
+static ENTITY_MEMBER_BEGIN_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Entity$BeginOffset", "com.amazonaws.comprehend", "Entity"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "BeginOffset",
+    3,
+);
+static ENTITY_MEMBER_END_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Entity$EndOffset", "com.amazonaws.comprehend", "Entity"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EndOffset",
+    4,
+);
+static ENTITY_MEMBER_BLOCK_REFERENCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfBlockReferences$member",
+        "com.amazonaws.comprehend",
+        "ListOfBlockReferences",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ENTITY_MEMBER_BLOCK_REFERENCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Entity$BlockReferences", "com.amazonaws.comprehend", "Entity"),
+    ::aws_smithy_schema::ShapeType::List,
+    "BlockReferences",
+    5,
+)
+.with_list_member(&ENTITY_MEMBER_BLOCK_REFERENCES_MEMBER);
+static ENTITY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#Entity", "com.amazonaws.comprehend", "Entity"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITY_MEMBER_SCORE,
+        &ENTITY_MEMBER_TYPE,
+        &ENTITY_MEMBER_TEXT,
+        &ENTITY_MEMBER_BEGIN_OFFSET,
+        &ENTITY_MEMBER_END_OFFSET,
+        &ENTITY_MEMBER_BLOCK_REFERENCES,
+    ],
+);
+impl Entity {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Entity {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.score {
+            ser.write_float(&ENTITY_MEMBER_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&ENTITY_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.text {
+            ser.write_string(&ENTITY_MEMBER_TEXT, val)?;
+        }
+        if let Some(ref val) = self.begin_offset {
+            ser.write_integer(&ENTITY_MEMBER_BEGIN_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.end_offset {
+            ser.write_integer(&ENTITY_MEMBER_END_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.block_references {
+            ser.write_list(
+                &ENTITY_MEMBER_BLOCK_REFERENCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::BlockReference::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntityBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.score = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::EntityType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.begin_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.block_references = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::BlockReference::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Entity {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Entity {
     /// Creates a new builder-style object to manufacture [`Entity`](crate::types::Entity).
     pub fn builder() -> crate::types::builders::EntityBuilder {

@@ -33,6 +33,8 @@ pub(crate) mod shape_batch_get_lifecycle_policy;
 
 pub(crate) mod shape_batch_get_vpc_endpoint;
 
+pub(crate) mod shape_cancel_ingestion_job;
+
 pub(crate) mod shape_create_access_policy;
 
 pub(crate) mod shape_create_collection;
@@ -40,6 +42,10 @@ pub(crate) mod shape_create_collection;
 pub(crate) mod shape_create_collection_group;
 
 pub(crate) mod shape_create_index;
+
+pub(crate) mod shape_create_ingestion_job;
+
+pub(crate) mod shape_create_ingestion_stream;
 
 pub(crate) mod shape_create_lifecycle_policy;
 
@@ -57,6 +63,8 @@ pub(crate) mod shape_delete_collection_group;
 
 pub(crate) mod shape_delete_index;
 
+pub(crate) mod shape_delete_ingestion_stream;
+
 pub(crate) mod shape_delete_lifecycle_policy;
 
 pub(crate) mod shape_delete_security_config;
@@ -71,6 +79,10 @@ pub(crate) mod shape_get_account_settings;
 
 pub(crate) mod shape_get_index;
 
+pub(crate) mod shape_get_ingestion_job;
+
+pub(crate) mod shape_get_ingestion_stream;
+
 pub(crate) mod shape_get_policies_stats;
 
 pub(crate) mod shape_get_security_config;
@@ -82,6 +94,10 @@ pub(crate) mod shape_list_access_policies;
 pub(crate) mod shape_list_collection_groups;
 
 pub(crate) mod shape_list_collections;
+
+pub(crate) mod shape_list_ingestion_jobs;
+
+pub(crate) mod shape_list_ingestion_streams;
 
 pub(crate) mod shape_list_lifecycle_policies;
 
@@ -133,6 +149,8 @@ pub(crate) mod shape_batch_get_lifecycle_policy_input;
 
 pub(crate) mod shape_batch_get_vpc_endpoint_input;
 
+pub(crate) mod shape_cancel_ingestion_job_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_access_policy_input;
@@ -142,6 +160,10 @@ pub(crate) mod shape_create_collection_group_input;
 pub(crate) mod shape_create_collection_input;
 
 pub(crate) mod shape_create_index_input;
+
+pub(crate) mod shape_create_ingestion_job_input;
+
+pub(crate) mod shape_create_ingestion_stream_input;
 
 pub(crate) mod shape_create_lifecycle_policy_input;
 
@@ -159,6 +181,8 @@ pub(crate) mod shape_delete_collection_input;
 
 pub(crate) mod shape_delete_index_input;
 
+pub(crate) mod shape_delete_ingestion_stream_input;
+
 pub(crate) mod shape_delete_lifecycle_policy_input;
 
 pub(crate) mod shape_delete_security_config_input;
@@ -171,6 +195,10 @@ pub(crate) mod shape_get_access_policy_input;
 
 pub(crate) mod shape_get_index_input;
 
+pub(crate) mod shape_get_ingestion_job_input;
+
+pub(crate) mod shape_get_ingestion_stream_input;
+
 pub(crate) mod shape_get_security_config_input;
 
 pub(crate) mod shape_get_security_policy_input;
@@ -182,6 +210,10 @@ pub(crate) mod shape_list_access_policies_input;
 pub(crate) mod shape_list_collection_groups_input;
 
 pub(crate) mod shape_list_collections_input;
+
+pub(crate) mod shape_list_ingestion_jobs_input;
+
+pub(crate) mod shape_list_ingestion_streams_input;
 
 pub(crate) mod shape_list_lifecycle_policies_input;
 
@@ -269,6 +301,18 @@ pub(crate) mod shape_encryption_config;
 
 pub(crate) mod shape_iam_federation_config_options;
 
+pub(crate) mod shape_ingestion_job_detail;
+
+pub(crate) mod shape_ingestion_job_source;
+
+pub(crate) mod shape_ingestion_job_summaries;
+
+pub(crate) mod shape_ingestion_stream_detail;
+
+pub(crate) mod shape_ingestion_stream_source;
+
+pub(crate) mod shape_ingestion_stream_summaries;
+
 pub(crate) mod shape_lifecycle_policy_detail;
 
 pub(crate) mod shape_lifecycle_policy_details;
@@ -339,6 +383,20 @@ pub(crate) mod shape_effective_lifecycle_policy_error_detail;
 
 pub(crate) mod shape_iam_identity_center_config_options;
 
+pub(crate) mod shape_ingestion_alerts;
+
+pub(crate) mod shape_ingestion_failure_reasons;
+
+pub(crate) mod shape_ingestion_job_s3_source;
+
+pub(crate) mod shape_ingestion_job_summary;
+
+pub(crate) mod shape_ingestion_statistics;
+
+pub(crate) mod shape_ingestion_stream_s3_source;
+
+pub(crate) mod shape_ingestion_stream_summary;
+
 pub(crate) mod shape_lifecycle_policy_error_detail;
 
 pub(crate) mod shape_lifecycle_policy_summary;
@@ -361,4 +419,14 @@ pub(crate) mod shape_current_capacity;
 
 pub(crate) mod shape_fips_endpoints;
 
+pub(crate) mod shape_ingestion_alert;
+
+pub(crate) mod shape_ingestion_failure_reason;
+
+pub(crate) mod shape_s3_statistics;
+
+pub(crate) mod shape_stream_bucket_config;
+
 pub(crate) mod shape_capacity_details;
+
+pub(crate) mod shape_stream_bucket_configs;

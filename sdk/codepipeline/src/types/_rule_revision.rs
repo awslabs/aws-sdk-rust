@@ -27,6 +27,117 @@ impl RuleRevision {
         &self.created
     }
 }
+static RULEREVISION_MEMBER_REVISION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleRevision$revisionId",
+        "com.amazonaws.codepipeline",
+        "RuleRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionId",
+    0,
+);
+static RULEREVISION_MEMBER_REVISION_CHANGE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleRevision$revisionChangeId",
+        "com.amazonaws.codepipeline",
+        "RuleRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionChangeId",
+    1,
+);
+static RULEREVISION_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#RuleRevision$created",
+        "com.amazonaws.codepipeline",
+        "RuleRevision",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "created",
+    2,
+);
+static RULEREVISION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#RuleRevision", "com.amazonaws.codepipeline", "RuleRevision"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RULEREVISION_MEMBER_REVISION_ID,
+        &RULEREVISION_MEMBER_REVISION_CHANGE_ID,
+        &RULEREVISION_MEMBER_CREATED,
+    ],
+);
+impl RuleRevision {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RULEREVISION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RuleRevision {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.revision_id;
+            ser.write_string(&RULEREVISION_MEMBER_REVISION_ID, val)?;
+        }
+        {
+            let val = &self.revision_change_id;
+            ser.write_string(&RULEREVISION_MEMBER_REVISION_CHANGE_ID, val)?;
+        }
+        {
+            let val = &self.created;
+            ser.write_timestamp(&RULEREVISION_MEMBER_CREATED, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RuleRevisionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RULEREVISION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.revision_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.revision_change_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.created = Some(deser.read_timestamp(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RuleRevision {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.revision_id = builder.revision_id.or(Some(String::new()));
+        builder.revision_change_id = builder.revision_change_id.or(Some(String::new()));
+        builder.created = builder.created.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RuleRevision {
     /// Creates a new builder-style object to manufacture [`RuleRevision`](crate::types::RuleRevision).
     pub fn builder() -> crate::types::builders::RuleRevisionBuilder {

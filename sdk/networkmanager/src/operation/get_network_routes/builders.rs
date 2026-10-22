@@ -108,6 +108,12 @@ impl GetNetworkRoutesFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_network_routes::paginator::GetNetworkRoutesPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::get_network_routes::paginator::GetNetworkRoutesPaginator {
+        crate::operation::get_network_routes::paginator::GetNetworkRoutesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
@@ -292,5 +298,33 @@ impl GetNetworkRoutesFluentBuilder {
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.inner.get_destination_filters()
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn max_results(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_results(input);
+        self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_results(input);
+        self
+    }
+    /// <p>The maximum number of results to return.</p>
+    pub fn get_max_results(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_results()
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>The token for the next page of results.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

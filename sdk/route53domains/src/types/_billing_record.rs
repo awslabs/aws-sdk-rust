@@ -39,6 +39,166 @@ impl BillingRecord {
         self.price
     }
 }
+static BILLINGRECORD_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#BillingRecord$DomainName",
+        "com.amazonaws.route53domains",
+        "BillingRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static BILLINGRECORD_MEMBER_OPERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#BillingRecord$Operation",
+        "com.amazonaws.route53domains",
+        "BillingRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Operation",
+    1,
+);
+static BILLINGRECORD_MEMBER_INVOICE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#BillingRecord$InvoiceId",
+        "com.amazonaws.route53domains",
+        "BillingRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InvoiceId",
+    2,
+);
+static BILLINGRECORD_MEMBER_BILL_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#BillingRecord$BillDate",
+        "com.amazonaws.route53domains",
+        "BillingRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "BillDate",
+    3,
+);
+static BILLINGRECORD_MEMBER_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#BillingRecord$Price",
+        "com.amazonaws.route53domains",
+        "BillingRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Price",
+    4,
+);
+static BILLINGRECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains#BillingRecord",
+        "com.amazonaws.route53domains",
+        "BillingRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BILLINGRECORD_MEMBER_DOMAIN_NAME,
+        &BILLINGRECORD_MEMBER_OPERATION,
+        &BILLINGRECORD_MEMBER_INVOICE_ID,
+        &BILLINGRECORD_MEMBER_BILL_DATE,
+        &BILLINGRECORD_MEMBER_PRICE,
+    ],
+);
+impl BillingRecord {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BILLINGRECORD_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BillingRecord {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&BILLINGRECORD_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.operation {
+            ser.write_string(&BILLINGRECORD_MEMBER_OPERATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.invoice_id {
+            ser.write_string(&BILLINGRECORD_MEMBER_INVOICE_ID, val)?;
+        }
+        if let Some(ref val) = self.bill_date {
+            ser.write_timestamp(&BILLINGRECORD_MEMBER_BILL_DATE, val)?;
+        }
+        {
+            let val = &self.price;
+            ser.write_double(&BILLINGRECORD_MEMBER_PRICE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::BillingRecordBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BILLINGRECORD_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation = Some(crate::types::OperationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.invoice_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bill_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    self.price = Some(deser.read_double(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BillingRecord {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl BillingRecord {
     /// Creates a new builder-style object to manufacture [`BillingRecord`](crate::types::BillingRecord).
     pub fn builder() -> crate::types::builders::BillingRecordBuilder {

@@ -25,6 +25,159 @@ impl PollForJobsInput {
         self.query_param.as_ref()
     }
 }
+static POLLFORJOBSINPUT_MEMBER_ACTION_TYPE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PollForJobsInput$actionTypeId",
+        "com.amazonaws.codepipeline.synthetic",
+        "PollForJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "actionTypeId",
+    0,
+);
+static POLLFORJOBSINPUT_MEMBER_MAX_BATCH_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PollForJobsInput$maxBatchSize",
+        "com.amazonaws.codepipeline.synthetic",
+        "PollForJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxBatchSize",
+    1,
+);
+static POLLFORJOBSINPUT_MEMBER_QUERY_PARAM_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#QueryParamMap$key",
+        "com.amazonaws.codepipeline",
+        "QueryParamMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static POLLFORJOBSINPUT_MEMBER_QUERY_PARAM_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#QueryParamMap$value",
+        "com.amazonaws.codepipeline",
+        "QueryParamMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static POLLFORJOBSINPUT_MEMBER_QUERY_PARAM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PollForJobsInput$queryParam",
+        "com.amazonaws.codepipeline.synthetic",
+        "PollForJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "queryParam",
+    2,
+)
+.with_map_members(&POLLFORJOBSINPUT_MEMBER_QUERY_PARAM_KEY, &POLLFORJOBSINPUT_MEMBER_QUERY_PARAM_VALUE);
+static POLLFORJOBSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PollForJobsInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "PollForJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &POLLFORJOBSINPUT_MEMBER_ACTION_TYPE_ID,
+        &POLLFORJOBSINPUT_MEMBER_MAX_BATCH_SIZE,
+        &POLLFORJOBSINPUT_MEMBER_QUERY_PARAM,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PollForJobsInput");
+impl PollForJobsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &POLLFORJOBSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PollForJobsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action_type_id {
+            ser.write_struct(&POLLFORJOBSINPUT_MEMBER_ACTION_TYPE_ID, val)?;
+        }
+        if let Some(ref val) = self.max_batch_size {
+            ser.write_integer(&POLLFORJOBSINPUT_MEMBER_MAX_BATCH_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.query_param {
+            ser.write_map(
+                &POLLFORJOBSINPUT_MEMBER_QUERY_PARAM,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::poll_for_jobs::builders::PollForJobsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&POLLFORJOBSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_type_id = Some(crate::types::ActionTypeId::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_batch_size = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.query_param = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PollForJobsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PollForJobsInput {
     /// Creates a new builder-style object to manufacture [`PollForJobsInput`](crate::operation::poll_for_jobs::PollForJobsInput).
     pub fn builder() -> crate::operation::poll_for_jobs::builders::PollForJobsInputBuilder {

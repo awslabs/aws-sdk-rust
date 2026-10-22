@@ -41,6 +41,222 @@ impl DescribeDimensionKeysOutput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_ALIGNED_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#DescribeDimensionKeysOutput$AlignedStartTime",
+        "com.amazonaws.pi.synthetic",
+        "DescribeDimensionKeysOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "AlignedStartTime",
+    0,
+);
+static DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_ALIGNED_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#DescribeDimensionKeysOutput$AlignedEndTime",
+        "com.amazonaws.pi.synthetic",
+        "DescribeDimensionKeysOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "AlignedEndTime",
+    1,
+);
+static DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_PARTITION_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#ResponsePartitionKeyList$member",
+        "com.amazonaws.pi",
+        "ResponsePartitionKeyList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_PARTITION_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#DescribeDimensionKeysOutput$PartitionKeys",
+        "com.amazonaws.pi.synthetic",
+        "DescribeDimensionKeysOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PartitionKeys",
+    2,
+)
+.with_list_member(&DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_PARTITION_KEYS_MEMBER);
+static DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#DimensionKeyDescriptionList$member",
+        "com.amazonaws.pi",
+        "DimensionKeyDescriptionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#DescribeDimensionKeysOutput$Keys",
+        "com.amazonaws.pi.synthetic",
+        "DescribeDimensionKeysOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Keys",
+    3,
+)
+.with_list_member(&DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_KEYS_MEMBER);
+static DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#DescribeDimensionKeysOutput$NextToken",
+        "com.amazonaws.pi.synthetic",
+        "DescribeDimensionKeysOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static DESCRIBEDIMENSIONKEYSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi.synthetic#DescribeDimensionKeysOutput",
+        "com.amazonaws.pi.synthetic",
+        "DescribeDimensionKeysOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_ALIGNED_START_TIME,
+        &DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_ALIGNED_END_TIME,
+        &DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_PARTITION_KEYS,
+        &DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_KEYS,
+        &DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("DescribeDimensionKeysResponse");
+impl DescribeDimensionKeysOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDIMENSIONKEYSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeDimensionKeysOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.aligned_start_time {
+            ser.write_timestamp(&DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_ALIGNED_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.aligned_end_time {
+            ser.write_timestamp(&DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_ALIGNED_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.partition_keys {
+            ser.write_list(
+                &DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_PARTITION_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ResponsePartitionKey::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.keys {
+            ser.write_list(
+                &DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DimensionKeyDescription::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEDIMENSIONKEYSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDIMENSIONKEYSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aligned_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.aligned_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.partition_keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResponsePartitionKey::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.keys = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DimensionKeyDescription::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeDimensionKeysOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeDimensionKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

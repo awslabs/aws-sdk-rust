@@ -55,6 +55,232 @@ impl ClassifierEvaluationMetrics {
         self.hamming_loss
     }
 }
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_ACCURACY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$Accuracy",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Accuracy",
+    0,
+);
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_PRECISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$Precision",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Precision",
+    1,
+);
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_RECALL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$Recall",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "Recall",
+    2,
+);
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_F1_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$F1Score",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "F1Score",
+    3,
+);
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_PRECISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$MicroPrecision",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "MicroPrecision",
+    4,
+);
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_RECALL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$MicroRecall",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "MicroRecall",
+    5,
+);
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_F1_SCORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$MicroF1Score",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "MicroF1Score",
+    6,
+);
+static CLASSIFIEREVALUATIONMETRICS_MEMBER_HAMMING_LOSS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics$HammingLoss",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "HammingLoss",
+    7,
+);
+static CLASSIFIEREVALUATIONMETRICS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ClassifierEvaluationMetrics",
+        "com.amazonaws.comprehend",
+        "ClassifierEvaluationMetrics",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_ACCURACY,
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_PRECISION,
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_RECALL,
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_F1_SCORE,
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_PRECISION,
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_RECALL,
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_F1_SCORE,
+        &CLASSIFIEREVALUATIONMETRICS_MEMBER_HAMMING_LOSS,
+    ],
+);
+impl ClassifierEvaluationMetrics {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLASSIFIEREVALUATIONMETRICS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClassifierEvaluationMetrics {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.accuracy {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_ACCURACY, *val)?;
+        }
+        if let Some(ref val) = self.precision {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_PRECISION, *val)?;
+        }
+        if let Some(ref val) = self.recall {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_RECALL, *val)?;
+        }
+        if let Some(ref val) = self.f1_score {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_F1_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.micro_precision {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_PRECISION, *val)?;
+        }
+        if let Some(ref val) = self.micro_recall {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_RECALL, *val)?;
+        }
+        if let Some(ref val) = self.micro_f1_score {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_MICRO_F1_SCORE, *val)?;
+        }
+        if let Some(ref val) = self.hamming_loss {
+            ser.write_double(&CLASSIFIEREVALUATIONMETRICS_MEMBER_HAMMING_LOSS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClassifierEvaluationMetricsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLASSIFIEREVALUATIONMETRICS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.accuracy = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.precision = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recall = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.f1_score = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.micro_precision = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.micro_recall = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.micro_f1_score = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hamming_loss = Some(deser.read_double(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClassifierEvaluationMetrics {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClassifierEvaluationMetrics {
     /// Creates a new builder-style object to manufacture [`ClassifierEvaluationMetrics`](crate::types::ClassifierEvaluationMetrics).
     pub fn builder() -> crate::types::builders::ClassifierEvaluationMetricsBuilder {

@@ -14,6 +14,97 @@ impl StaticValue {
         self.values.deref()
     }
 }
+static STATICVALUE_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#StaticParameterValues$member",
+        "com.amazonaws.configservice",
+        "StaticParameterValues",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STATICVALUE_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#StaticValue$Values",
+        "com.amazonaws.configservice",
+        "StaticValue",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Values",
+    0,
+)
+.with_list_member(&STATICVALUE_MEMBER_VALUES_MEMBER);
+static STATICVALUE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#StaticValue", "com.amazonaws.configservice", "StaticValue"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STATICVALUE_MEMBER_VALUES],
+);
+impl StaticValue {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STATICVALUE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StaticValue {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.values;
+
+            ser.write_list(
+                &STATICVALUE_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::StaticValueBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STATICVALUE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.values = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StaticValue {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.values = builder.values.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StaticValue {
     /// Creates a new builder-style object to manufacture [`StaticValue`](crate::types::StaticValue).
     pub fn builder() -> crate::types::builders::StaticValueBuilder {

@@ -72,6 +72,299 @@ impl ListHubContentVersionsInput {
         self.next_token.as_deref()
     }
 }
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$HubName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubName",
+    0,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$HubContentType",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentType",
+    1,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_CONTENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$HubContentName",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HubContentName",
+    2,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_MIN_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$MinVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MinVersion",
+    3,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_MAX_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$MaxSchemaVersion",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxSchemaVersion",
+    4,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    5,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    6,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    7,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    8,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    9,
+);
+static LISTHUBCONTENTVERSIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    10,
+);
+static LISTHUBCONTENTVERSIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListHubContentVersionsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListHubContentVersionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_NAME,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_CONTENT_TYPE,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_CONTENT_NAME,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_MIN_VERSION,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_MAX_SCHEMA_VERSION,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_SORT_BY,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_SORT_ORDER,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_MAX_RESULTS,
+        &LISTHUBCONTENTVERSIONSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListHubContentVersionsRequest");
+impl ListHubContentVersionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTHUBCONTENTVERSIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListHubContentVersionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.hub_name {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_NAME, val)?;
+        }
+        if let Some(ref val) = self.hub_content_type {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_CONTENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.hub_content_name {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_HUB_CONTENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.min_version {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_MIN_VERSION, val)?;
+        }
+        if let Some(ref val) = self.max_schema_version {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_MAX_SCHEMA_VERSION, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTHUBCONTENTVERSIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_hub_content_versions::builders::ListHubContentVersionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTHUBCONTENTVERSIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_type = Some(crate::types::HubContentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.hub_content_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.min_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::HubContentSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListHubContentVersionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.hub_name = builder.hub_name.or(Some(String::new()));
+        builder.hub_content_name = builder.hub_content_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListHubContentVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListHubContentVersionsInput`](crate::operation::list_hub_content_versions::ListHubContentVersionsInput).
     pub fn builder() -> crate::operation::list_hub_content_versions::builders::ListHubContentVersionsInputBuilder {

@@ -32,6 +32,179 @@ impl PutThirdPartyServiceLinkedConfigurationRecorderInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SERVICE_PRINCIPAL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutThirdPartyServiceLinkedConfigurationRecorderInput$ServicePrincipal",
+            "com.amazonaws.configservice.synthetic",
+            "PutThirdPartyServiceLinkedConfigurationRecorderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ServicePrincipal",
+        0,
+    );
+static PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_CONNECTOR_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutThirdPartyServiceLinkedConfigurationRecorderInput$ConnectorArn",
+            "com.amazonaws.configservice.synthetic",
+            "PutThirdPartyServiceLinkedConfigurationRecorderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ConnectorArn",
+        1,
+    );
+static PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SCOPE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutThirdPartyServiceLinkedConfigurationRecorderInput$ScopeConfiguration",
+            "com.amazonaws.configservice.synthetic",
+            "PutThirdPartyServiceLinkedConfigurationRecorderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ScopeConfiguration",
+        2,
+    );
+static PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.configservice#TagsList$member", "com.amazonaws.configservice", "TagsList"),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#PutThirdPartyServiceLinkedConfigurationRecorderInput$Tags",
+            "com.amazonaws.configservice.synthetic",
+            "PutThirdPartyServiceLinkedConfigurationRecorderInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "Tags",
+        3,
+    )
+    .with_list_member(&PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS_MEMBER);
+static PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutThirdPartyServiceLinkedConfigurationRecorderInput",
+        "com.amazonaws.configservice.synthetic",
+        "PutThirdPartyServiceLinkedConfigurationRecorderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SERVICE_PRINCIPAL,
+        &PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_CONNECTOR_ARN,
+        &PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SCOPE_CONFIGURATION,
+        &PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutThirdPartyServiceLinkedConfigurationRecorderRequest");
+impl PutThirdPartyServiceLinkedConfigurationRecorderInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutThirdPartyServiceLinkedConfigurationRecorderInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_principal {
+            ser.write_string(&PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SERVICE_PRINCIPAL, val)?;
+        }
+        if let Some(ref val) = self.connector_arn {
+            ser.write_string(&PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_CONNECTOR_ARN, val)?;
+        }
+        if let Some(ref val) = self.scope_configuration {
+            ser.write_struct(&PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_SCOPE_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_third_party_service_linked_configuration_recorder::builders::PutThirdPartyServiceLinkedConfigurationRecorderInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTTHIRDPARTYSERVICELINKEDCONFIGURATIONRECORDERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_principal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connector_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope_configuration = Some(crate::types::ScopeConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutThirdPartyServiceLinkedConfigurationRecorderInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_principal = builder.service_principal.or(Some(String::new()));
+        builder.connector_arn = builder.connector_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutThirdPartyServiceLinkedConfigurationRecorderInput {
     /// Creates a new builder-style object to manufacture [`PutThirdPartyServiceLinkedConfigurationRecorderInput`](crate::operation::put_third_party_service_linked_configuration_recorder::PutThirdPartyServiceLinkedConfigurationRecorderInput).
     pub fn builder(

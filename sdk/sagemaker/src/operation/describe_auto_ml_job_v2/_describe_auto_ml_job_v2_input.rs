@@ -12,6 +12,86 @@ impl DescribeAutoMlJobV2Input {
         self.auto_ml_job_name.as_deref()
     }
 }
+static DESCRIBEAUTOMLJOBV2INPUT_MEMBER_AUTO_ML_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Input$AutoMLJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Input",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutoMLJobName",
+    0,
+);
+static DESCRIBEAUTOMLJOBV2INPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAutoMLJobV2Input",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAutoMLJobV2Input",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEAUTOMLJOBV2INPUT_MEMBER_AUTO_ML_JOB_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeAutoMLJobV2Request");
+impl DescribeAutoMlJobV2Input {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAUTOMLJOBV2INPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAutoMlJobV2Input {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_ml_job_name {
+            ser.write_string(&DESCRIBEAUTOMLJOBV2INPUT_MEMBER_AUTO_ML_JOB_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMlJobV2InputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAUTOMLJOBV2INPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAutoMlJobV2Input {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.auto_ml_job_name = builder.auto_ml_job_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeAutoMlJobV2Input {
     /// Creates a new builder-style object to manufacture [`DescribeAutoMlJobV2Input`](crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Input).
     pub fn builder() -> crate::operation::describe_auto_ml_job_v2::builders::DescribeAutoMlJobV2InputBuilder {

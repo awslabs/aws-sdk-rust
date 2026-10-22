@@ -31,6 +31,148 @@ impl ResourceFilters {
         self.region.as_deref()
     }
 }
+static RESOURCEFILTERS_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceFilters$AccountId",
+        "com.amazonaws.configservice",
+        "ResourceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountId",
+    0,
+);
+static RESOURCEFILTERS_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceFilters$ResourceId",
+        "com.amazonaws.configservice",
+        "ResourceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    1,
+);
+static RESOURCEFILTERS_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceFilters$ResourceName",
+        "com.amazonaws.configservice",
+        "ResourceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceName",
+    2,
+);
+static RESOURCEFILTERS_MEMBER_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceFilters$Region",
+        "com.amazonaws.configservice",
+        "ResourceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Region",
+    3,
+);
+static RESOURCEFILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ResourceFilters",
+        "com.amazonaws.configservice",
+        "ResourceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEFILTERS_MEMBER_ACCOUNT_ID,
+        &RESOURCEFILTERS_MEMBER_RESOURCE_ID,
+        &RESOURCEFILTERS_MEMBER_RESOURCE_NAME,
+        &RESOURCEFILTERS_MEMBER_REGION,
+    ],
+);
+impl ResourceFilters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEFILTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceFilters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&RESOURCEFILTERS_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&RESOURCEFILTERS_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&RESOURCEFILTERS_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.region {
+            ser.write_string(&RESOURCEFILTERS_MEMBER_REGION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceFiltersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCEFILTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceFilters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResourceFilters {
     /// Creates a new builder-style object to manufacture [`ResourceFilters`](crate::types::ResourceFilters).
     pub fn builder() -> crate::types::builders::ResourceFiltersBuilder {

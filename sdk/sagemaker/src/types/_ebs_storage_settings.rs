@@ -13,6 +13,83 @@ impl EbsStorageSettings {
         self.ebs_volume_size_in_gb
     }
 }
+static EBSSTORAGESETTINGS_MEMBER_EBS_VOLUME_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EbsStorageSettings$EbsVolumeSizeInGb",
+        "com.amazonaws.sagemaker",
+        "EbsStorageSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "EbsVolumeSizeInGb",
+    0,
+);
+static EBSSTORAGESETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EbsStorageSettings",
+        "com.amazonaws.sagemaker",
+        "EbsStorageSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&EBSSTORAGESETTINGS_MEMBER_EBS_VOLUME_SIZE_IN_GB],
+);
+impl EbsStorageSettings {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EBSSTORAGESETTINGS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EbsStorageSettings {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ebs_volume_size_in_gb {
+            ser.write_integer(&EBSSTORAGESETTINGS_MEMBER_EBS_VOLUME_SIZE_IN_GB, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EbsStorageSettingsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EBSSTORAGESETTINGS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ebs_volume_size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EbsStorageSettings {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EbsStorageSettings {
     /// Creates a new builder-style object to manufacture [`EbsStorageSettings`](crate::types::EbsStorageSettings).
     pub fn builder() -> crate::types::builders::EbsStorageSettingsBuilder {

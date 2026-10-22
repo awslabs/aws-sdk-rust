@@ -43,6 +43,192 @@ impl PipelineExecutionSummary {
         self.pipeline_execution_failure_reason.as_deref()
     }
 }
+static PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionSummary$PipelineExecutionArn",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineExecutionArn",
+    0,
+);
+static PIPELINEEXECUTIONSUMMARY_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionSummary$StartTime",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    1,
+);
+static PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionSummary$PipelineExecutionStatus",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineExecutionStatus",
+    2,
+);
+static PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionSummary$PipelineExecutionDescription",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PipelineExecutionDescription",
+    3,
+);
+static PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#PipelineExecutionSummary$PipelineExecutionDisplayName",
+            "com.amazonaws.sagemaker",
+            "PipelineExecutionSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionDisplayName",
+        4,
+    );
+static PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#PipelineExecutionSummary$PipelineExecutionFailureReason",
+            "com.amazonaws.sagemaker",
+            "PipelineExecutionSummary",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "PipelineExecutionFailureReason",
+        5,
+    );
+static PIPELINEEXECUTIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineExecutionSummary",
+        "com.amazonaws.sagemaker",
+        "PipelineExecutionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_ARN,
+        &PIPELINEEXECUTIONSUMMARY_MEMBER_START_TIME,
+        &PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_STATUS,
+        &PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_DESCRIPTION,
+        &PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME,
+        &PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_FAILURE_REASON,
+    ],
+);
+impl PipelineExecutionSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINEEXECUTIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineExecutionSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_execution_arn {
+            ser.write_string(&PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_ARN, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&PIPELINEEXECUTIONSUMMARY_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_status {
+            ser.write_string(&PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.pipeline_execution_description {
+            ser.write_string(&PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_display_name {
+            ser.write_string(&PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.pipeline_execution_failure_reason {
+            ser.write_string(&PIPELINEEXECUTIONSUMMARY_MEMBER_PIPELINE_EXECUTION_FAILURE_REASON, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineExecutionSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINEEXECUTIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_status = Some(crate::types::PipelineExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineExecutionSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PipelineExecutionSummary {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionSummary`](crate::types::PipelineExecutionSummary).
     pub fn builder() -> crate::types::builders::PipelineExecutionSummaryBuilder {

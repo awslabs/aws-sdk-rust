@@ -38,6 +38,170 @@ impl DescribeLocationNfsOutput {
         self.creation_time.as_ref()
     }
 }
+static DESCRIBELOCATIONNFSOUTPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationNfsOutput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationNfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static DESCRIBELOCATIONNFSOUTPUT_MEMBER_LOCATION_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationNfsOutput$LocationUri",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationNfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationUri",
+    1,
+);
+static DESCRIBELOCATIONNFSOUTPUT_MEMBER_ON_PREM_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationNfsOutput$OnPremConfig",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationNfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OnPremConfig",
+    2,
+);
+static DESCRIBELOCATIONNFSOUTPUT_MEMBER_MOUNT_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationNfsOutput$MountOptions",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationNfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MountOptions",
+    3,
+);
+static DESCRIBELOCATIONNFSOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationNfsOutput$CreationTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationNfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static DESCRIBELOCATIONNFSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationNfsOutput",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationNfsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELOCATIONNFSOUTPUT_MEMBER_LOCATION_ARN,
+        &DESCRIBELOCATIONNFSOUTPUT_MEMBER_LOCATION_URI,
+        &DESCRIBELOCATIONNFSOUTPUT_MEMBER_ON_PREM_CONFIG,
+        &DESCRIBELOCATIONNFSOUTPUT_MEMBER_MOUNT_OPTIONS,
+        &DESCRIBELOCATIONNFSOUTPUT_MEMBER_CREATION_TIME,
+    ],
+)
+.with_original_name("DescribeLocationNfsResponse");
+impl DescribeLocationNfsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELOCATIONNFSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLocationNfsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&DESCRIBELOCATIONNFSOUTPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_uri {
+            ser.write_string(&DESCRIBELOCATIONNFSOUTPUT_MEMBER_LOCATION_URI, val)?;
+        }
+        if let Some(ref val) = self.on_prem_config {
+            ser.write_struct(&DESCRIBELOCATIONNFSOUTPUT_MEMBER_ON_PREM_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.mount_options {
+            ser.write_struct(&DESCRIBELOCATIONNFSOUTPUT_MEMBER_MOUNT_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBELOCATIONNFSOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_location_nfs::builders::DescribeLocationNfsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELOCATIONNFSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_prem_config = Some(crate::types::OnPremConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mount_options = Some(crate::types::NfsMountOptions::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLocationNfsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLocationNfsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

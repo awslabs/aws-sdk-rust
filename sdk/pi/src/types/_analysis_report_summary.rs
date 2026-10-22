@@ -45,6 +45,204 @@ impl AnalysisReportSummary {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static ANALYSISREPORTSUMMARY_MEMBER_ANALYSIS_REPORT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#AnalysisReportSummary$AnalysisReportId",
+        "com.amazonaws.pi",
+        "AnalysisReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AnalysisReportId",
+    0,
+);
+static ANALYSISREPORTSUMMARY_MEMBER_CREATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#AnalysisReportSummary$CreateTime",
+        "com.amazonaws.pi",
+        "AnalysisReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreateTime",
+    1,
+);
+static ANALYSISREPORTSUMMARY_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#AnalysisReportSummary$StartTime",
+        "com.amazonaws.pi",
+        "AnalysisReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    2,
+);
+static ANALYSISREPORTSUMMARY_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#AnalysisReportSummary$EndTime",
+        "com.amazonaws.pi",
+        "AnalysisReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    3,
+);
+static ANALYSISREPORTSUMMARY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.pi#AnalysisReportSummary$Status",
+        "com.amazonaws.pi",
+        "AnalysisReportSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    4,
+);
+static ANALYSISREPORTSUMMARY_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#TagList$member", "com.amazonaws.pi", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ANALYSISREPORTSUMMARY_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReportSummary$Tags", "com.amazonaws.pi", "AnalysisReportSummary"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    5,
+)
+.with_list_member(&ANALYSISREPORTSUMMARY_MEMBER_TAGS_MEMBER);
+static ANALYSISREPORTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.pi#AnalysisReportSummary", "com.amazonaws.pi", "AnalysisReportSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ANALYSISREPORTSUMMARY_MEMBER_ANALYSIS_REPORT_ID,
+        &ANALYSISREPORTSUMMARY_MEMBER_CREATE_TIME,
+        &ANALYSISREPORTSUMMARY_MEMBER_START_TIME,
+        &ANALYSISREPORTSUMMARY_MEMBER_END_TIME,
+        &ANALYSISREPORTSUMMARY_MEMBER_STATUS,
+        &ANALYSISREPORTSUMMARY_MEMBER_TAGS,
+    ],
+);
+impl AnalysisReportSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ANALYSISREPORTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AnalysisReportSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.analysis_report_id {
+            ser.write_string(&ANALYSISREPORTSUMMARY_MEMBER_ANALYSIS_REPORT_ID, val)?;
+        }
+        if let Some(ref val) = self.create_time {
+            ser.write_timestamp(&ANALYSISREPORTSUMMARY_MEMBER_CREATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&ANALYSISREPORTSUMMARY_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&ANALYSISREPORTSUMMARY_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ANALYSISREPORTSUMMARY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &ANALYSISREPORTSUMMARY_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AnalysisReportSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ANALYSISREPORTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.analysis_report_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.create_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::AnalysisStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AnalysisReportSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AnalysisReportSummary {
     /// Creates a new builder-style object to manufacture [`AnalysisReportSummary`](crate::types::AnalysisReportSummary).
     pub fn builder() -> crate::types::builders::AnalysisReportSummaryBuilder {

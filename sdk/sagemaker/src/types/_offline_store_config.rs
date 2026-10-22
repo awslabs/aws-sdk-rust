@@ -37,6 +37,148 @@ impl OfflineStoreConfig {
         self.table_format.as_ref()
     }
 }
+static OFFLINESTORECONFIG_MEMBER_S3_STORAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OfflineStoreConfig$S3StorageConfig",
+        "com.amazonaws.sagemaker",
+        "OfflineStoreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3StorageConfig",
+    0,
+);
+static OFFLINESTORECONFIG_MEMBER_DISABLE_GLUE_TABLE_CREATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OfflineStoreConfig$DisableGlueTableCreation",
+        "com.amazonaws.sagemaker",
+        "OfflineStoreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "DisableGlueTableCreation",
+    1,
+);
+static OFFLINESTORECONFIG_MEMBER_DATA_CATALOG_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OfflineStoreConfig$DataCatalogConfig",
+        "com.amazonaws.sagemaker",
+        "OfflineStoreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataCatalogConfig",
+    2,
+);
+static OFFLINESTORECONFIG_MEMBER_TABLE_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OfflineStoreConfig$TableFormat",
+        "com.amazonaws.sagemaker",
+        "OfflineStoreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TableFormat",
+    3,
+);
+static OFFLINESTORECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OfflineStoreConfig",
+        "com.amazonaws.sagemaker",
+        "OfflineStoreConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OFFLINESTORECONFIG_MEMBER_S3_STORAGE_CONFIG,
+        &OFFLINESTORECONFIG_MEMBER_DISABLE_GLUE_TABLE_CREATION,
+        &OFFLINESTORECONFIG_MEMBER_DATA_CATALOG_CONFIG,
+        &OFFLINESTORECONFIG_MEMBER_TABLE_FORMAT,
+    ],
+);
+impl OfflineStoreConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OFFLINESTORECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OfflineStoreConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_storage_config {
+            ser.write_struct(&OFFLINESTORECONFIG_MEMBER_S3_STORAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.disable_glue_table_creation {
+            ser.write_boolean(&OFFLINESTORECONFIG_MEMBER_DISABLE_GLUE_TABLE_CREATION, *val)?;
+        }
+        if let Some(ref val) = self.data_catalog_config {
+            ser.write_struct(&OFFLINESTORECONFIG_MEMBER_DATA_CATALOG_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.table_format {
+            ser.write_string(&OFFLINESTORECONFIG_MEMBER_TABLE_FORMAT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OfflineStoreConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OFFLINESTORECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_storage_config = Some(crate::types::S3StorageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.disable_glue_table_creation = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_catalog_config = Some(crate::types::DataCatalogConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.table_format = Some(crate::types::TableFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OfflineStoreConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OfflineStoreConfig {
     /// Creates a new builder-style object to manufacture [`OfflineStoreConfig`](crate::types::OfflineStoreConfig).
     pub fn builder() -> crate::types::builders::OfflineStoreConfigBuilder {

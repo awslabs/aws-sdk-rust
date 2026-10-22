@@ -23,6 +23,163 @@ impl SearchTrainingPlanOfferingsOutput {
         self.training_plan_extension_offerings.as_deref().unwrap_or_default()
     }
 }
+static SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_OFFERINGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TrainingPlanOfferings$member",
+            "com.amazonaws.sagemaker",
+            "TrainingPlanOfferings",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_OFFERINGS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsOutput$TrainingPlanOfferings",
+            "com.amazonaws.sagemaker.synthetic",
+            "SearchTrainingPlanOfferingsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "TrainingPlanOfferings",
+        0,
+    )
+    .with_list_member(&SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_OFFERINGS_MEMBER);
+static SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_EXTENSION_OFFERINGS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TrainingPlanExtensionOfferings$member",
+            "com.amazonaws.sagemaker",
+            "TrainingPlanExtensionOfferings",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_EXTENSION_OFFERINGS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsOutput$TrainingPlanExtensionOfferings",
+            "com.amazonaws.sagemaker.synthetic",
+            "SearchTrainingPlanOfferingsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "TrainingPlanExtensionOfferings",
+        1,
+    )
+    .with_list_member(&SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_EXTENSION_OFFERINGS_MEMBER);
+static SEARCHTRAININGPLANOFFERINGSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#SearchTrainingPlanOfferingsOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "SearchTrainingPlanOfferingsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_OFFERINGS,
+        &SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_EXTENSION_OFFERINGS,
+    ],
+)
+.with_original_name("SearchTrainingPlanOfferingsResponse");
+impl SearchTrainingPlanOfferingsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SEARCHTRAININGPLANOFFERINGSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SearchTrainingPlanOfferingsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_plan_offerings {
+            ser.write_list(
+                &SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_OFFERINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TrainingPlanOffering::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.training_plan_extension_offerings {
+            ser.write_list(
+                &SEARCHTRAININGPLANOFFERINGSOUTPUT_MEMBER_TRAINING_PLAN_EXTENSION_OFFERINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TrainingPlanExtensionOffering::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::search_training_plan_offerings::builders::SearchTrainingPlanOfferingsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SEARCHTRAININGPLANOFFERINGSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_offerings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TrainingPlanOffering::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_extension_offerings = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TrainingPlanExtensionOffering::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SearchTrainingPlanOfferingsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for SearchTrainingPlanOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

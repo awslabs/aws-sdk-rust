@@ -58,6 +58,277 @@ impl StartEventsDetectionJobInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$InputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    0,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$OutputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    1,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    2,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$JobName",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    3,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    4,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    5,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_TARGET_EVENT_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#TargetEventTypes$member",
+        "com.amazonaws.comprehend",
+        "TargetEventTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_TARGET_EVENT_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$TargetEventTypes",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetEventTypes",
+    6,
+)
+.with_list_member(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_TARGET_EVENT_TYPES_MEMBER);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTEVENTSDETECTIONJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_TAGS_MEMBER);
+static STARTEVENTSDETECTIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEventsDetectionJobInput",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEventsDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_JOB_NAME,
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE,
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_TARGET_EVENT_TYPES,
+        &STARTEVENTSDETECTIONJOBINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartEventsDetectionJobRequest");
+impl StartEventsDetectionJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTEVENTSDETECTIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartEventsDetectionJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTEVENTSDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.target_event_types {
+            ser.write_list(
+                &STARTEVENTSDETECTIONJOBINPUT_MEMBER_TARGET_EVENT_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTEVENTSDETECTIONJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTEVENTSDETECTIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_event_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartEventsDetectionJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.target_event_types = builder.target_event_types.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartEventsDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobInput`](crate::operation::start_events_detection_job::StartEventsDetectionJobInput).
     pub fn builder() -> crate::operation::start_events_detection_job::builders::StartEventsDetectionJobInputBuilder {

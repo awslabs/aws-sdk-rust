@@ -1660,6 +1660,8 @@ mod get_spot_placement_scores;
 
 mod get_subnet_cidr_reservations;
 
+mod get_transit_gateway_attachment_nat_configuration;
+
 mod get_transit_gateway_attachment_propagations;
 
 mod get_transit_gateway_metering_policy_entries;
@@ -1821,6 +1823,8 @@ mod modify_traffic_mirror_filter_rule;
 mod modify_traffic_mirror_session;
 
 mod modify_transit_gateway;
+
+mod modify_transit_gateway_attachment_nat_configuration;
 
 mod modify_transit_gateway_metering_policy;
 

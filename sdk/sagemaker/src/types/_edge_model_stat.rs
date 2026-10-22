@@ -43,6 +43,186 @@ impl EdgeModelStat {
         self.sampling_device_count
     }
 }
+static EDGEMODELSTAT_MEMBER_MODEL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelStat$ModelName",
+        "com.amazonaws.sagemaker",
+        "EdgeModelStat",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelName",
+    0,
+);
+static EDGEMODELSTAT_MEMBER_MODEL_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelStat$ModelVersion",
+        "com.amazonaws.sagemaker",
+        "EdgeModelStat",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelVersion",
+    1,
+);
+static EDGEMODELSTAT_MEMBER_OFFLINE_DEVICE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelStat$OfflineDeviceCount",
+        "com.amazonaws.sagemaker",
+        "EdgeModelStat",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "OfflineDeviceCount",
+    2,
+);
+static EDGEMODELSTAT_MEMBER_CONNECTED_DEVICE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelStat$ConnectedDeviceCount",
+        "com.amazonaws.sagemaker",
+        "EdgeModelStat",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ConnectedDeviceCount",
+    3,
+);
+static EDGEMODELSTAT_MEMBER_ACTIVE_DEVICE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelStat$ActiveDeviceCount",
+        "com.amazonaws.sagemaker",
+        "EdgeModelStat",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "ActiveDeviceCount",
+    4,
+);
+static EDGEMODELSTAT_MEMBER_SAMPLING_DEVICE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeModelStat$SamplingDeviceCount",
+        "com.amazonaws.sagemaker",
+        "EdgeModelStat",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "SamplingDeviceCount",
+    5,
+);
+static EDGEMODELSTAT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EdgeModelStat", "com.amazonaws.sagemaker", "EdgeModelStat"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EDGEMODELSTAT_MEMBER_MODEL_NAME,
+        &EDGEMODELSTAT_MEMBER_MODEL_VERSION,
+        &EDGEMODELSTAT_MEMBER_OFFLINE_DEVICE_COUNT,
+        &EDGEMODELSTAT_MEMBER_CONNECTED_DEVICE_COUNT,
+        &EDGEMODELSTAT_MEMBER_ACTIVE_DEVICE_COUNT,
+        &EDGEMODELSTAT_MEMBER_SAMPLING_DEVICE_COUNT,
+    ],
+);
+impl EdgeModelStat {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EDGEMODELSTAT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EdgeModelStat {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model_name {
+            ser.write_string(&EDGEMODELSTAT_MEMBER_MODEL_NAME, val)?;
+        }
+        if let Some(ref val) = self.model_version {
+            ser.write_string(&EDGEMODELSTAT_MEMBER_MODEL_VERSION, val)?;
+        }
+        if let Some(ref val) = self.offline_device_count {
+            ser.write_long(&EDGEMODELSTAT_MEMBER_OFFLINE_DEVICE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.connected_device_count {
+            ser.write_long(&EDGEMODELSTAT_MEMBER_CONNECTED_DEVICE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.active_device_count {
+            ser.write_long(&EDGEMODELSTAT_MEMBER_ACTIVE_DEVICE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.sampling_device_count {
+            ser.write_long(&EDGEMODELSTAT_MEMBER_SAMPLING_DEVICE_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EdgeModelStatBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EDGEMODELSTAT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.offline_device_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.connected_device_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_device_count = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sampling_device_count = Some(deser.read_long(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EdgeModelStat {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EdgeModelStat {
     /// Creates a new builder-style object to manufacture [`EdgeModelStat`](crate::types::EdgeModelStat).
     pub fn builder() -> crate::types::builders::EdgeModelStatBuilder {

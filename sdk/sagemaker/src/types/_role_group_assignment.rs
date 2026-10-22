@@ -21,6 +21,119 @@ impl RoleGroupAssignment {
         self.group_patterns.deref()
     }
 }
+static ROLEGROUPASSIGNMENT_MEMBER_ROLE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RoleGroupAssignment$RoleName",
+        "com.amazonaws.sagemaker",
+        "RoleGroupAssignment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleName",
+    0,
+);
+static ROLEGROUPASSIGNMENT_MEMBER_GROUP_PATTERNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#GroupPatternsList$member",
+        "com.amazonaws.sagemaker",
+        "GroupPatternsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ROLEGROUPASSIGNMENT_MEMBER_GROUP_PATTERNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RoleGroupAssignment$GroupPatterns",
+        "com.amazonaws.sagemaker",
+        "RoleGroupAssignment",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "GroupPatterns",
+    1,
+)
+.with_list_member(&ROLEGROUPASSIGNMENT_MEMBER_GROUP_PATTERNS_MEMBER);
+static ROLEGROUPASSIGNMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RoleGroupAssignment",
+        "com.amazonaws.sagemaker",
+        "RoleGroupAssignment",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ROLEGROUPASSIGNMENT_MEMBER_ROLE_NAME, &ROLEGROUPASSIGNMENT_MEMBER_GROUP_PATTERNS],
+);
+impl RoleGroupAssignment {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ROLEGROUPASSIGNMENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RoleGroupAssignment {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.role_name;
+            ser.write_string(&ROLEGROUPASSIGNMENT_MEMBER_ROLE_NAME, val)?;
+        }
+        {
+            let val = &self.group_patterns;
+
+            ser.write_list(
+                &ROLEGROUPASSIGNMENT_MEMBER_GROUP_PATTERNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RoleGroupAssignmentBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ROLEGROUPASSIGNMENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.role_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.group_patterns = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RoleGroupAssignment {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.role_name = builder.role_name.or(Some(String::new()));
+        builder.group_patterns = builder.group_patterns.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RoleGroupAssignment {
     /// Creates a new builder-style object to manufacture [`RoleGroupAssignment`](crate::types::RoleGroupAssignment).
     pub fn builder() -> crate::types::builders::RoleGroupAssignmentBuilder {

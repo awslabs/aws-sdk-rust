@@ -59,6 +59,144 @@ impl AutoMlJobChannel {
         self.data_source.as_ref()
     }
 }
+static AUTOMLJOBCHANNEL_MEMBER_CHANNEL_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLJobChannel$ChannelType",
+        "com.amazonaws.sagemaker",
+        "AutoMLJobChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChannelType",
+    0,
+);
+static AUTOMLJOBCHANNEL_MEMBER_CONTENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLJobChannel$ContentType",
+        "com.amazonaws.sagemaker",
+        "AutoMLJobChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentType",
+    1,
+);
+static AUTOMLJOBCHANNEL_MEMBER_COMPRESSION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLJobChannel$CompressionType",
+        "com.amazonaws.sagemaker",
+        "AutoMLJobChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CompressionType",
+    2,
+);
+static AUTOMLJOBCHANNEL_MEMBER_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#AutoMLJobChannel$DataSource",
+        "com.amazonaws.sagemaker",
+        "AutoMLJobChannel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DataSource",
+    3,
+);
+static AUTOMLJOBCHANNEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#AutoMLJobChannel", "com.amazonaws.sagemaker", "AutoMLJobChannel"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTOMLJOBCHANNEL_MEMBER_CHANNEL_TYPE,
+        &AUTOMLJOBCHANNEL_MEMBER_CONTENT_TYPE,
+        &AUTOMLJOBCHANNEL_MEMBER_COMPRESSION_TYPE,
+        &AUTOMLJOBCHANNEL_MEMBER_DATA_SOURCE,
+    ],
+);
+impl AutoMlJobChannel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOMLJOBCHANNEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutoMlJobChannel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.channel_type {
+            ser.write_string(&AUTOMLJOBCHANNEL_MEMBER_CHANNEL_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.content_type {
+            ser.write_string(&AUTOMLJOBCHANNEL_MEMBER_CONTENT_TYPE, val)?;
+        }
+        if let Some(ref val) = self.compression_type {
+            ser.write_string(&AUTOMLJOBCHANNEL_MEMBER_COMPRESSION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.data_source {
+            ser.write_struct(&AUTOMLJOBCHANNEL_MEMBER_DATA_SOURCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutoMlJobChannelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTOMLJOBCHANNEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.channel_type = Some(crate::types::AutoMlChannelType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compression_type = Some(crate::types::CompressionType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_source = Some(crate::types::AutoMlDataSource::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AutoMlJobChannel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl AutoMlJobChannel {
     /// Creates a new builder-style object to manufacture [`AutoMlJobChannel`](crate::types::AutoMlJobChannel).
     pub fn builder() -> crate::types::builders::AutoMlJobChannelBuilder {

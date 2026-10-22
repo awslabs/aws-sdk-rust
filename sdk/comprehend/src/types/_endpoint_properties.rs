@@ -79,6 +79,316 @@ impl EndpointProperties {
         self.flywheel_arn.as_deref()
     }
 }
+static ENDPOINTPROPERTIES_MEMBER_ENDPOINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$EndpointArn",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointArn",
+    0,
+);
+static ENDPOINTPROPERTIES_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$Status",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    1,
+);
+static ENDPOINTPROPERTIES_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$Message",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    2,
+);
+static ENDPOINTPROPERTIES_MEMBER_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$ModelArn",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelArn",
+    3,
+);
+static ENDPOINTPROPERTIES_MEMBER_DESIRED_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$DesiredModelArn",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DesiredModelArn",
+    4,
+);
+static ENDPOINTPROPERTIES_MEMBER_DESIRED_INFERENCE_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$DesiredInferenceUnits",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "DesiredInferenceUnits",
+    5,
+);
+static ENDPOINTPROPERTIES_MEMBER_CURRENT_INFERENCE_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$CurrentInferenceUnits",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CurrentInferenceUnits",
+    6,
+);
+static ENDPOINTPROPERTIES_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$CreationTime",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    7,
+);
+static ENDPOINTPROPERTIES_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$LastModifiedTime",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static ENDPOINTPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$DataAccessRoleArn",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    9,
+);
+static ENDPOINTPROPERTIES_MEMBER_DESIRED_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$DesiredDataAccessRoleArn",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DesiredDataAccessRoleArn",
+    10,
+);
+static ENDPOINTPROPERTIES_MEMBER_FLYWHEEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties$FlywheelArn",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelArn",
+    11,
+);
+static ENDPOINTPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#EndpointProperties",
+        "com.amazonaws.comprehend",
+        "EndpointProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENDPOINTPROPERTIES_MEMBER_ENDPOINT_ARN,
+        &ENDPOINTPROPERTIES_MEMBER_STATUS,
+        &ENDPOINTPROPERTIES_MEMBER_MESSAGE,
+        &ENDPOINTPROPERTIES_MEMBER_MODEL_ARN,
+        &ENDPOINTPROPERTIES_MEMBER_DESIRED_MODEL_ARN,
+        &ENDPOINTPROPERTIES_MEMBER_DESIRED_INFERENCE_UNITS,
+        &ENDPOINTPROPERTIES_MEMBER_CURRENT_INFERENCE_UNITS,
+        &ENDPOINTPROPERTIES_MEMBER_CREATION_TIME,
+        &ENDPOINTPROPERTIES_MEMBER_LAST_MODIFIED_TIME,
+        &ENDPOINTPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &ENDPOINTPROPERTIES_MEMBER_DESIRED_DATA_ACCESS_ROLE_ARN,
+        &ENDPOINTPROPERTIES_MEMBER_FLYWHEEL_ARN,
+    ],
+);
+impl EndpointProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENDPOINTPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EndpointProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_arn {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_ENDPOINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.model_arn {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.desired_model_arn {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_DESIRED_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.desired_inference_units {
+            ser.write_integer(&ENDPOINTPROPERTIES_MEMBER_DESIRED_INFERENCE_UNITS, *val)?;
+        }
+        if let Some(ref val) = self.current_inference_units {
+            ser.write_integer(&ENDPOINTPROPERTIES_MEMBER_CURRENT_INFERENCE_UNITS, *val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&ENDPOINTPROPERTIES_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&ENDPOINTPROPERTIES_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.desired_data_access_role_arn {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_DESIRED_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.flywheel_arn {
+            ser.write_string(&ENDPOINTPROPERTIES_MEMBER_FLYWHEEL_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EndpointPropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENDPOINTPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::EndpointStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_inference_units = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_inference_units = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.desired_data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EndpointProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EndpointProperties {
     /// Creates a new builder-style object to manufacture [`EndpointProperties`](crate::types::EndpointProperties).
     pub fn builder() -> crate::types::builders::EndpointPropertiesBuilder {

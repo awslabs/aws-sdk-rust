@@ -63,6 +63,144 @@ impl EdgeOutputConfig {
         self.preset_deployment_config.as_deref()
     }
 }
+static EDGEOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeOutputConfig$S3OutputLocation",
+        "com.amazonaws.sagemaker",
+        "EdgeOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3OutputLocation",
+    0,
+);
+static EDGEOUTPUTCONFIG_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeOutputConfig$KmsKeyId",
+        "com.amazonaws.sagemaker",
+        "EdgeOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    1,
+);
+static EDGEOUTPUTCONFIG_MEMBER_PRESET_DEPLOYMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeOutputConfig$PresetDeploymentType",
+        "com.amazonaws.sagemaker",
+        "EdgeOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PresetDeploymentType",
+    2,
+);
+static EDGEOUTPUTCONFIG_MEMBER_PRESET_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EdgeOutputConfig$PresetDeploymentConfig",
+        "com.amazonaws.sagemaker",
+        "EdgeOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PresetDeploymentConfig",
+    3,
+);
+static EDGEOUTPUTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EdgeOutputConfig", "com.amazonaws.sagemaker", "EdgeOutputConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &EDGEOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION,
+        &EDGEOUTPUTCONFIG_MEMBER_KMS_KEY_ID,
+        &EDGEOUTPUTCONFIG_MEMBER_PRESET_DEPLOYMENT_TYPE,
+        &EDGEOUTPUTCONFIG_MEMBER_PRESET_DEPLOYMENT_CONFIG,
+    ],
+);
+impl EdgeOutputConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EDGEOUTPUTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EdgeOutputConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_output_location {
+            ser.write_string(&EDGEOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&EDGEOUTPUTCONFIG_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.preset_deployment_type {
+            ser.write_string(&EDGEOUTPUTCONFIG_MEMBER_PRESET_DEPLOYMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.preset_deployment_config {
+            ser.write_string(&EDGEOUTPUTCONFIG_MEMBER_PRESET_DEPLOYMENT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EdgeOutputConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&EDGEOUTPUTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_output_location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preset_deployment_type = Some(crate::types::EdgePresetDeploymentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.preset_deployment_config = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EdgeOutputConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EdgeOutputConfig {
     /// Creates a new builder-style object to manufacture [`EdgeOutputConfig`](crate::types::EdgeOutputConfig).
     pub fn builder() -> crate::types::builders::EdgeOutputConfigBuilder {

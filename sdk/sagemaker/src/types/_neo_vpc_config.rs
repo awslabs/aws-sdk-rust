@@ -23,6 +23,129 @@ impl NeoVpcConfig {
         self.subnets.as_deref().unwrap_or_default()
     }
 }
+static NEOVPCCONFIG_MEMBER_SECURITY_GROUP_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NeoVpcSecurityGroupIds$member",
+        "com.amazonaws.sagemaker",
+        "NeoVpcSecurityGroupIds",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static NEOVPCCONFIG_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#NeoVpcConfig$SecurityGroupIds",
+        "com.amazonaws.sagemaker",
+        "NeoVpcConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupIds",
+    0,
+)
+.with_list_member(&NEOVPCCONFIG_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static NEOVPCCONFIG_MEMBER_SUBNETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#NeoVpcSubnets$member", "com.amazonaws.sagemaker", "NeoVpcSubnets"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static NEOVPCCONFIG_MEMBER_SUBNETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#NeoVpcConfig$Subnets", "com.amazonaws.sagemaker", "NeoVpcConfig"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Subnets",
+    1,
+)
+.with_list_member(&NEOVPCCONFIG_MEMBER_SUBNETS_MEMBER);
+static NEOVPCCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#NeoVpcConfig", "com.amazonaws.sagemaker", "NeoVpcConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&NEOVPCCONFIG_MEMBER_SECURITY_GROUP_IDS, &NEOVPCCONFIG_MEMBER_SUBNETS],
+);
+impl NeoVpcConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NEOVPCCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NeoVpcConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.security_group_ids {
+            ser.write_list(
+                &NEOVPCCONFIG_MEMBER_SECURITY_GROUP_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.subnets {
+            ser.write_list(
+                &NEOVPCCONFIG_MEMBER_SUBNETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::NeoVpcConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&NEOVPCCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnets = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl NeoVpcConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl NeoVpcConfig {
     /// Creates a new builder-style object to manufacture [`NeoVpcConfig`](crate::types::NeoVpcConfig).
     pub fn builder() -> crate::types::builders::NeoVpcConfigBuilder {

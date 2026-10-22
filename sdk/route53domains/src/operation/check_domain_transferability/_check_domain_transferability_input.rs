@@ -49,6 +49,109 @@ impl ::std::fmt::Debug for CheckDomainTransferabilityInput {
         formatter.finish()
     }
 }
+static CHECKDOMAINTRANSFERABILITYINPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainTransferabilityInput$DomainName",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainTransferabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    0,
+);
+static CHECKDOMAINTRANSFERABILITYINPUT_MEMBER_AUTH_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainTransferabilityInput$AuthCode",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainTransferabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthCode",
+    1,
+);
+static CHECKDOMAINTRANSFERABILITYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53domains.synthetic#CheckDomainTransferabilityInput",
+        "com.amazonaws.route53domains.synthetic",
+        "CheckDomainTransferabilityInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CHECKDOMAINTRANSFERABILITYINPUT_MEMBER_DOMAIN_NAME,
+        &CHECKDOMAINTRANSFERABILITYINPUT_MEMBER_AUTH_CODE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CheckDomainTransferabilityRequest");
+impl CheckDomainTransferabilityInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CHECKDOMAINTRANSFERABILITYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CheckDomainTransferabilityInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&CHECKDOMAINTRANSFERABILITYINPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.auth_code {
+            ser.write_string(&CHECKDOMAINTRANSFERABILITYINPUT_MEMBER_AUTH_CODE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CHECKDOMAINTRANSFERABILITYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auth_code = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CheckDomainTransferabilityInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.domain_name = builder.domain_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CheckDomainTransferabilityInput {
     /// Creates a new builder-style object to manufacture [`CheckDomainTransferabilityInput`](crate::operation::check_domain_transferability::CheckDomainTransferabilityInput).
     pub fn builder() -> crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder {

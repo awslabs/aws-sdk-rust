@@ -95,6 +95,317 @@ impl MonitoringSchedule {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$MonitoringScheduleArn",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringScheduleArn",
+    0,
+);
+static MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$MonitoringScheduleName",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringScheduleName",
+    1,
+);
+static MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$MonitoringScheduleStatus",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringScheduleStatus",
+    2,
+);
+static MONITORINGSCHEDULE_MEMBER_MONITORING_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$MonitoringType",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringType",
+    3,
+);
+static MONITORINGSCHEDULE_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$FailureReason",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    4,
+);
+static MONITORINGSCHEDULE_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$CreationTime",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    5,
+);
+static MONITORINGSCHEDULE_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    6,
+);
+static MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$MonitoringScheduleConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MonitoringScheduleConfig",
+    7,
+);
+static MONITORINGSCHEDULE_MEMBER_ENDPOINT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$EndpointName",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointName",
+    8,
+);
+static MONITORINGSCHEDULE_MEMBER_LAST_MONITORING_EXECUTION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$LastMonitoringExecutionSummary",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastMonitoringExecutionSummary",
+    9,
+);
+static MONITORINGSCHEDULE_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MONITORINGSCHEDULE_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule$Tags",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    10,
+)
+.with_list_member(&MONITORINGSCHEDULE_MEMBER_TAGS_MEMBER);
+static MONITORINGSCHEDULE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringSchedule",
+        "com.amazonaws.sagemaker",
+        "MonitoringSchedule",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_ARN,
+        &MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_NAME,
+        &MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_STATUS,
+        &MONITORINGSCHEDULE_MEMBER_MONITORING_TYPE,
+        &MONITORINGSCHEDULE_MEMBER_FAILURE_REASON,
+        &MONITORINGSCHEDULE_MEMBER_CREATION_TIME,
+        &MONITORINGSCHEDULE_MEMBER_LAST_MODIFIED_TIME,
+        &MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_CONFIG,
+        &MONITORINGSCHEDULE_MEMBER_ENDPOINT_NAME,
+        &MONITORINGSCHEDULE_MEMBER_LAST_MONITORING_EXECUTION_SUMMARY,
+        &MONITORINGSCHEDULE_MEMBER_TAGS,
+    ],
+);
+impl MonitoringSchedule {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGSCHEDULE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringSchedule {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.monitoring_schedule_arn {
+            ser.write_string(&MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_ARN, val)?;
+        }
+        if let Some(ref val) = self.monitoring_schedule_name {
+            ser.write_string(&MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_NAME, val)?;
+        }
+        if let Some(ref val) = self.monitoring_schedule_status {
+            ser.write_string(&MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.monitoring_type {
+            ser.write_string(&MONITORINGSCHEDULE_MEMBER_MONITORING_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&MONITORINGSCHEDULE_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&MONITORINGSCHEDULE_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&MONITORINGSCHEDULE_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.monitoring_schedule_config {
+            ser.write_struct(&MONITORINGSCHEDULE_MEMBER_MONITORING_SCHEDULE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.endpoint_name {
+            ser.write_string(&MONITORINGSCHEDULE_MEMBER_ENDPOINT_NAME, val)?;
+        }
+        if let Some(ref val) = self.last_monitoring_execution_summary {
+            ser.write_struct(&MONITORINGSCHEDULE_MEMBER_LAST_MONITORING_EXECUTION_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &MONITORINGSCHEDULE_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringScheduleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGSCHEDULE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_schedule_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_schedule_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_schedule_status = Some(crate::types::ScheduleStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_type = Some(crate::types::MonitoringType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_schedule_config = Some(crate::types::MonitoringScheduleConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_monitoring_execution_summary = Some(crate::types::MonitoringExecutionSummary::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringSchedule {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringSchedule {
     /// Creates a new builder-style object to manufacture [`MonitoringSchedule`](crate::types::MonitoringSchedule).
     pub fn builder() -> crate::types::builders::MonitoringScheduleBuilder {

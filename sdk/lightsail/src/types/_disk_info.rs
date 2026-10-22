@@ -31,6 +31,128 @@ impl DiskInfo {
         self.is_system_disk
     }
 }
+static DISKINFO_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DiskInfo$name", "com.amazonaws.lightsail", "DiskInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static DISKINFO_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DiskInfo$path", "com.amazonaws.lightsail", "DiskInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "path",
+    1,
+);
+static DISKINFO_MEMBER_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DiskInfo$sizeInGb", "com.amazonaws.lightsail", "DiskInfo"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "sizeInGb",
+    2,
+);
+static DISKINFO_MEMBER_IS_SYSTEM_DISK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DiskInfo$isSystemDisk", "com.amazonaws.lightsail", "DiskInfo"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isSystemDisk",
+    3,
+);
+static DISKINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#DiskInfo", "com.amazonaws.lightsail", "DiskInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISKINFO_MEMBER_NAME,
+        &DISKINFO_MEMBER_PATH,
+        &DISKINFO_MEMBER_SIZE_IN_GB,
+        &DISKINFO_MEMBER_IS_SYSTEM_DISK,
+    ],
+);
+impl DiskInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISKINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DiskInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DISKINFO_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&DISKINFO_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.size_in_gb {
+            ser.write_integer(&DISKINFO_MEMBER_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.is_system_disk {
+            ser.write_boolean(&DISKINFO_MEMBER_IS_SYSTEM_DISK, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DiskInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISKINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_system_disk = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DiskInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DiskInfo {
     /// Creates a new builder-style object to manufacture [`DiskInfo`](crate::types::DiskInfo).
     pub fn builder() -> crate::types::builders::DiskInfoBuilder {

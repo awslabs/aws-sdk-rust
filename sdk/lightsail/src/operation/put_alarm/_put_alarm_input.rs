@@ -182,6 +182,401 @@ impl PutAlarmInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static PUTALARMINPUT_MEMBER_ALARM_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$alarmName",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "alarmName",
+    0,
+);
+static PUTALARMINPUT_MEMBER_METRIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$metricName",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "metricName",
+    1,
+);
+static PUTALARMINPUT_MEMBER_MONITORED_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$monitoredResourceName",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "monitoredResourceName",
+    2,
+);
+static PUTALARMINPUT_MEMBER_COMPARISON_OPERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$comparisonOperator",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "comparisonOperator",
+    3,
+);
+static PUTALARMINPUT_MEMBER_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$threshold",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "threshold",
+    4,
+);
+static PUTALARMINPUT_MEMBER_EVALUATION_PERIODS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$evaluationPeriods",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "evaluationPeriods",
+    5,
+);
+static PUTALARMINPUT_MEMBER_DATAPOINTS_TO_ALARM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$datapointsToAlarm",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "datapointsToAlarm",
+    6,
+);
+static PUTALARMINPUT_MEMBER_TREAT_MISSING_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$treatMissingData",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "treatMissingData",
+    7,
+);
+static PUTALARMINPUT_MEMBER_CONTACT_PROTOCOLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContactProtocolsList$member",
+        "com.amazonaws.lightsail",
+        "ContactProtocolsList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PUTALARMINPUT_MEMBER_CONTACT_PROTOCOLS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$contactProtocols",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "contactProtocols",
+    8,
+)
+.with_list_member(&PUTALARMINPUT_MEMBER_CONTACT_PROTOCOLS_MEMBER);
+static PUTALARMINPUT_MEMBER_NOTIFICATION_TRIGGERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#NotificationTriggerList$member",
+        "com.amazonaws.lightsail",
+        "NotificationTriggerList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PUTALARMINPUT_MEMBER_NOTIFICATION_TRIGGERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$notificationTriggers",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "notificationTriggers",
+    9,
+)
+.with_list_member(&PUTALARMINPUT_MEMBER_NOTIFICATION_TRIGGERS_MEMBER);
+static PUTALARMINPUT_MEMBER_NOTIFICATION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$notificationEnabled",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "notificationEnabled",
+    10,
+);
+static PUTALARMINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PUTALARMINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput$tags",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    11,
+)
+.with_list_member(&PUTALARMINPUT_MEMBER_TAGS_MEMBER);
+static PUTALARMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#PutAlarmInput",
+        "com.amazonaws.lightsail.synthetic",
+        "PutAlarmInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PUTALARMINPUT_MEMBER_ALARM_NAME,
+        &PUTALARMINPUT_MEMBER_METRIC_NAME,
+        &PUTALARMINPUT_MEMBER_MONITORED_RESOURCE_NAME,
+        &PUTALARMINPUT_MEMBER_COMPARISON_OPERATOR,
+        &PUTALARMINPUT_MEMBER_THRESHOLD,
+        &PUTALARMINPUT_MEMBER_EVALUATION_PERIODS,
+        &PUTALARMINPUT_MEMBER_DATAPOINTS_TO_ALARM,
+        &PUTALARMINPUT_MEMBER_TREAT_MISSING_DATA,
+        &PUTALARMINPUT_MEMBER_CONTACT_PROTOCOLS,
+        &PUTALARMINPUT_MEMBER_NOTIFICATION_TRIGGERS,
+        &PUTALARMINPUT_MEMBER_NOTIFICATION_ENABLED,
+        &PUTALARMINPUT_MEMBER_TAGS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/ls/api/2016-11-28/PutAlarm", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutAlarmRequest");
+impl PutAlarmInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTALARMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutAlarmInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.alarm_name {
+            ser.write_string(&PUTALARMINPUT_MEMBER_ALARM_NAME, val)?;
+        }
+        if let Some(ref val) = self.metric_name {
+            ser.write_string(&PUTALARMINPUT_MEMBER_METRIC_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.monitored_resource_name {
+            ser.write_string(&PUTALARMINPUT_MEMBER_MONITORED_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.comparison_operator {
+            ser.write_string(&PUTALARMINPUT_MEMBER_COMPARISON_OPERATOR, val.as_str())?;
+        }
+        if let Some(ref val) = self.threshold {
+            ser.write_double(&PUTALARMINPUT_MEMBER_THRESHOLD, *val)?;
+        }
+        if let Some(ref val) = self.evaluation_periods {
+            ser.write_integer(&PUTALARMINPUT_MEMBER_EVALUATION_PERIODS, *val)?;
+        }
+        if let Some(ref val) = self.datapoints_to_alarm {
+            ser.write_integer(&PUTALARMINPUT_MEMBER_DATAPOINTS_TO_ALARM, *val)?;
+        }
+        if let Some(ref val) = self.treat_missing_data {
+            ser.write_string(&PUTALARMINPUT_MEMBER_TREAT_MISSING_DATA, val.as_str())?;
+        }
+        if let Some(ref val) = self.contact_protocols {
+            ser.write_list(
+                &PUTALARMINPUT_MEMBER_CONTACT_PROTOCOLS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.notification_triggers {
+            ser.write_list(
+                &PUTALARMINPUT_MEMBER_NOTIFICATION_TRIGGERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.notification_enabled {
+            ser.write_boolean(&PUTALARMINPUT_MEMBER_NOTIFICATION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &PUTALARMINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_alarm::builders::PutAlarmInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTALARMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alarm_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_name = Some(crate::types::MetricName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitored_resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.comparison_operator = Some(crate::types::ComparisonOperator::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.threshold = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_periods = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.datapoints_to_alarm = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.treat_missing_data = Some(crate::types::TreatMissingData::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact_protocols = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ContactProtocol::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_triggers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AlarmState::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.notification_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutAlarmInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.alarm_name = builder.alarm_name.or(Some(String::new()));
+        builder.monitored_resource_name = builder.monitored_resource_name.or(Some(String::new()));
+        builder.threshold = builder.threshold.or(Some(0.0f64));
+        builder.evaluation_periods = builder.evaluation_periods.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutAlarmInput {
     /// Creates a new builder-style object to manufacture [`PutAlarmInput`](crate::operation::put_alarm::PutAlarmInput).
     pub fn builder() -> crate::operation::put_alarm::builders::PutAlarmInputBuilder {

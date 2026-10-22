@@ -19,6 +19,106 @@ impl PutJobFailureResultInput {
         self.failure_details.as_ref()
     }
 }
+static PUTJOBFAILURERESULTINPUT_MEMBER_JOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobFailureResultInput$jobId",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobFailureResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "jobId",
+    0,
+);
+static PUTJOBFAILURERESULTINPUT_MEMBER_FAILURE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobFailureResultInput$failureDetails",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobFailureResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "failureDetails",
+    1,
+);
+static PUTJOBFAILURERESULTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline.synthetic#PutJobFailureResultInput",
+        "com.amazonaws.codepipeline.synthetic",
+        "PutJobFailureResultInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUTJOBFAILURERESULTINPUT_MEMBER_JOB_ID, &PUTJOBFAILURERESULTINPUT_MEMBER_FAILURE_DETAILS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("PutJobFailureResultInput");
+impl PutJobFailureResultInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUTJOBFAILURERESULTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PutJobFailureResultInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_id {
+            ser.write_string(&PUTJOBFAILURERESULTINPUT_MEMBER_JOB_ID, val)?;
+        }
+        if let Some(ref val) = self.failure_details {
+            ser.write_struct(&PUTJOBFAILURERESULTINPUT_MEMBER_FAILURE_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUTJOBFAILURERESULTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_details = Some(crate::types::FailureDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PutJobFailureResultInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.job_id = builder.job_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl PutJobFailureResultInput {
     /// Creates a new builder-style object to manufacture [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
     pub fn builder() -> crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {

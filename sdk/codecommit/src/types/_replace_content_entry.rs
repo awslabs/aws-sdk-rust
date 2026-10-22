@@ -32,6 +32,143 @@ impl ReplaceContentEntry {
         self.file_mode.as_ref()
     }
 }
+static REPLACECONTENTENTRY_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReplaceContentEntry$filePath",
+        "com.amazonaws.codecommit",
+        "ReplaceContentEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "filePath",
+    0,
+);
+static REPLACECONTENTENTRY_MEMBER_REPLACEMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReplaceContentEntry$replacementType",
+        "com.amazonaws.codecommit",
+        "ReplaceContentEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "replacementType",
+    1,
+);
+static REPLACECONTENTENTRY_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReplaceContentEntry$content",
+        "com.amazonaws.codecommit",
+        "ReplaceContentEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "content",
+    2,
+);
+static REPLACECONTENTENTRY_MEMBER_FILE_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReplaceContentEntry$fileMode",
+        "com.amazonaws.codecommit",
+        "ReplaceContentEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fileMode",
+    3,
+);
+static REPLACECONTENTENTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#ReplaceContentEntry",
+        "com.amazonaws.codecommit",
+        "ReplaceContentEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPLACECONTENTENTRY_MEMBER_FILE_PATH,
+        &REPLACECONTENTENTRY_MEMBER_REPLACEMENT_TYPE,
+        &REPLACECONTENTENTRY_MEMBER_CONTENT,
+        &REPLACECONTENTENTRY_MEMBER_FILE_MODE,
+    ],
+);
+impl ReplaceContentEntry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPLACECONTENTENTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ReplaceContentEntry {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.file_path;
+            ser.write_string(&REPLACECONTENTENTRY_MEMBER_FILE_PATH, val)?;
+        }
+        {
+            let val = &self.replacement_type;
+            ser.write_string(&REPLACECONTENTENTRY_MEMBER_REPLACEMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_blob(&REPLACECONTENTENTRY_MEMBER_CONTENT, val.clone())?;
+        }
+        if let Some(ref val) = self.file_mode {
+            ser.write_string(&REPLACECONTENTENTRY_MEMBER_FILE_MODE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ReplaceContentEntryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPLACECONTENTENTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.file_path = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.replacement_type = Some(crate::types::ReplacementTypeEnum::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content = Some(deser.read_blob(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_mode = Some(crate::types::FileModeTypeEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ReplaceContentEntry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_path = builder.file_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ReplaceContentEntry {
     /// Creates a new builder-style object to manufacture [`ReplaceContentEntry`](crate::types::ReplaceContentEntry).
     pub fn builder() -> crate::types::builders::ReplaceContentEntryBuilder {

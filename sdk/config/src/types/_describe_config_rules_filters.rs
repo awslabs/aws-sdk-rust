@@ -19,6 +19,106 @@ impl DescribeConfigRulesFilters {
         self.rule_evaluation_visibility.as_ref()
     }
 }
+static DESCRIBECONFIGRULESFILTERS_MEMBER_EVALUATION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DescribeConfigRulesFilters$EvaluationMode",
+        "com.amazonaws.configservice",
+        "DescribeConfigRulesFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EvaluationMode",
+    0,
+);
+static DESCRIBECONFIGRULESFILTERS_MEMBER_RULE_EVALUATION_VISIBILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DescribeConfigRulesFilters$RuleEvaluationVisibility",
+        "com.amazonaws.configservice",
+        "DescribeConfigRulesFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RuleEvaluationVisibility",
+    1,
+);
+static DESCRIBECONFIGRULESFILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#DescribeConfigRulesFilters",
+        "com.amazonaws.configservice",
+        "DescribeConfigRulesFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECONFIGRULESFILTERS_MEMBER_EVALUATION_MODE,
+        &DESCRIBECONFIGRULESFILTERS_MEMBER_RULE_EVALUATION_VISIBILITY,
+    ],
+);
+impl DescribeConfigRulesFilters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECONFIGRULESFILTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeConfigRulesFilters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.evaluation_mode {
+            ser.write_string(&DESCRIBECONFIGRULESFILTERS_MEMBER_EVALUATION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.rule_evaluation_visibility {
+            ser.write_string(&DESCRIBECONFIGRULESFILTERS_MEMBER_RULE_EVALUATION_VISIBILITY, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DescribeConfigRulesFiltersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECONFIGRULESFILTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_mode = Some(crate::types::EvaluationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rule_evaluation_visibility = Some(crate::types::RuleEvaluationVisibility::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeConfigRulesFilters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl DescribeConfigRulesFilters {
     /// Creates a new builder-style object to manufacture [`DescribeConfigRulesFilters`](crate::types::DescribeConfigRulesFilters).
     pub fn builder() -> crate::types::builders::DescribeConfigRulesFiltersBuilder {

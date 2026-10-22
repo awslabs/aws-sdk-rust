@@ -24,6 +24,131 @@ impl GetFolderInput {
         self.folder_path.as_deref()
     }
 }
+static GETFOLDERINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    0,
+);
+static GETFOLDERINPUT_MEMBER_COMMIT_SPECIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderInput$commitSpecifier",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "commitSpecifier",
+    1,
+);
+static GETFOLDERINPUT_MEMBER_FOLDER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderInput$folderPath",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "folderPath",
+    2,
+);
+static GETFOLDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFolderInput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFolderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETFOLDERINPUT_MEMBER_REPOSITORY_NAME,
+        &GETFOLDERINPUT_MEMBER_COMMIT_SPECIFIER,
+        &GETFOLDERINPUT_MEMBER_FOLDER_PATH,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetFolderInput");
+impl GetFolderInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETFOLDERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetFolderInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&GETFOLDERINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.commit_specifier {
+            ser.write_string(&GETFOLDERINPUT_MEMBER_COMMIT_SPECIFIER, val)?;
+        }
+        if let Some(ref val) = self.folder_path {
+            ser.write_string(&GETFOLDERINPUT_MEMBER_FOLDER_PATH, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_folder::builders::GetFolderInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETFOLDERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commit_specifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.folder_path = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetFolderInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.folder_path = builder.folder_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetFolderInput {
     /// Creates a new builder-style object to manufacture [`GetFolderInput`](crate::operation::get_folder::GetFolderInput).
     pub fn builder() -> crate::operation::get_folder::builders::GetFolderInputBuilder {

@@ -55,6 +55,234 @@ impl ClarifyCheckStepMetadata {
         self.register_new_baseline
     }
 }
+static CLARIFYCHECKSTEPMETADATA_MEMBER_CHECK_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$CheckType",
+        "com.amazonaws.sagemaker",
+        "ClarifyCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CheckType",
+    0,
+);
+static CLARIFYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$BaselineUsedForDriftCheckConstraints",
+            "com.amazonaws.sagemaker",
+            "ClarifyCheckStepMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "BaselineUsedForDriftCheckConstraints",
+        1,
+    );
+static CLARIFYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_CONSTRAINTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$CalculatedBaselineConstraints",
+            "com.amazonaws.sagemaker",
+            "ClarifyCheckStepMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CalculatedBaselineConstraints",
+        2,
+    );
+static CLARIFYCHECKSTEPMETADATA_MEMBER_MODEL_PACKAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$ModelPackageGroupName",
+        "com.amazonaws.sagemaker",
+        "ClarifyCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelPackageGroupName",
+    3,
+);
+static CLARIFYCHECKSTEPMETADATA_MEMBER_VIOLATION_REPORT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$ViolationReport",
+        "com.amazonaws.sagemaker",
+        "ClarifyCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ViolationReport",
+    4,
+);
+static CLARIFYCHECKSTEPMETADATA_MEMBER_CHECK_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$CheckJobArn",
+        "com.amazonaws.sagemaker",
+        "ClarifyCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CheckJobArn",
+    5,
+);
+static CLARIFYCHECKSTEPMETADATA_MEMBER_SKIP_CHECK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$SkipCheck",
+        "com.amazonaws.sagemaker",
+        "ClarifyCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "SkipCheck",
+    6,
+);
+static CLARIFYCHECKSTEPMETADATA_MEMBER_REGISTER_NEW_BASELINE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyCheckStepMetadata$RegisterNewBaseline",
+        "com.amazonaws.sagemaker",
+        "ClarifyCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "RegisterNewBaseline",
+    7,
+);
+static CLARIFYCHECKSTEPMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClarifyCheckStepMetadata",
+        "com.amazonaws.sagemaker",
+        "ClarifyCheckStepMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_CHECK_TYPE,
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_CONSTRAINTS,
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_CONSTRAINTS,
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_MODEL_PACKAGE_GROUP_NAME,
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_VIOLATION_REPORT,
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_CHECK_JOB_ARN,
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_SKIP_CHECK,
+        &CLARIFYCHECKSTEPMETADATA_MEMBER_REGISTER_NEW_BASELINE,
+    ],
+);
+impl ClarifyCheckStepMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CLARIFYCHECKSTEPMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ClarifyCheckStepMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.check_type {
+            ser.write_string(&CLARIFYCHECKSTEPMETADATA_MEMBER_CHECK_TYPE, val)?;
+        }
+        if let Some(ref val) = self.baseline_used_for_drift_check_constraints {
+            ser.write_string(&CLARIFYCHECKSTEPMETADATA_MEMBER_BASELINE_USED_FOR_DRIFT_CHECK_CONSTRAINTS, val)?;
+        }
+        if let Some(ref val) = self.calculated_baseline_constraints {
+            ser.write_string(&CLARIFYCHECKSTEPMETADATA_MEMBER_CALCULATED_BASELINE_CONSTRAINTS, val)?;
+        }
+        if let Some(ref val) = self.model_package_group_name {
+            ser.write_string(&CLARIFYCHECKSTEPMETADATA_MEMBER_MODEL_PACKAGE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.violation_report {
+            ser.write_string(&CLARIFYCHECKSTEPMETADATA_MEMBER_VIOLATION_REPORT, val)?;
+        }
+        if let Some(ref val) = self.check_job_arn {
+            ser.write_string(&CLARIFYCHECKSTEPMETADATA_MEMBER_CHECK_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.skip_check {
+            ser.write_boolean(&CLARIFYCHECKSTEPMETADATA_MEMBER_SKIP_CHECK, *val)?;
+        }
+        if let Some(ref val) = self.register_new_baseline {
+            ser.write_boolean(&CLARIFYCHECKSTEPMETADATA_MEMBER_REGISTER_NEW_BASELINE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ClarifyCheckStepMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CLARIFYCHECKSTEPMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.check_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.baseline_used_for_drift_check_constraints = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.calculated_baseline_constraints = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.violation_report = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.check_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.skip_check = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.register_new_baseline = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ClarifyCheckStepMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ClarifyCheckStepMetadata {
     /// Creates a new builder-style object to manufacture [`ClarifyCheckStepMetadata`](crate::types::ClarifyCheckStepMetadata).
     pub fn builder() -> crate::types::builders::ClarifyCheckStepMetadataBuilder {

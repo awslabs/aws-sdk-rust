@@ -222,6 +222,645 @@ impl StartTranscriptionJobInput {
         self.toxicity_detection.as_deref().unwrap_or_default()
     }
 }
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_TRANSCRIPTION_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$TranscriptionJobName",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TranscriptionJobName",
+    0,
+)
+.with_http_label();
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_SAMPLE_RATE_HERTZ: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$MediaSampleRateHertz",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MediaSampleRateHertz",
+    2,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$MediaFormat",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MediaFormat",
+    3,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$Media",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Media",
+    4,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$OutputBucketName",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputBucketName",
+    5,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$OutputKey",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputKey",
+    6,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$OutputEncryptionKMSKeyId",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputEncryptionKMSKeyId",
+    7,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#KMSEncryptionContextMap$key",
+        "com.amazonaws.transcribe",
+        "KMSEncryptionContextMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#KMSEncryptionContextMap$value",
+        "com.amazonaws.transcribe",
+        "KMSEncryptionContextMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$KMSEncryptionContext",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "KMSEncryptionContext",
+    8,
+)
+.with_map_members(
+    &STARTTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_KEY,
+    &STARTTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT_VALUE,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$Settings",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Settings",
+    9,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_MODEL_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$ModelSettings",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelSettings",
+    10,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_JOB_EXECUTION_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$JobExecutionSettings",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JobExecutionSettings",
+    11,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_CONTENT_REDACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$ContentRedaction",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ContentRedaction",
+    12,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_IDENTIFY_LANGUAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$IdentifyLanguage",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IdentifyLanguage",
+    13,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_IDENTIFY_MULTIPLE_LANGUAGES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$IdentifyMultipleLanguages",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IdentifyMultipleLanguages",
+    14,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_OPTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageOptions$member",
+        "com.amazonaws.transcribe",
+        "LanguageOptions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$LanguageOptions",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "LanguageOptions",
+    15,
+)
+.with_list_member(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_OPTIONS_MEMBER);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_SUBTITLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$Subtitles",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Subtitles",
+    16,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.transcribe#TagList$member", "com.amazonaws.transcribe", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$Tags",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    17,
+)
+.with_list_member(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_TAGS_MEMBER);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_ID_SETTINGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageIdSettingsMap$key",
+        "com.amazonaws.transcribe",
+        "LanguageIdSettingsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_ID_SETTINGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#LanguageIdSettingsMap$value",
+        "com.amazonaws.transcribe",
+        "LanguageIdSettingsMap",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_ID_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$LanguageIdSettings",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "LanguageIdSettings",
+    18,
+)
+.with_map_members(
+    &STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_ID_SETTINGS_KEY,
+    &STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_ID_SETTINGS_VALUE,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_TOXICITY_DETECTION_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#ToxicityDetection$member",
+        "com.amazonaws.transcribe",
+        "ToxicityDetection",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTTRANSCRIPTIONJOBINPUT_MEMBER_TOXICITY_DETECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput$ToxicityDetection",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ToxicityDetection",
+    19,
+)
+.with_list_member(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_TOXICITY_DETECTION_MEMBER);
+static STARTTRANSCRIPTIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#StartTranscriptionJobInput",
+        "com.amazonaws.transcribe.synthetic",
+        "StartTranscriptionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_TRANSCRIPTION_JOB_NAME,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_CODE,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_SAMPLE_RATE_HERTZ,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_FORMAT,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_KEY,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_SETTINGS,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_MODEL_SETTINGS,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_JOB_EXECUTION_SETTINGS,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_CONTENT_REDACTION,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_IDENTIFY_LANGUAGE,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_IDENTIFY_MULTIPLE_LANGUAGES,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_OPTIONS,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_SUBTITLES,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_TAGS,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_ID_SETTINGS,
+        &STARTTRANSCRIPTIONJOBINPUT_MEMBER_TOXICITY_DETECTION,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PUT",
+    "/transcriptionjobs/{TranscriptionJobName}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartTranscriptionJobRequest");
+impl StartTranscriptionJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTTRANSCRIPTIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartTranscriptionJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.transcription_job_name {
+            ser.write_string(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_TRANSCRIPTION_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.media_sample_rate_hertz {
+            ser.write_integer(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_SAMPLE_RATE_HERTZ, *val)?;
+        }
+        if let Some(ref val) = self.media_format {
+            ser.write_string(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.media {
+            ser.write_struct(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_MEDIA, val)?;
+        }
+        if let Some(ref val) = self.output_bucket_name {
+            ser.write_string(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.output_key {
+            ser.write_string(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_KEY, val)?;
+        }
+        if let Some(ref val) = self.output_encryption_kms_key_id {
+            ser.write_string(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_OUTPUT_ENCRYPTION_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_encryption_context {
+            ser.write_map(
+                &STARTTRANSCRIPTIONJOBINPUT_MEMBER_KMS_ENCRYPTION_CONTEXT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.settings {
+            ser.write_struct(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.model_settings {
+            ser.write_struct(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_MODEL_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.job_execution_settings {
+            ser.write_struct(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_JOB_EXECUTION_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.content_redaction {
+            ser.write_struct(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_CONTENT_REDACTION, val)?;
+        }
+        if let Some(ref val) = self.identify_language {
+            ser.write_boolean(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_IDENTIFY_LANGUAGE, *val)?;
+        }
+        if let Some(ref val) = self.identify_multiple_languages {
+            ser.write_boolean(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_IDENTIFY_MULTIPLE_LANGUAGES, *val)?;
+        }
+        if let Some(ref val) = self.language_options {
+            ser.write_list(
+                &STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_OPTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.subtitles {
+            ser.write_struct(&STARTTRANSCRIPTIONJOBINPUT_MEMBER_SUBTITLES, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTTRANSCRIPTIONJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.language_id_settings {
+            ser.write_map(
+                &STARTTRANSCRIPTIONJOBINPUT_MEMBER_LANGUAGE_ID_SETTINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key.as_str())?;
+                        ser.write_struct(crate::types::LanguageIdSettings::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.toxicity_detection {
+            ser.write_list(
+                &STARTTRANSCRIPTIONJOBINPUT_MEMBER_TOXICITY_DETECTION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ToxicityDetectionSettings::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTTRANSCRIPTIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transcription_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media_sample_rate_hertz = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media_format = Some(crate::types::MediaFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.media = Some(crate::types::Media::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_encryption_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_encryption_context = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.settings = Some(crate::types::Settings::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_settings = Some(crate::types::ModelSettings::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_execution_settings = Some(crate::types::JobExecutionSettings::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_redaction = Some(crate::types::ContentRedaction::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identify_language = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identify_multiple_languages = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_options = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LanguageCode::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subtitles = Some(crate::types::Subtitles::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_id_settings = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(
+                                    crate::types::LanguageCode::from(key.as_str()),
+                                    crate::types::LanguageIdSettings::deserialize(deser)?,
+                                );
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.toxicity_detection = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ToxicityDetectionSettings::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartTranscriptionJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.transcription_job_name = builder.transcription_job_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartTranscriptionJobInput {
     /// Creates a new builder-style object to manufacture [`StartTranscriptionJobInput`](crate::operation::start_transcription_job::StartTranscriptionJobInput).
     pub fn builder() -> crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder {

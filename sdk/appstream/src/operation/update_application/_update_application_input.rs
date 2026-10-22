@@ -62,6 +62,284 @@ impl UpdateApplicationInput {
         self.attributes_to_delete.as_deref().unwrap_or_default()
     }
 }
+static UPDATEAPPLICATIONINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$Name",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$DisplayName",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    1,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$Description",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    2,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_ICON_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$IconS3Location",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "IconS3Location",
+    3,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_LAUNCH_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$LaunchPath",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LaunchPath",
+    4,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_WORKING_DIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$WorkingDirectory",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkingDirectory",
+    5,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_LAUNCH_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$LaunchParameters",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LaunchParameters",
+    6,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_APP_BLOCK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$AppBlockArn",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppBlockArn",
+    7,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_ATTRIBUTES_TO_DELETE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#ApplicationAttributes$member",
+        "com.amazonaws.appstream",
+        "ApplicationAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEAPPLICATIONINPUT_MEMBER_ATTRIBUTES_TO_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput$AttributesToDelete",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AttributesToDelete",
+    8,
+)
+.with_list_member(&UPDATEAPPLICATIONINPUT_MEMBER_ATTRIBUTES_TO_DELETE_MEMBER);
+static UPDATEAPPLICATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#UpdateApplicationInput",
+        "com.amazonaws.appstream.synthetic",
+        "UpdateApplicationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEAPPLICATIONINPUT_MEMBER_NAME,
+        &UPDATEAPPLICATIONINPUT_MEMBER_DISPLAY_NAME,
+        &UPDATEAPPLICATIONINPUT_MEMBER_DESCRIPTION,
+        &UPDATEAPPLICATIONINPUT_MEMBER_ICON_S3_LOCATION,
+        &UPDATEAPPLICATIONINPUT_MEMBER_LAUNCH_PATH,
+        &UPDATEAPPLICATIONINPUT_MEMBER_WORKING_DIRECTORY,
+        &UPDATEAPPLICATIONINPUT_MEMBER_LAUNCH_PARAMETERS,
+        &UPDATEAPPLICATIONINPUT_MEMBER_APP_BLOCK_ARN,
+        &UPDATEAPPLICATIONINPUT_MEMBER_ATTRIBUTES_TO_DELETE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateApplicationRequest");
+impl UpdateApplicationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEAPPLICATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateApplicationInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEAPPLICATIONINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&UPDATEAPPLICATIONINPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEAPPLICATIONINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.icon_s3_location {
+            ser.write_struct(&UPDATEAPPLICATIONINPUT_MEMBER_ICON_S3_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.launch_path {
+            ser.write_string(&UPDATEAPPLICATIONINPUT_MEMBER_LAUNCH_PATH, val)?;
+        }
+        if let Some(ref val) = self.working_directory {
+            ser.write_string(&UPDATEAPPLICATIONINPUT_MEMBER_WORKING_DIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.launch_parameters {
+            ser.write_string(&UPDATEAPPLICATIONINPUT_MEMBER_LAUNCH_PARAMETERS, val)?;
+        }
+        if let Some(ref val) = self.app_block_arn {
+            ser.write_string(&UPDATEAPPLICATIONINPUT_MEMBER_APP_BLOCK_ARN, val)?;
+        }
+        if let Some(ref val) = self.attributes_to_delete {
+            ser.write_list(
+                &UPDATEAPPLICATIONINPUT_MEMBER_ATTRIBUTES_TO_DELETE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEAPPLICATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.icon_s3_location = Some(crate::types::S3Location::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.working_directory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.launch_parameters = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_block_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes_to_delete = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ApplicationAttribute::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateApplicationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {

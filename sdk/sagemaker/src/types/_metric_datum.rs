@@ -35,6 +35,132 @@ impl MetricDatum {
         self.set.as_ref()
     }
 }
+static METRICDATUM_MEMBER_METRIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricDatum$MetricName", "com.amazonaws.sagemaker", "MetricDatum"),
+    ::aws_smithy_schema::ShapeType::String,
+    "MetricName",
+    0,
+);
+static METRICDATUM_MEMBER_STANDARD_METRIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricDatum$StandardMetricName",
+        "com.amazonaws.sagemaker",
+        "MetricDatum",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StandardMetricName",
+    1,
+);
+static METRICDATUM_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricDatum$Value", "com.amazonaws.sagemaker", "MetricDatum"),
+    ::aws_smithy_schema::ShapeType::Float,
+    "Value",
+    2,
+);
+static METRICDATUM_MEMBER_SET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricDatum$Set", "com.amazonaws.sagemaker", "MetricDatum"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Set",
+    3,
+);
+static METRICDATUM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#MetricDatum", "com.amazonaws.sagemaker", "MetricDatum"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &METRICDATUM_MEMBER_METRIC_NAME,
+        &METRICDATUM_MEMBER_STANDARD_METRIC_NAME,
+        &METRICDATUM_MEMBER_VALUE,
+        &METRICDATUM_MEMBER_SET,
+    ],
+);
+impl MetricDatum {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &METRICDATUM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MetricDatum {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.metric_name {
+            ser.write_string(&METRICDATUM_MEMBER_METRIC_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.standard_metric_name {
+            ser.write_string(&METRICDATUM_MEMBER_STANDARD_METRIC_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.value {
+            ser.write_float(&METRICDATUM_MEMBER_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.set {
+            ser.write_string(&METRICDATUM_MEMBER_SET, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MetricDatumBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&METRICDATUM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_name = Some(crate::types::AutoMlMetricEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.standard_metric_name = Some(crate::types::AutoMlMetricExtendedEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.value = Some(deser.read_float(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.set = Some(crate::types::MetricSetSource::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MetricDatum {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MetricDatum {
     /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::types::MetricDatum).
     pub fn builder() -> crate::types::builders::MetricDatumBuilder {

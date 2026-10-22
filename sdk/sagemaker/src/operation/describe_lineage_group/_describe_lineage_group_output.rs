@@ -55,6 +55,233 @@ impl DescribeLineageGroupOutput {
         self.last_modified_by.as_ref()
     }
 }
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LINEAGE_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$LineageGroupName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LineageGroupName",
+    0,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LINEAGE_GROUP_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$LineageGroupArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LineageGroupArn",
+    1,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$DisplayName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$Description",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    3,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    4,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    5,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    6,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    7,
+);
+static DESCRIBELINEAGEGROUPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeLineageGroupOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeLineageGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LINEAGE_GROUP_NAME,
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LINEAGE_GROUP_ARN,
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_DISPLAY_NAME,
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_DESCRIPTION,
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LAST_MODIFIED_BY,
+    ],
+)
+.with_original_name("DescribeLineageGroupResponse");
+impl DescribeLineageGroupOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELINEAGEGROUPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLineageGroupOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.lineage_group_name {
+            ser.write_string(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LINEAGE_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.lineage_group_arn {
+            ser.write_string(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LINEAGE_GROUP_ARN, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBELINEAGEGROUPOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_lineage_group::builders::DescribeLineageGroupOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELINEAGEGROUPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lineage_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lineage_group_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLineageGroupOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLineageGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

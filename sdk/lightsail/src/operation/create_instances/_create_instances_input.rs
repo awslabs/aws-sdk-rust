@@ -92,6 +92,348 @@ impl CreateInstancesInput {
         self.ip_address_type.as_ref()
     }
 }
+static CREATEINSTANCESINPUT_MEMBER_INSTANCE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#StringList$member", "com.amazonaws.lightsail", "StringList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEINSTANCESINPUT_MEMBER_INSTANCE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$instanceNames",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "instanceNames",
+    0,
+)
+.with_list_member(&CREATEINSTANCESINPUT_MEMBER_INSTANCE_NAMES_MEMBER);
+static CREATEINSTANCESINPUT_MEMBER_AVAILABILITY_ZONE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$availabilityZone",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "availabilityZone",
+    1,
+);
+static CREATEINSTANCESINPUT_MEMBER_CUSTOM_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$customImageName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "customImageName",
+    2,
+);
+static CREATEINSTANCESINPUT_MEMBER_BLUEPRINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$blueprintId",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "blueprintId",
+    3,
+);
+static CREATEINSTANCESINPUT_MEMBER_BUNDLE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$bundleId",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "bundleId",
+    4,
+);
+static CREATEINSTANCESINPUT_MEMBER_USER_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$userData",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "userData",
+    5,
+);
+static CREATEINSTANCESINPUT_MEMBER_KEY_PAIR_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$keyPairName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "keyPairName",
+    6,
+);
+static CREATEINSTANCESINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEINSTANCESINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$tags",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    7,
+)
+.with_list_member(&CREATEINSTANCESINPUT_MEMBER_TAGS_MEMBER);
+static CREATEINSTANCESINPUT_MEMBER_ADD_ONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#AddOnRequestList$member",
+        "com.amazonaws.lightsail",
+        "AddOnRequestList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEINSTANCESINPUT_MEMBER_ADD_ONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$addOns",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "addOns",
+    8,
+)
+.with_list_member(&CREATEINSTANCESINPUT_MEMBER_ADD_ONS_MEMBER);
+static CREATEINSTANCESINPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput$ipAddressType",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ipAddressType",
+    9,
+);
+static CREATEINSTANCESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateInstancesInput",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateInstancesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEINSTANCESINPUT_MEMBER_INSTANCE_NAMES,
+        &CREATEINSTANCESINPUT_MEMBER_AVAILABILITY_ZONE,
+        &CREATEINSTANCESINPUT_MEMBER_CUSTOM_IMAGE_NAME,
+        &CREATEINSTANCESINPUT_MEMBER_BLUEPRINT_ID,
+        &CREATEINSTANCESINPUT_MEMBER_BUNDLE_ID,
+        &CREATEINSTANCESINPUT_MEMBER_USER_DATA,
+        &CREATEINSTANCESINPUT_MEMBER_KEY_PAIR_NAME,
+        &CREATEINSTANCESINPUT_MEMBER_TAGS,
+        &CREATEINSTANCESINPUT_MEMBER_ADD_ONS,
+        &CREATEINSTANCESINPUT_MEMBER_IP_ADDRESS_TYPE,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/CreateInstances",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateInstancesRequest");
+impl CreateInstancesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEINSTANCESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateInstancesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_names {
+            ser.write_list(
+                &CREATEINSTANCESINPUT_MEMBER_INSTANCE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.availability_zone {
+            ser.write_string(&CREATEINSTANCESINPUT_MEMBER_AVAILABILITY_ZONE, val)?;
+        }
+        if let Some(ref val) = self.custom_image_name {
+            ser.write_string(&CREATEINSTANCESINPUT_MEMBER_CUSTOM_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.blueprint_id {
+            ser.write_string(&CREATEINSTANCESINPUT_MEMBER_BLUEPRINT_ID, val)?;
+        }
+        if let Some(ref val) = self.bundle_id {
+            ser.write_string(&CREATEINSTANCESINPUT_MEMBER_BUNDLE_ID, val)?;
+        }
+        if let Some(ref val) = self.user_data {
+            ser.write_string(&CREATEINSTANCESINPUT_MEMBER_USER_DATA, val)?;
+        }
+        if let Some(ref val) = self.key_pair_name {
+            ser.write_string(&CREATEINSTANCESINPUT_MEMBER_KEY_PAIR_NAME, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEINSTANCESINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.add_ons {
+            ser.write_list(
+                &CREATEINSTANCESINPUT_MEMBER_ADD_ONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AddOnRequest::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ip_address_type {
+            ser.write_string(&CREATEINSTANCESINPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_instances::builders::CreateInstancesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEINSTANCESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.availability_zone = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blueprint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bundle_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.user_data = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.key_pair_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.add_ons = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AddOnRequest::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateInstancesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.instance_names = builder.instance_names.or(Some(Vec::new()));
+        builder.availability_zone = builder.availability_zone.or(Some(String::new()));
+        builder.blueprint_id = builder.blueprint_id.or(Some(String::new()));
+        builder.bundle_id = builder.bundle_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateInstancesInput {
     /// Creates a new builder-style object to manufacture [`CreateInstancesInput`](crate::operation::create_instances::CreateInstancesInput).
     pub fn builder() -> crate::operation::create_instances::builders::CreateInstancesInputBuilder {

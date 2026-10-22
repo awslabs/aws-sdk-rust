@@ -49,6 +49,215 @@ impl DescribeAppImageConfigOutput {
         self.code_editor_app_image_config.as_ref()
     }
 }
+static DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_APP_IMAGE_CONFIG_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput$AppImageConfigArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAppImageConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppImageConfigArn",
+    0,
+);
+static DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_APP_IMAGE_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput$AppImageConfigName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAppImageConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppImageConfigName",
+    1,
+);
+static DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAppImageConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    2,
+);
+static DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAppImageConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    3,
+);
+static DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_KERNEL_GATEWAY_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput$KernelGatewayImageConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeAppImageConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "KernelGatewayImageConfig",
+        4,
+    );
+static DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_JUPYTER_LAB_APP_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput$JupyterLabAppImageConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeAppImageConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "JupyterLabAppImageConfig",
+        5,
+    );
+static DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_CODE_EDITOR_APP_IMAGE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput$CodeEditorAppImageConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeAppImageConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CodeEditorAppImageConfig",
+        6,
+    );
+static DESCRIBEAPPIMAGECONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeAppImageConfigOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeAppImageConfigOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_APP_IMAGE_CONFIG_ARN,
+        &DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_APP_IMAGE_CONFIG_NAME,
+        &DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_KERNEL_GATEWAY_IMAGE_CONFIG,
+        &DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_JUPYTER_LAB_APP_IMAGE_CONFIG,
+        &DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_CODE_EDITOR_APP_IMAGE_CONFIG,
+    ],
+)
+.with_original_name("DescribeAppImageConfigResponse");
+impl DescribeAppImageConfigOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEAPPIMAGECONFIGOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeAppImageConfigOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.app_image_config_arn {
+            ser.write_string(&DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_APP_IMAGE_CONFIG_ARN, val)?;
+        }
+        if let Some(ref val) = self.app_image_config_name {
+            ser.write_string(&DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_APP_IMAGE_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.kernel_gateway_image_config {
+            ser.write_struct(&DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_KERNEL_GATEWAY_IMAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.jupyter_lab_app_image_config {
+            ser.write_struct(&DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_JUPYTER_LAB_APP_IMAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.code_editor_app_image_config {
+            ser.write_struct(&DESCRIBEAPPIMAGECONFIGOUTPUT_MEMBER_CODE_EDITOR_APP_IMAGE_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_app_image_config::builders::DescribeAppImageConfigOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEAPPIMAGECONFIGOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_image_config_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_image_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kernel_gateway_image_config = Some(crate::types::KernelGatewayImageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jupyter_lab_app_image_config = Some(crate::types::JupyterLabAppImageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.code_editor_app_image_config = Some(crate::types::CodeEditorAppImageConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeAppImageConfigOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeAppImageConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

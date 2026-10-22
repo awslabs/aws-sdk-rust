@@ -55,6 +55,196 @@ impl Image {
         self.last_modified_time.as_ref()
     }
 }
+static IMAGE_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$CreationTime", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    0,
+);
+static IMAGE_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$Description", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static IMAGE_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$DisplayName", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static IMAGE_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$FailureReason", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    3,
+);
+static IMAGE_MEMBER_IMAGE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$ImageArn", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageArn",
+    4,
+);
+static IMAGE_MEMBER_IMAGE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$ImageName", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageName",
+    5,
+);
+static IMAGE_MEMBER_IMAGE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$ImageStatus", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ImageStatus",
+    6,
+);
+static IMAGE_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image$LastModifiedTime", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static IMAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Image", "com.amazonaws.sagemaker", "Image"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &IMAGE_MEMBER_CREATION_TIME,
+        &IMAGE_MEMBER_DESCRIPTION,
+        &IMAGE_MEMBER_DISPLAY_NAME,
+        &IMAGE_MEMBER_FAILURE_REASON,
+        &IMAGE_MEMBER_IMAGE_ARN,
+        &IMAGE_MEMBER_IMAGE_NAME,
+        &IMAGE_MEMBER_IMAGE_STATUS,
+        &IMAGE_MEMBER_LAST_MODIFIED_TIME,
+    ],
+);
+impl Image {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &IMAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Image {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&IMAGE_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&IMAGE_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&IMAGE_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&IMAGE_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.image_arn {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_ARN, val)?;
+        }
+        if let Some(ref val) = self.image_name {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_NAME, val)?;
+        }
+        if let Some(ref val) = self.image_status {
+            ser.write_string(&IMAGE_MEMBER_IMAGE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&IMAGE_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ImageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&IMAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_status = Some(crate::types::ImageStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Image {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Image {
     /// Creates a new builder-style object to manufacture [`Image`](crate::types::Image).
     pub fn builder() -> crate::types::builders::ImageBuilder {

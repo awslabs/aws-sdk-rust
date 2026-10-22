@@ -25,6 +25,129 @@ impl ManagedQueryResultsConfigurationUpdates {
         self.remove_encryption_configuration
     }
 }
+static MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ManagedQueryResultsConfigurationUpdates$Enabled",
+        "com.amazonaws.athena",
+        "ManagedQueryResultsConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Enabled",
+    0,
+);
+static MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#ManagedQueryResultsConfigurationUpdates$EncryptionConfiguration",
+            "com.amazonaws.athena",
+            "ManagedQueryResultsConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "EncryptionConfiguration",
+        1,
+    );
+static MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_REMOVE_ENCRYPTION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#ManagedQueryResultsConfigurationUpdates$RemoveEncryptionConfiguration",
+            "com.amazonaws.athena",
+            "ManagedQueryResultsConfigurationUpdates",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "RemoveEncryptionConfiguration",
+        2,
+    );
+static MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#ManagedQueryResultsConfigurationUpdates",
+        "com.amazonaws.athena",
+        "ManagedQueryResultsConfigurationUpdates",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_ENABLED,
+        &MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_ENCRYPTION_CONFIGURATION,
+        &MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_REMOVE_ENCRYPTION_CONFIGURATION,
+    ],
+);
+impl ManagedQueryResultsConfigurationUpdates {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManagedQueryResultsConfigurationUpdates {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.enabled {
+            ser.write_boolean(&MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.encryption_configuration {
+            ser.write_struct(&MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_ENCRYPTION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.remove_encryption_configuration {
+            ser.write_boolean(&MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_MEMBER_REMOVE_ENCRYPTION_CONFIGURATION, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManagedQueryResultsConfigurationUpdatesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANAGEDQUERYRESULTSCONFIGURATIONUPDATES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.encryption_configuration = Some(crate::types::ManagedQueryResultsEncryptionConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.remove_encryption_configuration = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManagedQueryResultsConfigurationUpdates {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ManagedQueryResultsConfigurationUpdates {
     /// Creates a new builder-style object to manufacture [`ManagedQueryResultsConfigurationUpdates`](crate::types::ManagedQueryResultsConfigurationUpdates).
     pub fn builder() -> crate::types::builders::ManagedQueryResultsConfigurationUpdatesBuilder {

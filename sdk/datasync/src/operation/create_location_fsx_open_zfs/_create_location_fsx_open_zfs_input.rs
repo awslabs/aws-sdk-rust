@@ -40,6 +40,215 @@ impl CreateLocationFsxOpenZfsInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATELOCATIONFSXOPENZFSINPUT_MEMBER_FSX_FILESYSTEM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxOpenZfsInput$FsxFilesystemArn",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxOpenZfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FsxFilesystemArn",
+    0,
+);
+static CREATELOCATIONFSXOPENZFSINPUT_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxOpenZfsInput$Protocol",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxOpenZfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Protocol",
+    1,
+);
+static CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.datasync#Ec2SecurityGroupArnList$member",
+            "com.amazonaws.datasync",
+            "Ec2SecurityGroupArnList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SECURITY_GROUP_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxOpenZfsInput$SecurityGroupArns",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxOpenZfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupArns",
+    2,
+)
+.with_list_member(&CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER);
+static CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxOpenZfsInput$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxOpenZfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    3,
+);
+static CREATELOCATIONFSXOPENZFSINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#InputTagList$member", "com.amazonaws.datasync", "InputTagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELOCATIONFSXOPENZFSINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxOpenZfsInput$Tags",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxOpenZfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    4,
+)
+.with_list_member(&CREATELOCATIONFSXOPENZFSINPUT_MEMBER_TAGS_MEMBER);
+static CREATELOCATIONFSXOPENZFSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationFsxOpenZfsInput",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationFsxOpenZfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELOCATIONFSXOPENZFSINPUT_MEMBER_FSX_FILESYSTEM_ARN,
+        &CREATELOCATIONFSXOPENZFSINPUT_MEMBER_PROTOCOL,
+        &CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SECURITY_GROUP_ARNS,
+        &CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SUBDIRECTORY,
+        &CREATELOCATIONFSXOPENZFSINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLocationFsxOpenZfsRequest");
+impl CreateLocationFsxOpenZfsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELOCATIONFSXOPENZFSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLocationFsxOpenZfsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.fsx_filesystem_arn {
+            ser.write_string(&CREATELOCATIONFSXOPENZFSINPUT_MEMBER_FSX_FILESYSTEM_ARN, val)?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_struct(&CREATELOCATIONFSXOPENZFSINPUT_MEMBER_PROTOCOL, val)?;
+        }
+        if let Some(ref val) = self.security_group_arns {
+            ser.write_list(
+                &CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SECURITY_GROUP_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&CREATELOCATIONFSXOPENZFSINPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELOCATIONFSXOPENZFSINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TagListEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELOCATIONFSXOPENZFSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fsx_filesystem_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::FsxProtocol::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TagListEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLocationFsxOpenZfsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.fsx_filesystem_arn = builder.fsx_filesystem_arn.or(Some(String::new()));
+        builder.security_group_arns = builder.security_group_arns.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLocationFsxOpenZfsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsInput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput).
     pub fn builder() -> crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder {

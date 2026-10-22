@@ -86,6 +86,320 @@ impl StartEntitiesDetectionJobInput {
         self.flywheel_arn.as_deref()
     }
 }
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$InputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InputDataConfig",
+    0,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$OutputDataConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputDataConfig",
+    1,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$DataAccessRoleArn",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataAccessRoleArn",
+    2,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$JobName",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobName",
+    3,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_ENTITY_RECOGNIZER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$EntityRecognizerArn",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EntityRecognizerArn",
+    4,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$LanguageCode",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    5,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$ClientRequestToken",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientRequestToken",
+    6,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_VOLUME_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$VolumeKmsKeyId",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeKmsKeyId",
+    7,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$VpcConfig",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    8,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#TagList$member", "com.amazonaws.comprehend", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$Tags",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_TAGS_MEMBER);
+static STARTENTITIESDETECTIONJOBINPUT_MEMBER_FLYWHEEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput$FlywheelArn",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelArn",
+    10,
+);
+static STARTENTITIESDETECTIONJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#StartEntitiesDetectionJobInput",
+        "com.amazonaws.comprehend.synthetic",
+        "StartEntitiesDetectionJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_JOB_NAME,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_ENTITY_RECOGNIZER_ARN,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_VOLUME_KMS_KEY_ID,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_VPC_CONFIG,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_TAGS,
+        &STARTENTITIESDETECTIONJOBINPUT_MEMBER_FLYWHEEL_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartEntitiesDetectionJobRequest");
+impl StartEntitiesDetectionJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTENTITIESDETECTIONJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartEntitiesDetectionJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.input_data_config {
+            ser.write_struct(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_INPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.output_data_config {
+            ser.write_struct(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_OUTPUT_DATA_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.data_access_role_arn {
+            ser.write_string(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_DATA_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.job_name {
+            ser.write_string(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.entity_recognizer_arn {
+            ser.write_string(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_ENTITY_RECOGNIZER_ARN, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.client_request_token {
+            ser.write_string(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_CLIENT_REQUEST_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.volume_kms_key_id {
+            ser.write_string(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_VOLUME_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTENTITIESDETECTIONJOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.flywheel_arn {
+            ser.write_string(&STARTENTITIESDETECTIONJOBINPUT_MEMBER_FLYWHEEL_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTENTITIESDETECTIONJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.input_data_config = Some(crate::types::InputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.output_data_config = Some(crate::types::OutputDataConfig::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_recognizer_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_request_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartEntitiesDetectionJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.data_access_role_arn = builder.data_access_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartEntitiesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobInput`](crate::operation::start_entities_detection_job::StartEntitiesDetectionJobInput).
     pub fn builder() -> crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder {

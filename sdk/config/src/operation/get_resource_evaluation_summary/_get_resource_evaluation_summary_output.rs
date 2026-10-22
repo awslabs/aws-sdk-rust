@@ -49,6 +49,214 @@ impl GetResourceEvaluationSummaryOutput {
         self.resource_details.as_ref()
     }
 }
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_RESOURCE_EVALUATION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput$ResourceEvaluationId",
+            "com.amazonaws.configservice.synthetic",
+            "GetResourceEvaluationSummaryOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ResourceEvaluationId",
+        0,
+    );
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput$EvaluationMode",
+        "com.amazonaws.configservice.synthetic",
+        "GetResourceEvaluationSummaryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EvaluationMode",
+    1,
+);
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput$EvaluationStatus",
+        "com.amazonaws.configservice.synthetic",
+        "GetResourceEvaluationSummaryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EvaluationStatus",
+    2,
+);
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_START_TIMESTAMP: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput$EvaluationStartTimestamp",
+            "com.amazonaws.configservice.synthetic",
+            "GetResourceEvaluationSummaryOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "EvaluationStartTimestamp",
+        3,
+    );
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_COMPLIANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput$Compliance",
+        "com.amazonaws.configservice.synthetic",
+        "GetResourceEvaluationSummaryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Compliance",
+    4,
+);
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_CONTEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput$EvaluationContext",
+        "com.amazonaws.configservice.synthetic",
+        "GetResourceEvaluationSummaryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EvaluationContext",
+    5,
+);
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_RESOURCE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput$ResourceDetails",
+        "com.amazonaws.configservice.synthetic",
+        "GetResourceEvaluationSummaryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourceDetails",
+    6,
+);
+static GETRESOURCEEVALUATIONSUMMARYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#GetResourceEvaluationSummaryOutput",
+        "com.amazonaws.configservice.synthetic",
+        "GetResourceEvaluationSummaryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_RESOURCE_EVALUATION_ID,
+        &GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_MODE,
+        &GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_STATUS,
+        &GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_START_TIMESTAMP,
+        &GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_COMPLIANCE,
+        &GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_CONTEXT,
+        &GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_RESOURCE_DETAILS,
+    ],
+)
+.with_original_name("GetResourceEvaluationSummaryResponse");
+impl GetResourceEvaluationSummaryOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRESOURCEEVALUATIONSUMMARYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetResourceEvaluationSummaryOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_evaluation_id {
+            ser.write_string(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_RESOURCE_EVALUATION_ID, val)?;
+        }
+        if let Some(ref val) = self.evaluation_mode {
+            ser.write_string(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.evaluation_status {
+            ser.write_struct(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_STATUS, val)?;
+        }
+        if let Some(ref val) = self.evaluation_start_timestamp {
+            ser.write_timestamp(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_START_TIMESTAMP, val)?;
+        }
+        if let Some(ref val) = self.compliance {
+            ser.write_string(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_COMPLIANCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.evaluation_context {
+            ser.write_struct(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_EVALUATION_CONTEXT, val)?;
+        }
+        if let Some(ref val) = self.resource_details {
+            ser.write_struct(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_MEMBER_RESOURCE_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_resource_evaluation_summary::builders::GetResourceEvaluationSummaryOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRESOURCEEVALUATIONSUMMARYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_evaluation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_mode = Some(crate::types::EvaluationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_status = Some(crate::types::EvaluationStatus::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_start_timestamp = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance = Some(crate::types::ComplianceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_context = Some(crate::types::EvaluationContext::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_details = Some(crate::types::ResourceDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetResourceEvaluationSummaryOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetResourceEvaluationSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

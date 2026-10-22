@@ -78,6 +78,325 @@ impl ListInferenceRecommendationsJobsInput {
         self.model_package_version_arn_equals.as_deref()
     }
 }
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$CreationTimeAfter",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListInferenceRecommendationsJobsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "CreationTimeAfter",
+        0,
+    );
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$CreationTimeBefore",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListInferenceRecommendationsJobsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "CreationTimeBefore",
+        1,
+    );
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$LastModifiedTimeAfter",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListInferenceRecommendationsJobsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastModifiedTimeAfter",
+        2,
+    );
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$LastModifiedTimeBefore",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListInferenceRecommendationsJobsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastModifiedTimeBefore",
+        3,
+    );
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$NameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NameContains",
+    4,
+);
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_STATUS_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$StatusEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusEquals",
+    5,
+);
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    6,
+);
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    7,
+);
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    8,
+);
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    9,
+);
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MODEL_NAME_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$ModelNameEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelNameEquals",
+    10,
+);
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MODEL_PACKAGE_VERSION_ARN_EQUALS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput$ModelPackageVersionArnEquals",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListInferenceRecommendationsJobsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ModelPackageVersionArnEquals",
+        11,
+    );
+static LISTINFERENCERECOMMENDATIONSJOBSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListInferenceRecommendationsJobsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListInferenceRecommendationsJobsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_NAME_CONTAINS,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_STATUS_EQUALS,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_SORT_BY,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_SORT_ORDER,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MAX_RESULTS,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MODEL_NAME_EQUALS,
+        &LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MODEL_PACKAGE_VERSION_ARN_EQUALS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListInferenceRecommendationsJobsRequest");
+impl ListInferenceRecommendationsJobsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTINFERENCERECOMMENDATIONSJOBSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListInferenceRecommendationsJobsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_after {
+            ser.write_timestamp(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_LAST_MODIFIED_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time_before {
+            ser.write_timestamp(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_LAST_MODIFIED_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.name_contains {
+            ser.write_string(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.status_equals {
+            ser.write_string(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_STATUS_EQUALS, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.model_name_equals {
+            ser.write_string(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MODEL_NAME_EQUALS, val)?;
+        }
+        if let Some(ref val) = self.model_package_version_arn_equals {
+            ser.write_string(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_MEMBER_MODEL_PACKAGE_VERSION_ARN_EQUALS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTINFERENCERECOMMENDATIONSJOBSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status_equals = Some(crate::types::RecommendationJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::ListInferenceRecommendationsJobsSortBy::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::SortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_name_equals = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_package_version_arn_equals = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListInferenceRecommendationsJobsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListInferenceRecommendationsJobsInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobsInput`](crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsInput).
     pub fn builder() -> crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsInputBuilder {

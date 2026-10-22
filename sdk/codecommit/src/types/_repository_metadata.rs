@@ -73,6 +73,295 @@ impl RepositoryMetadata {
         self.kms_key_id.as_deref()
     }
 }
+static REPOSITORYMETADATA_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$accountId",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "accountId",
+    0,
+);
+static REPOSITORYMETADATA_MEMBER_REPOSITORY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$repositoryId",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryId",
+    1,
+);
+static REPOSITORYMETADATA_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$repositoryName",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    2,
+);
+static REPOSITORYMETADATA_MEMBER_REPOSITORY_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$repositoryDescription",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryDescription",
+    3,
+);
+static REPOSITORYMETADATA_MEMBER_DEFAULT_BRANCH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$defaultBranch",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "defaultBranch",
+    4,
+);
+static REPOSITORYMETADATA_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$lastModifiedDate",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastModifiedDate",
+    5,
+);
+static REPOSITORYMETADATA_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$creationDate",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "creationDate",
+    6,
+);
+static REPOSITORYMETADATA_MEMBER_CLONE_URL_HTTP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$cloneUrlHttp",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cloneUrlHttp",
+    7,
+);
+static REPOSITORYMETADATA_MEMBER_CLONE_URL_SSH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$cloneUrlSsh",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "cloneUrlSsh",
+    8,
+);
+static REPOSITORYMETADATA_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$Arn",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Arn",
+    9,
+);
+static REPOSITORYMETADATA_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata$kmsKeyId",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "kmsKeyId",
+    10,
+);
+static REPOSITORYMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#RepositoryMetadata",
+        "com.amazonaws.codecommit",
+        "RepositoryMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPOSITORYMETADATA_MEMBER_ACCOUNT_ID,
+        &REPOSITORYMETADATA_MEMBER_REPOSITORY_ID,
+        &REPOSITORYMETADATA_MEMBER_REPOSITORY_NAME,
+        &REPOSITORYMETADATA_MEMBER_REPOSITORY_DESCRIPTION,
+        &REPOSITORYMETADATA_MEMBER_DEFAULT_BRANCH,
+        &REPOSITORYMETADATA_MEMBER_LAST_MODIFIED_DATE,
+        &REPOSITORYMETADATA_MEMBER_CREATION_DATE,
+        &REPOSITORYMETADATA_MEMBER_CLONE_URL_HTTP,
+        &REPOSITORYMETADATA_MEMBER_CLONE_URL_SSH,
+        &REPOSITORYMETADATA_MEMBER_ARN,
+        &REPOSITORYMETADATA_MEMBER_KMS_KEY_ID,
+    ],
+);
+impl RepositoryMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPOSITORYMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RepositoryMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.account_id {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_id {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_REPOSITORY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.repository_description {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_REPOSITORY_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.default_branch {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_DEFAULT_BRANCH, val)?;
+        }
+        if let Some(ref val) = self.last_modified_date {
+            ser.write_timestamp(&REPOSITORYMETADATA_MEMBER_LAST_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.creation_date {
+            ser.write_timestamp(&REPOSITORYMETADATA_MEMBER_CREATION_DATE, val)?;
+        }
+        if let Some(ref val) = self.clone_url_http {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_CLONE_URL_HTTP, val)?;
+        }
+        if let Some(ref val) = self.clone_url_ssh {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_CLONE_URL_SSH, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&REPOSITORYMETADATA_MEMBER_KMS_KEY_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RepositoryMetadataBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPOSITORYMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_branch = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.clone_url_http = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.clone_url_ssh = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RepositoryMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RepositoryMetadata {
     /// Creates a new builder-style object to manufacture [`RepositoryMetadata`](crate::types::RepositoryMetadata).
     pub fn builder() -> crate::types::builders::RepositoryMetadataBuilder {

@@ -170,6 +170,251 @@ impl GetDistributionMetricDataInput {
         self.statistics.as_deref().unwrap_or_default()
     }
 }
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_DISTRIBUTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput$distributionName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "distributionName",
+    0,
+);
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_METRIC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput$metricName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "metricName",
+    1,
+);
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput$startTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    2,
+);
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput$endTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    3,
+);
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_PERIOD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput$period",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "period",
+    4,
+);
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput$unit",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "unit",
+    5,
+);
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_STATISTICS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#MetricStatisticList$member",
+        "com.amazonaws.lightsail",
+        "MetricStatisticList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_STATISTICS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput$statistics",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "statistics",
+    6,
+)
+.with_list_member(&GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_STATISTICS_MEMBER);
+static GETDISTRIBUTIONMETRICDATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetDistributionMetricDataInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetDistributionMetricDataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_DISTRIBUTION_NAME,
+        &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_METRIC_NAME,
+        &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_START_TIME,
+        &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_END_TIME,
+        &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_PERIOD,
+        &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_UNIT,
+        &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_STATISTICS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/GetDistributionMetricData",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetDistributionMetricDataRequest");
+impl GetDistributionMetricDataInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETDISTRIBUTIONMETRICDATAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetDistributionMetricDataInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.distribution_name {
+            ser.write_string(&GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_DISTRIBUTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.metric_name {
+            ser.write_string(&GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_METRIC_NAME, val.as_str())?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.period {
+            ser.write_integer(&GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_PERIOD, *val)?;
+        }
+        if let Some(ref val) = self.unit {
+            ser.write_string(&GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_UNIT, val.as_str())?;
+        }
+        if let Some(ref val) = self.statistics {
+            ser.write_list(
+                &GETDISTRIBUTIONMETRICDATAINPUT_MEMBER_STATISTICS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETDISTRIBUTIONMETRICDATAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.distribution_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_name = Some(crate::types::DistributionMetricName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.period = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.unit = Some(crate::types::MetricUnit::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.statistics = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricStatistic::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetDistributionMetricDataInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.distribution_name = builder.distribution_name.or(Some(String::new()));
+        builder.start_time = builder.start_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.end_time = builder.end_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.period = builder.period.or(Some(0i32));
+        builder.statistics = builder.statistics.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetDistributionMetricDataInput {
     /// Creates a new builder-style object to manufacture [`GetDistributionMetricDataInput`](crate::operation::get_distribution_metric_data::GetDistributionMetricDataInput).
     pub fn builder() -> crate::operation::get_distribution_metric_data::builders::GetDistributionMetricDataInputBuilder {

@@ -32,6 +32,177 @@ impl OpenTunnelInput {
         self.timeout_config.as_ref()
     }
 }
+static OPENTUNNELINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#OpenTunnelInput$description",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "OpenTunnelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "description",
+    0,
+);
+static OPENTUNNELINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling#TagList$member",
+        "com.amazonaws.iotsecuretunneling",
+        "TagList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static OPENTUNNELINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#OpenTunnelInput$tags",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "OpenTunnelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    1,
+)
+.with_list_member(&OPENTUNNELINPUT_MEMBER_TAGS_MEMBER);
+static OPENTUNNELINPUT_MEMBER_DESTINATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#OpenTunnelInput$destinationConfig",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "OpenTunnelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "destinationConfig",
+    2,
+);
+static OPENTUNNELINPUT_MEMBER_TIMEOUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#OpenTunnelInput$timeoutConfig",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "OpenTunnelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "timeoutConfig",
+    3,
+);
+static OPENTUNNELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.iotsecuretunneling.synthetic#OpenTunnelInput",
+        "com.amazonaws.iotsecuretunneling.synthetic",
+        "OpenTunnelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPENTUNNELINPUT_MEMBER_DESCRIPTION,
+        &OPENTUNNELINPUT_MEMBER_TAGS,
+        &OPENTUNNELINPUT_MEMBER_DESTINATION_CONFIG,
+        &OPENTUNNELINPUT_MEMBER_TIMEOUT_CONFIG,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/tunnels", None))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("OpenTunnelRequest");
+impl OpenTunnelInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPENTUNNELINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpenTunnelInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&OPENTUNNELINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &OPENTUNNELINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.destination_config {
+            ser.write_struct(&OPENTUNNELINPUT_MEMBER_DESTINATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.timeout_config {
+            ser.write_struct(&OPENTUNNELINPUT_MEMBER_TIMEOUT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::open_tunnel::builders::OpenTunnelInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPENTUNNELINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.destination_config = Some(crate::types::DestinationConfig::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.timeout_config = Some(crate::types::TimeoutConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OpenTunnelInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl OpenTunnelInput {
     /// Creates a new builder-style object to manufacture [`OpenTunnelInput`](crate::operation::open_tunnel::OpenTunnelInput).
     pub fn builder() -> crate::operation::open_tunnel::builders::OpenTunnelInputBuilder {

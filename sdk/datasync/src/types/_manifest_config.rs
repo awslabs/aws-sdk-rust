@@ -31,6 +31,111 @@ impl ManifestConfig {
         self.source.as_ref()
     }
 }
+static MANIFESTCONFIG_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#ManifestConfig$Action", "com.amazonaws.datasync", "ManifestConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Action",
+    0,
+);
+static MANIFESTCONFIG_MEMBER_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#ManifestConfig$Format", "com.amazonaws.datasync", "ManifestConfig"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Format",
+    1,
+);
+static MANIFESTCONFIG_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#ManifestConfig$Source", "com.amazonaws.datasync", "ManifestConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    2,
+);
+static MANIFESTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#ManifestConfig", "com.amazonaws.datasync", "ManifestConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MANIFESTCONFIG_MEMBER_ACTION,
+        &MANIFESTCONFIG_MEMBER_FORMAT,
+        &MANIFESTCONFIG_MEMBER_SOURCE,
+    ],
+);
+impl ManifestConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MANIFESTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ManifestConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action {
+            ser.write_string(&MANIFESTCONFIG_MEMBER_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.format {
+            ser.write_string(&MANIFESTCONFIG_MEMBER_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&MANIFESTCONFIG_MEMBER_SOURCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ManifestConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MANIFESTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action = Some(crate::types::ManifestAction::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.format = Some(crate::types::ManifestFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::SourceManifestConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ManifestConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ManifestConfig {
     /// Creates a new builder-style object to manufacture [`ManifestConfig`](crate::types::ManifestConfig).
     pub fn builder() -> crate::types::builders::ManifestConfigBuilder {

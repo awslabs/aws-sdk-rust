@@ -93,6 +93,334 @@ impl CachediScsiVolume {
         self.target_name.as_deref()
     }
 }
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeARN",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeARN",
+    0,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeId",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeId",
+    1,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeType",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeType",
+    2,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeStatus",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeStatus",
+    3,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_ATTACHMENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeAttachmentStatus",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeAttachmentStatus",
+    4,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeSizeInBytes",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeSizeInBytes",
+    5,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_PROGRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeProgress",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "VolumeProgress",
+    6,
+);
+static CACHEDISCSIVOLUME_MEMBER_SOURCE_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$SourceSnapshotId",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceSnapshotId",
+    7,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUMEI_SCSI_ATTRIBUTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeiSCSIAttributes",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VolumeiSCSIAttributes",
+    8,
+);
+static CACHEDISCSIVOLUME_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$CreatedDate",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    9,
+);
+static CACHEDISCSIVOLUME_MEMBER_VOLUME_USED_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$VolumeUsedInBytes",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "VolumeUsedInBytes",
+    10,
+);
+static CACHEDISCSIVOLUME_MEMBER_KMS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$KMSKey",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KMSKey",
+    11,
+);
+static CACHEDISCSIVOLUME_MEMBER_TARGET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume$TargetName",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetName",
+    12,
+);
+static CACHEDISCSIVOLUME_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CachediSCSIVolume",
+        "com.amazonaws.storagegateway",
+        "CachediSCSIVolume",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_ARN,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_ID,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_TYPE,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_STATUS,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_ATTACHMENT_STATUS,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_SIZE_IN_BYTES,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_PROGRESS,
+        &CACHEDISCSIVOLUME_MEMBER_SOURCE_SNAPSHOT_ID,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUMEI_SCSI_ATTRIBUTES,
+        &CACHEDISCSIVOLUME_MEMBER_CREATED_DATE,
+        &CACHEDISCSIVOLUME_MEMBER_VOLUME_USED_IN_BYTES,
+        &CACHEDISCSIVOLUME_MEMBER_KMS_KEY,
+        &CACHEDISCSIVOLUME_MEMBER_TARGET_NAME,
+    ],
+);
+impl CachediScsiVolume {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CACHEDISCSIVOLUME_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CachediScsiVolume {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_arn {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_VOLUME_ARN, val)?;
+        }
+        if let Some(ref val) = self.volume_id {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_VOLUME_ID, val)?;
+        }
+        if let Some(ref val) = self.volume_type {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_VOLUME_TYPE, val)?;
+        }
+        if let Some(ref val) = self.volume_status {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_VOLUME_STATUS, val)?;
+        }
+        if let Some(ref val) = self.volume_attachment_status {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_VOLUME_ATTACHMENT_STATUS, val)?;
+        }
+        {
+            let val = &self.volume_size_in_bytes;
+            ser.write_long(&CACHEDISCSIVOLUME_MEMBER_VOLUME_SIZE_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.volume_progress {
+            ser.write_double(&CACHEDISCSIVOLUME_MEMBER_VOLUME_PROGRESS, *val)?;
+        }
+        if let Some(ref val) = self.source_snapshot_id {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_SOURCE_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.volumei_scsi_attributes {
+            ser.write_struct(&CACHEDISCSIVOLUME_MEMBER_VOLUMEI_SCSI_ATTRIBUTES, val)?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&CACHEDISCSIVOLUME_MEMBER_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.volume_used_in_bytes {
+            ser.write_long(&CACHEDISCSIVOLUME_MEMBER_VOLUME_USED_IN_BYTES, *val)?;
+        }
+        if let Some(ref val) = self.kms_key {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_KMS_KEY, val)?;
+        }
+        if let Some(ref val) = self.target_name {
+            ser.write_string(&CACHEDISCSIVOLUME_MEMBER_TARGET_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CachediScsiVolumeBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CACHEDISCSIVOLUME_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_attachment_status = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    self.volume_size_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_progress = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volumei_scsi_attributes = Some(crate::types::VolumeiScsiAttributes::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_used_in_bytes = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CachediScsiVolume {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CachediScsiVolume {
     /// Creates a new builder-style object to manufacture [`CachediScsiVolume`](crate::types::CachediScsiVolume).
     pub fn builder() -> crate::types::builders::CachediScsiVolumeBuilder {

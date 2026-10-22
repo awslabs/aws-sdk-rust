@@ -16,9 +16,9 @@ pub struct OperationUpdate {
     pub sub_type: ::std::option::Option<::std::string::String>,
     /// <p>The action to take on the operation.</p>
     pub action: crate::types::OperationAction,
-    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType) and <code>CHAINED_INVOKE</code> operations, and 256 KB for <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
+    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), and 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType), <code>CHAINED_INVOKE</code>, <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
     pub payload: ::std::option::Option<::std::string::String>,
-    /// <p>The error information for failed operations.</p>
+    /// <p>The error information for failed operations. The combined size of all error fields is limited to 1 MB.</p>
     pub error: ::std::option::Option<crate::types::ErrorObject>,
     /// <p>Options for context operations.</p>
     pub context_options: ::std::option::Option<crate::types::ContextOptions>,
@@ -57,11 +57,11 @@ impl OperationUpdate {
     pub fn action(&self) -> &crate::types::OperationAction {
         &self.action
     }
-    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType) and <code>CHAINED_INVOKE</code> operations, and 256 KB for <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
+    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), and 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType), <code>CHAINED_INVOKE</code>, <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
     pub fn payload(&self) -> ::std::option::Option<&str> {
         self.payload.as_deref()
     }
-    /// <p>The error information for failed operations.</p>
+    /// <p>The error information for failed operations. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorObject> {
         self.error.as_ref()
     }
@@ -218,31 +218,31 @@ impl OperationUpdateBuilder {
     pub fn get_action(&self) -> &::std::option::Option<crate::types::OperationAction> {
         &self.action
     }
-    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType) and <code>CHAINED_INVOKE</code> operations, and 256 KB for <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
+    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), and 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType), <code>CHAINED_INVOKE</code>, <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
     pub fn payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payload = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType) and <code>CHAINED_INVOKE</code> operations, and 256 KB for <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
+    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), and 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType), <code>CHAINED_INVOKE</code>, <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payload = input;
         self
     }
-    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType) and <code>CHAINED_INVOKE</code> operations, and 256 KB for <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
+    /// <p>The payload for successful operations. The maximum payload size is 6 MB for synchronous <code>EXECUTION</code> operations (RequestResponse invocationType), and 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType), <code>CHAINED_INVOKE</code>, <code>CONTEXT</code>, <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::string::String> {
         &self.payload
     }
-    /// <p>The error information for failed operations.</p>
+    /// <p>The error information for failed operations. The combined size of all error fields is limited to 1 MB.</p>
     pub fn error(mut self, input: crate::types::ErrorObject) -> Self {
         self.error = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The error information for failed operations.</p>
+    /// <p>The error information for failed operations. The combined size of all error fields is limited to 1 MB.</p>
     pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorObject>) -> Self {
         self.error = input;
         self
     }
-    /// <p>The error information for failed operations.</p>
+    /// <p>The error information for failed operations. The combined size of all error fields is limited to 1 MB.</p>
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorObject> {
         &self.error
     }

@@ -599,6 +599,12 @@ pub use crate::types::_quick_connect_summary::QuickConnectSummaryBuilder;
 
 pub use crate::types::_queue_summary::QueueSummaryBuilder;
 
+pub use crate::types::_replication_finding::ReplicationFindingBuilder;
+
+pub use crate::types::_approximate_drifted_resource_count::ApproximateDriftedResourceCountBuilder;
+
+pub use crate::types::_resource_replication_status::ResourceReplicationStatusBuilder;
+
 pub use crate::types::_routing_profile_manual_assignment_queue_config_summary::RoutingProfileManualAssignmentQueueConfigSummaryBuilder;
 
 pub use crate::types::_routing_profile_queue_config_summary::RoutingProfileQueueConfigSummaryBuilder;

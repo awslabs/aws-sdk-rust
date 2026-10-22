@@ -73,6 +73,301 @@ impl DescribeModelBiasJobDefinitionOutput {
         self.stopping_condition.as_ref()
     }
 }
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_DEFINITION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$JobDefinitionArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelBiasJobDefinitionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "JobDefinitionArn",
+    0,
+);
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$JobDefinitionName",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelBiasJobDefinitionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "JobDefinitionName",
+        1,
+    );
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelBiasJobDefinitionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    2,
+);
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_BASELINE_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$ModelBiasBaselineConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelBiasJobDefinitionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelBiasBaselineConfig",
+        3,
+    );
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_APP_SPECIFICATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$ModelBiasAppSpecification",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelBiasJobDefinitionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelBiasAppSpecification",
+        4,
+    );
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_JOB_INPUT: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$ModelBiasJobInput",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelBiasJobDefinitionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelBiasJobInput",
+        5,
+    );
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_JOB_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$ModelBiasJobOutputConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeModelBiasJobDefinitionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "ModelBiasJobOutputConfig",
+        6,
+    );
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_RESOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$JobResources",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelBiasJobDefinitionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JobResources",
+    7,
+);
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_NETWORK_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$NetworkConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelBiasJobDefinitionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NetworkConfig",
+    8,
+);
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelBiasJobDefinitionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    9,
+);
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_STOPPING_CONDITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput$StoppingCondition",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelBiasJobDefinitionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "StoppingCondition",
+    10,
+);
+static DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeModelBiasJobDefinitionOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeModelBiasJobDefinitionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_DEFINITION_ARN,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_DEFINITION_NAME,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_BASELINE_CONFIG,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_APP_SPECIFICATION,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_JOB_INPUT,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_JOB_OUTPUT_CONFIG,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_RESOURCES,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_NETWORK_CONFIG,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_ROLE_ARN,
+        &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_STOPPING_CONDITION,
+    ],
+)
+.with_original_name("DescribeModelBiasJobDefinitionResponse");
+impl DescribeModelBiasJobDefinitionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeModelBiasJobDefinitionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.job_definition_arn {
+            ser.write_string(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_DEFINITION_ARN, val)?;
+        }
+        if let Some(ref val) = self.job_definition_name {
+            ser.write_string(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_DEFINITION_NAME, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.model_bias_baseline_config {
+            ser.write_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_BASELINE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.model_bias_app_specification {
+            ser.write_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_APP_SPECIFICATION, val)?;
+        }
+        if let Some(ref val) = self.model_bias_job_input {
+            ser.write_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_JOB_INPUT, val)?;
+        }
+        if let Some(ref val) = self.model_bias_job_output_config {
+            ser.write_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_MODEL_BIAS_JOB_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.job_resources {
+            ser.write_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_JOB_RESOURCES, val)?;
+        }
+        if let Some(ref val) = self.network_config {
+            ser.write_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_NETWORK_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.stopping_condition {
+            ser.write_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_MEMBER_STOPPING_CONDITION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_model_bias_job_definition::builders::DescribeModelBiasJobDefinitionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEMODELBIASJOBDEFINITIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_definition_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_bias_baseline_config = Some(crate::types::ModelBiasBaselineConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_bias_app_specification = Some(crate::types::ModelBiasAppSpecification::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_bias_job_input = Some(crate::types::ModelBiasJobInput::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_bias_job_output_config = Some(crate::types::MonitoringOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.job_resources = Some(crate::types::MonitoringResources::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.network_config = Some(crate::types::MonitoringNetworkConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stopping_condition = Some(crate::types::MonitoringStoppingCondition::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeModelBiasJobDefinitionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeModelBiasJobDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -33,6 +33,108 @@ impl StartCalculationExecutionOutput {
         self.state.as_ref()
     }
 }
+static STARTCALCULATIONEXECUTIONOUTPUT_MEMBER_CALCULATION_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena.synthetic#StartCalculationExecutionOutput$CalculationExecutionId",
+            "com.amazonaws.athena.synthetic",
+            "StartCalculationExecutionOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CalculationExecutionId",
+        0,
+    );
+static STARTCALCULATIONEXECUTIONOUTPUT_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartCalculationExecutionOutput$State",
+        "com.amazonaws.athena.synthetic",
+        "StartCalculationExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    1,
+);
+static STARTCALCULATIONEXECUTIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#StartCalculationExecutionOutput",
+        "com.amazonaws.athena.synthetic",
+        "StartCalculationExecutionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTCALCULATIONEXECUTIONOUTPUT_MEMBER_CALCULATION_EXECUTION_ID,
+        &STARTCALCULATIONEXECUTIONOUTPUT_MEMBER_STATE,
+    ],
+)
+.with_original_name("StartCalculationExecutionResponse");
+impl StartCalculationExecutionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTCALCULATIONEXECUTIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartCalculationExecutionOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.calculation_execution_id {
+            ser.write_string(&STARTCALCULATIONEXECUTIONOUTPUT_MEMBER_CALCULATION_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&STARTCALCULATIONEXECUTIONOUTPUT_MEMBER_STATE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_calculation_execution::builders::StartCalculationExecutionOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTCALCULATIONEXECUTIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.calculation_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::CalculationExecutionState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartCalculationExecutionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for StartCalculationExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

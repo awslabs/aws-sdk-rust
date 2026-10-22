@@ -167,6 +167,587 @@ impl DescribeDomainOutput {
         self.default_space_settings.as_ref()
     }
 }
+static DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$DomainArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainArn",
+    0,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$DomainId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainId",
+    1,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$DomainName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DomainName",
+    2,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$HomeEfsFileSystemId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeEfsFileSystemId",
+    3,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_SINGLE_SIGN_ON_MANAGED_APPLICATION_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$SingleSignOnManagedApplicationInstanceId",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeDomainOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SingleSignOnManagedApplicationInstanceId",
+        4,
+    );
+static DESCRIBEDOMAINOUTPUT_MEMBER_SINGLE_SIGN_ON_APPLICATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$SingleSignOnApplicationArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SingleSignOnApplicationArn",
+    5,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$Status",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    7,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$LastModifiedTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$FailureReason",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    9,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_SECURITY_GROUP_ID_FOR_DOMAIN_BOUNDARY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$SecurityGroupIdForDomainBoundary",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeDomainOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SecurityGroupIdForDomainBoundary",
+        10,
+    );
+static DESCRIBEDOMAINOUTPUT_MEMBER_AUTH_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$AuthMode",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthMode",
+    11,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_DEFAULT_USER_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$DefaultUserSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultUserSettings",
+    12,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$DomainSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DomainSettings",
+    13,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_APP_NETWORK_ACCESS_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$AppNetworkAccessType",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppNetworkAccessType",
+    14,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$HomeEfsFileSystemKmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeEfsFileSystemKmsKeyId",
+    15,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_SUBNET_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#Subnets$member", "com.amazonaws.sagemaker", "Subnets"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_SUBNET_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$SubnetIds",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SubnetIds",
+    16,
+)
+.with_list_member(&DESCRIBEDOMAINOUTPUT_MEMBER_SUBNET_IDS_MEMBER);
+static DESCRIBEDOMAINOUTPUT_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$Url",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    17,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_VPC_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$VpcId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VpcId",
+    18,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$KmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    19,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_APP_SECURITY_GROUP_MANAGEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$AppSecurityGroupManagement",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AppSecurityGroupManagement",
+    20,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_CREATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$HomeEfsFileSystemCreation",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HomeEfsFileSystemCreation",
+    21,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_TAG_PROPAGATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$TagPropagation",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TagPropagation",
+    22,
+);
+static DESCRIBEDOMAINOUTPUT_MEMBER_DEFAULT_SPACE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput$DefaultSpaceSettings",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DefaultSpaceSettings",
+    23,
+);
+static DESCRIBEDOMAINOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeDomainOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeDomainOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_ARN,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_ID,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_NAME,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_ID,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_SINGLE_SIGN_ON_MANAGED_APPLICATION_INSTANCE_ID,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_SINGLE_SIGN_ON_APPLICATION_ARN,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_STATUS,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_FAILURE_REASON,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_SECURITY_GROUP_ID_FOR_DOMAIN_BOUNDARY,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_AUTH_MODE,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_DEFAULT_USER_SETTINGS,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_SETTINGS,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_APP_NETWORK_ACCESS_TYPE,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_KMS_KEY_ID,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_SUBNET_IDS,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_URL,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_VPC_ID,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_KMS_KEY_ID,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_APP_SECURITY_GROUP_MANAGEMENT,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_CREATION,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_TAG_PROPAGATION,
+        &DESCRIBEDOMAINOUTPUT_MEMBER_DEFAULT_SPACE_SETTINGS,
+    ],
+)
+.with_original_name("DescribeDomainResponse");
+impl DescribeDomainOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDOMAINOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeDomainOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_arn {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_ARN, val)?;
+        }
+        if let Some(ref val) = self.domain_id {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_ID, val)?;
+        }
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.home_efs_file_system_id {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_ID, val)?;
+        }
+        if let Some(ref val) = self.single_sign_on_managed_application_instance_id {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_SINGLE_SIGN_ON_MANAGED_APPLICATION_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.single_sign_on_application_arn {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_SINGLE_SIGN_ON_APPLICATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBEDOMAINOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&DESCRIBEDOMAINOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        if let Some(ref val) = self.security_group_id_for_domain_boundary {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_SECURITY_GROUP_ID_FOR_DOMAIN_BOUNDARY, val)?;
+        }
+        if let Some(ref val) = self.auth_mode {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_AUTH_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.default_user_settings {
+            ser.write_struct(&DESCRIBEDOMAINOUTPUT_MEMBER_DEFAULT_USER_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.domain_settings {
+            ser.write_struct(&DESCRIBEDOMAINOUTPUT_MEMBER_DOMAIN_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.app_network_access_type {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_APP_NETWORK_ACCESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.home_efs_file_system_kms_key_id {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.subnet_ids {
+            ser.write_list(
+                &DESCRIBEDOMAINOUTPUT_MEMBER_SUBNET_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.url {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.vpc_id {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_VPC_ID, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.app_security_group_management {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_APP_SECURITY_GROUP_MANAGEMENT, val.as_str())?;
+        }
+        if let Some(ref val) = self.home_efs_file_system_creation {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_HOME_EFS_FILE_SYSTEM_CREATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.tag_propagation {
+            ser.write_string(&DESCRIBEDOMAINOUTPUT_MEMBER_TAG_PROPAGATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.default_space_settings {
+            ser.write_struct(&DESCRIBEDOMAINOUTPUT_MEMBER_DEFAULT_SPACE_SETTINGS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_domain::builders::DescribeDomainOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDOMAINOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_efs_file_system_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.single_sign_on_managed_application_instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.single_sign_on_application_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::DomainStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_id_for_domain_boundary = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auth_mode = Some(crate::types::AuthMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_user_settings = Some(crate::types::UserSettings::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_settings = Some(crate::types::DomainSettings::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_network_access_type = Some(crate::types::AppNetworkAccessType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_efs_file_system_kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subnet_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.app_security_group_management =
+                            Some(crate::types::AppSecurityGroupManagement::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.home_efs_file_system_creation = Some(crate::types::HomeEfsFileSystemCreation::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_propagation = Some(crate::types::TagPropagation::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_space_settings = Some(crate::types::DefaultSpaceSettings::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeDomainOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

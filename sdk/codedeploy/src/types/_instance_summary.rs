@@ -86,6 +86,212 @@ impl InstanceSummary {
         self.instance_type.as_ref()
     }
 }
+static INSTANCESUMMARY_MEMBER_DEPLOYMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceSummary$deploymentId",
+        "com.amazonaws.codedeploy",
+        "InstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentId",
+    0,
+);
+static INSTANCESUMMARY_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceSummary$instanceId",
+        "com.amazonaws.codedeploy",
+        "InstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceId",
+    1,
+);
+static INSTANCESUMMARY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceSummary$status",
+        "com.amazonaws.codedeploy",
+        "InstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "status",
+    2,
+);
+static INSTANCESUMMARY_MEMBER_LAST_UPDATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceSummary$lastUpdatedAt",
+        "com.amazonaws.codedeploy",
+        "InstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastUpdatedAt",
+    3,
+);
+static INSTANCESUMMARY_MEMBER_LIFECYCLE_EVENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#LifecycleEventList$member",
+        "com.amazonaws.codedeploy",
+        "LifecycleEventList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INSTANCESUMMARY_MEMBER_LIFECYCLE_EVENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceSummary$lifecycleEvents",
+        "com.amazonaws.codedeploy",
+        "InstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "lifecycleEvents",
+    4,
+)
+.with_list_member(&INSTANCESUMMARY_MEMBER_LIFECYCLE_EVENTS_MEMBER);
+static INSTANCESUMMARY_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#InstanceSummary$instanceType",
+        "com.amazonaws.codedeploy",
+        "InstanceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceType",
+    5,
+);
+static INSTANCESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#InstanceSummary", "com.amazonaws.codedeploy", "InstanceSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCESUMMARY_MEMBER_DEPLOYMENT_ID,
+        &INSTANCESUMMARY_MEMBER_INSTANCE_ID,
+        &INSTANCESUMMARY_MEMBER_STATUS,
+        &INSTANCESUMMARY_MEMBER_LAST_UPDATED_AT,
+        &INSTANCESUMMARY_MEMBER_LIFECYCLE_EVENTS,
+        &INSTANCESUMMARY_MEMBER_INSTANCE_TYPE,
+    ],
+);
+impl InstanceSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_id {
+            ser.write_string(&INSTANCESUMMARY_MEMBER_DEPLOYMENT_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&INSTANCESUMMARY_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&INSTANCESUMMARY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_updated_at {
+            ser.write_timestamp(&INSTANCESUMMARY_MEMBER_LAST_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.lifecycle_events {
+            ser.write_list(
+                &INSTANCESUMMARY_MEMBER_LIFECYCLE_EVENTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::LifecycleEvent::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&INSTANCESUMMARY_MEMBER_INSTANCE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InstanceSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INSTANCESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::InstanceStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.lifecycle_events = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::LifecycleEvent::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(crate::types::InstanceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InstanceSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InstanceSummary {
     /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::types::InstanceSummary).
     pub fn builder() -> crate::types::builders::InstanceSummaryBuilder {

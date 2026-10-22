@@ -28,7 +28,7 @@ version = "1.19.1"
 
 [dependencies.aws-smithy-schema]
 path = "../aws-smithy-schema"
-version = "1.0.0"
+version = "1.1.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

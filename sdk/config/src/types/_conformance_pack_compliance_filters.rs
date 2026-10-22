@@ -23,6 +23,126 @@ impl ConformancePackComplianceFilters {
         self.compliance_type.as_ref()
     }
 }
+static CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_CONFIG_RULE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#ConformancePackConfigRuleNames$member",
+            "com.amazonaws.configservice",
+            "ConformancePackConfigRuleNames",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_CONFIG_RULE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceFilters$ConfigRuleNames",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ConfigRuleNames",
+    0,
+)
+.with_list_member(&CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_CONFIG_RULE_NAMES_MEMBER);
+static CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceFilters$ComplianceType",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    1,
+);
+static CONFORMANCEPACKCOMPLIANCEFILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackComplianceFilters",
+        "com.amazonaws.configservice",
+        "ConformancePackComplianceFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_CONFIG_RULE_NAMES,
+        &CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_COMPLIANCE_TYPE,
+    ],
+);
+impl ConformancePackComplianceFilters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CONFORMANCEPACKCOMPLIANCEFILTERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ConformancePackComplianceFilters {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.config_rule_names {
+            ser.write_list(
+                &CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_CONFIG_RULE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.compliance_type {
+            ser.write_string(&CONFORMANCEPACKCOMPLIANCEFILTERS_MEMBER_COMPLIANCE_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ConformancePackComplianceFiltersBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CONFORMANCEPACKCOMPLIANCEFILTERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_rule_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.compliance_type = Some(crate::types::ConformancePackComplianceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ConformancePackComplianceFilters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ConformancePackComplianceFilters {
     /// Creates a new builder-style object to manufacture [`ConformancePackComplianceFilters`](crate::types::ConformancePackComplianceFilters).
     pub fn builder() -> crate::types::builders::ConformancePackComplianceFiltersBuilder {

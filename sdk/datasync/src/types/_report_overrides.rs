@@ -31,6 +31,144 @@ impl ReportOverrides {
         self.skipped.as_ref()
     }
 }
+static REPORTOVERRIDES_MEMBER_TRANSFERRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#ReportOverrides$Transferred",
+        "com.amazonaws.datasync",
+        "ReportOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Transferred",
+    0,
+);
+static REPORTOVERRIDES_MEMBER_VERIFIED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#ReportOverrides$Verified",
+        "com.amazonaws.datasync",
+        "ReportOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Verified",
+    1,
+);
+static REPORTOVERRIDES_MEMBER_DELETED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#ReportOverrides$Deleted",
+        "com.amazonaws.datasync",
+        "ReportOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Deleted",
+    2,
+);
+static REPORTOVERRIDES_MEMBER_SKIPPED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#ReportOverrides$Skipped",
+        "com.amazonaws.datasync",
+        "ReportOverrides",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Skipped",
+    3,
+);
+static REPORTOVERRIDES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#ReportOverrides", "com.amazonaws.datasync", "ReportOverrides"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REPORTOVERRIDES_MEMBER_TRANSFERRED,
+        &REPORTOVERRIDES_MEMBER_VERIFIED,
+        &REPORTOVERRIDES_MEMBER_DELETED,
+        &REPORTOVERRIDES_MEMBER_SKIPPED,
+    ],
+);
+impl ReportOverrides {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REPORTOVERRIDES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ReportOverrides {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.transferred {
+            ser.write_struct(&REPORTOVERRIDES_MEMBER_TRANSFERRED, val)?;
+        }
+        if let Some(ref val) = self.verified {
+            ser.write_struct(&REPORTOVERRIDES_MEMBER_VERIFIED, val)?;
+        }
+        if let Some(ref val) = self.deleted {
+            ser.write_struct(&REPORTOVERRIDES_MEMBER_DELETED, val)?;
+        }
+        if let Some(ref val) = self.skipped {
+            ser.write_struct(&REPORTOVERRIDES_MEMBER_SKIPPED, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ReportOverridesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REPORTOVERRIDES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.transferred = Some(crate::types::ReportOverride::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.verified = Some(crate::types::ReportOverride::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deleted = Some(crate::types::ReportOverride::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.skipped = Some(crate::types::ReportOverride::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ReportOverrides {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ReportOverrides {
     /// Creates a new builder-style object to manufacture [`ReportOverrides`](crate::types::ReportOverrides).
     pub fn builder() -> crate::types::builders::ReportOverridesBuilder {

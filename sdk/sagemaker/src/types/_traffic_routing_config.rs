@@ -47,6 +47,148 @@ impl TrafficRoutingConfig {
         self.linear_step_size.as_ref()
     }
 }
+static TRAFFICROUTINGCONFIG_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficRoutingConfig$Type",
+        "com.amazonaws.sagemaker",
+        "TrafficRoutingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    0,
+);
+static TRAFFICROUTINGCONFIG_MEMBER_WAIT_INTERVAL_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficRoutingConfig$WaitIntervalInSeconds",
+        "com.amazonaws.sagemaker",
+        "TrafficRoutingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "WaitIntervalInSeconds",
+    1,
+);
+static TRAFFICROUTINGCONFIG_MEMBER_CANARY_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficRoutingConfig$CanarySize",
+        "com.amazonaws.sagemaker",
+        "TrafficRoutingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CanarySize",
+    2,
+);
+static TRAFFICROUTINGCONFIG_MEMBER_LINEAR_STEP_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficRoutingConfig$LinearStepSize",
+        "com.amazonaws.sagemaker",
+        "TrafficRoutingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LinearStepSize",
+    3,
+);
+static TRAFFICROUTINGCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrafficRoutingConfig",
+        "com.amazonaws.sagemaker",
+        "TrafficRoutingConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAFFICROUTINGCONFIG_MEMBER_TYPE,
+        &TRAFFICROUTINGCONFIG_MEMBER_WAIT_INTERVAL_IN_SECONDS,
+        &TRAFFICROUTINGCONFIG_MEMBER_CANARY_SIZE,
+        &TRAFFICROUTINGCONFIG_MEMBER_LINEAR_STEP_SIZE,
+    ],
+);
+impl TrafficRoutingConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAFFICROUTINGCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrafficRoutingConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&TRAFFICROUTINGCONFIG_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.wait_interval_in_seconds {
+            ser.write_integer(&TRAFFICROUTINGCONFIG_MEMBER_WAIT_INTERVAL_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.canary_size {
+            ser.write_struct(&TRAFFICROUTINGCONFIG_MEMBER_CANARY_SIZE, val)?;
+        }
+        if let Some(ref val) = self.linear_step_size {
+            ser.write_struct(&TRAFFICROUTINGCONFIG_MEMBER_LINEAR_STEP_SIZE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrafficRoutingConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAFFICROUTINGCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::TrafficRoutingConfigType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.wait_interval_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.canary_size = Some(crate::types::CapacitySize::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.linear_step_size = Some(crate::types::CapacitySize::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrafficRoutingConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrafficRoutingConfig {
     /// Creates a new builder-style object to manufacture [`TrafficRoutingConfig`](crate::types::TrafficRoutingConfig).
     pub fn builder() -> crate::types::builders::TrafficRoutingConfigBuilder {

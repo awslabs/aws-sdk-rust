@@ -26,6 +26,197 @@ impl GetIdentityPoolRolesOutput {
         self.role_mappings.as_ref()
     }
 }
+static GETIDENTITYPOOLROLESOUTPUT_MEMBER_IDENTITY_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdentityPoolRolesOutput$IdentityPoolId",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdentityPoolRolesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "IdentityPoolId",
+    0,
+);
+static GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cognitoidentity#RolesMap$key", "com.amazonaws.cognitoidentity", "RolesMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#RolesMap$value",
+        "com.amazonaws.cognitoidentity",
+        "RolesMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdentityPoolRolesOutput$Roles",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdentityPoolRolesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Roles",
+    1,
+)
+.with_map_members(
+    &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLES_KEY,
+    &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLES_VALUE,
+);
+static GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLE_MAPPINGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#RoleMappingMap$key",
+        "com.amazonaws.cognitoidentity",
+        "RoleMappingMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLE_MAPPINGS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity#RoleMappingMap$value",
+        "com.amazonaws.cognitoidentity",
+        "RoleMappingMap",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLE_MAPPINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdentityPoolRolesOutput$RoleMappings",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdentityPoolRolesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "RoleMappings",
+    2,
+)
+.with_map_members(
+    &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLE_MAPPINGS_KEY,
+    &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLE_MAPPINGS_VALUE,
+);
+static GETIDENTITYPOOLROLESOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentity.synthetic#GetIdentityPoolRolesOutput",
+        "com.amazonaws.cognitoidentity.synthetic",
+        "GetIdentityPoolRolesOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETIDENTITYPOOLROLESOUTPUT_MEMBER_IDENTITY_POOL_ID,
+        &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLES,
+        &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLE_MAPPINGS,
+    ],
+)
+.with_original_name("GetIdentityPoolRolesResponse");
+impl GetIdentityPoolRolesOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETIDENTITYPOOLROLESOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetIdentityPoolRolesOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.identity_pool_id {
+            ser.write_string(&GETIDENTITYPOOLROLESOUTPUT_MEMBER_IDENTITY_POOL_ID, val)?;
+        }
+        if let Some(ref val) = self.roles {
+            ser.write_map(
+                &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.role_mappings {
+            ser.write_map(
+                &GETIDENTITYPOOLROLESOUTPUT_MEMBER_ROLE_MAPPINGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::RoleMapping::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_identity_pool_roles::builders::GetIdentityPoolRolesOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETIDENTITYPOOLROLESOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.identity_pool_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.roles = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_mappings = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::RoleMapping::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetIdentityPoolRolesOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetIdentityPoolRolesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

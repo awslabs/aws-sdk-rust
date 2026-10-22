@@ -18,6 +18,108 @@ impl GetSearchSuggestionsInput {
         self.suggestion_query.as_ref()
     }
 }
+static GETSEARCHSUGGESTIONSINPUT_MEMBER_RESOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetSearchSuggestionsInput$Resource",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetSearchSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Resource",
+    0,
+);
+static GETSEARCHSUGGESTIONSINPUT_MEMBER_SUGGESTION_QUERY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetSearchSuggestionsInput$SuggestionQuery",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetSearchSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SuggestionQuery",
+    1,
+);
+static GETSEARCHSUGGESTIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#GetSearchSuggestionsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "GetSearchSuggestionsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETSEARCHSUGGESTIONSINPUT_MEMBER_RESOURCE,
+        &GETSEARCHSUGGESTIONSINPUT_MEMBER_SUGGESTION_QUERY,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetSearchSuggestionsRequest");
+impl GetSearchSuggestionsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETSEARCHSUGGESTIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetSearchSuggestionsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource {
+            ser.write_string(&GETSEARCHSUGGESTIONSINPUT_MEMBER_RESOURCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.suggestion_query {
+            ser.write_struct(&GETSEARCHSUGGESTIONSINPUT_MEMBER_SUGGESTION_QUERY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_search_suggestions::builders::GetSearchSuggestionsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETSEARCHSUGGESTIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.suggestion_query = Some(crate::types::SuggestionQuery::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetSearchSuggestionsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetSearchSuggestionsInput {
     /// Creates a new builder-style object to manufacture [`GetSearchSuggestionsInput`](crate::operation::get_search_suggestions::GetSearchSuggestionsInput).
     pub fn builder() -> crate::operation::get_search_suggestions::builders::GetSearchSuggestionsInputBuilder {

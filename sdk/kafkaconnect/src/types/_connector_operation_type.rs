@@ -13,8 +13,10 @@
 /// # let connectoroperationtype = unimplemented!();
 /// match connectoroperationtype {
 ///     ConnectorOperationType::IsolateConnector => { /* ... */ },
+///     ConnectorOperationType::PauseConnector => { /* ... */ },
 ///     ConnectorOperationType::RestartConnector => { /* ... */ },
 ///     ConnectorOperationType::RestoreConnector => { /* ... */ },
+///     ConnectorOperationType::ResumeConnector => { /* ... */ },
 ///     ConnectorOperationType::UpdateConnectorConfiguration => { /* ... */ },
 ///     ConnectorOperationType::UpdateWorkerSetting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -48,9 +50,13 @@ pub enum ConnectorOperationType {
     #[allow(missing_docs)] // documentation missing in model
     IsolateConnector,
     #[allow(missing_docs)] // documentation missing in model
+    PauseConnector,
+    #[allow(missing_docs)] // documentation missing in model
     RestartConnector,
     #[allow(missing_docs)] // documentation missing in model
     RestoreConnector,
+    #[allow(missing_docs)] // documentation missing in model
+    ResumeConnector,
     #[allow(missing_docs)] // documentation missing in model
     UpdateConnectorConfiguration,
     #[allow(missing_docs)] // documentation missing in model
@@ -63,8 +69,10 @@ impl ::std::convert::From<&str> for ConnectorOperationType {
     fn from(s: &str) -> Self {
         match s {
             "ISOLATE_CONNECTOR" => ConnectorOperationType::IsolateConnector,
+            "PAUSE_CONNECTOR" => ConnectorOperationType::PauseConnector,
             "RESTART_CONNECTOR" => ConnectorOperationType::RestartConnector,
             "RESTORE_CONNECTOR" => ConnectorOperationType::RestoreConnector,
+            "RESUME_CONNECTOR" => ConnectorOperationType::ResumeConnector,
             "UPDATE_CONNECTOR_CONFIGURATION" => ConnectorOperationType::UpdateConnectorConfiguration,
             "UPDATE_WORKER_SETTING" => ConnectorOperationType::UpdateWorkerSetting,
             other => ConnectorOperationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -83,8 +91,10 @@ impl ConnectorOperationType {
     pub fn as_str(&self) -> &str {
         match self {
             ConnectorOperationType::IsolateConnector => "ISOLATE_CONNECTOR",
+            ConnectorOperationType::PauseConnector => "PAUSE_CONNECTOR",
             ConnectorOperationType::RestartConnector => "RESTART_CONNECTOR",
             ConnectorOperationType::RestoreConnector => "RESTORE_CONNECTOR",
+            ConnectorOperationType::ResumeConnector => "RESUME_CONNECTOR",
             ConnectorOperationType::UpdateConnectorConfiguration => "UPDATE_CONNECTOR_CONFIGURATION",
             ConnectorOperationType::UpdateWorkerSetting => "UPDATE_WORKER_SETTING",
             ConnectorOperationType::Unknown(value) => value.as_str(),
@@ -94,8 +104,10 @@ impl ConnectorOperationType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ISOLATE_CONNECTOR",
+            "PAUSE_CONNECTOR",
             "RESTART_CONNECTOR",
             "RESTORE_CONNECTOR",
+            "RESUME_CONNECTOR",
             "UPDATE_CONNECTOR_CONFIGURATION",
             "UPDATE_WORKER_SETTING",
         ]
@@ -122,8 +134,10 @@ impl ::std::fmt::Display for ConnectorOperationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConnectorOperationType::IsolateConnector => write!(f, "ISOLATE_CONNECTOR"),
+            ConnectorOperationType::PauseConnector => write!(f, "PAUSE_CONNECTOR"),
             ConnectorOperationType::RestartConnector => write!(f, "RESTART_CONNECTOR"),
             ConnectorOperationType::RestoreConnector => write!(f, "RESTORE_CONNECTOR"),
+            ConnectorOperationType::ResumeConnector => write!(f, "RESUME_CONNECTOR"),
             ConnectorOperationType::UpdateConnectorConfiguration => write!(f, "UPDATE_CONNECTOR_CONFIGURATION"),
             ConnectorOperationType::UpdateWorkerSetting => write!(f, "UPDATE_WORKER_SETTING"),
             ConnectorOperationType::Unknown(value) => write!(f, "{value}"),

@@ -45,6 +45,169 @@ impl EndpointDescription {
         self.client_ip_preservation_enabled
     }
 }
+static ENDPOINTDESCRIPTION_MEMBER_ENDPOINT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointDescription$EndpointId",
+        "com.amazonaws.globalaccelerator",
+        "EndpointDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EndpointId",
+    0,
+);
+static ENDPOINTDESCRIPTION_MEMBER_WEIGHT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointDescription$Weight",
+        "com.amazonaws.globalaccelerator",
+        "EndpointDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Weight",
+    1,
+);
+static ENDPOINTDESCRIPTION_MEMBER_HEALTH_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointDescription$HealthState",
+        "com.amazonaws.globalaccelerator",
+        "EndpointDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HealthState",
+    2,
+);
+static ENDPOINTDESCRIPTION_MEMBER_HEALTH_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointDescription$HealthReason",
+        "com.amazonaws.globalaccelerator",
+        "EndpointDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HealthReason",
+    3,
+);
+static ENDPOINTDESCRIPTION_MEMBER_CLIENT_IP_PRESERVATION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointDescription$ClientIPPreservationEnabled",
+        "com.amazonaws.globalaccelerator",
+        "EndpointDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ClientIPPreservationEnabled",
+    4,
+);
+static ENDPOINTDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.globalaccelerator#EndpointDescription",
+        "com.amazonaws.globalaccelerator",
+        "EndpointDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENDPOINTDESCRIPTION_MEMBER_ENDPOINT_ID,
+        &ENDPOINTDESCRIPTION_MEMBER_WEIGHT,
+        &ENDPOINTDESCRIPTION_MEMBER_HEALTH_STATE,
+        &ENDPOINTDESCRIPTION_MEMBER_HEALTH_REASON,
+        &ENDPOINTDESCRIPTION_MEMBER_CLIENT_IP_PRESERVATION_ENABLED,
+    ],
+);
+impl EndpointDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENDPOINTDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EndpointDescription {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.endpoint_id {
+            ser.write_string(&ENDPOINTDESCRIPTION_MEMBER_ENDPOINT_ID, val)?;
+        }
+        if let Some(ref val) = self.weight {
+            ser.write_integer(&ENDPOINTDESCRIPTION_MEMBER_WEIGHT, *val)?;
+        }
+        if let Some(ref val) = self.health_state {
+            ser.write_string(&ENDPOINTDESCRIPTION_MEMBER_HEALTH_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.health_reason {
+            ser.write_string(&ENDPOINTDESCRIPTION_MEMBER_HEALTH_REASON, val)?;
+        }
+        if let Some(ref val) = self.client_ip_preservation_enabled {
+            ser.write_boolean(&ENDPOINTDESCRIPTION_MEMBER_CLIENT_IP_PRESERVATION_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EndpointDescriptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENDPOINTDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.weight = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_state = Some(crate::types::HealthState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_ip_preservation_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EndpointDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EndpointDescription {
     /// Creates a new builder-style object to manufacture [`EndpointDescription`](crate::types::EndpointDescription).
     pub fn builder() -> crate::types::builders::EndpointDescriptionBuilder {

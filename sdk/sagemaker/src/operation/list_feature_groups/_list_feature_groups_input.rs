@@ -60,6 +60,255 @@ impl ListFeatureGroupsInput {
         self.next_token.as_deref()
     }
 }
+static LISTFEATUREGROUPSINPUT_MEMBER_NAME_CONTAINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$NameContains",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NameContains",
+    0,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_FEATURE_GROUP_STATUS_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$FeatureGroupStatusEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FeatureGroupStatusEquals",
+    1,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_OFFLINE_STORE_STATUS_EQUALS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$OfflineStoreStatusEquals",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OfflineStoreStatusEquals",
+    2,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_CREATION_TIME_AFTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$CreationTimeAfter",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeAfter",
+    3,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_CREATION_TIME_BEFORE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$CreationTimeBefore",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTimeBefore",
+    4,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$SortOrder",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortOrder",
+    5,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$SortBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SortBy",
+    6,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$MaxResults",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    7,
+);
+static LISTFEATUREGROUPSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    8,
+);
+static LISTFEATUREGROUPSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListFeatureGroupsInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListFeatureGroupsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTFEATUREGROUPSINPUT_MEMBER_NAME_CONTAINS,
+        &LISTFEATUREGROUPSINPUT_MEMBER_FEATURE_GROUP_STATUS_EQUALS,
+        &LISTFEATUREGROUPSINPUT_MEMBER_OFFLINE_STORE_STATUS_EQUALS,
+        &LISTFEATUREGROUPSINPUT_MEMBER_CREATION_TIME_AFTER,
+        &LISTFEATUREGROUPSINPUT_MEMBER_CREATION_TIME_BEFORE,
+        &LISTFEATUREGROUPSINPUT_MEMBER_SORT_ORDER,
+        &LISTFEATUREGROUPSINPUT_MEMBER_SORT_BY,
+        &LISTFEATUREGROUPSINPUT_MEMBER_MAX_RESULTS,
+        &LISTFEATUREGROUPSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListFeatureGroupsRequest");
+impl ListFeatureGroupsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTFEATUREGROUPSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListFeatureGroupsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name_contains {
+            ser.write_string(&LISTFEATUREGROUPSINPUT_MEMBER_NAME_CONTAINS, val)?;
+        }
+        if let Some(ref val) = self.feature_group_status_equals {
+            ser.write_string(&LISTFEATUREGROUPSINPUT_MEMBER_FEATURE_GROUP_STATUS_EQUALS, val.as_str())?;
+        }
+        if let Some(ref val) = self.offline_store_status_equals {
+            ser.write_string(&LISTFEATUREGROUPSINPUT_MEMBER_OFFLINE_STORE_STATUS_EQUALS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time_after {
+            ser.write_timestamp(&LISTFEATUREGROUPSINPUT_MEMBER_CREATION_TIME_AFTER, val)?;
+        }
+        if let Some(ref val) = self.creation_time_before {
+            ser.write_timestamp(&LISTFEATUREGROUPSINPUT_MEMBER_CREATION_TIME_BEFORE, val)?;
+        }
+        if let Some(ref val) = self.sort_order {
+            ser.write_string(&LISTFEATUREGROUPSINPUT_MEMBER_SORT_ORDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.sort_by {
+            ser.write_string(&LISTFEATUREGROUPSINPUT_MEMBER_SORT_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTFEATUREGROUPSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTFEATUREGROUPSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTFEATUREGROUPSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name_contains = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.feature_group_status_equals = Some(crate::types::FeatureGroupStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.offline_store_status_equals = Some(crate::types::OfflineStoreStatusValue::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_after = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time_before = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_order = Some(crate::types::FeatureGroupSortOrder::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::FeatureGroupSortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListFeatureGroupsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListFeatureGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListFeatureGroupsInput`](crate::operation::list_feature_groups::ListFeatureGroupsInput).
     pub fn builder() -> crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder {

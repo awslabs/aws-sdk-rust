@@ -22,6 +22,109 @@ impl UpdateOrganizationalUnitInput {
         self.name.as_deref()
     }
 }
+static UPDATEORGANIZATIONALUNITINPUT_MEMBER_ORGANIZATIONAL_UNIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdateOrganizationalUnitInput$OrganizationalUnitId",
+        "com.amazonaws.organizations.synthetic",
+        "UpdateOrganizationalUnitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OrganizationalUnitId",
+    0,
+);
+static UPDATEORGANIZATIONALUNITINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdateOrganizationalUnitInput$Name",
+        "com.amazonaws.organizations.synthetic",
+        "UpdateOrganizationalUnitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static UPDATEORGANIZATIONALUNITINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#UpdateOrganizationalUnitInput",
+        "com.amazonaws.organizations.synthetic",
+        "UpdateOrganizationalUnitInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEORGANIZATIONALUNITINPUT_MEMBER_ORGANIZATIONAL_UNIT_ID,
+        &UPDATEORGANIZATIONALUNITINPUT_MEMBER_NAME,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateOrganizationalUnitRequest");
+impl UpdateOrganizationalUnitInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEORGANIZATIONALUNITINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateOrganizationalUnitInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.organizational_unit_id {
+            ser.write_string(&UPDATEORGANIZATIONALUNITINPUT_MEMBER_ORGANIZATIONAL_UNIT_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEORGANIZATIONALUNITINPUT_MEMBER_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEORGANIZATIONALUNITINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organizational_unit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateOrganizationalUnitInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.organizational_unit_id = builder.organizational_unit_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateOrganizationalUnitInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationalUnitInput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitInput).
     pub fn builder() -> crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitInputBuilder {

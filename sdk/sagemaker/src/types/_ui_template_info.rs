@@ -19,6 +19,95 @@ impl UiTemplateInfo {
         self.content_sha256.as_deref()
     }
 }
+static UITEMPLATEINFO_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#UiTemplateInfo$Url", "com.amazonaws.sagemaker", "UiTemplateInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    0,
+);
+static UITEMPLATEINFO_MEMBER_CONTENT_SHA256: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#UiTemplateInfo$ContentSha256",
+        "com.amazonaws.sagemaker",
+        "UiTemplateInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContentSha256",
+    1,
+);
+static UITEMPLATEINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#UiTemplateInfo", "com.amazonaws.sagemaker", "UiTemplateInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&UITEMPLATEINFO_MEMBER_URL, &UITEMPLATEINFO_MEMBER_CONTENT_SHA256],
+);
+impl UiTemplateInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UITEMPLATEINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UiTemplateInfo {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.url {
+            ser.write_string(&UITEMPLATEINFO_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.content_sha256 {
+            ser.write_string(&UITEMPLATEINFO_MEMBER_CONTENT_SHA256, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UiTemplateInfoBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UITEMPLATEINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.content_sha256 = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UiTemplateInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl UiTemplateInfo {
     /// Creates a new builder-style object to manufacture [`UiTemplateInfo`](crate::types::UiTemplateInfo).
     pub fn builder() -> crate::types::builders::UiTemplateInfoBuilder {

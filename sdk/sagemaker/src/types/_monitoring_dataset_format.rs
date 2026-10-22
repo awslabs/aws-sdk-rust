@@ -25,6 +25,127 @@ impl MonitoringDatasetFormat {
         self.parquet.as_ref()
     }
 }
+static MONITORINGDATASETFORMAT_MEMBER_CSV: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringDatasetFormat$Csv",
+        "com.amazonaws.sagemaker",
+        "MonitoringDatasetFormat",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Csv",
+    0,
+);
+static MONITORINGDATASETFORMAT_MEMBER_JSON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringDatasetFormat$Json",
+        "com.amazonaws.sagemaker",
+        "MonitoringDatasetFormat",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Json",
+    1,
+);
+static MONITORINGDATASETFORMAT_MEMBER_PARQUET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringDatasetFormat$Parquet",
+        "com.amazonaws.sagemaker",
+        "MonitoringDatasetFormat",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Parquet",
+    2,
+);
+static MONITORINGDATASETFORMAT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringDatasetFormat",
+        "com.amazonaws.sagemaker",
+        "MonitoringDatasetFormat",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGDATASETFORMAT_MEMBER_CSV,
+        &MONITORINGDATASETFORMAT_MEMBER_JSON,
+        &MONITORINGDATASETFORMAT_MEMBER_PARQUET,
+    ],
+);
+impl MonitoringDatasetFormat {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGDATASETFORMAT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringDatasetFormat {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.csv {
+            ser.write_struct(&MONITORINGDATASETFORMAT_MEMBER_CSV, val)?;
+        }
+        if let Some(ref val) = self.json {
+            ser.write_struct(&MONITORINGDATASETFORMAT_MEMBER_JSON, val)?;
+        }
+        if let Some(ref val) = self.parquet {
+            ser.write_struct(&MONITORINGDATASETFORMAT_MEMBER_PARQUET, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringDatasetFormatBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGDATASETFORMAT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.csv = Some(crate::types::MonitoringCsvDatasetFormat::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.json = Some(crate::types::MonitoringJsonDatasetFormat::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parquet = Some(crate::types::MonitoringParquetDatasetFormat::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringDatasetFormat {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringDatasetFormat {
     /// Creates a new builder-style object to manufacture [`MonitoringDatasetFormat`](crate::types::MonitoringDatasetFormat).
     pub fn builder() -> crate::types::builders::MonitoringDatasetFormatBuilder {

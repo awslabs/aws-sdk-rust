@@ -21,6 +21,132 @@ impl CandidateProperties {
         self.candidate_metrics.as_deref().unwrap_or_default()
     }
 }
+static CANDIDATEPROPERTIES_MEMBER_CANDIDATE_ARTIFACT_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CandidateProperties$CandidateArtifactLocations",
+        "com.amazonaws.sagemaker",
+        "CandidateProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CandidateArtifactLocations",
+    0,
+);
+static CANDIDATEPROPERTIES_MEMBER_CANDIDATE_METRICS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricDataList$member",
+        "com.amazonaws.sagemaker",
+        "MetricDataList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CANDIDATEPROPERTIES_MEMBER_CANDIDATE_METRICS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CandidateProperties$CandidateMetrics",
+        "com.amazonaws.sagemaker",
+        "CandidateProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CandidateMetrics",
+    1,
+)
+.with_list_member(&CANDIDATEPROPERTIES_MEMBER_CANDIDATE_METRICS_MEMBER);
+static CANDIDATEPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CandidateProperties",
+        "com.amazonaws.sagemaker",
+        "CandidateProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CANDIDATEPROPERTIES_MEMBER_CANDIDATE_ARTIFACT_LOCATIONS,
+        &CANDIDATEPROPERTIES_MEMBER_CANDIDATE_METRICS,
+    ],
+);
+impl CandidateProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CANDIDATEPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CandidateProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.candidate_artifact_locations {
+            ser.write_struct(&CANDIDATEPROPERTIES_MEMBER_CANDIDATE_ARTIFACT_LOCATIONS, val)?;
+        }
+        if let Some(ref val) = self.candidate_metrics {
+            ser.write_list(
+                &CANDIDATEPROPERTIES_MEMBER_CANDIDATE_METRICS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MetricDatum::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CandidatePropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CANDIDATEPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_artifact_locations = Some(crate::types::CandidateArtifactLocations::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.candidate_metrics = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricDatum::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CandidateProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CandidateProperties {
     /// Creates a new builder-style object to manufacture [`CandidateProperties`](crate::types::CandidateProperties).
     pub fn builder() -> crate::types::builders::CandidatePropertiesBuilder {

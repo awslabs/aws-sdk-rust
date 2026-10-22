@@ -23,6 +23,144 @@ impl CaptureContentTypeHeader {
         self.json_content_types.as_deref().unwrap_or_default()
     }
 }
+static CAPTURECONTENTTYPEHEADER_MEMBER_CSV_CONTENT_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CsvContentTypes$member",
+        "com.amazonaws.sagemaker",
+        "CsvContentTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CAPTURECONTENTTYPEHEADER_MEMBER_CSV_CONTENT_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CaptureContentTypeHeader$CsvContentTypes",
+        "com.amazonaws.sagemaker",
+        "CaptureContentTypeHeader",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CsvContentTypes",
+    0,
+)
+.with_list_member(&CAPTURECONTENTTYPEHEADER_MEMBER_CSV_CONTENT_TYPES_MEMBER);
+static CAPTURECONTENTTYPEHEADER_MEMBER_JSON_CONTENT_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#JsonContentTypes$member",
+        "com.amazonaws.sagemaker",
+        "JsonContentTypes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CAPTURECONTENTTYPEHEADER_MEMBER_JSON_CONTENT_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CaptureContentTypeHeader$JsonContentTypes",
+        "com.amazonaws.sagemaker",
+        "CaptureContentTypeHeader",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "JsonContentTypes",
+    1,
+)
+.with_list_member(&CAPTURECONTENTTYPEHEADER_MEMBER_JSON_CONTENT_TYPES_MEMBER);
+static CAPTURECONTENTTYPEHEADER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CaptureContentTypeHeader",
+        "com.amazonaws.sagemaker",
+        "CaptureContentTypeHeader",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CAPTURECONTENTTYPEHEADER_MEMBER_CSV_CONTENT_TYPES,
+        &CAPTURECONTENTTYPEHEADER_MEMBER_JSON_CONTENT_TYPES,
+    ],
+);
+impl CaptureContentTypeHeader {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CAPTURECONTENTTYPEHEADER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CaptureContentTypeHeader {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.csv_content_types {
+            ser.write_list(
+                &CAPTURECONTENTTYPEHEADER_MEMBER_CSV_CONTENT_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.json_content_types {
+            ser.write_list(
+                &CAPTURECONTENTTYPEHEADER_MEMBER_JSON_CONTENT_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CaptureContentTypeHeaderBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CAPTURECONTENTTYPEHEADER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.csv_content_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.json_content_types = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CaptureContentTypeHeader {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CaptureContentTypeHeader {
     /// Creates a new builder-style object to manufacture [`CaptureContentTypeHeader`](crate::types::CaptureContentTypeHeader).
     pub fn builder() -> crate::types::builders::CaptureContentTypeHeaderBuilder {

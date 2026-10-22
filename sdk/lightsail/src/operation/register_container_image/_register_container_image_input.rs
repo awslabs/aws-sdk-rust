@@ -44,6 +44,138 @@ impl RegisterContainerImageInput {
         self.digest.as_deref()
     }
 }
+static REGISTERCONTAINERIMAGEINPUT_MEMBER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#RegisterContainerImageInput$serviceName",
+        "com.amazonaws.lightsail.synthetic",
+        "RegisterContainerImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceName",
+    0,
+)
+.with_http_label();
+static REGISTERCONTAINERIMAGEINPUT_MEMBER_LABEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#RegisterContainerImageInput$label",
+        "com.amazonaws.lightsail.synthetic",
+        "RegisterContainerImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "label",
+    1,
+);
+static REGISTERCONTAINERIMAGEINPUT_MEMBER_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#RegisterContainerImageInput$digest",
+        "com.amazonaws.lightsail.synthetic",
+        "RegisterContainerImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "digest",
+    2,
+);
+static REGISTERCONTAINERIMAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#RegisterContainerImageInput",
+        "com.amazonaws.lightsail.synthetic",
+        "RegisterContainerImageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERCONTAINERIMAGEINPUT_MEMBER_SERVICE_NAME,
+        &REGISTERCONTAINERIMAGEINPUT_MEMBER_LABEL,
+        &REGISTERCONTAINERIMAGEINPUT_MEMBER_DIGEST,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/container-services/{serviceName}/images",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RegisterContainerImageRequest");
+impl RegisterContainerImageInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERCONTAINERIMAGEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterContainerImageInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_name {
+            ser.write_string(&REGISTERCONTAINERIMAGEINPUT_MEMBER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.label {
+            ser.write_string(&REGISTERCONTAINERIMAGEINPUT_MEMBER_LABEL, val)?;
+        }
+        if let Some(ref val) = self.digest {
+            ser.write_string(&REGISTERCONTAINERIMAGEINPUT_MEMBER_DIGEST, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&REGISTERCONTAINERIMAGEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.label = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.digest = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RegisterContainerImageInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_name = builder.service_name.or(Some(String::new()));
+        builder.label = builder.label.or(Some(String::new()));
+        builder.digest = builder.digest.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl RegisterContainerImageInput {
     /// Creates a new builder-style object to manufacture [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
     pub fn builder() -> crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder {

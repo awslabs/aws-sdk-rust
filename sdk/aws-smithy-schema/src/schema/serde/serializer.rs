@@ -55,6 +55,20 @@ pub trait ShapeSerializer {
         write_elements: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError>;
 
+    /// Writes a list with a known number of elements, including sparse nulls.
+    ///
+    /// The callback must write exactly `length` elements. Formats that do not
+    /// need a length use the ordinary list implementation by default.
+    fn write_list_with_length(
+        &mut self,
+        schema: &Schema<'_>,
+        length: usize,
+        write_elements: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
+    ) -> Result<(), SerdeError> {
+        let _ = length;
+        self.write_list(schema, write_elements)
+    }
+
     /// Writes a map to the serializer.
     ///
     /// # Arguments
@@ -66,6 +80,20 @@ pub trait ShapeSerializer {
         schema: &Schema<'_>,
         write_entries: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError>;
+
+    /// Writes a map with a known number of entries, including sparse null values.
+    ///
+    /// The callback must write exactly `length` key/value pairs. Formats that
+    /// do not need a length use the ordinary map implementation by default.
+    fn write_map_with_length(
+        &mut self,
+        schema: &Schema<'_>,
+        length: usize,
+        write_entries: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
+    ) -> Result<(), SerdeError> {
+        let _ = length;
+        self.write_map(schema, write_entries)
+    }
 
     /// Writes a boolean value.
     fn write_boolean(&mut self, schema: &Schema<'_>, value: bool) -> Result<(), SerdeError>;
@@ -166,7 +194,7 @@ pub trait ShapeSerializer {
         schema: &Schema<'_>,
         values: &[String],
     ) -> Result<(), SerdeError> {
-        self.write_list(schema, &|ser| {
+        self.write_list_with_length(schema, values.len(), &|ser| {
             for item in values {
                 ser.write_string(&crate::prelude::STRING, item)?;
             }
@@ -180,7 +208,7 @@ pub trait ShapeSerializer {
         schema: &Schema<'_>,
         values: &[aws_smithy_types::Blob],
     ) -> Result<(), SerdeError> {
-        self.write_list(schema, &|ser| {
+        self.write_list_with_length(schema, values.len(), &|ser| {
             for item in values {
                 // Refcount bump, not a payload copy: `Blob` wraps `bytes::Bytes`.
                 ser.write_blob(&crate::prelude::BLOB, item.clone())?;
@@ -195,7 +223,7 @@ pub trait ShapeSerializer {
         schema: &Schema<'_>,
         values: &[i32],
     ) -> Result<(), SerdeError> {
-        self.write_list(schema, &|ser| {
+        self.write_list_with_length(schema, values.len(), &|ser| {
             for item in values {
                 ser.write_integer(&crate::prelude::INTEGER, *item)?;
             }
@@ -205,7 +233,7 @@ pub trait ShapeSerializer {
 
     /// Writes a list of longs.
     fn write_long_list(&mut self, schema: &Schema<'_>, values: &[i64]) -> Result<(), SerdeError> {
-        self.write_list(schema, &|ser| {
+        self.write_list_with_length(schema, values.len(), &|ser| {
             for item in values {
                 ser.write_long(&crate::prelude::LONG, *item)?;
             }
@@ -219,7 +247,7 @@ pub trait ShapeSerializer {
         schema: &Schema<'_>,
         values: &std::collections::HashMap<String, String>,
     ) -> Result<(), SerdeError> {
-        self.write_map(schema, &|ser| {
+        self.write_map_with_length(schema, values.len(), &|ser| {
             for (key, value) in values {
                 ser.write_string(&crate::prelude::STRING, key)?;
                 ser.write_string(&crate::prelude::STRING, value)?;

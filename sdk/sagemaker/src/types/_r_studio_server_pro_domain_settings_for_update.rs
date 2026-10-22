@@ -35,6 +35,152 @@ impl RStudioServerProDomainSettingsForUpdate {
         self.r_studio_package_manager_url.as_deref()
     }
 }
+static RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_DOMAIN_EXECUTION_ROLE_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#RStudioServerProDomainSettingsForUpdate$DomainExecutionRoleArn",
+            "com.amazonaws.sagemaker",
+            "RStudioServerProDomainSettingsForUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DomainExecutionRoleArn",
+        0,
+    );
+static RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_DEFAULT_RESOURCE_SPEC: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#RStudioServerProDomainSettingsForUpdate$DefaultResourceSpec",
+            "com.amazonaws.sagemaker",
+            "RStudioServerProDomainSettingsForUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "DefaultResourceSpec",
+        1,
+    );
+static RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_R_STUDIO_CONNECT_URL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#RStudioServerProDomainSettingsForUpdate$RStudioConnectUrl",
+            "com.amazonaws.sagemaker",
+            "RStudioServerProDomainSettingsForUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RStudioConnectUrl",
+        2,
+    );
+static RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_R_STUDIO_PACKAGE_MANAGER_URL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#RStudioServerProDomainSettingsForUpdate$RStudioPackageManagerUrl",
+            "com.amazonaws.sagemaker",
+            "RStudioServerProDomainSettingsForUpdate",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "RStudioPackageManagerUrl",
+        3,
+    );
+static RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#RStudioServerProDomainSettingsForUpdate",
+        "com.amazonaws.sagemaker",
+        "RStudioServerProDomainSettingsForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_DOMAIN_EXECUTION_ROLE_ARN,
+        &RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_DEFAULT_RESOURCE_SPEC,
+        &RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_R_STUDIO_CONNECT_URL,
+        &RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_R_STUDIO_PACKAGE_MANAGER_URL,
+    ],
+);
+impl RStudioServerProDomainSettingsForUpdate {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RStudioServerProDomainSettingsForUpdate {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_execution_role_arn {
+            ser.write_string(&RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_DOMAIN_EXECUTION_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.default_resource_spec {
+            ser.write_struct(&RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_DEFAULT_RESOURCE_SPEC, val)?;
+        }
+        if let Some(ref val) = self.r_studio_connect_url {
+            ser.write_string(&RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_R_STUDIO_CONNECT_URL, val)?;
+        }
+        if let Some(ref val) = self.r_studio_package_manager_url {
+            ser.write_string(&RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_MEMBER_R_STUDIO_PACKAGE_MANAGER_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::RStudioServerProDomainSettingsForUpdateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RSTUDIOSERVERPRODOMAINSETTINGSFORUPDATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_execution_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_resource_spec = Some(crate::types::ResourceSpec::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r_studio_connect_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r_studio_package_manager_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl RStudioServerProDomainSettingsForUpdate {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl RStudioServerProDomainSettingsForUpdate {
     /// Creates a new builder-style object to manufacture [`RStudioServerProDomainSettingsForUpdate`](crate::types::RStudioServerProDomainSettingsForUpdate).
     pub fn builder() -> crate::types::builders::RStudioServerProDomainSettingsForUpdateBuilder {

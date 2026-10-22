@@ -31,6 +31,148 @@ impl MonitoringScheduleConfig {
         self.monitoring_type.as_ref()
     }
 }
+static MONITORINGSCHEDULECONFIG_MEMBER_SCHEDULE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringScheduleConfig$ScheduleConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringScheduleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ScheduleConfig",
+    0,
+);
+static MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_JOB_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringScheduleConfig$MonitoringJobDefinition",
+        "com.amazonaws.sagemaker",
+        "MonitoringScheduleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MonitoringJobDefinition",
+    1,
+);
+static MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_JOB_DEFINITION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringScheduleConfig$MonitoringJobDefinitionName",
+        "com.amazonaws.sagemaker",
+        "MonitoringScheduleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringJobDefinitionName",
+    2,
+);
+static MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringScheduleConfig$MonitoringType",
+        "com.amazonaws.sagemaker",
+        "MonitoringScheduleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MonitoringType",
+    3,
+);
+static MONITORINGSCHEDULECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MonitoringScheduleConfig",
+        "com.amazonaws.sagemaker",
+        "MonitoringScheduleConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MONITORINGSCHEDULECONFIG_MEMBER_SCHEDULE_CONFIG,
+        &MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_JOB_DEFINITION,
+        &MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_JOB_DEFINITION_NAME,
+        &MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_TYPE,
+    ],
+);
+impl MonitoringScheduleConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MONITORINGSCHEDULECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MonitoringScheduleConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.schedule_config {
+            ser.write_struct(&MONITORINGSCHEDULECONFIG_MEMBER_SCHEDULE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.monitoring_job_definition {
+            ser.write_struct(&MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_JOB_DEFINITION, val)?;
+        }
+        if let Some(ref val) = self.monitoring_job_definition_name {
+            ser.write_string(&MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_JOB_DEFINITION_NAME, val)?;
+        }
+        if let Some(ref val) = self.monitoring_type {
+            ser.write_string(&MONITORINGSCHEDULECONFIG_MEMBER_MONITORING_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::MonitoringScheduleConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MONITORINGSCHEDULECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.schedule_config = Some(crate::types::ScheduleConfig::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_job_definition = Some(crate::types::MonitoringJobDefinition::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_job_definition_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_type = Some(crate::types::MonitoringType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MonitoringScheduleConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl MonitoringScheduleConfig {
     /// Creates a new builder-style object to manufacture [`MonitoringScheduleConfig`](crate::types::MonitoringScheduleConfig).
     pub fn builder() -> crate::types::builders::MonitoringScheduleConfigBuilder {

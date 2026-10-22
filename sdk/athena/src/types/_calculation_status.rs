@@ -47,6 +47,144 @@ impl CalculationStatus {
         self.state_change_reason.as_deref()
     }
 }
+static CALCULATIONSTATUS_MEMBER_SUBMISSION_DATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationStatus$SubmissionDateTime",
+        "com.amazonaws.athena",
+        "CalculationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SubmissionDateTime",
+    0,
+);
+static CALCULATIONSTATUS_MEMBER_COMPLETION_DATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationStatus$CompletionDateTime",
+        "com.amazonaws.athena",
+        "CalculationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CompletionDateTime",
+    1,
+);
+static CALCULATIONSTATUS_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationStatus$State",
+        "com.amazonaws.athena",
+        "CalculationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    2,
+);
+static CALCULATIONSTATUS_MEMBER_STATE_CHANGE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#CalculationStatus$StateChangeReason",
+        "com.amazonaws.athena",
+        "CalculationStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StateChangeReason",
+    3,
+);
+static CALCULATIONSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.athena#CalculationStatus", "com.amazonaws.athena", "CalculationStatus"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CALCULATIONSTATUS_MEMBER_SUBMISSION_DATE_TIME,
+        &CALCULATIONSTATUS_MEMBER_COMPLETION_DATE_TIME,
+        &CALCULATIONSTATUS_MEMBER_STATE,
+        &CALCULATIONSTATUS_MEMBER_STATE_CHANGE_REASON,
+    ],
+);
+impl CalculationStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CALCULATIONSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CalculationStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.submission_date_time {
+            ser.write_timestamp(&CALCULATIONSTATUS_MEMBER_SUBMISSION_DATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.completion_date_time {
+            ser.write_timestamp(&CALCULATIONSTATUS_MEMBER_COMPLETION_DATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&CALCULATIONSTATUS_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.state_change_reason {
+            ser.write_string(&CALCULATIONSTATUS_MEMBER_STATE_CHANGE_REASON, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CalculationStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CALCULATIONSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.submission_date_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_date_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::CalculationExecutionState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_change_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CalculationStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CalculationStatus {
     /// Creates a new builder-style object to manufacture [`CalculationStatus`](crate::types::CalculationStatus).
     pub fn builder() -> crate::types::builders::CalculationStatusBuilder {

@@ -92,6 +92,314 @@ impl CreateLocationAzureBlobInput {
         self.custom_secret_config.as_ref()
     }
 }
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_CONTAINER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$ContainerUrl",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContainerUrl",
+    0,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_AUTHENTICATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$AuthenticationType",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AuthenticationType",
+    1,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_SAS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$SasConfiguration",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SasConfiguration",
+    2,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_BLOB_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$BlobType",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BlobType",
+    3,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_ACCESS_TIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$AccessTier",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessTier",
+    4,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    5,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#AgentArnList$member", "com.amazonaws.datasync", "AgentArnList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$AgentArns",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AgentArns",
+    6,
+)
+.with_list_member(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS_MEMBER);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.datasync#InputTagList$member", "com.amazonaws.datasync", "InputTagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$Tags",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    7,
+)
+.with_list_member(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_TAGS_MEMBER);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_CMK_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$CmkSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CmkSecretConfig",
+    8,
+);
+static CREATELOCATIONAZUREBLOBINPUT_MEMBER_CUSTOM_SECRET_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput$CustomSecretConfig",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CustomSecretConfig",
+    9,
+);
+static CREATELOCATIONAZUREBLOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#CreateLocationAzureBlobInput",
+        "com.amazonaws.datasync.synthetic",
+        "CreateLocationAzureBlobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_CONTAINER_URL,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_AUTHENTICATION_TYPE,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_SAS_CONFIGURATION,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_BLOB_TYPE,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_ACCESS_TIER,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_SUBDIRECTORY,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_TAGS,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_CMK_SECRET_CONFIG,
+        &CREATELOCATIONAZUREBLOBINPUT_MEMBER_CUSTOM_SECRET_CONFIG,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateLocationAzureBlobRequest");
+impl CreateLocationAzureBlobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATELOCATIONAZUREBLOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateLocationAzureBlobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.container_url {
+            ser.write_string(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_CONTAINER_URL, val)?;
+        }
+        if let Some(ref val) = self.authentication_type {
+            ser.write_string(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_AUTHENTICATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.sas_configuration {
+            ser.write_struct(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_SAS_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.blob_type {
+            ser.write_string(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_BLOB_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.access_tier {
+            ser.write_string(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_ACCESS_TIER, val.as_str())?;
+        }
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.agent_arns {
+            ser.write_list(
+                &CREATELOCATIONAZUREBLOBINPUT_MEMBER_AGENT_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATELOCATIONAZUREBLOBINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TagListEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cmk_secret_config {
+            ser.write_struct(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_CMK_SECRET_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.custom_secret_config {
+            ser.write_struct(&CREATELOCATIONAZUREBLOBINPUT_MEMBER_CUSTOM_SECRET_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATELOCATIONAZUREBLOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.authentication_type = Some(crate::types::AzureBlobAuthenticationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sas_configuration = Some(crate::types::AzureBlobSasConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blob_type = Some(crate::types::AzureBlobType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_tier = Some(crate::types::AzureAccessTier::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TagListEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cmk_secret_config = Some(crate::types::CmkSecretConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.custom_secret_config = Some(crate::types::CustomSecretConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateLocationAzureBlobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.container_url = builder.container_url.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateLocationAzureBlobInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationAzureBlobInput`](crate::operation::create_location_azure_blob::CreateLocationAzureBlobInput).
     pub fn builder() -> crate::operation::create_location_azure_blob::builders::CreateLocationAzureBlobInputBuilder {

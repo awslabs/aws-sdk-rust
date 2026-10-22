@@ -13,6 +13,84 @@ impl DescribeResourcePolicyOutput {
         self.resource_policy.as_ref()
     }
 }
+static DESCRIBERESOURCEPOLICYOUTPUT_MEMBER_RESOURCE_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#DescribeResourcePolicyOutput$ResourcePolicy",
+        "com.amazonaws.organizations.synthetic",
+        "DescribeResourcePolicyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResourcePolicy",
+    0,
+);
+static DESCRIBERESOURCEPOLICYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.organizations.synthetic#DescribeResourcePolicyOutput",
+        "com.amazonaws.organizations.synthetic",
+        "DescribeResourcePolicyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBERESOURCEPOLICYOUTPUT_MEMBER_RESOURCE_POLICY],
+)
+.with_original_name("DescribeResourcePolicyResponse");
+impl DescribeResourcePolicyOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBERESOURCEPOLICYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeResourcePolicyOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_policy {
+            ser.write_struct(&DESCRIBERESOURCEPOLICYOUTPUT_MEMBER_RESOURCE_POLICY, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBERESOURCEPOLICYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_policy = Some(crate::types::ResourcePolicy::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeResourcePolicyOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeResourcePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

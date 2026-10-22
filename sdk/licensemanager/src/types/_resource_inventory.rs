@@ -81,6 +81,335 @@ impl ResourceInventory {
         self.instance_type.as_deref()
     }
 }
+static RESOURCEINVENTORY_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$ResourceId",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static RESOURCEINVENTORY_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$ResourceType",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    1,
+);
+static RESOURCEINVENTORY_MEMBER_RESOURCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$ResourceArn",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceArn",
+    2,
+);
+static RESOURCEINVENTORY_MEMBER_PLATFORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$Platform",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Platform",
+    3,
+);
+static RESOURCEINVENTORY_MEMBER_PLATFORM_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$PlatformVersion",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PlatformVersion",
+    4,
+);
+static RESOURCEINVENTORY_MEMBER_RESOURCE_OWNING_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$ResourceOwningAccountId",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceOwningAccountId",
+    5,
+);
+static RESOURCEINVENTORY_MEMBER_MARKETPLACE_PRODUCT_CODES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#StringList$member",
+        "com.amazonaws.licensemanager",
+        "StringList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RESOURCEINVENTORY_MEMBER_MARKETPLACE_PRODUCT_CODES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$MarketplaceProductCodes",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MarketplaceProductCodes",
+    6,
+)
+.with_list_member(&RESOURCEINVENTORY_MEMBER_MARKETPLACE_PRODUCT_CODES_MEMBER);
+static RESOURCEINVENTORY_MEMBER_USAGE_OPERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$UsageOperation",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UsageOperation",
+    7,
+);
+static RESOURCEINVENTORY_MEMBER_AMI_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$AmiId",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AmiId",
+    8,
+);
+static RESOURCEINVENTORY_MEMBER_HOST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$HostId",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HostId",
+    9,
+);
+static RESOURCEINVENTORY_MEMBER_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$Region",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Region",
+    10,
+);
+static RESOURCEINVENTORY_MEMBER_INSTANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory$InstanceType",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceType",
+    11,
+);
+static RESOURCEINVENTORY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#ResourceInventory",
+        "com.amazonaws.licensemanager",
+        "ResourceInventory",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEINVENTORY_MEMBER_RESOURCE_ID,
+        &RESOURCEINVENTORY_MEMBER_RESOURCE_TYPE,
+        &RESOURCEINVENTORY_MEMBER_RESOURCE_ARN,
+        &RESOURCEINVENTORY_MEMBER_PLATFORM,
+        &RESOURCEINVENTORY_MEMBER_PLATFORM_VERSION,
+        &RESOURCEINVENTORY_MEMBER_RESOURCE_OWNING_ACCOUNT_ID,
+        &RESOURCEINVENTORY_MEMBER_MARKETPLACE_PRODUCT_CODES,
+        &RESOURCEINVENTORY_MEMBER_USAGE_OPERATION,
+        &RESOURCEINVENTORY_MEMBER_AMI_ID,
+        &RESOURCEINVENTORY_MEMBER_HOST_ID,
+        &RESOURCEINVENTORY_MEMBER_REGION,
+        &RESOURCEINVENTORY_MEMBER_INSTANCE_TYPE,
+    ],
+);
+impl ResourceInventory {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEINVENTORY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceInventory {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_arn {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_RESOURCE_ARN, val)?;
+        }
+        if let Some(ref val) = self.platform {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_PLATFORM, val)?;
+        }
+        if let Some(ref val) = self.platform_version {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_PLATFORM_VERSION, val)?;
+        }
+        if let Some(ref val) = self.resource_owning_account_id {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_RESOURCE_OWNING_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.marketplace_product_codes {
+            ser.write_list(
+                &RESOURCEINVENTORY_MEMBER_MARKETPLACE_PRODUCT_CODES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.usage_operation {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_USAGE_OPERATION, val)?;
+        }
+        if let Some(ref val) = self.ami_id {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_AMI_ID, val)?;
+        }
+        if let Some(ref val) = self.host_id {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_HOST_ID, val)?;
+        }
+        if let Some(ref val) = self.region {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_REGION, val)?;
+        }
+        if let Some(ref val) = self.instance_type {
+            ser.write_string(&RESOURCEINVENTORY_MEMBER_INSTANCE_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResourceInventoryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOURCEINVENTORY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.platform_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owning_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.marketplace_product_codes = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.usage_operation = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ami_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.host_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResourceInventory {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResourceInventory {
     /// Creates a new builder-style object to manufacture [`ResourceInventory`](crate::types::ResourceInventory).
     pub fn builder() -> crate::types::builders::ResourceInventoryBuilder {

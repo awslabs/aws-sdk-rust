@@ -53,6 +53,191 @@ impl Commit {
         self.additional_data.as_deref()
     }
 }
+static COMMIT_MEMBER_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit$commitId", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::String,
+    "commitId",
+    0,
+);
+static COMMIT_MEMBER_TREE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit$treeId", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::String,
+    "treeId",
+    1,
+);
+static COMMIT_MEMBER_PARENTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#ParentList$member", "com.amazonaws.codecommit", "ParentList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static COMMIT_MEMBER_PARENTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit$parents", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::List,
+    "parents",
+    2,
+)
+.with_list_member(&COMMIT_MEMBER_PARENTS_MEMBER);
+static COMMIT_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit$message", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::String,
+    "message",
+    3,
+);
+static COMMIT_MEMBER_AUTHOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit$author", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "author",
+    4,
+);
+static COMMIT_MEMBER_COMMITTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit$committer", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "committer",
+    5,
+);
+static COMMIT_MEMBER_ADDITIONAL_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit$additionalData", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::String,
+    "additionalData",
+    6,
+);
+static COMMIT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codecommit#Commit", "com.amazonaws.codecommit", "Commit"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COMMIT_MEMBER_COMMIT_ID,
+        &COMMIT_MEMBER_TREE_ID,
+        &COMMIT_MEMBER_PARENTS,
+        &COMMIT_MEMBER_MESSAGE,
+        &COMMIT_MEMBER_AUTHOR,
+        &COMMIT_MEMBER_COMMITTER,
+        &COMMIT_MEMBER_ADDITIONAL_DATA,
+    ],
+);
+impl Commit {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMMIT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Commit {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.commit_id {
+            ser.write_string(&COMMIT_MEMBER_COMMIT_ID, val)?;
+        }
+        if let Some(ref val) = self.tree_id {
+            ser.write_string(&COMMIT_MEMBER_TREE_ID, val)?;
+        }
+        if let Some(ref val) = self.parents {
+            ser.write_list(&COMMIT_MEMBER_PARENTS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&COMMIT_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.author {
+            ser.write_struct(&COMMIT_MEMBER_AUTHOR, val)?;
+        }
+        if let Some(ref val) = self.committer {
+            ser.write_struct(&COMMIT_MEMBER_COMMITTER, val)?;
+        }
+        if let Some(ref val) = self.additional_data {
+            ser.write_string(&COMMIT_MEMBER_ADDITIONAL_DATA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CommitBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COMMIT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tree_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.parents = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.author = Some(crate::types::UserInfo::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.committer = Some(crate::types::UserInfo::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_data = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Commit {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Commit {
     /// Creates a new builder-style object to manufacture [`Commit`](crate::types::Commit).
     pub fn builder() -> crate::types::builders::CommitBuilder {

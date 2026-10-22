@@ -80,6 +80,165 @@ impl OrganizationConfigRuleStatus {
         self.last_update_time.as_ref()
     }
 }
+static ORGANIZATIONCONFIGRULESTATUS_MEMBER_ORGANIZATION_CONFIG_RULE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.configservice#OrganizationConfigRuleStatus$OrganizationConfigRuleName",
+            "com.amazonaws.configservice",
+            "OrganizationConfigRuleStatus",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "OrganizationConfigRuleName",
+        0,
+    );
+static ORGANIZATIONCONFIGRULESTATUS_MEMBER_ORGANIZATION_RULE_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConfigRuleStatus$OrganizationRuleStatus",
+        "com.amazonaws.configservice",
+        "OrganizationConfigRuleStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OrganizationRuleStatus",
+    1,
+);
+static ORGANIZATIONCONFIGRULESTATUS_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConfigRuleStatus$ErrorCode",
+        "com.amazonaws.configservice",
+        "OrganizationConfigRuleStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorCode",
+    2,
+);
+static ORGANIZATIONCONFIGRULESTATUS_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConfigRuleStatus$ErrorMessage",
+        "com.amazonaws.configservice",
+        "OrganizationConfigRuleStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ErrorMessage",
+    3,
+);
+static ORGANIZATIONCONFIGRULESTATUS_MEMBER_LAST_UPDATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConfigRuleStatus$LastUpdateTime",
+        "com.amazonaws.configservice",
+        "OrganizationConfigRuleStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastUpdateTime",
+    4,
+);
+static ORGANIZATIONCONFIGRULESTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#OrganizationConfigRuleStatus",
+        "com.amazonaws.configservice",
+        "OrganizationConfigRuleStatus",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ORGANIZATIONCONFIGRULESTATUS_MEMBER_ORGANIZATION_CONFIG_RULE_NAME,
+        &ORGANIZATIONCONFIGRULESTATUS_MEMBER_ORGANIZATION_RULE_STATUS,
+        &ORGANIZATIONCONFIGRULESTATUS_MEMBER_ERROR_CODE,
+        &ORGANIZATIONCONFIGRULESTATUS_MEMBER_ERROR_MESSAGE,
+        &ORGANIZATIONCONFIGRULESTATUS_MEMBER_LAST_UPDATE_TIME,
+    ],
+);
+impl OrganizationConfigRuleStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ORGANIZATIONCONFIGRULESTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OrganizationConfigRuleStatus {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.organization_config_rule_name;
+            ser.write_string(&ORGANIZATIONCONFIGRULESTATUS_MEMBER_ORGANIZATION_CONFIG_RULE_NAME, val)?;
+        }
+        {
+            let val = &self.organization_rule_status;
+            ser.write_string(&ORGANIZATIONCONFIGRULESTATUS_MEMBER_ORGANIZATION_RULE_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&ORGANIZATIONCONFIGRULESTATUS_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&ORGANIZATIONCONFIGRULESTATUS_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.last_update_time {
+            ser.write_timestamp(&ORGANIZATIONCONFIGRULESTATUS_MEMBER_LAST_UPDATE_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OrganizationConfigRuleStatusBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ORGANIZATIONCONFIGRULESTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.organization_config_rule_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.organization_rule_status = Some(crate::types::OrganizationRuleStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_update_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OrganizationConfigRuleStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.organization_config_rule_name = builder.organization_config_rule_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl OrganizationConfigRuleStatus {
     /// Creates a new builder-style object to manufacture [`OrganizationConfigRuleStatus`](crate::types::OrganizationConfigRuleStatus).
     pub fn builder() -> crate::types::builders::OrganizationConfigRuleStatusBuilder {

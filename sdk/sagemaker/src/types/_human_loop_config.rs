@@ -473,6 +473,268 @@ impl HumanLoopConfig {
         self.public_workforce_task_price.as_ref()
     }
 }
+static HUMANLOOPCONFIG_MEMBER_WORKTEAM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$WorkteamArn",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkteamArn",
+    0,
+);
+static HUMANLOOPCONFIG_MEMBER_HUMAN_TASK_UI_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$HumanTaskUiArn",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HumanTaskUiArn",
+    1,
+);
+static HUMANLOOPCONFIG_MEMBER_TASK_TITLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$TaskTitle",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskTitle",
+    2,
+);
+static HUMANLOOPCONFIG_MEMBER_TASK_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$TaskDescription",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskDescription",
+    3,
+);
+static HUMANLOOPCONFIG_MEMBER_TASK_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$TaskCount",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TaskCount",
+    4,
+);
+static HUMANLOOPCONFIG_MEMBER_TASK_AVAILABILITY_LIFETIME_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$TaskAvailabilityLifetimeInSeconds",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TaskAvailabilityLifetimeInSeconds",
+    5,
+);
+static HUMANLOOPCONFIG_MEMBER_TASK_TIME_LIMIT_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$TaskTimeLimitInSeconds",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TaskTimeLimitInSeconds",
+    6,
+);
+static HUMANLOOPCONFIG_MEMBER_TASK_KEYWORDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#FlowDefinitionTaskKeywords$member",
+        "com.amazonaws.sagemaker",
+        "FlowDefinitionTaskKeywords",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static HUMANLOOPCONFIG_MEMBER_TASK_KEYWORDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$TaskKeywords",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TaskKeywords",
+    7,
+)
+.with_list_member(&HUMANLOOPCONFIG_MEMBER_TASK_KEYWORDS_MEMBER);
+static HUMANLOOPCONFIG_MEMBER_PUBLIC_WORKFORCE_TASK_PRICE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HumanLoopConfig$PublicWorkforceTaskPrice",
+        "com.amazonaws.sagemaker",
+        "HumanLoopConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "PublicWorkforceTaskPrice",
+    8,
+);
+static HUMANLOOPCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#HumanLoopConfig", "com.amazonaws.sagemaker", "HumanLoopConfig"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &HUMANLOOPCONFIG_MEMBER_WORKTEAM_ARN,
+        &HUMANLOOPCONFIG_MEMBER_HUMAN_TASK_UI_ARN,
+        &HUMANLOOPCONFIG_MEMBER_TASK_TITLE,
+        &HUMANLOOPCONFIG_MEMBER_TASK_DESCRIPTION,
+        &HUMANLOOPCONFIG_MEMBER_TASK_COUNT,
+        &HUMANLOOPCONFIG_MEMBER_TASK_AVAILABILITY_LIFETIME_IN_SECONDS,
+        &HUMANLOOPCONFIG_MEMBER_TASK_TIME_LIMIT_IN_SECONDS,
+        &HUMANLOOPCONFIG_MEMBER_TASK_KEYWORDS,
+        &HUMANLOOPCONFIG_MEMBER_PUBLIC_WORKFORCE_TASK_PRICE,
+    ],
+);
+impl HumanLoopConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &HUMANLOOPCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for HumanLoopConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.workteam_arn {
+            ser.write_string(&HUMANLOOPCONFIG_MEMBER_WORKTEAM_ARN, val)?;
+        }
+        if let Some(ref val) = self.human_task_ui_arn {
+            ser.write_string(&HUMANLOOPCONFIG_MEMBER_HUMAN_TASK_UI_ARN, val)?;
+        }
+        if let Some(ref val) = self.task_title {
+            ser.write_string(&HUMANLOOPCONFIG_MEMBER_TASK_TITLE, val)?;
+        }
+        if let Some(ref val) = self.task_description {
+            ser.write_string(&HUMANLOOPCONFIG_MEMBER_TASK_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.task_count {
+            ser.write_integer(&HUMANLOOPCONFIG_MEMBER_TASK_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.task_availability_lifetime_in_seconds {
+            ser.write_integer(&HUMANLOOPCONFIG_MEMBER_TASK_AVAILABILITY_LIFETIME_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.task_time_limit_in_seconds {
+            ser.write_integer(&HUMANLOOPCONFIG_MEMBER_TASK_TIME_LIMIT_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.task_keywords {
+            ser.write_list(
+                &HUMANLOOPCONFIG_MEMBER_TASK_KEYWORDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.public_workforce_task_price {
+            ser.write_struct(&HUMANLOOPCONFIG_MEMBER_PUBLIC_WORKFORCE_TASK_PRICE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::HumanLoopConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&HUMANLOOPCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workteam_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.human_task_ui_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_title = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_availability_lifetime_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_time_limit_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.task_keywords = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_workforce_task_price = Some(crate::types::PublicWorkforceTaskPrice::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl HumanLoopConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl HumanLoopConfig {
     /// Creates a new builder-style object to manufacture [`HumanLoopConfig`](crate::types::HumanLoopConfig).
     pub fn builder() -> crate::types::builders::HumanLoopConfigBuilder {

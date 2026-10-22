@@ -19,6 +19,150 @@ impl GetInstancesHealthStatusOutput {
         self.next_token.as_deref()
     }
 }
+static GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_STATUS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#InstanceHealthStatusMap$key",
+        "com.amazonaws.servicediscovery",
+        "InstanceHealthStatusMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_STATUS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#InstanceHealthStatusMap$value",
+        "com.amazonaws.servicediscovery",
+        "InstanceHealthStatusMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#GetInstancesHealthStatusOutput$Status",
+        "com.amazonaws.servicediscovery.synthetic",
+        "GetInstancesHealthStatusOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Status",
+    0,
+)
+.with_map_members(
+    &GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_STATUS_KEY,
+    &GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_STATUS_VALUE,
+);
+static GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#GetInstancesHealthStatusOutput$NextToken",
+        "com.amazonaws.servicediscovery.synthetic",
+        "GetInstancesHealthStatusOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static GETINSTANCESHEALTHSTATUSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#GetInstancesHealthStatusOutput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "GetInstancesHealthStatusOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_STATUS,
+        &GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("GetInstancesHealthStatusResponse");
+impl GetInstancesHealthStatusOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETINSTANCESHEALTHSTATUSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetInstancesHealthStatusOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.status {
+            ser.write_map(
+                &GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_STATUS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETINSTANCESHEALTHSTATUSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_instances_health_status::builders::GetInstancesHealthStatusOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETINSTANCESHEALTHSTATUSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(
+                                    key,
+                                    crate::types::HealthStatus::from(deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str()),
+                                );
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetInstancesHealthStatusOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetInstancesHealthStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

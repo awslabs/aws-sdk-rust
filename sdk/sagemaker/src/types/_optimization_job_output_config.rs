@@ -25,6 +25,127 @@ impl OptimizationJobOutputConfig {
         self.sage_maker_model.as_ref()
     }
 }
+static OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobOutputConfig$KmsKeyId",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    0,
+);
+static OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobOutputConfig$S3OutputLocation",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3OutputLocation",
+    1,
+);
+static OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_SAGE_MAKER_MODEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobOutputConfig$SageMakerModel",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SageMakerModel",
+    2,
+);
+static OPTIMIZATIONJOBOUTPUTCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#OptimizationJobOutputConfig",
+        "com.amazonaws.sagemaker",
+        "OptimizationJobOutputConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_KMS_KEY_ID,
+        &OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION,
+        &OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_SAGE_MAKER_MODEL,
+    ],
+);
+impl OptimizationJobOutputConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPTIMIZATIONJOBOUTPUTCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OptimizationJobOutputConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.s3_output_location {
+            ser.write_string(&OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_S3_OUTPUT_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.sage_maker_model {
+            ser.write_struct(&OPTIMIZATIONJOBOUTPUTCONFIG_MEMBER_SAGE_MAKER_MODEL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::OptimizationJobOutputConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&OPTIMIZATIONJOBOUTPUTCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_output_location = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sage_maker_model = Some(crate::types::OptimizationSageMakerModel::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl OptimizationJobOutputConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl OptimizationJobOutputConfig {
     /// Creates a new builder-style object to manufacture [`OptimizationJobOutputConfig`](crate::types::OptimizationJobOutputConfig).
     pub fn builder() -> crate::types::builders::OptimizationJobOutputConfigBuilder {

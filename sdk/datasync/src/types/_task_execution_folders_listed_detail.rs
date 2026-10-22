@@ -37,6 +37,101 @@ impl TaskExecutionFoldersListedDetail {
         self.at_destination_for_delete
     }
 }
+static TASKEXECUTIONFOLDERSLISTEDDETAIL_MEMBER_AT_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersListedDetail$AtSource",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersListedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "AtSource",
+    0,
+);
+static TASKEXECUTIONFOLDERSLISTEDDETAIL_MEMBER_AT_DESTINATION_FOR_DELETE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.datasync#TaskExecutionFoldersListedDetail$AtDestinationForDelete",
+            "com.amazonaws.datasync",
+            "TaskExecutionFoldersListedDetail",
+        ),
+        ::aws_smithy_schema::ShapeType::Long,
+        "AtDestinationForDelete",
+        1,
+    );
+static TASKEXECUTIONFOLDERSLISTEDDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync#TaskExecutionFoldersListedDetail",
+        "com.amazonaws.datasync",
+        "TaskExecutionFoldersListedDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TASKEXECUTIONFOLDERSLISTEDDETAIL_MEMBER_AT_SOURCE,
+        &TASKEXECUTIONFOLDERSLISTEDDETAIL_MEMBER_AT_DESTINATION_FOR_DELETE,
+    ],
+);
+impl TaskExecutionFoldersListedDetail {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TASKEXECUTIONFOLDERSLISTEDDETAIL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TaskExecutionFoldersListedDetail {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.at_source;
+            ser.write_long(&TASKEXECUTIONFOLDERSLISTEDDETAIL_MEMBER_AT_SOURCE, *val)?;
+        }
+        {
+            let val = &self.at_destination_for_delete;
+            ser.write_long(&TASKEXECUTIONFOLDERSLISTEDDETAIL_MEMBER_AT_DESTINATION_FOR_DELETE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TaskExecutionFoldersListedDetailBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TASKEXECUTIONFOLDERSLISTEDDETAIL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.at_source = Some(deser.read_long(member)?);
+                }
+                Some(1) => {
+                    self.at_destination_for_delete = Some(deser.read_long(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TaskExecutionFoldersListedDetail {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TaskExecutionFoldersListedDetail {
     /// Creates a new builder-style object to manufacture [`TaskExecutionFoldersListedDetail`](crate::types::TaskExecutionFoldersListedDetail).
     pub fn builder() -> crate::types::builders::TaskExecutionFoldersListedDetailBuilder {

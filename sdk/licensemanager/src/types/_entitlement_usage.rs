@@ -33,6 +33,141 @@ impl EntitlementUsage {
         &self.unit
     }
 }
+static ENTITLEMENTUSAGE_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementUsage$Name",
+        "com.amazonaws.licensemanager",
+        "EntitlementUsage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static ENTITLEMENTUSAGE_MEMBER_CONSUMED_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementUsage$ConsumedValue",
+        "com.amazonaws.licensemanager",
+        "EntitlementUsage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConsumedValue",
+    1,
+);
+static ENTITLEMENTUSAGE_MEMBER_MAX_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementUsage$MaxCount",
+        "com.amazonaws.licensemanager",
+        "EntitlementUsage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxCount",
+    2,
+);
+static ENTITLEMENTUSAGE_MEMBER_UNIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementUsage$Unit",
+        "com.amazonaws.licensemanager",
+        "EntitlementUsage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Unit",
+    3,
+);
+static ENTITLEMENTUSAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager#EntitlementUsage",
+        "com.amazonaws.licensemanager",
+        "EntitlementUsage",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ENTITLEMENTUSAGE_MEMBER_NAME,
+        &ENTITLEMENTUSAGE_MEMBER_CONSUMED_VALUE,
+        &ENTITLEMENTUSAGE_MEMBER_MAX_COUNT,
+        &ENTITLEMENTUSAGE_MEMBER_UNIT,
+    ],
+);
+impl EntitlementUsage {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENTITLEMENTUSAGE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EntitlementUsage {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&ENTITLEMENTUSAGE_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.consumed_value;
+            ser.write_string(&ENTITLEMENTUSAGE_MEMBER_CONSUMED_VALUE, val)?;
+        }
+        if let Some(ref val) = self.max_count {
+            ser.write_string(&ENTITLEMENTUSAGE_MEMBER_MAX_COUNT, val)?;
+        }
+        {
+            let val = &self.unit;
+            ser.write_string(&ENTITLEMENTUSAGE_MEMBER_UNIT, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EntitlementUsageBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENTITLEMENTUSAGE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.consumed_value = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_count = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    self.unit = Some(crate::types::EntitlementDataUnit::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EntitlementUsage {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.consumed_value = builder.consumed_value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl EntitlementUsage {
     /// Creates a new builder-style object to manufacture [`EntitlementUsage`](crate::types::EntitlementUsage).
     pub fn builder() -> crate::types::builders::EntitlementUsageBuilder {

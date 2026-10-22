@@ -15,6 +15,111 @@ impl EnvironmentParameterRanges {
         self.categorical_parameter_ranges.as_deref().unwrap_or_default()
     }
 }
+static ENVIRONMENTPARAMETERRANGES_MEMBER_CATEGORICAL_PARAMETER_RANGES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#CategoricalParameters$member",
+            "com.amazonaws.sagemaker",
+            "CategoricalParameters",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static ENVIRONMENTPARAMETERRANGES_MEMBER_CATEGORICAL_PARAMETER_RANGES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#EnvironmentParameterRanges$CategoricalParameterRanges",
+            "com.amazonaws.sagemaker",
+            "EnvironmentParameterRanges",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "CategoricalParameterRanges",
+        0,
+    )
+    .with_list_member(&ENVIRONMENTPARAMETERRANGES_MEMBER_CATEGORICAL_PARAMETER_RANGES_MEMBER);
+static ENVIRONMENTPARAMETERRANGES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EnvironmentParameterRanges",
+        "com.amazonaws.sagemaker",
+        "EnvironmentParameterRanges",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&ENVIRONMENTPARAMETERRANGES_MEMBER_CATEGORICAL_PARAMETER_RANGES],
+);
+impl EnvironmentParameterRanges {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ENVIRONMENTPARAMETERRANGES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EnvironmentParameterRanges {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.categorical_parameter_ranges {
+            ser.write_list(
+                &ENVIRONMENTPARAMETERRANGES_MEMBER_CATEGORICAL_PARAMETER_RANGES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CategoricalParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::EnvironmentParameterRangesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ENVIRONMENTPARAMETERRANGES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.categorical_parameter_ranges = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CategoricalParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl EnvironmentParameterRanges {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl EnvironmentParameterRanges {
     /// Creates a new builder-style object to manufacture [`EnvironmentParameterRanges`](crate::types::EnvironmentParameterRanges).
     pub fn builder() -> crate::types::builders::EnvironmentParameterRangesBuilder {

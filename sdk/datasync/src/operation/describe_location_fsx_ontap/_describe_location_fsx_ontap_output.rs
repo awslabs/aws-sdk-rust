@@ -51,6 +51,233 @@ impl DescribeLocationFsxOntapOutput {
         self.fsx_filesystem_arn.as_deref()
     }
 }
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput$CreationTime",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOntapOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    0,
+);
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOntapOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    1,
+);
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_LOCATION_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput$LocationUri",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOntapOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationUri",
+    2,
+);
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_PROTOCOL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput$Protocol",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOntapOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Protocol",
+    3,
+);
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.datasync#Ec2SecurityGroupArnList$member",
+            "com.amazonaws.datasync",
+            "Ec2SecurityGroupArnList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_SECURITY_GROUP_ARNS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput$SecurityGroupArns",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOntapOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SecurityGroupArns",
+    4,
+)
+.with_list_member(&DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_SECURITY_GROUP_ARNS_MEMBER);
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_STORAGE_VIRTUAL_MACHINE_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput$StorageVirtualMachineArn",
+            "com.amazonaws.datasync.synthetic",
+            "DescribeLocationFsxOntapOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "StorageVirtualMachineArn",
+        5,
+    );
+static DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_FSX_FILESYSTEM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput$FsxFilesystemArn",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOntapOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FsxFilesystemArn",
+    6,
+);
+static DESCRIBELOCATIONFSXONTAPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#DescribeLocationFsxOntapOutput",
+        "com.amazonaws.datasync.synthetic",
+        "DescribeLocationFsxOntapOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_LOCATION_ARN,
+        &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_LOCATION_URI,
+        &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_PROTOCOL,
+        &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_SECURITY_GROUP_ARNS,
+        &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_STORAGE_VIRTUAL_MACHINE_ARN,
+        &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_FSX_FILESYSTEM_ARN,
+    ],
+)
+.with_original_name("DescribeLocationFsxOntapResponse");
+impl DescribeLocationFsxOntapOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBELOCATIONFSXONTAPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeLocationFsxOntapOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.location_uri {
+            ser.write_string(&DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_LOCATION_URI, val)?;
+        }
+        if let Some(ref val) = self.protocol {
+            ser.write_struct(&DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_PROTOCOL, val)?;
+        }
+        if let Some(ref val) = self.security_group_arns {
+            ser.write_list(
+                &DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_SECURITY_GROUP_ARNS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.storage_virtual_machine_arn {
+            ser.write_string(&DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_STORAGE_VIRTUAL_MACHINE_ARN, val)?;
+        }
+        if let Some(ref val) = self.fsx_filesystem_arn {
+            ser.write_string(&DESCRIBELOCATIONFSXONTAPOUTPUT_MEMBER_FSX_FILESYSTEM_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_location_fsx_ontap::builders::DescribeLocationFsxOntapOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBELOCATIONFSXONTAPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.protocol = Some(crate::types::FsxProtocol::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.security_group_arns = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.storage_virtual_machine_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.fsx_filesystem_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeLocationFsxOntapOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeLocationFsxOntapOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

@@ -52,6 +52,231 @@ impl ListWebhookItem {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static LISTWEBHOOKITEM_MEMBER_DEFINITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem$definition",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "definition",
+    0,
+);
+static LISTWEBHOOKITEM_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem$url",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "url",
+    1,
+);
+static LISTWEBHOOKITEM_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem$errorMessage",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "errorMessage",
+    2,
+);
+static LISTWEBHOOKITEM_MEMBER_ERROR_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem$errorCode",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "errorCode",
+    3,
+);
+static LISTWEBHOOKITEM_MEMBER_LAST_TRIGGERED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem$lastTriggered",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "lastTriggered",
+    4,
+);
+static LISTWEBHOOKITEM_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem$arn",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    5,
+);
+static LISTWEBHOOKITEM_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#TagList$member", "com.amazonaws.codepipeline", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTWEBHOOKITEM_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem$tags",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    6,
+)
+.with_list_member(&LISTWEBHOOKITEM_MEMBER_TAGS_MEMBER);
+static LISTWEBHOOKITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ListWebhookItem",
+        "com.amazonaws.codepipeline",
+        "ListWebhookItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTWEBHOOKITEM_MEMBER_DEFINITION,
+        &LISTWEBHOOKITEM_MEMBER_URL,
+        &LISTWEBHOOKITEM_MEMBER_ERROR_MESSAGE,
+        &LISTWEBHOOKITEM_MEMBER_ERROR_CODE,
+        &LISTWEBHOOKITEM_MEMBER_LAST_TRIGGERED,
+        &LISTWEBHOOKITEM_MEMBER_ARN,
+        &LISTWEBHOOKITEM_MEMBER_TAGS,
+    ],
+);
+impl ListWebhookItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTWEBHOOKITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListWebhookItem {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.definition {
+            ser.write_struct(&LISTWEBHOOKITEM_MEMBER_DEFINITION, val)?;
+        }
+        {
+            let val = &self.url;
+            ser.write_string(&LISTWEBHOOKITEM_MEMBER_URL, val)?;
+        }
+        if let Some(ref val) = self.error_message {
+            ser.write_string(&LISTWEBHOOKITEM_MEMBER_ERROR_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.error_code {
+            ser.write_string(&LISTWEBHOOKITEM_MEMBER_ERROR_CODE, val)?;
+        }
+        if let Some(ref val) = self.last_triggered {
+            ser.write_timestamp(&LISTWEBHOOKITEM_MEMBER_LAST_TRIGGERED, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&LISTWEBHOOKITEM_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &LISTWEBHOOKITEM_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ListWebhookItemBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTWEBHOOKITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.definition = Some(crate::types::WebhookDefinition::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    self.url = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.error_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_triggered = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListWebhookItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.url = builder.url.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ListWebhookItem {
     /// Creates a new builder-style object to manufacture [`ListWebhookItem`](crate::types::ListWebhookItem).
     pub fn builder() -> crate::types::builders::ListWebhookItemBuilder {

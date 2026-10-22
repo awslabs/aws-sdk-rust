@@ -72,6 +72,334 @@ impl StartCacheReportInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static STARTCACHEREPORTINPUT_MEMBER_FILE_SHARE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$FileShareARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileShareARN",
+    0,
+);
+static STARTCACHEREPORTINPUT_MEMBER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$Role",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Role",
+    1,
+);
+static STARTCACHEREPORTINPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$LocationARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationARN",
+    2,
+);
+static STARTCACHEREPORTINPUT_MEMBER_BUCKET_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$BucketRegion",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BucketRegion",
+    3,
+);
+static STARTCACHEREPORTINPUT_MEMBER_VPC_ENDPOINT_DNS_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$VPCEndpointDNSName",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VPCEndpointDNSName",
+    4,
+);
+static STARTCACHEREPORTINPUT_MEMBER_INCLUSION_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportFilterList$member",
+        "com.amazonaws.storagegateway",
+        "CacheReportFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTCACHEREPORTINPUT_MEMBER_INCLUSION_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$InclusionFilters",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InclusionFilters",
+    5,
+)
+.with_list_member(&STARTCACHEREPORTINPUT_MEMBER_INCLUSION_FILTERS_MEMBER);
+static STARTCACHEREPORTINPUT_MEMBER_EXCLUSION_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#CacheReportFilterList$member",
+        "com.amazonaws.storagegateway",
+        "CacheReportFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTCACHEREPORTINPUT_MEMBER_EXCLUSION_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$ExclusionFilters",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ExclusionFilters",
+    6,
+)
+.with_list_member(&STARTCACHEREPORTINPUT_MEMBER_EXCLUSION_FILTERS_MEMBER);
+static STARTCACHEREPORTINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$ClientToken",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    7,
+);
+static STARTCACHEREPORTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.storagegateway#Tags$member", "com.amazonaws.storagegateway", "Tags"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTCACHEREPORTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput$Tags",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&STARTCACHEREPORTINPUT_MEMBER_TAGS_MEMBER);
+static STARTCACHEREPORTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#StartCacheReportInput",
+        "com.amazonaws.storagegateway.synthetic",
+        "StartCacheReportInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTCACHEREPORTINPUT_MEMBER_FILE_SHARE_ARN,
+        &STARTCACHEREPORTINPUT_MEMBER_ROLE,
+        &STARTCACHEREPORTINPUT_MEMBER_LOCATION_ARN,
+        &STARTCACHEREPORTINPUT_MEMBER_BUCKET_REGION,
+        &STARTCACHEREPORTINPUT_MEMBER_VPC_ENDPOINT_DNS_NAME,
+        &STARTCACHEREPORTINPUT_MEMBER_INCLUSION_FILTERS,
+        &STARTCACHEREPORTINPUT_MEMBER_EXCLUSION_FILTERS,
+        &STARTCACHEREPORTINPUT_MEMBER_CLIENT_TOKEN,
+        &STARTCACHEREPORTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartCacheReportInput");
+impl StartCacheReportInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTCACHEREPORTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartCacheReportInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.file_share_arn {
+            ser.write_string(&STARTCACHEREPORTINPUT_MEMBER_FILE_SHARE_ARN, val)?;
+        }
+        if let Some(ref val) = self.role {
+            ser.write_string(&STARTCACHEREPORTINPUT_MEMBER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&STARTCACHEREPORTINPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.bucket_region {
+            ser.write_string(&STARTCACHEREPORTINPUT_MEMBER_BUCKET_REGION, val)?;
+        }
+        if let Some(ref val) = self.vpc_endpoint_dns_name {
+            ser.write_string(&STARTCACHEREPORTINPUT_MEMBER_VPC_ENDPOINT_DNS_NAME, val)?;
+        }
+        if let Some(ref val) = self.inclusion_filters {
+            ser.write_list(
+                &STARTCACHEREPORTINPUT_MEMBER_INCLUSION_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CacheReportFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.exclusion_filters {
+            ser.write_list(
+                &STARTCACHEREPORTINPUT_MEMBER_EXCLUSION_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CacheReportFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&STARTCACHEREPORTINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTCACHEREPORTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_cache_report::builders::StartCacheReportInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTCACHEREPORTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_share_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_endpoint_dns_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.inclusion_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CacheReportFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.exclusion_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CacheReportFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartCacheReportInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_share_arn = builder.file_share_arn.or(Some(String::new()));
+        builder.role = builder.role.or(Some(String::new()));
+        builder.location_arn = builder.location_arn.or(Some(String::new()));
+        builder.bucket_region = builder.bucket_region.or(Some(String::new()));
+        builder.client_token = builder.client_token.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartCacheReportInput {
     /// Creates a new builder-style object to manufacture [`StartCacheReportInput`](crate::operation::start_cache_report::StartCacheReportInput).
     pub fn builder() -> crate::operation::start_cache_report::builders::StartCacheReportInputBuilder {

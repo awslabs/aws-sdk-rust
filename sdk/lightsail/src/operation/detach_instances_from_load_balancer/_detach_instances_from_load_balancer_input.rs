@@ -20,6 +20,135 @@ impl DetachInstancesFromLoadBalancerInput {
         self.instance_names.as_deref().unwrap_or_default()
     }
 }
+static DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_LOAD_BALANCER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DetachInstancesFromLoadBalancerInput$loadBalancerName",
+        "com.amazonaws.lightsail.synthetic",
+        "DetachInstancesFromLoadBalancerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "loadBalancerName",
+    0,
+);
+static DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_INSTANCE_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#ResourceNameList$member",
+            "com.amazonaws.lightsail",
+            "ResourceNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_INSTANCE_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DetachInstancesFromLoadBalancerInput$instanceNames",
+        "com.amazonaws.lightsail.synthetic",
+        "DetachInstancesFromLoadBalancerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "instanceNames",
+    1,
+)
+.with_list_member(&DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_INSTANCE_NAMES_MEMBER);
+static DETACHINSTANCESFROMLOADBALANCERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#DetachInstancesFromLoadBalancerInput",
+        "com.amazonaws.lightsail.synthetic",
+        "DetachInstancesFromLoadBalancerInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_LOAD_BALANCER_NAME,
+        &DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_INSTANCE_NAMES,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/DetachInstancesFromLoadBalancer",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DetachInstancesFromLoadBalancerRequest");
+impl DetachInstancesFromLoadBalancerInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DETACHINSTANCESFROMLOADBALANCERINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DetachInstancesFromLoadBalancerInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.load_balancer_name {
+            ser.write_string(&DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_LOAD_BALANCER_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_names {
+            ser.write_list(
+                &DETACHINSTANCESFROMLOADBALANCERINPUT_MEMBER_INSTANCE_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DETACHINSTANCESFROMLOADBALANCERINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DetachInstancesFromLoadBalancerInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.load_balancer_name = builder.load_balancer_name.or(Some(String::new()));
+        builder.instance_names = builder.instance_names.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DetachInstancesFromLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
     pub fn builder() -> crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder {

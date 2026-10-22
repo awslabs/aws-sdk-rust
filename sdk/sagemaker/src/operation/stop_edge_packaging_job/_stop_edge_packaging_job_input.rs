@@ -12,6 +12,86 @@ impl StopEdgePackagingJobInput {
         self.edge_packaging_job_name.as_deref()
     }
 }
+static STOPEDGEPACKAGINGJOBINPUT_MEMBER_EDGE_PACKAGING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StopEdgePackagingJobInput$EdgePackagingJobName",
+        "com.amazonaws.sagemaker.synthetic",
+        "StopEdgePackagingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EdgePackagingJobName",
+    0,
+);
+static STOPEDGEPACKAGINGJOBINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StopEdgePackagingJobInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "StopEdgePackagingJobInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STOPEDGEPACKAGINGJOBINPUT_MEMBER_EDGE_PACKAGING_JOB_NAME],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StopEdgePackagingJobRequest");
+impl StopEdgePackagingJobInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOPEDGEPACKAGINGJOBINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StopEdgePackagingJobInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.edge_packaging_job_name {
+            ser.write_string(&STOPEDGEPACKAGINGJOBINPUT_MEMBER_EDGE_PACKAGING_JOB_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STOPEDGEPACKAGINGJOBINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.edge_packaging_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StopEdgePackagingJobInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.edge_packaging_job_name = builder.edge_packaging_job_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StopEdgePackagingJobInput {
     /// Creates a new builder-style object to manufacture [`StopEdgePackagingJobInput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobInput).
     pub fn builder() -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobInputBuilder {

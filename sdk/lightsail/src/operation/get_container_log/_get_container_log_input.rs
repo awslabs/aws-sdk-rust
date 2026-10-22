@@ -106,6 +106,206 @@ impl GetContainerLogInput {
         self.page_token.as_deref()
     }
 }
+static GETCONTAINERLOGINPUT_MEMBER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerLogInput$serviceName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerLogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceName",
+    0,
+)
+.with_http_label();
+static GETCONTAINERLOGINPUT_MEMBER_CONTAINER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerLogInput$containerName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerLogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "containerName",
+    1,
+)
+.with_http_label();
+static GETCONTAINERLOGINPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerLogInput$startTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerLogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "startTime",
+    2,
+)
+.with_http_query("startTime");
+static GETCONTAINERLOGINPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerLogInput$endTime",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerLogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "endTime",
+    3,
+)
+.with_http_query("endTime");
+static GETCONTAINERLOGINPUT_MEMBER_FILTER_PATTERN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerLogInput$filterPattern",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerLogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "filterPattern",
+    4,
+)
+.with_http_query("filterPattern");
+static GETCONTAINERLOGINPUT_MEMBER_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerLogInput$pageToken",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerLogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pageToken",
+    5,
+)
+.with_http_query("pageToken");
+static GETCONTAINERLOGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetContainerLogInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetContainerLogInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETCONTAINERLOGINPUT_MEMBER_SERVICE_NAME,
+        &GETCONTAINERLOGINPUT_MEMBER_CONTAINER_NAME,
+        &GETCONTAINERLOGINPUT_MEMBER_START_TIME,
+        &GETCONTAINERLOGINPUT_MEMBER_END_TIME,
+        &GETCONTAINERLOGINPUT_MEMBER_FILTER_PATTERN,
+        &GETCONTAINERLOGINPUT_MEMBER_PAGE_TOKEN,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "GET",
+    "/ls/api/2016-11-28/container-services/{serviceName}/containers/{containerName}/log",
+    None,
+))
+.with_no_body_members()
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetContainerLogRequest");
+impl GetContainerLogInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETCONTAINERLOGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetContainerLogInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_name {
+            ser.write_string(&GETCONTAINERLOGINPUT_MEMBER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.container_name {
+            ser.write_string(&GETCONTAINERLOGINPUT_MEMBER_CONTAINER_NAME, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&GETCONTAINERLOGINPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&GETCONTAINERLOGINPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.filter_pattern {
+            ser.write_string(&GETCONTAINERLOGINPUT_MEMBER_FILTER_PATTERN, val)?;
+        }
+        if let Some(ref val) = self.page_token {
+            ser.write_string(&GETCONTAINERLOGINPUT_MEMBER_PAGE_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_container_log::builders::GetContainerLogInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETCONTAINERLOGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.container_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.filter_pattern = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetContainerLogInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_name = builder.service_name.or(Some(String::new()));
+        builder.container_name = builder.container_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetContainerLogInput {
     /// Creates a new builder-style object to manufacture [`GetContainerLogInput`](crate::operation::get_container_log::GetContainerLogInput).
     pub fn builder() -> crate::operation::get_container_log::builders::GetContainerLogInputBuilder {

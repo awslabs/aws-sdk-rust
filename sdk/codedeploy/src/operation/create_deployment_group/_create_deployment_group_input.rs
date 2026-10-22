@@ -159,6 +159,638 @@ impl CreateDeploymentGroupInput {
         self.termination_hook_enabled
     }
 }
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_APPLICATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$applicationName",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "applicationName",
+    0,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_GROUP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$deploymentGroupName",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentGroupName",
+    1,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$deploymentConfigName",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "deploymentConfigName",
+    2,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#EC2TagFilterList$member",
+        "com.amazonaws.codedeploy",
+        "EC2TagFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$ec2TagFilters",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ec2TagFilters",
+    3,
+)
+.with_list_member(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_FILTERS_MEMBER);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_INSTANCE_TAG_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#TagFilterList$member",
+            "com.amazonaws.codedeploy",
+            "TagFilterList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_INSTANCE_TAG_FILTERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$onPremisesInstanceTagFilters",
+            "com.amazonaws.codedeploy.synthetic",
+            "CreateDeploymentGroupInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "onPremisesInstanceTagFilters",
+        4,
+    )
+    .with_list_member(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_INSTANCE_TAG_FILTERS_MEMBER);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_SCALING_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#AutoScalingGroupNameList$member",
+        "com.amazonaws.codedeploy",
+        "AutoScalingGroupNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_SCALING_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$autoScalingGroups",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "autoScalingGroups",
+    5,
+)
+.with_list_member(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_SCALING_GROUPS_MEMBER);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_SERVICE_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$serviceRoleArn",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceRoleArn",
+    6,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_TRIGGER_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy#TriggerConfigList$member",
+            "com.amazonaws.codedeploy",
+            "TriggerConfigList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_TRIGGER_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$triggerConfigurations",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "triggerConfigurations",
+    7,
+)
+.with_list_member(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_TRIGGER_CONFIGURATIONS_MEMBER);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$alarmConfiguration",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "alarmConfiguration",
+    8,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_ROLLBACK_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$autoRollbackConfiguration",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "autoRollbackConfiguration",
+    9,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_OUTDATED_INSTANCES_STRATEGY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$outdatedInstancesStrategy",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "outdatedInstancesStrategy",
+    10,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_STYLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$deploymentStyle",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "deploymentStyle",
+    11,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_BLUE_GREEN_DEPLOYMENT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$blueGreenDeploymentConfiguration",
+            "com.amazonaws.codedeploy.synthetic",
+            "CreateDeploymentGroupInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "blueGreenDeploymentConfiguration",
+        12,
+    );
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_LOAD_BALANCER_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$loadBalancerInfo",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "loadBalancerInfo",
+    13,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_SET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$ec2TagSet",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ec2TagSet",
+    14,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_ECS_SERVICES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#ECSServiceList$member",
+        "com.amazonaws.codedeploy",
+        "ECSServiceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_ECS_SERVICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$ecsServices",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ecsServices",
+    15,
+)
+.with_list_member(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_ECS_SERVICES_MEMBER);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_TAG_SET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$onPremisesTagSet",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "onPremisesTagSet",
+    16,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#TagList$member", "com.amazonaws.codedeploy", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$tags",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    17,
+)
+.with_list_member(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_DEPLOYMENT_OPTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$ec2DeploymentOptions",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ec2DeploymentOptions",
+    18,
+);
+static CREATEDEPLOYMENTGROUPINPUT_MEMBER_TERMINATION_HOOK_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput$terminationHookEnabled",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "terminationHookEnabled",
+    19,
+);
+static CREATEDEPLOYMENTGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy.synthetic#CreateDeploymentGroupInput",
+        "com.amazonaws.codedeploy.synthetic",
+        "CreateDeploymentGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_APPLICATION_NAME,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_GROUP_NAME,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_FILTERS,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_INSTANCE_TAG_FILTERS,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_SCALING_GROUPS,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_SERVICE_ROLE_ARN,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_TRIGGER_CONFIGURATIONS,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_ALARM_CONFIGURATION,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_ROLLBACK_CONFIGURATION,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_OUTDATED_INSTANCES_STRATEGY,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_STYLE,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_LOAD_BALANCER_INFO,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_SET,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_ECS_SERVICES,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_TAG_SET,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_TAGS,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_DEPLOYMENT_OPTIONS,
+        &CREATEDEPLOYMENTGROUPINPUT_MEMBER_TERMINATION_HOOK_ENABLED,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateDeploymentGroupInput");
+impl CreateDeploymentGroupInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEDEPLOYMENTGROUPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateDeploymentGroupInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.application_name {
+            ser.write_string(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_APPLICATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.deployment_group_name {
+            ser.write_string(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_GROUP_NAME, val)?;
+        }
+        if let Some(ref val) = self.deployment_config_name {
+            ser.write_string(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_CONFIG_NAME, val)?;
+        }
+        if let Some(ref val) = self.ec2_tag_filters {
+            ser.write_list(
+                &CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Ec2TagFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.on_premises_instance_tag_filters {
+            ser.write_list(
+                &CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_INSTANCE_TAG_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TagFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.auto_scaling_groups {
+            ser.write_list(
+                &CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_SCALING_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_role_arn {
+            ser.write_string(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_SERVICE_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.trigger_configurations {
+            ser.write_list(
+                &CREATEDEPLOYMENTGROUPINPUT_MEMBER_TRIGGER_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TriggerConfig::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.auto_rollback_configuration {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_AUTO_ROLLBACK_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.outdated_instances_strategy {
+            ser.write_string(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_OUTDATED_INSTANCES_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.deployment_style {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_DEPLOYMENT_STYLE, val)?;
+        }
+        if let Some(ref val) = self.blue_green_deployment_configuration {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_BLUE_GREEN_DEPLOYMENT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.load_balancer_info {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_LOAD_BALANCER_INFO, val)?;
+        }
+        if let Some(ref val) = self.ec2_tag_set {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_TAG_SET, val)?;
+        }
+        if let Some(ref val) = self.ecs_services {
+            ser.write_list(
+                &CREATEDEPLOYMENTGROUPINPUT_MEMBER_ECS_SERVICES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EcsService::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.on_premises_tag_set {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_ON_PREMISES_TAG_SET, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEDEPLOYMENTGROUPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ec2_deployment_options {
+            ser.write_struct(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_EC2_DEPLOYMENT_OPTIONS, val)?;
+        }
+        if let Some(ref val) = self.termination_hook_enabled {
+            ser.write_boolean(&CREATEDEPLOYMENTGROUPINPUT_MEMBER_TERMINATION_HOOK_ENABLED, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_deployment_group::builders::CreateDeploymentGroupInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEDEPLOYMENTGROUPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.application_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_group_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_config_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_tag_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Ec2TagFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_premises_instance_tag_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TagFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_scaling_groups = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.trigger_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TriggerConfig::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_rollback_configuration = Some(crate::types::AutoRollbackConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.outdated_instances_strategy = Some(crate::types::OutdatedInstancesStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deployment_style = Some(crate::types::DeploymentStyle::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.blue_green_deployment_configuration = Some(crate::types::BlueGreenDeploymentConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.load_balancer_info = Some(crate::types::LoadBalancerInfo::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_tag_set = Some(crate::types::Ec2TagSet::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ecs_services = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EcsService::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_premises_tag_set = Some(crate::types::OnPremisesTagSet::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_deployment_options = Some(crate::types::Ec2DeploymentOptions::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.termination_hook_enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateDeploymentGroupInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.application_name = builder.application_name.or(Some(String::new()));
+        builder.deployment_group_name = builder.deployment_group_name.or(Some(String::new()));
+        builder.service_role_arn = builder.service_role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateDeploymentGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentGroupInput`](crate::operation::create_deployment_group::CreateDeploymentGroupInput).
     pub fn builder() -> crate::operation::create_deployment_group::builders::CreateDeploymentGroupInputBuilder {

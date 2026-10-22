@@ -44,6 +44,172 @@ impl UpdateLocationEfsInput {
         self.in_transit_encryption.as_ref()
     }
 }
+static UPDATELOCATIONEFSINPUT_MEMBER_LOCATION_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationEfsInput$LocationArn",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationEfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LocationArn",
+    0,
+);
+static UPDATELOCATIONEFSINPUT_MEMBER_SUBDIRECTORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationEfsInput$Subdirectory",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationEfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Subdirectory",
+    1,
+);
+static UPDATELOCATIONEFSINPUT_MEMBER_ACCESS_POINT_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationEfsInput$AccessPointArn",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationEfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccessPointArn",
+    2,
+);
+static UPDATELOCATIONEFSINPUT_MEMBER_FILE_SYSTEM_ACCESS_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationEfsInput$FileSystemAccessRoleArn",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationEfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FileSystemAccessRoleArn",
+    3,
+);
+static UPDATELOCATIONEFSINPUT_MEMBER_IN_TRANSIT_ENCRYPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationEfsInput$InTransitEncryption",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationEfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InTransitEncryption",
+    4,
+);
+static UPDATELOCATIONEFSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.datasync.synthetic#UpdateLocationEfsInput",
+        "com.amazonaws.datasync.synthetic",
+        "UpdateLocationEfsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATELOCATIONEFSINPUT_MEMBER_LOCATION_ARN,
+        &UPDATELOCATIONEFSINPUT_MEMBER_SUBDIRECTORY,
+        &UPDATELOCATIONEFSINPUT_MEMBER_ACCESS_POINT_ARN,
+        &UPDATELOCATIONEFSINPUT_MEMBER_FILE_SYSTEM_ACCESS_ROLE_ARN,
+        &UPDATELOCATIONEFSINPUT_MEMBER_IN_TRANSIT_ENCRYPTION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateLocationEfsRequest");
+impl UpdateLocationEfsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATELOCATIONEFSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateLocationEfsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.location_arn {
+            ser.write_string(&UPDATELOCATIONEFSINPUT_MEMBER_LOCATION_ARN, val)?;
+        }
+        if let Some(ref val) = self.subdirectory {
+            ser.write_string(&UPDATELOCATIONEFSINPUT_MEMBER_SUBDIRECTORY, val)?;
+        }
+        if let Some(ref val) = self.access_point_arn {
+            ser.write_string(&UPDATELOCATIONEFSINPUT_MEMBER_ACCESS_POINT_ARN, val)?;
+        }
+        if let Some(ref val) = self.file_system_access_role_arn {
+            ser.write_string(&UPDATELOCATIONEFSINPUT_MEMBER_FILE_SYSTEM_ACCESS_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.in_transit_encryption {
+            ser.write_string(&UPDATELOCATIONEFSINPUT_MEMBER_IN_TRANSIT_ENCRYPTION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_location_efs::builders::UpdateLocationEfsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATELOCATIONEFSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdirectory = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.access_point_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.file_system_access_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.in_transit_encryption = Some(crate::types::EfsInTransitEncryption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateLocationEfsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.location_arn = builder.location_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateLocationEfsInput {
     /// Creates a new builder-style object to manufacture [`UpdateLocationEfsInput`](crate::operation::update_location_efs::UpdateLocationEfsInput).
     pub fn builder() -> crate::operation::update_location_efs::builders::UpdateLocationEfsInputBuilder {

@@ -50,6 +50,178 @@ impl GetFileOutput {
         &self.file_content
     }
 }
+static GETFILEOUTPUT_MEMBER_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFileOutput$commitId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "commitId",
+    0,
+);
+static GETFILEOUTPUT_MEMBER_BLOB_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFileOutput$blobId",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "blobId",
+    1,
+);
+static GETFILEOUTPUT_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFileOutput$filePath",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "filePath",
+    2,
+);
+static GETFILEOUTPUT_MEMBER_FILE_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFileOutput$fileMode",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "fileMode",
+    3,
+);
+static GETFILEOUTPUT_MEMBER_FILE_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFileOutput$fileSize",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "fileSize",
+    4,
+);
+static GETFILEOUTPUT_MEMBER_FILE_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFileOutput$fileContent",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Blob,
+    "fileContent",
+    5,
+);
+static GETFILEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#GetFileOutput",
+        "com.amazonaws.codecommit.synthetic",
+        "GetFileOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETFILEOUTPUT_MEMBER_COMMIT_ID,
+        &GETFILEOUTPUT_MEMBER_BLOB_ID,
+        &GETFILEOUTPUT_MEMBER_FILE_PATH,
+        &GETFILEOUTPUT_MEMBER_FILE_MODE,
+        &GETFILEOUTPUT_MEMBER_FILE_SIZE,
+        &GETFILEOUTPUT_MEMBER_FILE_CONTENT,
+    ],
+)
+.with_original_name("GetFileOutput");
+impl GetFileOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETFILEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetFileOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.commit_id;
+            ser.write_string(&GETFILEOUTPUT_MEMBER_COMMIT_ID, val)?;
+        }
+        {
+            let val = &self.blob_id;
+            ser.write_string(&GETFILEOUTPUT_MEMBER_BLOB_ID, val)?;
+        }
+        {
+            let val = &self.file_path;
+            ser.write_string(&GETFILEOUTPUT_MEMBER_FILE_PATH, val)?;
+        }
+        {
+            let val = &self.file_mode;
+            ser.write_string(&GETFILEOUTPUT_MEMBER_FILE_MODE, val.as_str())?;
+        }
+        {
+            let val = &self.file_size;
+            ser.write_long(&GETFILEOUTPUT_MEMBER_FILE_SIZE, *val)?;
+        }
+        {
+            let val = &self.file_content;
+            ser.write_blob(&GETFILEOUTPUT_MEMBER_FILE_CONTENT, val.clone())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_file::builders::GetFileOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETFILEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.commit_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.blob_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.file_path = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.file_mode = Some(crate::types::FileModeTypeEnum::from(deser.read_string(member)?.as_str()));
+                }
+                Some(4) => {
+                    self.file_size = Some(deser.read_long(member)?);
+                }
+                Some(5) => {
+                    self.file_content = Some(deser.read_blob(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetFileOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.commit_id = builder.commit_id.or(Some(String::new()));
+        builder.blob_id = builder.blob_id.or(Some(String::new()));
+        builder.file_path = builder.file_path.or(Some(String::new()));
+        builder.file_size = builder.file_size.or(Some(0i64));
+        builder.file_content = builder.file_content.or(Some(::aws_smithy_types::Blob::new("")));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ::aws_types::request_id::RequestId for GetFileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

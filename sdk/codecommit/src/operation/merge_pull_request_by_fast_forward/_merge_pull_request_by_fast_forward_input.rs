@@ -24,6 +24,131 @@ impl MergePullRequestByFastForwardInput {
         self.source_commit_id.as_deref()
     }
 }
+static MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_PULL_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestByFastForwardInput$pullRequestId",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pullRequestId",
+    0,
+);
+static MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestByFastForwardInput$repositoryName",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_SOURCE_COMMIT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestByFastForwardInput$sourceCommitId",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "sourceCommitId",
+    2,
+);
+static MERGEPULLREQUESTBYFASTFORWARDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit.synthetic#MergePullRequestByFastForwardInput",
+        "com.amazonaws.codecommit.synthetic",
+        "MergePullRequestByFastForwardInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_PULL_REQUEST_ID,
+        &MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_REPOSITORY_NAME,
+        &MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_SOURCE_COMMIT_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("MergePullRequestByFastForwardInput");
+impl MergePullRequestByFastForwardInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MERGEPULLREQUESTBYFASTFORWARDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MergePullRequestByFastForwardInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pull_request_id {
+            ser.write_string(&MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_PULL_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.source_commit_id {
+            ser.write_string(&MERGEPULLREQUESTBYFASTFORWARDINPUT_MEMBER_SOURCE_COMMIT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MERGEPULLREQUESTBYFASTFORWARDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pull_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_commit_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl MergePullRequestByFastForwardInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.pull_request_id = builder.pull_request_id.or(Some(String::new()));
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl MergePullRequestByFastForwardInput {
     /// Creates a new builder-style object to manufacture [`MergePullRequestByFastForwardInput`](crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardInput).
     pub fn builder() -> crate::operation::merge_pull_request_by_fast_forward::builders::MergePullRequestByFastForwardInputBuilder {

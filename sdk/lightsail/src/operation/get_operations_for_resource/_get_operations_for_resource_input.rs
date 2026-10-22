@@ -20,6 +20,114 @@ impl GetOperationsForResourceInput {
         self.page_token.as_deref()
     }
 }
+static GETOPERATIONSFORRESOURCEINPUT_MEMBER_RESOURCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetOperationsForResourceInput$resourceName",
+        "com.amazonaws.lightsail.synthetic",
+        "GetOperationsForResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceName",
+    0,
+);
+static GETOPERATIONSFORRESOURCEINPUT_MEMBER_PAGE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetOperationsForResourceInput$pageToken",
+        "com.amazonaws.lightsail.synthetic",
+        "GetOperationsForResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pageToken",
+    1,
+);
+static GETOPERATIONSFORRESOURCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetOperationsForResourceInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetOperationsForResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETOPERATIONSFORRESOURCEINPUT_MEMBER_RESOURCE_NAME,
+        &GETOPERATIONSFORRESOURCEINPUT_MEMBER_PAGE_TOKEN,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/GetOperationsForResource",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetOperationsForResourceRequest");
+impl GetOperationsForResourceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETOPERATIONSFORRESOURCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetOperationsForResourceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_name {
+            ser.write_string(&GETOPERATIONSFORRESOURCEINPUT_MEMBER_RESOURCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.page_token {
+            ser.write_string(&GETOPERATIONSFORRESOURCEINPUT_MEMBER_PAGE_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_operations_for_resource::builders::GetOperationsForResourceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETOPERATIONSFORRESOURCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.page_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetOperationsForResourceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.resource_name = builder.resource_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetOperationsForResourceInput {
     /// Creates a new builder-style object to manufacture [`GetOperationsForResourceInput`](crate::operation::get_operations_for_resource::GetOperationsForResourceInput).
     pub fn builder() -> crate::operation::get_operations_for_resource::builders::GetOperationsForResourceInputBuilder {

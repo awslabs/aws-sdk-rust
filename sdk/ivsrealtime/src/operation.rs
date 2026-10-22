@@ -94,6 +94,9 @@ pub mod list_storage_configurations;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `RevokeConnectionToken` operation.
+pub mod revoke_connection_token;
+
 /// Types for the `StartComposition` operation.
 pub mod start_composition;
 

@@ -12,6 +12,8 @@
 /// ```text
 /// # let connectpeererrorcode = unimplemented!();
 /// match connectpeererrorcode {
+///     ConnectPeerErrorCode::CreationFailed => { /* ... */ },
+///     ConnectPeerErrorCode::DeletionFailed => { /* ... */ },
 ///     ConnectPeerErrorCode::EdgeLocationNoFreeIps => { /* ... */ },
 ///     ConnectPeerErrorCode::EdgeLocationPeerDuplicate => { /* ... */ },
 ///     ConnectPeerErrorCode::InvalidInsideCidrBlock => { /* ... */ },
@@ -47,6 +49,10 @@
 )]
 pub enum ConnectPeerErrorCode {
     #[allow(missing_docs)] // documentation missing in model
+    CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeletionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     EdgeLocationNoFreeIps,
     #[allow(missing_docs)] // documentation missing in model
     EdgeLocationPeerDuplicate,
@@ -65,6 +71,8 @@ pub enum ConnectPeerErrorCode {
 impl ::std::convert::From<&str> for ConnectPeerErrorCode {
     fn from(s: &str) -> Self {
         match s {
+            "CREATION_FAILED" => ConnectPeerErrorCode::CreationFailed,
+            "DELETION_FAILED" => ConnectPeerErrorCode::DeletionFailed,
             "EDGE_LOCATION_NO_FREE_IPS" => ConnectPeerErrorCode::EdgeLocationNoFreeIps,
             "EDGE_LOCATION_PEER_DUPLICATE" => ConnectPeerErrorCode::EdgeLocationPeerDuplicate,
             "INVALID_INSIDE_CIDR_BLOCK" => ConnectPeerErrorCode::InvalidInsideCidrBlock,
@@ -86,6 +94,8 @@ impl ConnectPeerErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConnectPeerErrorCode::CreationFailed => "CREATION_FAILED",
+            ConnectPeerErrorCode::DeletionFailed => "DELETION_FAILED",
             ConnectPeerErrorCode::EdgeLocationNoFreeIps => "EDGE_LOCATION_NO_FREE_IPS",
             ConnectPeerErrorCode::EdgeLocationPeerDuplicate => "EDGE_LOCATION_PEER_DUPLICATE",
             ConnectPeerErrorCode::InvalidInsideCidrBlock => "INVALID_INSIDE_CIDR_BLOCK",
@@ -98,6 +108,8 @@ impl ConnectPeerErrorCode {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CREATION_FAILED",
+            "DELETION_FAILED",
             "EDGE_LOCATION_NO_FREE_IPS",
             "EDGE_LOCATION_PEER_DUPLICATE",
             "INVALID_INSIDE_CIDR_BLOCK",
@@ -127,6 +139,8 @@ impl ConnectPeerErrorCode {
 impl ::std::fmt::Display for ConnectPeerErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConnectPeerErrorCode::CreationFailed => write!(f, "CREATION_FAILED"),
+            ConnectPeerErrorCode::DeletionFailed => write!(f, "DELETION_FAILED"),
             ConnectPeerErrorCode::EdgeLocationNoFreeIps => write!(f, "EDGE_LOCATION_NO_FREE_IPS"),
             ConnectPeerErrorCode::EdgeLocationPeerDuplicate => write!(f, "EDGE_LOCATION_PEER_DUPLICATE"),
             ConnectPeerErrorCode::InvalidInsideCidrBlock => write!(f, "INVALID_INSIDE_CIDR_BLOCK"),

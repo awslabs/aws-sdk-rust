@@ -25,6 +25,127 @@ impl ResolvedAttributes {
         self.completion_criteria.as_ref()
     }
 }
+static RESOLVEDATTRIBUTES_MEMBER_AUTO_ML_JOB_OBJECTIVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResolvedAttributes$AutoMLJobObjective",
+        "com.amazonaws.sagemaker",
+        "ResolvedAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoMLJobObjective",
+    0,
+);
+static RESOLVEDATTRIBUTES_MEMBER_PROBLEM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResolvedAttributes$ProblemType",
+        "com.amazonaws.sagemaker",
+        "ResolvedAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ProblemType",
+    1,
+);
+static RESOLVEDATTRIBUTES_MEMBER_COMPLETION_CRITERIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResolvedAttributes$CompletionCriteria",
+        "com.amazonaws.sagemaker",
+        "ResolvedAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CompletionCriteria",
+    2,
+);
+static RESOLVEDATTRIBUTES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ResolvedAttributes",
+        "com.amazonaws.sagemaker",
+        "ResolvedAttributes",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOLVEDATTRIBUTES_MEMBER_AUTO_ML_JOB_OBJECTIVE,
+        &RESOLVEDATTRIBUTES_MEMBER_PROBLEM_TYPE,
+        &RESOLVEDATTRIBUTES_MEMBER_COMPLETION_CRITERIA,
+    ],
+);
+impl ResolvedAttributes {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOLVEDATTRIBUTES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResolvedAttributes {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.auto_ml_job_objective {
+            ser.write_struct(&RESOLVEDATTRIBUTES_MEMBER_AUTO_ML_JOB_OBJECTIVE, val)?;
+        }
+        if let Some(ref val) = self.problem_type {
+            ser.write_string(&RESOLVEDATTRIBUTES_MEMBER_PROBLEM_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.completion_criteria {
+            ser.write_struct(&RESOLVEDATTRIBUTES_MEMBER_COMPLETION_CRITERIA, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ResolvedAttributesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&RESOLVEDATTRIBUTES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_ml_job_objective = Some(crate::types::AutoMlJobObjective::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.problem_type = Some(crate::types::ProblemType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.completion_criteria = Some(crate::types::AutoMlJobCompletionCriteria::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ResolvedAttributes {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ResolvedAttributes {
     /// Creates a new builder-style object to manufacture [`ResolvedAttributes`](crate::types::ResolvedAttributes).
     pub fn builder() -> crate::types::builders::ResolvedAttributesBuilder {

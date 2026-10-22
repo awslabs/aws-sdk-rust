@@ -63,6 +63,253 @@ impl TrainingJobSummary {
         self.training_plan_arn.as_deref()
     }
 }
+static TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$TrainingJobName",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingJobName",
+    0,
+);
+static TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$TrainingJobArn",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingJobArn",
+    1,
+);
+static TRAININGJOBSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$CreationTime",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    2,
+);
+static TRAININGJOBSUMMARY_MEMBER_TRAINING_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$TrainingEndTime",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "TrainingEndTime",
+    3,
+);
+static TRAININGJOBSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$LastModifiedTime",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    4,
+);
+static TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$TrainingJobStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingJobStatus",
+    5,
+);
+static TRAININGJOBSUMMARY_MEMBER_SECONDARY_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$SecondaryStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SecondaryStatus",
+    6,
+);
+static TRAININGJOBSUMMARY_MEMBER_WARM_POOL_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$WarmPoolStatus",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WarmPoolStatus",
+    7,
+);
+static TRAININGJOBSUMMARY_MEMBER_TRAINING_PLAN_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary$TrainingPlanArn",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingPlanArn",
+    8,
+);
+static TRAININGJOBSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingJobSummary",
+        "com.amazonaws.sagemaker",
+        "TrainingJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_NAME,
+        &TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_ARN,
+        &TRAININGJOBSUMMARY_MEMBER_CREATION_TIME,
+        &TRAININGJOBSUMMARY_MEMBER_TRAINING_END_TIME,
+        &TRAININGJOBSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+        &TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_STATUS,
+        &TRAININGJOBSUMMARY_MEMBER_SECONDARY_STATUS,
+        &TRAININGJOBSUMMARY_MEMBER_WARM_POOL_STATUS,
+        &TRAININGJOBSUMMARY_MEMBER_TRAINING_PLAN_ARN,
+    ],
+);
+impl TrainingJobSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGJOBSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingJobSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_job_name {
+            ser.write_string(&TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_NAME, val)?;
+        }
+        if let Some(ref val) = self.training_job_arn {
+            ser.write_string(&TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_ARN, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&TRAININGJOBSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_end_time {
+            ser.write_timestamp(&TRAININGJOBSUMMARY_MEMBER_TRAINING_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&TRAININGJOBSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.training_job_status {
+            ser.write_string(&TRAININGJOBSUMMARY_MEMBER_TRAINING_JOB_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.secondary_status {
+            ser.write_string(&TRAININGJOBSUMMARY_MEMBER_SECONDARY_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.warm_pool_status {
+            ser.write_struct(&TRAININGJOBSUMMARY_MEMBER_WARM_POOL_STATUS, val)?;
+        }
+        if let Some(ref val) = self.training_plan_arn {
+            ser.write_string(&TRAININGJOBSUMMARY_MEMBER_TRAINING_PLAN_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingJobSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGJOBSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_job_status = Some(crate::types::TrainingJobStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.secondary_status = Some(crate::types::SecondaryStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.warm_pool_status = Some(crate::types::WarmPoolStatus::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_plan_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingJobSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingJobSummary {
     /// Creates a new builder-style object to manufacture [`TrainingJobSummary`](crate::types::TrainingJobSummary).
     pub fn builder() -> crate::types::builders::TrainingJobSummaryBuilder {

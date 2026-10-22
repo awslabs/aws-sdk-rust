@@ -35,6 +35,112 @@ impl ProductionVariantCapacityReservationConfig {
         self.ml_reservation_arn.as_deref()
     }
 }
+static PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_MEMBER_CAPACITY_RESERVATION_PREFERENCE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationConfig$CapacityReservationPreference",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "CapacityReservationPreference",
+        0,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#ProductionVariantCapacityReservationConfig$MlReservationArn",
+            "com.amazonaws.sagemaker",
+            "ProductionVariantCapacityReservationConfig",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "MlReservationArn",
+        1,
+    );
+static PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ProductionVariantCapacityReservationConfig",
+        "com.amazonaws.sagemaker",
+        "ProductionVariantCapacityReservationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_MEMBER_CAPACITY_RESERVATION_PREFERENCE,
+        &PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARN,
+    ],
+);
+impl ProductionVariantCapacityReservationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ProductionVariantCapacityReservationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capacity_reservation_preference {
+            ser.write_string(
+                &PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_MEMBER_CAPACITY_RESERVATION_PREFERENCE,
+                val.as_str(),
+            )?;
+        }
+        if let Some(ref val) = self.ml_reservation_arn {
+            ser.write_string(&PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_MEMBER_ML_RESERVATION_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ProductionVariantCapacityReservationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PRODUCTIONVARIANTCAPACITYRESERVATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.capacity_reservation_preference =
+                            Some(crate::types::CapacityReservationPreference::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ml_reservation_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ProductionVariantCapacityReservationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ProductionVariantCapacityReservationConfig {
     /// Creates a new builder-style object to manufacture [`ProductionVariantCapacityReservationConfig`](crate::types::ProductionVariantCapacityReservationConfig).
     pub fn builder() -> crate::types::builders::ProductionVariantCapacityReservationConfigBuilder {

@@ -29,6 +29,168 @@ impl TargetInstances {
         self.ec2_tag_set.as_ref()
     }
 }
+static TARGETINSTANCES_MEMBER_TAG_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#EC2TagFilterList$member",
+        "com.amazonaws.codedeploy",
+        "EC2TagFilterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TARGETINSTANCES_MEMBER_TAG_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#TargetInstances$tagFilters",
+        "com.amazonaws.codedeploy",
+        "TargetInstances",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "tagFilters",
+    0,
+)
+.with_list_member(&TARGETINSTANCES_MEMBER_TAG_FILTERS_MEMBER);
+static TARGETINSTANCES_MEMBER_AUTO_SCALING_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#AutoScalingGroupNameList$member",
+        "com.amazonaws.codedeploy",
+        "AutoScalingGroupNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static TARGETINSTANCES_MEMBER_AUTO_SCALING_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#TargetInstances$autoScalingGroups",
+        "com.amazonaws.codedeploy",
+        "TargetInstances",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "autoScalingGroups",
+    1,
+)
+.with_list_member(&TARGETINSTANCES_MEMBER_AUTO_SCALING_GROUPS_MEMBER);
+static TARGETINSTANCES_MEMBER_EC2_TAG_SET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codedeploy#TargetInstances$ec2TagSet",
+        "com.amazonaws.codedeploy",
+        "TargetInstances",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ec2TagSet",
+    2,
+);
+static TARGETINSTANCES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codedeploy#TargetInstances", "com.amazonaws.codedeploy", "TargetInstances"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TARGETINSTANCES_MEMBER_TAG_FILTERS,
+        &TARGETINSTANCES_MEMBER_AUTO_SCALING_GROUPS,
+        &TARGETINSTANCES_MEMBER_EC2_TAG_SET,
+    ],
+);
+impl TargetInstances {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TARGETINSTANCES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TargetInstances {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.tag_filters {
+            ser.write_list(
+                &TARGETINSTANCES_MEMBER_TAG_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Ec2TagFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.auto_scaling_groups {
+            ser.write_list(
+                &TARGETINSTANCES_MEMBER_AUTO_SCALING_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ec2_tag_set {
+            ser.write_struct(&TARGETINSTANCES_MEMBER_EC2_TAG_SET, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TargetInstancesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TARGETINSTANCES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tag_filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Ec2TagFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_scaling_groups = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ec2_tag_set = Some(crate::types::Ec2TagSet::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TargetInstances {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TargetInstances {
     /// Creates a new builder-style object to manufacture [`TargetInstances`](crate::types::TargetInstances).
     pub fn builder() -> crate::types::builders::TargetInstancesBuilder {

@@ -22,6 +22,116 @@ impl GetRelationalDatabaseMasterUserPasswordInput {
         self.password_version.as_ref()
     }
 }
+static GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_MEMBER_RELATIONAL_DATABASE_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseMasterUserPasswordInput$relationalDatabaseName",
+            "com.amazonaws.lightsail.synthetic",
+            "GetRelationalDatabaseMasterUserPasswordInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "relationalDatabaseName",
+        0,
+    );
+static GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_MEMBER_PASSWORD_VERSION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseMasterUserPasswordInput$passwordVersion",
+            "com.amazonaws.lightsail.synthetic",
+            "GetRelationalDatabaseMasterUserPasswordInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "passwordVersion",
+        1,
+    );
+static GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#GetRelationalDatabaseMasterUserPasswordInput",
+        "com.amazonaws.lightsail.synthetic",
+        "GetRelationalDatabaseMasterUserPasswordInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_MEMBER_RELATIONAL_DATABASE_NAME,
+        &GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_MEMBER_PASSWORD_VERSION,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "POST",
+    "/ls/api/2016-11-28/GetRelationalDatabaseMasterUserPassword",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetRelationalDatabaseMasterUserPasswordRequest");
+impl GetRelationalDatabaseMasterUserPasswordInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetRelationalDatabaseMasterUserPasswordInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.relational_database_name {
+            ser.write_string(&GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_MEMBER_RELATIONAL_DATABASE_NAME, val)?;
+        }
+        if let Some(ref val) = self.password_version {
+            ser.write_string(&GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_MEMBER_PASSWORD_VERSION, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&GETRELATIONALDATABASEMASTERUSERPASSWORDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relational_database_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.password_version = Some(crate::types::RelationalDatabasePasswordVersion::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl GetRelationalDatabaseMasterUserPasswordInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.relational_database_name = builder.relational_database_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl GetRelationalDatabaseMasterUserPasswordInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseMasterUserPasswordInput`](crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordInput).
     pub fn builder() -> crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder

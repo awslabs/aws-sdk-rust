@@ -14,6 +14,7 @@
 /// match routetype {
 ///     RouteType::Propagated => { /* ... */ },
 ///     RouteType::Static => { /* ... */ },
+///     RouteType::System => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum RouteType {
     Propagated,
     #[allow(missing_docs)] // documentation missing in model
     Static,
+    #[allow(missing_docs)] // documentation missing in model
+    System,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for RouteType {
         match s {
             "PROPAGATED" => RouteType::Propagated,
             "STATIC" => RouteType::Static,
+            "SYSTEM" => RouteType::System,
             other => RouteType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl RouteType {
         match self {
             RouteType::Propagated => "PROPAGATED",
             RouteType::Static => "STATIC",
+            RouteType::System => "SYSTEM",
             RouteType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PROPAGATED", "STATIC"]
+        &["PROPAGATED", "STATIC", "SYSTEM"]
     }
 }
 impl ::std::convert::AsRef<str> for RouteType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for RouteType {
         match self {
             RouteType::Propagated => write!(f, "PROPAGATED"),
             RouteType::Static => write!(f, "STATIC"),
+            RouteType::System => write!(f, "SYSTEM"),
             RouteType::Unknown(value) => write!(f, "{value}"),
         }
     }

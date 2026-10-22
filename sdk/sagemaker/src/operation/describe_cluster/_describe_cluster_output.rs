@@ -101,6 +101,432 @@ impl DescribeClusterOutput {
         self.auto_scaling.as_ref()
     }
 }
+static DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$ClusterArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterArn",
+    0,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$ClusterName",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    1,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$ClusterStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterStatus",
+    2,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$CreationTime",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    3,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_FAILURE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$FailureMessage",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureMessage",
+    4,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_INSTANCE_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterInstanceGroupDetailsList$member",
+        "com.amazonaws.sagemaker",
+        "ClusterInstanceGroupDetailsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_INSTANCE_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$InstanceGroups",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceGroups",
+    5,
+)
+.with_list_member(&DESCRIBECLUSTEROUTPUT_MEMBER_INSTANCE_GROUPS_MEMBER);
+static DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterRestrictedInstanceGroupDetailsList$member",
+        "com.amazonaws.sagemaker",
+        "ClusterRestrictedInstanceGroupDetailsList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$RestrictedInstanceGroups",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RestrictedInstanceGroups",
+    6,
+)
+.with_list_member(&DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS_MEMBER);
+static DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$RestrictedInstanceGroupsConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RestrictedInstanceGroupsConfig",
+    7,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_VPC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$VpcConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VpcConfig",
+    8,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_ORCHESTRATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$Orchestrator",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Orchestrator",
+    9,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_TIERED_STORAGE_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$TieredStorageConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TieredStorageConfig",
+    10,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_NODE_RECOVERY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$NodeRecovery",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeRecovery",
+    11,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_NODE_PROVISIONING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$NodeProvisioningMode",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NodeProvisioningMode",
+    12,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$ClusterRole",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterRole",
+    13,
+);
+static DESCRIBECLUSTEROUTPUT_MEMBER_AUTO_SCALING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput$AutoScaling",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoScaling",
+    14,
+);
+static DESCRIBECLUSTEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_ARN,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_NAME,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_STATUS,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_CREATION_TIME,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_FAILURE_MESSAGE,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_INSTANCE_GROUPS,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS_CONFIG,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_VPC_CONFIG,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_ORCHESTRATOR,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_TIERED_STORAGE_CONFIG,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_NODE_RECOVERY,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_NODE_PROVISIONING_MODE,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_ROLE,
+        &DESCRIBECLUSTEROUTPUT_MEMBER_AUTO_SCALING,
+    ],
+)
+.with_original_name("DescribeClusterResponse");
+impl DescribeClusterOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBECLUSTEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeClusterOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_arn {
+            ser.write_string(&DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_ARN, val)?;
+        }
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.cluster_status {
+            ser.write_string(&DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&DESCRIBECLUSTEROUTPUT_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_message {
+            ser.write_string(&DESCRIBECLUSTEROUTPUT_MEMBER_FAILURE_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.instance_groups {
+            ser.write_list(
+                &DESCRIBECLUSTEROUTPUT_MEMBER_INSTANCE_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ClusterInstanceGroupDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.restricted_instance_groups {
+            ser.write_list(
+                &DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ClusterRestrictedInstanceGroupDetails::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.restricted_instance_groups_config {
+            ser.write_struct(&DESCRIBECLUSTEROUTPUT_MEMBER_RESTRICTED_INSTANCE_GROUPS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.vpc_config {
+            ser.write_struct(&DESCRIBECLUSTEROUTPUT_MEMBER_VPC_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.orchestrator {
+            ser.write_struct(&DESCRIBECLUSTEROUTPUT_MEMBER_ORCHESTRATOR, val)?;
+        }
+        if let Some(ref val) = self.tiered_storage_config {
+            ser.write_struct(&DESCRIBECLUSTEROUTPUT_MEMBER_TIERED_STORAGE_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.node_recovery {
+            ser.write_string(&DESCRIBECLUSTEROUTPUT_MEMBER_NODE_RECOVERY, val.as_str())?;
+        }
+        if let Some(ref val) = self.node_provisioning_mode {
+            ser.write_string(&DESCRIBECLUSTEROUTPUT_MEMBER_NODE_PROVISIONING_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.cluster_role {
+            ser.write_string(&DESCRIBECLUSTEROUTPUT_MEMBER_CLUSTER_ROLE, val)?;
+        }
+        if let Some(ref val) = self.auto_scaling {
+            ser.write_struct(&DESCRIBECLUSTEROUTPUT_MEMBER_AUTO_SCALING, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_cluster::builders::DescribeClusterOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBECLUSTEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_status = Some(crate::types::ClusterStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClusterInstanceGroupDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restricted_instance_groups = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ClusterRestrictedInstanceGroupDetails::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.restricted_instance_groups_config = Some(crate::types::ClusterRestrictedInstanceGroupsConfigOutput::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_config = Some(crate::types::VpcConfig::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.orchestrator = Some(crate::types::ClusterOrchestrator::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tiered_storage_config = Some(crate::types::ClusterTieredStorageConfig::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_recovery = Some(crate::types::ClusterNodeRecovery::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.node_provisioning_mode = Some(crate::types::ClusterNodeProvisioningMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_scaling = Some(crate::types::ClusterAutoScalingConfigOutput::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeClusterOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

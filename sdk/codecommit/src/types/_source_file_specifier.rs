@@ -20,6 +20,98 @@ impl SourceFileSpecifier {
         self.is_move
     }
 }
+static SOURCEFILESPECIFIER_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#SourceFileSpecifier$filePath",
+        "com.amazonaws.codecommit",
+        "SourceFileSpecifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "filePath",
+    0,
+);
+static SOURCEFILESPECIFIER_MEMBER_IS_MOVE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#SourceFileSpecifier$isMove",
+        "com.amazonaws.codecommit",
+        "SourceFileSpecifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isMove",
+    1,
+);
+static SOURCEFILESPECIFIER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codecommit#SourceFileSpecifier",
+        "com.amazonaws.codecommit",
+        "SourceFileSpecifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SOURCEFILESPECIFIER_MEMBER_FILE_PATH, &SOURCEFILESPECIFIER_MEMBER_IS_MOVE],
+);
+impl SourceFileSpecifier {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SOURCEFILESPECIFIER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SourceFileSpecifier {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.file_path;
+            ser.write_string(&SOURCEFILESPECIFIER_MEMBER_FILE_PATH, val)?;
+        }
+        {
+            let val = &self.is_move;
+            ser.write_boolean(&SOURCEFILESPECIFIER_MEMBER_IS_MOVE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::SourceFileSpecifierBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SOURCEFILESPECIFIER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.file_path = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.is_move = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SourceFileSpecifier {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.file_path = builder.file_path.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SourceFileSpecifier {
     /// Creates a new builder-style object to manufacture [`SourceFileSpecifier`](crate::types::SourceFileSpecifier).
     pub fn builder() -> crate::types::builders::SourceFileSpecifierBuilder {

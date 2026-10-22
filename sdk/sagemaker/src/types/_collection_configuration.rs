@@ -19,6 +19,139 @@ impl CollectionConfiguration {
         self.collection_parameters.as_ref()
     }
 }
+static COLLECTIONCONFIGURATION_MEMBER_COLLECTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CollectionConfiguration$CollectionName",
+        "com.amazonaws.sagemaker",
+        "CollectionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CollectionName",
+    0,
+);
+static COLLECTIONCONFIGURATION_MEMBER_COLLECTION_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CollectionParameters$key",
+        "com.amazonaws.sagemaker",
+        "CollectionParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static COLLECTIONCONFIGURATION_MEMBER_COLLECTION_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CollectionParameters$value",
+        "com.amazonaws.sagemaker",
+        "CollectionParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static COLLECTIONCONFIGURATION_MEMBER_COLLECTION_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CollectionConfiguration$CollectionParameters",
+        "com.amazonaws.sagemaker",
+        "CollectionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "CollectionParameters",
+    1,
+)
+.with_map_members(
+    &COLLECTIONCONFIGURATION_MEMBER_COLLECTION_PARAMETERS_KEY,
+    &COLLECTIONCONFIGURATION_MEMBER_COLLECTION_PARAMETERS_VALUE,
+);
+static COLLECTIONCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#CollectionConfiguration",
+        "com.amazonaws.sagemaker",
+        "CollectionConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COLLECTIONCONFIGURATION_MEMBER_COLLECTION_NAME,
+        &COLLECTIONCONFIGURATION_MEMBER_COLLECTION_PARAMETERS,
+    ],
+);
+impl CollectionConfiguration {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COLLECTIONCONFIGURATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CollectionConfiguration {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.collection_name {
+            ser.write_string(&COLLECTIONCONFIGURATION_MEMBER_COLLECTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.collection_parameters {
+            ser.write_map(
+                &COLLECTIONCONFIGURATION_MEMBER_COLLECTION_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::CollectionConfigurationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&COLLECTIONCONFIGURATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.collection_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.collection_parameters = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CollectionConfiguration {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl CollectionConfiguration {
     /// Creates a new builder-style object to manufacture [`CollectionConfiguration`](crate::types::CollectionConfiguration).
     pub fn builder() -> crate::types::builders::CollectionConfigurationBuilder {

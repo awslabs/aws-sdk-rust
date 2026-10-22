@@ -30,6 +30,152 @@ impl SetRepositoryPolicyInput {
         self.force
     }
 }
+static SETREPOSITORYPOLICYINPUT_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#SetRepositoryPolicyInput$registryId",
+        "com.amazonaws.ecrpublic.synthetic",
+        "SetRepositoryPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static SETREPOSITORYPOLICYINPUT_MEMBER_REPOSITORY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#SetRepositoryPolicyInput$repositoryName",
+        "com.amazonaws.ecrpublic.synthetic",
+        "SetRepositoryPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "repositoryName",
+    1,
+);
+static SETREPOSITORYPOLICYINPUT_MEMBER_POLICY_TEXT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#SetRepositoryPolicyInput$policyText",
+        "com.amazonaws.ecrpublic.synthetic",
+        "SetRepositoryPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "policyText",
+    2,
+);
+static SETREPOSITORYPOLICYINPUT_MEMBER_FORCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#SetRepositoryPolicyInput$force",
+        "com.amazonaws.ecrpublic.synthetic",
+        "SetRepositoryPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "force",
+    3,
+);
+static SETREPOSITORYPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#SetRepositoryPolicyInput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "SetRepositoryPolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SETREPOSITORYPOLICYINPUT_MEMBER_REGISTRY_ID,
+        &SETREPOSITORYPOLICYINPUT_MEMBER_REPOSITORY_NAME,
+        &SETREPOSITORYPOLICYINPUT_MEMBER_POLICY_TEXT,
+        &SETREPOSITORYPOLICYINPUT_MEMBER_FORCE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SetRepositoryPolicyRequest");
+impl SetRepositoryPolicyInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SETREPOSITORYPOLICYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SetRepositoryPolicyInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&SETREPOSITORYPOLICYINPUT_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_name {
+            ser.write_string(&SETREPOSITORYPOLICYINPUT_MEMBER_REPOSITORY_NAME, val)?;
+        }
+        if let Some(ref val) = self.policy_text {
+            ser.write_string(&SETREPOSITORYPOLICYINPUT_MEMBER_POLICY_TEXT, val)?;
+        }
+        if let Some(ref val) = self.force {
+            ser.write_boolean(&SETREPOSITORYPOLICYINPUT_MEMBER_FORCE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&SETREPOSITORYPOLICYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_text = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.force = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl SetRepositoryPolicyInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.repository_name = builder.repository_name.or(Some(String::new()));
+        builder.policy_text = builder.policy_text.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl SetRepositoryPolicyInput {
     /// Creates a new builder-style object to manufacture [`SetRepositoryPolicyInput`](crate::operation::set_repository_policy::SetRepositoryPolicyInput).
     pub fn builder() -> crate::operation::set_repository_policy::builders::SetRepositoryPolicyInputBuilder {

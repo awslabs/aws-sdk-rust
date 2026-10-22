@@ -43,6 +43,190 @@ impl InferenceRecommendation {
         self.invocation_start_time.as_ref()
     }
 }
+static INFERENCERECOMMENDATION_MEMBER_RECOMMENDATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendation$RecommendationId",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RecommendationId",
+    0,
+);
+static INFERENCERECOMMENDATION_MEMBER_METRICS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendation$Metrics",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Metrics",
+    1,
+);
+static INFERENCERECOMMENDATION_MEMBER_ENDPOINT_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendation$EndpointConfiguration",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "EndpointConfiguration",
+    2,
+);
+static INFERENCERECOMMENDATION_MEMBER_MODEL_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendation$ModelConfiguration",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelConfiguration",
+    3,
+);
+static INFERENCERECOMMENDATION_MEMBER_INVOCATION_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendation$InvocationEndTime",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "InvocationEndTime",
+    4,
+);
+static INFERENCERECOMMENDATION_MEMBER_INVOCATION_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendation$InvocationStartTime",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "InvocationStartTime",
+    5,
+);
+static INFERENCERECOMMENDATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#InferenceRecommendation",
+        "com.amazonaws.sagemaker",
+        "InferenceRecommendation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INFERENCERECOMMENDATION_MEMBER_RECOMMENDATION_ID,
+        &INFERENCERECOMMENDATION_MEMBER_METRICS,
+        &INFERENCERECOMMENDATION_MEMBER_ENDPOINT_CONFIGURATION,
+        &INFERENCERECOMMENDATION_MEMBER_MODEL_CONFIGURATION,
+        &INFERENCERECOMMENDATION_MEMBER_INVOCATION_END_TIME,
+        &INFERENCERECOMMENDATION_MEMBER_INVOCATION_START_TIME,
+    ],
+);
+impl InferenceRecommendation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INFERENCERECOMMENDATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InferenceRecommendation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.recommendation_id {
+            ser.write_string(&INFERENCERECOMMENDATION_MEMBER_RECOMMENDATION_ID, val)?;
+        }
+        if let Some(ref val) = self.metrics {
+            ser.write_struct(&INFERENCERECOMMENDATION_MEMBER_METRICS, val)?;
+        }
+        if let Some(ref val) = self.endpoint_configuration {
+            ser.write_struct(&INFERENCERECOMMENDATION_MEMBER_ENDPOINT_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.model_configuration {
+            ser.write_struct(&INFERENCERECOMMENDATION_MEMBER_MODEL_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.invocation_end_time {
+            ser.write_timestamp(&INFERENCERECOMMENDATION_MEMBER_INVOCATION_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.invocation_start_time {
+            ser.write_timestamp(&INFERENCERECOMMENDATION_MEMBER_INVOCATION_START_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InferenceRecommendationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INFERENCERECOMMENDATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.recommendation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metrics = Some(crate::types::RecommendationMetrics::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoint_configuration = Some(crate::types::EndpointOutputConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_configuration = Some(crate::types::ModelConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.invocation_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.invocation_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InferenceRecommendation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InferenceRecommendation {
     /// Creates a new builder-style object to manufacture [`InferenceRecommendation`](crate::types::InferenceRecommendation).
     pub fn builder() -> crate::types::builders::InferenceRecommendationBuilder {

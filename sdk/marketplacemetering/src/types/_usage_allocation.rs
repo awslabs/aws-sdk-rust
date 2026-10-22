@@ -22,6 +22,127 @@ impl UsageAllocation {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageAllocation$AllocatedUsageQuantity",
+        "com.amazonaws.marketplacemetering",
+        "UsageAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AllocatedUsageQuantity",
+    0,
+);
+static USAGEALLOCATION_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#TagList$member",
+        "com.amazonaws.marketplacemetering",
+        "TagList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static USAGEALLOCATION_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageAllocation$Tags",
+        "com.amazonaws.marketplacemetering",
+        "UsageAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    1,
+)
+.with_list_member(&USAGEALLOCATION_MEMBER_TAGS_MEMBER);
+static USAGEALLOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageAllocation",
+        "com.amazonaws.marketplacemetering",
+        "UsageAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY, &USAGEALLOCATION_MEMBER_TAGS],
+);
+impl UsageAllocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &USAGEALLOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UsageAllocation {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.allocated_usage_quantity;
+            ser.write_integer(&USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY, *val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &USAGEALLOCATION_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::UsageAllocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&USAGEALLOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.allocated_usage_quantity = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UsageAllocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.allocated_usage_quantity = builder.allocated_usage_quantity.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UsageAllocation {
     /// Creates a new builder-style object to manufacture [`UsageAllocation`](crate::types::UsageAllocation).
     pub fn builder() -> crate::types::builders::UsageAllocationBuilder {

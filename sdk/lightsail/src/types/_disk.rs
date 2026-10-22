@@ -135,6 +135,404 @@ impl Disk {
         self.auto_mount_status.as_ref()
     }
 }
+static DISK_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$name", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static DISK_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$arn", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "arn",
+    1,
+);
+static DISK_MEMBER_SUPPORT_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$supportCode", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "supportCode",
+    2,
+);
+static DISK_MEMBER_CREATED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$createdAt", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "createdAt",
+    3,
+);
+static DISK_MEMBER_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$location", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "location",
+    4,
+);
+static DISK_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$resourceType", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "resourceType",
+    5,
+);
+static DISK_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#TagList$member", "com.amazonaws.lightsail", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DISK_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$tags", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::List,
+    "tags",
+    6,
+)
+.with_list_member(&DISK_MEMBER_TAGS_MEMBER);
+static DISK_MEMBER_ADD_ONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#AddOnList$member", "com.amazonaws.lightsail", "AddOnList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DISK_MEMBER_ADD_ONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$addOns", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::List,
+    "addOns",
+    7,
+)
+.with_list_member(&DISK_MEMBER_ADD_ONS_MEMBER);
+static DISK_MEMBER_SIZE_IN_GB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$sizeInGb", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "sizeInGb",
+    8,
+);
+static DISK_MEMBER_IS_SYSTEM_DISK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$isSystemDisk", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isSystemDisk",
+    9,
+);
+static DISK_MEMBER_IOPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$iops", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "iops",
+    10,
+);
+static DISK_MEMBER_PATH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$path", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "path",
+    11,
+);
+static DISK_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$state", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "state",
+    12,
+);
+static DISK_MEMBER_ATTACHED_TO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$attachedTo", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "attachedTo",
+    13,
+);
+static DISK_MEMBER_IS_ATTACHED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$isAttached", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isAttached",
+    14,
+);
+static DISK_MEMBER_ATTACHMENT_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$attachmentState", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "attachmentState",
+    15,
+);
+static DISK_MEMBER_GB_IN_USE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$gbInUse", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "gbInUse",
+    16,
+);
+static DISK_MEMBER_AUTO_MOUNT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk$autoMountStatus", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::String,
+    "autoMountStatus",
+    17,
+);
+static DISK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.lightsail#Disk", "com.amazonaws.lightsail", "Disk"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DISK_MEMBER_NAME,
+        &DISK_MEMBER_ARN,
+        &DISK_MEMBER_SUPPORT_CODE,
+        &DISK_MEMBER_CREATED_AT,
+        &DISK_MEMBER_LOCATION,
+        &DISK_MEMBER_RESOURCE_TYPE,
+        &DISK_MEMBER_TAGS,
+        &DISK_MEMBER_ADD_ONS,
+        &DISK_MEMBER_SIZE_IN_GB,
+        &DISK_MEMBER_IS_SYSTEM_DISK,
+        &DISK_MEMBER_IOPS,
+        &DISK_MEMBER_PATH,
+        &DISK_MEMBER_STATE,
+        &DISK_MEMBER_ATTACHED_TO,
+        &DISK_MEMBER_IS_ATTACHED,
+        &DISK_MEMBER_ATTACHMENT_STATE,
+        &DISK_MEMBER_GB_IN_USE,
+        &DISK_MEMBER_AUTO_MOUNT_STATUS,
+    ],
+);
+impl Disk {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DISK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Disk {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DISK_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.arn {
+            ser.write_string(&DISK_MEMBER_ARN, val)?;
+        }
+        if let Some(ref val) = self.support_code {
+            ser.write_string(&DISK_MEMBER_SUPPORT_CODE, val)?;
+        }
+        if let Some(ref val) = self.created_at {
+            ser.write_timestamp(&DISK_MEMBER_CREATED_AT, val)?;
+        }
+        if let Some(ref val) = self.location {
+            ser.write_struct(&DISK_MEMBER_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&DISK_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&DISK_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.add_ons {
+            ser.write_list(&DISK_MEMBER_ADD_ONS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::AddOn::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.size_in_gb {
+            ser.write_integer(&DISK_MEMBER_SIZE_IN_GB, *val)?;
+        }
+        if let Some(ref val) = self.is_system_disk {
+            ser.write_boolean(&DISK_MEMBER_IS_SYSTEM_DISK, *val)?;
+        }
+        if let Some(ref val) = self.iops {
+            ser.write_integer(&DISK_MEMBER_IOPS, *val)?;
+        }
+        if let Some(ref val) = self.path {
+            ser.write_string(&DISK_MEMBER_PATH, val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&DISK_MEMBER_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.attached_to {
+            ser.write_string(&DISK_MEMBER_ATTACHED_TO, val)?;
+        }
+        if let Some(ref val) = self.is_attached {
+            ser.write_boolean(&DISK_MEMBER_IS_ATTACHED, *val)?;
+        }
+        if let Some(ref val) = self.attachment_state {
+            ser.write_string(&DISK_MEMBER_ATTACHMENT_STATE, val)?;
+        }
+        if let Some(ref val) = self.gb_in_use {
+            ser.write_integer(&DISK_MEMBER_GB_IN_USE, *val)?;
+        }
+        if let Some(ref val) = self.auto_mount_status {
+            ser.write_string(&DISK_MEMBER_AUTO_MOUNT_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DiskBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DISK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.support_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.location = Some(crate::types::ResourceLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type = Some(crate::types::ResourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.add_ons = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AddOn::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.size_in_gb = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_system_disk = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.iops = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.path = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::DiskState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attached_to = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_attached = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attachment_state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gb_in_use = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_mount_status = Some(crate::types::AutoMountStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl Disk {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl Disk {
     /// Creates a new builder-style object to manufacture [`Disk`](crate::types::Disk).
     pub fn builder() -> crate::types::builders::DiskBuilder {

@@ -13,10 +13,16 @@
 /// # let workertype = unimplemented!();
 /// match workertype {
 ///     WorkerType::G025X => { /* ... */ },
+///     WorkerType::G12X => { /* ... */ },
+///     WorkerType::G16X => { /* ... */ },
 ///     WorkerType::G1X => { /* ... */ },
 ///     WorkerType::G2X => { /* ... */ },
 ///     WorkerType::G4X => { /* ... */ },
 ///     WorkerType::G8X => { /* ... */ },
+///     WorkerType::R1X => { /* ... */ },
+///     WorkerType::R2X => { /* ... */ },
+///     WorkerType::R4X => { /* ... */ },
+///     WorkerType::R8X => { /* ... */ },
 ///     WorkerType::Standard => { /* ... */ },
 ///     WorkerType::Z2X => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -50,6 +56,10 @@ pub enum WorkerType {
     #[allow(missing_docs)] // documentation missing in model
     G025X,
     #[allow(missing_docs)] // documentation missing in model
+    G12X,
+    #[allow(missing_docs)] // documentation missing in model
+    G16X,
+    #[allow(missing_docs)] // documentation missing in model
     G1X,
     #[allow(missing_docs)] // documentation missing in model
     G2X,
@@ -57,6 +67,14 @@ pub enum WorkerType {
     G4X,
     #[allow(missing_docs)] // documentation missing in model
     G8X,
+    #[allow(missing_docs)] // documentation missing in model
+    R1X,
+    #[allow(missing_docs)] // documentation missing in model
+    R2X,
+    #[allow(missing_docs)] // documentation missing in model
+    R4X,
+    #[allow(missing_docs)] // documentation missing in model
+    R8X,
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,10 +87,16 @@ impl ::std::convert::From<&str> for WorkerType {
     fn from(s: &str) -> Self {
         match s {
             "G.025X" => WorkerType::G025X,
+            "G.12X" => WorkerType::G12X,
+            "G.16X" => WorkerType::G16X,
             "G.1X" => WorkerType::G1X,
             "G.2X" => WorkerType::G2X,
             "G.4X" => WorkerType::G4X,
             "G.8X" => WorkerType::G8X,
+            "R.1X" => WorkerType::R1X,
+            "R.2X" => WorkerType::R2X,
+            "R.4X" => WorkerType::R4X,
+            "R.8X" => WorkerType::R8X,
             "Standard" => WorkerType::Standard,
             "Z.2X" => WorkerType::Z2X,
             other => WorkerType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -91,10 +115,16 @@ impl WorkerType {
     pub fn as_str(&self) -> &str {
         match self {
             WorkerType::G025X => "G.025X",
+            WorkerType::G12X => "G.12X",
+            WorkerType::G16X => "G.16X",
             WorkerType::G1X => "G.1X",
             WorkerType::G2X => "G.2X",
             WorkerType::G4X => "G.4X",
             WorkerType::G8X => "G.8X",
+            WorkerType::R1X => "R.1X",
+            WorkerType::R2X => "R.2X",
+            WorkerType::R4X => "R.4X",
+            WorkerType::R8X => "R.8X",
             WorkerType::Standard => "Standard",
             WorkerType::Z2X => "Z.2X",
             WorkerType::Unknown(value) => value.as_str(),
@@ -102,7 +132,9 @@ impl WorkerType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["G.025X", "G.1X", "G.2X", "G.4X", "G.8X", "Standard", "Z.2X"]
+        &[
+            "G.025X", "G.12X", "G.16X", "G.1X", "G.2X", "G.4X", "G.8X", "R.1X", "R.2X", "R.4X", "R.8X", "Standard", "Z.2X",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for WorkerType {
@@ -126,10 +158,16 @@ impl ::std::fmt::Display for WorkerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             WorkerType::G025X => write!(f, "G.025X"),
+            WorkerType::G12X => write!(f, "G.12X"),
+            WorkerType::G16X => write!(f, "G.16X"),
             WorkerType::G1X => write!(f, "G.1X"),
             WorkerType::G2X => write!(f, "G.2X"),
             WorkerType::G4X => write!(f, "G.4X"),
             WorkerType::G8X => write!(f, "G.8X"),
+            WorkerType::R1X => write!(f, "R.1X"),
+            WorkerType::R2X => write!(f, "R.2X"),
+            WorkerType::R4X => write!(f, "R.4X"),
+            WorkerType::R8X => write!(f, "R.8X"),
             WorkerType::Standard => write!(f, "Standard"),
             WorkerType::Z2X => write!(f, "Z.2X"),
             WorkerType::Unknown(value) => write!(f, "{value}"),

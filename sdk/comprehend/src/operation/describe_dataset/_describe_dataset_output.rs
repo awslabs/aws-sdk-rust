@@ -13,6 +13,84 @@ impl DescribeDatasetOutput {
         self.dataset_properties.as_ref()
     }
 }
+static DESCRIBEDATASETOUTPUT_MEMBER_DATASET_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DescribeDatasetOutput$DatasetProperties",
+        "com.amazonaws.comprehend.synthetic",
+        "DescribeDatasetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DatasetProperties",
+    0,
+);
+static DESCRIBEDATASETOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend.synthetic#DescribeDatasetOutput",
+        "com.amazonaws.comprehend.synthetic",
+        "DescribeDatasetOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DESCRIBEDATASETOUTPUT_MEMBER_DATASET_PROPERTIES],
+)
+.with_original_name("DescribeDatasetResponse");
+impl DescribeDatasetOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEDATASETOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeDatasetOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.dataset_properties {
+            ser.write_struct(&DESCRIBEDATASETOUTPUT_MEMBER_DATASET_PROPERTIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_dataset::builders::DescribeDatasetOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEDATASETOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dataset_properties = Some(crate::types::DatasetProperties::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeDatasetOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeDatasetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

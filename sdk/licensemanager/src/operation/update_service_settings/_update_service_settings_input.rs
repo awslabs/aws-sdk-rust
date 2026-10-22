@@ -38,6 +38,193 @@ impl UpdateServiceSettingsInput {
         self.enabled_discovery_source_regions.as_deref().unwrap_or_default()
     }
 }
+static UPDATESERVICESETTINGSINPUT_MEMBER_S3_BUCKET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#UpdateServiceSettingsInput$S3BucketArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "UpdateServiceSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3BucketArn",
+    0,
+);
+static UPDATESERVICESETTINGSINPUT_MEMBER_SNS_TOPIC_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#UpdateServiceSettingsInput$SnsTopicArn",
+        "com.amazonaws.licensemanager.synthetic",
+        "UpdateServiceSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnsTopicArn",
+    1,
+);
+static UPDATESERVICESETTINGSINPUT_MEMBER_ORGANIZATION_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#UpdateServiceSettingsInput$OrganizationConfiguration",
+        "com.amazonaws.licensemanager.synthetic",
+        "UpdateServiceSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OrganizationConfiguration",
+    2,
+);
+static UPDATESERVICESETTINGSINPUT_MEMBER_ENABLE_CROSS_ACCOUNTS_DISCOVERY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#UpdateServiceSettingsInput$EnableCrossAccountsDiscovery",
+            "com.amazonaws.licensemanager.synthetic",
+            "UpdateServiceSettingsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableCrossAccountsDiscovery",
+        3,
+    );
+static UPDATESERVICESETTINGSINPUT_MEMBER_ENABLED_DISCOVERY_SOURCE_REGIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager#StringList$member",
+            "com.amazonaws.licensemanager",
+            "StringList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static UPDATESERVICESETTINGSINPUT_MEMBER_ENABLED_DISCOVERY_SOURCE_REGIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.licensemanager.synthetic#UpdateServiceSettingsInput$EnabledDiscoverySourceRegions",
+            "com.amazonaws.licensemanager.synthetic",
+            "UpdateServiceSettingsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "EnabledDiscoverySourceRegions",
+        4,
+    )
+    .with_list_member(&UPDATESERVICESETTINGSINPUT_MEMBER_ENABLED_DISCOVERY_SOURCE_REGIONS_MEMBER);
+static UPDATESERVICESETTINGSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.licensemanager.synthetic#UpdateServiceSettingsInput",
+        "com.amazonaws.licensemanager.synthetic",
+        "UpdateServiceSettingsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESERVICESETTINGSINPUT_MEMBER_S3_BUCKET_ARN,
+        &UPDATESERVICESETTINGSINPUT_MEMBER_SNS_TOPIC_ARN,
+        &UPDATESERVICESETTINGSINPUT_MEMBER_ORGANIZATION_CONFIGURATION,
+        &UPDATESERVICESETTINGSINPUT_MEMBER_ENABLE_CROSS_ACCOUNTS_DISCOVERY,
+        &UPDATESERVICESETTINGSINPUT_MEMBER_ENABLED_DISCOVERY_SOURCE_REGIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateServiceSettingsRequest");
+impl UpdateServiceSettingsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESERVICESETTINGSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateServiceSettingsInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_bucket_arn {
+            ser.write_string(&UPDATESERVICESETTINGSINPUT_MEMBER_S3_BUCKET_ARN, val)?;
+        }
+        if let Some(ref val) = self.sns_topic_arn {
+            ser.write_string(&UPDATESERVICESETTINGSINPUT_MEMBER_SNS_TOPIC_ARN, val)?;
+        }
+        if let Some(ref val) = self.organization_configuration {
+            ser.write_struct(&UPDATESERVICESETTINGSINPUT_MEMBER_ORGANIZATION_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.enable_cross_accounts_discovery {
+            ser.write_boolean(&UPDATESERVICESETTINGSINPUT_MEMBER_ENABLE_CROSS_ACCOUNTS_DISCOVERY, *val)?;
+        }
+        if let Some(ref val) = self.enabled_discovery_source_regions {
+            ser.write_list(
+                &UPDATESERVICESETTINGSINPUT_MEMBER_ENABLED_DISCOVERY_SOURCE_REGIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATESERVICESETTINGSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.s3_bucket_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sns_topic_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.organization_configuration = Some(crate::types::OrganizationConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_cross_accounts_discovery = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enabled_discovery_source_regions = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateServiceSettingsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateServiceSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSettingsInput`](crate::operation::update_service_settings::UpdateServiceSettingsInput).
     pub fn builder() -> crate::operation::update_service_settings::builders::UpdateServiceSettingsInputBuilder {

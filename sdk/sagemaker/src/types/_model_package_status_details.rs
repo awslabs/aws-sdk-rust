@@ -23,6 +23,158 @@ impl ModelPackageStatusDetails {
         self.image_scan_statuses.as_deref().unwrap_or_default()
     }
 }
+static MODELPACKAGESTATUSDETAILS_MEMBER_VALIDATION_STATUSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageStatusItemList$member",
+        "com.amazonaws.sagemaker",
+        "ModelPackageStatusItemList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MODELPACKAGESTATUSDETAILS_MEMBER_VALIDATION_STATUSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageStatusDetails$ValidationStatuses",
+        "com.amazonaws.sagemaker",
+        "ModelPackageStatusDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ValidationStatuses",
+    0,
+)
+.with_list_member(&MODELPACKAGESTATUSDETAILS_MEMBER_VALIDATION_STATUSES_MEMBER);
+static MODELPACKAGESTATUSDETAILS_MEMBER_IMAGE_SCAN_STATUSES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageStatusItemList$member",
+        "com.amazonaws.sagemaker",
+        "ModelPackageStatusItemList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MODELPACKAGESTATUSDETAILS_MEMBER_IMAGE_SCAN_STATUSES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageStatusDetails$ImageScanStatuses",
+        "com.amazonaws.sagemaker",
+        "ModelPackageStatusDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ImageScanStatuses",
+    1,
+)
+.with_list_member(&MODELPACKAGESTATUSDETAILS_MEMBER_IMAGE_SCAN_STATUSES_MEMBER);
+static MODELPACKAGESTATUSDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelPackageStatusDetails",
+        "com.amazonaws.sagemaker",
+        "ModelPackageStatusDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELPACKAGESTATUSDETAILS_MEMBER_VALIDATION_STATUSES,
+        &MODELPACKAGESTATUSDETAILS_MEMBER_IMAGE_SCAN_STATUSES,
+    ],
+);
+impl ModelPackageStatusDetails {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELPACKAGESTATUSDETAILS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelPackageStatusDetails {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.validation_statuses {
+            ser.write_list(
+                &MODELPACKAGESTATUSDETAILS_MEMBER_VALIDATION_STATUSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ModelPackageStatusItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.image_scan_statuses {
+            ser.write_list(
+                &MODELPACKAGESTATUSDETAILS_MEMBER_IMAGE_SCAN_STATUSES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ModelPackageStatusItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelPackageStatusDetailsBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELPACKAGESTATUSDETAILS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_statuses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ModelPackageStatusItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.image_scan_statuses = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ModelPackageStatusItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelPackageStatusDetails {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelPackageStatusDetails {
     /// Creates a new builder-style object to manufacture [`ModelPackageStatusDetails`](crate::types::ModelPackageStatusDetails).
     pub fn builder() -> crate::types::builders::ModelPackageStatusDetailsBuilder {

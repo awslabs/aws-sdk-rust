@@ -24,6 +24,130 @@ impl UpdateHttpNamespaceInput {
         self.namespace.as_ref()
     }
 }
+static UPDATEHTTPNAMESPACEINPUT_MEMBER_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateHttpNamespaceInput$Id",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateHttpNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Id",
+    0,
+);
+static UPDATEHTTPNAMESPACEINPUT_MEMBER_UPDATER_REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateHttpNamespaceInput$UpdaterRequestId",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateHttpNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UpdaterRequestId",
+    1,
+);
+static UPDATEHTTPNAMESPACEINPUT_MEMBER_NAMESPACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateHttpNamespaceInput$Namespace",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateHttpNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Namespace",
+    2,
+);
+static UPDATEHTTPNAMESPACEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery.synthetic#UpdateHttpNamespaceInput",
+        "com.amazonaws.servicediscovery.synthetic",
+        "UpdateHttpNamespaceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEHTTPNAMESPACEINPUT_MEMBER_ID,
+        &UPDATEHTTPNAMESPACEINPUT_MEMBER_UPDATER_REQUEST_ID,
+        &UPDATEHTTPNAMESPACEINPUT_MEMBER_NAMESPACE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateHttpNamespaceRequest");
+impl UpdateHttpNamespaceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEHTTPNAMESPACEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateHttpNamespaceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.id {
+            ser.write_string(&UPDATEHTTPNAMESPACEINPUT_MEMBER_ID, val)?;
+        }
+        if let Some(ref val) = self.updater_request_id {
+            ser.write_string(&UPDATEHTTPNAMESPACEINPUT_MEMBER_UPDATER_REQUEST_ID, val)?;
+        }
+        if let Some(ref val) = self.namespace {
+            ser.write_struct(&UPDATEHTTPNAMESPACEINPUT_MEMBER_NAMESPACE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATEHTTPNAMESPACEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updater_request_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.namespace = Some(crate::types::HttpNamespaceChange::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateHttpNamespaceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.id = builder.id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateHttpNamespaceInput {
     /// Creates a new builder-style object to manufacture [`UpdateHttpNamespaceInput`](crate::operation::update_http_namespace::UpdateHttpNamespaceInput).
     pub fn builder() -> crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder {

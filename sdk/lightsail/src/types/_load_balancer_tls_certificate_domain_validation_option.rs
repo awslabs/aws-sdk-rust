@@ -19,6 +19,110 @@ impl LoadBalancerTlsCertificateDomainValidationOption {
         self.validation_status.as_ref()
     }
 }
+static LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_MEMBER_DOMAIN_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#LoadBalancerTlsCertificateDomainValidationOption$domainName",
+            "com.amazonaws.lightsail",
+            "LoadBalancerTlsCertificateDomainValidationOption",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "domainName",
+        0,
+    );
+static LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_MEMBER_VALIDATION_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#LoadBalancerTlsCertificateDomainValidationOption$validationStatus",
+            "com.amazonaws.lightsail",
+            "LoadBalancerTlsCertificateDomainValidationOption",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "validationStatus",
+        1,
+    );
+static LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LoadBalancerTlsCertificateDomainValidationOption",
+        "com.amazonaws.lightsail",
+        "LoadBalancerTlsCertificateDomainValidationOption",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_MEMBER_DOMAIN_NAME,
+        &LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_MEMBER_VALIDATION_STATUS,
+    ],
+);
+impl LoadBalancerTlsCertificateDomainValidationOption {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for LoadBalancerTlsCertificateDomainValidationOption {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.domain_name {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_MEMBER_DOMAIN_NAME, val)?;
+        }
+        if let Some(ref val) = self.validation_status {
+            ser.write_string(&LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_MEMBER_VALIDATION_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::LoadBalancerTlsCertificateDomainValidationOptionBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LOADBALANCERTLSCERTIFICATEDOMAINVALIDATIONOPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.domain_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.validation_status = Some(crate::types::LoadBalancerTlsCertificateDomainStatus::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl LoadBalancerTlsCertificateDomainValidationOption {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl LoadBalancerTlsCertificateDomainValidationOption {
     /// Creates a new builder-style object to manufacture [`LoadBalancerTlsCertificateDomainValidationOption`](crate::types::LoadBalancerTlsCertificateDomainValidationOption).
     pub fn builder() -> crate::types::builders::LoadBalancerTlsCertificateDomainValidationOptionBuilder {

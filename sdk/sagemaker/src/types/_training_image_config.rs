@@ -19,6 +19,107 @@ impl TrainingImageConfig {
         self.training_repository_auth_config.as_ref()
     }
 }
+static TRAININGIMAGECONFIG_MEMBER_TRAINING_REPOSITORY_ACCESS_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingImageConfig$TrainingRepositoryAccessMode",
+        "com.amazonaws.sagemaker",
+        "TrainingImageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingRepositoryAccessMode",
+    0,
+);
+static TRAININGIMAGECONFIG_MEMBER_TRAINING_REPOSITORY_AUTH_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingImageConfig$TrainingRepositoryAuthConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingImageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TrainingRepositoryAuthConfig",
+    1,
+);
+static TRAININGIMAGECONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingImageConfig",
+        "com.amazonaws.sagemaker",
+        "TrainingImageConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGIMAGECONFIG_MEMBER_TRAINING_REPOSITORY_ACCESS_MODE,
+        &TRAININGIMAGECONFIG_MEMBER_TRAINING_REPOSITORY_AUTH_CONFIG,
+    ],
+);
+impl TrainingImageConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGIMAGECONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingImageConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_repository_access_mode {
+            ser.write_string(&TRAININGIMAGECONFIG_MEMBER_TRAINING_REPOSITORY_ACCESS_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.training_repository_auth_config {
+            ser.write_struct(&TRAININGIMAGECONFIG_MEMBER_TRAINING_REPOSITORY_AUTH_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingImageConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGIMAGECONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_repository_access_mode =
+                            Some(crate::types::TrainingRepositoryAccessMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_repository_auth_config = Some(crate::types::TrainingRepositoryAuthConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingImageConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingImageConfig {
     /// Creates a new builder-style object to manufacture [`TrainingImageConfig`](crate::types::TrainingImageConfig).
     pub fn builder() -> crate::types::builders::TrainingImageConfigBuilder {

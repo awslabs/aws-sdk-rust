@@ -62,6 +62,139 @@ impl ActionTypeIdentifier {
         self.version.deref()
     }
 }
+static ACTIONTYPEIDENTIFIER_MEMBER_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeIdentifier$category",
+        "com.amazonaws.codepipeline",
+        "ActionTypeIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "category",
+    0,
+);
+static ACTIONTYPEIDENTIFIER_MEMBER_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeIdentifier$owner",
+        "com.amazonaws.codepipeline",
+        "ActionTypeIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "owner",
+    1,
+);
+static ACTIONTYPEIDENTIFIER_MEMBER_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeIdentifier$provider",
+        "com.amazonaws.codepipeline",
+        "ActionTypeIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "provider",
+    2,
+);
+static ACTIONTYPEIDENTIFIER_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeIdentifier$version",
+        "com.amazonaws.codepipeline",
+        "ActionTypeIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "version",
+    3,
+);
+static ACTIONTYPEIDENTIFIER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionTypeIdentifier",
+        "com.amazonaws.codepipeline",
+        "ActionTypeIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONTYPEIDENTIFIER_MEMBER_CATEGORY,
+        &ACTIONTYPEIDENTIFIER_MEMBER_OWNER,
+        &ACTIONTYPEIDENTIFIER_MEMBER_PROVIDER,
+        &ACTIONTYPEIDENTIFIER_MEMBER_VERSION,
+    ],
+);
+impl ActionTypeIdentifier {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONTYPEIDENTIFIER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionTypeIdentifier {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.category;
+            ser.write_string(&ACTIONTYPEIDENTIFIER_MEMBER_CATEGORY, val.as_str())?;
+        }
+        {
+            let val = &self.owner;
+            ser.write_string(&ACTIONTYPEIDENTIFIER_MEMBER_OWNER, val)?;
+        }
+        {
+            let val = &self.provider;
+            ser.write_string(&ACTIONTYPEIDENTIFIER_MEMBER_PROVIDER, val)?;
+        }
+        {
+            let val = &self.version;
+            ser.write_string(&ACTIONTYPEIDENTIFIER_MEMBER_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionTypeIdentifierBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONTYPEIDENTIFIER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.category = Some(crate::types::ActionCategory::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    self.owner = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.provider = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    self.version = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionTypeIdentifier {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.owner = builder.owner.or(Some(String::new()));
+        builder.provider = builder.provider.or(Some(String::new()));
+        builder.version = builder.version.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl ActionTypeIdentifier {
     /// Creates a new builder-style object to manufacture [`ActionTypeIdentifier`](crate::types::ActionTypeIdentifier).
     pub fn builder() -> crate::types::builders::ActionTypeIdentifierBuilder {

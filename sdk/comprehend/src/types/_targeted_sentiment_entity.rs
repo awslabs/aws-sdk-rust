@@ -24,6 +24,152 @@ impl TargetedSentimentEntity {
         self.mentions.as_deref().unwrap_or_default()
     }
 }
+static TARGETEDSENTIMENTENTITY_MEMBER_DESCRIPTIVE_MENTION_INDEX_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.comprehend#ListOfDescriptiveMentionIndices$member",
+            "com.amazonaws.comprehend",
+            "ListOfDescriptiveMentionIndices",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "member",
+        0,
+    );
+static TARGETEDSENTIMENTENTITY_MEMBER_DESCRIPTIVE_MENTION_INDEX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#TargetedSentimentEntity$DescriptiveMentionIndex",
+        "com.amazonaws.comprehend",
+        "TargetedSentimentEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DescriptiveMentionIndex",
+    0,
+)
+.with_list_member(&TARGETEDSENTIMENTENTITY_MEMBER_DESCRIPTIVE_MENTION_INDEX_MEMBER);
+static TARGETEDSENTIMENTENTITY_MEMBER_MENTIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#ListOfMentions$member",
+        "com.amazonaws.comprehend",
+        "ListOfMentions",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TARGETEDSENTIMENTENTITY_MEMBER_MENTIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#TargetedSentimentEntity$Mentions",
+        "com.amazonaws.comprehend",
+        "TargetedSentimentEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Mentions",
+    1,
+)
+.with_list_member(&TARGETEDSENTIMENTENTITY_MEMBER_MENTIONS_MEMBER);
+static TARGETEDSENTIMENTENTITY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#TargetedSentimentEntity",
+        "com.amazonaws.comprehend",
+        "TargetedSentimentEntity",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TARGETEDSENTIMENTENTITY_MEMBER_DESCRIPTIVE_MENTION_INDEX,
+        &TARGETEDSENTIMENTENTITY_MEMBER_MENTIONS,
+    ],
+);
+impl TargetedSentimentEntity {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TARGETEDSENTIMENTENTITY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TargetedSentimentEntity {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.descriptive_mention_index {
+            ser.write_list(
+                &TARGETEDSENTIMENTENTITY_MEMBER_DESCRIPTIVE_MENTION_INDEX,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_integer(&aws_smithy_schema::prelude::INTEGER, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.mentions {
+            ser.write_list(
+                &TARGETEDSENTIMENTENTITY_MEMBER_MENTIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TargetedSentimentMention::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TargetedSentimentEntityBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TARGETEDSENTIMENTENTITY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.descriptive_mention_index = Some(deser.read_integer_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.mentions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TargetedSentimentMention::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TargetedSentimentEntity {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TargetedSentimentEntity {
     /// Creates a new builder-style object to manufacture [`TargetedSentimentEntity`](crate::types::TargetedSentimentEntity).
     pub fn builder() -> crate::types::builders::TargetedSentimentEntityBuilder {

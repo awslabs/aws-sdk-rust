@@ -20,6 +20,138 @@ impl StartClusterHealthCheckInput {
         self.deep_health_check_configurations.as_deref().unwrap_or_default()
     }
 }
+static STARTCLUSTERHEALTHCHECKINPUT_MEMBER_CLUSTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartClusterHealthCheckInput$ClusterName",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartClusterHealthCheckInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClusterName",
+    0,
+);
+static STARTCLUSTERHEALTHCHECKINPUT_MEMBER_DEEP_HEALTH_CHECK_CONFIGURATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#DeepHealthCheckConfigurations$member",
+            "com.amazonaws.sagemaker",
+            "DeepHealthCheckConfigurations",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static STARTCLUSTERHEALTHCHECKINPUT_MEMBER_DEEP_HEALTH_CHECK_CONFIGURATIONS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#StartClusterHealthCheckInput$DeepHealthCheckConfigurations",
+            "com.amazonaws.sagemaker.synthetic",
+            "StartClusterHealthCheckInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "DeepHealthCheckConfigurations",
+        1,
+    )
+    .with_list_member(&STARTCLUSTERHEALTHCHECKINPUT_MEMBER_DEEP_HEALTH_CHECK_CONFIGURATIONS_MEMBER);
+static STARTCLUSTERHEALTHCHECKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#StartClusterHealthCheckInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "StartClusterHealthCheckInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTCLUSTERHEALTHCHECKINPUT_MEMBER_CLUSTER_NAME,
+        &STARTCLUSTERHEALTHCHECKINPUT_MEMBER_DEEP_HEALTH_CHECK_CONFIGURATIONS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartClusterHealthCheckRequest");
+impl StartClusterHealthCheckInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTCLUSTERHEALTHCHECKINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartClusterHealthCheckInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cluster_name {
+            ser.write_string(&STARTCLUSTERHEALTHCHECKINPUT_MEMBER_CLUSTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.deep_health_check_configurations {
+            ser.write_list(
+                &STARTCLUSTERHEALTHCHECKINPUT_MEMBER_DEEP_HEALTH_CHECK_CONFIGURATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InstanceGroupHealthCheckConfiguration::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::start_cluster_health_check::builders::StartClusterHealthCheckInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&STARTCLUSTERHEALTHCHECKINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cluster_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deep_health_check_configurations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InstanceGroupHealthCheckConfiguration::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl StartClusterHealthCheckInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.cluster_name = builder.cluster_name.or(Some(String::new()));
+        builder.deep_health_check_configurations = builder.deep_health_check_configurations.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl StartClusterHealthCheckInput {
     /// Creates a new builder-style object to manufacture [`StartClusterHealthCheckInput`](crate::operation::start_cluster_health_check::StartClusterHealthCheckInput).
     pub fn builder() -> crate::operation::start_cluster_health_check::builders::StartClusterHealthCheckInputBuilder {

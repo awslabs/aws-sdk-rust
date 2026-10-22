@@ -21,6 +21,135 @@ impl ListPipelineExecutionStepsOutput {
         self.next_token.as_deref()
     }
 }
+static LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_PIPELINE_EXECUTION_STEPS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#PipelineExecutionStepList$member",
+            "com.amazonaws.sagemaker",
+            "PipelineExecutionStepList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_PIPELINE_EXECUTION_STEPS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#ListPipelineExecutionStepsOutput$PipelineExecutionSteps",
+            "com.amazonaws.sagemaker.synthetic",
+            "ListPipelineExecutionStepsOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "PipelineExecutionSteps",
+        0,
+    )
+    .with_list_member(&LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_PIPELINE_EXECUTION_STEPS_MEMBER);
+static LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineExecutionStepsOutput$NextToken",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineExecutionStepsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static LISTPIPELINEEXECUTIONSTEPSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListPipelineExecutionStepsOutput",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListPipelineExecutionStepsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_PIPELINE_EXECUTION_STEPS,
+        &LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_original_name("ListPipelineExecutionStepsResponse");
+impl ListPipelineExecutionStepsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTPIPELINEEXECUTIONSTEPSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListPipelineExecutionStepsOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.pipeline_execution_steps {
+            ser.write_list(
+                &LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_PIPELINE_EXECUTION_STEPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PipelineExecutionStep::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTPIPELINEEXECUTIONSTEPSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::list_pipeline_execution_steps::builders::ListPipelineExecutionStepsOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&LISTPIPELINEEXECUTIONSTEPSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_execution_steps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PipelineExecutionStep::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ListPipelineExecutionStepsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListPipelineExecutionStepsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

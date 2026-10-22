@@ -43,6 +43,158 @@ impl AutomaticTapeCreationRule {
         self.worm
     }
 }
+static AUTOMATICTAPECREATIONRULE_MEMBER_TAPE_BARCODE_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#AutomaticTapeCreationRule$TapeBarcodePrefix",
+        "com.amazonaws.storagegateway",
+        "AutomaticTapeCreationRule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TapeBarcodePrefix",
+    0,
+);
+static AUTOMATICTAPECREATIONRULE_MEMBER_POOL_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#AutomaticTapeCreationRule$PoolId",
+        "com.amazonaws.storagegateway",
+        "AutomaticTapeCreationRule",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PoolId",
+    1,
+);
+static AUTOMATICTAPECREATIONRULE_MEMBER_TAPE_SIZE_IN_BYTES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#AutomaticTapeCreationRule$TapeSizeInBytes",
+        "com.amazonaws.storagegateway",
+        "AutomaticTapeCreationRule",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TapeSizeInBytes",
+    2,
+);
+static AUTOMATICTAPECREATIONRULE_MEMBER_MINIMUM_NUM_TAPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#AutomaticTapeCreationRule$MinimumNumTapes",
+        "com.amazonaws.storagegateway",
+        "AutomaticTapeCreationRule",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MinimumNumTapes",
+    3,
+);
+static AUTOMATICTAPECREATIONRULE_MEMBER_WORM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#AutomaticTapeCreationRule$Worm",
+        "com.amazonaws.storagegateway",
+        "AutomaticTapeCreationRule",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Worm",
+    4,
+);
+static AUTOMATICTAPECREATIONRULE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway#AutomaticTapeCreationRule",
+        "com.amazonaws.storagegateway",
+        "AutomaticTapeCreationRule",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTOMATICTAPECREATIONRULE_MEMBER_TAPE_BARCODE_PREFIX,
+        &AUTOMATICTAPECREATIONRULE_MEMBER_POOL_ID,
+        &AUTOMATICTAPECREATIONRULE_MEMBER_TAPE_SIZE_IN_BYTES,
+        &AUTOMATICTAPECREATIONRULE_MEMBER_MINIMUM_NUM_TAPES,
+        &AUTOMATICTAPECREATIONRULE_MEMBER_WORM,
+    ],
+);
+impl AutomaticTapeCreationRule {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOMATICTAPECREATIONRULE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutomaticTapeCreationRule {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.tape_barcode_prefix;
+            ser.write_string(&AUTOMATICTAPECREATIONRULE_MEMBER_TAPE_BARCODE_PREFIX, val)?;
+        }
+        {
+            let val = &self.pool_id;
+            ser.write_string(&AUTOMATICTAPECREATIONRULE_MEMBER_POOL_ID, val)?;
+        }
+        {
+            let val = &self.tape_size_in_bytes;
+            ser.write_long(&AUTOMATICTAPECREATIONRULE_MEMBER_TAPE_SIZE_IN_BYTES, *val)?;
+        }
+        {
+            let val = &self.minimum_num_tapes;
+            ser.write_integer(&AUTOMATICTAPECREATIONRULE_MEMBER_MINIMUM_NUM_TAPES, *val)?;
+        }
+        {
+            let val = &self.worm;
+            ser.write_boolean(&AUTOMATICTAPECREATIONRULE_MEMBER_WORM, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::AutomaticTapeCreationRuleBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&AUTOMATICTAPECREATIONRULE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.tape_barcode_prefix = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    self.pool_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    self.tape_size_in_bytes = Some(deser.read_long(member)?);
+                }
+                Some(3) => {
+                    self.minimum_num_tapes = Some(deser.read_integer(member)?);
+                }
+                Some(4) => {
+                    self.worm = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl AutomaticTapeCreationRule {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.tape_barcode_prefix = builder.tape_barcode_prefix.or(Some(String::new()));
+        builder.pool_id = builder.pool_id.or(Some(String::new()));
+        builder.tape_size_in_bytes = builder.tape_size_in_bytes.or(Some(0i64));
+        builder.minimum_num_tapes = builder.minimum_num_tapes.or(Some(0i32));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl AutomaticTapeCreationRule {
     /// Creates a new builder-style object to manufacture [`AutomaticTapeCreationRule`](crate::types::AutomaticTapeCreationRule).
     pub fn builder() -> crate::types::builders::AutomaticTapeCreationRuleBuilder {

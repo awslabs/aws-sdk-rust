@@ -63,6 +63,190 @@ impl PipelineSummary {
         self.updated.as_ref()
     }
 }
+static PIPELINESUMMARY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineSummary$name",
+        "com.amazonaws.codepipeline",
+        "PipelineSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "name",
+    0,
+);
+static PIPELINESUMMARY_MEMBER_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineSummary$version",
+        "com.amazonaws.codepipeline",
+        "PipelineSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "version",
+    1,
+);
+static PIPELINESUMMARY_MEMBER_PIPELINE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineSummary$pipelineType",
+        "com.amazonaws.codepipeline",
+        "PipelineSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "pipelineType",
+    2,
+);
+static PIPELINESUMMARY_MEMBER_EXECUTION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineSummary$executionMode",
+        "com.amazonaws.codepipeline",
+        "PipelineSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "executionMode",
+    3,
+);
+static PIPELINESUMMARY_MEMBER_CREATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineSummary$created",
+        "com.amazonaws.codepipeline",
+        "PipelineSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "created",
+    4,
+);
+static PIPELINESUMMARY_MEMBER_UPDATED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineSummary$updated",
+        "com.amazonaws.codepipeline",
+        "PipelineSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "updated",
+    5,
+);
+static PIPELINESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#PipelineSummary",
+        "com.amazonaws.codepipeline",
+        "PipelineSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINESUMMARY_MEMBER_NAME,
+        &PIPELINESUMMARY_MEMBER_VERSION,
+        &PIPELINESUMMARY_MEMBER_PIPELINE_TYPE,
+        &PIPELINESUMMARY_MEMBER_EXECUTION_MODE,
+        &PIPELINESUMMARY_MEMBER_CREATED,
+        &PIPELINESUMMARY_MEMBER_UPDATED,
+    ],
+);
+impl PipelineSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINESUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&PIPELINESUMMARY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.version {
+            ser.write_integer(&PIPELINESUMMARY_MEMBER_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.pipeline_type {
+            ser.write_string(&PIPELINESUMMARY_MEMBER_PIPELINE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.execution_mode {
+            ser.write_string(&PIPELINESUMMARY_MEMBER_EXECUTION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.created {
+            ser.write_timestamp(&PIPELINESUMMARY_MEMBER_CREATED, val)?;
+        }
+        if let Some(ref val) = self.updated {
+            ser.write_timestamp(&PIPELINESUMMARY_MEMBER_UPDATED, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINESUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.pipeline_type = Some(crate::types::PipelineType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.execution_mode = Some(crate::types::ExecutionMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.updated = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PipelineSummary {
     /// Creates a new builder-style object to manufacture [`PipelineSummary`](crate::types::PipelineSummary).
     pub fn builder() -> crate::types::builders::PipelineSummaryBuilder {

@@ -20,6 +20,104 @@ impl CreateSnapshotOutput {
         self.snapshot_id.as_deref()
     }
 }
+static CREATESNAPSHOTOUTPUT_MEMBER_VOLUME_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateSnapshotOutput$VolumeARN",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VolumeARN",
+    0,
+);
+static CREATESNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateSnapshotOutput$SnapshotId",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    1,
+);
+static CREATESNAPSHOTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.storagegateway.synthetic#CreateSnapshotOutput",
+        "com.amazonaws.storagegateway.synthetic",
+        "CreateSnapshotOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&CREATESNAPSHOTOUTPUT_MEMBER_VOLUME_ARN, &CREATESNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID],
+)
+.with_original_name("CreateSnapshotOutput");
+impl CreateSnapshotOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATESNAPSHOTOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateSnapshotOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.volume_arn {
+            ser.write_string(&CREATESNAPSHOTOUTPUT_MEMBER_VOLUME_ARN, val)?;
+        }
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&CREATESNAPSHOTOUTPUT_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATESNAPSHOTOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.volume_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateSnapshotOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

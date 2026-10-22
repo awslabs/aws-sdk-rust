@@ -20,6 +20,131 @@ impl BatchGetPreparedStatementInput {
         self.work_group.as_deref()
     }
 }
+static BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_PREPARED_STATEMENT_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena#PreparedStatementNameList$member",
+            "com.amazonaws.athena",
+            "PreparedStatementNameList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_PREPARED_STATEMENT_NAMES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.athena.synthetic#BatchGetPreparedStatementInput$PreparedStatementNames",
+            "com.amazonaws.athena.synthetic",
+            "BatchGetPreparedStatementInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "PreparedStatementNames",
+        0,
+    )
+    .with_list_member(&BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_PREPARED_STATEMENT_NAMES_MEMBER);
+static BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#BatchGetPreparedStatementInput$WorkGroup",
+        "com.amazonaws.athena.synthetic",
+        "BatchGetPreparedStatementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkGroup",
+    1,
+);
+static BATCHGETPREPAREDSTATEMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#BatchGetPreparedStatementInput",
+        "com.amazonaws.athena.synthetic",
+        "BatchGetPreparedStatementInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_PREPARED_STATEMENT_NAMES,
+        &BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_WORK_GROUP,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("BatchGetPreparedStatementInput");
+impl BatchGetPreparedStatementInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &BATCHGETPREPAREDSTATEMENTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for BatchGetPreparedStatementInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.prepared_statement_names {
+            ser.write_list(
+                &BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_PREPARED_STATEMENT_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.work_group {
+            ser.write_string(&BATCHGETPREPAREDSTATEMENTINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&BATCHGETPREPAREDSTATEMENTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.prepared_statement_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl BatchGetPreparedStatementInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.prepared_statement_names = builder.prepared_statement_names.or(Some(Vec::new()));
+        builder.work_group = builder.work_group.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl BatchGetPreparedStatementInput {
     /// Creates a new builder-style object to manufacture [`BatchGetPreparedStatementInput`](crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementInput).
     pub fn builder() -> crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder {

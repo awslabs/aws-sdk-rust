@@ -62,6 +62,267 @@ impl UpdateContainerServiceInput {
         self.private_registry_access.as_ref()
     }
 }
+static UPDATECONTAINERSERVICEINPUT_MEMBER_SERVICE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateContainerServiceInput$serviceName",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateContainerServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceName",
+    0,
+)
+.with_http_label();
+static UPDATECONTAINERSERVICEINPUT_MEMBER_POWER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateContainerServiceInput$power",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateContainerServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "power",
+    1,
+);
+static UPDATECONTAINERSERVICEINPUT_MEMBER_SCALE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateContainerServiceInput$scale",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateContainerServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "scale",
+    2,
+);
+static UPDATECONTAINERSERVICEINPUT_MEMBER_IS_DISABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateContainerServiceInput$isDisabled",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateContainerServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "isDisabled",
+    3,
+);
+static UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.lightsail#ContainerServicePublicDomainsList$member",
+            "com.amazonaws.lightsail",
+            "ContainerServicePublicDomainsList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePublicDomains$key",
+        "com.amazonaws.lightsail",
+        "ContainerServicePublicDomains",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#ContainerServicePublicDomains$value",
+        "com.amazonaws.lightsail",
+        "ContainerServicePublicDomains",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE_MEMBER);
+static UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateContainerServiceInput$publicDomainNames",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateContainerServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "publicDomainNames",
+    4,
+)
+.with_map_members(
+    &UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_KEY,
+    &UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE,
+);
+static UPDATECONTAINERSERVICEINPUT_MEMBER_PRIVATE_REGISTRY_ACCESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateContainerServiceInput$privateRegistryAccess",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateContainerServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "privateRegistryAccess",
+    5,
+);
+static UPDATECONTAINERSERVICEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#UpdateContainerServiceInput",
+        "com.amazonaws.lightsail.synthetic",
+        "UpdateContainerServiceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATECONTAINERSERVICEINPUT_MEMBER_SERVICE_NAME,
+        &UPDATECONTAINERSERVICEINPUT_MEMBER_POWER,
+        &UPDATECONTAINERSERVICEINPUT_MEMBER_SCALE,
+        &UPDATECONTAINERSERVICEINPUT_MEMBER_IS_DISABLED,
+        &UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES,
+        &UPDATECONTAINERSERVICEINPUT_MEMBER_PRIVATE_REGISTRY_ACCESS,
+    ],
+)
+.with_http(aws_smithy_schema::traits::HttpTrait::new(
+    "PATCH",
+    "/ls/api/2016-11-28/container-services/{serviceName}",
+    None,
+))
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateContainerServiceRequest");
+impl UpdateContainerServiceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATECONTAINERSERVICEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateContainerServiceInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.service_name {
+            ser.write_string(&UPDATECONTAINERSERVICEINPUT_MEMBER_SERVICE_NAME, val)?;
+        }
+        if let Some(ref val) = self.power {
+            ser.write_string(&UPDATECONTAINERSERVICEINPUT_MEMBER_POWER, val.as_str())?;
+        }
+        if let Some(ref val) = self.scale {
+            ser.write_integer(&UPDATECONTAINERSERVICEINPUT_MEMBER_SCALE, *val)?;
+        }
+        if let Some(ref val) = self.is_disabled {
+            ser.write_boolean(&UPDATECONTAINERSERVICEINPUT_MEMBER_IS_DISABLED, *val)?;
+        }
+        if let Some(ref val) = self.public_domain_names {
+            ser.write_map(
+                &UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.private_registry_access {
+            ser.write_struct(&UPDATECONTAINERSERVICEINPUT_MEMBER_PRIVATE_REGISTRY_ACCESS, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&UPDATECONTAINERSERVICEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.power = Some(crate::types::ContainerServicePowerName::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scale = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.is_disabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.public_domain_names = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&UPDATECONTAINERSERVICEINPUT_MEMBER_PUBLIC_DOMAIN_NAMES_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.private_registry_access = Some(crate::types::PrivateRegistryAccessRequest::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl UpdateContainerServiceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.service_name = builder.service_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl UpdateContainerServiceInput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerServiceInput`](crate::operation::update_container_service::UpdateContainerServiceInput).
     pub fn builder() -> crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder {

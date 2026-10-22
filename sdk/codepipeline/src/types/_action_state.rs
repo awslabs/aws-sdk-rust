@@ -37,6 +37,165 @@ impl ActionState {
         self.revision_url.as_deref()
     }
 }
+static ACTIONSTATE_MEMBER_ACTION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionState$actionName",
+        "com.amazonaws.codepipeline",
+        "ActionState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "actionName",
+    0,
+);
+static ACTIONSTATE_MEMBER_CURRENT_REVISION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionState$currentRevision",
+        "com.amazonaws.codepipeline",
+        "ActionState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "currentRevision",
+    1,
+);
+static ACTIONSTATE_MEMBER_LATEST_EXECUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionState$latestExecution",
+        "com.amazonaws.codepipeline",
+        "ActionState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "latestExecution",
+    2,
+);
+static ACTIONSTATE_MEMBER_ENTITY_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionState$entityUrl",
+        "com.amazonaws.codepipeline",
+        "ActionState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "entityUrl",
+    3,
+);
+static ACTIONSTATE_MEMBER_REVISION_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.codepipeline#ActionState$revisionUrl",
+        "com.amazonaws.codepipeline",
+        "ActionState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "revisionUrl",
+    4,
+);
+static ACTIONSTATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.codepipeline#ActionState", "com.amazonaws.codepipeline", "ActionState"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIONSTATE_MEMBER_ACTION_NAME,
+        &ACTIONSTATE_MEMBER_CURRENT_REVISION,
+        &ACTIONSTATE_MEMBER_LATEST_EXECUTION,
+        &ACTIONSTATE_MEMBER_ENTITY_URL,
+        &ACTIONSTATE_MEMBER_REVISION_URL,
+    ],
+);
+impl ActionState {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIONSTATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ActionState {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.action_name {
+            ser.write_string(&ACTIONSTATE_MEMBER_ACTION_NAME, val)?;
+        }
+        if let Some(ref val) = self.current_revision {
+            ser.write_struct(&ACTIONSTATE_MEMBER_CURRENT_REVISION, val)?;
+        }
+        if let Some(ref val) = self.latest_execution {
+            ser.write_struct(&ACTIONSTATE_MEMBER_LATEST_EXECUTION, val)?;
+        }
+        if let Some(ref val) = self.entity_url {
+            ser.write_string(&ACTIONSTATE_MEMBER_ENTITY_URL, val)?;
+        }
+        if let Some(ref val) = self.revision_url {
+            ser.write_string(&ACTIONSTATE_MEMBER_REVISION_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ActionStateBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&ACTIONSTATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.action_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_revision = Some(crate::types::ActionRevision::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_execution = Some(crate::types::ActionExecution::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revision_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ActionState {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ActionState {
     /// Creates a new builder-style object to manufacture [`ActionState`](crate::types::ActionState).
     pub fn builder() -> crate::types::builders::ActionStateBuilder {

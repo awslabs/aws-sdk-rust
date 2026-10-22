@@ -162,6 +162,42 @@ impl From<crate::operation::create_feed::CreateFeedError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_schedule_action::CreateScheduleActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_schedule_action::CreateScheduleActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_schedule_action::CreateScheduleActionError> for Error {
+    fn from(err: crate::operation::create_schedule_action::CreateScheduleActionError) -> Self {
+        match err {
+            crate::operation::create_schedule_action::CreateScheduleActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_schedule_action::CreateScheduleActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_schedule_action::CreateScheduleActionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_schedule_action::CreateScheduleActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_schedule_action::CreateScheduleActionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_schedule_action::CreateScheduleActionError::TooManyRequestException(inner) => {
+                Error::TooManyRequestException(inner)
+            }
+            crate::operation::create_schedule_action::CreateScheduleActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_schedule_action::CreateScheduleActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dictionary::DeleteDictionaryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -243,6 +279,39 @@ impl From<crate::operation::delete_feed_policy::DeleteFeedPolicyError> for Error
             crate::operation::delete_feed_policy::DeleteFeedPolicyError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::delete_feed_policy::DeleteFeedPolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_feed_policy::DeleteFeedPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_schedule_action::DeleteScheduleActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_schedule_action::DeleteScheduleActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_schedule_action::DeleteScheduleActionError> for Error {
+    fn from(err: crate::operation::delete_schedule_action::DeleteScheduleActionError) -> Self {
+        match err {
+            crate::operation::delete_schedule_action::DeleteScheduleActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_schedule_action::DeleteScheduleActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_schedule_action::DeleteScheduleActionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_schedule_action::DeleteScheduleActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_schedule_action::DeleteScheduleActionError::TooManyRequestException(inner) => {
+                Error::TooManyRequestException(inner)
+            }
+            crate::operation::delete_schedule_action::DeleteScheduleActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_schedule_action::DeleteScheduleActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -469,6 +538,38 @@ impl From<crate::operation::list_feeds::ListFeedsError> for Error {
             crate::operation::list_feeds::ListFeedsError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::list_feeds::ListFeedsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_feeds::ListFeedsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_schedule_actions::ListScheduleActionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_schedule_actions::ListScheduleActionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_schedule_actions::ListScheduleActionsError> for Error {
+    fn from(err: crate::operation::list_schedule_actions::ListScheduleActionsError) -> Self {
+        match err {
+            crate::operation::list_schedule_actions::ListScheduleActionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_schedule_actions::ListScheduleActionsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_schedule_actions::ListScheduleActionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_schedule_actions::ListScheduleActionsError::TooManyRequestException(inner) => {
+                Error::TooManyRequestException(inner)
+            }
+            crate::operation::list_schedule_actions::ListScheduleActionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_schedule_actions::ListScheduleActionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

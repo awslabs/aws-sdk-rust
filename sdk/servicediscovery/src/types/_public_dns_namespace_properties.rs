@@ -13,6 +13,83 @@ impl PublicDnsNamespaceProperties {
         self.dns_properties.as_ref()
     }
 }
+static PUBLICDNSNAMESPACEPROPERTIES_MEMBER_DNS_PROPERTIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#PublicDnsNamespaceProperties$DnsProperties",
+        "com.amazonaws.servicediscovery",
+        "PublicDnsNamespaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DnsProperties",
+    0,
+);
+static PUBLICDNSNAMESPACEPROPERTIES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.servicediscovery#PublicDnsNamespaceProperties",
+        "com.amazonaws.servicediscovery",
+        "PublicDnsNamespaceProperties",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PUBLICDNSNAMESPACEPROPERTIES_MEMBER_DNS_PROPERTIES],
+);
+impl PublicDnsNamespaceProperties {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PUBLICDNSNAMESPACEPROPERTIES_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PublicDnsNamespaceProperties {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.dns_properties {
+            ser.write_struct(&PUBLICDNSNAMESPACEPROPERTIES_MEMBER_DNS_PROPERTIES, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PublicDnsNamespacePropertiesBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PUBLICDNSNAMESPACEPROPERTIES_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dns_properties = Some(crate::types::PublicDnsPropertiesMutable::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PublicDnsNamespaceProperties {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PublicDnsNamespaceProperties {
     /// Creates a new builder-style object to manufacture [`PublicDnsNamespaceProperties`](crate::types::PublicDnsNamespaceProperties).
     pub fn builder() -> crate::types::builders::PublicDnsNamespacePropertiesBuilder {

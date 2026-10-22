@@ -64,6 +64,299 @@ impl CreateMlflowAppInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static CREATEMLFLOWAPPINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$Name",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_ARTIFACT_STORE_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$ArtifactStoreUri",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ArtifactStoreUri",
+    1,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$RoleArn",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RoleArn",
+    2,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_KMS_KEY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$KmsKeyId",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyId",
+    3,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_MODEL_REGISTRATION_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$ModelRegistrationMode",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelRegistrationMode",
+    4,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_WEEKLY_MAINTENANCE_WINDOW_START: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$WeeklyMaintenanceWindowStart",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WeeklyMaintenanceWindowStart",
+    5,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_ACCOUNT_DEFAULT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$AccountDefaultStatus",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AccountDefaultStatus",
+    6,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_DEFAULT_DOMAIN_ID_LIST_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#DefaultDomainIdList$member",
+        "com.amazonaws.sagemaker",
+        "DefaultDomainIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_DEFAULT_DOMAIN_ID_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$DefaultDomainIdList",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "DefaultDomainIdList",
+    7,
+)
+.with_list_member(&CREATEMLFLOWAPPINPUT_MEMBER_DEFAULT_DOMAIN_ID_LIST_MEMBER);
+static CREATEMLFLOWAPPINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEMLFLOWAPPINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput$Tags",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    8,
+)
+.with_list_member(&CREATEMLFLOWAPPINPUT_MEMBER_TAGS_MEMBER);
+static CREATEMLFLOWAPPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#CreateMlflowAppInput",
+        "com.amazonaws.sagemaker.synthetic",
+        "CreateMlflowAppInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMLFLOWAPPINPUT_MEMBER_NAME,
+        &CREATEMLFLOWAPPINPUT_MEMBER_ARTIFACT_STORE_URI,
+        &CREATEMLFLOWAPPINPUT_MEMBER_ROLE_ARN,
+        &CREATEMLFLOWAPPINPUT_MEMBER_KMS_KEY_ID,
+        &CREATEMLFLOWAPPINPUT_MEMBER_MODEL_REGISTRATION_MODE,
+        &CREATEMLFLOWAPPINPUT_MEMBER_WEEKLY_MAINTENANCE_WINDOW_START,
+        &CREATEMLFLOWAPPINPUT_MEMBER_ACCOUNT_DEFAULT_STATUS,
+        &CREATEMLFLOWAPPINPUT_MEMBER_DEFAULT_DOMAIN_ID_LIST,
+        &CREATEMLFLOWAPPINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateMlflowAppRequest");
+impl CreateMlflowAppInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMLFLOWAPPINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateMlflowAppInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&CREATEMLFLOWAPPINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.artifact_store_uri {
+            ser.write_string(&CREATEMLFLOWAPPINPUT_MEMBER_ARTIFACT_STORE_URI, val)?;
+        }
+        if let Some(ref val) = self.role_arn {
+            ser.write_string(&CREATEMLFLOWAPPINPUT_MEMBER_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.kms_key_id {
+            ser.write_string(&CREATEMLFLOWAPPINPUT_MEMBER_KMS_KEY_ID, val)?;
+        }
+        if let Some(ref val) = self.model_registration_mode {
+            ser.write_string(&CREATEMLFLOWAPPINPUT_MEMBER_MODEL_REGISTRATION_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.weekly_maintenance_window_start {
+            ser.write_string(&CREATEMLFLOWAPPINPUT_MEMBER_WEEKLY_MAINTENANCE_WINDOW_START, val)?;
+        }
+        if let Some(ref val) = self.account_default_status {
+            ser.write_string(&CREATEMLFLOWAPPINPUT_MEMBER_ACCOUNT_DEFAULT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.default_domain_id_list {
+            ser.write_list(
+                &CREATEMLFLOWAPPINPUT_MEMBER_DEFAULT_DOMAIN_ID_LIST,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &CREATEMLFLOWAPPINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_mlflow_app::builders::CreateMlflowAppInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMLFLOWAPPINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.artifact_store_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.kms_key_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_registration_mode = Some(crate::types::ModelRegistrationMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.weekly_maintenance_window_start = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_default_status = Some(crate::types::AccountDefaultStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.default_domain_id_list = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateMlflowAppInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.artifact_store_uri = builder.artifact_store_uri.or(Some(String::new()));
+        builder.role_arn = builder.role_arn.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl CreateMlflowAppInput {
     /// Creates a new builder-style object to manufacture [`CreateMlflowAppInput`](crate::operation::create_mlflow_app::CreateMlflowAppInput).
     pub fn builder() -> crate::operation::create_mlflow_app::builders::CreateMlflowAppInputBuilder {

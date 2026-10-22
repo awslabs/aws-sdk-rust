@@ -27,6 +27,128 @@ impl CreateVocabularyFilterOutput {
         self.last_modified_time.as_ref()
     }
 }
+static CREATEVOCABULARYFILTEROUTPUT_MEMBER_VOCABULARY_FILTER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterOutput$VocabularyFilterName",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyFilterName",
+    0,
+);
+static CREATEVOCABULARYFILTEROUTPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterOutput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static CREATEVOCABULARYFILTEROUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterOutput$LastModifiedTime",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    2,
+);
+static CREATEVOCABULARYFILTEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateVocabularyFilterOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateVocabularyFilterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEVOCABULARYFILTEROUTPUT_MEMBER_VOCABULARY_FILTER_NAME,
+        &CREATEVOCABULARYFILTEROUTPUT_MEMBER_LANGUAGE_CODE,
+        &CREATEVOCABULARYFILTEROUTPUT_MEMBER_LAST_MODIFIED_TIME,
+    ],
+)
+.with_original_name("CreateVocabularyFilterResponse");
+impl CreateVocabularyFilterOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEVOCABULARYFILTEROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateVocabularyFilterOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_filter_name {
+            ser.write_string(&CREATEVOCABULARYFILTEROUTPUT_MEMBER_VOCABULARY_FILTER_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&CREATEVOCABULARYFILTEROUTPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&CREATEVOCABULARYFILTEROUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_vocabulary_filter::builders::CreateVocabularyFilterOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEVOCABULARYFILTEROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_filter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateVocabularyFilterOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateVocabularyFilterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

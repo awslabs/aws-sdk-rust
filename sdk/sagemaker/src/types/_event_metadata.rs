@@ -110,3 +110,142 @@ impl EventMetadata {
         matches!(self, Self::Unknown)
     }
 }
+static EVENTMETADATA_MEMBER_CLUSTER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EventMetadata$Cluster",
+        "com.amazonaws.sagemaker",
+        "EventMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Cluster",
+    0,
+);
+static EVENTMETADATA_MEMBER_INSTANCEGROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EventMetadata$InstanceGroup",
+        "com.amazonaws.sagemaker",
+        "EventMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InstanceGroup",
+    1,
+);
+static EVENTMETADATA_MEMBER_INSTANCEGROUPSCALING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EventMetadata$InstanceGroupScaling",
+        "com.amazonaws.sagemaker",
+        "EventMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "InstanceGroupScaling",
+    2,
+);
+static EVENTMETADATA_MEMBER_INSTANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EventMetadata$Instance",
+        "com.amazonaws.sagemaker",
+        "EventMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Instance",
+    3,
+);
+static EVENTMETADATA_MEMBER_DATABASECONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EventMetadata$DatabaseConfiguration",
+        "com.amazonaws.sagemaker",
+        "EventMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DatabaseConfiguration",
+    4,
+);
+static EVENTMETADATA_MEMBER_SLURMHEALTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#EventMetadata$SlurmHealth",
+        "com.amazonaws.sagemaker",
+        "EventMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SlurmHealth",
+    5,
+);
+static EVENTMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#EventMetadata", "com.amazonaws.sagemaker", "EventMetadata"),
+    ::aws_smithy_schema::ShapeType::Union,
+    &[
+        &EVENTMETADATA_MEMBER_CLUSTER,
+        &EVENTMETADATA_MEMBER_INSTANCEGROUP,
+        &EVENTMETADATA_MEMBER_INSTANCEGROUPSCALING,
+        &EVENTMETADATA_MEMBER_INSTANCE,
+        &EVENTMETADATA_MEMBER_DATABASECONFIGURATION,
+        &EVENTMETADATA_MEMBER_SLURMHEALTH,
+    ],
+);
+impl EventMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &EVENTMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for EventMetadata {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        match self {
+            Self::Cluster(val) => {
+                ser.write_struct(&EVENTMETADATA_MEMBER_CLUSTER, val)?;
+            }
+            Self::InstanceGroup(val) => {
+                ser.write_struct(&EVENTMETADATA_MEMBER_INSTANCEGROUP, val)?;
+            }
+            Self::InstanceGroupScaling(val) => {
+                ser.write_struct(&EVENTMETADATA_MEMBER_INSTANCEGROUPSCALING, val)?;
+            }
+            Self::Instance(val) => {
+                ser.write_struct(&EVENTMETADATA_MEMBER_INSTANCE, val)?;
+            }
+            Self::DatabaseConfiguration(val) => {
+                ser.write_struct(&EVENTMETADATA_MEMBER_DATABASECONFIGURATION, val)?;
+            }
+            Self::SlurmHealth(val) => {
+                ser.write_struct(&EVENTMETADATA_MEMBER_SLURMHEALTH, val)?;
+            }
+            Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
+        }
+        Ok(())
+    }
+}
+impl EventMetadata {
+    /// Deserializes this union from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut result: ::std::option::Option<Self> = ::std::option::Option::None;
+        #[allow(unused_variables, unreachable_code, clippy::single_match, clippy::match_single_binding)]
+        deserializer.read_struct(&EVENTMETADATA_SCHEMA, &mut |member, deser| {
+            // A union holds exactly one member; the deserializer reports every key
+            // (known or not), so a second one is an error whatever it names.
+            if result.is_some() {
+                return Err(::aws_smithy_schema::serde::SerdeError::invalid_input(
+                    "encountered mixed variants in union",
+                ));
+            }
+            result = ::std::option::Option::Some(match member.member_index() {
+                Some(0) => Self::Cluster(crate::types::ClusterMetadata::deserialize(deser)?),
+                Some(1) => Self::InstanceGroup(crate::types::InstanceGroupMetadata::deserialize(deser)?),
+                Some(2) => Self::InstanceGroupScaling(crate::types::InstanceGroupScalingMetadata::deserialize(deser)?),
+                Some(3) => Self::Instance(crate::types::InstanceMetadata::deserialize(deser)?),
+                Some(4) => Self::DatabaseConfiguration(crate::types::DatabaseConfigurationMetadata::deserialize(deser)?),
+                Some(5) => Self::SlurmHealth(crate::types::SlurmHealthMetadata::deserialize(deser)?),
+                _ => Self::Unknown,
+            });
+            Ok(())
+        })?;
+        result.ok_or_else(|| ::aws_smithy_schema::serde::SerdeError::custom("expected a union variant"))
+    }
+}

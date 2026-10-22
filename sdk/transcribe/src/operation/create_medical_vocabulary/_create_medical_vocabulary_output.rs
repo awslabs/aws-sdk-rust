@@ -39,6 +39,170 @@ impl CreateMedicalVocabularyOutput {
         self.failure_reason.as_deref()
     }
 }
+static CREATEMEDICALVOCABULARYOUTPUT_MEMBER_VOCABULARY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateMedicalVocabularyOutput$VocabularyName",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateMedicalVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyName",
+    0,
+);
+static CREATEMEDICALVOCABULARYOUTPUT_MEMBER_LANGUAGE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateMedicalVocabularyOutput$LanguageCode",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateMedicalVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LanguageCode",
+    1,
+);
+static CREATEMEDICALVOCABULARYOUTPUT_MEMBER_VOCABULARY_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateMedicalVocabularyOutput$VocabularyState",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateMedicalVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VocabularyState",
+    2,
+);
+static CREATEMEDICALVOCABULARYOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateMedicalVocabularyOutput$LastModifiedTime",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateMedicalVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    3,
+);
+static CREATEMEDICALVOCABULARYOUTPUT_MEMBER_FAILURE_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateMedicalVocabularyOutput$FailureReason",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateMedicalVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureReason",
+    4,
+);
+static CREATEMEDICALVOCABULARYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe.synthetic#CreateMedicalVocabularyOutput",
+        "com.amazonaws.transcribe.synthetic",
+        "CreateMedicalVocabularyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEMEDICALVOCABULARYOUTPUT_MEMBER_VOCABULARY_NAME,
+        &CREATEMEDICALVOCABULARYOUTPUT_MEMBER_LANGUAGE_CODE,
+        &CREATEMEDICALVOCABULARYOUTPUT_MEMBER_VOCABULARY_STATE,
+        &CREATEMEDICALVOCABULARYOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &CREATEMEDICALVOCABULARYOUTPUT_MEMBER_FAILURE_REASON,
+    ],
+)
+.with_original_name("CreateMedicalVocabularyResponse");
+impl CreateMedicalVocabularyOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEMEDICALVOCABULARYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateMedicalVocabularyOutput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.vocabulary_name {
+            ser.write_string(&CREATEMEDICALVOCABULARYOUTPUT_MEMBER_VOCABULARY_NAME, val)?;
+        }
+        if let Some(ref val) = self.language_code {
+            ser.write_string(&CREATEMEDICALVOCABULARYOUTPUT_MEMBER_LANGUAGE_CODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.vocabulary_state {
+            ser.write_string(&CREATEMEDICALVOCABULARYOUTPUT_MEMBER_VOCABULARY_STATE, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&CREATEMEDICALVOCABULARYOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.failure_reason {
+            ser.write_string(&CREATEMEDICALVOCABULARYOUTPUT_MEMBER_FAILURE_REASON, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyOutputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&CREATEMEDICALVOCABULARYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language_code = Some(crate::types::LanguageCode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vocabulary_state = Some(crate::types::VocabularyState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.failure_reason = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl CreateMedicalVocabularyOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for CreateMedicalVocabularyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()

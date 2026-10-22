@@ -25,6 +25,127 @@ impl PipelineDefinitionS3Location {
         self.version_id.as_deref()
     }
 }
+static PIPELINEDEFINITIONS3LOCATION_MEMBER_BUCKET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineDefinitionS3Location$Bucket",
+        "com.amazonaws.sagemaker",
+        "PipelineDefinitionS3Location",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Bucket",
+    0,
+);
+static PIPELINEDEFINITIONS3LOCATION_MEMBER_OBJECT_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineDefinitionS3Location$ObjectKey",
+        "com.amazonaws.sagemaker",
+        "PipelineDefinitionS3Location",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ObjectKey",
+    1,
+);
+static PIPELINEDEFINITIONS3LOCATION_MEMBER_VERSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineDefinitionS3Location$VersionId",
+        "com.amazonaws.sagemaker",
+        "PipelineDefinitionS3Location",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionId",
+    2,
+);
+static PIPELINEDEFINITIONS3LOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#PipelineDefinitionS3Location",
+        "com.amazonaws.sagemaker",
+        "PipelineDefinitionS3Location",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PIPELINEDEFINITIONS3LOCATION_MEMBER_BUCKET,
+        &PIPELINEDEFINITIONS3LOCATION_MEMBER_OBJECT_KEY,
+        &PIPELINEDEFINITIONS3LOCATION_MEMBER_VERSION_ID,
+    ],
+);
+impl PipelineDefinitionS3Location {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PIPELINEDEFINITIONS3LOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PipelineDefinitionS3Location {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.bucket {
+            ser.write_string(&PIPELINEDEFINITIONS3LOCATION_MEMBER_BUCKET, val)?;
+        }
+        if let Some(ref val) = self.object_key {
+            ser.write_string(&PIPELINEDEFINITIONS3LOCATION_MEMBER_OBJECT_KEY, val)?;
+        }
+        if let Some(ref val) = self.version_id {
+            ser.write_string(&PIPELINEDEFINITIONS3LOCATION_MEMBER_VERSION_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::PipelineDefinitionS3LocationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&PIPELINEDEFINITIONS3LOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.bucket = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.object_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.version_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl PipelineDefinitionS3Location {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl PipelineDefinitionS3Location {
     /// Creates a new builder-style object to manufacture [`PipelineDefinitionS3Location`](crate::types::PipelineDefinitionS3Location).
     pub fn builder() -> crate::types::builders::PipelineDefinitionS3LocationBuilder {

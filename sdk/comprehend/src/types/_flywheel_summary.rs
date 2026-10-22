@@ -61,6 +61,249 @@ impl FlywheelSummary {
         self.latest_flywheel_iteration.as_deref()
     }
 }
+static FLYWHEELSUMMARY_MEMBER_FLYWHEEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$FlywheelArn",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FlywheelArn",
+    0,
+);
+static FLYWHEELSUMMARY_MEMBER_ACTIVE_MODEL_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$ActiveModelArn",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActiveModelArn",
+    1,
+);
+static FLYWHEELSUMMARY_MEMBER_DATA_LAKE_S3_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$DataLakeS3Uri",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DataLakeS3Uri",
+    2,
+);
+static FLYWHEELSUMMARY_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$Status",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static FLYWHEELSUMMARY_MEMBER_MODEL_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$ModelType",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ModelType",
+    4,
+);
+static FLYWHEELSUMMARY_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$Message",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    5,
+);
+static FLYWHEELSUMMARY_MEMBER_CREATION_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$CreationTime",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreationTime",
+    6,
+);
+static FLYWHEELSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$LastModifiedTime",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    7,
+);
+static FLYWHEELSUMMARY_MEMBER_LATEST_FLYWHEEL_ITERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#FlywheelSummary$LatestFlywheelIteration",
+        "com.amazonaws.comprehend",
+        "FlywheelSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LatestFlywheelIteration",
+    8,
+);
+static FLYWHEELSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#FlywheelSummary", "com.amazonaws.comprehend", "FlywheelSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &FLYWHEELSUMMARY_MEMBER_FLYWHEEL_ARN,
+        &FLYWHEELSUMMARY_MEMBER_ACTIVE_MODEL_ARN,
+        &FLYWHEELSUMMARY_MEMBER_DATA_LAKE_S3_URI,
+        &FLYWHEELSUMMARY_MEMBER_STATUS,
+        &FLYWHEELSUMMARY_MEMBER_MODEL_TYPE,
+        &FLYWHEELSUMMARY_MEMBER_MESSAGE,
+        &FLYWHEELSUMMARY_MEMBER_CREATION_TIME,
+        &FLYWHEELSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+        &FLYWHEELSUMMARY_MEMBER_LATEST_FLYWHEEL_ITERATION,
+    ],
+);
+impl FlywheelSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &FLYWHEELSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for FlywheelSummary {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.flywheel_arn {
+            ser.write_string(&FLYWHEELSUMMARY_MEMBER_FLYWHEEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.active_model_arn {
+            ser.write_string(&FLYWHEELSUMMARY_MEMBER_ACTIVE_MODEL_ARN, val)?;
+        }
+        if let Some(ref val) = self.data_lake_s3_uri {
+            ser.write_string(&FLYWHEELSUMMARY_MEMBER_DATA_LAKE_S3_URI, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&FLYWHEELSUMMARY_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.model_type {
+            ser.write_string(&FLYWHEELSUMMARY_MEMBER_MODEL_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.message {
+            ser.write_string(&FLYWHEELSUMMARY_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.creation_time {
+            ser.write_timestamp(&FLYWHEELSUMMARY_MEMBER_CREATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&FLYWHEELSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.latest_flywheel_iteration {
+            ser.write_string(&FLYWHEELSUMMARY_MEMBER_LATEST_FLYWHEEL_ITERATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::FlywheelSummaryBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&FLYWHEELSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.flywheel_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.active_model_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.data_lake_s3_uri = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::FlywheelStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_type = Some(crate::types::ModelType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.latest_flywheel_iteration = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl FlywheelSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl FlywheelSummary {
     /// Creates a new builder-style object to manufacture [`FlywheelSummary`](crate::types::FlywheelSummary).
     pub fn builder() -> crate::types::builders::FlywheelSummaryBuilder {

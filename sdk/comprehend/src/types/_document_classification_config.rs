@@ -21,6 +21,115 @@ impl DocumentClassificationConfig {
         self.labels.as_deref().unwrap_or_default()
     }
 }
+static DOCUMENTCLASSIFICATIONCONFIG_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassificationConfig$Mode",
+        "com.amazonaws.comprehend",
+        "DocumentClassificationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    0,
+);
+static DOCUMENTCLASSIFICATIONCONFIG_MEMBER_LABELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.comprehend#LabelsList$member", "com.amazonaws.comprehend", "LabelsList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOCUMENTCLASSIFICATIONCONFIG_MEMBER_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassificationConfig$Labels",
+        "com.amazonaws.comprehend",
+        "DocumentClassificationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Labels",
+    1,
+)
+.with_list_member(&DOCUMENTCLASSIFICATIONCONFIG_MEMBER_LABELS_MEMBER);
+static DOCUMENTCLASSIFICATIONCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.comprehend#DocumentClassificationConfig",
+        "com.amazonaws.comprehend",
+        "DocumentClassificationConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DOCUMENTCLASSIFICATIONCONFIG_MEMBER_MODE, &DOCUMENTCLASSIFICATIONCONFIG_MEMBER_LABELS],
+);
+impl DocumentClassificationConfig {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTCLASSIFICATIONCONFIG_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentClassificationConfig {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.mode;
+            ser.write_string(&DOCUMENTCLASSIFICATIONCONFIG_MEMBER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.labels {
+            ser.write_list(
+                &DOCUMENTCLASSIFICATIONCONFIG_MEMBER_LABELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::DocumentClassificationConfigBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DOCUMENTCLASSIFICATIONCONFIG_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    self.mode = Some(crate::types::DocumentClassifierMode::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.labels = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DocumentClassificationConfig {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DocumentClassificationConfig {
     /// Creates a new builder-style object to manufacture [`DocumentClassificationConfig`](crate::types::DocumentClassificationConfig).
     pub fn builder() -> crate::types::builders::DocumentClassificationConfigBuilder {

@@ -71,6 +71,389 @@ impl TrainingSpecification {
         self.additional_s3_data_source.as_ref()
     }
 }
+static TRAININGSPECIFICATION_MEMBER_TRAINING_IMAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification$TrainingImage",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingImage",
+    0,
+);
+static TRAININGSPECIFICATION_MEMBER_TRAINING_IMAGE_DIGEST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification$TrainingImageDigest",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TrainingImageDigest",
+    1,
+);
+static TRAININGSPECIFICATION_MEMBER_SUPPORTED_HYPER_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HyperParameterSpecifications$member",
+        "com.amazonaws.sagemaker",
+        "HyperParameterSpecifications",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGSPECIFICATION_MEMBER_SUPPORTED_HYPER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification$SupportedHyperParameters",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SupportedHyperParameters",
+    2,
+)
+.with_list_member(&TRAININGSPECIFICATION_MEMBER_SUPPORTED_HYPER_PARAMETERS_MEMBER);
+static TRAININGSPECIFICATION_MEMBER_SUPPORTED_TRAINING_INSTANCE_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TrainingInstanceTypes$member",
+            "com.amazonaws.sagemaker",
+            "TrainingInstanceTypes",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static TRAININGSPECIFICATION_MEMBER_SUPPORTED_TRAINING_INSTANCE_TYPES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TrainingSpecification$SupportedTrainingInstanceTypes",
+            "com.amazonaws.sagemaker",
+            "TrainingSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "SupportedTrainingInstanceTypes",
+        3,
+    )
+    .with_list_member(&TRAININGSPECIFICATION_MEMBER_SUPPORTED_TRAINING_INSTANCE_TYPES_MEMBER);
+static TRAININGSPECIFICATION_MEMBER_SUPPORTS_DISTRIBUTED_TRAINING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification$SupportsDistributedTraining",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "SupportsDistributedTraining",
+    4,
+);
+static TRAININGSPECIFICATION_MEMBER_METRIC_DEFINITIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#MetricDefinitionList$member",
+        "com.amazonaws.sagemaker",
+        "MetricDefinitionList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGSPECIFICATION_MEMBER_METRIC_DEFINITIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification$MetricDefinitions",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MetricDefinitions",
+    5,
+)
+.with_list_member(&TRAININGSPECIFICATION_MEMBER_METRIC_DEFINITIONS_MEMBER);
+static TRAININGSPECIFICATION_MEMBER_TRAINING_CHANNELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ChannelSpecifications$member",
+        "com.amazonaws.sagemaker",
+        "ChannelSpecifications",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static TRAININGSPECIFICATION_MEMBER_TRAINING_CHANNELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification$TrainingChannels",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TrainingChannels",
+    6,
+)
+.with_list_member(&TRAININGSPECIFICATION_MEMBER_TRAINING_CHANNELS_MEMBER);
+static TRAININGSPECIFICATION_MEMBER_SUPPORTED_TUNING_JOB_OBJECTIVE_METRICS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#HyperParameterTuningJobObjectives$member",
+            "com.amazonaws.sagemaker",
+            "HyperParameterTuningJobObjectives",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static TRAININGSPECIFICATION_MEMBER_SUPPORTED_TUNING_JOB_OBJECTIVE_METRICS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker#TrainingSpecification$SupportedTuningJobObjectiveMetrics",
+            "com.amazonaws.sagemaker",
+            "TrainingSpecification",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "SupportedTuningJobObjectiveMetrics",
+        7,
+    )
+    .with_list_member(&TRAININGSPECIFICATION_MEMBER_SUPPORTED_TUNING_JOB_OBJECTIVE_METRICS_MEMBER);
+static TRAININGSPECIFICATION_MEMBER_ADDITIONAL_S3_DATA_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification$AdditionalS3DataSource",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AdditionalS3DataSource",
+    8,
+);
+static TRAININGSPECIFICATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#TrainingSpecification",
+        "com.amazonaws.sagemaker",
+        "TrainingSpecification",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &TRAININGSPECIFICATION_MEMBER_TRAINING_IMAGE,
+        &TRAININGSPECIFICATION_MEMBER_TRAINING_IMAGE_DIGEST,
+        &TRAININGSPECIFICATION_MEMBER_SUPPORTED_HYPER_PARAMETERS,
+        &TRAININGSPECIFICATION_MEMBER_SUPPORTED_TRAINING_INSTANCE_TYPES,
+        &TRAININGSPECIFICATION_MEMBER_SUPPORTS_DISTRIBUTED_TRAINING,
+        &TRAININGSPECIFICATION_MEMBER_METRIC_DEFINITIONS,
+        &TRAININGSPECIFICATION_MEMBER_TRAINING_CHANNELS,
+        &TRAININGSPECIFICATION_MEMBER_SUPPORTED_TUNING_JOB_OBJECTIVE_METRICS,
+        &TRAININGSPECIFICATION_MEMBER_ADDITIONAL_S3_DATA_SOURCE,
+    ],
+);
+impl TrainingSpecification {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &TRAININGSPECIFICATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for TrainingSpecification {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.training_image {
+            ser.write_string(&TRAININGSPECIFICATION_MEMBER_TRAINING_IMAGE, val)?;
+        }
+        if let Some(ref val) = self.training_image_digest {
+            ser.write_string(&TRAININGSPECIFICATION_MEMBER_TRAINING_IMAGE_DIGEST, val)?;
+        }
+        if let Some(ref val) = self.supported_hyper_parameters {
+            ser.write_list(
+                &TRAININGSPECIFICATION_MEMBER_SUPPORTED_HYPER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HyperParameterSpecification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.supported_training_instance_types {
+            ser.write_list(
+                &TRAININGSPECIFICATION_MEMBER_SUPPORTED_TRAINING_INSTANCE_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.supports_distributed_training {
+            ser.write_boolean(&TRAININGSPECIFICATION_MEMBER_SUPPORTS_DISTRIBUTED_TRAINING, *val)?;
+        }
+        if let Some(ref val) = self.metric_definitions {
+            ser.write_list(
+                &TRAININGSPECIFICATION_MEMBER_METRIC_DEFINITIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MetricDefinition::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.training_channels {
+            ser.write_list(
+                &TRAININGSPECIFICATION_MEMBER_TRAINING_CHANNELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ChannelSpecification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.supported_tuning_job_objective_metrics {
+            ser.write_list(
+                &TRAININGSPECIFICATION_MEMBER_SUPPORTED_TUNING_JOB_OBJECTIVE_METRICS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::HyperParameterTuningJobObjective::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.additional_s3_data_source {
+            ser.write_struct(&TRAININGSPECIFICATION_MEMBER_ADDITIONAL_S3_DATA_SOURCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::TrainingSpecificationBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&TRAININGSPECIFICATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_image = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_image_digest = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_hyper_parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HyperParameterSpecification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_training_instance_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TrainingInstanceType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supports_distributed_training = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.metric_definitions = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MetricDefinition::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.training_channels = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ChannelSpecification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.supported_tuning_job_objective_metrics = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::HyperParameterTuningJobObjective::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_s3_data_source = Some(crate::types::AdditionalS3DataSource::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl TrainingSpecification {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl TrainingSpecification {
     /// Creates a new builder-style object to manufacture [`TrainingSpecification`](crate::types::TrainingSpecification).
     pub fn builder() -> crate::types::builders::TrainingSpecificationBuilder {

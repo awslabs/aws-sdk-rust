@@ -41,6 +41,221 @@ impl ModelDashboardModel {
         self.model_card.as_ref()
     }
 }
+static MODELDASHBOARDMODEL_MEMBER_MODEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardModel$Model",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Model",
+    0,
+);
+static MODELDASHBOARDMODEL_MEMBER_ENDPOINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardEndpoints$member",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardEndpoints",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MODELDASHBOARDMODEL_MEMBER_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardModel$Endpoints",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardModel",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Endpoints",
+    1,
+)
+.with_list_member(&MODELDASHBOARDMODEL_MEMBER_ENDPOINTS_MEMBER);
+static MODELDASHBOARDMODEL_MEMBER_LAST_BATCH_TRANSFORM_JOB: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardModel$LastBatchTransformJob",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastBatchTransformJob",
+    2,
+);
+static MODELDASHBOARDMODEL_MEMBER_MONITORING_SCHEDULES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardMonitoringSchedules$member",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardMonitoringSchedules",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static MODELDASHBOARDMODEL_MEMBER_MONITORING_SCHEDULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardModel$MonitoringSchedules",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardModel",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "MonitoringSchedules",
+    3,
+)
+.with_list_member(&MODELDASHBOARDMODEL_MEMBER_MONITORING_SCHEDULES_MEMBER);
+static MODELDASHBOARDMODEL_MEMBER_MODEL_CARD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardModel$ModelCard",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ModelCard",
+    4,
+);
+static MODELDASHBOARDMODEL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ModelDashboardModel",
+        "com.amazonaws.sagemaker",
+        "ModelDashboardModel",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MODELDASHBOARDMODEL_MEMBER_MODEL,
+        &MODELDASHBOARDMODEL_MEMBER_ENDPOINTS,
+        &MODELDASHBOARDMODEL_MEMBER_LAST_BATCH_TRANSFORM_JOB,
+        &MODELDASHBOARDMODEL_MEMBER_MONITORING_SCHEDULES,
+        &MODELDASHBOARDMODEL_MEMBER_MODEL_CARD,
+    ],
+);
+impl ModelDashboardModel {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MODELDASHBOARDMODEL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ModelDashboardModel {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.model {
+            ser.write_struct(&MODELDASHBOARDMODEL_MEMBER_MODEL, val)?;
+        }
+        if let Some(ref val) = self.endpoints {
+            ser.write_list(
+                &MODELDASHBOARDMODEL_MEMBER_ENDPOINTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ModelDashboardEndpoint::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.last_batch_transform_job {
+            ser.write_struct(&MODELDASHBOARDMODEL_MEMBER_LAST_BATCH_TRANSFORM_JOB, val)?;
+        }
+        if let Some(ref val) = self.monitoring_schedules {
+            ser.write_list(
+                &MODELDASHBOARDMODEL_MEMBER_MONITORING_SCHEDULES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ModelDashboardMonitoringSchedule::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.model_card {
+            ser.write_struct(&MODELDASHBOARDMODEL_MEMBER_MODEL_CARD, val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::ModelDashboardModelBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&MODELDASHBOARDMODEL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model = Some(crate::types::Model::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.endpoints = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ModelDashboardEndpoint::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_batch_transform_job = Some(crate::types::TransformJob::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.monitoring_schedules = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ModelDashboardMonitoringSchedule::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.model_card = Some(crate::types::ModelDashboardModelCard::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl ModelDashboardModel {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl ModelDashboardModel {
     /// Creates a new builder-style object to manufacture [`ModelDashboardModel`](crate::types::ModelDashboardModel).
     pub fn builder() -> crate::types::builders::ModelDashboardModelBuilder {

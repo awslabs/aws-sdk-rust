@@ -36,6 +36,169 @@ impl DescribeRepositoriesInput {
         self.max_results
     }
 }
+static DESCRIBEREPOSITORIESINPUT_MEMBER_REGISTRY_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeRepositoriesInput$registryId",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "registryId",
+    0,
+);
+static DESCRIBEREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic#RepositoryNameList$member",
+        "com.amazonaws.ecrpublic",
+        "RepositoryNameList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DESCRIBEREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeRepositoriesInput$repositoryNames",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "repositoryNames",
+    1,
+)
+.with_list_member(&DESCRIBEREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES_MEMBER);
+static DESCRIBEREPOSITORIESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeRepositoriesInput$nextToken",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "nextToken",
+    2,
+);
+static DESCRIBEREPOSITORIESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeRepositoriesInput$maxResults",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "maxResults",
+    3,
+);
+static DESCRIBEREPOSITORIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecrpublic.synthetic#DescribeRepositoriesInput",
+        "com.amazonaws.ecrpublic.synthetic",
+        "DescribeRepositoriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEREPOSITORIESINPUT_MEMBER_REGISTRY_ID,
+        &DESCRIBEREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES,
+        &DESCRIBEREPOSITORIESINPUT_MEMBER_NEXT_TOKEN,
+        &DESCRIBEREPOSITORIESINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeRepositoriesRequest");
+impl DescribeRepositoriesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEREPOSITORIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeRepositoriesInput {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.registry_id {
+            ser.write_string(&DESCRIBEREPOSITORIESINPUT_MEMBER_REGISTRY_ID, val)?;
+        }
+        if let Some(ref val) = self.repository_names {
+            ser.write_list(
+                &DESCRIBEREPOSITORIESINPUT_MEMBER_REPOSITORY_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEREPOSITORIESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&DESCRIBEREPOSITORIESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::operation::describe_repositories::builders::DescribeRepositoriesInputBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&DESCRIBEREPOSITORIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.registry_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.repository_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl DescribeRepositoriesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
 impl DescribeRepositoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeRepositoriesInput`](crate::operation::describe_repositories::DescribeRepositoriesInput).
     pub fn builder() -> crate::operation::describe_repositories::builders::DescribeRepositoriesInputBuilder {

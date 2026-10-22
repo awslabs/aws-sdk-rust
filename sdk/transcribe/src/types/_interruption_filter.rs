@@ -49,6 +49,169 @@ impl InterruptionFilter {
         self.negate
     }
 }
+static INTERRUPTIONFILTER_MEMBER_THRESHOLD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InterruptionFilter$Threshold",
+        "com.amazonaws.transcribe",
+        "InterruptionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Threshold",
+    0,
+);
+static INTERRUPTIONFILTER_MEMBER_PARTICIPANT_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InterruptionFilter$ParticipantRole",
+        "com.amazonaws.transcribe",
+        "InterruptionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ParticipantRole",
+    1,
+);
+static INTERRUPTIONFILTER_MEMBER_ABSOLUTE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InterruptionFilter$AbsoluteTimeRange",
+        "com.amazonaws.transcribe",
+        "InterruptionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AbsoluteTimeRange",
+    2,
+);
+static INTERRUPTIONFILTER_MEMBER_RELATIVE_TIME_RANGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InterruptionFilter$RelativeTimeRange",
+        "com.amazonaws.transcribe",
+        "InterruptionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RelativeTimeRange",
+    3,
+);
+static INTERRUPTIONFILTER_MEMBER_NEGATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InterruptionFilter$Negate",
+        "com.amazonaws.transcribe",
+        "InterruptionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Negate",
+    4,
+);
+static INTERRUPTIONFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#InterruptionFilter",
+        "com.amazonaws.transcribe",
+        "InterruptionFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INTERRUPTIONFILTER_MEMBER_THRESHOLD,
+        &INTERRUPTIONFILTER_MEMBER_PARTICIPANT_ROLE,
+        &INTERRUPTIONFILTER_MEMBER_ABSOLUTE_TIME_RANGE,
+        &INTERRUPTIONFILTER_MEMBER_RELATIVE_TIME_RANGE,
+        &INTERRUPTIONFILTER_MEMBER_NEGATE,
+    ],
+);
+impl InterruptionFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INTERRUPTIONFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InterruptionFilter {
+    fn schema(&self) -> &::aws_smithy_schema::Schema<'_> {
+        Self::SCHEMA
+    }
+
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.threshold {
+            ser.write_long(&INTERRUPTIONFILTER_MEMBER_THRESHOLD, *val)?;
+        }
+        if let Some(ref val) = self.participant_role {
+            ser.write_string(&INTERRUPTIONFILTER_MEMBER_PARTICIPANT_ROLE, val.as_str())?;
+        }
+        if let Some(ref val) = self.absolute_time_range {
+            ser.write_struct(&INTERRUPTIONFILTER_MEMBER_ABSOLUTE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.relative_time_range {
+            ser.write_struct(&INTERRUPTIONFILTER_MEMBER_RELATIVE_TIME_RANGE, val)?;
+        }
+        if let Some(ref val) = self.negate {
+            ser.write_boolean(&INTERRUPTIONFILTER_MEMBER_NEGATE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl crate::types::builders::InterruptionFilterBuilder {
+    #[allow(
+        unused_variables,
+        unreachable_code,
+        clippy::single_match,
+        clippy::match_single_binding,
+        clippy::diverging_sub_expression
+    )]
+    pub(crate) fn deserialize_members(
+        &mut self,
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        deserializer.read_struct(&INTERRUPTIONFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.threshold = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.participant_role = Some(crate::types::ParticipantRole::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.absolute_time_range = Some(crate::types::AbsoluteTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.relative_time_range = Some(crate::types::RelativeTimeRange::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.negate = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })
+    }
+}
+
+impl InterruptionFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        let mut builder = Self::builder();
+        builder.deserialize_members(deserializer)?;
+        Ok(builder.build())
+    }
+}
 impl InterruptionFilter {
     /// Creates a new builder-style object to manufacture [`InterruptionFilter`](crate::types::InterruptionFilter).
     pub fn builder() -> crate::types::builders::InterruptionFilterBuilder {
